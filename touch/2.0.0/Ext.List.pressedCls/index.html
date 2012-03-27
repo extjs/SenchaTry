@@ -2,49 +2,12 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8"/>
-    <link href="http://extjs.cachefly.net/touch/sencha-touch-2.0.0/resources/css/sencha-touch.css" rel="stylesheet" type="text/css" />
-    <style>
-        .myPressedCls {
-            background: rgba(255, 0, 0, 0.4);
-            font-weight: bold;
-            text-indent: 20px;
-        }
-    </style>
     <title>Preventing items from being selected in an Ext.List component in Sencha Touch 2</title>
-    <!-- http://senchaexamples.com/2012/03/20/applying-a-pressed-item-style-to-an-ext-list-control-in-sencha-touch-2/ -->
+    <link href="http://extjs.cachefly.net/touch/sencha-touch-2.0.0/resources/css/sencha-touch.css" rel="stylesheet" type="text/css" />
+    <link href="app/styles.css" rel="stylesheet" type="text/css" />
+    <script src="http://extjs.cachefly.net/touch/sencha-touch-2.0.0/sencha-touch-all.js" type="text/javascript"></script>
+    <script src="app.js" type="text/javascript"></script>
 </head>
 <body>
-    
-    <script src="http://extjs.cachefly.net/touch/sencha-touch-2.0.0/sencha-touch-all.js" type="text/javascript"></script>
-    <script type="text/javascript">
-        Ext.application({
-            launch: function () {
-                var myList = Ext.create('Ext.List', {
-                    disableSelection: true,
-                    fullscreen: true,
-                    itemTpl: '{name}',
-                    pressedCls: 'myPressedCls',
-                    pressedDelay: 100, /* ms */
-                    store: {
-                        fields: ['name', 'selectable'],
-                        data: [{
-                            name: 'Red'
-                        }, {
-                            name: 'Orange'
-                        }, {
-                            name: 'Yellow',
-                            selectable: true
-                        }, {
-                            name: 'Green',
-                            selectable: false
-                        }, {
-                            name: 'Blue'
-                        }] // data
-                    } // store
-                }); // create()
-            } // launch
-        }); // application()
-    </script>
-    
 </body>
 </html>

@@ -2,39 +2,11 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8"/>
-    <link href="http://extjs.cachefly.net/touch/sencha-touch-2.0.0/resources/css/sencha-touch.css" rel="stylesheet" type="text/css" />
     <title>Specifying a custom animation duration on an Ext.Msg component in Sencha Touch 2</title>
-    <!-- http://senchaexamples.com/2012/03/01/specifying-a-custom-animation-duration-on-an-ext-msg-component-in-sencha-touch-2/ -->
+    <link href="http://extjs.cachefly.net/touch/sencha-touch-2.0.0/resources/css/sencha-touch.css" rel="stylesheet" type="text/css" />
+    <script src="http://extjs.cachefly.net/touch/sencha-touch-2.0.0/sencha-touch-all.js" type="text/javascript"></script>
+    <script src="app.js" type="text/javascript"></script>
 </head>
 <body>
-    
-    <script src="http://extjs.cachefly.net/touch/sencha-touch-2.0.0/sencha-touch-all.js" type="text/javascript"></script>
-    <script type="text/javascript">
-        Ext.application({
-            launch: function () {
-                Ext.create('Ext.Panel', {
-                    fullscreen: true,
-                    items: [{
-                        xtype: 'titlebar',
-                        dock: 'top',
-                        items: [{
-                            text: 'World\'s slowest alert',
-                            handler: function () {
-                                Ext.Msg.show({
-                                    title: 'Lorem Ipsum\'d',
-                                    message: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi odio erat, viverra pellentesque pulvinar eu, molestie eget mauris.',
-                                    showAnimation: {
-                                        type: 'slideIn',
-                                        duration: 5000
-                                    } // showAnimation
-                                }); // show()
-                            } // handler
-                        }] // items
-                    }] // items
-                }); // create()
-            } // launch
-        }); // application()
-    </script>
-    
 </body>
 </html>

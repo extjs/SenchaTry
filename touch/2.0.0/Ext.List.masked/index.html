@@ -2,43 +2,11 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8"/>
-    <link href="http://extjs.cachefly.net/touch/sencha-touch-2.0.0/resources/css/sencha-touch.css" rel="stylesheet" type="text/css" />
     <title>Setting a loading mask on an Ext.List component in Sencha Touch 2</title>
-    <!-- http://senchaexamples.com/2012/03/20/setting-a-loading-mask-on-an-ext-list-component-in-sencha-touch-2/ -->
+    <link href="http://extjs.cachefly.net/touch/sencha-touch-2.0.0/resources/css/sencha-touch.css" rel="stylesheet" type="text/css" />
+    <script src="http://extjs.cachefly.net/touch/sencha-touch-2.0.0/sencha-touch-all.js" type="text/javascript"></script>
+    <script src="app.js" type="text/javascript"></script>
 </head>
 <body>
-    
-    <script src="http://extjs.cachefly.net/touch/sencha-touch-2.0.0/sencha-touch-all.js" type="text/javascript"></script>
-    <script type="text/javascript">
-        Ext.application({
-            launch: function () {
-                Ext.create('Ext.List', {
-                    fullscreen: true,
-                    itemTpl: '{name}',
-                    masked: {
-                        xtype: 'loadmask',
-                        message: 'Please wait while we fetch some more data... ' +
-                            '<hr>Still waiting? Seriously, this dialog won\'t ' +
-                            'disappear until you call <code>setMasked(false)</code>'
-                    }, // masked
-                    store: {
-                        fields: ['name'],
-                        data: [{
-                            name: 'Red'
-                        }, {
-                            name: 'Orange'
-                        }, {
-                            name: 'Yellow'
-                        }, {
-                            name: 'Green'
-                        }, {
-                            name: 'Blue'
-                        }] // data
-                    } // store
-                }); // create()
-            } // launch
-        }); // application()
-    </script>
-    
 </body>
 </html>
