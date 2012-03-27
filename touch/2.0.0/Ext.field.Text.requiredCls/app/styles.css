@@ -1,0 +1,10 @@
+.myReq .x-form-label {
+    color: red;
+}
+
+.myReq .x-form-label:after {
+    content: " (required)";
+    display: inline;
+    color: #999;
+    font-size: 0.6em;
+}
