@@ -29,15 +29,11 @@ Ext.application({
                     ui: 'decline',
                     handler: function (btn, evt) {
                         Ext.Msg.confirm('', 'Are you sure you want to reset this form?', function (btn) {
-                            switch (btn) {
-                                case 'yes':
-                                    contactForm.setValues({
-                                        fname: '',
-                                        lname: ''
-                                    }); // contactForm()
-                                    break;
-                                default:
-                                    break;
+                            if (btn === 'yes') {
+                                contactForm.setValues({
+                                    fname: '',
+                                    lname: ''
+                                }); // contactForm()
                             } // switch
                         }); // confirm()
                     }

@@ -4,7 +4,7 @@ Ext.application({
             fullscreen: true,
             tabBarPosition: 'bottom',
             defaults: {
-                styleHtmlContent: true,
+                styleHtmlContent: true
             }, // defaults
             listeners: {
                 activeitemchange: function (tabPanel, tab, oldTab) {
