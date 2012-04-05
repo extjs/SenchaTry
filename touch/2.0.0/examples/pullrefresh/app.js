@@ -23,7 +23,7 @@ var timeAgoInWords = function(date) {
     } catch (e) {
         return '';
     }
-}
+};
 
 /**
  * This examples illustrates the 'List Paging' and 'Pull Refresh' plugins

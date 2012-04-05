@@ -2,7 +2,7 @@
     "name": "AddressBook",
     "js": [
         {
-            "path": "http://extjs.cachefly.net/touch/sencha-touch-2.0.0/sencha-touch-all-debug.js"
+            "path": "http://cdn.sencha.com/try/touch/2.0.0/sencha-touch-all-debug.js"
         },
         {
             "path": "app.js",

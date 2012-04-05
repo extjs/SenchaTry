@@ -11,7 +11,7 @@ Ext.define('GeoCon.view.committee.List', {
         scrollable: false,
 
         itemTpl: [
-            '<div class="committee">{name}</div>',
+            '<div class="committee">{name}</div>'
         ]
     }
 });

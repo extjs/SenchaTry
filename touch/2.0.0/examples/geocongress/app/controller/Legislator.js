@@ -64,7 +64,7 @@ Ext.define('GeoCon.controller.Legislator', {
             });
         }
 
-        Ext.getCmp('billSummaryToolbar').setTitle(record.data.bill_id)
+        Ext.getCmp('billSummaryToolbar').setTitle(record.data.bill_id);
     },
 
     onVoteListActivate: function() {
@@ -73,7 +73,7 @@ Ext.define('GeoCon.controller.Legislator', {
 
             var storeParams = {
                 sections: "basic,voter_ids." + this.currentLegislator.bioguide_id
-            }
+            };
             storeParams['voter_ids.' + this.currentLegislator.bioguide_id + '__exists'] = true;
 
             Ext.getStore('Votes').load({
@@ -112,7 +112,7 @@ Ext.define('GeoCon.controller.Legislator', {
         }
 
         Ext.getCmp('legislatorBio').setData(this.currentLegislator);
-        Ext.getCmp('legislatorToolbar').setTitle(this.currentLegislator.title + " " + this.currentLegislator.lastname)
+        Ext.getCmp('legislatorToolbar').setTitle(this.currentLegislator.title + " " + this.currentLegislator.lastname);
         Ext.getCmp('legislatorTabPanel').setActiveItem(0);
     }
 

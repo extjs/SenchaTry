@@ -44,7 +44,7 @@ Ext.define('Oreilly.util.Proxy', {
 		            speakerSessionStore.add(proposalModel);
 		        });
 
-		        for (speakerId in speakerSessions) {
+		        for (var speakerId in speakerSessions) {
 		            speaker = speakerStore.findRecord('id', speakerId);
 		            if (speaker) {
 		                speaker.set('sessionIds', speakerSessions[speakerId]);

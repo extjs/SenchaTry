@@ -14,7 +14,7 @@ Ext.define('Oreilly.model.Session', {
 						var dateArr = value.split(/[\-T:]/);
 						return new Date(dateArr[0], dateArr[1] - 1, dateArr[2], dateArr[3]);
 					} else {
-						return new Date()
+						return new Date();
 					}
                 }
 			},

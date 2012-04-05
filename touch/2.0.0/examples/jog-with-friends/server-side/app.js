@@ -28,7 +28,7 @@ var config = {
 
     // Session encyption key
     sessionSecret: 'oasjdf0asduf0asd9f0adfks'
-}
+};
 
 
 
@@ -152,7 +152,7 @@ var handleError = function(msg, err, req, res, next){
     }
     console.log(msg, err);
     res.json({ success: false, error: err });
-}
+};
 
 /**
  * Serve index.html if the root URL is hit
@@ -180,7 +180,7 @@ app.get('/runs', checkFbSession, function(req, res) {
 
         // Create an array of friend IDs
         var friendIds = _.map(friends.data, function(f) {
-            return f.id
+            return f.id;
         });
 
         // Add the users ID to the list
@@ -220,7 +220,7 @@ app.post('/run', checkFbSession, function(req, res, next) {
         // Construct a new Run using the post data
         var run = new Run({
             location:  req.body.location || 'Unknown Location',
-            date:      new Date,
+            date:      new Date(),
             distance:  req.body.distance,
             profileId: user.id,
             name:      user.first_name + ' ' + user.last_name

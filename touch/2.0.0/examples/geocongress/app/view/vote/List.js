@@ -23,10 +23,10 @@ Ext.define('GeoCon.view.vote.List', {
                     var str = '';
 
                     if (voteBreakdown.total) {
-                        str = voteBreakdown.total['Yea'] + '-' + voteBreakdown.total['Nay'];
+                        str = voteBreakdown.total.Yea + '-' + voteBreakdown.total.Nay;
 
                         if (voteBreakdown.total['Not Voting']) {
-                            str += ", " + voteBreakdown.total['Not Voting'] + " not voting"
+                            str += ", " + voteBreakdown.total['Not Voting'] + " not voting";
                         }
                     }
 

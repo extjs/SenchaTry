@@ -39,7 +39,7 @@ Ext.define('Oreilly.view.session.List', {
 		var segmentedButton = this.down('segmentedbutton');
 
 		Ext.Array.each(Oreilly.sessionDays, function(day) {
-			segmentedButton.add(day)
+			segmentedButton.add(day);
 		});
 	}
 });

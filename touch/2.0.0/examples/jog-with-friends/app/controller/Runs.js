@@ -52,7 +52,7 @@ Ext.define('JWF.controller.Runs', {
         if (!this.addRunForm) {
             this.addRunForm = Ext.create('JWF.view.Form', {
                 id: 'runForm'
-            })
+            });
         }
         Ext.Viewport.setActiveItem(this.addRunForm);
     },

@@ -62,7 +62,7 @@ Ext.define('GeoCon.store.States', {
             { abbr: 'WA', state: 'Washington',           maxDistrict: 9 },
             { abbr: 'WV', state: 'West Virginia',        maxDistrict: 3 },
             { abbr: 'WI', state: 'Wisconsin',            maxDistrict: 8 },
-            { abbr: 'WY', state: 'Wyoming',              maxDistrict: 0 },
+            { abbr: 'WY', state: 'Wyoming',              maxDistrict: 0 }
         ]
     }
 });

@@ -108,7 +108,7 @@ Ext.application({
 
         this.facebookAppId = '';
 
-        if (this.facebookAppId == '') {
+        if (this.facebookAppId === '') {
             Ext.create('Ext.Component', {
                 fullscreen: true,
                 padding: 20,
@@ -116,7 +116,7 @@ Ext.application({
                     '<p>Please read the source of app.js to set up this example locally.</p><br/>',
                     '<p>For a live example, visit <a href="http://ju.mp/senchajwf">http://ju.mp/senchajwf</a></p>'
                 ].join('')
-            })
+            });
         }
     }
 });

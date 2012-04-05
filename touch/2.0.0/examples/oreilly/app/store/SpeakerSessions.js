@@ -11,4 +11,4 @@ Ext.define('Oreilly.store.SpeakerSessions', {
             }
         ]
     }
-})
+});

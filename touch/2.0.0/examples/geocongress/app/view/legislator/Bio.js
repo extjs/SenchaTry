@@ -40,7 +40,7 @@ Ext.define('GeoCon.view.legislator.Bio', {
                     var endings = ['th', 'st', 'nd', 'rd'],
                         digit = value % 10;
 
-                    if (value == 0) {
+                    if (value === 0) {
                         return 'At-large District';
                     }
                     else if (digit > 3 || (value > 10 && value < 20)) {

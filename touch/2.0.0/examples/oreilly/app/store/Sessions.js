@@ -25,4 +25,4 @@ Ext.define('Oreilly.store.Sessions', {
             }
         ]
     }
-})
+});

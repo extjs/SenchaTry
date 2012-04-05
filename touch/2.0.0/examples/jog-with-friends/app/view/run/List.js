@@ -28,7 +28,7 @@ Ext.define('JWF.view.run.List', {
                         if (diff < 0) diff = -diff;
 
                         if (diff < 86400) {
-                            return 'Today'
+                            return 'Today';
                         } else if (diff < 60*60*24*365) {
                             str = String(Math.ceil(diff / (60 * 60 * 24)));
                             return str + (str == "1" ? ' day' : ' days') + ' ago';

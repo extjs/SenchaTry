@@ -35,7 +35,7 @@ Ext.define('JWF.controller.Facebook', {
 
     onFacebookInit: function() {
 
-        if (JWF.app.facebookAppId == '') return;
+        if (JWF.app.facebookAppId === '') return;
 
         var me = this;
 
