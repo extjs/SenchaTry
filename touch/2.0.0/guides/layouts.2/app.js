@@ -2,19 +2,16 @@ Ext.application({
     launch: function () {
         var container = Ext.create('Ext.Container', {
             fullscreen: true,
-
             layout: {
                 type: 'vbox',
                 align: 'start',
                 pack: 'start'
             },
-
             items: [{
                 docked: 'top',
                 xtype: 'titlebar',
                 title: 'VBox Layout'
             },
-
             {
                 docked: 'top',
                 xtype: 'toolbar',
@@ -28,18 +25,18 @@ Ext.application({
                     items: [{
                         text: 'Start',
                         handler: function () {
-                            layout.setPack('start')
+                            layout.setPack('start');
                         },
                         pressed: true
                     }, {
                         text: 'Center',
                         handler: function () {
-                            layout.setPack('center')
+                            layout.setPack('center');
                         }
                     }, {
                         text: 'End',
                         handler: function () {
-                            layout.setPack('end')
+                            layout.setPack('end');
                         }
                     }]
                 }]
@@ -77,7 +74,6 @@ Ext.application({
                     }]
                 }]
             },
-
             {
                 xtype: 'button',
                 text: 'Btn 1',

@@ -34,7 +34,7 @@ Ext.application({
                         name: 'Ed',
                         email: 'ed@sencha.com',
                         password: 'secret'
-                    })
+                    });
                 }
             }, {
                 xtype: 'button',

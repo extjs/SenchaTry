@@ -1398,7 +1398,7 @@ Ext.define('Ext.XTemplateParser', {
                 else {
                     // todo - error
                 }
-                /**/
+                */
             } else {
                 frame = stack.pop();
                 me.doEnd(frame.type, frame.actions);
