@@ -1,11 +1,11 @@
-{
-    "success": true,
-    "data": [
-        {
-            "id": 1, "path": "/frameworks/touch/2.0.0/demos/Ext.ActionSheet.enter/index.html"
-        },
-        {
-            "id": 2, "path": "/frameworks/touch/2.0.0/demos/Ext.ActionSheet.enter/app.js"
-        }
-    ]
-}
+[{
+    "id": "/frameworks/touch/2.0.0/demos/Ext.browserw/index.html",
+    "text": "index.html",
+    "cls": "file",
+    "leaf": true
+}, {
+    "id": "/frameworks/touch/2.0.0/demos/Ext.browser/app.js",
+    "text": "app.js",
+    "cls": "file",
+    "leaf": true
+}]

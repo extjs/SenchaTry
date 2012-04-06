@@ -1,11 +1,11 @@
-{
-    "success": true,
-    "data": [
-        {
-            "id": 1, "path": "/frameworks/touch/2.0.0/demos/Ext.ActionSheet_TitleBar/index.html"
-        },
-        {
-            "id": 2, "path": "/frameworks/touch/2.0.0/demos/Ext.ActionSheet_TitleBar/app.js"
-        }
-    ]
-}
+[{
+    "id": "/frameworks/touch/2.0.0/demos/Ext.ActionSheet_TitleBar/index.html",
+    "text": "index.html",
+    "cls": "file",
+    "leaf": true
+}, {
+    "id": "/frameworks/touch/2.0.0/demos/Ext.ActionSheet_TitleBar/app.js",
+    "text": "app.js",
+    "cls": "file",
+    "leaf": true
+}]
