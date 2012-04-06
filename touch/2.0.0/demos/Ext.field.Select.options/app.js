@@ -53,7 +53,7 @@ Ext.application({
                                                 Ext.JSON.encode(oldValue.data));
                                 Ext.Msg.alert('selectfield change dispatched:', debug);
                             } else {
-                                console.log('oldValue is undefined');
+                                alert('oldValue is undefined');
                             }
                         } // change
                     } // listeners

@@ -10,7 +10,7 @@ Ext.application({
             }, {
                 xtype: 'panel',
                 flex: 2,
-                html: 'Sencha Inc.&lt;br/&gt;1700 Seaport Boulevard Suite 120, Redwood City, CA'
+                html: 'Sencha Inc.<br/>1700 Seaport Boulevard Suite 120, Redwood City, CA'
             }]
         });
     } // launch

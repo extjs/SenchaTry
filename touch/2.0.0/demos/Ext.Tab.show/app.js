@@ -11,8 +11,7 @@ Ext.application({
                 html: 'Home container',
                 iconCls: 'home',
                 listeners: {
-                    show: function (aa) {
-                        console.log(this);
+                    show: function () {
                         alert('Home show');
                     }, // show
                     hide: function () {

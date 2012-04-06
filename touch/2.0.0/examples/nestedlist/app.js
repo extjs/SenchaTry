@@ -66,7 +66,7 @@ Ext.define('Example.SourceView', {
         // Escape HTML...whatever
         var htmlRE = /<(\w+)>/ig, match;
         while (match = htmlRE.exec(v)) {
-            v = v.slice(0, match.index) + Ext.util.Format.format('&lt;{0}&gt;', match[1]) + v.slice(match.index + match[0].length);
+            v = v.slice(0, match.index) + Ext.util.Format.format('<{0}>', match[1]) + v.slice(match.index + match[0].length);
         }
 
         // Block comments

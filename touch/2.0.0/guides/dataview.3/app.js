@@ -14,7 +14,7 @@ Ext.application({
                     }
                 }
             },
-            itemTpl: '<img src="{profile_image_url}" /><h2>{from_user}</h2&gt;<p>{text}</p>',
+            itemTpl: '<img src="{profile_image_url}" /><h2>{from_user}</h2><p>{text}</p>',
             baseCls: 'my-dataview'
             //As described above, we don't need to set itemCls in most cases as it will already add a className
             //generated from the baseCls to each item.

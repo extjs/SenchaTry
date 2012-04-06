@@ -25,7 +25,7 @@ Ext.application({
 
         Ext.create('Ext.List', {
             fullscreen: true,
-            itemTpl: '&lt;div class="contact"&gt;{firstName} &lt;strong&gt;{lastName}&lt;/strong&gt;&lt;/div&gt;',
+            itemTpl: '<div class="contact">{firstName} <strong>{lastName}</strong</div>',
             store: store
         });
 

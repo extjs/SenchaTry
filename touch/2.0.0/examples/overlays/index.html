@@ -169,14 +169,14 @@
 
                             <pre>
                                 <code>
-                                $text = str_replace("&lt;p&gt;%::%&lt;/p&gt;","",$text);
-                                $text = str_replace("%::%&lt;/p&gt;","",$text);
+                                $text = str_replace("<p>%::%</p>","",$text);
+                                $text = str_replace("%::%</p>;","",$text);
                                 $text = str_replace("%::%","",$text);
 
                                 </code>
                             </pre>
 
-                            <p>This isn&rsquo;t code.</p>
+                            <p>This isn't code.</p>
 
                             <p>So you see, my friends:</p>
 

@@ -1,0 +1,10 @@
+.x-customOverStyle {
+    background-color: rgba(0, 255, 0, 0.2);
+    background-image: none;
+    border-color: green;
+}
+.x-customPressedStyle {
+    background-color: rgba(255, 0, 0, 0.2);
+    background-image: none;
+    border-color:  red;
+}
