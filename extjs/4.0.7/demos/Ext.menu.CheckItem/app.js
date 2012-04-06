@@ -3,7 +3,7 @@ Ext.onReady(function () {
         menu: [
             {
                 text: 'Ext JS 4',
-                xtype: 'menucheckitem',
+                xtype: 'menucheckitem'
             }, {
                 text: 'Ext JS 3',
                 xtype: 'menucheckitem'

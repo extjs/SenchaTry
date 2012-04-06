@@ -28,6 +28,6 @@ Ext.onReady(function () {
         tbar: [
             ch,
             toggleBtn
-        ], // tbar
+        ] // tbar
     }); // create()
 }); // onReady()

@@ -10,19 +10,19 @@ Ext.onReady(function () {
             xtype: 'button',
             text: 'Ext.Msg.INFO',
             handler: function () {
-                showMessage('INFO')
+                showMessage('INFO');
             }
         }, {
             xtype: 'button',
             text: 'Ext.Msg.QUESTION',
             handler: function () {
-                showMessage('QUESTION')
+                showMessage('QUESTION');
             }
         }, {
             xtype: 'button',
             text: 'Ext.Msg.WARNING',
             handler: function () {
-                showMessage('WARNING')
+                showMessage('WARNING');
             }
         }],
         renderTo: Ext.getBody()

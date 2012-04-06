@@ -4,7 +4,7 @@ Ext.application({
         Ext.create('Ext.Button', {
             text: 'I\'m a button!',
             icon: 'http://sencha.com/favicon.ico',
-            renderTo: Ext.getBody(),
+            renderTo: Ext.getBody()
         });
     } // launch
 }); // Ext.application()
