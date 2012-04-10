@@ -37,6 +37,6 @@ Ext.onReady(function () {
             name: 'time',
             minValue: '8:00am',
             maxValue: '6:00pm'
-        }],
+        }]
     });
 });

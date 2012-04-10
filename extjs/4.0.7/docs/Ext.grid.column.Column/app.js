@@ -1,35 +1,35 @@
 Ext.onReady(function () {
     Ext.create('Ext.data.Store', {
         storeId: 'employeeStore',
-        fields: ['firstname', 'lastname', 'senority', 'dep', 'hired'],
+        fields: ['firstname', 'lastname', 'seniority', 'dep', 'hired'],
         data: [{
             firstname: "Michael",
             lastname: "Scott",
-            senority: 7,
-            dep: "Manangement",
+            seniority: 7,
+            dep: "Management",
             hired: "01/10/2004"
         }, {
             firstname: "Dwight",
             lastname: "Schrute",
-            senority: 2,
+            seniority: 2,
             dep: "Sales",
             hired: "04/01/2004"
         }, {
             firstname: "Jim",
             lastname: "Halpert",
-            senority: 3,
+            seniority: 3,
             dep: "Sales",
             hired: "02/22/2006"
         }, {
             firstname: "Kevin",
             lastname: "Malone",
-            senority: 4,
+            seniority: 4,
             dep: "Accounting",
             hired: "06/10/2007"
         }, {
             firstname: "Angela",
             lastname: "Martin",
-            senority: 5,
+            seniority: 5,
             dep: "Accounting",
             hired: "10/21/2008"
         }]
@@ -37,7 +37,7 @@ Ext.onReady(function () {
 
     Ext.create('Ext.grid.Panel', {
         title: 'Column Demo',
-        store: Ext.data.StoreManager.lookup('employeeStore'),
+        store: 'employeeStore',
         columns: [{
             text: 'First Name',
             dataIndex: 'firstname'
@@ -52,7 +52,7 @@ Ext.onReady(function () {
         }, {
             text: 'Department (Yrs)',
             xtype: 'templatecolumn',
-            tpl: '{dep} ({senority})'
+            tpl: '{dep} ({seniority})'
         }],
         width: 400,
         forceFit: true,

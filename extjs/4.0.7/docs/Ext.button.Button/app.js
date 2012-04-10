@@ -3,7 +3,7 @@ Ext.onReady(function () {
         text: 'Click me',
         renderTo: Ext.getBody(),
         handler: function () {
-            alert('You clicked the button!')
+            alert('You clicked the button!');
         }
     });
 });

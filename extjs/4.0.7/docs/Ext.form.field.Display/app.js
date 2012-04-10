@@ -17,7 +17,7 @@ Ext.onReady(function () {
             value: '11'
         }],
         buttons: [{
-            text: 'Update',
+            text: 'Update'
         }]
     });
 });

@@ -9,7 +9,7 @@ Ext.onReady(function () {
             if (!me.readOnly) {
                 var val = me.step; // set the default value to the step value
                 if (me.getValue() !== '') {
-                    val = parseInt(me.getValue().slice(0, -5)); // gets rid of " Pack"
+                    val = parseInt(me.getValue().slice(0, -5), 10); // gets rid of " Pack"
                 }
                 me.setValue((val + me.step) + ' Pack');
             }
@@ -20,7 +20,7 @@ Ext.onReady(function () {
             var val, me = this;
             if (!me.readOnly) {
                 if (me.getValue() !== '') {
-                    val = parseInt(me.getValue().slice(0, -5)); // gets rid of " Pack"
+                    val = parseInt(me.getValue().slice(0, -5), 10); // gets rid of " Pack"
                 }
                 me.setValue((val - me.step) + ' Pack');
             }

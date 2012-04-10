@@ -17,7 +17,7 @@ Ext.onReady(function () {
         items: [{
             xtype: 'customtrigger',
             fieldLabel: 'Sample Trigger',
-            emptyText: 'click the trigger',
+            emptyText: 'click the trigger'
         }]
     });
 });

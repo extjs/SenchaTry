@@ -9,7 +9,7 @@ Ext.onReady(function () {
             text: 'select all'
         }, {
             xtype: 'menucheckitem',
-            text: 'select specific',
+            text: 'select specific'
         }, {
             iconCls: 'add16',
             text: 'icon item'

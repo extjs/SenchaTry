@@ -4,7 +4,7 @@ Ext.onReady(function () {
         width: 300,
         height: 275,
         layout: {
-            type: 'absolute',
+            type: 'absolute'
             // layout-specific configs go here
             //itemCls: 'x-abs-layout-item',
         },

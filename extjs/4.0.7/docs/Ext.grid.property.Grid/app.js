@@ -7,7 +7,7 @@ Ext.onReady(function () {
             "(name)": "My Object",
             "Created": Ext.Date.parse('10/15/2006', 'm/d/Y'),
             "Available": false,
-            "Version": .01,
+            "Version": 0.01,
             "Description": "A test object"
         }
     });

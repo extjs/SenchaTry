@@ -10,9 +10,9 @@ Ext.onReady(function () {
         }, {
             xtype: 'menuseparator'
         }, {
-            text: 'seperator above',
+            text: 'separator above'
         }, {
-            text: 'regular item',
+            text: 'regular item'
         }]
     });
 });

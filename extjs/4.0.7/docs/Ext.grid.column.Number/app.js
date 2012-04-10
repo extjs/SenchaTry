@@ -13,7 +13,7 @@ Ext.onReady(function () {
         }, {
             name: 'volume',
             type: 'number'
-        }, ],
+        }],
         data: [{
             symbol: "msft",
             price: 25.76,
