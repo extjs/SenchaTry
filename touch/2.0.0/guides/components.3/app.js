@@ -3,14 +3,13 @@ Ext.application({
         Ext.create('Ext.Container', {
             fullscreen: true,
             layout: 'fit',
-
             items: [{
                 xtype: 'panel',
                 html: 'This panel is created by xtype'
             }, {
                 xtype: 'toolbar',
                 title: 'So is the toolbar',
-                dock: 'top'
+                docked: 'top'
             }]
         });
     } // launch

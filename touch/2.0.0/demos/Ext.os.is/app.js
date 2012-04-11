@@ -1,13 +1,13 @@
 Ext.application({
     launch: function () {
         Ext.define('OS', {
-            extend: 'Ext.data.Model',
-            fields: ['name', 'value']
+            extend: 'Ext.data.Model'
         }); // define()
         
         var store = Ext.create('Ext.data.Store', {
             model: 'OS',
             sorters: 'name',
+            fields: ['name', 'value'],
             data: [{
                 name: 'iOS',
                 value: Ext.os.is('iOS')

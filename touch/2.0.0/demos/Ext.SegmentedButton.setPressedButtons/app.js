@@ -4,7 +4,7 @@ Ext.application({
             fullscreen: true,
             items: [{
                 xtype: 'toolbar',
-                dock: 'top',
+                docked: 'top',
                 items: [{
                     text: 'setPressedButtons( [0,2,3] )',
                     handler: function () {

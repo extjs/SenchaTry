@@ -6,7 +6,7 @@ Ext.application({
                 xtype: 'list',
                 items: {
                     xtype: 'toolbar',
-                    dock: 'top',
+                    docked: 'top',
                     title: 'Sencha Touch Team'
                 },
                 store: {
@@ -30,7 +30,7 @@ Ext.application({
                 xtype: 'fieldset',
                 items: [{
                     xtype: 'toolbar',
-                    dock: 'top',
+                    docked: 'top',
                     title: 'Login'
                 }, {
                     xtype: 'textfield',

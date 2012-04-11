@@ -4,7 +4,7 @@ Ext.application({
             fullscreen: true,
             items: [{
                 xtype: 'titlebar',
-                dock: 'top',
+                docked: 'top',
                 items: [{
                     text: 'slideIn/slideOut',
                     handler: function () {

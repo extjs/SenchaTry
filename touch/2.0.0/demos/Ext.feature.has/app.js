@@ -1,13 +1,13 @@
 Ext.application({
     launch: function () {
         Ext.define('Feature', {
-            extend: 'Ext.data.Model',
-            fields: ['feature', 'value']
+            extend: 'Ext.data.Model'
         }); // define()
         
         var store = Ext.create('Ext.data.Store', {
             model: 'Feature',
             sorters: 'feature',
+            fields: ['feature', 'value'],
             data: [{
                 feature: 'Audio',
                 value: Ext.feature.has.Audio
