@@ -10,7 +10,7 @@ Ext.application({
                     url: 'http://search.twitter.com/search.json?q=Sencha+Touch',
                     reader: {
                         type: 'json',
-                        root: 'results'
+                        rootProperty: 'results'
                     }
                 }
             },
