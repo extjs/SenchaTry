@@ -1,0 +1,46 @@
+#search-results a {
+    color: #385F95;
+    font: bold 11px tahoma, arial, helvetica, sans-serif;
+    text-decoration: none;
+}
+
+#search-results a:hover {
+    text-decoration: underline;
+}
+
+#search-results p {
+    margin: 3px !important;
+}
+
+.search-item {
+    font: normal 11px tahoma, arial, helvetica, sans-serif;
+    padding: 3px 10px;
+    border: 1px solid #fff;
+    border-bottom: 1px solid #eee;
+    white-space: normal;
+    color: #555;
+}
+
+.search-item h3 {
+    display: block;
+    font: inherit;
+    font-weight: bold;
+    color: #222;
+}
+
+.search-item h3 span {
+    float: right;
+    font-weight: normal;
+    margin: 0 0 5px 5px;
+    width: 100px;
+    display: block;
+    clear: none;
+}
+
+.x-form-clear-trigger {
+    background-image: url(http://cdn.sencha.io/try/extjs/4.0.7/resources/themes/images/default/form/clear-trigger.gif);
+}
+
+.x-form-search-trigger {
+    background-image: url(http://cdn.sencha.io/try/extjs/4.0.7/resources/themes/images/default/form/search-trigger.gif);
+}

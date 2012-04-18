@@ -1,0 +1,42 @@
+#board {
+    width: 402px;
+    height: 402px;
+    border: 1px solid black;
+}
+
+.square {
+    width: 100px;
+    height: 100px;
+    float: left;
+    border: 1px solid black;
+    text-align: center;
+    padding-top: 40px;
+}
+
+.active-red {
+    background-color: #FF0000;
+}
+
+.active-green {
+    background-color: #00FF00;
+}
+
+/* IE6/7/8 bugs */
+.x-strict #board {
+    width: 400px;
+    height: 400px;
+}
+
+.x-strict .square {
+    width: 98px;
+    padding-top: 0;
+    line-height: 100px;
+}
+
+.x-quirks .x-ie .x-clear {
+    margin-top: -1px;
+}
+
+.x-quirks .x-ie6 .x-clear {
+    margin-top: 0px;
+}

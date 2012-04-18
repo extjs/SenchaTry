@@ -1,0 +1,15 @@
+.example {
+    width: 600px;
+    border: 1px solid #CCC;
+    padding: 0 10px;
+    margin: 0 0 10px;
+}
+
+.x-fieldset {
+    margin-top: 20px;
+}
+
+#transformCombo label {
+    display: block;
+    margin: 1em 0 2px;
+}

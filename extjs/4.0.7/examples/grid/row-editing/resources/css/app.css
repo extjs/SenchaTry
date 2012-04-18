@@ -1,0 +1,7 @@
+.employee-add {
+    background-image: url('../icons/fam/user_add.gif') !important;
+}
+
+.employee-remove {
+    background-image: url('../icons/fam/user_delete.gif') !important;
+}

@@ -1,0 +1,7 @@
+.task {
+    background-image: url(icons/cog.gif) !important;
+}
+
+.task-folder {
+    background-image: url(icons/folder_go.gif) !important;
+}

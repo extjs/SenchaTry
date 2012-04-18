@@ -1,0 +1,16 @@
+/* styles for iconCls */
+.x-icon-tickets {
+    background-image: url('images/tickets.png');
+}
+
+.x-icon-subscriptions {
+    background-image: url('images/subscriptions.png');
+}
+
+.x-icon-users {
+    background-image: url('images/group.png');
+}
+
+.x-icon-templates {
+    background-image: url('images/templates.png');
+}

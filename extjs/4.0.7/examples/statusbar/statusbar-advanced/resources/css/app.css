@@ -1,0 +1,11 @@
+.list {
+    list-style-image: none;
+    list-style-position: outside;
+    list-style-type: square;
+    padding-left: 16px;
+}
+
+.list li {
+    font-size: 11px;
+    padding: 3px;
+}

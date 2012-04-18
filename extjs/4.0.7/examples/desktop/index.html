@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <title>ExtTop - Desktop Sample App</title>
+    <link rel="stylesheet" href="http://cdn.sencha.io/try/extjs/4.0.7/resources/css/ext-all.css"/>
+    <link rel="stylesheet" type="text/css" href="css/desktop.css" />
+    <script src="http://cdn.sencha.io/try/extjs/4.0.7/ext-all.js"></script>
+    <script type="text/javascript" src="classes.js"></script>
+    <script type="text/javascript">
+        Ext.Loader.setPath({
+            'Ext.ux.desktop': 'js',
+            MyDesktop: ''
+        });
+        
+        Ext.require('MyDesktop.App');
+        
+        var myDesktopApp;
+        Ext.onReady(function () {
+            myDesktopApp = new MyDesktop.App();
+        });
+    </script>
+</head>
+<body>
+
+    <a href="http://www.sencha.com" target="_blank" alt="Powered by Ext JS"
+       id="poweredby"><div></div></a>
+
+</body>
+</html>

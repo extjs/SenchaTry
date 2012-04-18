@@ -1,0 +1,10 @@
+/* style rows on mouseover */
+.x-grid-row-over .x-grid-cell-inner {
+    font-weight: bold;
+}
+
+/* Style the buyAction Components; Button and MenuItem */
+.buy-button {
+    background-image: url(icons/fam/accept.png) !important;
+    background-repeat: no-repeat !important;
+}

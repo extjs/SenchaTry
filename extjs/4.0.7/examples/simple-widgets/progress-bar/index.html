@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <title></title>
+    <link rel="stylesheet" href="http://cdn.sencha.io/try/extjs/4.0.7/resources/css/ext-all.css" />
+    <link rel="stylesheet" href="resources/css/app.css" />
+    <script src="http://cdn.sencha.io/try/extjs/4.0.7/ext-all.js"></script>
+    <script src="app.js"></script>
+</head>
+<body>
+
+    <p><b>Basic Progress Bar:</b> Deferred rendering, dynamic show/hide and built-in progress text: <button id="btn1">Show</button></p>
+    <div class="status" id="p1text">
+        Nothing to see here.
+    </div>
+    <div id="p1" style="width:300px;"></div>
+    <hr/>
+    
+    <p><b>Additional Options:</b> Rendered on page load, left-aligned text and % width: <button id="btn2">Show</button></p>
+    <div id="p2" style="width:50%;"></div>
+    <hr/>
+    
+    <p><b>Waiting Bar:</b> Wait for a long operation to complete (example will stop after 5 secs): <button id="btn3">Show</button></p>
+    <div id="p3"></div>
+    <p><span class="status" id="p3text">Ready</span></p>
+    <hr/>
+    
+    <p><b>Custom Styles:</b> Rendered like Windows XP with custom progress text element: <button id="btn4">Show</button></p>
+    <div id="p4" style="width:300px;"></div>
+    <div class="status">
+        <b>Status:</b> <span id="p4text"></span>
+    </div>
+
+</body>
+</html>

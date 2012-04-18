@@ -1,0 +1,24 @@
+/* Styling of global error indicator */
+.form-error-state {
+    font-size: 11px;
+    padding-left: 20px;
+    height: 16px;
+    line-height: 18px;
+    background: no-repeat 0 0;
+    cursor: default;
+}
+
+.form-error-state-invalid {
+    color: #C30;
+    background-image: url(http://cdn.sencha.io/try/extjs/4.0.7/resources/themes/images/default/form/exclamation.gif);
+}
+
+.form-error-state-valid {
+    color: #090;
+    background-image: url(http://cdn.sencha.io/try/extjs/4.0.7/resources/themes/images/default/dd/drop-yes.gif);
+}
+
+/* Error details tooltip */
+.errors-tip .error {
+    font-style: italic;
+}
