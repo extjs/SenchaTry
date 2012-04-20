@@ -1,0 +1,1 @@
+# Ext.draw.Text Example #
