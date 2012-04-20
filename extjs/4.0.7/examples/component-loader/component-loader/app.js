@@ -35,7 +35,7 @@ Ext.onReady(function(){
             bodyPadding: 5,
             loader: {
                 autoLoad: true,
-                url: 'content.htm'
+                url: 'content.html'
             }
         }, {
             flex: 1,

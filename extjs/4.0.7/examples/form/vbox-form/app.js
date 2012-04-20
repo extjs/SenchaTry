@@ -14,7 +14,7 @@ If you are unsure which license is appropriate for your use, please contact the 
 */
 Ext.Loader.setConfig({enabled: true});
 
-Ext.Loader.setPath('Ext.ux', 'ux/');
+Ext.Loader.setPath('Ext.ux', 'ux');
 Ext.require([
     'Ext.form.*',
     'Ext.window.Window',

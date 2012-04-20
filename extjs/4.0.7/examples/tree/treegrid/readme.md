@@ -2,7 +2,7 @@
 
 This example is an advanced tree example. It illustrates:
 
-- Multiple headers</li>
+- Multiple headers
 - Preloading of nodes with a single AJAX request
 - Header hiding, showing, reordering and resizing 
 - useArrows configuration
