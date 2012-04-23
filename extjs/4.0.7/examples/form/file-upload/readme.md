@@ -2,7 +2,7 @@
 
 This example demonstrates use of Ext.form.field.File, a file upload field with custom rendering.
 
-## Basic File Field ## 
+## Basic File Field ##
 
 A typical file upload field with Ext style. Direct editing of the text field cannot be done in a consistent, cross-browser way, so it is always read-only. The file path reported by the `getValue` method will
 
