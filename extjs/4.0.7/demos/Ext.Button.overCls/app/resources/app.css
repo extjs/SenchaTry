@@ -3,8 +3,9 @@
     background-image: none;
     border-color: green;
 }
+
 .x-customPressedStyle {
     background-color: rgba(255, 0, 0, 0.2);
     background-image: none;
-    border-color:  red;
+    border-color: red;
 }

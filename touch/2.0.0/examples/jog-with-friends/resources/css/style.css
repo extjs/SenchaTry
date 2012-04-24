@@ -2,6 +2,7 @@
     color: #fff;
     font-size: 80%;
 }
+
 #facebookUserMeta img {
     width: 30px;
     border-radius: 5px;
@@ -16,13 +17,16 @@
 .run {
     min-height: 50px;
 }
+
 .run img {
     border-radius: 5px;
     float: left;
 }
+
 .run .info {
     margin: 0 0 5px 60px;
 }
+
 .run .meta {
     margin-left: 60px;
     font-size: 0.8em;
@@ -45,6 +49,7 @@
 #splash {
     font-size: 0.9em;
 }
+
 #splash h2 {
     font-weight: bold;
 }

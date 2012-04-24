@@ -1,5 +1,5 @@
 .status {
-    color:#555;
+    color: #555;
 }
 
 .x-progress.custom {
@@ -22,7 +22,6 @@
 .ext-strict .custom .x-progress-bar {
     height: 15px;
 }
-
 
 hr {
     margin: 20px 0;

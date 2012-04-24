@@ -1,19 +1,19 @@
 body .x-panel {
-    margin-bottom:20px;
+    margin-bottom: 20px;
 }
 
 .icon-grid {
-    background-image:url(../icons/fam/grid.png) !important;
+    background-image: url(../icons/fam/grid.png) !important;
 }
 
 .add {
-    background-image:url(../icons/fam/add.gif) !important;
+    background-image: url(../icons/fam/add.gif) !important;
 }
 
 .option {
-    background-image:url(../icons/fam/plugin.gif) !important;
+    background-image: url(../icons/fam/plugin.gif) !important;
 }
 
 .remove {
-    background-image:url(../icons/fam/delete.gif) !important;
+    background-image: url(../icons/fam/delete.gif) !important;
 }

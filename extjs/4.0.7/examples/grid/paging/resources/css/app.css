@@ -12,7 +12,7 @@
 }
 
 .x-grid-cell-topic a:hover {
-    text-decoration:underline;
+    text-decoration: underline;
 }
 
 .x-grid-cell-topic .x-grid-cell-innerf {
@@ -20,5 +20,5 @@
 }
 
 .x-grid-rowbody {
-    padding: 0 5px 5px 5px; 
+    padding: 0 5px 5px 5px;
 }

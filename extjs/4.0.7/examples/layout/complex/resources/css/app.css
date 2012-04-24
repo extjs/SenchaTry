@@ -1,15 +1,15 @@
 p {
-    margin:5px;
+    margin: 5px;
 }
 
 .settings {
-    background-image:url(icons/fam/folder_wrench.png);
+    background-image: url(icons/fam/folder_wrench.png);
 }
 
 .nav {
-    background-image:url(icons/fam/folder_go.png);
+    background-image: url(icons/fam/folder_go.png);
 }
 
 .info {
-    background-image:url(icons/fam/information.png);
+    background-image: url(icons/fam/information.png);
 }

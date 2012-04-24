@@ -10,7 +10,6 @@
     bottom: 40px;
     right: 20px;
     z-index: 15000;
-
     /* IE 5-7 */
     filter: alpha(opacity=70);
     /* Netscape */
@@ -34,7 +33,7 @@
 .x-ie7 #poweredby div,
 .x-ie8 #poweredby div {
     background-image: none;
-    filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='images/powered-by-ext-js.png', sizingMethod='scale');
+    filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='images/powered-by-ext-js.png', sizingMethod='scale');
 }
 
 /*----------------------------------------------------
@@ -74,7 +73,7 @@
 
 .ux-desktop-black .ux-start-button .x-btn-inner {
     color: black;
-    font-size:11px;
+    font-size: 11px;
     font-weight: bold;
 }
 
@@ -231,22 +230,22 @@
 
 .x-ie6 .accordion-shortcut {
     background-image: none;
-    filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='images/im48x48.png', sizingMethod='scale');
+    filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='images/im48x48.png', sizingMethod='scale');
 }
 
 .x-ie6 .cpu-shortcut {
     background-image: none;
-    filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='images/statusLarge.png', sizingMethod='scale');
+    filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='images/statusLarge.png', sizingMethod='scale');
 }
 
 .x-ie6 .grid-shortcut {
     background-image: none;
-    filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='images/grid48x48.png', sizingMethod='scale');
+    filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='images/grid48x48.png', sizingMethod='scale');
 }
 
 .x-ie6 .notepad-shortcut {
     background-image: none;
-    filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='images/notepadLarge.png', sizingMethod='scale');
+    filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='images/notepadLarge.png', sizingMethod='scale');
 }
 
 .video {
@@ -269,27 +268,32 @@
     background-image: url( ../images/gears.gif ) !important;
 }
 
-
 .icon-grid {
-    background-image:url( ../images/grid.png ) !important;
+    background-image: url( ../images/grid.png ) !important;
 }
+
 .add {
-    background-image:url(../../shared/icons/fam/add.gif) !important;
+    background-image: url(../../shared/icons/fam/add.gif) !important;
 }
+
 .option {
-    background-image:url(../../shared/icons/fam/plugin.gif) !important;
+    background-image: url(../../shared/icons/fam/plugin.gif) !important;
 }
+
 .remove {
-    background-image:url(../../shared/icons/fam/delete.gif) !important;
+    background-image: url(../../shared/icons/fam/delete.gif) !important;
 }
+
 .save {
-    background-image:url(../../shared/icons/save.gif) !important;
+    background-image: url(../../shared/icons/save.gif) !important;
 }
+
 .accordion {
-    background-image:url(../images/accordian.gif) !important;
+    background-image: url(../images/accordian.gif) !important;
 }
+
 .tabs {
-    background-image:url(../images/tabs.gif) !important;
+    background-image: url(../images/tabs.gif) !important;
 }
 
 /*----------------------------------------------------
@@ -297,29 +301,29 @@
 */
 
 .user {
-    background-image:url( ../../shared/icons/fam/user.gif ) !important;
+    background-image: url( ../../shared/icons/fam/user.gif ) !important;
 }
 
 .user-add {
-    background-image:url(../../shared/icons/fam/user_add.gif) !important;
+    background-image: url(../../shared/icons/fam/user_add.gif) !important;
 }
 
 .user-delete {
-    background-image:url(../../shared/icons/fam/user_delete.gif) !important;
+    background-image: url(../../shared/icons/fam/user_delete.gif) !important;
 }
 
 .connect {
-    background-image:url(../../shared/icons/fam/connect.gif) !important;
+    background-image: url(../../shared/icons/fam/connect.gif) !important;
 }
 
 .user-girl {
-    background-image:url(../../shared/icons/fam/user_female.gif) !important;
+    background-image: url(../../shared/icons/fam/user_female.gif) !important;
 }
 
 .user-kid {
-    background-image:url(../../shared/icons/fam/user_green.gif) !important;
+    background-image: url(../../shared/icons/fam/user_green.gif) !important;
 }
 
 .user-suit {
-    background-image:url(../../shared/icons/fam/user_suit.gif) !important;
+    background-image: url(../../shared/icons/fam/user_suit.gif) !important;
 }

@@ -46,7 +46,7 @@
 }
 
 #img-chooser-view .x-view-over {
-    border:1px solid #dddddd;
+    border: 1px solid #dddddd;
     background-color: #efefef;
     padding: 4px;
 }
@@ -58,20 +58,20 @@
 }
 
 #img-chooser-view .x-item-selected .thumb {
-    background:transparent;
+    background: transparent;
 }
 
 #img-chooser-view .x-item-selected span {
-    color:#1A4D8F;
+    color: #1A4D8F;
 }
 
 #img-chooser-view .loading-indicator {
-    font-size:11px;
-    background-image:url('../../resources/images/grid/loading.gif');
+    font-size: 11px;
+    background-image: url('../../resources/images/grid/loading.gif');
     background-repeat: no-repeat;
     background-position: left;
-    padding-left:20px;
-    margin:10px;
+    padding-left: 20px;
+    margin: 10px;
 }
 
 #images img {
