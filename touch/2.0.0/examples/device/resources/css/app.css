@@ -2035,8 +2035,7 @@ html,body {
 .x-scroll-indicator.csstransform>:nth-child(2) {
     -webkit-transform-origin: 0% 0%;
     background: none;
-    content: url(data:image/bmp;
-    base64,Qk08AAAAAAAAADYAAAAoAAAAAQAAAAEAAAABABAAAAAAAAYAAAASCwAAEgsAAAAAAAAAAAAAxhgAAAAA)
+    content: url(data:image/bmp;base64,Qk08AAAAAAAAADYAAAAoAAAAAQAAAAEAAAABABAAAAAAAAYAAAASCwAAEgsAAAAAAAAAAAAAxhgAAAAA)
 }
 
 .x-scroll-indicator.csstransform.x-scroll-indicator-light>* {
@@ -2044,8 +2043,7 @@ html,body {
 }
 
 .x-scroll-indicator.csstransform.x-scroll-indicator-light>:nth-child(2) {
-    content: url(data:image/bmp;
-    base64,Qk08AAAAAAAAADYAAAAoAAAAAQAAAAEAAAABABAAAAAAAAYAAAASCwAAEgsAAAAAAAAAAAAAvXcAAAAA)
+    content: url(data:image/bmp;base64,Qk08AAAAAAAAADYAAAAoAAAAAQAAAAEAAAABABAAAAAAAAYAAAASCwAAEgsAAAAAAAAAAAAAvXcAAAAA)
 }
 
 .x-scroll-indicator.csstransform.x-scroll-indicator-y>* {

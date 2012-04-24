@@ -44,8 +44,8 @@ select {
     display: block;
     overflow: hidden;
     text-align: center;
+    /* for IE to ensure that the text is centered */
     width: 76px;
-    // for IE to ensure that the text is centered
 }
 
 .x-image-view .x-item-selected .thumb {
