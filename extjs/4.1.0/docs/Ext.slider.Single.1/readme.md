@@ -1,0 +1,1 @@
+# Ext.slider.Single Example #
