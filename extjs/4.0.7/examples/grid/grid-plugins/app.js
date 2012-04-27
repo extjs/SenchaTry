@@ -167,7 +167,7 @@ Ext.onReady(function(){
     var selModel = Ext.create('Ext.selection.CheckboxModel', {
         listeners: {
             selectionchange: function(sm, selections) {
-                grid4.down('#removeButton').setDisabled(selections.length == 0);
+                grid4.down('#removeButton').setDisabled(selections.length === 0);
             }
         }
     });

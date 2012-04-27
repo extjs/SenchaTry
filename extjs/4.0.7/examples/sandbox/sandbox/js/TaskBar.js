@@ -25,7 +25,7 @@ If you are unsure which license is appropriate for your use, please contact the 
 Ext.ux.TaskBar = function(app){
     this.app = app;
     this.init();
-}
+};
 
 Ext.extend(Ext.ux.TaskBar, Ext.util.Observable, {
     init : function(){
@@ -138,7 +138,7 @@ Ext.ux.TaskButtonsPanel = Ext.extend(Ext.BoxComponent, {
     enableScroll: true,
     scrollIncrement: 0,
     scrollRepeatInterval: 400,
-    scrollDuration: .35,
+    scrollDuration: 0.35,
     animScroll: true,
     resizeButtons: true,
     buttonWidth: 168,
@@ -389,7 +389,7 @@ Ext.ux.TaskButtonsPanel = Ext.extend(Ext.BoxComponent, {
 
     updateScrollButtons : function(){
         var pos = this.getScrollPos();
-        this.scrollLeft[pos == 0 ? 'addClass' : 'removeClass']('ux-taskbuttons-scroller-left-disabled');
+        this.scrollLeft[pos === 0 ? 'addClass' : 'removeClass']('ux-taskbuttons-scroller-left-disabled');
         this.scrollRight[pos >= (this.getScrollWidth()-this.getScrollArea()) ? 'addClass' : 'removeClass']('ux-taskbuttons-scroller-right-disabled');
     }
 });

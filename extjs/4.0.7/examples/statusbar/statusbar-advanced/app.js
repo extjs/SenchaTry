@@ -35,7 +35,6 @@ Ext.onReady(function(){
         width: 350,
         autoHeight: true,
         id: 'status-form',
-        renderTo: Ext.getBody(),
         labelWidth: 75,
         bodyPadding: 10,
         defaults: {

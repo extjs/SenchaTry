@@ -66,7 +66,7 @@ MyDesktop.GridWindow = Ext.extend(Ext.app.Module, {
             iconCls:'icon-grid',
             handler : this.createWindow,
             scope: this
-        }
+        };
     },
 
     createWindow : function(){
@@ -82,7 +82,6 @@ MyDesktop.GridWindow = Ext.extend(Ext.app.Module, {
                 shim:false,
                 animCollapse:false,
                 constrainHeader:true,
-
                 layout: 'fit',
                 items:
                     new Ext.grid.GridPanel({
@@ -139,7 +138,7 @@ MyDesktop.TabWindow = Ext.extend(Ext.app.Module, {
             iconCls:'tabs',
             handler : this.createWindow,
             scope: this
-        }
+        };
     },
 
     createWindow : function(){
@@ -200,7 +199,7 @@ MyDesktop.AccordionWindow = Ext.extend(Ext.app.Module, {
             iconCls:'accordion',
             handler : this.createWindow,
             scope: this
-        }
+        };
     },
 
     createWindow : function(){
@@ -342,7 +341,7 @@ MyDesktop.BogusModule = Ext.extend(Ext.app.Module, {
             handler : this.createWindow,
             scope: this,
             windowId:windowIndex
-        }
+        };
     },
 
     createWindow : function(src){
@@ -407,7 +406,7 @@ MyDesktop.BogusMenuModule = Ext.extend(MyDesktop.BogusModule, {
                     windowId: windowIndex
                 }]
             }
-        }
+        };
     }
 });
 

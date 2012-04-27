@@ -120,7 +120,7 @@ Ext.onReady(function() {
                         } else {
                             var newRecord = {};    // creates a new object we can populate with dynamic keys and values to create a new record
                             newRecord[eid] = review.get(field.name);
-                            newRecord['metric'] = field.label;
+                            newRecord.metric = field.label;
                             me.add(newRecord);
                         }
                     }
@@ -278,7 +278,7 @@ Ext.onReady(function() {
                     'stroke':'#0677BD',
                     fill: 'none'
                 }
-            }
+            };
             
             if(config.series) {        
                 config.series.push(avgSeries);     // if a series is passed in then append the average to it
@@ -447,40 +447,40 @@ Ext.onReady(function() {
                             window.getEl().mask('saving data...');
                             var vals = form.getValues();
                             var employeeStore = Ext.data.StoreMgr.lookup('employeeStore');
-                            var currentEmployee = employeeStore.findRecord('id', vals['employee_id']);
+                            var currentEmployee = employeeStore.findRecord('id', vals.employee_id);
                             
                             // look up id for this employee to see if they already exist
-                            if(vals['employee_id'] && currentEmployee) {
-                                currentEmployee.set('first_name', vals['first_name']);
-                                currentEmployee.set('last_name', vals['last_name']);
-                                currentEmployee.set('title', vals['title']);
+                            if(vals.employee_id && currentEmployee) {
+                                currentEmployee.set('first_name', vals.first_name);
+                                currentEmployee.set('last_name', vals.last_name);
+                                currentEmployee.set('title', vals.title);
                                 
-                                var currentReview = Ext.data.StoreMgr.lookup('reviewStore').findRecord('employee_id', vals['employee_id']);
-                                currentReview.set('review_date', vals['review_date']);
-                                currentReview.set('attendance', vals['attendance']);
-                                currentReview.set('attitude', vals['attitude']);
-                                currentReview.set('communication', vals['communication']);
-                                currentReview.set('excellence', vals['excellence']);
-                                currentReview.set('skills', vals['skills']);
-                                currentReview.set('teamwork', vals['teamwork']);                                                                                                                                                                
+                                var currentReview = Ext.data.StoreMgr.lookup('reviewStore').findRecord('employee_id', vals.employee_id);
+                                currentReview.set('review_date', vals.review_date);
+                                currentReview.set('attendance', vals.attendance);
+                                currentReview.set('attitude', vals.attitude);
+                                currentReview.set('communication', vals.communication);
+                                currentReview.set('excellence', vals.excellence);
+                                currentReview.set('skills', vals.skills);
+                                currentReview.set('teamwork', vals.teamwork);                                                                                                                                                                
                             } else {
                                 var newId = employeeStore.getCount() + 1; 
                                                                                            
                                 employeeStore.add({
                                     id: newId,
-                                    first_name: vals['first_name'],
-                                    last_name: vals['last_name'],
-                                    title: vals['title']
+                                    first_name: vals.first_name,
+                                    last_name: vals.last_name,
+                                    title: vals.title
                                 });
     
                                 Ext.data.StoreMgr.lookup('reviewStore').add({
-                                    review_date: vals['review_date'],
-                                    attendance: vals['attendance'],
-                                    attitude: vals['attitude'],
-                                    communication: vals['communication'],
-                                    excellence: vals['excellence'],
-                                    skills: vals['skills'],
-                                    teamwork: vals['teamwork'],
+                                    review_date: vals.review_date,
+                                    attendance: vals.attendance,
+                                    attitude: vals.attitude,
+                                    communication: vals.communication,
+                                    excellence: vals.excellence,
+                                    skills: vals.skills,
+                                    teamwork: vals.teamwork,
                                     employee_id: newId
                                 });
                             }

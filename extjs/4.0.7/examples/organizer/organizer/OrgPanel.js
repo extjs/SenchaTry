@@ -55,7 +55,7 @@ Ext.define('Ext.org.OrgPanel', {
                         itemmouseenter: function (view, record, item, index, e) {
                             Ext.log('item', e.type, ' id=', record.id);
                         }
-                    },/**/
+                    },*/
                     trackOver: true
                 }
             }

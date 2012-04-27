@@ -535,16 +535,16 @@ Ext.define('Ext.event.Event', {
     isStopped: false,
 
     set: function(name, value) {
-        if (arguments.length === 1 && typeof name != 'string') {
-            var info = name;
+        if ((arguments.length === 1) && (typeof name !== 'string')) {
+            var info = name,
+                value;
 
-            for (name in info) {
-                if (info.hasOwnProperty(name)) {
-                    this[name] = info[name];
+            for (value in info) {
+                if (info.hasOwnProperty(value)) {
+                    this[value] = info[value];
                 }
             }
-        }
-        else {
+        } else {
             this[name] = info[name];
         }
     },
@@ -561,7 +561,6 @@ Ext.define('Ext.event.Event', {
      */
     stopPropagation: function() {
         this.isStopped = true;
-
         return this;
     }
 });
@@ -981,21 +980,21 @@ Ext.define('Ext.fx.State', {
             };
         }
 
-        if (typeof name == 'string') {
+        if (typeof name === 'string') {
             switch (name) {
                 case 'translate':
                     if (isArray) {
                         ln = value.length;
 
-                        if (ln == 0) { break; }
+                        if (ln === 0) { break; }
 
                         transform.translateX = value[0];
 
-                        if (ln == 1) { break; }
+                        if (ln === 1) { break; }
 
                         transform.translateY = value[1];
 
-                        if (ln == 2) { break; }
+                        if (ln === 2) { break; }
 
                         transform.translateZ = value[2];
                     }
@@ -1008,15 +1007,15 @@ Ext.define('Ext.fx.State', {
                     if (isArray) {
                         ln = value.length;
 
-                        if (ln == 0) { break; }
+                        if (ln === 0) { break; }
 
                         transform.rotateX = value[0];
 
-                        if (ln == 1) { break; }
+                        if (ln === 1) { break; }
 
                         transform.rotateY = value[1];
 
-                        if (ln == 2) { break; }
+                        if (ln === 2) { break; }
 
                         transform.rotateZ = value[2];
                     }
@@ -1030,15 +1029,15 @@ Ext.define('Ext.fx.State', {
                     if (isArray) {
                         ln = value.length;
 
-                        if (ln == 0) { break; }
+                        if (ln === 0) { break; }
 
                         transform.scaleX = value[0];
 
-                        if (ln == 1) { break; }
+                        if (ln === 1) { break; }
 
                         transform.scaleY = value[1];
 
-                        if (ln == 2) { break; }
+                        if (ln === 2) { break; }
 
                         transform.scaleZ = value[2];
                     }
@@ -1052,11 +1051,11 @@ Ext.define('Ext.fx.State', {
                     if (isArray) {
                         ln = value.length;
 
-                        if (ln == 0) { break; }
+                        if (ln === 0) { break; }
 
                         transform.skewX = value[0];
 
-                        if (ln == 1) { break; }
+                        if (ln === 1) { break; }
 
                         transform.skewY = value[1];
                     }
@@ -1150,7 +1149,6 @@ Ext.define('Ext.mixin.Mixin', {
             if (beforeHooks || afterHooks) {
                 Ext.Function.interceptBefore(data, 'onClassMixedIn', function(targetClass) {
                     var mixin = this.prototype;
-
                     if (beforeHooks) {
                         Ext.Object.each(beforeHooks, function(from, to) {
                             targetClass.override(to, function() {
@@ -1160,14 +1158,11 @@ Ext.define('Ext.mixin.Mixin', {
                             });
                         });
                     }
-
                     if (afterHooks) {
                         Ext.Object.each(afterHooks, function(from, to) {
                             targetClass.override(to, function() {
                                 var ret = this.callOverridden(arguments);
-
                                 mixin[from].apply(this, arguments);
-
                                 return ret;
                             });
                         });
@@ -1372,18 +1367,18 @@ Ext.define('Ext.XTemplateParser', {
                     }
                 }
                 else if (actions['if']) {
-                    me.doIf(actions['if'], actions)
+                    me.doIf(actions['if'], actions);
                     stack.push({ type: 'if' });
                 }
                 else if (actions['switch']) {
-                    me.doSwitch(actions['switch'], actions)
+                    me.doSwitch(actions['switch'], actions);
                     stack.push({ type: 'switch' });
                 }
                 else if (actions['case']) {
                     me.doCase(actions['case'], actions);
                 }
-                else if (actions['elif']) {
-                    me.doElseIf(actions['elif'], actions);
+                else if (actions.elif) {
+                    me.doElseIf(actions.elif, actions);
                 }
                 else if (actions['for']) {
                     ++me.level;
@@ -2176,7 +2171,7 @@ Ext.define('Ext.event.Dispatcher', {
                 stacks = listenerStacks[targetType][target];
 
                 if (stacks) {
-                    for (eventName in stacks) {
+                    for (var eventName in stacks) {
                         if (stacks.hasOwnProperty(eventName)) {
                             publishers = this.getActivePublishers(targetType, eventName);
 
@@ -2238,8 +2233,8 @@ Ext.define('Ext.event.Dispatcher', {
             wildcardStacks = this.getWildcardListenerStacks(targetType, target, eventName),
             controller;
 
-        if ((listenerStack === null || listenerStack.length == 0)) {
-            if (wildcardStacks.length == 0 && !action) {
+        if ((listenerStack === null || listenerStack.length === 0)) {
+            if (wildcardStacks.length === 0 && !action) {
                 return;
             }
         }
@@ -2484,7 +2479,7 @@ Ext.define('Ext.event.publisher.Dom', {
                 selector: [],
                 all: 0,
                 $length: 0
-            }
+            };
         }
 
         return eventSubscribers;
@@ -2493,11 +2488,9 @@ Ext.define('Ext.event.publisher.Dom', {
     getVendorEventName: function(eventName) {
         if (eventName === 'transitionend') {
             eventName = Ext.browser.getVendorProperyName('transitionEnd');
-        }
-        else if (eventName === 'animationstart') {
+        } else if (eventName === 'animationstart') {
             eventName = Ext.browser.getVendorProperyName('animationStart');
-        }
-        else if (eventName === 'animationend') {
+        } else if (eventName === 'animationend') {
             eventName = Ext.browser.getVendorProperyName('animationEnd');
         }
 
@@ -2882,17 +2875,17 @@ Ext.define('Ext.util.LineSegment', {
             d = (x1 - x2) * (y3 - y4) - (y1 - y2) * (x3 - x4),
             xi, yi;
 
-        if (d == 0) {
+        if (d === 0) {
             return null;
         }
 
         xi = ((x3 - x4) * (x1 * y2 - y1 * x2) - (x1 - x2) * (x3 * y4 - y3 * x4)) / d;
         yi = ((y3 - y4) * (x1 * y2 - y1 * x2) - (y1 - y2) * (x3 * y4 - y3 * x4)) / d;
 
-        if (xi < Math.min(x1, x2) || xi > Math.max(x1, x2)
-            || xi < Math.min(x3, x4) || xi > Math.max(x3, x4)
-            || yi < Math.min(y1, y2) || yi > Math.max(y1, y2)
-            || yi < Math.min(y3, y4) || yi > Math.max(y3, y4)) {
+        if (xi < Math.min(x1, x2) || xi > Math.max(x1, x2) ||
+                xi < Math.min(x3, x4) || xi > Math.max(x3, x4) ||
+                yi < Math.min(y1, y2) || yi > Math.max(y1, y2) ||
+                yi < Math.min(y3, y4) || yi > Math.max(y3, y4)) {
             return null;
         }
 
@@ -4294,7 +4287,7 @@ Ext.define('Ext.mixin.Observable', {
     createEventRelayer: function(newName){
         return function() {
             return this.doFireEvent(newName, Array.prototype.slice.call(arguments, 0, -2));
-        }
+        };
     },
 
     /**
@@ -4332,7 +4325,7 @@ Ext.define('Ext.mixin.Observable', {
             if (bubbleTarget && bubbleTarget !== this && bubbleTarget.isObservable) {
                 bubbleTarget.fireAction(name, Array.prototype.slice.call(arguments, 0, -2), doBubbleEvent, bubbleTarget, null, 'after');
             }
-        }
+        };
     },
 
     getBubbleTarget: function() {
@@ -4490,7 +4483,7 @@ Ext.define('Ext.Evented', {
                 }
 
                 return this;
-            }
+            };
         }
     },
 
@@ -7172,13 +7165,13 @@ Ext.define('Ext.util.MixedCollection', {
         }
 
         for (index = 0; index < length; index++) {
-            if (mapping[index] == undefined) {
+            if (mapping[index] === undefined) {
                 remaining.push(items[index]);
             }
         }
 
         for (index = 0; index < length; index++) {
-            if (order[index] == undefined) {
+            if (order[index] === undefined) {
                 order[index] = remaining.shift();
             }
         }
@@ -7816,7 +7809,7 @@ dt = Ext.Date.parse("2006-02-29 03:20:01", "Y-m-d H:i:s", true); // returns null
      */
     parse : function(input, format, strict) {
         var p = utilDate.parseFunctions;
-        if (p[format] == null) {
+        if (p[format] === null) {
             utilDate.createParser(format);
         }
         return p[format](input, Ext.isDefined(strict) ? strict : utilDate.useStrict);
@@ -8055,8 +8048,8 @@ dt = Ext.Date.parse("2006-02-29 03:20:01", "Y-m-d H:i:s", true); // returns null
         },
         y: {
             g:1,
-            c:"var ty = parseInt(results[{0}], 10);\n"
-                + "y = ty > Ext.Date.y2kYear ? 1900 + ty : 2000 + ty;\n", // 2-digit year
+            c:"var ty = parseInt(results[{0}], 10);\n" +
+                "y = ty > Ext.Date.y2kYear ? 1900 + ty : 2000 + ty;\n", // 2-digit year
             s:"(\\d{1,2})"
         },
         /*
@@ -8066,16 +8059,16 @@ dt = Ext.Date.parse("2006-02-29 03:20:01", "Y-m-d H:i:s", true); // returns null
          */
         a: {
             g:1,
-            c:"if (/(am)/i.test(results[{0}])) {\n"
-                + "if (!h || h == 12) { h = 0; }\n"
-                + "} else { if (!h || h < 12) { h = (h || 0) + 12; }}",
+            c:"if (/(am)/i.test(results[{0}])) {\n" +
+                "if (!h || h == 12) { h = 0; }\n" +
+                "} else { if (!h || h < 12) { h = (h || 0) + 12; }}",
             s:"(am|pm|AM|PM)"
         },
         A: {
             g:1,
-            c:"if (/(am)/i.test(results[{0}])) {\n"
-                + "if (!h || h == 12) { h = 0; }\n"
-                + "} else { if (!h || h < 12) { h = (h || 0) + 12; }}",
+            c:"if (/(am)/i.test(results[{0}])) {\n" +
+                "if (!h || h == 12) { h = 0; }\n" +
+                "} else { if (!h || h < 12) { h = (h || 0) + 12; }}",
             s:"(AM|PM|am|pm)"
         },
         g: function() {
@@ -8138,8 +8131,8 @@ dt = Ext.Date.parse("2006-02-29 03:20:01", "Y-m-d H:i:s", true); // returns null
         },
         Z: {
             g:1,
-            c:"zz = results[{0}] * 1;\n" // -43200 <= UTC offset <= 50400
-                  + "zz = (-43200 <= zz && zz <= 50400)? zz : null;\n",
+            c:"zz = results[{0}] * 1;\n" + // -43200 <= UTC offset <= 50400
+                  "zz = (-43200 <= zz && zz <= 50400)? zz : null;\n",
             s:"([+\-]?\\d{1,5})" // leading '+' sign is optional for UTC offset
         },
         c: function() {
@@ -8302,7 +8295,7 @@ dt = Ext.Date.parse("2006-02-29 03:20:01", "Y-m-d H:i:s", true); // returns null
      */
     isLeapYear : function(date) {
         var year = date.getFullYear();
-        return !!((year & 3) == 0 && (year % 100 || (year % 400 == 0 && year)));
+        return !!((year & 3) === 0 && (year % 100 || (year % 400 == 0 && year)));
     },
 
     /**
@@ -8371,7 +8364,7 @@ console.log(Ext.Date.dayNames[lastDay]); //output: 'Wednesday'
         return function(date) { // return a closure for efficiency
             var m = date.getMonth();
 
-            return m == 1 && utilDate.isLeapYear(date) ? 29 : daysInMonth[m];
+            return m === 1 && utilDate.isLeapYear(date) ? 29 : daysInMonth[m];
         };
     })(),
 
@@ -8432,7 +8425,7 @@ console.log(orig);  //returns 'Thu Oct 01 2006'
     isDST : function(date) {
         // adapted from http://sencha.com/forum/showthread.php?p=247172#post247172
         // courtesy of @geoffrey.mcgill
-        return new Date(date.getFullYear(), 0, 1).getTimezoneOffset() != date.getTimezoneOffset();
+        return new Date(date.getFullYear(), 0, 1).getTimezoneOffset() !== date.getTimezoneOffset();
     },
 
     /**
@@ -8457,12 +8450,12 @@ console.log(orig);  //returns 'Thu Oct 01 2006'
         date.setSeconds(0);
         date.setMilliseconds(0);
 
-        if (date.getDate() != d) { // account for DST (i.e. day of month changed when setting hour = 0)
+        if (date.getDate() !== d) { // account for DST (i.e. day of month changed when setting hour = 0)
             // note: DST adjustments are assumed to occur in multiples of 1 hour (this is almost always the case)
             // refer to http://www.timeanddate.com/time/aboutdst.html for the (rare) exceptions to this rule
 
             // increment hour until cloned date == current date
-            for (var hr = 1, c = utilDate.add(date, Ext.Date.HOUR, hr); c.getDate() != d; hr++, c = utilDate.add(date, Ext.Date.HOUR, hr));
+            for (var hr = 1, c = utilDate.add(date, Ext.Date.HOUR, hr); c.getDate() !== d; hr++, c = utilDate.add(date, Ext.Date.HOUR, hr));
 
             date.setDate(d);
             date.setHours(c.getHours());
@@ -8589,7 +8582,7 @@ Ext.define('Ext.util.Format', {
             if (word) {
                 var vs = value.substr(0, len - 2),
                 index = Math.max(vs.lastIndexOf(' '), vs.lastIndexOf('.'), vs.lastIndexOf('!'), vs.lastIndexOf('?'));
-                if (index != -1 && index >= (len - 15)) {
+                if (index !== -1 && index >= (len - 15)) {
                     return vs.substr(0, index) + "...";
                 }
             }
@@ -8634,7 +8627,7 @@ Ext.define('Ext.util.Format', {
      * @return {String} The new value
      */
     toggle: function(string, value, other) {
-        return string == value ? other : value;
+        return string === value ? other : value;
     },
 
     /**

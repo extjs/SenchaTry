@@ -25,7 +25,7 @@ for (var i = 0; i < 20; i++) {
         handler: function(b) {
             Ext.Msg.alert('Click', 'You clicked ' + b.text);
         }
-    })
+    });
 }
 
 Ext.onReady(function() {

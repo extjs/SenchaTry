@@ -130,7 +130,6 @@ Ext.onReady(function(){
                         width: 90
                     },{
                         iconCls: 'add',
-                        width: 'auto',
                         tooltip: 'Add user',
                         width: 40
                     },{

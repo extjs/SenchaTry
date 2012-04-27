@@ -192,15 +192,19 @@ Ext.onReady(function () {
             series = chart.series.items,
             len = series.length,
             rc = rendererConfiguration,
-            color, grayscale, radius, s;
+            color, grayscale, radius, s,
+            
+            func = function (a,b, attr) {
+                return attr;
+            };
 
         for(var i = 0; i < len; i++) {
             s = series[i];
             s.xField = rc.xField;
             s.yField = rc.yField;
-            color = rc.color? Renderers.color(rc.color, rc.colorFrom, rc.colorTo, 0, 100) : function(a, b, attr) { return attr; };
-            grayscale = rc.grayscale? Renderers.grayscale(rc.grayscale, rc.scaleFrom, rc.scaleTo, 0, 100) : function(a, b, attr) { return attr; };
-            radius = rc.radius? Renderers.radius(rc.radius, 10, rc.radiusSize, 0, 100) : function(a, b, attr) { return attr; };
+            color = rc.color? Renderers.color(rc.color, rc.colorFrom, rc.colorTo, 0, 100) : func;
+            grayscale = rc.grayscale? Renderers.grayscale(rc.grayscale, rc.scaleFrom, rc.scaleTo, 0, 100) : func;
+            radius = rc.radius? Renderers.radius(rc.radius, 10, rc.radiusSize, 0, 100) : func;
             s.renderer = function(sprite, record, attr, index, store) {
                 return radius(sprite, record, grayscale(sprite, record, color(sprite, record, attr, index, store), index, store), index, store);
             };

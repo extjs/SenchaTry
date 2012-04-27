@@ -85,10 +85,10 @@ Cookies.set = function(name, value){
      var domain = (argc > 4) ? argv[4] : null;
      var secure = (argc > 5) ? argv[5] : false;
      document.cookie = name + "=" + escape (value) +
-       ((expires == null) ? "" : ("; expires=" + expires.toGMTString())) +
-       ((path == null) ? "" : ("; path=" + path)) +
-       ((domain == null) ? "" : ("; domain=" + domain)) +
-       ((secure == true) ? "; secure" : "");
+       ((expires === null) ? "" : ("; expires=" + expires.toGMTString())) +
+       ((path === null) ? "" : ("; path=" + path)) +
+       ((domain === null) ? "" : ("; domain=" + domain)) +
+       ((secure === true) ? "; secure" : "");
 };
 
 Cookies.get = function(name){
@@ -102,7 +102,7 @@ Cookies.get = function(name){
 		if (document.cookie.substring(i, j) == arg)
 			return Cookies.getCookieVal(j);
 		i = document.cookie.indexOf(" ", i) + 1;
-		if(i == 0)
+		if(i === 0)
 			break;
 	}
 	return null;
@@ -117,7 +117,7 @@ Cookies.clear = function(name) {
 
 Cookies.getCookieVal = function(offset){
    var endstr = document.cookie.indexOf(";", offset);
-   if(endstr == -1){
+   if(endstr === -1){
        endstr = document.cookie.length;
    }
    return unescape(document.cookie.substring(offset, endstr));
