@@ -1,24 +1,24 @@
 Ext.define('Oreilly.model.Speaker', {
-	extend: 'Ext.data.Model',
+    extend: 'Ext.data.Model',
 
-	config: {
-		fields: [
-			'id',
-			'first_name',
-			'last_name',
-			'sessionIds',
-			'bio',
-			'position',
-			'photo',
-			'affiliation',
-			'url',
-			'twitter'
-		]
-	},
+    config: {
+        fields: [
+            'id',
+            'first_name',
+            'last_name',
+            'sessionIds',
+            'bio',
+            'position',
+            'photo',
+            'affiliation',
+            'url',
+            'twitter'
+        ]
+    },
 
-	getFullName: function() {
-		return this.get('first_name') + ' ' + this.get('last_name');
-	}
+    getFullName: function() {
+        return this.get('first_name') + ' ' + this.get('last_name');
+    }
 });
 
 // "first_name": "John ",

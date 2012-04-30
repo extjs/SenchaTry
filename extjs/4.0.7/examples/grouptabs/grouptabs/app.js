@@ -25,7 +25,7 @@ Ext.require([
 ]);
 
 Ext.onReady(function() {
-	Ext.tip.QuickTipManager.init();
+    Ext.tip.QuickTipManager.init();
     
     // create some portlet tools using built in Ext tool ids
     var tools = [{
@@ -44,17 +44,17 @@ Ext.onReady(function() {
         layout:'fit',
         items:[{
             xtype: 'grouptabpanel',
-    		activeGroup: 0,
-    		items: [{
-    			mainItem: 1,
-    			items: [{
-    				title: 'Tickets',
+            activeGroup: 0,
+            items: [{
+                mainItem: 1,
+                items: [{
+                    title: 'Tickets',
                     iconCls: 'x-icon-tickets',
                     tabTip: 'Tickets tabtip',
                     //border: false,
                     xtype: 'gridportlet',
                     height: null
-    			}, 
+                }, 
                 {
                     xtype: 'portalpanel',
                     title: 'Dashboard',
@@ -77,27 +77,27 @@ Ext.onReady(function() {
                         }]
                     }]                  
                 }, {
-    				title: 'Subscriptions',
+                    title: 'Subscriptions',
                     iconCls: 'x-icon-subscriptions',
                     tabTip: 'Subscriptions tabtip',
                     style: 'padding: 10px;',
                     border: false,
-					layout: 'fit',
-    				items: [{
-						xtype: 'tabpanel',
-						activeTab: 1,
-						items: [{
-							title: 'Nested Tabs',
-							html: Ext.example.shortBogusMarkup
-						}]	
-					}]	
-    			}, {
-    				title: 'Users',
+                    layout: 'fit',
+                    items: [{
+                        xtype: 'tabpanel',
+                        activeTab: 1,
+                        items: [{
+                            title: 'Nested Tabs',
+                            html: Ext.example.shortBogusMarkup
+                        }]  
+                    }]  
+                }, {
+                    title: 'Users',
                     iconCls: 'x-icon-users',
                     tabTip: 'Users tabtip',
                     style: 'padding: 10px;',
-    				html: Ext.example.shortBogusMarkup			
-    			}]
+                    html: Ext.example.shortBogusMarkup          
+                }]
             }, {
                 expanded: true,
                 items: [{
@@ -145,7 +145,7 @@ Ext.onReady(function() {
                         }
                 }]
             }]
-		}]
+        }]
     });
 });
 

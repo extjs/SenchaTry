@@ -1,0 +1,35 @@
+<project name="SenchaTry" default="pretty">
+    
+    <property name="version" value="0.1.0" />
+    <property name="pathsep" value="&#xA;" />
+    <property name="src" value="." />
+    
+    <target name="pretty">
+        <!--
+        <echo>HOLLA!!</echo>
+        <pathconvert pathsep="${pathsep}">
+            <fileset dir="${src}"
+                includes="**/*.js" />
+        </pathconvert>
+        -->
+        
+        <fixcrlf srcdir="${src}"
+                includes="**/*.js"
+                tab="remove"
+                tablength="4"
+                eol="lf" />
+
+        <fixcrlf srcdir="${src}"
+                includes="**/*.json"
+                tab="remove"
+                tablength="4"
+                eol="lf" />
+
+        <fixcrlf srcdir="${src}"
+                includes="**/*.css"
+                tab="remove"
+                tablength="4"
+                eol="lf" />
+    </target>
+    
+</project>

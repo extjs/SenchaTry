@@ -39,9 +39,9 @@ Ext.define('Ext.ux.ProgressBarPager', {
      * <p>A {@link Ext.fx.Anim Ext.fx.Anim} configuration object.</p>
      */
     defaultAnimCfg : {
-		duration: 1000,
-		easing: 'bounceOut'	
-	},	
+        duration: 1000,
+        easing: 'bounceOut' 
+    },  
     
     constructor : function(config) {
         if (config) {

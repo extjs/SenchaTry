@@ -38,13 +38,13 @@ Ext.extend(Ext.app.App, Ext.util.Observable, {
     },
 
     initApp : function(){
-    	this.startConfig = this.startConfig || this.getStartConfig();
+        this.startConfig = this.startConfig || this.getStartConfig();
 
         this.desktop = new Ext.Desktop(this);
 
-		this.launcher = this.desktop.taskbar.startMenu;
+        this.launcher = this.desktop.taskbar.startMenu;
 
-		this.modules = this.getModules();
+        this.modules = this.getModules();
         if(this.modules){
             this.initModules(this.modules);
         }
@@ -52,7 +52,7 @@ Ext.extend(Ext.app.App, Ext.util.Observable, {
         this.init();
 
         Ext.EventManager.on(window, 'beforeunload', this.onUnload, this);
-		this.fireEvent('ready', this);
+        this.fireEvent('ready', this);
         this.isReady = true;
     },
 
@@ -60,7 +60,7 @@ Ext.extend(Ext.app.App, Ext.util.Observable, {
     init : Ext.emptyFn,
 
     initModules : function(ms){
-		for(var i = 0, len = ms.length; i < len; i++){
+        for(var i = 0, len = ms.length; i < len; i++){
             var m = ms[i];
             this.launcher.add(m.launcher);
             m.app = this;
@@ -68,11 +68,11 @@ Ext.extend(Ext.app.App, Ext.util.Observable, {
     },
 
     getModule : function(name){
-    	var ms = this.modules;
-    	for(var i = 0, len = ms.length; i < len; i++){
-    		if(ms[i].id == name || ms[i].appType == name){
-    			return ms[i];
-			}
+        var ms = this.modules;
+        for(var i = 0, len = ms.length; i < len; i++){
+            if(ms[i].id == name || ms[i].appType == name){
+                return ms[i];
+            }
         }
         return '';
     },

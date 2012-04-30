@@ -1,29 +1,29 @@
 Ext.define('Oreilly.controller.Tweets', {
-	extend: 'Ext.app.Controller',
+    extend: 'Ext.app.Controller',
 
-	config: {
-		refs: {
-			title: 'tweets titlebar'
-		},
-		control: {
-			tweets: {
-				activate: 'onActivate'
-			}
-		}
-	},
+    config: {
+        refs: {
+            title: 'tweets titlebar'
+        },
+        control: {
+            tweets: {
+                activate: 'onActivate'
+            }
+        }
+    },
 
-	onActivate: function() {
-		if (!this.loadedTweets) {
+    onActivate: function() {
+        if (!this.loadedTweets) {
 
-			this.getTitle().setTitle(Oreilly.app.twitterSearch);
+            this.getTitle().setTitle(Oreilly.app.twitterSearch);
 
-			Ext.getStore('Tweets').getProxy().setExtraParams({
-				q: Oreilly.app.twitterSearch
-			});
-			Ext.getStore('Tweets').load();
+            Ext.getStore('Tweets').getProxy().setExtraParams({
+                q: Oreilly.app.twitterSearch
+            });
+            Ext.getStore('Tweets').load();
 
-			this.loadedTweets = true;
-		}
-	}
+            this.loadedTweets = true;
+        }
+    }
 
 });

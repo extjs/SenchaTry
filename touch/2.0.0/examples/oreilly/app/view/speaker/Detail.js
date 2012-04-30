@@ -1,36 +1,36 @@
 Ext.define('Oreilly.view.speaker.Detail', {
 
-	extend: 'Ext.Container',
-	xtype: 'speaker',
+    extend: 'Ext.Container',
+    xtype: 'speaker',
 
-	config: {
+    config: {
 
-		layout: 'vbox',
-		scrollable: 'vertical',
+        layout: 'vbox',
+        scrollable: 'vertical',
 
-		items: [
-			{
-				xtype: 'speakerInfo'
-			},
-			{
-				xtype: 'list',
-				store: 'SpeakerSessions',
+        items: [
+            {
+                xtype: 'speakerInfo'
+            },
+            {
+                xtype: 'list',
+                store: 'SpeakerSessions',
 
-				scrollable: false,
+                scrollable: false,
 
-				items: [
-					{
-						xtype: 'listitemheader',
-						cls: 'dark',
-						html: 'Sessions'
-					}
-				],
+                items: [
+                    {
+                        xtype: 'listitemheader',
+                        cls: 'dark',
+                        html: 'Sessions'
+                    }
+                ],
 
-				itemTpl: [
-					'{title}'
-				]
-			}
-		]
+                itemTpl: [
+                    '{title}'
+                ]
+            }
+        ]
 
-	}
+    }
 });

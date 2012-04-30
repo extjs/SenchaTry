@@ -21,19 +21,19 @@ If you are unsure which license is appropriate for your use, please contact the 
 
 // Sample desktop configuration
 MyDesktop = new Ext.app.App({
-	init :function(){
-		Ext.QuickTips.init();
-	},
+    init :function(){
+        Ext.QuickTips.init();
+    },
 
-	getModules : function(){
-		return [
-			new MyDesktop.GridWindow(),
+    getModules : function(){
+        return [
+            new MyDesktop.GridWindow(),
             new MyDesktop.TabWindow(),
             new MyDesktop.AccordionWindow(),
             new MyDesktop.BogusMenuModule(),
             new MyDesktop.BogusModule()
-		];
-	},
+        ];
+    },
 
     // config for the start menu
     getStartConfig : function(){
@@ -371,8 +371,8 @@ MyDesktop.BogusMenuModule = Ext.extend(MyDesktop.BogusModule, {
             text: 'Bogus Submenu',
             iconCls: 'bogus',
             handler: function() {
-				return false;
-			},
+                return false;
+            },
             menu: {
                 items:[{
                     text: 'Bogus Window '+(++windowIndex),

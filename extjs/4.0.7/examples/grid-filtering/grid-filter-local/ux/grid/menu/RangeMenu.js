@@ -209,7 +209,7 @@ menuItemCfgs : {
     /**
      * Set the value of this menu and fires the 'update' event.
      * @param {Object} data The data to assign to this menu
-     */	
+     */ 
     setValue : function (data) {
         var key;
         for (key in this.fields) {

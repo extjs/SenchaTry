@@ -1,26 +1,26 @@
 Ext.define('Oreilly.view.speaker.Card', {
 
-	extend: 'Ext.NavigationView',
-	xtype: 'speakerContainer',
+    extend: 'Ext.NavigationView',
+    xtype: 'speakerContainer',
 
-	config: {
+    config: {
 
         tab: {
-			title: 'Speakers',
-	        iconCls: 'team1',
-	        action: 'speakersTab'
-	    },
+            title: 'Speakers',
+            iconCls: 'team1',
+            action: 'speakersTab'
+        },
 
         autoDestroy: false,
 
-		items: [
-			{
-				xtype: 'speakers',
-				store: 'Speakers',
-				grouped: true,
-				pinHeaders: false,
-				indexBar: true
-			}
-		]
-	}
+        items: [
+            {
+                xtype: 'speakers',
+                store: 'Speakers',
+                grouped: true,
+                pinHeaders: false,
+                indexBar: true
+            }
+        ]
+    }
 });

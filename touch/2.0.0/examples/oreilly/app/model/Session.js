@@ -1,28 +1,28 @@
 Ext.define('Oreilly.model.Session', {
-	extend: 'Ext.data.Model',
+    extend: 'Ext.data.Model',
 
-	config: {
-		fields: [
-			'id',
-			'title',
-			'room',
-			{
-				name: 'time',
-				type: 'date',
-				convert: function(value, record) {
-					if (value) {
-						var dateArr = value.split(/[\-T:]/);
-						return new Date(dateArr[0], dateArr[1] - 1, dateArr[2], dateArr[3]);
-					} else {
-						return new Date();
-					}
+    config: {
+        fields: [
+            'id',
+            'title',
+            'room',
+            {
+                name: 'time',
+                type: 'date',
+                convert: function(value, record) {
+                    if (value) {
+                        var dateArr = value.split(/[\-T:]/);
+                        return new Date(dateArr[0], dateArr[1] - 1, dateArr[2], dateArr[3]);
+                    } else {
+                        return new Date();
+                    }
                 }
-			},
-			'speakerIds',
-			'description',
-			'proposal_type'
-		]
-	}
+            },
+            'speakerIds',
+            'description',
+            'proposal_type'
+        ]
+    }
 });
 
 

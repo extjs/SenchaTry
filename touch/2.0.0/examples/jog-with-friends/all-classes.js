@@ -16458,7 +16458,7 @@ Ext.define('Ext.field.Field', {
                 }
             };
 
-			// See https://sencha.jira.com/browse/TOUCH-1184
+            // See https://sencha.jira.com/browse/TOUCH-1184
 
             /**
              * @member Ext.field.Field
@@ -32362,12 +32362,12 @@ Ext.define('Ext.util.Inflector', {
             woman: 'women',
             child: 'children',
             man: 'men',
-            corpus:	'corpora',
+            corpus: 'corpora',
             criterion: 'criteria',
-            curriculum:	'curricula',
+            curriculum: 'curricula',
             genus: 'genera',
-            memorandum:	'memoranda',
-            phenomenon:	'phenomena',
+            memorandum: 'memoranda',
+            phenomenon: 'phenomena',
             foot: 'feet',
             goose: 'geese',
             tooth: 'teeth',

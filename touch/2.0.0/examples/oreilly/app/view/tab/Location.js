@@ -1,52 +1,52 @@
 Ext.define('Oreilly.view.tab.Location', {
 
-	extend: 'Ext.Container',
-	xtype: 'location',
+    extend: 'Ext.Container',
+    xtype: 'location',
 
-	config: {
+    config: {
 
-		title: 'Location',
-		iconCls: 'locate',
+        title: 'Location',
+        iconCls: 'locate',
 
-		layout: 'fit',
+        layout: 'fit',
 
-		items: [
-			{
-				docked: 'top',
-				xtype: 'toolbar',
-				title: 'Location'
-			}
-		]
-	},
+        items: [
+            {
+                docked: 'top',
+                xtype: 'toolbar',
+                title: 'Location'
+            }
+        ]
+    },
 
-	initialize: function() {
+    initialize: function() {
 
-		var position = new google.maps.LatLng(Oreilly.app.mapCenter[0], Oreilly.app.mapCenter[1]),
-			infoWindow = new google.maps.InfoWindow({ content: Oreilly.app.mapText }),
-			map, marker;
+        var position = new google.maps.LatLng(Oreilly.app.mapCenter[0], Oreilly.app.mapCenter[1]),
+            infoWindow = new google.maps.InfoWindow({ content: Oreilly.app.mapText }),
+            map, marker;
 
-		this.callParent();
+        this.callParent();
 
-		map = this.add({
-			xtype: 'map',
-			mapOptions: {
-				center: position,
-		        mapTypeId: google.maps.MapTypeId.ROADMAP
-			}
-		});
+        map = this.add({
+            xtype: 'map',
+            mapOptions: {
+                center: position,
+                mapTypeId: google.maps.MapTypeId.ROADMAP
+            }
+        });
 
-		marker = new google.maps.Marker({
-	        position: position,
-	        map: map.getMap(),
-	        visible: true
-	    });
+        marker = new google.maps.Marker({
+            position: position,
+            map: map.getMap(),
+            visible: true
+        });
 
-	    google.maps.event.addListener(marker, 'click', function() {
-	        infoWindow.open(map, marker);
-	    });
+        google.maps.event.addListener(marker, 'click', function() {
+            infoWindow.open(map, marker);
+        });
 
-	    setTimeout(function() {
+        setTimeout(function() {
             map.getMap().panTo(position);
         }, 1000);
-	}
+    }
 });

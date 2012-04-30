@@ -71,8 +71,8 @@ html, body {
 }
 
 #ux-taskbar button {
-	/* width: 150px;
-	overflow: hidden; */
+    /* width: 150px;
+    overflow: hidden; */
     text-align: left;
     color: #ffffff;
 }
@@ -412,9 +412,9 @@ html, body {
 }
 
 .ux-taskbuttons-strip-wrap {
-	/* overflow:hidden;
-	position:relative;
-	width:100%; */
+    /* overflow:hidden;
+    position:relative;
+    width:100%; */
     width: 100%;
     overflow: hidden;
     position: relative;

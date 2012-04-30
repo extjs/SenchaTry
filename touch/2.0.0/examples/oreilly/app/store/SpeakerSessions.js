@@ -1,13 +1,13 @@
 Ext.define('Oreilly.store.SpeakerSessions', {
-	extend: 'Ext.data.Store',
+    extend: 'Ext.data.Store',
 
     config: {
         model: 'Oreilly.model.Session',
 
         sorters: [
-        	{
-            	property: 'time',
-            	direction: 'ASC'
+            {
+                property: 'time',
+                direction: 'ASC'
             }
         ]
     }

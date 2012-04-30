@@ -1,19 +1,19 @@
 Ext.define('Oreilly.view.about.Card', {
 
-	extend: 'Ext.NavigationView',
-	xtype: 'aboutContainer',
+    extend: 'Ext.NavigationView',
+    xtype: 'aboutContainer',
 
-	config: {
+    config: {
 
-		title: 'About',
+        title: 'About',
         iconCls: 'time',
 
         autoDestroy: false,
 
-		items: [
-			{
-				xtype: 'aboutList'
-			}
-		]
-	}
+        items: [
+            {
+                xtype: 'aboutList'
+            }
+        ]
+    }
 });

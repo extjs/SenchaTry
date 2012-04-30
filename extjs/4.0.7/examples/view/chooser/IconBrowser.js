@@ -27,7 +27,7 @@ Ext.define('Ext.chooser.IconBrowser', {
     
     uses: 'Ext.data.Store',
     
-	singleSelect: true,
+    singleSelect: true,
     overItemCls: 'x-view-over',
     itemSelector: 'div.thumb-wrap',
     tpl: [

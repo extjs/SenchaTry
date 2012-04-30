@@ -138,7 +138,7 @@ Ext.define('Ext.ux.desktop.App', {
     },
 
     getModule : function(name) {
-    	var ms = this.modules;
+        var ms = this.modules;
         for (var i = 0, len = ms.length; i < len; i++) {
             var m = ms[i];
             if (m.id == name || m.appType == name) {

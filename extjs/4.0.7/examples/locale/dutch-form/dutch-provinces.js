@@ -16,17 +16,17 @@ If you are unsure which license is appropriate for your use, please contact the 
 Ext.namespace('Ext.exampledata');
 
 Ext.exampledata.dutch_provinces = [
-	['Drenthe'],
-	['Flevoland'],
-	['Friesland'],
-	['Gelderland'],
-	['Groningen'],
-	['Limburg'],
-	['Noord-Brabant'],
-	['Noord-Holland'],
-	['Overijsel'],
-	['Utrecht'],
-	['Zeeland'],
-	['Zuid-Holland']
+    ['Drenthe'],
+    ['Flevoland'],
+    ['Friesland'],
+    ['Gelderland'],
+    ['Groningen'],
+    ['Limburg'],
+    ['Noord-Brabant'],
+    ['Noord-Holland'],
+    ['Overijsel'],
+    ['Utrecht'],
+    ['Zeeland'],
+    ['Zuid-Holland']
     ];
 

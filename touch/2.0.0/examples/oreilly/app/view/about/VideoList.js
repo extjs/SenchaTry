@@ -1,27 +1,27 @@
 Ext.define('Oreilly.view.about.VideoList', {
 
-	extend: 'Ext.List',
-	xtype: 'videoList',
+    extend: 'Ext.List',
+    xtype: 'videoList',
 
-	config: {
+    config: {
 
-		disableSelection: true,
+        disableSelection: true,
 
-		itemCls: 'video',
+        itemCls: 'video',
         store: 'Videos'
-	},
+    },
 
-	initialize: function() {
+    initialize: function() {
 
-		this.setItemTpl([
-			'<div class="thumb" style="background-image: url({thumbnail.sqDefault})"></div>',
-			'<span class="name">{[values.title.replace("' + this.config.hideText + '","")]}</span>'
-		]);
+        this.setItemTpl([
+            '<div class="thumb" style="background-image: url({thumbnail.sqDefault})"></div>',
+            '<span class="name">{[values.title.replace("' + this.config.hideText + '","")]}</span>'
+        ]);
 
-		this.callParent();
+        this.callParent();
 
-		this.getStore().load({
-			url: 'http://gdata.youtube.com/feeds/api/playlists/' + this.config.playlistId + '?v=2&alt=jsonc'
-		});
-	}
+        this.getStore().load({
+            url: 'http://gdata.youtube.com/feeds/api/playlists/' + this.config.playlistId + '?v=2&alt=jsonc'
+        });
+    }
 });

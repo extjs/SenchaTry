@@ -8,5 +8,5 @@ Ext.define('Kiva.view.detail.Map', {
             zoom: 5,
             draggable: false
         }
-	}
+    }
 });
