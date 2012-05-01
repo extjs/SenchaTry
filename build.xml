@@ -1,35 +1,167 @@
-<project name="SenchaTry" default="pretty">
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<project name="SenchaTry" basedir="." default="usage">
+    <description>Just a bunch of Sencha Try scripts</description>
     
+    <!-- Global variables -->
     <property name="version" value="0.1.0" />
+    <property name="src.dir" value="." />
     <property name="pathsep" value="&#xA;" />
-    <property name="src" value="." />
     
-    <target name="pretty">
-        <!--
-        <echo>HOLLA!!</echo>
-        <pathconvert pathsep="${pathsep}">
-            <fileset dir="${src}"
-                includes="**/*.js" />
-        </pathconvert>
-        -->
+    <target name="usage" description="Usage examples">
+        <echo>Version: ${version}
+$ ant listfiles -- Outputs all the app.js files to an external file.
+$ ant pretty    -- Applies some general formatting to all *.(js|json|css) files in the project directory.
+        </echo>
+    </target>
+    
+    <!-- Outputs all the app.js files to an external file -->
+    <target name="listfiles" description="Outputs all the app.js files to an external file.">
+        <property name="filefilter" value="**/app.js" />
+        <property name="outfile" value="app.txt" />
         
-        <fixcrlf srcdir="${src}"
-                includes="**/*.js"
+        <pathconvert pathsep="${pathsep}" property="files">
+            <fileset dir="${src.dir}" includes="${filefilter}" />
+        </pathconvert>
+        <echo file="${outfile}">${files}</echo>
+    </target>
+    
+    
+    <!-- Find all those pesky .DS_Store files -->
+    <target name="ds_store"
+            description="Find all those pesky .DS_Store files.">
+        <exec executable="sh">
+            <arg value="-c" />
+            <arg value="find ${src.dir} -name .DS_Store" />
+        </exec>
+    </target>
+    
+    
+    <!-- Find all HTM (not HTML) files -->
+    <target name="htmFiles"
+            description="Find all HTM (not HTML) files.">
+        <exec executable="sh">
+            <arg value="-c" />
+            <arg value="find ${src.dir} -name *.htm" />
+        </exec>
+    </target>
+    
+    
+    <!-- Find all HTML files with missing doctypes -->
+    <target name="missingDoctype"
+            description="Find all HTML files with missing doctypes.">
+        <exec executable="sh">
+            <arg value="-c" />
+            <arg value="grep -Lir '!doctype' ${src.dir} --include=*.html" />
+        </exec>
+    </target>
+    
+    
+    <!-- Find all HTML files with an HTML4 doctype -->
+    <target name="html4Doctype"
+            description="Find all HTML files with an HTML4 doctype.">
+        <exec executable="sh">
+            <arg value="-c" />
+            <arg value="grep -ir 'strict.dtd' ${src.dir} --include=*.html" />
+        </exec>
+    </target>
+    
+    
+    <!-- Find all HTML files with empty title tags -->
+    <target name="emptyTitles"
+            description="Find all HTML files with empty title tags.">
+        <exec executable="sh">
+            <arg value="-c" />
+            <arg value="grep -ir '&lt;title&gt;&lt;title&gt;' ${src.dir} --include=*.html" />
+        </exec>
+    </target>
+    
+    
+    <!-- Find all HTML files with missing title tags -->
+    <target name="missingTitles"
+            description="Find all HTML files with missing title tags.">
+        <exec executable="sh">
+            <arg value="-c" />
+            <arg value="grep -Lir '&lt;title&gt;' ${src.dir} --include=*.html" />
+        </exec>
+    </target>
+    
+    
+    <!-- Find all script tags missing type attributes -->
+    <target name="scriptWithoutType"
+            description="Find all script tags missing type attributes.">
+        <exec executable="sh">
+            <arg value="-c" />
+            <arg value="grep -ir '&lt;script' ${src.dir} --include=*.html | grep -v 'type'" />
+        </exec>
+    </target>
+    
+    
+    <!-- Find all possible URLs in the examples (helps find potential .php or other external dependencies) -->
+    <target name="findURLs"
+            description="Find all possible URLs in the examples (helps find potential .php or other external dependencies).">
+        <exec executable="sh">
+            <arg value="-c" />
+            <arg value="grep -ir 'src:' ${src.dir} --include=*.js" />
+        </exec>
+        <exec executable="sh">
+            <arg value="-c" />
+            <arg value="grep -ir 'url:' ${src.dir} --include=*.js" />
+        </exec>
+        <exec executable="sh">
+            <arg value="-c" />
+            <arg value="grep -ir '://' ${src.dir} --include=*.js" />
+        </exec>
+    </target>
+    
+    
+    <!-- Find all *.php file references -->
+    <target name="findPHPs"
+            description="Find all .php file references.">
+        <exec executable="sh">
+            <arg value="-c" />
+            <arg value="grep -ir '.php' ${src.dir} --include=*.js" />
+        </exec>
+    </target>
+    
+    
+    <!-- Find all ux/ references -->
+    <target name="findUXs"
+            description="Find all ux/ references">
+        <exec executable="sh">
+            <arg value="-c" />
+            <arg value="grep -ir &quot;ux/'&quot; ${src.dir} --include=*.js" />
+        </exec>
+    </target>
+    
+    
+    <!-- Find any "<" or ">" characters in markdown files -->
+    <target name="readmeMarkup"
+            description="">
+        <exec executable="sh">
+            <arg value="-c" />
+            <arg value="grep -nlr [\&lt;\&gt;] ${src.dir} --include=*.md" />
+        </exec>
+    </target>
+    
+    
+    <!-- Applies some basic code/markup validations -->
+    <target name="validate"
+            description="Applies some basic code/markup validations."
+            depends="ds_store, htmFiles, missingDoctype, html4Doctype, emptyTitles, missingTitles, readmeMarkup">
+        
+    </target>
+    
+    
+    <!-- Apply some basic code cleanup (tabs to spaces, trailing linefeed) to all JS, JSON, and CSS files -->
+    <target name="pretty" description="Applies some general formatting to all *.(js|json|css) files in the project directory.">
+        <fixcrlf srcdir="${src.dir}"
                 tab="remove"
                 tablength="4"
-                eol="lf" />
-
-        <fixcrlf srcdir="${src}"
-                includes="**/*.json"
-                tab="remove"
-                tablength="4"
-                eol="lf" />
-
-        <fixcrlf srcdir="${src}"
-                includes="**/*.css"
-                tab="remove"
-                tablength="4"
-                eol="lf" />
+                eol="lf">
+            <include name="**/*.js" />
+            <include name="**/*.json" />
+            <include name="**/*.css" />
+        </fixcrlf>
     </target>
     
 </project>
