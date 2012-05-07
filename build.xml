@@ -9,8 +9,7 @@
     
     <target name="usage" description="Usage examples">
         <echo>Version: ${version}
-$ ant listfiles -- Outputs all the app.js files to an external file.
-$ ant pretty    -- Applies some general formatting to all *.(js|json|css) files in the project directory.
+$ ant -projecthelp
         </echo>
     </target>
     
@@ -147,10 +146,15 @@ $ ant pretty    -- Applies some general formatting to all *.(js|json|css) files 
     <!-- Applies some basic code/markup validations -->
     <target name="validate"
             description="Applies some basic code/markup validations."
-            depends="ds_store, htmFiles, missingDoctype, html4Doctype, emptyTitles, missingTitles, readmeMarkup">
-        
+            depends="showsplash, ds_store, htmFiles, missingDoctype, html4Doctype, emptyTitles, missingTitles, readmeMarkup">
     </target>
     
+    
+    <target name="showsplash">
+        <splash displaytext="Validating files..."
+                imageurl="http://www.sencha.com/img/sencha-large.png"
+                showduration="500" />
+    </target>
     
     <!-- Apply some basic code cleanup (tabs to spaces, trailing linefeed) to all JS, JSON, and CSS files -->
     <target name="pretty" description="Applies some general formatting to all *.(js|json|css) files in the project directory.">
