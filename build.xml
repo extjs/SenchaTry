@@ -7,9 +7,13 @@
     <property name="src.dir" value="." />
     <property name="pathsep" value="&#xA;" />
     
+    <property file="build.properties" />
+    
     <target name="usage" description="Usage examples">
         <echo>Version: ${version}
 $ ant -projecthelp
+$ ant validate
+$ ant pretty
         </echo>
     </target>
     
@@ -28,9 +32,10 @@ $ ant -projecthelp
     <!-- Find all those pesky .DS_Store files -->
     <target name="ds_store"
             description="Find all those pesky .DS_Store files.">
+        <echo>${ds_store.cmd}</echo>
         <exec executable="sh">
             <arg value="-c" />
-            <arg value="find ${src.dir} -name .DS_Store" />
+            <arg value="${ds_store.cmd}" />
         </exec>
     </target>
     
@@ -38,9 +43,10 @@ $ ant -projecthelp
     <!-- Find all HTM (not HTML) files -->
     <target name="htmFiles"
             description="Find all HTM (not HTML) files.">
+        <echo>${htmFiles.cmd}</echo>
         <exec executable="sh">
             <arg value="-c" />
-            <arg value="find ${src.dir} -name *.htm" />
+            <arg value="${htmFiles.cmd}" />
         </exec>
     </target>
     
@@ -48,9 +54,10 @@ $ ant -projecthelp
     <!-- Find all HTML files with missing doctypes -->
     <target name="missingDoctype"
             description="Find all HTML files with missing doctypes.">
+        <echo>${missingDoctype.cmd}</echo>
         <exec executable="sh">
             <arg value="-c" />
-            <arg value="grep -Lir '!doctype' ${src.dir} --include=*.html" />
+            <arg value="${missingDoctype.cmd}" />
         </exec>
     </target>
     
@@ -58,9 +65,10 @@ $ ant -projecthelp
     <!-- Find all HTML files with an HTML4 doctype -->
     <target name="html4Doctype"
             description="Find all HTML files with an HTML4 doctype.">
+        <echo>${html4Doctype.cmd}</echo>
         <exec executable="sh">
             <arg value="-c" />
-            <arg value="grep -ir 'strict.dtd' ${src.dir} --include=*.html" />
+            <arg value="${html4Doctype.cmd}" />
         </exec>
     </target>
     
@@ -68,9 +76,10 @@ $ ant -projecthelp
     <!-- Find all HTML files with empty title tags -->
     <target name="emptyTitles"
             description="Find all HTML files with empty title tags.">
+        <echo>${emptyTitles.cmd}</echo>
         <exec executable="sh">
             <arg value="-c" />
-            <arg value="grep -ir '&lt;title&gt;&lt;title&gt;' ${src.dir} --include=*.html" />
+            <arg value="${emptyTitles.cmd}" />
         </exec>
     </target>
     
@@ -78,9 +87,10 @@ $ ant -projecthelp
     <!-- Find all HTML files with missing title tags -->
     <target name="missingTitles"
             description="Find all HTML files with missing title tags.">
+        <echo>${missingTitles.cmd}</echo>
         <exec executable="sh">
             <arg value="-c" />
-            <arg value="grep -Lir '&lt;title&gt;' ${src.dir} --include=*.html" />
+            <arg value="${missingTitles.cmd}" />
         </exec>
     </target>
     
@@ -88,9 +98,10 @@ $ ant -projecthelp
     <!-- Find all script tags missing type attributes -->
     <target name="scriptWithoutType"
             description="Find all script tags missing type attributes.">
+        <echo>${scriptWithoutType.cmd}</echo>
         <exec executable="sh">
             <arg value="-c" />
-            <arg value="grep -ir '&lt;script' ${src.dir} --include=*.html | grep -v 'type'" />
+            <arg value="${scriptWithoutType.cmd}" />
         </exec>
     </target>
     
@@ -98,17 +109,22 @@ $ ant -projecthelp
     <!-- Find all possible URLs in the examples (helps find potential .php or other external dependencies) -->
     <target name="findURLs"
             description="Find all possible URLs in the examples (helps find potential .php or other external dependencies).">
+        <echo>${findURLs1.cmd}</echo>
         <exec executable="sh">
             <arg value="-c" />
-            <arg value="grep -ir 'src:' ${src.dir} --include=*.js" />
+            <arg value="${findURLs1.cmd}" />
         </exec>
+        
+        <echo>${findURLs2.cmd}</echo>
         <exec executable="sh">
             <arg value="-c" />
-            <arg value="grep -ir 'url:' ${src.dir} --include=*.js" />
+            <arg value="${findURLs2.cmd}" />
         </exec>
+        
+        <echo>${findURLs3.cmd}</echo>
         <exec executable="sh">
             <arg value="-c" />
-            <arg value="grep -ir '://' ${src.dir} --include=*.js" />
+            <arg value="${findURLs3.cmd}" />
         </exec>
     </target>
     
@@ -116,9 +132,10 @@ $ ant -projecthelp
     <!-- Find all *.php file references -->
     <target name="findPHPs"
             description="Find all .php file references.">
+        <echo>${findPHPs.cmd}</echo>
         <exec executable="sh">
             <arg value="-c" />
-            <arg value="grep -ir '.php' ${src.dir} --include=*.js" />
+            <arg value="${findPHPs.cmd}" />
         </exec>
     </target>
     
@@ -126,19 +143,21 @@ $ ant -projecthelp
     <!-- Find all ux/ references -->
     <target name="findUXs"
             description="Find all ux/ references">
+        <echo>${findUXs.cmd}</echo>
         <exec executable="sh">
             <arg value="-c" />
-            <arg value="grep -ir &quot;ux/'&quot; ${src.dir} --include=*.js" />
+            <arg value="${findUXs.cmd}" />
         </exec>
     </target>
     
     
     <!-- Find any "<" or ">" characters in markdown files -->
     <target name="readmeMarkup"
-            description="">
+            description="Find any HTML tags in a Markdown file.">
+        <echo>${readmeMarkup.cmd}</echo>
         <exec executable="sh">
             <arg value="-c" />
-            <arg value="grep -nlr [\&lt;\&gt;] ${src.dir} --include=*.md" />
+            <arg value="${readmeMarkup.cmd}" />
         </exec>
     </target>
     
@@ -150,14 +169,16 @@ $ ant -projecthelp
     </target>
     
     
-    <target name="showsplash">
+    <target name="showsplash"
+            description="Display a lovely splash screen while Ant runs.">
         <splash displaytext="Validating files..."
                 imageurl="http://www.sencha.com/img/sencha-large.png"
                 showduration="500" />
     </target>
     
     <!-- Apply some basic code cleanup (tabs to spaces, trailing linefeed) to all JS, JSON, and CSS files -->
-    <target name="pretty" description="Applies some general formatting to all *.(js|json|css) files in the project directory.">
+    <target name="pretty"
+            description="Applies some general formatting to all *.(js|json|css) files in the project directory.">
         <fixcrlf srcdir="${src.dir}"
                 tab="remove"
                 tablength="4"
