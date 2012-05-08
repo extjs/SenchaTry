@@ -11,9 +11,11 @@
     
     <target name="usage" description="Usage examples">
         <echo>Version: ${version}
-$ ant -projecthelp
 $ ant validate
 $ ant pretty
+
+For a full list of targets:
+$ ant -projecthelp
         </echo>
     </target>
     
@@ -102,6 +104,17 @@ $ ant pretty
         <exec executable="sh">
             <arg value="-c" />
             <arg value="${scriptWithoutType.cmd}" />
+        </exec>
+    </target>
+    
+    
+    <!-- Find all *.php file references -->
+    <target name="console"
+            description="Find all 'console.' references.">
+        <echo>${console.cmd}</echo>
+        <exec executable="sh">
+            <arg value="-c" />
+            <arg value="${console.cmd}" />
         </exec>
     </target>
     

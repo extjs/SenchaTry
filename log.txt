@@ -1,0 +1,15 @@
+./extjs/4.0.7/examples/organizer/organizer/ux/DataView/Draggable.js:        // console.log('test');
+./extjs/4.0.7/examples/view/animated-dataview/ux/DataView/Draggable.js:        // console.log('test');
+./extjs/4.0.7/examples/view/chooser/ux/DataView/Draggable.js:        // console.log('test');
+./extjs/4.0.7/examples/view/data-view/ux/DataView/Draggable.js:        // console.log('test');
+./extjs/4.0.7/examples/view/multisort/ux/DataView/Draggable.js:        // console.log('test');
+./touch/2.0.0/examples/jog-with-friends/server-side/app.js:    console.log("Listening on " + port);
+./touch/2.0.0/examples/jog-with-friends/server-side/app.js:        console.log("Found Facebook cookie. Swapping Auth code for access_token...");
+./touch/2.0.0/examples/jog-with-friends/server-side/app.js:            console.log("Successfully obtained Facebook access_token.");
+./touch/2.0.0/examples/jog-with-friends/server-side/app.js:    console.log(msg, err);
+./touch/2.0.0/examples/jog-with-friends/server-side/app.js:    console.log("Getting list of friends for " + req.session.fb.user_id + "...");
+./touch/2.0.0/examples/jog-with-friends/server-side/app.js:        console.log("Found " + friends.data.length + " friends. Searching for runs...");
+./touch/2.0.0/examples/jog-with-friends/server-side/app.js:            console.log("Found " + runs.length + " runs.");
+./touch/2.0.0/examples/jog-with-friends/server-side/app.js:    console.log("Saving new Run for " + req.session.fb.user_id + "...");
+./touch/2.0.0/examples/jog-with-friends/server-side/app.js:            console.log("Successfully saved new run");
+./touch/2.0.1/docs/Ext.SegmentedButton.1/app.js:                    console.log("User toggled the '" + button.text + "' button: " + (pressed ? 'on' : 'off'));
