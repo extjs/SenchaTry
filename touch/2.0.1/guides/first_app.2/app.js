@@ -1,18 +1,14 @@
 Ext.application({
-    launch: function() {
-        Ext.application({
-            name: 'Sencha',
+    name: 'Sencha',
 
-            launch: function() {
-                Ext.create("Ext.tab.Panel", {
-                    fullscreen: true,
-                    items: [{
-                        title: 'Home',
-                        iconCls: 'home',
-                        html: 'Welcome'
-                    }]
-                });
-            }
+    launch: function() {
+        Ext.create("Ext.tab.Panel", {
+            fullscreen: true,
+            items: [{
+                title: 'Home',
+                iconCls: 'home',
+                html: 'Welcome'
+            }]
         });
     }
 });
