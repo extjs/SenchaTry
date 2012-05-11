@@ -34,11 +34,16 @@ $ ant -projecthelp
     <!-- Find all those pesky .DS_Store files -->
     <target name="ds_store"
             description="Find all those pesky .DS_Store files.">
+        <!--
         <echo>${ds_store.cmd}</echo>
         <exec executable="sh">
             <arg value="-c" />
             <arg value="${ds_store.cmd}" />
         </exec>
+        -->
+        <delete>
+            <fileset dir="${src.dir}" includes="**/.DS_Store" defaultexcludes="no" />
+        </delete>
     </target>
     
     
