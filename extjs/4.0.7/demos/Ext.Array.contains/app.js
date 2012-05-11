@@ -1,3 +1,4 @@
+/*global Ext:false */
 Ext.application({
     name: 'Ext.Array.clean()',
     launch: function () {
@@ -35,6 +36,6 @@ Ext.application({
                 text: ''
             }],
             renderTo: Ext.getBody()
-        }); // Ext.create()
-    } // launch
-}); // Ext.application()
+        });
+    }
+});

@@ -9,6 +9,9 @@
     
     <property file="build.properties" />
     
+    <property name="buildr.dir" value="../buildr" />
+    <import file="${buildr.dir}/buildr.xml" />
+    
     <target name="usage" description="Usage examples">
         <echo>Version: ${version}
 $ ant validate
@@ -205,6 +208,24 @@ $ ant -projecthelp
             <include name="**/*.json" />
             <include name="**/*.css" />
         </fixcrlf>
+    </target>
+    
+    
+    <target name="jshint"
+            description="Validate all the JS files via Buildr's `jshint` task.">
+        <jshint options="undef=true,browser=true,devel=true,smarttabs=false,onecase=false">
+            <fileset dir="${src.dir}" includes="**/*.js" excludes="**/examples/**" />
+        </jshint>
+    </target>
+    
+    
+    <target name="csslint"
+            description="Validate all the CSS files via Buildr's `csslint` task.">
+        <csslint format="text" quiet="quiet" warnings="box-model,display-property-grouping,duplicate-properties,empty-rules,known-properties">
+            <fileset dir="${src.dir}"
+                    includes="**/*.css"
+                    excludes="**/examples/**" />
+        </csslint>
     </target>
     
 </project>

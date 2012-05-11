@@ -1,3 +1,4 @@
+/*global Ext:false */
 Ext.application({
     name: 'Ext.Array.clean()',
     launch: function() {
@@ -16,6 +17,6 @@ Ext.application({
             padding: 20,
             html: '<p><code>dirty</code> array (' + dirty.length + ' items): ' + JSON.stringify(dirty) + '</p>' + '<p><code>clean</code> array (' + clean.length + ' items): ' + JSON.stringify(clean) + '</p>',
             renderTo: Ext.getBody()
-        }); // Ext.create()
-    } // launch
-}); // Ext.application()
+        });
+    }
+});
