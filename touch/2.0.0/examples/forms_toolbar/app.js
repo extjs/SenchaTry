@@ -1,3 +1,4 @@
+/*global Ext:false */
 /**
  * This is a simple demonstration of using form fields inside toolbar components.
  */

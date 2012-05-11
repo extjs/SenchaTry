@@ -1,3 +1,4 @@
+/*global Ext:false */
 Ext.application({
     launch: function () {
         var contactForm = Ext.create('Ext.form.FormPanel', {

@@ -1,3 +1,4 @@
+/*global Ext:false */
 /**
  * Jog With Friends - Sencha Touch app server side by Nick Poulden
  *

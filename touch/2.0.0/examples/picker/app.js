@@ -1,3 +1,4 @@
+/*global Ext:false */
 /**
  * A simple example of the Ext.picker.Picker component in Sencha Touch.
  */

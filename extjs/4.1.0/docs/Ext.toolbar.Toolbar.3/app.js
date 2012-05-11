@@ -1,3 +1,4 @@
+/*global Ext:false */
 Ext.onReady(function() {
     var enableBtn = Ext.create('Ext.button.Button', {
         text: 'Enable All Items',

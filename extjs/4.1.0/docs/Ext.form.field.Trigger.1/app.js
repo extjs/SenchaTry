@@ -1,3 +1,4 @@
+/*global Ext:false */
 Ext.onReady(function() {
     Ext.define('Ext.ux.CustomTrigger', {
         extend: 'Ext.form.field.Trigger',

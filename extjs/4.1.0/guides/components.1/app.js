@@ -1,3 +1,4 @@
+/*global Ext:false */
 Ext.onReady(function() {
     var childPanel1 = Ext.create('Ext.panel.Panel', {
         title: 'Child Panel 1',

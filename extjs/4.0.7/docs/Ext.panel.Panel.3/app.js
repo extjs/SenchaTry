@@ -1,3 +1,4 @@
+/*global Ext:false */
 Ext.onReady(function () {
     var resultsPanel = Ext.create('Ext.panel.Panel', {
         title: 'Results',

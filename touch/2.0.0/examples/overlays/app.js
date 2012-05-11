@@ -1,3 +1,4 @@
+/*global Ext:false */
 /**
  * A simple demo showing how to overlay floating components using Sencha Touch.
  */

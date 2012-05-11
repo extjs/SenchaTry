@@ -1,3 +1,4 @@
+/*global Ext:false */
 Ext.onReady(function () {
     var pnl = Ext.create('Ext.Panel', {
         height: 150,

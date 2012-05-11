@@ -1,3 +1,4 @@
+/*global Ext:false */
 Ext.application({
     launch: function () {
         //create the navigation view and add it into the Ext.Viewport

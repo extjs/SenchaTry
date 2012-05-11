@@ -1,3 +1,4 @@
+/*global Ext:false */
 Ext.application({
     name: 'Ext.Array.clean()',
     launch: function() {

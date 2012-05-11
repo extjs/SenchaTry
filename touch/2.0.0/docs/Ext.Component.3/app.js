@@ -1,3 +1,4 @@
+/*global Ext:false */
 Ext.application({
     launch: function () {
         //we can configure the HTML when we instantiate the Component

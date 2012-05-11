@@ -1,3 +1,4 @@
+/*global Ext:false */
 Ext.onReady(function() {
     // Init the singleton.  Any tag-based quick tips will start working.
     Ext.tip.QuickTipManager.init();

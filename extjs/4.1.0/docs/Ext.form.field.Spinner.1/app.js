@@ -1,3 +1,4 @@
+/*global Ext:false */
 Ext.onReady(function() {
     Ext.define('Ext.ux.CustomSpinner', {
         extend: 'Ext.form.field.Spinner',

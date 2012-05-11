@@ -1,3 +1,4 @@
+/*global Ext:false */
 Ext.onReady(function () {
     var filterPanel = Ext.create('Ext.panel.Panel', {
         bodyPadding: 5,

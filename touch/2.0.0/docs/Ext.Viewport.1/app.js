@@ -1,3 +1,4 @@
+/*global Ext:false */
 Ext.setup({
     viewport: {
         layout: 'vbox'

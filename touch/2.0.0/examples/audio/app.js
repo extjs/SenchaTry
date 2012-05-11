@@ -1,3 +1,4 @@
+/*global Ext:false */
 //<debug>
 Ext.Loader.setPath({
     'Ext': '../../src'

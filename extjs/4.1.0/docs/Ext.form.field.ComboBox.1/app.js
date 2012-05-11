@@ -1,3 +1,4 @@
+/*global Ext:false */
 Ext.onReady(function() {
     // The data store containing the list of states
     var states = Ext.create('Ext.data.Store', {

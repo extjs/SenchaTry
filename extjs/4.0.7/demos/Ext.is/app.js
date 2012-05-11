@@ -1,3 +1,4 @@
+/*global Ext:false */
 Ext.onReady(function () {
     var platformStore = Ext.create('Ext.data.Store', {
         fields: ['name', 'value'],

@@ -1,3 +1,4 @@
+/*global Ext:false */
 //We've added a third and final item to our tab panel - scroll down to see it
 Ext.application({
     name: 'Sencha',

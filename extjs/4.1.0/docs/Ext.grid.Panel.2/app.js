@@ -1,3 +1,4 @@
+/*global Ext:false */
 Ext.onReady(function() {
     var store = Ext.create('Ext.data.Store', {
         storeId: 'employeeStore',

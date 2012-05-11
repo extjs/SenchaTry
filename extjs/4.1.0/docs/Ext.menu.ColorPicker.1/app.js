@@ -1,3 +1,4 @@
+/*global Ext:false */
 Ext.onReady(function() {
     var colorPicker = Ext.create('Ext.menu.ColorPicker', {
         value: '000000'

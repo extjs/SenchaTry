@@ -1,3 +1,4 @@
+/*global Ext:false */
 Ext.application({
     launch: function() {
         //this is the Panel we'll be adding below

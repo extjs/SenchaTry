@@ -1,3 +1,4 @@
+/*global Ext:false */
 // This utility function takes a date and returns a representation in words.
 var timeAgoInWords = function(date) {
     try {

@@ -1,3 +1,4 @@
+/*global Ext:false */
 Ext.onReady(function() {
     var p = Ext.create('Ext.ProgressBar', {
         renderTo: Ext.getBody(),

@@ -1,3 +1,4 @@
+/*global Ext:false */
 /**
  * This simple example shows the ability of the Ext.List component.
  *

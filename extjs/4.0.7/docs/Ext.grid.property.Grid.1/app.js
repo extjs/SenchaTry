@@ -1,3 +1,4 @@
+/*global Ext:false */
 Ext.onReady(function () {
     Ext.create('Ext.grid.property.Grid', {
         title: 'Properties Grid',

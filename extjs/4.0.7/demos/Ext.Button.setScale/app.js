@@ -1,3 +1,4 @@
+/*global Ext:false */
 Ext.onReady(function () {
     var btn = Ext.create('Ext.Button', {
         text: 'I am an Ext.Button',

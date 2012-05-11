@@ -1,3 +1,4 @@
+/*global Ext:false */
 Ext.onReady(function () {
     var numClicks = 0;
     Ext.create('Ext.Button', {

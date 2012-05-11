@@ -1,3 +1,4 @@
+/*global Ext:false */
 Ext.onReady(function() {
     // display a dropdown menu:
     Ext.create('Ext.button.Split', {

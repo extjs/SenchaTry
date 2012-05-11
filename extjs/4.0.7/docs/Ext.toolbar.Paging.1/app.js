@@ -1,3 +1,4 @@
+/*global Ext:false */
 Ext.onReady(function () {
     var itemsPerPage = 2; // set the number of items you want per page
     var store = Ext.create('Ext.data.Store', {

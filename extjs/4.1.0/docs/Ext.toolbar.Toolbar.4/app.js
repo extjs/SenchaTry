@@ -1,3 +1,4 @@
+/*global Ext:false */
 Ext.onReady(function() {
     var toolbar = Ext.create('Ext.toolbar.Toolbar', {
         renderTo: document.body,

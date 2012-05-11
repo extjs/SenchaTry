@@ -1,3 +1,4 @@
+/*global Ext:false */
 Ext.onReady(function() {
     Ext.define('Employee', {
         extend: 'Ext.data.Model',

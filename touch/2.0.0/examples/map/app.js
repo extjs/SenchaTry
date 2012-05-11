@@ -1,3 +1,4 @@
+/*global Ext:false */
 /**
  * This is a demo application which shows the Ext.Map component in Sencha Touch.
  */

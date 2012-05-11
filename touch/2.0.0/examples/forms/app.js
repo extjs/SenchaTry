@@ -1,3 +1,4 @@
+/*global Ext:false */
 /**
  * This example is a simple demo of some of the form and field components in Sencha Touch.
  * It also shows how you can bind a Model instance to a form, and then update that instance with values

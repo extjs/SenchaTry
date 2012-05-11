@@ -1,3 +1,4 @@
+/*global Ext:false */
 Ext.require('Oreilly.util.Proxy');
 
 Ext.application({

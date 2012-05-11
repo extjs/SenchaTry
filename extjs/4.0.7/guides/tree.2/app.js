@@ -1,3 +1,4 @@
+/*global Ext:false */
 Ext.onReady(function () {
     var tree = Ext.create('Ext.tree.Panel', {
         renderTo: Ext.getBody(),

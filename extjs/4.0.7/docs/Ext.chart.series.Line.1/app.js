@@ -1,3 +1,4 @@
+/*global Ext:false */
 Ext.onReady(function () {
     var store = Ext.create('Ext.data.JsonStore', {
         fields: ['name', 'data1', 'data2', 'data3', 'data4', 'data5'],

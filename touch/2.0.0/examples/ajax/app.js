@@ -1,3 +1,4 @@
+/*global Ext:false */
 /**
  * This application demonstrates the simple AJAX abilities of Sencha Touch.
  *

@@ -1,3 +1,4 @@
+/*global Ext:false */
 Ext.onReady(function () {
     // Explicitly create a Container
     Ext.create('Ext.container.Container', {

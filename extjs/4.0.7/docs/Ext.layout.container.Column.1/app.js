@@ -1,3 +1,4 @@
+/*global Ext:false */
 Ext.onReady(function () {
     // All columns are percentages -- they must add up to 1
     Ext.create('Ext.panel.Panel', {

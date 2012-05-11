@@ -1,3 +1,4 @@
+/*global Ext:false */
 Ext.application({
     launch: function() {
         Ext.Msg.prompt('Name', 'Please enter your name:', function(text) {

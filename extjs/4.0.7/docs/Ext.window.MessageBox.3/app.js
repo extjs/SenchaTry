@@ -1,3 +1,4 @@
+/*global Ext:false */
 Ext.onReady(function () {
     Ext.Msg.show({
         title: 'Save Changes?',

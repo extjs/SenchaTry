@@ -1,3 +1,4 @@
+/*global Ext:false */
 /**
  * This is a simple example which shows some of the built-in icons that are supported in Sencha Touch.
  */

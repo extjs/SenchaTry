@@ -1,3 +1,4 @@
+/*global Ext:false */
 Ext.application({
     launch: function() {
         var datePicker = Ext.create('Ext.picker.Date');

@@ -1,3 +1,4 @@
+/*global Ext:false */
 Ext.onReady(function () {
     var ch = Ext.create('Ext.form.Checkbox', {
         boxLabel: 'closable',

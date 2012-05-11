@@ -1,3 +1,4 @@
+/*global Ext:false */
 Ext.onReady(function() {
     var dateMenu = Ext.create('Ext.menu.DatePicker', {
         handler: function(dp, date) {

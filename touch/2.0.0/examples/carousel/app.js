@@ -1,3 +1,4 @@
+/*global Ext:false */
 /**
  * This example demonstrates the Carousel component in Sencha Touch 2.
  *

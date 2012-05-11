@@ -1,3 +1,4 @@
+/*global Ext:false */
 /**
 
 # Jog With Friends - by Nick Poulden

@@ -1,3 +1,4 @@
+/*global Ext:false */
 Ext.define('File', {
     extend: 'Ext.data.Model',
     config: {

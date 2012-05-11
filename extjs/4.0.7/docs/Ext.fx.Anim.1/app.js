@@ -1,3 +1,4 @@
+/*global Ext:false */
 Ext.onReady(function () {
     var myComponent = Ext.create('Ext.Component', {
         renderTo: document.body,

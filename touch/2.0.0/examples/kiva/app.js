@@ -1,3 +1,4 @@
+/*global Ext:false */
 Ext.ClassManager.setAlias('Ext.data.proxy.Kiva', 'proxy.kiva');
 
 Ext.application({

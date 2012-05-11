@@ -1,3 +1,4 @@
+/*global Ext:false */
 Ext.onReady(function () {
     Ext.tip.QuickTipManager.init(); // enable tooltips
     new Ext.panel.Panel({

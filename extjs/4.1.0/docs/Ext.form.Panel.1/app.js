@@ -1,3 +1,4 @@
+/*global Ext:false */
 Ext.onReady(function() {
     Ext.create('Ext.form.Panel', {
         title: 'Simple Form',

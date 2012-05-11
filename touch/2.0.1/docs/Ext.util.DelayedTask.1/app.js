@@ -1,3 +1,4 @@
+/*global Ext:false */
 Ext.application({
     launch: function() {
         //create a textfield where we can listen to text

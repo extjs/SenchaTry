@@ -1,3 +1,4 @@
+/*global Ext:false */
 Ext.onReady(function() {
     var drawComponent = Ext.create('Ext.draw.Component', {
         viewBox: false,

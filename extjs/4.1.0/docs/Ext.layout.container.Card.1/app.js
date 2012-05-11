@@ -1,3 +1,4 @@
+/*global Ext:false */
 Ext.onReady(function() {
     var navigate = function(panel, direction) {
             // This routine could contain business logic required to manage the navigation steps.

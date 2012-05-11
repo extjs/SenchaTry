@@ -1,3 +1,4 @@
+/*global Ext:false */
 Ext.onReady(function () {
     // Create a draw component
     var drawComponent = Ext.create('Ext.draw.Component', {

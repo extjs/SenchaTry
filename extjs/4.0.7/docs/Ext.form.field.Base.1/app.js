@@ -1,3 +1,4 @@
+/*global Ext:false */
 Ext.onReady(function () {
     // A simple subclass of BaseField that creates a HTML5 search field. Redirects to the
     // searchUrl when the Enter key is pressed.

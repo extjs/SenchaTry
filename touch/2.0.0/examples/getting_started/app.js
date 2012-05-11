@@ -1,3 +1,4 @@
+/*global Ext:false */
 /**
  * This is the output of the Sencha Touch 2.0 Getting Started Guide. It sets up a simple application
  * with Sencha Touch, creating a Tab Panel with 3 tabs - home, blog and contact. The home page just

@@ -1,3 +1,4 @@
+/*global Ext:false */
 Ext.application({
     name: 'GeoCon',
     icon: 'resources/icons/icon.png',

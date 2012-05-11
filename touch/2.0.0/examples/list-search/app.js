@@ -1,3 +1,4 @@
+/*global Ext:false */
 /**
  * This is a simple demontration of the Ext.List component with a binded Ext.data.Store.
  * It also included a search field which has functionality built in to filter the data in

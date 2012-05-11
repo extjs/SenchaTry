@@ -1,3 +1,4 @@
+/*global Ext:false */
 Ext.onReady(function () {
     var tabs = Ext.create('Ext.tab.Panel', {
         items: [{

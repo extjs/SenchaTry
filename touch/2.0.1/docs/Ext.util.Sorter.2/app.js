@@ -1,3 +1,4 @@
+/*global Ext:false */
 Ext.application({
     launch: function() {
         var store = Ext.create('Ext.data.Store', {

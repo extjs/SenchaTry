@@ -1,3 +1,4 @@
+/*global Ext:false */
 Ext.onReady(function () {
     var containerPanel = Ext.create('Ext.panel.Panel', {
         renderTo: Ext.getBody(),
