@@ -21,15 +21,15 @@ Ext.application({
                     text: 'Toggle docked',
                     handler: function () {
                         var toolbar = Ext.ComponentQuery.query('toolbar')[0],
-                            newDocked = (toolbar.getDocked() == 'top') ? 'bottom' : 'top';
-
+                            newDocked = (toolbar.getDocked() === 'top') ? 'bottom' : 'top';
+                        
                         toolbar.setDocked(newDocked);
                     }
                 }, {
                     text: 'Toggle UI',
                     handler: function () {
                         var toolbar = Ext.ComponentQuery.query('toolbar')[0],
-                            newUi = (toolbar.getUi() == 'light') ? 'dark' : 'light';
+                            newUi = (toolbar.getUi() === 'light') ? 'dark' : 'light';
 
                         toolbar.setUi(newUi);
                     }

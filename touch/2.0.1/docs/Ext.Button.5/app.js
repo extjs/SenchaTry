@@ -22,7 +22,7 @@ Ext.application({
                     // and loop through all of them
                     Ext.Array.forEach(Ext.ComponentQuery.query('button'), function(button) {
                         // if the button is the change iconCls button, continue
-                        if (button.getText() == text) {
+                        if (button.getText() === text) {
                             return;
                         }
 
@@ -31,7 +31,7 @@ Ext.application({
 
                         // update the iconCls of the button with the next iconCls, if one exists.
                         // if not, use the first one
-                        button.setIconCls(availableIconCls[(index == availableIconCls.length) ? 0 : index]);
+                        button.setIconCls(availableIconCls[(index === availableIconCls.length) ? 0 : index]);
                     });
                 }
             }, {

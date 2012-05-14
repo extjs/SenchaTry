@@ -9,7 +9,7 @@ Ext.application({
                     var name1 = record1.data.person.name.split('-')[1].substr(0, 1),
                         name2 = record2.data.person.name.split('-')[1].substr(0, 1);
 
-                    return name1 > name2 ? 1 : (name1 == name2 ? 0 : -1);
+                    return name1 > name2 ? 1 : (name1 === name2 ? 0 : -1);
                 },
                 direction: 'DESC'
             }],

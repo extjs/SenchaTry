@@ -213,8 +213,11 @@ $ ant -projecthelp
     
     <target name="jshint"
             description="Validate all the JS files via Buildr's `jshint` task.">
-        <jshint options="undef=true,browser=true,devel=true,smarttabs=false,onecase=false">
-            <fileset dir="${src.dir}" includes="**/*.js" excludes="**/examples/**" />
+        <echo>Note: This will validate all .js/.json files, except those in the /examples/ folders.</echo>
+        <jshint options="asi=true,boss=true,browser=true,curly=true,devel=true,eqeqeq=true,eqnull=true,forin=true,lastsemic=true,laxbreak=true,laxcomma=true,nonstandard=true,onecase=true,shadow=true,smarttabs=true,sub=true,undef=false">
+            <fileset dir="${src.dir}"
+                    includes="**/*.js, **/*.json"
+                    excludes="**/examples/**, **/Ext.Array.clean/**" />
         </jshint>
     </target>
     
