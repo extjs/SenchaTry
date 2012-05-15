@@ -197,6 +197,7 @@ $ ant -projecthelp
                 showduration="500" />
     </target>
     
+    
     <!-- Apply some basic code cleanup (tabs to spaces, trailing linefeed) to all JS, JSON, and CSS files -->
     <target name="pretty"
             description="Applies some general formatting to all *.(js|json|css) files in the project directory.">
@@ -213,8 +214,10 @@ $ ant -projecthelp
     
     <target name="jshint"
             description="Validate all the JS files via Buildr's `jshint` task.">
+        <property name="jshint_opts" value="asi=true,boss=true,browser=true,curly=true,devel=true,eqeqeq=true,eqnull=true,forin=true,lastsemic=true,laxbreak=true,laxcomma=true,nonstandard=true,onecase=true,shadow=true,smarttabs=true,sub=true,undef=false" />
         <echo>Note: This will validate all .js/.json files, except those in the /examples/ folders.</echo>
-        <jshint options="asi=true,boss=true,browser=true,curly=true,devel=true,eqeqeq=true,eqnull=true,forin=true,lastsemic=true,laxbreak=true,laxcomma=true,nonstandard=true,onecase=true,shadow=true,smarttabs=true,sub=true,undef=false">
+        <echo>Using: ${jshint_opts}</echo>
+        <jshint options="${jshint_opts}">
             <fileset dir="${src.dir}"
                     includes="**/*.js, **/*.json"
                     excludes="**/examples/**, **/Ext.Array.clean/**" />

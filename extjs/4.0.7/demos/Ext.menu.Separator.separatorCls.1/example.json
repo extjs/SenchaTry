@@ -1,0 +1,30 @@
+{
+    "product": "extjs",
+    "version": "4.0.7",
+    "path": "extjs/4.0.7/demos/Ext.menu.Separator.separatorCls.1/",
+    "files": [
+        "index.html",
+        "app.js",
+        "app/resources/app.css"
+    ],
+    
+    "categories": [
+        {
+            "label": "Ext.menu.Separator",
+            "url": "http://docs.sencha.com/ext-js/4-0/#!/api/Ext.menu.Separator"
+        },
+        {
+            "label": "menuseparator",
+            "url": "http://docs.sencha.com/ext-js/4-0/#!/api/Ext.menu.Separator"
+        }
+    ],
+    "tags": [
+        {
+            "label": "separatorCls",
+            "url": "http://docs.sencha.com/ext-js/4-0/#!/api/Ext.menu.Separator-cfg-separatorCls"
+        }
+    ],
+    
+    "seeAlso": [
+    ]
+}

@@ -1,0 +1,25 @@
+{
+    "product": "extjs",
+    "version": "4.0.7",
+    "path": "extjs/4.0.7/demos/Ext.menu.ColorPicker.1/",
+    "files": [
+        "index.html",
+        "app.js"
+    ],
+    
+    "categories": [
+        {
+            "label": "Ext.menu.ColorPicker",
+            "url": "http://docs.sencha.com/ext-js/4-0/#!/api/Ext.menu.ColorPicker"
+        },
+        {
+            "label": "colormenu",
+            "url": "http://docs.sencha.com/ext-js/4-0/#!/api/Ext.menu.ColorPicker"
+        }
+    ],
+    "tags": [
+    ],
+    
+    "seeAlso": [
+    ]
+}

@@ -1,0 +1,34 @@
+{
+    "product": "extjs",
+    "version": "4.0.7",
+    "path": "extjs/4.0.7/demos/Ext.Button.overCls.1/",
+    "files": [
+        "index.html",
+        "app.js",
+        "app/resources/app.css"
+    ],
+    
+    "categories": [
+        {
+            "label": "Ext.button.Button",
+            "url": "http://docs.sencha.com/ext-js/4-0/#!/api/Ext.button.Button"
+        },
+        {
+            "label": "Ext.Button",
+            "url": "http://docs.sencha.com/ext-js/4-0/#!/api/Ext.button.Button"
+        },
+        {
+            "label": "button",
+            "url": "http://docs.sencha.com/ext-js/4-0/#!/api/Ext.button.Button"
+        }
+    ],
+    "tags": [
+        {
+            "label": "overCls",
+            "url": "http://docs.sencha.com/ext-js/4-0/#!/api/Ext.button.Button-cfg-overCls"
+        }
+    ],
+    
+    "seeAlso": [
+    ]
+}

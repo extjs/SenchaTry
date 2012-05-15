@@ -1,0 +1,29 @@
+{
+    "product": "extjs",
+    "version": "4.0.7",
+    "path": "extjs/4.0.7/demos/Ext.menu.CheckItem.hideOnClick.1/",
+    "files": [
+        "index.html",
+        "app.js"
+    ],
+    
+    "categories": [
+        {
+            "label": "Ext.menu.CheckItem",
+            "url": "http://docs.sencha.com/ext-js/4-0/#!/api/Ext.menu.CheckItem"
+        },
+        {
+            "label": "menucheckitem",
+            "url": "http://docs.sencha.com/ext-js/4-0/#!/api/Ext.menu.CheckItem"
+        }
+    ],
+    "tags": [
+        {
+            "label": "hideOnClick",
+            "url": "http://docs.sencha.com/ext-js/4-0/#!/api/Ext.menu.CheckItem-cfg-hideOnClick"
+        }
+    ],
+    
+    "seeAlso": [
+    ]
+}

@@ -1,0 +1,37 @@
+{
+    "product": "extjs",
+    "version": "4.0.7",
+    "path": "extjs/4.0.7/demos/Ext.Button.listeners.click.1/",
+    "files": [
+        "index.html",
+        "app.js"
+    ],
+    
+    "categories": [
+        {
+            "label": "Ext.button.Button",
+            "url": "http://docs.sencha.com/ext-js/4-0/#!/api/Ext.button.Button"
+        },
+        {
+            "label": "Ext.Button",
+            "url": "http://docs.sencha.com/ext-js/4-0/#!/api/Ext.button.Button"
+        },
+        {
+            "label": "button",
+            "url": "http://docs.sencha.com/ext-js/4-0/#!/api/Ext.button.Button"
+        }
+    ],
+    "tags": [
+        {
+            "label": "listeners",
+            "url": "http://docs.sencha.com/ext-js/4-0/#!/api/Ext.button.Button-cfg-listeners"
+        },
+        {
+            "label": "click",
+            "url": "http://docs.sencha.com/ext-js/4-0/#!/api/Ext.button.Button-event-click"
+        }
+    ],
+    
+    "seeAlso": [
+    ]
+}
