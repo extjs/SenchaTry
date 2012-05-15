@@ -220,7 +220,7 @@ $ ant -projecthelp
         <jshint options="${jshint_opts}">
             <fileset dir="${src.dir}"
                     includes="**/*.js, **/*.json"
-                    excludes="**/examples/**, **/Ext.Array.clean/**" />
+                    excludes="**/examples/**, **/Ext.Array.clean.1/**" />
         </jshint>
     </target>
     
