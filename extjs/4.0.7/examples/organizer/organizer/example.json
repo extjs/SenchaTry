@@ -1,0 +1,20 @@
+{
+    "product": "extjs",
+    "version": "4.0.7",
+    "path": "extjs/4.0.7/examples/organizer/organizer/index.html",
+    "files": [
+        "AlbumTree.js",
+        "ImageView.js",
+        "OrgPanel.js",
+        "app.js",
+        "index.html",
+        "resources/css/app.css",
+        "ux/DataView/Animated.js",
+        "ux/DataView/DragSelector.css",
+        "ux/DataView/DragSelector.js",
+        "ux/DataView/Draggable.js",
+        "ux/DataView/LabelEditor.js"
+    ],
+    "categories": [],
+    "tags": []
+}

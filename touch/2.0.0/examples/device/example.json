@@ -1,0 +1,28 @@
+{
+    "product": "touch",
+    "version": "2.0.0",
+    "path": "touch/2.0.0/examples/device/index.html",
+    "files": [
+        "app.js",
+        "app.json",
+        "app/controller/Application.js",
+        "app/controller/Camera.js",
+        "app/controller/Connection.js",
+        "app/controller/Notification.js",
+        "app/controller/Orientation.js",
+        "app/store/Images.js",
+        "app/view/Camera.js",
+        "app/view/Connection.js",
+        "app/view/Geolocation.js",
+        "app/view/Information.js",
+        "app/view/Main.js",
+        "app/view/Notification.js",
+        "app/view/Orientation.js",
+        "app/view/camera/ImageList.js",
+        "app/view/camera/ImageView.js",
+        "index.html",
+        "resources/css/app.css"
+    ],
+    "categories": [],
+    "tags": []
+}

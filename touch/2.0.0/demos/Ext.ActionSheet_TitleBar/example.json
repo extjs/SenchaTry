@@ -1,0 +1,12 @@
+{
+    "product": "touch",
+    "version": "2.0.0",
+    "path": "touch/2.0.0/demos/Ext.ActionSheet_TitleBar/index.html",
+    "files": [
+        ".DS_Store",
+        "app.js",
+        "index.html"
+    ],
+    "categories": [],
+    "tags": []
+}

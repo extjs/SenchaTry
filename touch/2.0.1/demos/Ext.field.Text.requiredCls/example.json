@@ -1,0 +1,12 @@
+{
+    "product": "touch",
+    "version": "2.0.1",
+    "path": "touch/2.0.1/demos/Ext.field.Text.requiredCls/index.html",
+    "files": [
+        "app.js",
+        "app/styles.css",
+        "index.html"
+    ],
+    "categories": [],
+    "tags": []
+}

@@ -1,0 +1,15 @@
+{
+    "product": "extjs",
+    "version": "4.0.7",
+    "path": "extjs/4.0.7/examples/data/associations/index.html",
+    "files": [
+        "app.js",
+        "customer.php",
+        "index.html",
+        "order.php",
+        "orderitem.php",
+        "resources/css/app.css"
+    ],
+    "categories": [],
+    "tags": []
+}

@@ -1,0 +1,22 @@
+{
+    "product": "extjs",
+    "version": "4.0.7",
+    "path": "extjs/4.0.7/examples/grouptabs/grouptabs/index.html",
+    "files": [
+        "app.js",
+        "examples.js",
+        "index.html",
+        "portal/classes/ChartPortlet.js",
+        "portal/classes/GridPortlet.js",
+        "portal/classes/PortalColumn.js",
+        "portal/classes/PortalDropZone.js",
+        "portal/classes/PortalPanel.js",
+        "portal/classes/Portlet.js",
+        "portal/portal.css",
+        "resources/css/app.css",
+        "ux/GroupTabPanel.js",
+        "ux/css/GroupTabPanel.css"
+    ],
+    "categories": [],
+    "tags": []
+}

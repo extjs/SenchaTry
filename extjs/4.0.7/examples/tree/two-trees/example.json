@@ -1,0 +1,13 @@
+{
+    "product": "extjs",
+    "version": "4.0.7",
+    "path": "extjs/4.0.7/examples/tree/two-trees/index.html",
+    "files": [
+        "app.js",
+        "examples.js",
+        "get-nodes.php",
+        "index.html"
+    ],
+    "categories": [],
+    "tags": []
+}

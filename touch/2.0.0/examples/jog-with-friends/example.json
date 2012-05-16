@@ -1,0 +1,30 @@
+{
+    "product": "touch",
+    "version": "2.0.0",
+    "path": "touch/2.0.0/examples/jog-with-friends/index.html",
+    "files": [
+        "all-classes.js",
+        "app-all.js",
+        "app.js",
+        "app/controller/Facebook.js",
+        "app/controller/Runs.js",
+        "app/model/Run.js",
+        "app/store/Runs.js",
+        "app/view/Form.js",
+        "app/view/Login.js",
+        "app/view/Main.js",
+        "app/view/NoFriends.js",
+        "app/view/run/List.js",
+        "build.sh",
+        "index.html",
+        "resources/css/jogwithfriends.css",
+        "resources/css/runwithfriends.css",
+        "resources/css/style.css",
+        "server-side/Procfile",
+        "server-side/app.js",
+        "server-side/package.json",
+        "server-side/public/index.html"
+    ],
+    "categories": [],
+    "tags": []
+}

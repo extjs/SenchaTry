@@ -1,0 +1,21 @@
+{
+    "product": "extjs",
+    "version": "4.0.7",
+    "path": "extjs/4.0.7/examples/view/multisort/index.html",
+    "files": [
+        "Panel.js",
+        "SortButton.js",
+        "app.js",
+        "index.html",
+        "resources/css/app.css",
+        "sencha-touch-examples.json",
+        "ux/BoxReorderer.js",
+        "ux/DataView/Animated.js",
+        "ux/DataView/DragSelector.css",
+        "ux/DataView/DragSelector.js",
+        "ux/DataView/Draggable.js",
+        "ux/DataView/LabelEditor.js"
+    ],
+    "categories": [],
+    "tags": []
+}

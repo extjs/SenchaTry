@@ -1,0 +1,20 @@
+{
+    "product": "extjs",
+    "version": "4.0.7",
+    "path": "extjs/4.0.7/examples/sandbox/sandbox/index.html",
+    "files": [
+        "app.js",
+        "credits.txt",
+        "desktop.html",
+        "index.html",
+        "js/App.js",
+        "js/Desktop.js",
+        "js/Module.js",
+        "js/StartMenu.js",
+        "js/TaskBar.js",
+        "resources/css/app.css",
+        "sample.js"
+    ],
+    "categories": [],
+    "tags": []
+}

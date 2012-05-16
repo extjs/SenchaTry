@@ -1,0 +1,13 @@
+{
+    "product": "touch",
+    "version": "2.0.0",
+    "path": "touch/2.0.0/examples/audio/index.html",
+    "files": [
+        "app.js",
+        "app.json",
+        "index.html",
+        "resources/css/app.css"
+    ],
+    "categories": [],
+    "tags": []
+}

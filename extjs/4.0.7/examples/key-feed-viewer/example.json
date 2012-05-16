@@ -1,0 +1,21 @@
+{
+    "product": "extjs",
+    "version": "4.0.7",
+    "path": "extjs/4.0.7/examples/key-feed-viewer/index.html",
+    "files": [
+        "app.js",
+        "feed-proxy.php",
+        "index.html",
+        "resources/css/app.css",
+        "ux/PreviewPlugin.js",
+        "viewer/FeedDetail.js",
+        "viewer/FeedGrid.js",
+        "viewer/FeedInfo.js",
+        "viewer/FeedPanel.js",
+        "viewer/FeedPost.js",
+        "viewer/FeedViewer.js",
+        "viewer/FeedWindow.js"
+    ],
+    "categories": [],
+    "tags": []
+}

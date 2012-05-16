@@ -1,0 +1,16 @@
+{
+    "product": "extjs",
+    "version": "4.0.7",
+    "path": "extjs/4.0.7/examples/panel/bubble-panel/index.html",
+    "files": [
+        "app.js",
+        "index.html",
+        "resources/css/app.css",
+        "resources/manifest.js",
+        "resources/sass/bubble-panel.scss",
+        "resources/sass/config.rb",
+        "slice-command"
+    ],
+    "categories": [],
+    "tags": []
+}

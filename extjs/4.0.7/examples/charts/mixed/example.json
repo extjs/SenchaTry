@@ -1,0 +1,12 @@
+{
+    "product": "extjs",
+    "version": "4.0.7",
+    "path": "extjs/4.0.7/examples/charts/mixed/index.html",
+    "files": [
+        "app.js",
+        "index.html",
+        "resources/example-data.js"
+    ],
+    "categories": [],
+    "tags": []
+}

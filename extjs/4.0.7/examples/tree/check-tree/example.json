@@ -1,0 +1,13 @@
+{
+    "product": "extjs",
+    "version": "4.0.7",
+    "path": "extjs/4.0.7/examples/tree/check-tree/index.html",
+    "files": [
+        "app.js",
+        "check-nodes.json",
+        "index.html",
+        "resources/css/app.css"
+    ],
+    "categories": [],
+    "tags": []
+}

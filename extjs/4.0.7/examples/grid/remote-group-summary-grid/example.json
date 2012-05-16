@@ -1,0 +1,16 @@
+{
+    "product": "extjs",
+    "version": "4.0.7",
+    "path": "extjs/4.0.7/examples/grid/remote-group-summary-grid/index.html",
+    "files": [
+        "app.js",
+        "index.html",
+        "resources/css/app.css",
+        "ux/ajax/JsonSimlet.js",
+        "ux/ajax/SimManager.js",
+        "ux/ajax/SimXhr.js",
+        "ux/ajax/Simlet.js"
+    ],
+    "categories": [],
+    "tags": []
+}

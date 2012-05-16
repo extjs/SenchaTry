@@ -1,0 +1,14 @@
+{
+    "product": "touch",
+    "version": "2.0.0",
+    "path": "touch/2.0.0/examples/nestedlist/index.html",
+    "files": [
+        "app.js",
+        "app.json",
+        "index.html",
+        "resources/css/app.css",
+        "source.json"
+    ],
+    "categories": [],
+    "tags": []
+}

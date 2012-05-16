@@ -1,0 +1,14 @@
+{
+    "product": "touch",
+    "version": "2.0.0",
+    "path": "touch/2.0.0/examples/map/index.html",
+    "files": [
+        "app.js",
+        "app.json",
+        "index.html",
+        "lib/plugin/google/Tracker.js",
+        "lib/plugin/google/Traffic.js"
+    ],
+    "categories": [],
+    "tags": []
+}

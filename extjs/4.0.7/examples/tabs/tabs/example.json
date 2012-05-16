@@ -1,0 +1,14 @@
+{
+    "product": "extjs",
+    "version": "4.0.7",
+    "path": "extjs/4.0.7/examples/tabs/tabs/index.html",
+    "files": [
+        "ajax1.html",
+        "ajax2.html",
+        "app.js",
+        "index.html",
+        "resources/css/app.css"
+    ],
+    "categories": [],
+    "tags": []
+}

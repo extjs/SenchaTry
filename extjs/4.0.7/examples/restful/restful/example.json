@@ -1,0 +1,22 @@
+{
+    "product": "extjs",
+    "version": "4.0.7",
+    "path": "extjs/4.0.7/examples/restful/restful/index.html",
+    "files": [
+        "app.js",
+        "app.php",
+        "examples.js",
+        "index.html",
+        "remote/app/controllers/users.php",
+        "remote/app/models/user.php",
+        "remote/init.php",
+        "remote/lib/application_controller.php",
+        "remote/lib/model.php",
+        "remote/lib/request.php",
+        "remote/lib/response.php",
+        "remote/lib/session_db.php",
+        "resources/css/app.css"
+    ],
+    "categories": [],
+    "tags": []
+}
