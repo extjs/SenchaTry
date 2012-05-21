@@ -1,38 +1,15 @@
 {
+    "title": "GeoCon",
     "product": "touch",
     "version": "2.0.0",
-    "path": "touch/2.0.0/examples/geocongress/index.html",
-    "files": [
-        "app.js",
-        "app.json",
-        "app/controller/Committee.js",
-        "app/controller/Legislator.js",
-        "app/controller/SplashScreen.js",
-        "app/model/Bill.js",
-        "app/model/Committee.js",
-        "app/model/Legislator.js",
-        "app/model/Vote.js",
-        "app/store/Bills.js",
-        "app/store/Committees.js",
-        "app/store/Districts.js",
-        "app/store/Legislators.js",
-        "app/store/States.js",
-        "app/store/Votes.js",
-        "app/view/Main.js",
-        "app/view/Settings.js",
-        "app/view/Splash.js",
-        "app/view/bill/List.js",
-        "app/view/bill/Show.js",
-        "app/view/committee/List.js",
-        "app/view/legislator/Bio.js",
-        "app/view/legislator/Info.js",
-        "app/view/legislator/List.js",
-        "app/view/legislator/TabPanel.js",
-        "app/view/vote/List.js",
-        "app/view/vote/Show.js",
-        "index.html",
-        "resources/css/app.css"
+    "path": "touch/2.0.0/examples/geocongress/",
+    "categories": [
+        {
+            "label": "Sencha Touch"
+        },
+        {
+            "label": "Sencha Touch 2.0.0"
+        }
     ],
-    "categories": [],
     "tags": []
 }

@@ -1,11 +1,15 @@
 {
+    "title": "tabs Example",
     "product": "touch",
     "version": "2.0.1",
-    "path": "touch/2.0.1/guides/tabs.3/index.html",
-    "files": [
-        "app.js",
-        "index.html"
+    "path": "touch/2.0.1/guides/tabs.3/",
+    "categories": [
+        {
+            "label": "Sencha Touch"
+        },
+        {
+            "label": "Sencha Touch 2.0.1"
+        }
     ],
-    "categories": [],
     "tags": []
 }

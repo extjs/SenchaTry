@@ -1,11 +1,15 @@
 {
+    "title": "Getting the selected item value for an Ext.field.Radio control in Sencha Touch 2",
     "product": "touch",
     "version": "2.0.1",
-    "path": "touch/2.0.1/demos/Ext.field.Radio.getGroupValue/index.html",
-    "files": [
-        "app.js",
-        "index.html"
+    "path": "touch/2.0.1/demos/Ext.field.Radio.getGroupValue/",
+    "categories": [
+        {
+            "label": "Sencha Touch"
+        },
+        {
+            "label": "Sencha Touch 2.0.1"
+        }
     ],
-    "categories": [],
     "tags": []
 }

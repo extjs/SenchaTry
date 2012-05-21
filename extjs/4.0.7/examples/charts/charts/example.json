@@ -1,13 +1,15 @@
 {
+    "title": "Line Chart",
     "product": "extjs",
     "version": "4.0.7",
-    "path": "extjs/4.0.7/examples/charts/charts/index.html",
-    "files": [
-        "app.js",
-        "index.html",
-        "resources/css/app.css",
-        "resources/example-data.js"
+    "path": "extjs/4.0.7/examples/charts/charts/",
+    "categories": [
+        {
+            "label": "Ext JS"
+        },
+        {
+            "label": "Ext JS 4.0.7"
+        }
     ],
-    "categories": [],
     "tags": []
 }

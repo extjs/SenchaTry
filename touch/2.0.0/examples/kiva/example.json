@@ -1,26 +1,15 @@
 {
+    "title": "Kiva",
     "product": "touch",
     "version": "2.0.0",
-    "path": "touch/2.0.0/examples/kiva/index.html",
-    "files": [
-        "app.js",
-        "app.json",
-        "app/controller/Loans.js",
-        "app/model/Loan.js",
-        "app/store/Loans.js",
-        "app/view/Detail.js",
-        "app/view/LoanFilter.js",
-        "app/view/LoansList.js",
-        "app/view/LoansListItem.js",
-        "app/view/LoansListItemCompletion.js",
-        "app/view/Main.js",
-        "app/view/detail/Information.js",
-        "app/view/detail/Map.js",
-        "app/view/detail/Schedule.js",
-        "index.html",
-        "lib/KivaProxy.js",
-        "resources/css/app.css"
+    "path": "touch/2.0.0/examples/kiva/",
+    "categories": [
+        {
+            "label": "Sencha Touch"
+        },
+        {
+            "label": "Sencha Touch 2.0.0"
+        }
     ],
-    "categories": [],
     "tags": []
 }

@@ -1,17 +1,15 @@
 {
+    "title": "Ext.Direct Form Integration",
     "product": "extjs",
     "version": "4.0.7",
-    "path": "extjs/4.0.7/examples/direct/direct-form/index.html",
-    "files": [
-        "app.js",
-        "index.html",
-        "php/api.php",
-        "php/classes/Profile.php",
-        "php/classes/TestAction.php",
-        "php/config.php",
-        "php/poll.php",
-        "php/router.php"
+    "path": "extjs/4.0.7/examples/direct/direct-form/",
+    "categories": [
+        {
+            "label": "Ext JS"
+        },
+        {
+            "label": "Ext JS 4.0.7"
+        }
     ],
-    "categories": [],
     "tags": []
 }

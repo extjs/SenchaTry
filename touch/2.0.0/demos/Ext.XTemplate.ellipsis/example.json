@@ -1,12 +1,15 @@
 {
+    "title": "Truncating strings in an XTemplate in Sencha Touch 2",
     "product": "touch",
     "version": "2.0.0",
-    "path": "touch/2.0.0/demos/Ext.XTemplate.ellipsis/index.html",
-    "files": [
-        "app.js",
-        "app/styles.css",
-        "index.html"
+    "path": "touch/2.0.0/demos/Ext.XTemplate.ellipsis/",
+    "categories": [
+        {
+            "label": "Sencha Touch"
+        },
+        {
+            "label": "Sencha Touch 2.0.0"
+        }
     ],
-    "categories": [],
     "tags": []
 }

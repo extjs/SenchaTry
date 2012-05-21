@@ -1,11 +1,15 @@
 {
+    "title": "HBox Form Example",
     "product": "extjs",
     "version": "4.0.7",
-    "path": "extjs/4.0.7/examples/form/hbox-form/index.html",
-    "files": [
-        "app.js",
-        "index.html"
+    "path": "extjs/4.0.7/examples/form/hbox-form/",
+    "categories": [
+        {
+            "label": "Ext JS"
+        },
+        {
+            "label": "Ext JS 4.0.7"
+        }
     ],
-    "categories": [],
     "tags": []
 }

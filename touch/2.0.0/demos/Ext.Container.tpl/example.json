@@ -1,12 +1,15 @@
 {
+    "title": "Creating a simple XTemplate list in Sencha Touch 2",
     "product": "touch",
     "version": "2.0.0",
-    "path": "touch/2.0.0/demos/Ext.Container.tpl/index.html",
-    "files": [
-        "app.js",
-        "app/styles.css",
-        "index.html"
+    "path": "touch/2.0.0/demos/Ext.Container.tpl/",
+    "categories": [
+        {
+            "label": "Sencha Touch"
+        },
+        {
+            "label": "Sencha Touch 2.0.0"
+        }
     ],
-    "categories": [],
     "tags": []
 }

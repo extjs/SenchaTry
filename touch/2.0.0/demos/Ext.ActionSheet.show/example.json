@@ -1,12 +1,15 @@
 {
+    "title": "Displaying an Ext.ActionSheet container in Sencha Touch 2",
     "product": "touch",
     "version": "2.0.0",
-    "path": "touch/2.0.0/demos/Ext.ActionSheet.show/index.html",
-    "files": [
-        ".DS_Store",
-        "app.js",
-        "index.html"
+    "path": "touch/2.0.0/demos/Ext.ActionSheet.show/",
+    "categories": [
+        {
+            "label": "Sencha Touch"
+        },
+        {
+            "label": "Sencha Touch 2.0.0"
+        }
     ],
-    "categories": [],
     "tags": []
 }

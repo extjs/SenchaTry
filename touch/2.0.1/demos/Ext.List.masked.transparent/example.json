@@ -1,11 +1,15 @@
 {
+    "title": "Toggling the loading mask transparency on Ext.List component in Sencha Touch 2",
     "product": "touch",
     "version": "2.0.1",
-    "path": "touch/2.0.1/demos/Ext.List.masked.transparent/index.html",
-    "files": [
-        "app.js",
-        "index.html"
+    "path": "touch/2.0.1/demos/Ext.List.masked.transparent/",
+    "categories": [
+        {
+            "label": "Sencha Touch"
+        },
+        {
+            "label": "Sencha Touch 2.0.1"
+        }
     ],
-    "categories": [],
     "tags": []
 }

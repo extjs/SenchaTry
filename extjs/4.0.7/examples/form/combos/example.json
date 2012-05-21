@@ -1,14 +1,15 @@
 {
+    "title": "Combo Boxes",
     "product": "extjs",
     "version": "4.0.7",
-    "path": "extjs/4.0.7/examples/form/combos/index.html",
-    "files": [
-        "app.js",
-        "example.css",
-        "index.html",
-        "resources/css/app.css",
-        "shared/example.css"
+    "path": "extjs/4.0.7/examples/form/combos/",
+    "categories": [
+        {
+            "label": "Ext JS"
+        },
+        {
+            "label": "Ext JS 4.0.7"
+        }
     ],
-    "categories": [],
     "tags": []
 }

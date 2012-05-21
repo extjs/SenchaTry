@@ -1,13 +1,15 @@
 {
+    "title": "QuickTips Example",
     "product": "extjs",
     "version": "4.0.7",
-    "path": "extjs/4.0.7/examples/qtips/qtips/index.html",
-    "files": [
-        "ajax-tip.html",
-        "app.js",
-        "index.html",
-        "resources/css/app.css"
+    "path": "extjs/4.0.7/examples/qtips/qtips/",
+    "categories": [
+        {
+            "label": "Ext JS"
+        },
+        {
+            "label": "Ext JS 4.0.7"
+        }
     ],
-    "categories": [],
     "tags": []
 }

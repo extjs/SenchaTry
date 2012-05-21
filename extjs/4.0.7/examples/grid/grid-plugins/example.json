@@ -1,13 +1,15 @@
 {
+    "title": "Grid Plugins Examples",
     "product": "extjs",
     "version": "4.0.7",
-    "path": "extjs/4.0.7/examples/grid/grid-plugins/index.html",
-    "files": [
-        "app.js",
-        "index.html",
-        "resources/css/app.css",
-        "ux/RowExpander.js"
+    "path": "extjs/4.0.7/examples/grid/grid-plugins/",
+    "categories": [
+        {
+            "label": "Ext JS"
+        },
+        {
+            "label": "Ext JS 4.0.7"
+        }
     ],
-    "categories": [],
     "tags": []
 }

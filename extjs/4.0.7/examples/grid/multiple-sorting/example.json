@@ -1,14 +1,15 @@
 {
+    "title": "Multiple grid sorting example",
     "product": "extjs",
     "version": "4.0.7",
-    "path": "extjs/4.0.7/examples/grid/multiple-sorting/index.html",
-    "files": [
-        "app.js",
-        "index.html",
-        "resources/css/app.css",
-        "ux/BoxReorderer.js",
-        "ux/ToolbarDroppable.js"
+    "path": "extjs/4.0.7/examples/grid/multiple-sorting/",
+    "categories": [
+        {
+            "label": "Ext JS"
+        },
+        {
+            "label": "Ext JS 4.0.7"
+        }
     ],
-    "categories": [],
     "tags": []
 }

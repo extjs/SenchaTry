@@ -1,11 +1,15 @@
 {
+    "title": "Grouping the increment/decrement buttons on an Ext.field.Spinner control in Sencha Touch 2",
     "product": "touch",
     "version": "2.0.0",
-    "path": "touch/2.0.0/demos/Ext.field.Spinner.groupButtons/index.html",
-    "files": [
-        "app.js",
-        "index.html"
+    "path": "touch/2.0.0/demos/Ext.field.Spinner.groupButtons/",
+    "categories": [
+        {
+            "label": "Sencha Touch"
+        },
+        {
+            "label": "Sencha Touch 2.0.0"
+        }
     ],
-    "categories": [],
     "tags": []
 }

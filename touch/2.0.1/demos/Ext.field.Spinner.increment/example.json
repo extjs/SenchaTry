@@ -1,11 +1,15 @@
 {
+    "title": "Setting the increment value for an Ext.field.Spinner in Sencha Touch 2",
     "product": "touch",
     "version": "2.0.1",
-    "path": "touch/2.0.1/demos/Ext.field.Spinner.increment/index.html",
-    "files": [
-        "app.js",
-        "index.html"
+    "path": "touch/2.0.1/demos/Ext.field.Spinner.increment/",
+    "categories": [
+        {
+            "label": "Sencha Touch"
+        },
+        {
+            "label": "Sencha Touch 2.0.1"
+        }
     ],
-    "categories": [],
     "tags": []
 }

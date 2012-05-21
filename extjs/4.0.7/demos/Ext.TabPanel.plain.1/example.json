@@ -1,11 +1,15 @@
 {
+    "title": "Removing the tab bar background fill on an Ext.TabPanel container in Ext JS",
     "product": "extjs",
     "version": "4.0.7",
-    "path": "extjs/4.0.7/demos/Ext.TabPanel.plain.1/index.html",
-    "files": [
-        "app.js",
-        "index.html"
+    "path": "extjs/4.0.7/demos/Ext.TabPanel.plain.1/",
+    "categories": [
+        {
+            "label": "Ext JS"
+        },
+        {
+            "label": "Ext JS 4.0.7"
+        }
     ],
-    "categories": [],
     "tags": []
 }

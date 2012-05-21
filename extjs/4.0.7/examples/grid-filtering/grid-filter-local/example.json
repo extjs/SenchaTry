@@ -1,25 +1,15 @@
 {
+    "title": "Custom Grid Filters Example (local filtering)",
     "product": "extjs",
     "version": "4.0.7",
-    "path": "extjs/4.0.7/examples/grid-filtering/grid-filter-local/index.html",
-    "files": [
-        "app.js",
-        "grid-demo.sql",
-        "grid-filter.json",
-        "grid-filter.php",
-        "index.html",
-        "ux/grid/FiltersFeature.js",
-        "ux/grid/css/GridFilters.css",
-        "ux/grid/css/RangeMenu.css",
-        "ux/grid/filter/BooleanFilter.js",
-        "ux/grid/filter/DateFilter.js",
-        "ux/grid/filter/Filter.js",
-        "ux/grid/filter/ListFilter.js",
-        "ux/grid/filter/NumericFilter.js",
-        "ux/grid/filter/StringFilter.js",
-        "ux/grid/menu/ListMenu.js",
-        "ux/grid/menu/RangeMenu.js"
+    "path": "extjs/4.0.7/examples/grid-filtering/grid-filter-local/",
+    "categories": [
+        {
+            "label": "Ext JS"
+        },
+        {
+            "label": "Ext JS 4.0.7"
+        }
     ],
-    "categories": [],
     "tags": []
 }

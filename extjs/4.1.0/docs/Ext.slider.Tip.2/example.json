@@ -1,11 +1,15 @@
 {
+    "title": "Ext.slider.Tip Example",
     "product": "extjs",
     "version": "4.1.0",
-    "path": "extjs/4.1.0/docs/Ext.slider.Tip.2/index.html",
-    "files": [
-        "app.js",
-        "index.html"
+    "path": "extjs/4.1.0/docs/Ext.slider.Tip.2/",
+    "categories": [
+        {
+            "label": "Ext JS"
+        },
+        {
+            "label": "Ext JS 4.1.0"
+        }
     ],
-    "categories": [],
     "tags": []
 }

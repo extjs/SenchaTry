@@ -1,11 +1,15 @@
 {
+    "title": "Ext.picker.Picker Example",
     "product": "touch",
     "version": "2.0.0",
-    "path": "touch/2.0.0/docs/Ext.picker.Picker.2/index.html",
-    "files": [
-        "app.js",
-        "index.html"
+    "path": "touch/2.0.0/docs/Ext.picker.Picker.2/",
+    "categories": [
+        {
+            "label": "Sencha Touch"
+        },
+        {
+            "label": "Sencha Touch 2.0.0"
+        }
     ],
-    "categories": [],
     "tags": []
 }

@@ -1,14 +1,15 @@
 {
+    "title": "Ext JS 4 Themes",
     "product": "extjs",
     "version": "4.0.7",
-    "path": "extjs/4.0.7/examples/themes/themes/index.html",
-    "files": [
-        "app.js",
-        "index-access.html",
-        "index-gray.html",
-        "index.html",
-        "resources/css/app.css"
+    "path": "extjs/4.0.7/examples/themes/themes/",
+    "categories": [
+        {
+            "label": "Ext JS"
+        },
+        {
+            "label": "Ext JS 4.0.7"
+        }
     ],
-    "categories": [],
     "tags": []
 }

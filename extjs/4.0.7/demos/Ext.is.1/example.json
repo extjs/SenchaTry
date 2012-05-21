@@ -1,61 +1,15 @@
 {
+    "title": "Determining the user's platform using Ext JS",
     "product": "extjs",
     "version": "4.0.7",
     "path": "extjs/4.0.7/demos/Ext.is.1/",
-    "files": [
-        "index.html",
-        "app.js"
-    ],
-    
     "categories": [
         {
-            "label": "Ext.is",
-            "url": "http://docs.sencha.com/ext-js/4-0/#!/api/Ext.is"
-        }
-    ],
-    "tags": [
+            "label": "Ext JS"
+        },
         {
-            "label": "Android",
-            "url": "http://docs.sencha.com/ext-js/4-0/#!/api/Ext.is-property-Android"
-        }, {
-            "label": "Blackberry",
-            "url": "http://docs.sencha.com/ext-js/4-0/#!/api/Ext.is-property-Blackberry"
-        }, {
-            "label": "Desktop",
-            "url": "http://docs.sencha.com/ext-js/4-0/#!/api/Ext.is-property-Desktop"
-        }, {
-            "label": "Linux",
-            "url": "http://docs.sencha.com/ext-js/4-0/#!/api/Ext.is-property-Linux"
-        }, {
-            "label": "Mac",
-            "url": "http://docs.sencha.com/ext-js/4-0/#!/api/Ext.is-property-Mac"
-        }, {
-            "label": "Phone",
-            "url": "http://docs.sencha.com/ext-js/4-0/#!/api/Ext.is-property-Phone"
-        }, {
-            "label": "Standalone",
-            "url": "http://docs.sencha.com/ext-js/4-0/#!/api/Ext.is-property-Standalone"
-        }, {
-            "label": "Tablet",
-            "url": "http://docs.sencha.com/ext-js/4-0/#!/api/Ext.is-property-Tablet"
-        }, {
-            "label": "Windows",
-            "url": "http://docs.sencha.com/ext-js/4-0/#!/api/Ext.is-property-Windows"
-        }, {
-            "label": "iOS",
-            "url": "http://docs.sencha.com/ext-js/4-0/#!/api/Ext.is-property-iOS"
-        }, {
-            "label": "iPad",
-            "url": "http://docs.sencha.com/ext-js/4-0/#!/api/Ext.is-property-iPad"
-        }, {
-            "label": "iPhone",
-            "url": "http://docs.sencha.com/ext-js/4-0/#!/api/Ext.is-property-iPhone"
-        }, {
-            "label": "iPod",
-            "url": "http://docs.sencha.com/ext-js/4-0/#!/api/Ext.is-property-iPod"
+            "label": "Ext JS 4.0.7"
         }
     ],
-    
-    "seeAlso": [
-    ]
+    "tags": []
 }

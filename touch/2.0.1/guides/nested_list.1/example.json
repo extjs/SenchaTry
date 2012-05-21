@@ -1,11 +1,15 @@
 {
+    "title": "nested_list Example",
     "product": "touch",
     "version": "2.0.1",
-    "path": "touch/2.0.1/guides/nested_list.1/index.html",
-    "files": [
-        "app.js",
-        "index.html"
+    "path": "touch/2.0.1/guides/nested_list.1/",
+    "categories": [
+        {
+            "label": "Sencha Touch"
+        },
+        {
+            "label": "Sencha Touch 2.0.1"
+        }
     ],
-    "categories": [],
     "tags": []
 }

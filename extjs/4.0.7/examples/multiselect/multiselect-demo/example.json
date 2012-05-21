@@ -1,16 +1,15 @@
 {
+    "title": "MultiSelect and ItemSelector",
     "product": "extjs",
     "version": "4.0.7",
-    "path": "extjs/4.0.7/examples/multiselect/multiselect-demo/index.html",
-    "files": [
-        "app.js",
-        "index.html",
-        "ux/css/ItemSelector.css",
-        "ux/form/ItemSelector.js",
-        "ux/form/MultiSelect.js",
-        "ux/layout/component/form/ItemSelector.js",
-        "ux/layout/component/form/MultiSelect.js"
+    "path": "extjs/4.0.7/examples/multiselect/multiselect-demo/",
+    "categories": [
+        {
+            "label": "Ext JS"
+        },
+        {
+            "label": "Ext JS 4.0.7"
+        }
     ],
-    "categories": [],
     "tags": []
 }

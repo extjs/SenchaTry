@@ -1,11 +1,15 @@
 {
+    "title": "Setting a title bar UI theme on an Ext.TitleBar container in Sencha Touch 2",
     "product": "touch",
     "version": "2.0.0",
-    "path": "touch/2.0.0/demos/Ext.TitleBar.ui/index.html",
-    "files": [
-        "app.js",
-        "index.html"
+    "path": "touch/2.0.0/demos/Ext.TitleBar.ui/",
+    "categories": [
+        {
+            "label": "Sencha Touch"
+        },
+        {
+            "label": "Sencha Touch 2.0.0"
+        }
     ],
-    "categories": [],
     "tags": []
 }

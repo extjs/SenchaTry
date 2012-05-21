@@ -1,11 +1,15 @@
 {
+    "title": "Setting the thumb increment on an Ext.field.Slider control in Sencha Touch 2",
     "product": "touch",
     "version": "2.0.1",
-    "path": "touch/2.0.1/demos/Ext.field.Slider.increment/index.html",
-    "files": [
-        "app.js",
-        "index.html"
+    "path": "touch/2.0.1/demos/Ext.field.Slider.increment/",
+    "categories": [
+        {
+            "label": "Sencha Touch"
+        },
+        {
+            "label": "Sencha Touch 2.0.1"
+        }
     ],
-    "categories": [],
     "tags": []
 }

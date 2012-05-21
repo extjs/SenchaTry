@@ -1,11 +1,15 @@
 {
+    "title": "Adding a loading mask to an Ext.panel.Panel container in Ext JS",
     "product": "extjs",
     "version": "4.1.0",
-    "path": "extjs/4.1.0/demos/Ext.Panel.setLoading.2/index.html",
-    "files": [
-        "app.js",
-        "index.html"
+    "path": "extjs/4.1.0/demos/Ext.Panel.setLoading.2/",
+    "categories": [
+        {
+            "label": "Ext JS"
+        },
+        {
+            "label": "Ext JS 4.1.0"
+        }
     ],
-    "categories": [],
     "tags": []
 }

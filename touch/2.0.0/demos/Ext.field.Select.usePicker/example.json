@@ -1,11 +1,15 @@
 {
+    "title": "Toggling a picker on the Ext.field.Select control in Sencha Touch 2",
     "product": "touch",
     "version": "2.0.0",
-    "path": "touch/2.0.0/demos/Ext.field.Select.usePicker/index.html",
-    "files": [
-        "app.js",
-        "index.html"
+    "path": "touch/2.0.0/demos/Ext.field.Select.usePicker/",
+    "categories": [
+        {
+            "label": "Sencha Touch"
+        },
+        {
+            "label": "Sencha Touch 2.0.0"
+        }
     ],
-    "categories": [],
     "tags": []
 }

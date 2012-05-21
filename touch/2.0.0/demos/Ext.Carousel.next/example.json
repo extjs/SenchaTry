@@ -1,11 +1,15 @@
 {
+    "title": "Programmatically changing the active item on an Ext.Carousel component in Sencha Touch 2",
     "product": "touch",
     "version": "2.0.0",
-    "path": "touch/2.0.0/demos/Ext.Carousel.next/index.html",
-    "files": [
-        "app.js",
-        "index.html"
+    "path": "touch/2.0.0/demos/Ext.Carousel.next/",
+    "categories": [
+        {
+            "label": "Sencha Touch"
+        },
+        {
+            "label": "Sencha Touch 2.0.0"
+        }
     ],
-    "categories": [],
     "tags": []
 }

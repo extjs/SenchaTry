@@ -1,11 +1,15 @@
 {
+    "title": "Filtering the index bar letters on an Ext.List component in Sencha Touch 2",
     "product": "touch",
     "version": "2.0.1",
-    "path": "touch/2.0.1/demos/Ext.List.indexBar.letters/index.html",
-    "files": [
-        "app.js",
-        "index.html"
+    "path": "touch/2.0.1/demos/Ext.List.indexBar.letters/",
+    "categories": [
+        {
+            "label": "Sencha Touch"
+        },
+        {
+            "label": "Sencha Touch 2.0.1"
+        }
     ],
-    "categories": [],
     "tags": []
 }

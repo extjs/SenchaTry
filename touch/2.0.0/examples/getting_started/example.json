@@ -1,15 +1,15 @@
 {
+    "title": "Getting Started",
     "product": "touch",
     "version": "2.0.0",
-    "path": "touch/2.0.0/examples/getting_started/index.html",
-    "files": [
-        "app.js",
-        "app.json",
-        "blog.json",
-        "contact.php",
-        "index.html",
-        "resources/css/app.css"
+    "path": "touch/2.0.0/examples/getting_started/",
+    "categories": [
+        {
+            "label": "Sencha Touch"
+        },
+        {
+            "label": "Sencha Touch 2.0.0"
+        }
     ],
-    "categories": [],
     "tags": []
 }

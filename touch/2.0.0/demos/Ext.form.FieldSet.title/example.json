@@ -1,11 +1,15 @@
 {
+    "title": "Setting the title on an Ext.form.FieldSet container in Sencha Touch 2",
     "product": "touch",
     "version": "2.0.0",
-    "path": "touch/2.0.0/demos/Ext.form.FieldSet.title/index.html",
-    "files": [
-        "app.js",
-        "index.html"
+    "path": "touch/2.0.0/demos/Ext.form.FieldSet.title/",
+    "categories": [
+        {
+            "label": "Sencha Touch"
+        },
+        {
+            "label": "Sencha Touch 2.0.0"
+        }
     ],
-    "categories": [],
     "tags": []
 }

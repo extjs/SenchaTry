@@ -1,11 +1,15 @@
 {
+    "title": "Ext.field.Select Example",
     "product": "touch",
     "version": "2.0.0",
-    "path": "touch/2.0.0/docs/Ext.field.Select.1/index.html",
-    "files": [
-        "app.js",
-        "index.html"
+    "path": "touch/2.0.0/docs/Ext.field.Select.1/",
+    "categories": [
+        {
+            "label": "Sencha Touch"
+        },
+        {
+            "label": "Sencha Touch 2.0.0"
+        }
     ],
-    "categories": [],
     "tags": []
 }

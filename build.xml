@@ -234,4 +234,20 @@ $ ant -projecthelp
         </csslint>
     </target>
     
+    
+    <target name="lint"
+            description=""
+            depends="jshint, csslint">
+        <echo>Linting...</echo>
+    </target>
+    
+    
+    <!-- Find all those pesky .DS_Store files -->
+    <target name="example_json"
+            description="Find all those pesky example.json files.">
+        <delete>
+            <fileset dir="${src.dir}" includes="**/example.json" defaultexcludes="no" />
+        </delete>
+    </target>
+    
 </project>

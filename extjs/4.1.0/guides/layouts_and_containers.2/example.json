@@ -1,11 +1,15 @@
 {
+    "title": "Layouts and Containers Example",
     "product": "extjs",
     "version": "4.1.0",
-    "path": "extjs/4.1.0/guides/layouts_and_containers.2/index.html",
-    "files": [
-        "app.js",
-        "index.html"
+    "path": "extjs/4.1.0/guides/layouts_and_containers.2/",
+    "categories": [
+        {
+            "label": "Ext JS"
+        },
+        {
+            "label": "Ext JS 4.1.0"
+        }
     ],
-    "categories": [],
     "tags": []
 }

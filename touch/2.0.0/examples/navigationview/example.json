@@ -1,22 +1,15 @@
 {
+    "title": "Navigation View",
     "product": "touch",
     "version": "2.0.0",
-    "path": "touch/2.0.0/examples/navigationview/index.html",
-    "files": [
-        "app.js",
-        "app.json",
-        "app/controller/Application.js",
-        "app/model/Contact.js",
-        "app/store/Contacts.js",
-        "app/view/Contacts.js",
-        "app/view/Main.js",
-        "app/view/contact/Edit.js",
-        "app/view/contact/Show.js",
-        "contacts.json",
-        "index.html",
-        "resources/css/app.css",
-        "resources/images/headshots/attributions.txt"
+    "path": "touch/2.0.0/examples/navigationview/",
+    "categories": [
+        {
+            "label": "Sencha Touch"
+        },
+        {
+            "label": "Sencha Touch 2.0.0"
+        }
     ],
-    "categories": [],
     "tags": []
 }

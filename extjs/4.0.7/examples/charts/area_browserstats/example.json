@@ -1,11 +1,15 @@
 {
+    "title": "Area - BrowserStats",
     "product": "extjs",
     "version": "4.0.7",
-    "path": "extjs/4.0.7/examples/charts/area_browserstats/index.html",
-    "files": [
-        "app.js",
-        "index.html"
+    "path": "extjs/4.0.7/examples/charts/area_browserstats/",
+    "categories": [
+        {
+            "label": "Ext JS"
+        },
+        {
+            "label": "Ext JS 4.0.7"
+        }
     ],
-    "categories": [],
     "tags": []
 }

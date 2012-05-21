@@ -1,11 +1,15 @@
 {
+    "title": "Using Components in Sencha Touch 2",
     "product": "touch",
     "version": "2.0.0",
-    "path": "touch/2.0.0/guides/components.4/index.html",
-    "files": [
-        "app.js",
-        "index.html"
+    "path": "touch/2.0.0/guides/components.4/",
+    "categories": [
+        {
+            "label": "Sencha Touch"
+        },
+        {
+            "label": "Sencha Touch 2.0.0"
+        }
     ],
-    "categories": [],
     "tags": []
 }

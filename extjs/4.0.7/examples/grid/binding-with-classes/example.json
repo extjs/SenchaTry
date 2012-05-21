@@ -1,13 +1,15 @@
 {
+    "title": "Data Binding Example - Implemented with classes",
     "product": "extjs",
     "version": "4.0.7",
-    "path": "extjs/4.0.7/examples/grid/binding-with-classes/index.html",
-    "files": [
-        "app.js",
-        "index.html",
-        "resources/css/app.css",
-        "sheldon.xml"
+    "path": "extjs/4.0.7/examples/grid/binding-with-classes/",
+    "categories": [
+        {
+            "label": "Ext JS"
+        },
+        {
+            "label": "Ext JS 4.0.7"
+        }
     ],
-    "categories": [],
     "tags": []
 }

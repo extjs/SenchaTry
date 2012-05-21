@@ -1,16 +1,15 @@
 {
+    "title": "Live Search Grid Example",
     "product": "extjs",
     "version": "4.0.7",
-    "path": "extjs/4.0.7/examples/grid/live-search-grid/index.html",
-    "files": [
-        "app.js",
-        "index.html",
-        "resources/css/app.css",
-        "ux/LiveSearchGridPanel.js",
-        "ux/css/LiveSearchGridPanel.css",
-        "ux/statusbar/StatusBar.js",
-        "ux/statusbar/css/statusbar.css"
+    "path": "extjs/4.0.7/examples/grid/live-search-grid/",
+    "categories": [
+        {
+            "label": "Ext JS"
+        },
+        {
+            "label": "Ext JS 4.0.7"
+        }
     ],
-    "categories": [],
     "tags": []
 }

@@ -1,13 +1,15 @@
 {
+    "title": "Checkbox Selection in a TreePanel",
     "product": "extjs",
     "version": "4.0.7",
-    "path": "extjs/4.0.7/examples/tree/check-tree/index.html",
-    "files": [
-        "app.js",
-        "check-nodes.json",
-        "index.html",
-        "resources/css/app.css"
+    "path": "extjs/4.0.7/examples/tree/check-tree/",
+    "categories": [
+        {
+            "label": "Ext JS"
+        },
+        {
+            "label": "Ext JS 4.0.7"
+        }
     ],
-    "categories": [],
     "tags": []
 }

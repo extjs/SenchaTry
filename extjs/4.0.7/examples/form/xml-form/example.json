@@ -1,14 +1,15 @@
 {
+    "title": "Loading/Saving a Dynamic Form using XML",
     "product": "extjs",
     "version": "4.0.7",
-    "path": "extjs/4.0.7/examples/form/xml-form/index.html",
-    "files": [
-        "app.js",
-        "index.html",
-        "shared/states.js",
-        "xml-form-data.xml",
-        "xml-form-errors.xml"
+    "path": "extjs/4.0.7/examples/form/xml-form/",
+    "categories": [
+        {
+            "label": "Ext JS"
+        },
+        {
+            "label": "Ext JS 4.0.7"
+        }
     ],
-    "categories": [],
     "tags": []
 }

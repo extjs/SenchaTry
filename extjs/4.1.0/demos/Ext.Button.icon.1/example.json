@@ -1,12 +1,15 @@
 {
+    "title": "Displaying an icon on a Button component using Ext JS",
     "product": "extjs",
     "version": "4.1.0",
-    "path": "extjs/4.1.0/demos/Ext.Button.icon.1/index.html",
-    "files": [
-        "app.js",
-        "favicon.ico",
-        "index.html"
+    "path": "extjs/4.1.0/demos/Ext.Button.icon.1/",
+    "categories": [
+        {
+            "label": "Ext JS"
+        },
+        {
+            "label": "Ext JS 4.1.0"
+        }
     ],
-    "categories": [],
     "tags": []
 }

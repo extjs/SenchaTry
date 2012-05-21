@@ -1,12 +1,15 @@
 {
+    "title": "Grouped Bar Chart",
     "product": "extjs",
     "version": "4.0.7",
-    "path": "extjs/4.0.7/examples/charts/groupedbar/index.html",
-    "files": [
-        "app.js",
-        "index.html",
-        "resources/example-data.js"
+    "path": "extjs/4.0.7/examples/charts/groupedbar/",
+    "categories": [
+        {
+            "label": "Ext JS"
+        },
+        {
+            "label": "Ext JS 4.0.7"
+        }
     ],
-    "categories": [],
     "tags": []
 }

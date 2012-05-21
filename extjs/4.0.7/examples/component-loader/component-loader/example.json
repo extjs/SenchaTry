@@ -1,14 +1,15 @@
 {
+    "title": "Ext Component Loading",
     "product": "extjs",
     "version": "4.0.7",
-    "path": "extjs/4.0.7/examples/component-loader/component-loader/index.html",
-    "files": [
-        "app.js",
-        "boxes.php",
-        "content.html",
-        "data.json",
-        "index.html"
+    "path": "extjs/4.0.7/examples/component-loader/component-loader/",
+    "categories": [
+        {
+            "label": "Ext JS"
+        },
+        {
+            "label": "Ext JS 4.0.7"
+        }
     ],
-    "categories": [],
     "tags": []
 }

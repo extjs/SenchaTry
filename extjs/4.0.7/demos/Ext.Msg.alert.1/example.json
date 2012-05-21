@@ -1,30 +1,15 @@
 {
+    "title": "Displaying a simple alert message using the Ext.Msg class",
     "product": "extjs",
     "version": "4.0.7",
     "path": "extjs/4.0.7/demos/Ext.Msg.alert.1/",
-    "files": [
-        "index.html",
-        "app.js",
-        "app/resources/app.css"
-    ],
-    
     "categories": [
         {
-            "label": "Ext.MessageBox",
-            "url": "http://docs.sencha.com/ext-js/4-0/#!/api/Ext.MessageBox"
+            "label": "Ext JS"
         },
         {
-            "label": "Ext.Msg",
-            "url": "http://docs.sencha.com/ext-js/4-0/#!/api/Ext.MessageBox"
+            "label": "Ext JS 4.0.7"
         }
     ],
-    "tags": [
-        {
-            "label": "alert()",
-            "url": "http://docs.sencha.com/ext-js/4-0/#!/api/Ext.MessageBox-method-alert"
-        }
-    ],
-    
-    "seeAlso": [
-    ]
+    "tags": []
 }

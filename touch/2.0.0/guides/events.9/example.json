@@ -1,11 +1,15 @@
 {
+    "title": "Understanding and Using Events in Sencha Touch 2",
     "product": "touch",
     "version": "2.0.0",
-    "path": "touch/2.0.0/guides/events.9/index.html",
-    "files": [
-        "app.js",
-        "index.html"
+    "path": "touch/2.0.0/guides/events.9/",
+    "categories": [
+        {
+            "label": "Sencha Touch"
+        },
+        {
+            "label": "Sencha Touch 2.0.0"
+        }
     ],
-    "categories": [],
     "tags": []
 }

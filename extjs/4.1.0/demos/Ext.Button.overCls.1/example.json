@@ -1,12 +1,15 @@
 {
+    "title": "Specifying custom hover and pressed styles on an Ext.Button component using Ext JS",
     "product": "extjs",
     "version": "4.1.0",
-    "path": "extjs/4.1.0/demos/Ext.Button.overCls.1/index.html",
-    "files": [
-        "app.js",
-        "app/resources/app.css",
-        "index.html"
+    "path": "extjs/4.1.0/demos/Ext.Button.overCls.1/",
+    "categories": [
+        {
+            "label": "Ext JS"
+        },
+        {
+            "label": "Ext JS 4.1.0"
+        }
     ],
-    "categories": [],
     "tags": []
 }

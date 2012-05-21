@@ -1,12 +1,15 @@
 {
+    "title": "Specifying a custom style for the pressed state on an Ext.SegmentedButton component in Sencha Touch 2",
     "product": "touch",
     "version": "2.0.1",
-    "path": "touch/2.0.1/demos/Ext.SegmentedButton.pressedCls/index.html",
-    "files": [
-        "app.js",
-        "app/styles.css",
-        "index.html"
+    "path": "touch/2.0.1/demos/Ext.SegmentedButton.pressedCls/",
+    "categories": [
+        {
+            "label": "Sencha Touch"
+        },
+        {
+            "label": "Sencha Touch 2.0.1"
+        }
     ],
-    "categories": [],
     "tags": []
 }

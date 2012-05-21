@@ -1,11 +1,15 @@
 {
+    "title": "Maintaining Component State Sample",
     "product": "extjs",
     "version": "4.0.7",
-    "path": "extjs/4.0.7/examples/state/state/index.html",
-    "files": [
-        "app.js",
-        "index.html"
+    "path": "extjs/4.0.7/examples/state/state/",
+    "categories": [
+        {
+            "label": "Ext JS"
+        },
+        {
+            "label": "Ext JS 4.0.7"
+        }
     ],
-    "categories": [],
     "tags": []
 }

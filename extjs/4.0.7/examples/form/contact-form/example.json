@@ -1,12 +1,15 @@
 {
+    "title": "Contact Form",
     "product": "extjs",
     "version": "4.0.7",
-    "path": "extjs/4.0.7/examples/form/contact-form/index.html",
-    "files": [
-        "app.js",
-        "index.html",
-        "resources/css/app.css"
+    "path": "extjs/4.0.7/examples/form/contact-form/",
+    "categories": [
+        {
+            "label": "Ext JS"
+        },
+        {
+            "label": "Ext JS 4.0.7"
+        }
     ],
-    "categories": [],
     "tags": []
 }

@@ -1,11 +1,15 @@
 {
+    "title": "Ext.Panel Example",
     "product": "touch",
     "version": "2.0.1",
-    "path": "touch/2.0.1/docs/Ext.Panel.1/index.html",
-    "files": [
-        "app.js",
-        "index.html"
+    "path": "touch/2.0.1/docs/Ext.Panel.1/",
+    "categories": [
+        {
+            "label": "Sencha Touch"
+        },
+        {
+            "label": "Sencha Touch 2.0.1"
+        }
     ],
-    "categories": [],
     "tags": []
 }
