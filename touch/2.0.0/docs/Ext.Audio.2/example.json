@@ -11,5 +11,9 @@
             "label": "Sencha Touch 2.0.0"
         }
     ],
-    "tags": []
+    "tags": [
+        {
+            "label": "Ext.Audio"
+        }
+    ]
 }

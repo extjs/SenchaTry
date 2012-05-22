@@ -11,5 +11,9 @@
             "label": "Ext JS 4.1.0"
         }
     ],
-    "tags": []
+    "tags": [
+        {
+            "label": "Ext.button.Cycle"
+        }
+    ]
 }

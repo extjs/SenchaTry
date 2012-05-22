@@ -11,5 +11,9 @@
             "label": "Ext JS 4.0.7"
         }
     ],
-    "tags": []
+    "tags": [
+        {
+            "label": "Ext.chart.series.Pie"
+        }
+    ]
 }
