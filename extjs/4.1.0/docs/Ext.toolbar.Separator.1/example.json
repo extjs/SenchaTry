@@ -15,5 +15,12 @@
         {
             "label": "Ext.toolbar.Separator"
         }
-    ]
+    ],
+    "seeAlso": [],
+    "author": {
+        "name": "Sencha Inc.",
+        "github": "extjs",
+        "url": "http://sencha.com/",
+        "devid": 1
+    }
 }

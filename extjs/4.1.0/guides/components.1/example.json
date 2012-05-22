@@ -11,5 +11,12 @@
             "label": "Ext JS 4.1.0"
         }
     ],
-    "tags": []
+    "tags": [],
+    "seeAlso": [],
+    "author": {
+        "name": "Sencha Inc.",
+        "github": "extjs",
+        "url": "http://sencha.com/",
+        "devid": 1
+    }
 }

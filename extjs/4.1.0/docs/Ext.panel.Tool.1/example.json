@@ -15,5 +15,12 @@
         {
             "label": "Ext.panel.Tool"
         }
-    ]
+    ],
+    "seeAlso": [],
+    "author": {
+        "name": "Sencha Inc.",
+        "github": "extjs",
+        "url": "http://sencha.com/",
+        "devid": 1
+    }
 }

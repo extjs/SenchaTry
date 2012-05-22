@@ -11,5 +11,12 @@
             "label": "Sencha Touch 2.0.0"
         }
     ],
-    "tags": []
+    "tags": [],
+    "seeAlso": [],
+    "author": {
+        "name": "Sencha Inc.",
+        "github": "extjs",
+        "url": "http://sencha.com/",
+        "devid": 1
+    }
 }
