@@ -11,12 +11,22 @@
             "label": "Ext JS 4.0.7"
         }
     ],
-    "tags": [],
+    "tags": [
+        {
+            "label": "alert()"
+        },
+        {
+            "label": "Ext.MessageBox"
+        },
+        {
+            "label": "Ext.Msg"
+        }
+    ],
     "seeAlso": [],
     "author": {
         "name": "Sencha Inc.",
         "github": "extjs",
         "url": "http://sencha.com/",
-        "devid": 1
+        "senchadevs": ""
     }
 }

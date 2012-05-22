@@ -11,12 +11,55 @@
             "label": "Ext JS 4.0.7"
         }
     ],
-    "tags": [],
+    "tags": [
+        {
+            "label": "Ext.is"
+        },
+        {
+            "label": "Android"
+        },
+        {
+            "label": "Blackberry"
+        },
+        {
+            "label": "Desktop"
+        },
+        {
+            "label": "Linux"
+        },
+        {
+            "label": "Mac"
+        },
+        {
+            "label": "Phone"
+        },
+        {
+            "label": "Standalone"
+        },
+        {
+            "label": "Tablet"
+        },
+        {
+            "label": "Windows"
+        },
+        {
+            "label": "iOS"
+        },
+        {
+            "label": "iPad"
+        },
+        {
+            "label": "iPhone"
+        },
+        {
+            "label": "iPod"
+        }
+    ],
     "seeAlso": [],
     "author": {
         "name": "Sencha Inc.",
         "github": "extjs",
         "url": "http://sencha.com/",
-        "devid": 1
+        "senchadevs": ""
     }
 }

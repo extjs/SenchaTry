@@ -11,12 +11,22 @@
             "label": "Ext JS 4.0.7"
         }
     ],
-    "tags": [],
+    "tags": [
+        {
+            "label": "menu"
+        },
+        {
+            "label": "Ext.menu.ColorPicker"
+        },
+        {
+            "label": "colormenu"
+        }
+    ],
     "seeAlso": [],
     "author": {
         "name": "Sencha Inc.",
         "github": "extjs",
         "url": "http://sencha.com/",
-        "devid": 1
+        "senchadevs": ""
     }
 }

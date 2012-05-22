@@ -11,12 +11,22 @@
             "label": "Ext JS 4.1.0"
         }
     ],
-    "tags": [],
+    "tags": [
+        {
+            "label": "Ext.button.Button"
+        },
+        {
+            "label": "Ext.Button"
+        },
+        {
+            "label": "button"
+        }
+    ],
     "seeAlso": [],
     "author": {
         "name": "Sencha Inc.",
         "github": "extjs",
         "url": "http://sencha.com/",
-        "devid": 1
+        "senchadevs": ""
     }
 }

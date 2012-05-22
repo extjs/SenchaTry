@@ -11,12 +11,34 @@
             "label": "Ext JS 4.0.7"
         }
     ],
-    "tags": [],
+    "tags": [
+        {
+            "label": "Ext.panel.Panel"
+        },
+        {
+            "label": "Ext.Panel"
+        },
+        {
+            "label": "panel"
+        },
+        {
+            "label": "tbar"
+        },
+        {
+            "label": "bbar"
+        },
+        {
+            "label": "lbar"
+        },
+        {
+            "label": "rbar"
+        }
+    ],
     "seeAlso": [],
     "author": {
         "name": "Sencha Inc.",
         "github": "extjs",
         "url": "http://sencha.com/",
-        "devid": 1
+        "senchadevs": ""
     }
 }
