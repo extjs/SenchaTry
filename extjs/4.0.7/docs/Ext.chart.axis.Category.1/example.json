@@ -14,6 +14,33 @@
     "tags": [
         {
             "label": "Ext.chart.axis.Category"
+        },
+        {
+            "label": "Ext.chart.CategoryAxis"
+        },
+        {
+            "label": "category"
+        },
+        {
+            "label": "axes"
+        },
+        {
+            "label": "position"
+        },
+        {
+            "label": "fields"
+        },
+        {
+            "label": "title"
+        },
+        {
+            "label": "grid"
+        },
+        {
+            "label": "label"
+        },
+        {
+            "label": "series"
         }
     ],
     "seeAlso": [],

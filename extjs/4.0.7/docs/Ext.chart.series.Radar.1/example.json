@@ -14,6 +14,24 @@
     "tags": [
         {
             "label": "Ext.chart.series.Radar"
+        },
+        {
+            "label": "radar"
+        },
+        {
+            "label": "xField"
+        },
+        {
+            "label": "yField"
+        },
+        {
+            "label": "showInLegend"
+        },
+        {
+            "label": "showMarkers"
+        },
+        {
+            "label": "markerConfig"
         }
     ],
     "seeAlso": [],

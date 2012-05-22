@@ -14,6 +14,36 @@
     "tags": [
         {
             "label": "Ext.chart.series.Bar"
+        },
+        {
+            "label": "Ext.chart.BarChart"
+        },
+        {
+            "label": "Ext.chart.BarSeries"
+        },
+        {
+            "label": "Ext.chart.StackedBarChart"
+        },
+        {
+            "label": "bar"
+        },
+        {
+            "label": "axis"
+        },
+        {
+            "label": "highlight"
+        },
+        {
+            "label": "tips"
+        },
+        {
+            "label": "label"
+        },
+        {
+            "label": "xField"
+        },
+        {
+            "label": "yField"
         }
     ],
     "seeAlso": [],

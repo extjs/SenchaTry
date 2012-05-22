@@ -14,6 +14,30 @@
     "tags": [
         {
             "label": "Ext.button.Cycle"
+        },
+        {
+            "label": "Ext.CycleButton"
+        },
+        {
+            "label": "cycle"
+        },
+        {
+            "label": "showText"
+        },
+        {
+            "label": "prependText"
+        },
+        {
+            "label": "menu"
+        },
+        {
+            "label": "iconCls"
+        },
+        {
+            "label": "checked"
+        },
+        {
+            "label": "changeHandler"
         }
     ],
     "seeAlso": [],
