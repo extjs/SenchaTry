@@ -14,9 +14,27 @@
     "tags": [
         {
             "label": "Ext.layout.container.Card"
+        },
+        {
+            "label": "Ext.layout.CardLayout"
+        },
+        {
+            "label": "card"
+        },
+        {
+            "label": "layout"
+        },
+        {
+            "label": "container"
         }
     ],
-    "seeAlso": [],
+    "seeAlso": [
+        {
+            "label": "Layouts and Containers Guide",
+            "url": "http://docs.sencha.com/ext-js/4-0/#!/guide/layouts_and_containers",
+            "type": "guide"
+        }
+    ],
     "author": {
         "name": "Sencha Inc.",
         "github": "extjs",

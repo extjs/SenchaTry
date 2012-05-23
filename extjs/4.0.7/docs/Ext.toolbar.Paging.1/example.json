@@ -14,6 +14,21 @@
     "tags": [
         {
             "label": "Ext.toolbar.Paging"
+        },
+        {
+            "label": "Ext.PagingToolbar"
+        },
+        {
+            "label": "pagingtoolbar"
+        },
+        {
+            "label": "dock"
+        },
+        {
+            "label": "displayInfo"
+        },
+        {
+            "label": "toolbar"
         }
     ],
     "seeAlso": [],

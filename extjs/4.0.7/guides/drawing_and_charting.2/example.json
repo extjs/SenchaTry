@@ -11,8 +11,48 @@
             "label": "Ext JS 4.0.7"
         }
     ],
-    "tags": [],
-    "seeAlso": [],
+    "tags": [
+        {
+            "label": "Ext.draw.Component"
+        },
+        {
+            "label": "viewBox"
+        },
+        {
+            "label": "surface"
+        },
+        {
+            "label": "add()"
+        },
+        {
+            "label": "circle"
+        },
+        {
+            "label": "radius"
+        },
+        {
+            "label": "fill"
+        },
+        {
+            "label": "setAttributes()"
+        },
+        {
+            "label": "animate()"
+        },
+        {
+            "label": "to"
+        },
+        {
+            "label": "duration"
+        }
+    ],
+    "seeAlso": [
+        {
+            "label": "Drawing and Charting Guide",
+            "url": "http://docs.sencha.com/ext-js/4-0/#!/guide/drawing_and_charting",
+            "type": "guide"
+        }
+    ],
     "author": {
         "name": "Sencha Inc.",
         "github": "extjs",

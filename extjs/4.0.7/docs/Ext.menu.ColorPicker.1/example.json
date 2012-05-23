@@ -14,6 +14,12 @@
     "tags": [
         {
             "label": "Ext.menu.ColorPicker"
+        },
+        {
+            "label": "colormenu"
+        },
+        {
+            "label": "menu"
         }
     ],
     "seeAlso": [],

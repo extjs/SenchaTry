@@ -14,6 +14,12 @@
     "tags": [
         {
             "label": "Ext.menu.CheckItem"
+        },
+        {
+            "label": "menucheckitem"
+        },
+        {
+            "label": "menu"
         }
     ],
     "seeAlso": [],

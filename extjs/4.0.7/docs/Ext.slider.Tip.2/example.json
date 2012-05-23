@@ -14,6 +14,18 @@
     "tags": [
         {
             "label": "Ext.slider.Tip"
+        },
+        {
+            "label": "slidertip"
+        },
+        {
+            "label": "useTips"
+        },
+        {
+            "label": "tipText"
+        },
+        {
+            "label": "slider"
         }
     ],
     "seeAlso": [],

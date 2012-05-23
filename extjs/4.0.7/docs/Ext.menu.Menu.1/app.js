@@ -13,7 +13,7 @@ Ext.onReady(function () {
             text: 'regular item 3'
         }]
     });
-
+    
     Ext.create('Ext.menu.Menu', {
         width: 100,
         plain: true,

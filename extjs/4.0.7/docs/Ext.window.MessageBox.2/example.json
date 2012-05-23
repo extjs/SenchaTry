@@ -14,6 +14,15 @@
     "tags": [
         {
             "label": "Ext.window.MessageBox"
+        },
+        {
+            "label": "messagebox"
+        },
+        {
+            "label": "window"
+        },
+        {
+            "label": "prompt()"
         }
     ],
     "seeAlso": [],

@@ -3,7 +3,7 @@ Ext.onReady(function () {
     var colorPicker = Ext.create('Ext.menu.ColorPicker', {
         value: '000000'
     });
-
+    
     Ext.create('Ext.menu.Menu', {
         width: 100,
         height: 90,

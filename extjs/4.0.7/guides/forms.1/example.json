@@ -11,8 +11,24 @@
             "label": "Ext JS 4.0.7"
         }
     ],
-    "tags": [],
-    "seeAlso": [],
+    "tags": [
+        {
+            "label": "textfield"
+        },
+        {
+            "label": "fieldLabel"
+        },
+        {
+            "label": "datefield"
+        }
+    ],
+    "seeAlso": [
+        {
+            "label": "The Form Package Guide",
+            "url": "http://docs.sencha.com/ext-js/4-0/#!/guide/forms",
+            "type": "guide"
+        }
+    ],
     "author": {
         "name": "Sencha Inc.",
         "github": "extjs",

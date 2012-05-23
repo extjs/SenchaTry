@@ -11,8 +11,30 @@
             "label": "Ext JS 4.0.7"
         }
     ],
-    "tags": [],
-    "seeAlso": [],
+    "tags": [
+        {
+            "label": "Ext.draw.Component"
+        },
+        {
+            "label": "viewBox"
+        },
+        {
+            "label": "circle"
+        },
+        {
+            "label": "fill"
+        },
+        {
+            "label": "radius"
+        }
+    ],
+    "seeAlso": [
+        {
+            "label": "Drawing and Charting Guide",
+            "url": "http://docs.sencha.com/ext-js/4-0/#!/guide/drawing_and_charting",
+            "type": "guide"
+        }
+    ],
     "author": {
         "name": "Sencha Inc.",
         "github": "extjs",

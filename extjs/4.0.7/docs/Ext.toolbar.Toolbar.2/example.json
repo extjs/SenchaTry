@@ -14,6 +14,12 @@
     "tags": [
         {
             "label": "Ext.toolbar.Toolbar"
+        },
+        {
+            "label": "Ext.Toolbar"
+        },
+        {
+            "label": "toolbar"
         }
     ],
     "seeAlso": [],

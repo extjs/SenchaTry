@@ -14,6 +14,12 @@
     "tags": [
         {
             "label": "Ext.menu.DatePicker"
+        },
+        {
+            "label": "datemenu"
+        },
+        {
+            "label": "menu"
         }
     ],
     "seeAlso": [],

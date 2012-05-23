@@ -14,6 +14,27 @@
     "tags": [
         {
             "label": "Ext.tab.Panel"
+        },
+        {
+            "label": "Ext.TabPanel"
+        },
+        {
+            "label": "tabpanel"
+        },
+        {
+            "label": "tab"
+        },
+        {
+            "label": "child()"
+        },
+        {
+            "label": "hide()"
+        },
+        {
+            "label": "show()"
+        },
+        {
+            "label":"setActiveTab()"
         }
     ],
     "seeAlso": [],

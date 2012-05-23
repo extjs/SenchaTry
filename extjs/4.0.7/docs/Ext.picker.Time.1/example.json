@@ -14,6 +14,18 @@
     "tags": [
         {
             "label": "Ext.picker.Time"
+        },
+        {
+            "label": "timepicker"
+        },
+        {
+            "label": "picker"
+        },
+        {
+            "label": "minValue"
+        },
+        {
+            "label": "maxValue"
         }
     ],
     "seeAlso": [],

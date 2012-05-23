@@ -14,9 +14,39 @@
     "tags": [
         {
             "label": "Ext.tree.Panel"
+        },
+        {
+            "label": "Ext.TreePanel"
+        },
+        {
+            "label": "Ext.tree.TreePanel"
+        },
+        {
+            "label": "treepanel"
+        },
+        {
+            "label": "tree"
+        },
+        {
+            "label": "Ext.data.TreeStore"
+        },
+        {
+            "label": "expanded"
+        },
+        {
+            "label": "leaf"
+        },
+        {
+            "label": "rootVisible"
         }
     ],
-    "seeAlso": [],
+    "seeAlso": [
+        {
+            "label": "Trees Guide",
+            "url": "http://docs.sencha.com/ext-js/4-0/#!/guide/tree",
+            "type": "guide"
+        }
+    ],
     "author": {
         "name": "Sencha Inc.",
         "github": "extjs",

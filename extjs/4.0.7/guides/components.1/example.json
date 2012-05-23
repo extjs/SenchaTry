@@ -12,7 +12,13 @@
         }
     ],
     "tags": [],
-    "seeAlso": [],
+    "seeAlso": [
+        {
+            "label": "Components Guide",
+            "url": "http://docs.sencha.com/ext-js/4-0/#!/guide/components",
+            "type": "guide"
+        }
+    ],
     "author": {
         "name": "Sencha Inc.",
         "github": "extjs",
