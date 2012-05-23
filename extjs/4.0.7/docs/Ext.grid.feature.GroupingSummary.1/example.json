@@ -14,6 +14,27 @@
     "tags": [
         {
             "label": "Ext.grid.feature.GroupingSummary"
+        },
+        {
+            "label": "groupingsummary"
+        },
+        {
+            "label": "features"
+        },
+        {
+            "label": "groupHeaderTpl"
+        },
+        {
+            "label": "summaryType"
+        },
+        {
+            "label": "summaryRenderer"
+        },
+        {
+            "label": "grid"
+        },
+        {
+            "label": "feature"
         }
     ],
     "seeAlso": [],

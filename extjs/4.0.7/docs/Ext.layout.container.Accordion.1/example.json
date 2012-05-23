@@ -14,6 +14,27 @@
     "tags": [
         {
             "label": "Ext.layout.container.Accordion"
+        },
+        {
+            "label": "Ext.layout.AccorionLayout"
+        },
+        {
+            "label": "accordion"
+        },
+        {
+            "label": "layout"
+        },
+        {
+            "label": "titleCollapse"
+        },
+        {
+            "label": "animate"
+        },
+        {
+            "label": "activeOnTop"
+        },
+        {
+            "label": "container"
         }
     ],
     "seeAlso": [],

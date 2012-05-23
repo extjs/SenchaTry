@@ -14,6 +14,27 @@
     "tags": [
         {
             "label": "Ext.grid.column.Boolean"
+        },
+        {
+            "label": "Ext.grid.BooleanColumn"
+        },
+        {
+            "label": "booleancolumn"
+        },
+        {
+            "label": "trueText"
+        },
+        {
+            "label": "falseText"
+        },
+        {
+            "label": "dataIndex"
+        },
+        {
+            "label": "grid"
+        },
+        {
+            "label": "column"
         }
     ],
     "seeAlso": [],

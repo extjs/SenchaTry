@@ -14,6 +14,21 @@
     "tags": [
         {
             "label": "Ext.grid.property.Grid"
+        },
+        {
+            "label": "Ext.grid.PropertyGrid"
+        },
+        {
+            "label": "propertygrid"
+        },
+        {
+            "label": "source"
+        },
+        {
+            "label": "grid"
+        },
+        {
+            "label": "property"
         }
     ],
     "seeAlso": [],

@@ -41,6 +41,12 @@
         },
         {
             "label": "fill"
+        },
+        {
+            "label": "chart"
+        },
+        {
+            "label": "series"
         }
     ],
     "seeAlso": [],

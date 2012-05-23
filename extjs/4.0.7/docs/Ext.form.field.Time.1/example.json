@@ -14,6 +14,30 @@
     "tags": [
         {
             "label": "Ext.form.field.Time"
+        },
+        {
+            "label": "Ext.form.Time"
+        },
+        {
+            "label": "Ext.form.TimeField"
+        },
+        {
+            "label": "timefield"
+        },
+        {
+            "label": "minValue"
+        },
+        {
+            "label": "maxValue"
+        },
+        {
+            "label": "increment"
+        },
+        {
+            "label": "form"
+        },
+        {
+            "label": "field"
         }
     ],
     "seeAlso": [],

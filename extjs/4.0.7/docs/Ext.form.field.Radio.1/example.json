@@ -14,6 +14,33 @@
     "tags": [
         {
             "label": "Ext.form.field.Radio"
+        },
+        {
+            "label": "Ext.form.Radio"
+        },
+        {
+            "label": "radiofield"
+        },
+        {
+            "label": "radio"
+        },
+        {
+            "label": "boxLabel"
+        },
+        {
+            "label": "inputValue"
+        },
+        {
+            "label": "getValue()"
+        },
+        {
+            "label": "setValue()"
+        },
+        {
+            "label": "form"
+        },
+        {
+            "label": "field"
         }
     ],
     "seeAlso": [],

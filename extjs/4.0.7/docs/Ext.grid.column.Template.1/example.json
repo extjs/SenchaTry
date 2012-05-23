@@ -14,6 +14,21 @@
     "tags": [
         {
             "label": "Ext.grid.column.Template"
+        },
+        {
+            "label": "Ext.grid.TemplateColumn"
+        },
+        {
+            "label": "templatecolumn"
+        },
+        {
+            "label": "tpl"
+        },
+        {
+            "label": "grid"
+        },
+        {
+            "label": "column"
         }
     ],
     "seeAlso": [],

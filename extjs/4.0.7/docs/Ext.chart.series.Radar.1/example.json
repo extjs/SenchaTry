@@ -32,6 +32,12 @@
         },
         {
             "label": "markerConfig"
+        },
+        {
+            "label": "chart"
+        },
+        {
+            "label": "series"
         }
     ],
     "seeAlso": [],

@@ -14,6 +14,18 @@
     "tags": [
         {
             "label": "Ext.fx.Animator"
+        },
+        {
+            "label": "target"
+        },
+        {
+            "label": "duration"
+        },
+        {
+            "label": "keyframes"
+        },
+        {
+            "label": "fx"
         }
     ],
     "seeAlso": [],

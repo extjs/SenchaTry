@@ -14,6 +14,21 @@
     "tags": [
         {
             "label": "Ext.container.Viewport"
+        },
+        {
+            "label": "Ext.Viewport"
+        },
+        {
+            "label": "viewport"
+        },
+        {
+            "label": "layout"
+        },
+        {
+            "label": "items"
+        },
+        {
+            "label": "container"
         }
     ],
     "seeAlso": [],

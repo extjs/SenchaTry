@@ -14,6 +14,21 @@
     "tags": [
         {
             "label": "Ext.fx.Anim"
+        },
+        {
+            "label": "target"
+        },
+        {
+            "label": "duration"
+        },
+        {
+            "label": "from"
+        },
+        {
+            "label": "to"
+        },
+        {
+            "label": "fx"
         }
     ],
     "seeAlso": [],

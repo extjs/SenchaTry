@@ -14,6 +14,39 @@
     "tags": [
         {
             "label": "Ext.form.field.Spinner"
+        },
+        {
+            "label": "Ext.form.Spinner"
+        },
+        {
+            "label": "spinnerfield"
+        },
+        {
+            "label": "fieldLabel"
+        },
+        {
+            "label": "step"
+        },
+        {
+            "label": "onSpinUp"
+        },
+        {
+            "label": "onSpinDown"
+        },
+        {
+            "label": "readOnly"
+        },
+        {
+            "label": "getValue()"
+        },
+        {
+            "label": "setValue()"
+        },
+        {
+            "label": "form"
+        },
+        {
+            "label": "field"
         }
     ],
     "seeAlso": [],

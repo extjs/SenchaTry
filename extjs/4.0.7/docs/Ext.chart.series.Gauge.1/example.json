@@ -26,6 +26,12 @@
         },
         {
             "label": "colorSet"
+        },
+        {
+            "label": "chart"
+        },
+        {
+            "label": "series"
         }
     ],
     "seeAlso": [],

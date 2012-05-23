@@ -14,6 +14,24 @@
     "tags": [
         {
             "label": "Ext.grid.feature.RowBody"
+        },
+        {
+            "label": "rowbody"
+        },
+        {
+            "label": "features"
+        },
+        {
+            "label": "ftype"
+        },
+        {
+            "label": "getAdditionalData"
+        },
+        {
+            "label": "grid"
+        },
+        {
+            "label": "feature"
         }
     ],
     "seeAlso": [],

@@ -14,6 +14,18 @@
     "tags": [
         {
             "label": "Ext.grid.column.Action"
+        },
+        {
+            "label": "Ext.grid.ActionColumn"
+        },
+        {
+            "label": "actioncolumn"
+        },
+        {
+            "label": "grid"
+        },
+        {
+            "label": "column"
         }
     ],
     "seeAlso": [],

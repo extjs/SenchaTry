@@ -14,6 +14,27 @@
     "tags": [
         {
             "label": "Ext.grid.plugin.RowEditing"
+        },
+        {
+            "label": "rowediting"
+        },
+        {
+            "label": "selType"
+        },
+        {
+            "label": "rowmodel"
+        },
+        {
+            "label": "plugins"
+        },
+        {
+            "label": "clicksToEdit"
+        },
+        {
+            "label": "grid"
+        },
+        {
+            "label": "plugin"
         }
     ],
     "seeAlso": [],

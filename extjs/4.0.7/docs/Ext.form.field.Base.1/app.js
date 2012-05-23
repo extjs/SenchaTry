@@ -6,16 +6,16 @@ Ext.onReady(function () {
         extend: 'Ext.form.field.Base',
         alias: 'widget.searchfield',
         inputType: 'search',
-
+        
         // Config defining the search URL
         searchUrl: 'http://www.google.com/search?q={0}',
-
+        
         // Add specialkey listener
         initComponent: function () {
             this.callParent();
             this.on('specialkey', this.checkEnterKey, this);
         },
-
+        
         // Handle enter key presses, execute the search if the field has a value
         checkEnterKey: function (field, e) {
             var value = this.getValue();
@@ -24,7 +24,7 @@ Ext.onReady(function () {
             }
         }
     });
-
+    
     Ext.create('Ext.form.Panel', {
         title: 'BaseField Example',
         bodyPadding: 5,

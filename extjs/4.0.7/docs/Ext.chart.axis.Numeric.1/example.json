@@ -41,6 +41,12 @@
         },
         {
             "label": "adjustMinimumByMajorUnit"
+        },
+        {
+            "label": "chart"
+        },
+        {
+            "label": "axis"
         }
     ],
     "seeAlso": [],

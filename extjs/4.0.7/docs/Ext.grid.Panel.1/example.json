@@ -14,6 +14,24 @@
     "tags": [
         {
             "label": "Ext.grid.Panel"
+        },
+        {
+            "label": "Ext.ListView"
+        },
+        {
+            "label": "Ext.grid.GridPanel"
+        },
+        {
+            "label": "Ext.list.ListView"
+        },
+        {
+            "label": "gridpanel"
+        },
+        {
+            "label": "grid"
+        },
+        {
+            "label": "columns"
         }
     ],
     "seeAlso": [],

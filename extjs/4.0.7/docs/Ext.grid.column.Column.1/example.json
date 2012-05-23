@@ -14,6 +14,18 @@
     "tags": [
         {
             "label": "Ext.grid.column.Column"
+        },
+        {
+            "label": "Ext.grid.Column"
+        },
+        {
+            "label": "gridcolumn"
+        },
+        {
+            "label": "grid"
+        },
+        {
+            "label": "column"
         }
     ],
     "seeAlso": [],

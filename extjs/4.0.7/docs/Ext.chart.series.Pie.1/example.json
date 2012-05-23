@@ -38,6 +38,12 @@
         },
         {
             "label": "label"
+        },
+        {
+            "label": "chart"
+        },
+        {
+            "label": "series"
         }
     ],
     "seeAlso": [],

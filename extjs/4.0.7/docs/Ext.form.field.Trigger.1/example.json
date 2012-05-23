@@ -14,6 +14,33 @@
     "tags": [
         {
             "label": "Ext.form.field.Trigger"
+        },
+        {
+            "label": "Ext.form.Trigger"
+        },
+        {
+            "label": "Ext.form.TriggerField"
+        },
+        {
+            "label": "Ext.form.TwinTriggerField"
+        },
+        {
+            "label": "triggerfield"
+        },
+        {
+            "label": "trigger"
+        },
+        {
+            "label": "emptyText"
+        },
+        {
+            "label": "onTriggerClick"
+        },
+        {
+            "label": "form"
+        },
+        {
+            "label": "field"
         }
     ],
     "seeAlso": [],

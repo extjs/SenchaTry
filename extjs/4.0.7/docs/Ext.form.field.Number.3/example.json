@@ -14,6 +14,36 @@
     "tags": [
         {
             "label": "Ext.form.field.Number"
+        },
+        {
+            "label": "Ext.form.Number"
+        },
+        {
+            "label": "Ext.form.NumberField"
+        },
+        {
+            "label": "numberfield"
+        },
+        {
+            "label": "value"
+        },
+        {
+            "label": "step"
+        },
+        {
+            "label": "listeners"
+        },
+        {
+            "label": "change"
+        },
+        {
+            "label": "setValue()"
+        },
+        {
+            "label": "form"
+        },
+        {
+            "label": "field"
         }
     ],
     "seeAlso": [],

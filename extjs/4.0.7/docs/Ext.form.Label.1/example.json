@@ -14,6 +14,21 @@
     "tags": [
         {
             "label": "Ext.form.Label"
+        },
+        {
+            "label": "label"
+        },
+        {
+            "label": "forId"
+        },
+        {
+            "label": "text"
+        },
+        {
+            "label": "margins"
+        },
+        {
+            "label": "form"
         }
     ],
     "seeAlso": [],

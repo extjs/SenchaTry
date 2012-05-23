@@ -14,6 +14,24 @@
     "tags": [
         {
             "label": "Ext.grid.column.Date"
+        },
+        {
+            "label": "Ext.grid.DateColumn"
+        },
+        {
+            "label": "datecolumn"
+        },
+        {
+            "label": "dataIndex"
+        },
+        {
+            "label": "format"
+        },
+        {
+            "label": "grid"
+        },
+        {
+            "label": "column"
         }
     ],
     "seeAlso": [],

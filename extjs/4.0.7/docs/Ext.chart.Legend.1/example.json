@@ -17,6 +17,9 @@
         },
         {
             "label": "position"
+        },
+        {
+            "label": "chart"
         }
     ],
     "seeAlso": [],

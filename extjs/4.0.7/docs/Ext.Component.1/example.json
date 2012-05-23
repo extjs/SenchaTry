@@ -14,6 +14,12 @@
     "tags": [
         {
             "label": "Ext.Component"
+        },
+        {
+            "label": "component"
+        },
+        {
+            "label": "box"
         }
     ],
     "seeAlso": [],

@@ -44,6 +44,12 @@
         },
         {
             "label": "yField"
+        },
+        {
+            "label": "chart"
+        },
+        {
+            "label": "series"
         }
     ],
     "seeAlso": [],

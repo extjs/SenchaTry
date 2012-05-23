@@ -41,6 +41,12 @@
         },
         {
             "label": "series"
+        },
+        {
+            "label": "chart"
+        },
+        {
+            "label": "axis"
         }
     ],
     "seeAlso": [],

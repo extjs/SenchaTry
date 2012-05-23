@@ -32,6 +32,9 @@
         },
         {
             "label": "yField"
+        },
+        {
+            "label": "chart"
         }
     ],
     "seeAlso": [],
