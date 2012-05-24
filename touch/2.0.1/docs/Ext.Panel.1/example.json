@@ -14,6 +14,12 @@
     "tags": [
         {
             "label": "Ext.Panel"
+        },
+        {
+            "label": "Ext.lib.Panel"
+        },
+        {
+            "label": "panel"
         }
     ],
     "seeAlso": [
@@ -21,6 +27,11 @@
             "label": "Ext.Panel Documentation",
             "url": "http://docs.sencha.com/touch/2-0/#!/api/Ext.Panel",
             "type": "docs"
+        },
+        {
+            "label": "Floating Components Guide",
+            "url": "http://docs.sencha.com/touch/2-0/#!/guide/floating_components",
+            "type": "guide"
         }
     ],
     "author": {

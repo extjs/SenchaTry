@@ -14,6 +14,18 @@
     "tags": [
         {
             "label": "Ext.Button"
+        },
+        {
+            "label": "button"
+        },
+        {
+            "label": "align"
+        },
+        {
+            "label": "ui"
+        },
+        {
+            "label": "margin"
         }
     ],
     "seeAlso": [

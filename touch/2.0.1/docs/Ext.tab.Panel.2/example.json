@@ -14,6 +14,12 @@
     "tags": [
         {
             "label": "Ext.tab.Panel"
+        },
+        {
+            "label": "Ext.TabPanel"
+        },
+        {
+            "label": "tabpanel"
         }
     ],
     "seeAlso": [
@@ -21,6 +27,16 @@
             "label": "Ext.tab.Panel Documentation",
             "url": "http://docs.sencha.com/touch/2-0/#!/api/Ext.tab.Panel",
             "type": "docs"
+        },
+        {
+            "label": "Using TabPanel Guide",
+            "url": "http://docs.sencha.com/touch/2-0/#!/guide/tabs",
+            "type": "guide"
+        },
+        {
+            "label": "Tabs and Toolbars Video",
+            "url": "http://docs.sencha.com/touch/2-0/#!/video/tabs-toolbars",
+            "type": "video"
         }
     ],
     "author": {

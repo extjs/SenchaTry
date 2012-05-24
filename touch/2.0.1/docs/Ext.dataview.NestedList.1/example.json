@@ -14,6 +14,12 @@
     "tags": [
         {
             "label": "Ext.dataview.NestedList"
+        },
+        {
+            "label": "Ext.NestedList"
+        },
+        {
+            "label": "nestedlist"
         }
     ],
     "seeAlso": [
@@ -21,6 +27,11 @@
             "label": "Ext.dataview.NestedList Documentation",
             "url": "http://docs.sencha.com/touch/2-0/#!/api/Ext.dataview.NestedList",
             "type": "docs"
+        },
+        {
+            "label": "Using Nested List Guide",
+            "url": "http://docs.sencha.com/touch/2-0/#!/guide/nested_list",
+            "type": "guide"
         }
     ],
     "author": {

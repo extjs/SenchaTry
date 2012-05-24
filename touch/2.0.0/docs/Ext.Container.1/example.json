@@ -14,6 +14,12 @@
     "tags": [
         {
             "label": "Ext.Container"
+        },
+        {
+            "label": "layout"
+        },
+        {
+            "label": "flex"
         }
     ],
     "seeAlso": [

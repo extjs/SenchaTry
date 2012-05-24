@@ -17,6 +17,9 @@
         },
         {
             "label": "Ext.lib.Component"
+        },
+        {
+            "label": "flex"
         }
     ],
     "seeAlso": [

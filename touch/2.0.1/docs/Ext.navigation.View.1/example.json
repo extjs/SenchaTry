@@ -14,6 +14,12 @@
     "tags": [
         {
             "label": "Ext.navigation.View"
+        },
+        {
+            "label": "Ext.NavigationView"
+        },
+        {
+            "label": "navigationview"
         }
     ],
     "seeAlso": [
@@ -21,6 +27,11 @@
             "label": "Ext.navigation.View Documentation",
             "url": "http://docs.sencha.com/touch/2-0/#!/api/Ext.navigation.View",
             "type": "docs"
+        },
+        {
+            "label": "Using Navigation View Guide",
+            "url": "http://docs.sencha.com/touch/2-0/#!/guide/navigation_view",
+            "type": "guide"
         }
     ],
     "author": {

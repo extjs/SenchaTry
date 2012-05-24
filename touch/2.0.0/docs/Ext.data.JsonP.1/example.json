@@ -17,6 +17,21 @@
         },
         {
             "label": "Ext.util.JSONP"
+        },
+        {
+            "label": "request()"
+        },
+        {
+            "label": "url"
+        },
+        {
+            "label": "callbackKey"
+        },
+        {
+            "label": "params"
+        },
+        {
+            "label": "success"
         }
     ],
     "seeAlso": [

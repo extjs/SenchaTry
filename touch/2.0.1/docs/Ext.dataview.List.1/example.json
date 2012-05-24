@@ -14,6 +14,12 @@
     "tags": [
         {
             "label": "Ext.dataview.List"
+        },
+        {
+            "label": "Ext.List"
+        },
+        {
+            "label": "list"
         }
     ],
     "seeAlso": [
@@ -21,6 +27,16 @@
             "label": "Ext.dataview.List Documentation",
             "url": "http://docs.sencha.com/touch/2-0/#!/api/Ext.dataview.List",
             "type": "docs"
+        },
+        {
+            "label": "Using List Guide",
+            "url": "http://docs.sencha.com/touch/2-0/#!/guide/list",
+            "type": "guide"
+        },
+        {
+            "label": "Intro to List Component Video",
+            "url": "http://docs.sencha.com/touch/2-0/#!/video/list",
+            "type": "video"
         }
     ],
     "author": {

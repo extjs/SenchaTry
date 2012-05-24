@@ -14,6 +14,12 @@
     "tags": [
         {
             "label": "Ext.dataview.DataView"
+        },
+        {
+            "label": "Ext.DataView"
+        },
+        {
+            "label": "dataview"
         }
     ],
     "seeAlso": [
@@ -21,6 +27,11 @@
             "label": "Ext.dataview.DataView Documentation",
             "url": "http://docs.sencha.com/touch/2-0/#!/api/Ext.dataview.DataView",
             "type": "docs"
+        },
+        {
+            "label": "Using DataView Guide",
+            "url": "http://docs.sencha.com/touch/2-0/#!/guide/dataview",
+            "type": "guide"
         }
     ],
     "author": {
