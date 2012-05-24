@@ -16,7 +16,13 @@
             "label": "Ext.grid.property.Grid"
         }
     ],
-    "seeAlso": [],
+    "seeAlso": [
+        {
+            "label": "Ext.grid.property.Grid Documentation",
+            "url": "http://docs.sencha.com/ext-js/4-1/#!/api/Ext.grid.property.Grid",
+            "type": "docs"
+        }
+    ],
     "author": {
         "name": "Sencha Inc.",
         "github": "extjs",

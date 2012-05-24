@@ -16,7 +16,13 @@
             "label": "Ext.dataview.IndexBar"
         }
     ],
-    "seeAlso": [],
+    "seeAlso": [
+        {
+            "label": "Ext.dataview.IndexBar Documentation",
+            "url": "http://docs.sencha.com/touch/2-0/#!/api/Ext.dataview.IndexBar",
+            "type": "docs"
+        }
+    ],
     "author": {
         "name": "Sencha Inc.",
         "github": "extjs",

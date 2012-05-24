@@ -16,7 +16,13 @@
             "label": "Ext.form.field.Date"
         }
     ],
-    "seeAlso": [],
+    "seeAlso": [
+        {
+            "label": "Ext.form.field.Date Documentation",
+            "url": "http://docs.sencha.com/ext-js/4-1/#!/api/Ext.form.field.Date",
+            "type": "docs"
+        }
+    ],
     "author": {
         "name": "Sencha Inc.",
         "github": "extjs",

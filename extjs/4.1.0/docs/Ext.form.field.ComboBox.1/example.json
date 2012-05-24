@@ -16,7 +16,13 @@
             "label": "Ext.form.field.ComboBox"
         }
     ],
-    "seeAlso": [],
+    "seeAlso": [
+        {
+            "label": "Ext.form.field.ComboBox Documentation",
+            "url": "http://docs.sencha.com/ext-js/4-1/#!/api/Ext.form.field.ComboBox",
+            "type": "docs"
+        }
+    ],
     "author": {
         "name": "Sencha Inc.",
         "github": "extjs",

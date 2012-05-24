@@ -16,7 +16,13 @@
             "label": "Ext.grid.column.Date"
         }
     ],
-    "seeAlso": [],
+    "seeAlso": [
+        {
+            "label": "Ext.grid.column.Date Documentation",
+            "url": "http://docs.sencha.com/ext-js/4-1/#!/api/Ext.grid.column.Date",
+            "type": "docs"
+        }
+    ],
     "author": {
         "name": "Sencha Inc.",
         "github": "extjs",

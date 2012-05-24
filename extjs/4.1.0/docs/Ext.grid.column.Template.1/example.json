@@ -16,7 +16,13 @@
             "label": "Ext.grid.column.Template"
         }
     ],
-    "seeAlso": [],
+    "seeAlso": [
+        {
+            "label": "Ext.grid.column.Template Documentation",
+            "url": "http://docs.sencha.com/ext-js/4-1/#!/api/Ext.grid.column.Template",
+            "type": "docs"
+        }
+    ],
     "author": {
         "name": "Sencha Inc.",
         "github": "extjs",

@@ -16,7 +16,13 @@
             "label": "Ext.dataview.NestedList"
         }
     ],
-    "seeAlso": [],
+    "seeAlso": [
+        {
+            "label": "Ext.dataview.NestedList Documentation",
+            "url": "http://docs.sencha.com/touch/2-0/#!/api/Ext.dataview.NestedList",
+            "type": "docs"
+        }
+    ],
     "author": {
         "name": "Sencha Inc.",
         "github": "extjs",

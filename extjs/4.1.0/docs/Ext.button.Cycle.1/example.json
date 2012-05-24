@@ -16,7 +16,13 @@
             "label": "Ext.button.Cycle"
         }
     ],
-    "seeAlso": [],
+    "seeAlso": [
+        {
+            "label": "Ext.button.Cycle Documentation",
+            "url": "http://docs.sencha.com/ext-js/4-1/#!/api/Ext.button.Cycle",
+            "type": "docs"
+        }
+    ],
     "author": {
         "name": "Sencha Inc.",
         "github": "extjs",

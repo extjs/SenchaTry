@@ -16,7 +16,13 @@
             "label": "Ext.layout.container.Anchor"
         }
     ],
-    "seeAlso": [],
+    "seeAlso": [
+        {
+            "label": "Ext.layout.container.Anchor Documentation",
+            "url": "http://docs.sencha.com/ext-js/4-1/#!/api/Ext.layout.container.Anchor",
+            "type": "docs"
+        }
+    ],
     "author": {
         "name": "Sencha Inc.",
         "github": "extjs",

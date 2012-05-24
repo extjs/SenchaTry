@@ -16,7 +16,13 @@
             "label": "Ext.dataview.DataView"
         }
     ],
-    "seeAlso": [],
+    "seeAlso": [
+        {
+            "label": "Ext.dataview.DataView Documentation",
+            "url": "http://docs.sencha.com/touch/2-0/#!/api/Ext.dataview.DataView",
+            "type": "docs"
+        }
+    ],
     "author": {
         "name": "Sencha Inc.",
         "github": "extjs",

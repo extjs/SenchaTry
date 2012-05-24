@@ -16,7 +16,13 @@
             "label": "Ext.grid.feature.RowBody"
         }
     ],
-    "seeAlso": [],
+    "seeAlso": [
+        {
+            "label": "Ext.grid.feature.RowBody Documentation",
+            "url": "http://docs.sencha.com/ext-js/4-1/#!/api/Ext.grid.feature.RowBody",
+            "type": "docs"
+        }
+    ],
     "author": {
         "name": "Sencha Inc.",
         "github": "extjs",

@@ -16,7 +16,13 @@
             "label": "Ext.window.Window"
         }
     ],
-    "seeAlso": [],
+    "seeAlso": [
+        {
+            "label": "Ext.window.Window Documentation",
+            "url": "http://docs.sencha.com/ext-js/4-1/#!/api/Ext.window.Window",
+            "type": "docs"
+        }
+    ],
     "author": {
         "name": "Sencha Inc.",
         "github": "extjs",

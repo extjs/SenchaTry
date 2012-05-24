@@ -25,7 +25,13 @@
             "label": "prompt()"
         }
     ],
-    "seeAlso": [],
+    "seeAlso": [
+        {
+            "label": "Ext.window.MessageBox Documentation",
+            "url": "http://docs.sencha.com/ext-js/4-0/#!/api/Ext.window.MessageBox",
+            "type": "docs"
+        }
+    ],
     "author": {
         "name": "Sencha Inc.",
         "github": "extjs",

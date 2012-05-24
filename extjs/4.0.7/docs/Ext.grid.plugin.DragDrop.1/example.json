@@ -39,6 +39,11 @@
     ],
     "seeAlso": [
         {
+            "label": "Ext.grid.plugin.DragDrop Documentation",
+            "url": "http://docs.sencha.com/ext-js/4-0/#!/api/Ext.grid.plugin.DragDrop",
+            "type": "docs"
+        },
+        {
             "label": "Drag and Drop Guide",
             "url": "http://docs.sencha.com/ext-js/4-0/#!/guide/drag_and_drop",
             "type": "guide"

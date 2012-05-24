@@ -16,7 +16,13 @@
             "label": "Ext.menu.CheckItem"
         }
     ],
-    "seeAlso": [],
+    "seeAlso": [
+        {
+            "label": "Ext.menu.CheckItem Documentation",
+            "url": "http://docs.sencha.com/ext-js/4-1/#!/api/Ext.menu.CheckItem",
+            "type": "docs"
+        }
+    ],
     "author": {
         "name": "Sencha Inc.",
         "github": "extjs",

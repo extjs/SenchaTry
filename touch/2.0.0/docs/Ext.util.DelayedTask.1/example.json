@@ -16,7 +16,13 @@
             "label": "Ext.util.DelayedTask"
         }
     ],
-    "seeAlso": [],
+    "seeAlso": [
+        {
+            "label": "Ext.util.DelayedTask Documentation",
+            "url": "http://docs.sencha.com/touch/2-0/#!/api/Ext.util.DelayedTask",
+            "type": "docs"
+        }
+    ],
     "author": {
         "name": "Sencha Inc.",
         "github": "extjs",

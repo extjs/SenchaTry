@@ -16,7 +16,13 @@
             "label": "Ext.ActionSheet"
         }
     ],
-    "seeAlso": [],
+    "seeAlso": [
+        {
+            "label": "Ext.ActionSheet Documentation",
+            "url": "http://docs.sencha.com/touch/2-0/#!/api/Ext.ActionSheet",
+            "type": "docs"
+        }
+    ],
     "author": {
         "name": "Sencha Inc.",
         "github": "extjs",

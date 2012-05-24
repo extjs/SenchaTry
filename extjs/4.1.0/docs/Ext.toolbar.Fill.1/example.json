@@ -16,7 +16,13 @@
             "label": "Ext.toolbar.Fill"
         }
     ],
-    "seeAlso": [],
+    "seeAlso": [
+        {
+            "label": "Ext.toolbar.Fill Documentation",
+            "url": "http://docs.sencha.com/ext-js/4-1/#!/api/Ext.toolbar.Fill",
+            "type": "docs"
+        }
+    ],
     "author": {
         "name": "Sencha Inc.",
         "github": "extjs",

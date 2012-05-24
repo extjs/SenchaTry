@@ -16,7 +16,13 @@
             "label": "Ext.button.Split"
         }
     ],
-    "seeAlso": [],
+    "seeAlso": [
+        {
+            "label": "Ext.button.Split Documentation",
+            "url": "http://docs.sencha.com/ext-js/4-1/#!/api/Ext.button.Split",
+            "type": "docs"
+        }
+    ],
     "author": {
         "name": "Sencha Inc.",
         "github": "extjs",

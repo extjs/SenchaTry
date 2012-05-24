@@ -16,7 +16,13 @@
             "label": "Ext.form.FieldContainer"
         }
     ],
-    "seeAlso": [],
+    "seeAlso": [
+        {
+            "label": "Ext.form.FieldContainer Documentation",
+            "url": "http://docs.sencha.com/ext-js/4-1/#!/api/Ext.form.FieldContainer",
+            "type": "docs"
+        }
+    ],
     "author": {
         "name": "Sencha Inc.",
         "github": "extjs",

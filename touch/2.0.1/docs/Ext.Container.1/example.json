@@ -16,7 +16,13 @@
             "label": "Ext.Container"
         }
     ],
-    "seeAlso": [],
+    "seeAlso": [
+        {
+            "label": "Ext.Container Documentation",
+            "url": "http://docs.sencha.com/touch/2-0/#!/api/Ext.Container",
+            "type": "docs"
+        }
+    ],
     "author": {
         "name": "Sencha Inc.",
         "github": "extjs",

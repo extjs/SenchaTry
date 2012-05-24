@@ -16,7 +16,13 @@
             "label": "Ext.grid.feature.Summary"
         }
     ],
-    "seeAlso": [],
+    "seeAlso": [
+        {
+            "label": "Ext.grid.feature.Summary Documentation",
+            "url": "http://docs.sencha.com/ext-js/4-1/#!/api/Ext.grid.feature.Summary",
+            "type": "docs"
+        }
+    ],
     "author": {
         "name": "Sencha Inc.",
         "github": "extjs",

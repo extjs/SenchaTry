@@ -16,7 +16,13 @@
             "label": "Ext.toolbar.TextItem"
         }
     ],
-    "seeAlso": [],
+    "seeAlso": [
+        {
+            "label": "Ext.toolbar.TextItem Documentation",
+            "url": "http://docs.sencha.com/ext-js/4-1/#!/api/Ext.toolbar.TextItem",
+            "type": "docs"
+        }
+    ],
     "author": {
         "name": "Sencha Inc.",
         "github": "extjs",

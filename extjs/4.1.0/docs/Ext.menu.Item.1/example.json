@@ -16,7 +16,13 @@
             "label": "Ext.menu.Item"
         }
     ],
-    "seeAlso": [],
+    "seeAlso": [
+        {
+            "label": "Ext.menu.Item Documentation",
+            "url": "http://docs.sencha.com/ext-js/4-1/#!/api/Ext.menu.Item",
+            "type": "docs"
+        }
+    ],
     "author": {
         "name": "Sencha Inc.",
         "github": "extjs",

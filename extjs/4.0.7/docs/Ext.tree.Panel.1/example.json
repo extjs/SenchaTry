@@ -42,6 +42,11 @@
     ],
     "seeAlso": [
         {
+            "label": "Ext.tree.Panel Documentation",
+            "url": "http://docs.sencha.com/ext-js/4-0/#!/api/Ext.tree.Panel",
+            "type": "docs"
+        },
+        {
             "label": "Trees Guide",
             "url": "http://docs.sencha.com/ext-js/4-0/#!/guide/tree",
             "type": "guide"

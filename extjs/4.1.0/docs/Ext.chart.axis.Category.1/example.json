@@ -16,7 +16,13 @@
             "label": "Ext.chart.axis.Category"
         }
     ],
-    "seeAlso": [],
+    "seeAlso": [
+        {
+            "label": "Ext.chart.axis.Category Documentation",
+            "url": "http://docs.sencha.com/ext-js/4-1/#!/api/Ext.chart.axis.Category",
+            "type": "docs"
+        }
+    ],
     "author": {
         "name": "Sencha Inc.",
         "github": "extjs",

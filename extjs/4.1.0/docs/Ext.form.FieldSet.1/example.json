@@ -16,7 +16,13 @@
             "label": "Ext.form.FieldSet"
         }
     ],
-    "seeAlso": [],
+    "seeAlso": [
+        {
+            "label": "Ext.form.FieldSet Documentation",
+            "url": "http://docs.sencha.com/ext-js/4-1/#!/api/Ext.form.FieldSet",
+            "type": "docs"
+        }
+    ],
     "author": {
         "name": "Sencha Inc.",
         "github": "extjs",

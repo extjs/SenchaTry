@@ -22,7 +22,13 @@
             "label": "updateText()"
         }
     ],
-    "seeAlso": [],
+    "seeAlso": [
+        {
+            "label": "Ext.ProgressBar Documentation",
+            "url": "http://docs.sencha.com/ext-js/4-0/#!/api/Ext.ProgressBar",
+            "type": "docs"
+        }
+    ],
     "author": {
         "name": "Sencha Inc.",
         "github": "extjs",

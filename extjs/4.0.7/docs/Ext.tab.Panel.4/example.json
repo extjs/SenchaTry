@@ -31,7 +31,13 @@
             "label": "plain"
         }
     ],
-    "seeAlso": [],
+    "seeAlso": [
+        {
+            "label": "Ext.tab.Panel Documentation",
+            "url": "http://docs.sencha.com/ext-js/4-0/#!/api/Ext.tab.Panel",
+            "type": "docs"
+        }
+    ],
     "author": {
         "name": "Sencha Inc.",
         "github": "extjs",

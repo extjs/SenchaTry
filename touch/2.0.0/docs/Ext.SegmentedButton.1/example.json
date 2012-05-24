@@ -16,7 +16,13 @@
             "label": "Ext.SegmentedButton"
         }
     ],
-    "seeAlso": [],
+    "seeAlso": [
+        {
+            "label": "Ext.SegmentedButton Documentation",
+            "url": "http://docs.sencha.com/touch/2-0/#!/api/Ext.SegmentedButton",
+            "type": "docs"
+        }
+    ],
     "author": {
         "name": "Sencha Inc.",
         "github": "extjs",

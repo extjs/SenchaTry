@@ -16,7 +16,13 @@
             "label": "Ext.grid.column.Number"
         }
     ],
-    "seeAlso": [],
+    "seeAlso": [
+        {
+            "label": "Ext.grid.column.Number Documentation",
+            "url": "http://docs.sencha.com/ext-js/4-1/#!/api/Ext.grid.column.Number",
+            "type": "docs"
+        }
+    ],
     "author": {
         "name": "Sencha Inc.",
         "github": "extjs",

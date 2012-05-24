@@ -16,7 +16,13 @@
             "label": "Ext.LoadMask"
         }
     ],
-    "seeAlso": [],
+    "seeAlso": [
+        {
+            "label": "Ext.LoadMask Documentation",
+            "url": "http://docs.sencha.com/touch/2-0/#!/api/Ext.LoadMask",
+            "type": "docs"
+        }
+    ],
     "author": {
         "name": "Sencha Inc.",
         "github": "extjs",

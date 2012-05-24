@@ -28,7 +28,13 @@
             "label": "tbar"
         }
     ],
-    "seeAlso": [],
+    "seeAlso": [
+        {
+            "label": "Ext.toolbar.Spacer Documentation",
+            "url": "http://docs.sencha.com/ext-js/4-0/#!/api/Ext.toolbar.Spacer",
+            "type": "docs"
+        }
+    ],
     "author": {
         "name": "Sencha Inc.",
         "github": "extjs",

@@ -16,7 +16,13 @@
             "label": "Ext.slider.Tip"
         }
     ],
-    "seeAlso": [],
+    "seeAlso": [
+        {
+            "label": "Ext.slider.Tip Documentation",
+            "url": "http://docs.sencha.com/ext-js/4-1/#!/api/Ext.slider.Tip",
+            "type": "docs"
+        }
+    ],
     "author": {
         "name": "Sencha Inc.",
         "github": "extjs",

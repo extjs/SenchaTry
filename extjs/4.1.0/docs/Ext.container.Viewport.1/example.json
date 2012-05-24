@@ -16,7 +16,13 @@
             "label": "Ext.container.Viewport"
         }
     ],
-    "seeAlso": [],
+    "seeAlso": [
+        {
+            "label": "Ext.container.Viewport Documentation",
+            "url": "http://docs.sencha.com/ext-js/4-1/#!/api/Ext.container.Viewport",
+            "type": "docs"
+        }
+    ],
     "author": {
         "name": "Sencha Inc.",
         "github": "extjs",

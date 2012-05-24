@@ -16,7 +16,13 @@
             "label": "Ext.draw.Text"
         }
     ],
-    "seeAlso": [],
+    "seeAlso": [
+        {
+            "label": "Ext.draw.Text Documentation",
+            "url": "http://docs.sencha.com/ext-js/4-1/#!/api/Ext.draw.Text",
+            "type": "docs"
+        }
+    ],
     "author": {
         "name": "Sencha Inc.",
         "github": "extjs",

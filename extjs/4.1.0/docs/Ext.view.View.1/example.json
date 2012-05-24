@@ -16,7 +16,13 @@
             "label": "Ext.view.View"
         }
     ],
-    "seeAlso": [],
+    "seeAlso": [
+        {
+            "label": "Ext.view.View Documentation",
+            "url": "http://docs.sencha.com/ext-js/4-1/#!/api/Ext.view.View",
+            "type": "docs"
+        }
+    ],
     "author": {
         "name": "Sencha Inc.",
         "github": "extjs",

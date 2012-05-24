@@ -16,7 +16,13 @@
             "label": "Ext.chart.series.Column"
         }
     ],
-    "seeAlso": [],
+    "seeAlso": [
+        {
+            "label": "Ext.chart.series.Column Documentation",
+            "url": "http://docs.sencha.com/ext-js/4-1/#!/api/Ext.chart.series.Column",
+            "type": "docs"
+        }
+    ],
     "author": {
         "name": "Sencha Inc.",
         "github": "extjs",

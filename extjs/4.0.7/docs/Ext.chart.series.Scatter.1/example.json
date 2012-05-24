@@ -39,6 +39,11 @@
     ],
     "seeAlso": [
         {
+            "label": "Ext.chart.series.Scatter Documentation",
+            "url": "http://docs.sencha.com/ext-js/4-0/#!/api/Ext.chart.series.Scatter",
+            "type": "docs"
+        },
+        {
             "label": "Drawing and Charting Guide",
             "url": "http://docs.sencha.com/ext-js/4-0/#!/guide/drawing_and_charting",
             "type": "guide"

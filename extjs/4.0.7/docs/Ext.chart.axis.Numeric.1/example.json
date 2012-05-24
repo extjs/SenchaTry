@@ -51,6 +51,11 @@
     ],
     "seeAlso": [
         {
+            "label": "Ext.chart.axis.Numeric Documentation",
+            "url": "http://docs.sencha.com/ext-js/4-0/#!/api/Ext.chart.axis.Numeric",
+            "type": "docs"
+        },
+        {
             "label": "Drawing and Charting Guide",
             "url": "http://docs.sencha.com/ext-js/4-0/#!/guide/drawing_and_charting",
             "type": "guide"

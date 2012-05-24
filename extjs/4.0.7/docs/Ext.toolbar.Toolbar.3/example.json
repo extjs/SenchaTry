@@ -28,7 +28,13 @@
             "label": "disable()"
         }
     ],
-    "seeAlso": [],
+    "seeAlso": [
+        {
+            "label": "Ext.toolbar.Toolbar Documentation",
+            "url": "http://docs.sencha.com/ext-js/4-0/#!/api/Ext.toolbar.Toolbar",
+            "type": "docs"
+        }
+    ],
     "author": {
         "name": "Sencha Inc.",
         "github": "extjs",

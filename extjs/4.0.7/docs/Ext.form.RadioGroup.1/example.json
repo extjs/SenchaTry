@@ -33,6 +33,11 @@
     ],
     "seeAlso": [
         {
+            "label": "Ext.form.RadioGroup Documentation",
+            "url": "http://docs.sencha.com/ext-js/4-0/#!/api/Ext.form.RadioGroup",
+            "type": "docs"
+        },
+        {
             "label": "The Form Package Guide",
             "url": "http://docs.sencha.com/ext-js/4-0/#!/guide/forms",
             "type": "guide"

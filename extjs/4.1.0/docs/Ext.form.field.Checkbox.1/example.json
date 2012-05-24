@@ -16,7 +16,13 @@
             "label": "Ext.form.field.Checkbox"
         }
     ],
-    "seeAlso": [],
+    "seeAlso": [
+        {
+            "label": "Ext.form.field.Checkbox Documentation",
+            "url": "http://docs.sencha.com/ext-js/4-1/#!/api/Ext.form.field.Checkbox",
+            "type": "docs"
+        }
+    ],
     "author": {
         "name": "Sencha Inc.",
         "github": "extjs",

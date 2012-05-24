@@ -16,7 +16,13 @@
             "label": "Ext.tip.QuickTipManager"
         }
     ],
-    "seeAlso": [],
+    "seeAlso": [
+        {
+            "label": "Ext.tip.QuickTipManager Documentation",
+            "url": "http://docs.sencha.com/ext-js/4-1/#!/api/Ext.tip.QuickTipManager",
+            "type": "docs"
+        }
+    ],
     "author": {
         "name": "Sencha Inc.",
         "github": "extjs",

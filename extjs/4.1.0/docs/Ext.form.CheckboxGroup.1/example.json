@@ -16,7 +16,13 @@
             "label": "Ext.form.CheckboxGroup"
         }
     ],
-    "seeAlso": [],
+    "seeAlso": [
+        {
+            "label": "Ext.form.CheckboxGroup Documentation",
+            "url": "http://docs.sencha.com/ext-js/4-1/#!/api/Ext.form.CheckboxGroup",
+            "type": "docs"
+        }
+    ],
     "author": {
         "name": "Sencha Inc.",
         "github": "extjs",

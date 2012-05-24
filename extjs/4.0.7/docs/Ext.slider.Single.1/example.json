@@ -46,7 +46,13 @@
             "label": "maxValue"
         }
     ],
-    "seeAlso": [],
+    "seeAlso": [
+        {
+            "label": "Ext.slider.Single Documentation",
+            "url": "http://docs.sencha.com/ext-js/4-0/#!/api/Ext.slider.Single",
+            "type": "docs"
+        }
+    ],
     "author": {
         "name": "Sencha Inc.",
         "github": "extjs",

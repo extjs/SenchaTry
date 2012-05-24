@@ -33,6 +33,11 @@
     ],
     "seeAlso": [
         {
+            "label": "Ext.layout.container.Table Documentation",
+            "url": "http://docs.sencha.com/ext-js/4-0/#!/api/Ext.layout.container.Table",
+            "type": "docs"
+        },
+        {
             "label": "Layouts and Containers Guide",
             "url": "http://docs.sencha.com/ext-js/4-0/#!/guide/layouts_and_containers",
             "type": "guide"

@@ -16,7 +16,13 @@
             "label": "Ext.form.field.HtmlEditor"
         }
     ],
-    "seeAlso": [],
+    "seeAlso": [
+        {
+            "label": "Ext.form.field.HtmlEditor Documentation",
+            "url": "http://docs.sencha.com/ext-js/4-1/#!/api/Ext.form.field.HtmlEditor",
+            "type": "docs"
+        }
+    ],
     "author": {
         "name": "Sencha Inc.",
         "github": "extjs",

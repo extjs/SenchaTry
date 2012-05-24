@@ -16,7 +16,13 @@
             "label": "Ext.form.Basic"
         }
     ],
-    "seeAlso": [],
+    "seeAlso": [
+        {
+            "label": "Ext.form.Basic Documentation",
+            "url": "http://docs.sencha.com/ext-js/4-1/#!/api/Ext.form.Basic",
+            "type": "docs"
+        }
+    ],
     "author": {
         "name": "Sencha Inc.",
         "github": "extjs",

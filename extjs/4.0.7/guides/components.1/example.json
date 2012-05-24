@@ -11,7 +11,11 @@
             "label": "Ext JS 4.0.7"
         }
     ],
-    "tags": [],
+    "tags": [
+        {
+            "label": "Ext.create()"
+        }
+    ],
     "seeAlso": [
         {
             "label": "Components Guide",

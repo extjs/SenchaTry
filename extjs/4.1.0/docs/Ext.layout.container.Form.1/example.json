@@ -16,7 +16,13 @@
             "label": "Ext.layout.container.Form"
         }
     ],
-    "seeAlso": [],
+    "seeAlso": [
+        {
+            "label": "Ext.layout.container.Form Documentation",
+            "url": "http://docs.sencha.com/ext-js/4-1/#!/api/Ext.layout.container.Form",
+            "type": "docs"
+        }
+    ],
     "author": {
         "name": "Sencha Inc.",
         "github": "extjs",

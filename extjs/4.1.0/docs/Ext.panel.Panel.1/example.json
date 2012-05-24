@@ -16,7 +16,13 @@
             "label": "Ext.panel.Panel"
         }
     ],
-    "seeAlso": [],
+    "seeAlso": [
+        {
+            "label": "Ext.panel.Panel Documentation",
+            "url": "http://docs.sencha.com/ext-js/4-1/#!/api/Ext.panel.Panel",
+            "type": "docs"
+        }
+    ],
     "author": {
         "name": "Sencha Inc.",
         "github": "extjs",

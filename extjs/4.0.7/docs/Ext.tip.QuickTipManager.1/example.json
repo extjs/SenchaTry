@@ -40,7 +40,13 @@
             "label": "dismissDelay"
         }
     ],
-    "seeAlso": [],
+    "seeAlso": [
+        {
+            "label": "Ext.tip.QuickTipManager Documentation",
+            "url": "http://docs.sencha.com/ext-js/4-0/#!/api/Ext.tip.QuickTipManager",
+            "type": "docs"
+        }
+    ],
     "author": {
         "name": "Sencha Inc.",
         "github": "extjs",

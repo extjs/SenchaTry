@@ -16,7 +16,13 @@
             "label": "Ext.container.ButtonGroup"
         }
     ],
-    "seeAlso": [],
+    "seeAlso": [
+        {
+            "label": "Ext.container.ButtonGroup Documentation",
+            "url": "http://docs.sencha.com/ext-js/4-1/#!/api/Ext.container.ButtonGroup",
+            "type": "docs"
+        }
+    ],
     "author": {
         "name": "Sencha Inc.",
         "github": "extjs",

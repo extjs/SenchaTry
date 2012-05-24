@@ -16,7 +16,13 @@
             "label": "Ext.picker.Time"
         }
     ],
-    "seeAlso": [],
+    "seeAlso": [
+        {
+            "label": "Ext.picker.Time Documentation",
+            "url": "http://docs.sencha.com/ext-js/4-1/#!/api/Ext.picker.Time",
+            "type": "docs"
+        }
+    ],
     "author": {
         "name": "Sencha Inc.",
         "github": "extjs",

@@ -48,6 +48,11 @@
     ],
     "seeAlso": [
         {
+            "label": "Ext.chart.series.Column Documentation",
+            "url": "http://docs.sencha.com/ext-js/4-0/#!/api/Ext.chart.series.Column",
+            "type": "docs"
+        },
+        {
             "label": "Drawing and Charting Guide",
             "url": "http://docs.sencha.com/ext-js/4-0/#!/guide/drawing_and_charting",
             "type": "guide"

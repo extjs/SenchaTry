@@ -16,7 +16,13 @@
             "label": "Ext.TitleBar"
         }
     ],
-    "seeAlso": [],
+    "seeAlso": [
+        {
+            "label": "Ext.TitleBar Documentation",
+            "url": "http://docs.sencha.com/touch/2-0/#!/api/Ext.TitleBar",
+            "type": "docs"
+        }
+    ],
     "author": {
         "name": "Sencha Inc.",
         "github": "extjs",

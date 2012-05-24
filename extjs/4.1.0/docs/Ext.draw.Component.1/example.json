@@ -16,7 +16,13 @@
             "label": "Ext.draw.Component"
         }
     ],
-    "seeAlso": [],
+    "seeAlso": [
+        {
+            "label": "Ext.draw.Component Documentation",
+            "url": "http://docs.sencha.com/ext-js/4-1/#!/api/Ext.draw.Component",
+            "type": "docs"
+        }
+    ],
     "author": {
         "name": "Sencha Inc.",
         "github": "extjs",

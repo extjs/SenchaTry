@@ -16,7 +16,13 @@
             "label": "Ext.layout.container.Container"
         }
     ],
-    "seeAlso": [],
+    "seeAlso": [
+        {
+            "label": "Ext.layout.container.Container Documentation",
+            "url": "http://docs.sencha.com/ext-js/4-1/#!/api/Ext.layout.container.Container",
+            "type": "docs"
+        }
+    ],
     "author": {
         "name": "Sencha Inc.",
         "github": "extjs",

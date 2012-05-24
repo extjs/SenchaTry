@@ -16,7 +16,13 @@
             "label": "Ext.grid.plugin.RowEditing"
         }
     ],
-    "seeAlso": [],
+    "seeAlso": [
+        {
+            "label": "Ext.grid.plugin.RowEditing Documentation",
+            "url": "http://docs.sencha.com/ext-js/4-1/#!/api/Ext.grid.plugin.RowEditing",
+            "type": "docs"
+        }
+    ],
     "author": {
         "name": "Sencha Inc.",
         "github": "extjs",

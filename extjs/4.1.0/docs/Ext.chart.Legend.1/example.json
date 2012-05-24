@@ -16,7 +16,13 @@
             "label": "Ext.chart.Legend"
         }
     ],
-    "seeAlso": [],
+    "seeAlso": [
+        {
+            "label": "Ext.chart.Legend Documentation",
+            "url": "http://docs.sencha.com/ext-js/4-1/#!/api/Ext.chart.Legend",
+            "type": "docs"
+        }
+    ],
     "author": {
         "name": "Sencha Inc.",
         "github": "extjs",

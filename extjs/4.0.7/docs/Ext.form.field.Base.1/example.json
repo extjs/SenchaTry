@@ -30,6 +30,11 @@
     ],
     "seeAlso": [
         {
+            "label": "Ext.form.field.Base Documentation",
+            "url": "http://docs.sencha.com/ext-js/4-0/#!/api/Ext.form.field.Base",
+            "type": "docs"
+        },
+        {
             "label": "The Form Package Guide",
             "url": "http://docs.sencha.com/ext-js/4-0/#!/guide/forms",
             "type": "guide"

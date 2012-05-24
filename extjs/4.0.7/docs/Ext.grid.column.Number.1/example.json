@@ -36,6 +36,11 @@
     ],
     "seeAlso": [
         {
+            "label": "Ext.grid.column.Number Documentation",
+            "url": "http://docs.sencha.com/ext-js/4-0/#!/api/Ext.grid.column.Number",
+            "type": "docs"
+        },
+        {
             "label": "The Grid Component Guide",
             "url": "http://docs.sencha.com/ext-js/4-0/#!/guide/grid",
             "type": "guide"

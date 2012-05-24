@@ -16,7 +16,13 @@
             "label": "Ext.field.Select"
         }
     ],
-    "seeAlso": [],
+    "seeAlso": [
+        {
+            "label": "Ext.field.Select Documentation",
+            "url": "http://docs.sencha.com/touch/2-0/#!/api/Ext.field.Select",
+            "type": "docs"
+        }
+    ],
     "author": {
         "name": "Sencha Inc.",
         "github": "extjs",

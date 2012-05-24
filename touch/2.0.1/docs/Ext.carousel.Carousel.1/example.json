@@ -16,7 +16,13 @@
             "label": "Ext.carousel.Carousel"
         }
     ],
-    "seeAlso": [],
+    "seeAlso": [
+        {
+            "label": "Ext.carousel.Carousel Documentation",
+            "url": "http://docs.sencha.com/touch/2-0/#!/api/Ext.carousel.Carousel",
+            "type": "docs"
+        }
+    ],
     "author": {
         "name": "Sencha Inc.",
         "github": "extjs",

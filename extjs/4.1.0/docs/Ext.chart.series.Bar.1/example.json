@@ -16,7 +16,13 @@
             "label": "Ext.chart.series.Bar"
         }
     ],
-    "seeAlso": [],
+    "seeAlso": [
+        {
+            "label": "Ext.chart.series.Bar Documentation",
+            "url": "http://docs.sencha.com/ext-js/4-1/#!/api/Ext.chart.series.Bar",
+            "type": "docs"
+        }
+    ],
     "author": {
         "name": "Sencha Inc.",
         "github": "extjs",
