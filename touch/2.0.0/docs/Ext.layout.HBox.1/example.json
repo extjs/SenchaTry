@@ -14,6 +14,12 @@
     "tags": [
         {
             "label": "Ext.layout.HBox"
+        },
+        {
+            "label": "Ext.layout.HBoxLayout"
+        },
+        {
+            "label": "hbox"
         }
     ],
     "seeAlso": [
@@ -21,6 +27,16 @@
             "label": "Ext.layout.HBox Documentation",
             "url": "http://docs.sencha.com/touch/2-0/#!/api/Ext.layout.HBox",
             "type": "docs"
+        },
+        {
+            "label": "Layouts Guide",
+            "url": "http://docs.sencha.com/touch/2-0/#!/guide/layouts",
+            "type": "guide"
+        },
+        {
+            "label": "Intro to Layouts Video",
+            "url": "http://docs.sencha.com/touch/2-0/#!/video/layouts",
+            "type": "video"
         }
     ],
     "author": {

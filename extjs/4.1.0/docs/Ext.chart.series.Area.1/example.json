@@ -21,6 +21,11 @@
             "label": "Ext.chart.series.Area Documentation",
             "url": "http://docs.sencha.com/ext-js/4-1/#!/api/Ext.chart.series.Area",
             "type": "docs"
+        },
+        {
+            "label": "Charting & Data Visualization in Ext JS 4 Video",
+            "url": "http://docs.sencha.com/ext-js/4-1/#!/video/17673342",
+            "type": "video"
         }
     ],
     "author": {

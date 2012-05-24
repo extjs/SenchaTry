@@ -14,6 +14,12 @@
     "tags": [
         {
             "label": "Ext.layout.VBox"
+        },
+        {
+            "label": "Ext.layout.VBoxLayout"
+        },
+        {
+            "label": "vbox"
         }
     ],
     "seeAlso": [
@@ -21,6 +27,16 @@
             "label": "Ext.layout.VBox Documentation",
             "url": "http://docs.sencha.com/touch/2-0/#!/api/Ext.layout.VBox",
             "type": "docs"
+        },
+        {
+            "label": "Layouts Guide",
+            "url": "http://docs.sencha.com/touch/2-0/#!/guide/layouts",
+            "type": "guide"
+        },
+        {
+            "label": "Intro to Layouts Guide",
+            "url": "http://docs.sencha.com/touch/2-0/#!/video/layouts",
+            "type": "video"
         }
     ],
     "author": {

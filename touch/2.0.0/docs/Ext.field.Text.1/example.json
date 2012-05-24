@@ -21,6 +21,11 @@
             "label": "Ext.field.Text Documentation",
             "url": "http://docs.sencha.com/touch/2-0/#!/api/Ext.field.Text",
             "type": "docs"
+        },
+        {
+            "label": "Using Forms Guide",
+            "url": "http://docs.sencha.com/touch/2-0/#!/guide/forms",
+            "type": "guide"
         }
     ],
     "author": {

@@ -21,6 +21,11 @@
             "label": "Ext.container.ButtonGroup Documentation",
             "url": "http://docs.sencha.com/ext-js/4-1/#!/api/Ext.container.ButtonGroup",
             "type": "docs"
+        },
+        {
+            "label": "The Ext JS 4 Layout System Video",
+            "url": "http://docs.sencha.com/ext-js/4-1/#!/video/17917111",
+            "type": "video"
         }
     ],
     "author": {
