@@ -13,9 +13,6 @@
     ],
     "tags": [
         {
-            "label": "menu"
-        },
-        {
             "label": "Ext.menu.Separator"
         },
         {
@@ -23,9 +20,18 @@
         },
         {
             "label": "separatorCls"
+        },
+        {
+            "label": "menu"
         }
     ],
-    "seeAlso": [],
+    "seeAlso": [
+        {
+            "label": "Ext.menu.Separator Documentation",
+            "url": "http://docs.sencha.com/ext-js/4-0/#!/api/Ext.menu.Separator",
+            "type": "docs"
+        }
+    ],
     "author": {
         "name": "Sencha Inc.",
         "github": "extjs",

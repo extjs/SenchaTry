@@ -13,16 +13,22 @@
     ],
     "tags": [
         {
-            "label": "menu"
-        },
-        {
             "label": "Ext.menu.ColorPicker"
         },
         {
             "label": "colormenu"
+        },
+        {
+            "label": "menu"
         }
     ],
-    "seeAlso": [],
+    "seeAlso": [
+        {
+            "label": "Ext.menu.ColorPicker Documentation",
+            "url": "http://docs.sencha.com/ext-js/4-0/#!/api/Ext.menu.ColorPicker",
+            "type": "docs"
+        }
+    ],
     "author": {
         "name": "Sencha Inc.",
         "github": "extjs",

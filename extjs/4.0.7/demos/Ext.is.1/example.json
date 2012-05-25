@@ -55,7 +55,13 @@
             "label": "iPod"
         }
     ],
-    "seeAlso": [],
+    "seeAlso": [
+        {
+            "label": "Ext.is Documentation",
+            "url": "http://docs.sencha.com/ext-js/4-0/#!/api/Ext.is",
+            "type": "docs"
+        }
+    ],
     "author": {
         "name": "Sencha Inc.",
         "github": "extjs",

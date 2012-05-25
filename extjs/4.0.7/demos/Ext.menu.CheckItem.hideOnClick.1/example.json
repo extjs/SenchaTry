@@ -13,19 +13,25 @@
     ],
     "tags": [
         {
-            "label": "menu"
+            "label": "Ext.menu.CheckItem"
         },
         {
             "label": "menucheckitem"
         },
         {
-            "label": "Ext.menu.CheckItem"
+            "label": "menu"
         },
         {
             "label": "hideOnClick"
         }
     ],
-    "seeAlso": [],
+    "seeAlso": [
+        {
+            "label": "Ext.menu.CheckItem Documentation",
+            "url": "http://docs.sencha.com/ext-js/4-0/#!/api/Ext.menu.CheckItem",
+            "type": "docs"
+        }
+    ],
     "author": {
         "name": "Sencha Inc.",
         "github": "extjs",
