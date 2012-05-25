@@ -14,6 +14,24 @@
     "tags": [
         {
             "label": "Ext.field.Checkbox"
+        },
+        {
+            "label": "Ext.form.Checkbox"
+        },
+        {
+            "label": "checkboxfield"
+        },
+        {
+            "label": "checked"
+        },
+        {
+            "label": "getValues()"
+        },
+        {
+            "label": "field"
+        },
+        {
+            "label": "form"
         }
     ],
     "seeAlso": [

@@ -14,6 +14,21 @@
     "tags": [
         {
             "label": "Ext.SegmentedButton"
+        },
+        {
+            "label": "segmentedbutton"
+        },
+        {
+            "label": "allowMultiple"
+        },
+        {
+            "label": "items"
+        },
+        {
+            "label": "listeners"
+        },
+        {
+            "label": "toggle"
         }
     ],
     "seeAlso": [

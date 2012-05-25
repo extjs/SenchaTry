@@ -14,6 +14,12 @@
     "tags": [
         {
             "label": "Ext.LoadMask"
+        },
+        {
+            "label": "loadmask"
+        },
+        {
+            "label": "masked"
         }
     ],
     "seeAlso": [

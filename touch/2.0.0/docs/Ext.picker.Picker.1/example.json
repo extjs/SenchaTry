@@ -14,6 +14,18 @@
     "tags": [
         {
             "label": "Ext.picker.Picker"
+        },
+        {
+            "label": "Ext.Picker"
+        },
+        {
+            "label": "picker"
+        },
+        {
+            "label": "slots"
+        },
+        {
+            "label": "show()"
         }
     ],
     "seeAlso": [

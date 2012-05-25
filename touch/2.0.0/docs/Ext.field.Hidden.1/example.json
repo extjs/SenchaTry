@@ -14,6 +14,18 @@
     "tags": [
         {
             "label": "Ext.field.Hidden"
+        },
+        {
+            "label": "Ext.form.Hidden"
+        },
+        {
+            "label": "hiddenfield"
+        },
+        {
+            "label": "field"
+        },
+        {
+            "label": "form"
         }
     ],
     "seeAlso": [

@@ -20,6 +20,9 @@
         },
         {
             "label": "panel"
+        },
+        {
+            "label": "showBy()"
         }
     ],
     "seeAlso": [

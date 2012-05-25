@@ -14,6 +14,15 @@
     "tags": [
         {
             "label": "Ext.Spacer"
+        },
+        {
+            "label": "spacer"
+        },
+        {
+            "label": "width"
+        },
+        {
+            "label": "setWidth()"
         }
     ],
     "seeAlso": [

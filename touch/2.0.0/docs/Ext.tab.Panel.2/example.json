@@ -20,6 +20,9 @@
         },
         {
             "label": "tabpanel"
+        },
+        {
+            "label": "tab"
         }
     ],
     "seeAlso": [

@@ -14,6 +14,18 @@
     "tags": [
         {
             "label": "Ext.field.Email"
+        },
+        {
+            "label": "Ext.form.Email"
+        },
+        {
+            "label": "emailfield"
+        },
+        {
+            "label": "field"
+        },
+        {
+            "label": "form"
         }
     ],
     "seeAlso": [

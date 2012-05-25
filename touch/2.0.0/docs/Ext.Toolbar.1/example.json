@@ -17,6 +17,30 @@
         },
         {
             "label": "toolbar"
+        },
+        {
+            "label": "docked"
+        },
+        {
+            "label": "title"
+        },
+        {
+            "label": "getDocked()"
+        },
+        {
+            "label": "setDocked()"
+        },
+        {
+            "label": "getUi()"
+        },
+        {
+            "label": "setUi()"
+        },
+        {
+            "label": "getTitle()"
+        },
+        {
+            "label": "setTitle()"
         }
     ],
     "seeAlso": [

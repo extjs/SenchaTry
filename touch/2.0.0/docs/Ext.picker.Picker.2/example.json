@@ -14,6 +14,24 @@
     "tags": [
         {
             "label": "Ext.picker.Picker"
+        },
+        {
+            "label": "Ext.Picker"
+        },
+        {
+            "label": "picker"
+        },
+        {
+            "label": "doneButton"
+        },
+        {
+            "label": "cancelButton"
+        },
+        {
+            "label": "slots"
+        },
+        {
+            "label": "show()"
         }
     ],
     "seeAlso": [

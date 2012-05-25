@@ -14,6 +14,24 @@
     "tags": [
         {
             "label": "Ext.field.Toggle"
+        },
+        {
+            "label": "Ext.form.Toggle"
+        },
+        {
+            "label": "togglefield"
+        },
+        {
+            "label": "label"
+        },
+        {
+            "label": "labelWidth"
+        },
+        {
+            "label": "field"
+        },
+        {
+            "label": "form"
         }
     ],
     "seeAlso": [

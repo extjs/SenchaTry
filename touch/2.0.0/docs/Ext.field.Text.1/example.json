@@ -14,6 +14,18 @@
     "tags": [
         {
             "label": "Ext.field.Text"
+        },
+        {
+            "label": "Ext.form.Text"
+        },
+        {
+            "label": "textfield"
+        },
+        {
+            "label": "field"
+        },
+        {
+            "label": "form"
         }
     ],
     "seeAlso": [

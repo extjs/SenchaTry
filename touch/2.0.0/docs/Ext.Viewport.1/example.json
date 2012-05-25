@@ -14,6 +14,18 @@
     "tags": [
         {
             "label": "Ext.Viewport"
+        },
+        {
+            "label": "setup()"
+        },
+        {
+            "label": "viewport"
+        },
+        {
+            "label": "layout"
+        },
+        {
+            "label": "onReady()"
         }
     ],
     "seeAlso": [

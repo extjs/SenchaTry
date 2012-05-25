@@ -14,6 +14,18 @@
     "tags": [
         {
             "label": "Ext.field.Search"
+        },
+        {
+            "label": "Ext.form.Search"
+        },
+        {
+            "label": "searchfield"
+        },
+        {
+            "label": "field"
+        },
+        {
+            "label": "form"
         }
     ],
     "seeAlso": [

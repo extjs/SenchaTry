@@ -20,6 +20,12 @@
         },
         {
             "label": "hbox"
+        },
+        {
+            "label": "layout"
+        },
+        {
+            "label": "flex"
         }
     ],
     "seeAlso": [

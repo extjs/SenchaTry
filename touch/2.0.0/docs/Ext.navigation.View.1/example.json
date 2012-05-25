@@ -14,6 +14,21 @@
     "tags": [
         {
             "label": "Ext.navigation.View"
+        },
+        {
+            "label": "Ext.NavigationView"
+        },
+        {
+            "label": "navigationview"
+        },
+        {
+            "label": "navigation"
+        },
+        {
+            "label": "items"
+        },
+        {
+            "label": "push()"
         }
     ],
     "seeAlso": [

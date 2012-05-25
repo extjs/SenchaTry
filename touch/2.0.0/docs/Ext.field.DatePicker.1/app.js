@@ -20,11 +20,11 @@ Ext.application({
                     text: 'setValue',
                     handler: function () {
                         var datePickerField = Ext.ComponentQuery.query('datepickerfield')[0];
-
+                        
                         var randomNumber = function (from, to) {
                                 return Math.floor(Math.random() * (to - from + 1) + from);
                             };
-
+                        
                         datePickerField.setValue({
                             month: randomNumber(0, 11),
                             day: randomNumber(0, 28),
@@ -36,6 +36,5 @@ Ext.application({
                 }]
             }]
         });
-
     } // launch
 }); // application()

@@ -14,6 +14,33 @@
     "tags": [
         {
             "label": "Ext.field.DatePicker"
+        },
+        {
+            "label": "Ext.form.DatePicker"
+        },
+        {
+            "label": "datepickerfield"
+        },
+        {
+            "label": "value"
+        },
+        {
+            "label": "setValue()"
+        },
+        {
+            "label": "month"
+        },
+        {
+            "label": "day"
+        },
+        {
+            "label": "year"
+        },
+        {
+            "label": "field"
+        },
+        {
+            "label": "form"
         }
     ],
     "seeAlso": [

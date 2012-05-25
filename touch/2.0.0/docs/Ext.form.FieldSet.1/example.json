@@ -14,6 +14,18 @@
     "tags": [
         {
             "label": "Ext.form.FieldSet"
+        },
+        {
+            "label": "fieldset"
+        },
+        {
+            "label": "instructions"
+        },
+        {
+            "label": "title"
+        },
+        {
+            "label": "form"
         }
     ],
     "seeAlso": [

@@ -14,6 +14,27 @@
     "tags": [
         {
             "label": "Ext.field.Number"
+        },
+        {
+            "label": "Ext.form.Number"
+        },
+        {
+            "label": "numberfield"
+        },
+        {
+            "label": "minValue"
+        },
+        {
+            "label": "maxValue"
+        },
+        {
+            "label": "stepValue"
+        },
+        {
+            "label": "field"
+        },
+        {
+            "label": "form"
         }
     ],
     "seeAlso": [

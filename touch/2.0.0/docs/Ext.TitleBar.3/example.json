@@ -14,6 +14,15 @@
     "tags": [
         {
             "label": "Ext.TitleBar"
+        },
+        {
+            "label": "titlebar"
+        },
+        {
+            "label": "docked"
+        },
+        {
+            "label": "title"
         }
     ],
     "seeAlso": [

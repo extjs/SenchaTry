@@ -14,6 +14,33 @@
     "tags": [
         {
             "label": "Ext.event.Event"
+        },
+        {
+            "label": "Ext.EventObject"
+        },
+        {
+            "label": "element"
+        },
+        {
+            "label": "on()"
+        },
+        {
+            "label": "tap"
+        },
+        {
+            "label": "pageX"
+        },
+        {
+            "label": "pageY"
+        },
+        {
+            "label": "target"
+        },
+        {
+            "label": "className"
+        },
+        {
+            "label": "getTarget()"
         }
     ],
     "seeAlso": [

@@ -14,6 +14,12 @@
     "tags": [
         {
             "label": "Ext.util.DelayedTask"
+        },
+        {
+            "label": "util"
+        },
+        {
+            "label": "delay()"
         }
     ],
     "seeAlso": [

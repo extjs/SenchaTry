@@ -20,6 +20,12 @@
         },
         {
             "label": "tabpanel"
+        },
+        {
+            "label": "tab"
+        },
+        {
+            "label": "tabBarPosition"
         }
     ],
     "seeAlso": [

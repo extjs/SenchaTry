@@ -14,6 +14,9 @@
     "tags": [
         {
             "label": "Ext.Spacer"
+        },
+        {
+            "label": "spacer"
         }
     ],
     "seeAlso": [

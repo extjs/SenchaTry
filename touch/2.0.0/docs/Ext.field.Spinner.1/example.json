@@ -14,6 +14,33 @@
     "tags": [
         {
             "label": "Ext.field.Spinner"
+        },
+        {
+            "label": "Ext.form.Spinner"
+        },
+        {
+            "label": "spinnerfield"
+        },
+        {
+            "label": "minValue"
+        },
+        {
+            "label": "maxValue"
+        },
+        {
+            "label": "value"
+        },
+        {
+            "label": "increment"
+        },
+        {
+            "label": "cycle"
+        },
+        {
+            "label": "field"
+        },
+        {
+            "label": "form"
         }
     ],
     "seeAlso": [

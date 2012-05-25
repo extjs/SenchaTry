@@ -20,6 +20,12 @@
         },
         {
             "label": "vbox"
+        },
+        {
+            "label": "layout"
+        },
+        {
+            "label": "flex"
         }
     ],
     "seeAlso": [

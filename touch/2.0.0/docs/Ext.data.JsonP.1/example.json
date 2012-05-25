@@ -32,6 +32,9 @@
         },
         {
             "label": "success"
+        },
+        {
+            "label": "data"
         }
     ],
     "seeAlso": [

@@ -14,6 +14,24 @@
     "tags": [
         {
             "label": "Ext.field.DatePicker"
+        },
+        {
+            "label": "Ext.form.DatePicker"
+        },
+        {
+            "label": "datepickerfield"
+        },
+        {
+            "label": "getValue()"
+        },
+        {
+            "label": "getFormattedValue()"
+        },
+        {
+            "label": "field"
+        },
+        {
+            "label": "form"
         }
     ],
     "seeAlso": [
