@@ -246,7 +246,17 @@ $ ant -projecthelp
     <target name="example_json"
             description="Find all those pesky example.json files.">
         <delete>
-            <fileset dir="${src.dir}" includes="**/example.json" defaultexcludes="no" />
+            <fileset dir="${src.dir}" includes="**/example.json2" defaultexcludes="no" />
+        </delete>
+    </target>
+    
+    
+    <!-- Remove any src.zip files. -->
+    <target name="srczip"
+            description="Remove any src.zip files."
+            depends="ds_store">
+        <delete>
+            <fileset dir="${src.dir}" includes="**/src.zip" defaultexcludes="no" />
         </delete>
     </target>
     
