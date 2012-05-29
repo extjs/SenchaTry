@@ -24,6 +24,11 @@
             "label": "Layouts and Containers Guide",
             "url": "http://docs.sencha.com/ext-js/4-0/#!/guide/layouts_and_containers",
             "type": "guide"
+        },
+        {
+            "label": "Ext.panel.Panel Documentation",
+            "url": "http://docs.sencha.com/ext-js/4-0/#!/api/Ext.panel.Panel",
+            "type": "docs"
         }
     ],
     "author": {

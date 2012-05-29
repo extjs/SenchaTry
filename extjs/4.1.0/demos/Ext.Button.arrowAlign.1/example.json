@@ -20,9 +20,18 @@
         },
         {
             "label": "button"
+        },
+        {
+            "label": "arrowAlign"
         }
     ],
-    "seeAlso": [],
+    "seeAlso": [
+        {
+            "label": "Ext.button.Button Documentation",
+            "url": "http://docs.sencha.com/ext-js/4-1/#!/api/Ext.button.Button",
+            "type": "docs"
+        }
+    ],
     "author": {
         "name": "Sencha Inc.",
         "github": "extjs",

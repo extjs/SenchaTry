@@ -11,8 +11,121 @@
             "label": "Ext JS 4.0.7"
         }
     ],
-    "tags": [],
-    "seeAlso": [],
+    "tags": [
+        {
+            "label": "Ext.chart.Chart"
+        },
+        {
+            "label": "chart"
+        },
+        {
+            "label": "Ext.panel.Panel"
+        },
+        {
+            "label": "axes"
+        },
+        {
+            "label": "axis"
+        },
+        {
+            "label": "Ext.chart.axis.Numeric"
+        },
+        {
+            "label": "Ext.chart.NumericAxis"
+        },
+        {
+            "label": "numeric"
+        },
+        {
+            "label": "Ext.chart.axis.Category"
+        },
+        {
+            "label": "Ext.chart.CategoryAxis"
+        },
+        {
+            "label": "category"
+        },
+        {
+            "label": "Ext.chart.series.Line"
+        },
+        {
+            "label": "Ext.chart.LineChart"
+        },
+        {
+            "label": "Ext.chart.LineSeries"
+        },
+        {
+            "label": "line"
+        },
+        {
+            "label": "Ext.chart.series.Column"
+        },
+        {
+            "label": "Ext.chart.ColumnChart"
+        },
+        {
+            "label": "Ext.chart.ColumnSeries"
+        },
+        {
+            "label": "Ext.chart.StackedColumnChart"
+        },
+        {
+            "label": "column"
+        },
+        {
+            "label": "Ext.util.Format"
+        },
+        {
+            "label": "numberRenderer()"
+        },
+        {
+            "label": "itemmouseup"
+        },
+        {
+            "label": "tips"
+        },
+        {
+            "label": "trackMouse"
+        },
+        {
+            "label": "markerConfig"
+        },
+        {
+            "label": "showMarkers"
+        }
+    ],
+    "seeAlso": [
+        {
+            "label": "Ext.chart.Chart Documentation",
+            "url": "http://docs.sencha.com/ext-js/4-0/#!/api/Ext.chart.Chart",
+            "type": "docs"
+        },
+        {
+            "label": "Ext.chart.axis.Numeric Documentation",
+            "url": "http://docs.sencha.com/ext-js/4-0/#!/api/Ext.chart.axis.Numeric",
+            "type": "docs"
+        },
+        {
+            "label": "Ext.chart.axis.Category Documentation",
+            "url": "http://docs.sencha.com/ext-js/4-0/#!/api/Ext.chart.axis.Category",
+            "type": "docs"
+        },
+        {
+            "label": "Ext.chart.series.Line Documentation",
+            "url": "http://docs.sencha.com/ext-js/4-0/#!/api/Ext.chart.series.Line",
+            "type": "docs"
+        },
+        {
+            "label": "Ext.chart.series.Column Documentation",
+            "url": "http://docs.sencha.com/ext-js/4-0/#!/api/Ext.chart.series.Column",
+            "type": "docs"
+        },
+        {
+            "label": "Drawing and Charting Guide",
+            "url": "http://docs.sencha.com/ext-js/4-0/#!/guide/drawing_and_charting",
+            "type": "guide"
+        }
+    ],
     "author": {
         "name": "Sencha Inc.",
         "github": "extjs",

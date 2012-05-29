@@ -21,6 +21,11 @@
             "label": "Components Guide",
             "url": "http://docs.sencha.com/ext-js/4-0/#!/guide/components",
             "type": "guide"
+        },
+        {
+            "label": "Ext Class Documentation",
+            "url": "http://docs.sencha.com/ext-js/4-0/#!/api/Ext",
+            "type": "docs"
         }
     ],
     "author": {

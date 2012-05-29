@@ -11,8 +11,91 @@
             "label": "Ext JS 4.0.7"
         }
     ],
-    "tags": [],
-    "seeAlso": [],
+    "tags": [
+        {
+            "label": "Ext.chart.Chart"
+        },
+        {
+            "label": "chart"
+        },
+        {
+            "label": "Ext.chart.series.Area"
+        },
+        {
+            "label": "area"
+        },
+        {
+            "label": "Ext.Window"
+        },
+        {
+            "label": "Ext.require()"
+        },
+        {
+            "label": "Ext.create()"
+        },
+        {
+            "label": "Ext.getCmp()"
+        },
+        {
+            "label": "shadow"
+        },
+        {
+            "label": "maximizable"
+        },
+        {
+            "label": "layout"
+        },
+        {
+            "label": "animate"
+        },
+        {
+            "label": "easing"
+        },
+        {
+            "label": "duration"
+        },
+        {
+            "label": "loadData()"
+        },
+        {
+            "label": "legend"
+        },
+        {
+            "label": "axes"
+        },
+        {
+            "label": "grid"
+        },
+        {
+            "label": "adjustMinimumByMajorUnit"
+        },
+        {
+            "label": "rotate"
+        },
+        {
+            "label": "degrees"
+        },
+        {
+            "label": "series"
+        }
+    ],
+    "seeAlso": [
+        {
+            "label": "Ext.chart.Chart Documentation",
+            "url": "http://docs.sencha.com/ext-js/4-0/#!/api/Ext.chart.Chart",
+            "type": "docs"
+        },
+        {
+            "label": "Ext.chart.series.Area Documentation",
+            "url": "http://docs.sencha.com/ext-js/4-0/#!/api/Ext.chart.series.Area",
+            "type": "docs"
+        },
+        {
+            "label": "Drawing and Charting Guide",
+            "url": "http://docs.sencha.com/ext-js/4-0/#!/guide/drawing_and_charting",
+            "type": "guide"
+        }
+    ],
     "author": {
         "name": "Sencha Inc.",
         "github": "extjs",

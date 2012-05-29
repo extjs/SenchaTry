@@ -33,6 +33,11 @@
             "label": "Drawing and Charting Guide",
             "url": "http://docs.sencha.com/ext-js/4-0/#!/guide/drawing_and_charting",
             "type": "guide"
+        },
+        {
+            "label": "Ext.draw.Component Documentation",
+            "url": "http://docs.sencha.com/ext-js/4-0/#!/api/Ext.draw.Component",
+            "type": "docs"
         }
     ],
     "author": {

@@ -11,8 +11,42 @@
             "label": "Ext JS 4.0.7"
         }
     ],
-    "tags": [],
-    "seeAlso": [],
+    "tags": [
+        {
+            "label": "Ext.button.Button"
+        },
+        {
+            "label": "Ext.Button"
+        },
+        {
+            "label": "button"
+        },
+        {
+            "label": "Ext.require()"
+        },
+        {
+            "label": "iconCls"
+        },
+        {
+            "label": "iconAlign"
+        },
+        {
+            "label": "Ext.createWidget()"
+        },
+        {
+            "label": "Ext.each()"
+        },
+        {
+            "label": "Ext.apply()"
+        }
+    ],
+    "seeAlso": [
+        {
+            "label": "Ext.button.Button Documentation",
+            "url": "http://docs.sencha.com/ext-js/4-0/#!/api/Ext.button.Button",
+            "type": "docs"
+        }
+    ],
     "author": {
         "name": "Sencha Inc.",
         "github": "extjs",

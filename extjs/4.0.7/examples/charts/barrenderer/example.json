@@ -11,8 +11,101 @@
             "label": "Ext JS 4.0.7"
         }
     ],
-    "tags": [],
-    "seeAlso": [],
+    "tags": [
+        {
+            "label": "Ext.chart.Chart"
+        },
+        {
+            "label": "chart"
+        },
+        {
+            "label": "Ext.chart.series.Bar"
+        },
+        {
+            "label": "Ext.chart.BarChart"
+        },
+        {
+            "label": "Ext.chart.BarSeries"
+        },
+        {
+            "label": "Ext.chart.StackedBarChart"
+        },
+        {
+            "label": "bar"
+        },
+        {
+            "label": "Ext.chart.axis.Numeric"
+        },
+        {
+            "label": "Ext.chart.NumericAxis"
+        },
+        {
+            "label": "numeric"
+        },
+        {
+            "label": "Ext.chart.axis.Category"
+        },
+        {
+            "label": "Ext.chart.CategoryAxis"
+        },
+        {
+            "label": "category"
+        },
+        {
+            "label": "axis"
+        },
+        {
+            "label": "axes"
+        },
+        {
+            "label": "Ext.Window"
+        },
+        {
+            "label": "Ext.apply()"
+        },
+        {
+            "label": "loadData()"
+        },
+        {
+            "label": "animate"
+        },
+        {
+            "label": "Ext.util.Format"
+        },
+        {
+            "label": "numberRenderer()"
+        },
+        {
+            "label": "contrast"
+        }
+    ],
+    "seeAlso": [
+        {
+            "label": "Ext.chart.Chart Documentation",
+            "url": "http://docs.sencha.com/ext-js/4-0/#!/api/Ext.chart.Chart",
+            "type": "docs"
+        },
+        {
+            "label": "Ext.chart.series.Bar Documentation",
+            "url": "http://docs.sencha.com/ext-js/4-0/#!/api/Ext.chart.series.Bar",
+            "type": "docs"
+        },
+        {
+            "label": "Ext.chart.axis Numeric Documentation",
+            "url": "http://docs.sencha.com/ext-js/4-0/#!/api/Ext.chart.axis.Numeric",
+            "type": "docs"
+        },
+        {
+            "label": "Ext.chart.axis.Category Documentation",
+            "url": "http://docs.sencha.com/ext-js/4-0/#!/api/Ext.chart.axis.Category",
+            "type": "docs"
+        },
+        {
+            "label": "Drawing and Charting Guide",
+            "url": "http://docs.sencha.com/ext-js/4-0/#!/guide/drawing_and_charting",
+            "type": "guide"
+        }
+    ],
     "author": {
         "name": "Sencha Inc.",
         "github": "extjs",

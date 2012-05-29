@@ -11,8 +11,21 @@
             "label": "Ext JS 4.1.0"
         }
     ],
-    "tags": [],
-    "seeAlso": [],
+    "tags": [
+        {
+            "label": "Ext.Array"
+        },
+        {
+            "label": "clean()"
+        }
+    ],
+    "seeAlso": [
+        {
+            "label": "Ext.Array Documentation",
+            "url": "http://docs.sencha.com/ext-js/4-1/#!/api/Ext.Array",
+            "type": "docs"
+        }
+    ],
     "author": {
         "name": "Sencha Inc.",
         "github": "extjs",

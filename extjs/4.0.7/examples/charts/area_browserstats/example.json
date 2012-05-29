@@ -11,8 +11,73 @@
             "label": "Ext JS 4.0.7"
         }
     ],
-    "tags": [],
-    "seeAlso": [],
+    "tags": [
+        {
+            "label": "Ext.chart.Chart"
+        },
+        {
+            "label": "Ext.chart.series.Area"
+        },
+        {
+            "label": "Ext.Window"
+        },
+        {
+            "label": "Ext.data.JsonStore"
+        },
+        {
+            "label": "Ext.chart.theme.Base"
+        },
+        {
+            "label": "animate"
+        },
+        {
+            "label": "theme"
+        },
+        {
+            "label": "defaultInsets"
+        },
+        {
+            "label": "legend"
+        },
+        {
+            "label": "renderer"
+        },
+        {
+            "label": "series"
+        },
+        {
+            "label": "chart"
+        },
+        {
+            "label": "area"
+        },
+        {
+            "label": "tips"
+        },
+        {
+            "label": "trackMouse"
+        },
+        {
+            "label": "Ext.Date.format()"
+        }
+    ],
+    "seeAlso": [
+        {
+            "label": "Ext.chart.Chart Documentation",
+            "url": "http://docs.sencha.com/ext-js/4-0/#!/api/Ext.chart.Chart",
+            "type": "docs"
+        },
+        {
+            "label": "Ext.chart.series.Area Documentation",
+            "url": "http://docs.sencha.com/ext-js/4-0/#!/api/Ext.chart.series.Area",
+            "type": "docs"
+        },
+        {
+            "label": "Drawing and Charting Guide",
+            "url": "http://docs.sencha.com/ext-js/4-0/#!/guide/drawing_and_charting",
+            "type": "guide"
+        }
+    ],
     "author": {
         "name": "Sencha Inc.",
         "github": "extjs",

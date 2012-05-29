@@ -11,7 +11,7 @@
             "label": "Ext JS 4.0.7"
         }
     ],
-    "items": [
+    "tags": [
         {
             "label": "Ext.MessageBox"
         },
