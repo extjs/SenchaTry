@@ -18,5 +18,33 @@
         "github": "extjs",
         "url": "http://sencha.com/",
         "senchadevs": ""
-    }
+    },
+    "files": [
+        "app.js",
+        "get-images.php",
+        "images.json",
+        "index.html",
+        "resources/css/app.css",
+        "resources/css/icons/loading.gif",
+        "resources/css/icons/over.gif",
+        "resources/css/icons/selected.gif",
+        "resources/images/dance_fever.jpg",
+        "resources/images/gangster_zack.jpg",
+        "resources/images/kids_hug.jpg",
+        "resources/images/kids_hug2.jpg",
+        "resources/images/sara_pink.jpg",
+        "resources/images/sara_pumpkin.jpg",
+        "resources/images/sara_smile.jpg",
+        "resources/images/up_to_something.jpg",
+        "resources/images/zack.jpg",
+        "resources/images/zack_dress.jpg",
+        "resources/images/zack_hat.jpg",
+        "resources/images/zack_sink.jpg",
+        "resources/images/zacks_grill.jpg",
+        "ux/DataView/Animated.js",
+        "ux/DataView/DragSelector.css",
+        "ux/DataView/DragSelector.js",
+        "ux/DataView/Draggable.js",
+        "ux/DataView/LabelEditor.js"
+    ]
 }

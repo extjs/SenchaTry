@@ -18,5 +18,26 @@
         "github": "extjs",
         "url": "http://sencha.com/",
         "senchadevs": ""
-    }
+    },
+    "files": [
+        "app.js",
+        "app.php",
+        "index.html",
+        "remote/app/controllers/users.php",
+        "remote/app/models/user.php",
+        "remote/init.php",
+        "remote/lib/application_controller.php",
+        "remote/lib/model.php",
+        "remote/lib/request.php",
+        "remote/lib/response.php",
+        "remote/lib/session_db.php",
+        "resources/css/app.css",
+        "resources/css/images/add.png",
+        "resources/css/images/delete.png",
+        "resources/css/images/grid.png",
+        "resources/css/images/save.gif",
+        "resources/css/images/stop.png",
+        "resources/css/images/user.png",
+        "resources/css/images/user_add.gif"
+    ]
 }

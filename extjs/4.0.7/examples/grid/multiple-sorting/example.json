@@ -18,5 +18,14 @@
         "github": "extjs",
         "url": "http://sencha.com/",
         "senchadevs": ""
-    }
+    },
+    "files": [
+        "app.js",
+        "index.html",
+        "resources/css/app.css",
+        "resources/images/grid/sort_asc.gif",
+        "resources/images/grid/sort_desc.gif",
+        "ux/BoxReorderer.js",
+        "ux/ToolbarDroppable.js"
+    ]
 }

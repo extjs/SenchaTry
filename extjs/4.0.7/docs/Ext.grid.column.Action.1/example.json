@@ -65,5 +65,11 @@
         "github": "extjs",
         "url": "http://sencha.com/",
         "senchadevs": ""
-    }
+    },
+    "files": [
+        "app.js",
+        "app/resources/images/cog_edit.png",
+        "app/resources/images/delete.png",
+        "index.html"
+    ]
 }

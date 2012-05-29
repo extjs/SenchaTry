@@ -18,5 +18,13 @@
         "github": "extjs",
         "url": "http://sencha.com/",
         "senchadevs": ""
-    }
+    },
+    "files": [
+        "app.js",
+        "index.html",
+        "resources/css/app.css",
+        "resources/css/images/slider-bg.png",
+        "resources/css/images/slider-thumb.png",
+        "resources/css/images/ticks.gif"
+    ]
 }

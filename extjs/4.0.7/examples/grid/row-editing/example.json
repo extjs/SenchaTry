@@ -18,5 +18,16 @@
         "github": "extjs",
         "url": "http://sencha.com/",
         "senchadevs": ""
-    }
+    },
+    "files": [
+        "app.js",
+        "index.html",
+        "resources/css/app.css",
+        "resources/icons/fam/user_add.gif",
+        "resources/icons/fam/user_delete.gif",
+        "ux/CheckColumn.js",
+        "ux/css/CheckHeader.css",
+        "ux/css/images/checked.gif",
+        "ux/css/images/unchecked.gif"
+    ]
 }

@@ -18,5 +18,10 @@
         "github": "extjs",
         "url": "http://sencha.com/",
         "senchadevs": ""
-    }
+    },
+    "files": [
+        "app.js",
+        "app/styles.css",
+        "index.html"
+    ]
 }

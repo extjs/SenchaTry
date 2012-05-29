@@ -18,5 +18,25 @@
         "github": "extjs",
         "url": "http://sencha.com/",
         "senchadevs": ""
-    }
+    },
+    "files": [
+        "app.js",
+        "get-images.json",
+        "get-images.php",
+        "images/thumbs/dance_fever.jpg",
+        "images/thumbs/gangster_zack.jpg",
+        "images/thumbs/kids_hug.jpg",
+        "images/thumbs/kids_hug2.jpg",
+        "images/thumbs/sara_pink.jpg",
+        "images/thumbs/sara_pumpkin.jpg",
+        "images/thumbs/sara_smile.jpg",
+        "images/thumbs/up_to_something.jpg",
+        "images/thumbs/zack.jpg",
+        "images/thumbs/zack_dress.jpg",
+        "images/thumbs/zack_hat.jpg",
+        "images/thumbs/zack_sink.jpg",
+        "images/thumbs/zacks_grill.jpg",
+        "index.html",
+        "resources/css/app.css"
+    ]
 }

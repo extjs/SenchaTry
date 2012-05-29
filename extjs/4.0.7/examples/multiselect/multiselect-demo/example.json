@@ -18,5 +18,27 @@
         "github": "extjs",
         "url": "http://sencha.com/",
         "senchadevs": ""
-    }
+    },
+    "files": [
+        "app.js",
+        "index.html",
+        "ux/css/ItemSelector.css",
+        "ux/css/images/border.gif",
+        "ux/css/images/bottom2.gif",
+        "ux/css/images/checked.gif",
+        "ux/css/images/down2.gif",
+        "ux/css/images/left2.gif",
+        "ux/css/images/right2.gif",
+        "ux/css/images/tab-collapsed.gif",
+        "ux/css/images/tab-first.gif",
+        "ux/css/images/tab-last.gif",
+        "ux/css/images/tab-scroller-menu.gif",
+        "ux/css/images/top2.gif",
+        "ux/css/images/unchecked.gif",
+        "ux/css/images/up2.gif",
+        "ux/form/ItemSelector.js",
+        "ux/form/MultiSelect.js",
+        "ux/layout/component/form/ItemSelector.js",
+        "ux/layout/component/form/MultiSelect.js"
+    ]
 }

@@ -18,5 +18,14 @@
         "github": "extjs",
         "url": "http://sencha.com/",
         "senchadevs": ""
-    }
+    },
+    "files": [
+        "app.js",
+        "index.html",
+        "resources/css/app.css",
+        "ux/LiveSearchGridPanel.js",
+        "ux/css/LiveSearchGridPanel.css",
+        "ux/statusbar/StatusBar.js",
+        "ux/statusbar/css/statusbar.css"
+    ]
 }

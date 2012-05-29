@@ -18,5 +18,28 @@
         "github": "extjs",
         "url": "http://sencha.com/",
         "senchadevs": ""
-    }
+    },
+    "files": [
+        "app.js",
+        "examples.js",
+        "index.html",
+        "portal/classes/ChartPortlet.js",
+        "portal/classes/GridPortlet.js",
+        "portal/classes/PortalColumn.js",
+        "portal/classes/PortalDropZone.js",
+        "portal/classes/PortalPanel.js",
+        "portal/classes/Portlet.js",
+        "portal/portal.css",
+        "resources/css/app.css",
+        "resources/css/images/group.png",
+        "resources/css/images/subscriptions.png",
+        "resources/css/images/templates.png",
+        "resources/css/images/tickets.png",
+        "ux/GroupTabPanel.js",
+        "ux/css/GroupTabPanel.css",
+        "ux/css/images/border.gif",
+        "ux/css/images/tab-collapsed.gif",
+        "ux/css/images/tab-first.gif",
+        "ux/css/images/tab-last.gif"
+    ]
 }

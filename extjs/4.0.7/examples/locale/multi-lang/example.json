@@ -18,5 +18,13 @@
         "github": "extjs",
         "url": "http://sencha.com/",
         "senchadevs": ""
-    }
+    },
+    "files": [
+        "app.js",
+        "create_languages_js.py",
+        "examples.js",
+        "index.html",
+        "languages.js",
+        "ux/data/PagingMemoryProxy.js"
+    ]
 }

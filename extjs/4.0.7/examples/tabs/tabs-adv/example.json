@@ -18,5 +18,14 @@
         "github": "extjs",
         "url": "http://sencha.com/",
         "senchadevs": ""
-    }
+    },
+    "files": [
+        "app.js",
+        "examples.js",
+        "index.html",
+        "resources/css/app.css",
+        "resources/css/images/new_tab.gif",
+        "resources/css/images/tabs.gif",
+        "ux/TabCloseMenu.js"
+    ]
 }

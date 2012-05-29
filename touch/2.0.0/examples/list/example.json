@@ -18,5 +18,26 @@
         "github": "extjs",
         "url": "http://sencha.com/",
         "senchadevs": ""
-    }
+    },
+    "files": [
+        "app.js",
+        "app.json",
+        "contacts.json",
+        "index.html",
+        "resources/icons/icon.png",
+        "resources/icons/icon@144.png",
+        "resources/icons/icon@2x.png",
+        "resources/icons/icon@72.png",
+        "resources/loading/Default-LandscapeLeft~ipad.png",
+        "resources/loading/Default-LandscapeRight~ipad.png",
+        "resources/loading/Default-Landscape~ipad.png",
+        "resources/loading/Default-PortraitUpsideDown~ipad.png",
+        "resources/loading/Default-Portrait~ipad.png",
+        "resources/loading/Default.png",
+        "resources/loading/Default@2x.png",
+        "resources/loading/Default~ipad.png",
+        "resources/loading/Homescreen.jpg",
+        "resources/loading/Homescreen~ipad.jpg",
+        "resources/loading/iTunesArtwork.png"
+    ]
 }

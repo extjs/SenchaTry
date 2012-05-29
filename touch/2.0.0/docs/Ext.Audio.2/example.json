@@ -43,5 +43,10 @@
         "github": "extjs",
         "url": "http://sencha.com/",
         "senchadevs": ""
-    }
+    },
+    "files": [
+        "app.js",
+        "audio/crash.mp3",
+        "index.html"
+    ]
 }

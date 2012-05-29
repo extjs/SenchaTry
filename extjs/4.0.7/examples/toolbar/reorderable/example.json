@@ -18,5 +18,21 @@
         "github": "extjs",
         "url": "http://sencha.com/",
         "senchadevs": ""
-    }
+    },
+    "files": [
+        "app.js",
+        "index.html",
+        "resources/css/app.css",
+        "resources/css/images/add.gif",
+        "resources/css/images/add16.gif",
+        "resources/css/images/add24.gif",
+        "resources/css/images/delete.gif",
+        "resources/css/images/edit.gif",
+        "resources/css/images/find.gif",
+        "resources/css/images/im32x32.gif",
+        "resources/css/images/money_add.png",
+        "resources/css/images/money_delete.png",
+        "resources/css/images/view.gif",
+        "ux/BoxReorderer.js"
+    ]
 }

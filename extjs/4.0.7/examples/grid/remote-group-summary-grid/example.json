@@ -18,5 +18,14 @@
         "github": "extjs",
         "url": "http://sencha.com/",
         "senchadevs": ""
-    }
+    },
+    "files": [
+        "app.js",
+        "index.html",
+        "resources/css/app.css",
+        "ux/ajax/JsonSimlet.js",
+        "ux/ajax/SimManager.js",
+        "ux/ajax/SimXhr.js",
+        "ux/ajax/Simlet.js"
+    ]
 }

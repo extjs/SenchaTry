@@ -18,5 +18,32 @@
         "github": "extjs",
         "url": "http://sencha.com/",
         "senchadevs": ""
-    }
+    },
+    "files": [
+        "app.js",
+        "feed-proxy.php",
+        "index.html",
+        "resources/css/app.css",
+        "resources/css/images/article.gif",
+        "resources/css/images/details.gif",
+        "resources/css/images/post.gif",
+        "resources/css/images/post_go.gif",
+        "resources/css/images/preview-bottom.gif",
+        "resources/css/images/preview-hide.gif",
+        "resources/css/images/preview-right.gif",
+        "resources/css/images/rss.gif",
+        "resources/css/images/rss_add.gif",
+        "resources/css/images/rss_delete.gif",
+        "resources/css/images/rss_load.gif",
+        "resources/css/images/tab_new.gif",
+        "resources/css/images/tabs.gif",
+        "ux/PreviewPlugin.js",
+        "viewer/FeedDetail.js",
+        "viewer/FeedGrid.js",
+        "viewer/FeedInfo.js",
+        "viewer/FeedPanel.js",
+        "viewer/FeedPost.js",
+        "viewer/FeedViewer.js",
+        "viewer/FeedWindow.js"
+    ]
 }

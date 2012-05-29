@@ -18,5 +18,20 @@
         "github": "extjs",
         "url": "http://sencha.com/",
         "senchadevs": ""
-    }
+    },
+    "files": [
+        "AlbumTree.js",
+        "ImageView.js",
+        "OrgPanel.js",
+        "app.js",
+        "index.html",
+        "resources/css/app.css",
+        "resources/css/images/album.gif",
+        "resources/css/images/loading.gif",
+        "ux/DataView/Animated.js",
+        "ux/DataView/DragSelector.css",
+        "ux/DataView/DragSelector.js",
+        "ux/DataView/Draggable.js",
+        "ux/DataView/LabelEditor.js"
+    ]
 }

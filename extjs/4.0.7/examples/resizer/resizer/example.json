@@ -18,5 +18,16 @@
         "github": "extjs",
         "url": "http://sencha.com/",
         "senchadevs": ""
-    }
+    },
+    "files": [
+        "app.js",
+        "index.html",
+        "resources/css/app.css",
+        "resources/css/images/square.gif",
+        "resources/images/CroixDeFer.jpg",
+        "resources/images/avus_gtr.jpg",
+        "resources/images/flower.jpg",
+        "resources/images/grass.jpg",
+        "resources/images/stones.jpg"
+    ]
 }

@@ -18,5 +18,13 @@
         "github": "extjs",
         "url": "http://sencha.com/",
         "senchadevs": ""
-    }
+    },
+    "files": [
+        "app.js",
+        "index.html",
+        "resources/css/app.css",
+        "resources/css/icons/cog.gif",
+        "resources/css/icons/folder_go.gif",
+        "treegrid.json"
+    ]
 }

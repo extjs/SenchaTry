@@ -18,5 +18,13 @@
         "github": "extjs",
         "url": "http://sencha.com/",
         "senchadevs": ""
-    }
+    },
+    "files": [
+        "app.js",
+        "index.html",
+        "resources/css/app.css",
+        "resources/css/icons/fam/folder_go.png",
+        "resources/css/icons/fam/folder_wrench.png",
+        "resources/css/icons/fam/information.png"
+    ]
 }

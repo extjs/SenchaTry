@@ -18,5 +18,13 @@
         "github": "extjs",
         "url": "http://sencha.com/",
         "senchadevs": ""
-    }
+    },
+    "files": [
+        "app.js",
+        "index.html",
+        "resources/css/app.css",
+        "ux/TabScrollerMenu.js",
+        "ux/css/TabScrollerMenu.css",
+        "ux/css/images/tab-scroller-menu.gif"
+    ]
 }

@@ -18,5 +18,19 @@
         "github": "extjs",
         "url": "http://sencha.com/",
         "senchadevs": ""
-    }
+    },
+    "files": [
+        "app.js",
+        "index.html",
+        "resources/css/app.css",
+        "resources/images/default/panel-header/panel-header-bubble-framed-top-bg.gif",
+        "resources/images/default/panel-header/panel-header-bubble-framed-top-corners.gif",
+        "resources/images/default/panel-header/panel-header-bubble-framed-top-sides.gif",
+        "resources/images/default/panel/panel-bubble-corners.gif",
+        "resources/images/default/panel/panel-bubble-sides.gif",
+        "resources/manifest.js",
+        "resources/sass/bubble-panel.scss",
+        "resources/sass/config.rb",
+        "slice-command"
+    ]
 }
