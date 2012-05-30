@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <title>components Example</title>
+    <meta Name="description" content="components Example" />
+    <meta name="keywords" content="Sencha, Sencha Touch, Sencha Touch 2.0.1" />
+    <link href="/assets/application.css" media="screen" rel="stylesheet" type="text/css" />
+    <style>
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    
+    <div>
+        <header>
+            <h1>Sencha Try</h1>
+        </header>
+        
+        <section id="readme">
+            <h1>components Example</h1>
+            <strong>Tags:</strong> <a href="/search/Sencha Touch">Sencha Touch</a> <a href="/search/Sencha Touch 2.0.1">Sencha Touch 2.0.1</a> <br/>
+        </section>
+        <section id="example">
+            [example]
+        </section>
+        
+        <footer>
+            &copy; 2012 Sencha Inc.
+        </footer>
+    </div>
+    
+    <div class="hidden">
+        <!-- touch/2.0.1/guides/components.1/app.js -->
+        <pre>/*global Ext:false */
+Ext.application({
+    launch: function() {
+        var panel = Ext.create('Ext.Panel', {
+            layout: 'hbox',
+
+            items: [{
+                xtype: 'panel',
+                flex: 1,
+                html: 'Left Panel, 1/3rd of total size',
+                style: 'background-color: #5E99CC;'
+            }, {
+                xtype: 'panel',
+                flex: 2,
+                html: 'Right Panel, 2/3rds of total size',
+                style: 'background-color: #759E60;'
+            }]
+        });
+
+        Ext.Viewport.add(panel);
+    }
+});
+</pre>
+    </div>
+    
+</body>
+</html>

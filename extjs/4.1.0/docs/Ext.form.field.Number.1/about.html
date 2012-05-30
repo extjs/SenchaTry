@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Ext.form.field.Number Example</title>
+    <meta Name="description" content="Ext.form.field.Number Example" />
+    <meta name="keywords" content="Sencha, Ext JS, Ext JS 4.1.0, Ext.form.field.Number" />
+    <link href="/assets/application.css" media="screen" rel="stylesheet" type="text/css" />
+    <style>
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    
+    <div>
+        <header>
+            <h1>Sencha Try</h1>
+        </header>
+        
+        <section id="readme">
+            <h1>Ext.form.field.Number Example</h1>
+            <strong>Tags:</strong> <a href="/search/Ext JS">Ext JS</a> <a href="/search/Ext JS 4.1.0">Ext JS 4.1.0</a> <a href="/search/Ext.form.field.Number">Ext.form.field.Number</a> <br/>
+        </section>
+        <section id="example">
+            [example]
+        </section>
+        
+        <footer>
+            &copy; 2012 Sencha Inc.
+        </footer>
+    </div>
+    
+    <div class="hidden">
+        <!-- extjs/4.1.0/docs/Ext.form.field.Number.1/app.js -->
+        <pre>/*global Ext:false */
+Ext.onReady(function() {
+    Ext.create('Ext.form.Panel', {
+        title: 'On The Wall',
+        width: 300,
+        bodyPadding: 10,
+        renderTo: Ext.getBody(),
+        items: [{
+            xtype: 'numberfield',
+            anchor: '100%',
+            name: 'bottles',
+            fieldLabel: 'Bottles of Beer',
+            value: 99,
+            maxValue: 99,
+            minValue: 0
+        }],
+        buttons: [{
+            text: 'Take one down, pass it around',
+            handler: function() {
+                this.up('form').down('[name=bottles]').spinDown();
+            }
+        }]
+    });
+});
+</pre>
+    </div>
+    
+</body>
+</html>

@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Ext.grid.column.Column Example</title>
+    <meta Name="description" content="Ext.grid.column.Column Example" />
+    <meta name="keywords" content="Sencha, Ext JS, Ext JS 4.0.7, Ext.grid.column.Column, Ext.grid.Column, gridcolumn, grid, column" />
+    <link href="/assets/application.css" media="screen" rel="stylesheet" type="text/css" />
+    <style>
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    
+    <div>
+        <header>
+            <h1>Sencha Try</h1>
+        </header>
+        
+        <section id="readme">
+            <h1>Ext.grid.column.Column Example</h1>
+            <strong>Tags:</strong> <a href="/search/Ext JS">Ext JS</a> <a href="/search/Ext JS 4.0.7">Ext JS 4.0.7</a> <a href="/search/Ext.grid.column.Column">Ext.grid.column.Column</a> <a href="/search/Ext.grid.Column">Ext.grid.Column</a> <a href="/search/gridcolumn">gridcolumn</a> <a href="/search/grid">grid</a> <a href="/search/column">column</a> <br/>
+        </section>
+        <section id="example">
+            [example]
+        </section>
+        
+        <footer>
+            &copy; 2012 Sencha Inc.
+        </footer>
+    </div>
+    
+    <div class="hidden">
+        <!-- extjs/4.0.7/docs/Ext.grid.column.Column.1/app.js -->
+        <pre>/*global Ext:false */
+Ext.onReady(function () {
+    Ext.create('Ext.data.Store', {
+        storeId: 'employeeStore',
+        fields: ['firstname', 'lastname', 'seniority', 'dep', 'hired'],
+        data: [{
+            firstname: "Michael",
+            lastname: "Scott",
+            seniority: 7,
+            dep: "Management",
+            hired: "01/10/2004"
+        }, {
+            firstname: "Dwight",
+            lastname: "Schrute",
+            seniority: 2,
+            dep: "Sales",
+            hired: "04/01/2004"
+        }, {
+            firstname: "Jim",
+            lastname: "Halpert",
+            seniority: 3,
+            dep: "Sales",
+            hired: "02/22/2006"
+        }, {
+            firstname: "Kevin",
+            lastname: "Malone",
+            seniority: 4,
+            dep: "Accounting",
+            hired: "06/10/2007"
+        }, {
+            firstname: "Angela",
+            lastname: "Martin",
+            seniority: 5,
+            dep: "Accounting",
+            hired: "10/21/2008"
+        }]
+    });
+
+    Ext.create('Ext.grid.Panel', {
+        title: 'Column Demo',
+        store: 'employeeStore',
+        columns: [{
+            text: 'First Name',
+            dataIndex: 'firstname'
+        }, {
+            text: 'Last Name',
+            dataIndex: 'lastname'
+        }, {
+            text: 'Hired Month',
+            dataIndex: 'hired',
+            xtype: 'datecolumn',
+            format: 'M'
+        }, {
+            text: 'Department (Yrs)',
+            xtype: 'templatecolumn',
+            tpl: '{dep} ({seniority})'
+        }],
+        width: 400,
+        forceFit: true,
+        renderTo: Ext.getBody()
+    });
+});
+</pre>
+    </div>
+    
+</body>
+</html>

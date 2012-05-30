@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Ext.grid.feature.Summary Example</title>
+    <meta Name="description" content="Ext.grid.feature.Summary Example" />
+    <meta name="keywords" content="Sencha, Ext JS, Ext JS 4.0.7, Ext.grid.feature.Summary, summary, features, summaryType, summaryRenderer, grid, feature" />
+    <link href="/assets/application.css" media="screen" rel="stylesheet" type="text/css" />
+    <style>
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    
+    <div>
+        <header>
+            <h1>Sencha Try</h1>
+        </header>
+        
+        <section id="readme">
+            <h1>Ext.grid.feature.Summary Example</h1>
+            <strong>Tags:</strong> <a href="/search/Ext JS">Ext JS</a> <a href="/search/Ext JS 4.0.7">Ext JS 4.0.7</a> <a href="/search/Ext.grid.feature.Summary">Ext.grid.feature.Summary</a> <a href="/search/summary">summary</a> <a href="/search/features">features</a> <a href="/search/summaryType">summaryType</a> <a href="/search/summaryRenderer">summaryRenderer</a> <a href="/search/grid">grid</a> <a href="/search/feature">feature</a> <br/>
+        </section>
+        <section id="example">
+            [example]
+        </section>
+        
+        <footer>
+            &copy; 2012 Sencha Inc.
+        </footer>
+    </div>
+    
+    <div class="hidden">
+        <!-- extjs/4.0.7/docs/Ext.grid.feature.Summary.1/app.js -->
+        <pre>/*global Ext:false */
+Ext.onReady(function () {
+    Ext.define('TestResult', {
+        extend: 'Ext.data.Model',
+        fields: ['student',
+        {
+            name: 'mark',
+            type: 'int'
+        }]
+    });
+
+    Ext.create('Ext.grid.Panel', {
+        width: 200,
+        height: 140,
+        renderTo: document.body,
+        features: [{
+            ftype: 'summary'
+        }],
+        store: {
+            model: 'TestResult',
+            data: [{
+                student: 'Student 1',
+                mark: 84
+            }, {
+                student: 'Student 2',
+                mark: 72
+            }, {
+                student: 'Student 3',
+                mark: 96
+            }, {
+                student: 'Student 4',
+                mark: 68
+            }]
+        },
+        columns: [{
+            dataIndex: 'student',
+            text: 'Name',
+            summaryType: 'count',
+            summaryRenderer: function (value, summaryData, dataIndex) {
+                return Ext.String.format('{0} student{1}', value, value !== 1 ? 's' : '');
+            }
+        }, {
+            dataIndex: 'mark',
+            text: 'Mark',
+            summaryType: 'average'
+        }]
+    });
+});
+</pre>
+    </div>
+    
+</body>
+</html>

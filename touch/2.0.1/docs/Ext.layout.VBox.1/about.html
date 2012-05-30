@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Ext.layout.VBox Example</title>
+    <meta Name="description" content="Ext.layout.VBox Example" />
+    <meta name="keywords" content="Sencha, Sencha Touch, Sencha Touch 2.0.1, Ext.layout.VBox, Ext.layout.VBoxLayout, vbox" />
+    <link href="/assets/application.css" media="screen" rel="stylesheet" type="text/css" />
+    <style>
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    
+    <div>
+        <header>
+            <h1>Sencha Try</h1>
+        </header>
+        
+        <section id="readme">
+            <h1>Ext.layout.VBox Example</h1>
+            <strong>Tags:</strong> <a href="/search/Sencha Touch">Sencha Touch</a> <a href="/search/Sencha Touch 2.0.1">Sencha Touch 2.0.1</a> <a href="/search/Ext.layout.VBox">Ext.layout.VBox</a> <a href="/search/Ext.layout.VBoxLayout">Ext.layout.VBoxLayout</a> <a href="/search/vbox">vbox</a> <br/>
+        </section>
+        <section id="example">
+            [example]
+        </section>
+        
+        <footer>
+            &copy; 2012 Sencha Inc.
+        </footer>
+    </div>
+    
+    <div class="hidden">
+        <!-- touch/2.0.1/docs/Ext.layout.VBox.1/app.js -->
+        <pre>/*global Ext:false */
+Ext.application({
+    launch: function() {
+        Ext.create('Ext.Container', {
+            fullscreen: true,
+            layout: 'vbox',
+            items: [{
+                html: 'Awesome banner',
+                style: 'background-color: #759E60;',
+                flex: 1
+            }, {
+                html: 'Some wonderful information',
+                style: 'background-color: #5E99CC;',
+                flex: 2
+            }]
+        });
+    }
+});
+</pre>
+    </div>
+    
+</body>
+</html>

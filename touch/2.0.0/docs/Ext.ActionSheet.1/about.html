@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Ext.ActionSheet Example</title>
+    <meta Name="description" content="Ext.ActionSheet Example" />
+    <meta name="keywords" content="Sencha, Sencha Touch, Sencha Touch 2.0.0, Ext.ActionSheet, actionsheet, show()" />
+    <link href="/assets/application.css" media="screen" rel="stylesheet" type="text/css" />
+    <style>
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    
+    <div>
+        <header>
+            <h1>Sencha Try</h1>
+        </header>
+        
+        <section id="readme">
+            <h1>Ext.ActionSheet Example</h1>
+
+<p>As you can see from the following example, you no longer have to specify an xtype when creating buttons within an ActionSheet, because the <code>defaultType</code> is set to button.</p>
+            <strong>Tags:</strong> <a href="/search/Sencha Touch">Sencha Touch</a> <a href="/search/Sencha Touch 2.0.0">Sencha Touch 2.0.0</a> <a href="/search/Ext.ActionSheet">Ext.ActionSheet</a> <a href="/search/actionsheet">actionsheet</a> <a href="/search/show()">show()</a> <br/>
+        </section>
+        <section id="example">
+            [example]
+        </section>
+        
+        <footer>
+            &copy; 2012 Sencha Inc.
+        </footer>
+    </div>
+    
+    <div class="hidden">
+        <!-- touch/2.0.0/docs/Ext.ActionSheet.1/app.js -->
+        <pre>/*global Ext:false */
+Ext.application({
+    launch: function () {
+        var actionSheet = Ext.create('Ext.ActionSheet', {
+            items: [{
+                text: 'Delete draft',
+                ui: 'decline'
+            }, {
+                text: 'Save draft'
+            }, {
+                text: 'Cancel',
+                ui: 'confirm'
+            }]
+        });
+
+        Ext.Viewport.add(actionSheet);
+        actionSheet.show();
+    } // launch
+}); // application()
+</pre>
+    </div>
+    
+</body>
+</html>

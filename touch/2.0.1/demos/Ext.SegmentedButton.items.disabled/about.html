@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Disabling individual buttons in an Ext.SegmentedButton control in Sencha Touch 2</title>
+    <meta Name="description" content="Disabling individual buttons in an Ext.SegmentedButton control in Sencha Touch 2" />
+    <meta name="keywords" content="Sencha, Sencha Touch, Sencha Touch 2.0.1" />
+    <link href="/assets/application.css" media="screen" rel="stylesheet" type="text/css" />
+    <style>
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    
+    <div>
+        <header>
+            <h1>Sencha Try</h1>
+        </header>
+        
+        <section id="readme">
+            <h1>Disabling individual buttons in an Ext.SegmentedButton control in Sencha Touch 2</h1>
+
+<p>The following example shows how you can disable individual buttons in an Ext.SegmentedButton (segmentedbutton) control in Sencha Touch 2 by setting the Boolean <code>disabled</code> config option or calling the <code>setDisabled()</code> method dynamically at runtime on the individual child items.</p>
+            <strong>Tags:</strong> <a href="/search/Sencha Touch">Sencha Touch</a> <a href="/search/Sencha Touch 2.0.1">Sencha Touch 2.0.1</a> <br/>
+        </section>
+        <section id="example">
+            [example]
+        </section>
+        
+        <footer>
+            &copy; 2012 Sencha Inc.
+        </footer>
+    </div>
+    
+    <div class="hidden">
+        <!-- touch/2.0.1/demos/Ext.SegmentedButton.items.disabled/app.js -->
+        <pre>/*global Ext:false */
+Ext.application({
+    launch: function () {
+        Ext.create('Ext.Container', {
+            fullscreen: true,
+            items: [{
+                xtype: 'toolbar',
+                docked: 'top',
+                items: [{
+                    xtype: 'segmentedbutton',
+                    allowDepress: false,
+                    items: [{
+                        text: 'Tony',
+                        pressed: true
+                    }, {
+                        text: 'Angela'
+                    }, {
+                        text: 'Samantha',
+                        disabled: true
+                    }, {
+                        text: 'Jonathan',
+                        disabled: true
+                    }, {
+                        text: 'Mona',
+                        hidden: true
+                    }], // items (segmentedbutton)
+                    listeners: {
+                        toggle: function (segBtn, btn, isPressed) {
+                            Ext.Msg.alert('toggle', btn.getText() + ' was pressed.');
+                        } // toggle
+                    } // listeners
+                }] // items (toolbar)
+            }] // items (container)
+        }); // create()
+    } // launch
+}); // application()
+</pre>
+    </div>
+    
+</body>
+</html>

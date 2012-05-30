@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Ext.form.Panel Example</title>
+    <meta Name="description" content="Ext.form.Panel Example" />
+    <meta name="keywords" content="Sencha, Ext JS, Ext JS 4.1.0, Ext.form.Panel" />
+    <link href="/assets/application.css" media="screen" rel="stylesheet" type="text/css" />
+    <style>
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    
+    <div>
+        <header>
+            <h1>Sencha Try</h1>
+        </header>
+        
+        <section id="readme">
+            <h1>Ext.form.Panel Example</h1>
+            <strong>Tags:</strong> <a href="/search/Ext JS">Ext JS</a> <a href="/search/Ext JS 4.1.0">Ext JS 4.1.0</a> <a href="/search/Ext.form.Panel">Ext.form.Panel</a> <br/>
+        </section>
+        <section id="example">
+            [example]
+        </section>
+        
+        <footer>
+            &copy; 2012 Sencha Inc.
+        </footer>
+    </div>
+    
+    <div class="hidden">
+        <!-- extjs/4.1.0/docs/Ext.form.Panel.1/app.js -->
+        <pre>/*global Ext:false */
+Ext.onReady(function() {
+    Ext.create('Ext.form.Panel', {
+        title: 'Simple Form',
+        bodyPadding: 5,
+        width: 350,
+
+        // The form will submit an AJAX request to this URL when submitted
+        url: 'save-form.php',
+
+        // Fields will be arranged vertically, stretched to full width
+        layout: 'anchor',
+        defaults: {
+            anchor: '100%'
+        },
+
+        // The fields
+        defaultType: 'textfield',
+        items: [{
+            fieldLabel: 'First Name',
+            name: 'first',
+            allowBlank: false
+        }, {
+            fieldLabel: 'Last Name',
+            name: 'last',
+            allowBlank: false
+        }],
+
+        // Reset and Submit buttons
+        buttons: [{
+            text: 'Reset',
+            handler: function() {
+                this.up('form').getForm().reset();
+            }
+        }, {
+            text: 'Submit',
+            formBind: true,
+            //only enabled once the form is valid
+            disabled: true,
+            handler: function() {
+                var form = this.up('form').getForm();
+                if (form.isValid()) {
+                    form.submit({
+                        success: function(form, action) {
+                            Ext.Msg.alert('Success', action.result.msg);
+                        },
+                        failure: function(form, action) {
+                            Ext.Msg.alert('Failed', action.result.msg);
+                        }
+                    });
+                }
+            }
+        }],
+        renderTo: Ext.getBody()
+    });
+});
+</pre>
+    </div>
+    
+</body>
+</html>

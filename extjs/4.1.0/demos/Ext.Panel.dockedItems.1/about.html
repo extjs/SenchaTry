@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Adding docked toolbars to an Ext.Panel container in Ext JS</title>
+    <meta Name="description" content="Adding docked toolbars to an Ext.Panel container in Ext JS" />
+    <meta name="keywords" content="Sencha, Ext JS, Ext JS 4.1.0" />
+    <link href="/assets/application.css" media="screen" rel="stylesheet" type="text/css" />
+    <style>
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    
+    <div>
+        <header>
+            <h1>Sencha Try</h1>
+        </header>
+        
+        <section id="readme">
+            <h1>Adding docked toolbars to an Ext.Panel container in Ext JS</h1>
+
+<p>The following example shows how you can create docked toolbars to an Ext.Panel container in Ext JS by specifying the <code>tbar</code> (top toolbar), <code>bbar</code> (bottom toolbar), <code>lbar</code> (left toolbar), or <code>rbar</code> (right toolbar) config options, or by explicitly setting the <code>dockedItems</code> config and specifying a toolbar and dock location ("top", "bottom", "left", or "right").</p>
+            <strong>Tags:</strong> <a href="/search/Ext JS">Ext JS</a> <a href="/search/Ext JS 4.1.0">Ext JS 4.1.0</a> <br/>
+        </section>
+        <section id="example">
+            [example]
+        </section>
+        
+        <footer>
+            &copy; 2012 Sencha Inc.
+        </footer>
+    </div>
+    
+    <div class="hidden">
+        <!-- extjs/4.1.0/demos/Ext.Panel.dockedItems.1/app.js -->
+        <pre>/*global Ext:false */
+Ext.onReady(function () {
+    Ext.create('Ext.Panel', {
+        height: 150,
+        title: 'Ext.Panel title',
+        renderTo: Ext.getBody(),
+        dockedItems: [{
+            xtype: 'toolbar',
+            dock: 'top',
+            items: [{
+                xtype: 'label',
+                html: "Ext.Panel top bar"
+            }] // items
+        }, {
+            xtype: 'toolbar',
+            dock: 'bottom',
+            items: [{
+                xtype: 'label',
+                html: 'Ext.Panel bottom bar'
+            }] // items
+        }, {
+            xtype: 'toolbar',
+            dock: 'left',
+            items: [{
+                xtype: 'label',
+                html: 'Ext.Panel left bar'
+            }] // items
+        }, {
+            xtype: 'toolbar',
+            dock: 'right',
+            items: [{
+                xtype: 'label',
+                html: 'Ext.Panel right bar'
+            }] // items
+        }] // dockedItems
+    }); // create()
+}); // onReady()
+</pre>
+    </div>
+    
+</body>
+</html>

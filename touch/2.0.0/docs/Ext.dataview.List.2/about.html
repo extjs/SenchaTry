@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Ext.dataview.List Example</title>
+    <meta Name="description" content="Ext.dataview.List Example" />
+    <meta name="keywords" content="Sencha, Sencha Touch, Sencha Touch 2.0.0, Ext.dataview.List, Ext.List, list, itemTpl, store, grouped" />
+    <link href="/assets/application.css" media="screen" rel="stylesheet" type="text/css" />
+    <style>
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    
+    <div>
+        <header>
+            <h1>Sencha Try</h1>
+        </header>
+        
+        <section id="readme">
+            <h1>Ext.dataview.List Example</h1>
+            <strong>Tags:</strong> <a href="/search/Sencha Touch">Sencha Touch</a> <a href="/search/Sencha Touch 2.0.0">Sencha Touch 2.0.0</a> <a href="/search/Ext.dataview.List">Ext.dataview.List</a> <a href="/search/Ext.List">Ext.List</a> <a href="/search/list">list</a> <a href="/search/itemTpl">itemTpl</a> <a href="/search/store">store</a> <a href="/search/grouped">grouped</a> <br/>
+        </section>
+        <section id="example">
+            [example]
+        </section>
+        
+        <footer>
+            &copy; 2012 Sencha Inc.
+        </footer>
+    </div>
+    
+    <div class="hidden">
+        <!-- touch/2.0.0/docs/Ext.dataview.List.2/app.js -->
+        <pre>/*global Ext:false */
+Ext.application({
+    launch: function () {
+        Ext.define('Contact', {
+            extend: 'Ext.data.Model',
+            config: {
+                fields: ['firstName', 'lastName']
+            }
+        });
+
+        var store = Ext.create('Ext.data.Store', {
+            model: 'Contact',
+            sorters: 'lastName',
+            grouper: {
+                groupFn: function (record) {
+                    return record.get('lastName')[0];
+                }
+            },
+            data: [{
+                firstName: 'Tommy',
+                lastName: 'Maintz'
+            }, {
+                firstName: 'Rob',
+                lastName: 'Dougan'
+            }, {
+                firstName: 'Ed',
+                lastName: 'Spencer'
+            }, {
+                firstName: 'Jamie',
+                lastName: 'Avins'
+            }, {
+                firstName: 'Aaron',
+                lastName: 'Conran'
+            }, {
+                firstName: 'Dave',
+                lastName: 'Kaneda'
+            }, {
+                firstName: 'Jacky',
+                lastName: 'Nguyen'
+            }, {
+                firstName: 'Abraham',
+                lastName: 'Elias'
+            }, {
+                firstName: 'Jay',
+                lastName: 'Robinson'
+            }, {
+                firstName: 'Nigel',
+                lastName: 'White'
+            }, {
+                firstName: 'Don',
+                lastName: 'Griffin'
+            }, {
+                firstName: 'Nico',
+                lastName: 'Ferrero'
+            }, {
+                firstName: 'Nicolas',
+                lastName: 'Belmonte'
+            }, {
+                firstName: 'Jason',
+                lastName: 'Johnston'
+            }]
+        });
+
+        Ext.create('Ext.List', {
+            fullscreen: true,
+            itemTpl: '<div class="contact">{firstName} <strong>{lastName}</strong></div>',
+            store: store,
+            grouped: true
+        });
+    } // launch
+}); // application()
+</pre>
+    </div>
+    
+</body>
+</html>

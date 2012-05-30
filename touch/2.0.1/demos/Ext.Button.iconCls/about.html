@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Adding icons to an Ext.Button component using Sencha Touch 2</title>
+    <meta Name="description" content="Adding icons to an Ext.Button component using Sencha Touch 2" />
+    <meta name="keywords" content="Sencha, Sencha Touch, Sencha Touch 2.0.1" />
+    <link href="/assets/application.css" media="screen" rel="stylesheet" type="text/css" />
+    <style>
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    
+    <div>
+        <header>
+            <h1>Sencha Try</h1>
+        </header>
+        
+        <section id="readme">
+            <h1>Adding icons to an Ext.Button component using Sencha Touch 2</h1>
+
+<p>The following example shows how you can add an icon to an Ext.Button component using Sencha Touch 2 by setting the <code>iconCls</code> and <code>iconMask</code> configs.</p>
+            <strong>Tags:</strong> <a href="/search/Sencha Touch">Sencha Touch</a> <a href="/search/Sencha Touch 2.0.1">Sencha Touch 2.0.1</a> <br/>
+        </section>
+        <section id="example">
+            [example]
+        </section>
+        
+        <footer>
+            &copy; 2012 Sencha Inc.
+        </footer>
+    </div>
+    
+    <div class="hidden">
+        <!-- touch/2.0.1/demos/Ext.Button.iconCls/app.js -->
+        <pre>/*global Ext:false */
+Ext.application({
+    launch: function () {
+        Ext.create('Ext.Panel', {
+            fullscreen: true,
+            bodyPadding: 20,
+            layout: {
+                layout: 'vbox',
+                align: 'center'
+            }, // layout
+            defaults: {
+                margin: 10,
+                width: 200
+            }, // defaults
+            scrollable: 'vertical',
+            items: [
+                {
+                    xtype: 'button',
+                    iconCls: 'action',
+                    iconMask: true,
+                    text: 'action'
+                }, {
+                    xtype: 'button',
+                    iconCls: 'add',
+                    iconMask: true,
+                    text: 'add'
+                }, {
+                    xtype: 'button',
+                    iconCls: 'arrow_down',
+                    iconMask: true,
+                    text: 'arrow_down'
+                }, {
+                    xtype: 'button',
+                    iconCls: 'arrow_left',
+                    iconMask: true,
+                    text: 'arrow_left'
+                }, {
+                    xtype: 'button',
+                    iconCls: 'arrow_right',
+                    iconMask: true,
+                    text: 'arrow_right'
+                }, {
+                    xtype: 'button',
+                    iconCls: 'arrow_up',
+                    iconMask: true,
+                    text: 'arrow_up'
+                }, {
+                    xtype: 'button',
+                    iconCls: 'compose',
+                    iconMask: true,
+                    text: 'compose'
+                }, {
+                    xtype: 'button',
+                    iconCls: 'delete',
+                    iconMask: true,
+                    text: 'delete'
+                }, {
+                    xtype: 'button',
+                    iconCls: 'home',
+                    iconMask: true,
+                    text: 'home'
+                }, {
+                    xtype: 'button',
+                    iconCls: 'locate',
+                    iconMask: true,
+                    text: 'locate'
+                }, {
+                    xtype: 'button',
+                    iconCls: 'maps',
+                    iconMask: true,
+                    text: 'maps'
+                }, {
+                    xtype: 'button',
+                    iconCls: 'organize',
+                    iconMask: true,
+                    text: 'organize'
+                }, {
+                    xtype: 'button',
+                    iconCls: 'refresh',
+                    iconMask: true,
+                    text: 'refresh'
+                }, {
+                    xtype: 'button',
+                    iconCls: 'reply',
+                    iconMask: true,
+                    text: 'reply'
+                }, {
+                    xtype: 'button',
+                    iconCls: 'search',
+                    iconMask: true,
+                    text: 'search'
+                }, {
+                    xtype: 'button',
+                    iconCls: 'settings',
+                    iconMask: true,
+                    text: 'settings'
+                }, {
+                    xtype: 'button',
+                    iconCls: 'star',
+                    iconMask: true,
+                    text: 'star'
+                }, {
+                    xtype: 'button',
+                    iconCls: 'trash',
+                    iconMask: true,
+                    text: 'trash'
+                }
+            ] // items
+        }); // create()
+    } // launch
+}); // application()
+</pre>
+    </div>
+    
+</body>
+</html>

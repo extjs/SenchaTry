@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Ext.data.JsonP Example</title>
+    <meta Name="description" content="Ext.data.JsonP Example" />
+    <meta name="keywords" content="Sencha, Sencha Touch, Sencha Touch 2.0.1, Ext.data.JsonP, Ext.util.JSONP" />
+    <link href="/assets/application.css" media="screen" rel="stylesheet" type="text/css" />
+    <style>
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    
+    <div>
+        <header>
+            <h1>Sencha Try</h1>
+        </header>
+        
+        <section id="readme">
+            <h1>Ext.data.JsonP Example</h1>
+            <strong>Tags:</strong> <a href="/search/Sencha Touch">Sencha Touch</a> <a href="/search/Sencha Touch 2.0.1">Sencha Touch 2.0.1</a> <a href="/search/Ext.data.JsonP">Ext.data.JsonP</a> <a href="/search/Ext.util.JSONP">Ext.util.JSONP</a> <br/>
+        </section>
+        <section id="example">
+            [example]
+        </section>
+        
+        <footer>
+            &copy; 2012 Sencha Inc.
+        </footer>
+    </div>
+    
+    <div class="hidden">
+        <!-- touch/2.0.1/docs/Ext.data.JsonP.1/app.js -->
+        <pre>/*global Ext:false */
+Ext.application({
+    launch: function() {
+        Ext.Viewport.add({
+            xtype: 'button',
+            text: 'Make JsonP Request',
+            centered: true,
+            handler: function(button) {
+                // Mask the viewport
+                Ext.Viewport.mask();
+
+                // Remove the button
+                button.destroy();
+
+                // Make the JsonP request
+                Ext.data.JsonP.request({
+                    url: 'http://free.worldweatheronline.com/feed/weather.ashx',
+                    callbackKey: 'callback',
+                    params: {
+                        key: '23f6a0ab24185952101705',
+                        q: '94301',
+                        // Palo Alto
+                        format: 'json',
+                        num_of_days: 5
+                    },
+                    success: function(result, request) {
+                        // Unmask the viewport
+                        Ext.Viewport.unmask();
+
+                        // Get the weather data from the json object result
+                        var weather = result.data.weather;
+                        if (weather) {
+                            // Style the viewport html, and set the html of the max temperature
+                            Ext.Viewport.setStyleHtmlContent(true);
+                            Ext.Viewport.setHtml('The temperature in Palo Alto is <b>' + weather[0].tempMaxF + '° F</b>');
+                        }
+                    }
+                });
+            }
+        });
+    }
+});
+</pre>
+    </div>
+    
+</body>
+</html>

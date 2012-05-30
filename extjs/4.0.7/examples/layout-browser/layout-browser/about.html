@@ -1,0 +1,1042 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <title>ExtJS Layout Examples</title>
+    <meta Name="description" content="ExtJS Layout Examples" />
+    <meta name="keywords" content="Sencha, Ext JS, Ext JS 4.0.7" />
+    <link href="/assets/application.css" media="screen" rel="stylesheet" type="text/css" />
+    <style>
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    
+    <div>
+        <header>
+            <h1>Sencha Try</h1>
+        </header>
+        
+        <section id="readme">
+            <h1>ExtJS Layout Examples</h1>
+            <strong>Tags:</strong> <a href="/search/Ext JS">Ext JS</a> <a href="/search/Ext JS 4.0.7">Ext JS 4.0.7</a> <br/>
+        </section>
+        <section id="example">
+            [example]
+        </section>
+        
+        <footer>
+            &copy; 2012 Sencha Inc.
+        </footer>
+    </div>
+    
+    <div class="hidden">
+        <!-- extjs/4.0.7/examples/layout-browser/layout-browser/app.js -->
+        <pre>/*global Ext:false */
+/*
+
+This file is part of Ext JS 4
+
+Copyright (c) 2011 Sencha Inc
+
+Contact:  http://www.sencha.com/contact
+
+GNU General Public License Usage
+This file may be used under the terms of the GNU General Public License version 3.0 as published by the Free Software Foundation and appearing in the file LICENSE included in the packaging of this file.  Please review the following information to ensure the GNU General Public License version 3.0 requirements will be met: http://www.gnu.org/copyleft/gpl.html.
+
+If you are unsure which license is appropriate for your use, please contact the sales department at http://www.sencha.com/contact.
+
+*/
+Ext.Loader.setConfig({enabled: true});
+
+Ext.Loader.setPath('Ext.ux', 'ux');
+
+Ext.require([
+    'Ext.tip.QuickTipManager',
+    'Ext.container.Viewport',
+    'Ext.layout.*',
+    'Ext.form.Panel',
+    'Ext.form.Label',
+    'Ext.grid.*',
+    'Ext.data.*',
+    'Ext.tree.*',
+    'Ext.selection.*',
+    'Ext.tab.Panel',
+    'Ext.ux.layout.Center'  
+]);
+
+//
+// This is the main layout definition.
+//
+Ext.onReady(function(){
+ 
+    Ext.tip.QuickTipManager.init();
+
+    // This is an inner body element within the Details panel created to provide a "slide in" effect
+    // on the panel body without affecting the body's box itself.  This element is created on
+    // initial use and cached in this var for subsequent access.
+    var detailEl;
+    
+    // Gets all layouts examples
+    var layoutExamples = [];
+    Ext.Object.each(getBasicLayouts(), function(name, example) {
+        layoutExamples.push(example);
+    });
+    
+    Ext.Object.each(getCombinationLayouts(), function(name, example){
+        layoutExamples.push(example);
+    });
+    
+    Ext.Object.each(getCustomLayouts(), function(name, example){
+        layoutExamples.push(example);
+    });
+    
+    // This is the main content center region that will contain each example layout panel.
+    // It will be implemented as a CardLayout since it will contain multiple panels with
+    // only one being visible at any given time.
+
+    var contentPanel = {
+         id: 'content-panel',
+         region: 'center', // this is what makes this panel into a region within the containing layout
+         layout: 'card',
+         margins: '2 5 5 0',
+         activeItem: 0,
+         border: false,
+         items: layoutExamples
+    };
+     
+    var store = Ext.create('Ext.data.TreeStore', {
+        root: {
+            expanded: true
+        },
+        proxy: {
+            type: 'ajax',
+            url: 'tree-data.json'
+        }
+    });
+    
+    // Go ahead and create the TreePanel now so that we can use it below
+     var treePanel = Ext.create('Ext.tree.Panel', {
+        id: 'tree-panel',
+        title: 'Sample Layouts',
+        region:'north',
+        split: true,
+        height: 360,
+        minSize: 150,
+        rootVisible: false,
+        autoScroll: true,
+        store: store
+    });
+    
+    // Assign the changeLayout function to be called on tree node click.
+    treePanel.getSelectionModel().on('select', function(selModel, record) {
+        if (record.get('leaf')) {
+            Ext.getCmp('content-panel').layout.setActiveItem(record.getId() + '-panel');
+             if (!detailEl) {
+                var bd = Ext.getCmp('details-panel').body;
+                bd.update('').setStyle('background','#fff');
+                detailEl = bd.createChild(); //create default empty div
+            }
+            detailEl.hide().update(Ext.getDom(record.getId() + '-details').innerHTML).slideIn('l', {stopAnimation:true,duration: 200});
+        }
+    });
+    
+    // This is the Details panel that contains the description for each example layout.
+    var detailsPanel = {
+        id: 'details-panel',
+        title: 'Details',
+        region: 'center',
+        bodyStyle: 'padding-bottom:15px;background:#eee;',
+        autoScroll: true,
+        html: '<p class="details-info">When you select a layout from the tree, additional details will display here.</p>'
+    };
+ 
+    // Finally, build the main layout once all the pieces are ready.  This is also a good
+    // example of putting together a full-screen BorderLayout within a Viewport.
+    Ext.create('Ext.Viewport', {
+        layout: 'border',
+        title: 'Ext Layout Browser',
+        items: [{
+            xtype: 'box',
+            id: 'header',
+            region: 'north',
+            html: '<h1> Ext.Layout.Browser</h1>',
+            height: 30
+        },{
+            layout: 'border',
+            id: 'layout-browser',
+            region:'west',
+            border: false,
+            split:true,
+            margins: '2 0 5 5',
+            width: 275,
+            minSize: 100,
+            maxSize: 500,
+            items: [treePanel, detailsPanel]
+        }, 
+            contentPanel
+        ],
+        renderTo: Ext.getBody()
+    });
+});
+
+</pre>
+        <!-- extjs/4.0.7/examples/layout-browser/layout-browser/layouts/basic.js -->
+        <pre>/*
+
+This file is part of Ext JS 4
+
+Copyright (c) 2011 Sencha Inc
+
+Contact:  http://www.sencha.com/contact
+
+GNU General Public License Usage
+This file may be used under the terms of the GNU General Public License version 3.0 as published by the Free Software Foundation and appearing in the file LICENSE included in the packaging of this file.  Please review the following information to ensure the GNU General Public License version 3.0 requirements will be met: http://www.gnu.org/copyleft/gpl.html.
+
+If you are unsure which license is appropriate for your use, please contact the sales department at http://www.sencha.com/contact.
+
+*/
+//
+// Note that these are all defined as panel configs, rather than instantiated
+// as panel objects.  You could just as easily do this instead:
+//
+// var absolute = Ext.create('Ext.Panel', { ... });
+//
+// However, by passing configs into the main container instead of objects, we can defer
+// layout AND object instantiation until absolutely needed.  Since most of these panels
+// won't be shown by default until requested, this will save us some processing
+// time up front when initially rendering the page.
+//
+// Since all of these configs are being added into a layout container, they are
+// automatically assumed to be panel configs, and so the xtype of 'panel' is
+// implicit.  To define a config of some other type of component to be added into
+// the layout, simply provide the appropriate xtype config explicitly.
+//
+function getBasicLayouts() {
+    // This is a fake CardLayout navigation function.  A real implementation would
+    // likely be more sophisticated, with logic to validate navigation flow.  It will
+    // be assigned next as the handling function for the buttons in the CardLayout example.
+    var cardNav = function(incr){
+        var l = Ext.getCmp('card-wizard-panel').getLayout();
+        var i = l.activeItem.id.split('card-')[1];
+        var next = parseInt(i, 10) + incr;
+        l.setActiveItem(next);
+        Ext.getCmp('card-prev').setDisabled(next===0);
+        Ext.getCmp('card-next').setDisabled(next===2);
+    };
+    return {
+        /*
+         * ================  Start page config  =======================
+         */
+        // The default start page, also a simple example of a FitLayout.
+        start: {
+            id: 'start-panel',
+            title: 'Start Page',
+            layout: 'fit',
+            bodyStyle: 'padding:25px',
+            contentEl: 'start-div'  // pull existing content from the page
+        },
+
+        /*
+         * ================  AbsoluteLayout config  =======================
+         */
+        absolute: {
+            id: 'absolute-panel',
+            title: 'Absolute Layout',
+            layout: 'absolute',
+            defaults: {
+                bodyStyle: 'padding:15px;',
+                width: 200,
+                height: 100,
+                frame: true
+            },
+            items:[{
+                title: 'Panel 1',
+                x: 50,
+                y: 50,
+                html: 'Positioned at x:50, y:50'
+            },{
+                title: 'Panel 2',
+                x: 125,
+                y: 125,
+                html: 'Positioned at x:125, y:125'
+            }]
+        },
+
+        /*
+         * ================  AccordionLayout config  =======================
+         */
+        accordion: {
+            id: 'accordion-panel',
+            title: 'Accordion Layout',
+            layout: 'accordion',
+            bodyStyle: 'background-color:#DFE8F6',  // if all accordion panels are collapsed, this looks better in this layout
+            defaults: {bodyStyle: 'padding:15px'},
+            items: [{
+                title: 'Introduction',
+                tools: [{type:'gear'},{type:'refresh'}],
+                html: '<p>Here is some accordion content.  Click on one of the other bars below for more.</p>'
+            },{
+                title: 'Basic Content',
+                html: '<br /><br /><p>More content.  Open the third panel for a customized look and feel example.</p>',
+                items: {
+                    xtype: 'button',
+                    text: 'Show Next Panel',
+                    handler: function(){
+                        Ext.getCmp('acc-custom').expand(true);
+                    }
+                }
+            },{
+                id: 'acc-custom',
+                title: 'Custom Panel Look and Feel',
+                cls: 'custom-accordion', // look in layout-browser.css to see the CSS rules for this class
+                html: '<p>Here is an example of how easy it is to completely customize the look and feel of an individual panel simply by adding a CSS class in the config.</p>'
+            }]
+        },
+
+        /*
+         * ================  AnchorLayout config  =======================
+         */
+        anchor: {
+            id:'anchor-panel',
+            title: 'Anchor Layout',
+            layout:'anchor',
+            defaults: {bodyStyle: 'padding:15px'},
+            items: [{
+                title: 'Panel 1',
+                height: 100,
+                anchor: '50%',
+                html: '<p>Width = 50% of the container</p>'
+            },{
+                title: 'Panel 2',
+                height: 100,
+                anchor: '-100',
+                html: '<p>Width = container width - 100 pixels</p>'
+            },{
+                title: 'Panel 3',
+                anchor: '-10, -262',
+                html: '<p>Width = container width - 10 pixels</p><p>Height = container height - 262 pixels</p>'
+            }]
+        },
+
+        /*
+         * ================  BorderLayout config  =======================
+         */
+        border: {
+            id:'border-panel',
+            title: 'Border Layout',
+            layout: 'border',
+            bodyBorder: false,
+            defaults: {
+                collapsible: true,
+                split: true,
+                animFloat: false,
+                autoHide: false,
+                useSplitTips: true,
+                bodyStyle: 'padding:15px'
+            },
+            items: [{
+                title: 'Footer',
+                region: 'south',
+                height: 150,
+                minSize: 75,
+                maxSize: 250,
+                cmargins: '5 0 0 0',
+                html: '<p>Footer content</p>'
+            },{
+                title: 'Navigation',
+                region:'west',
+                floatable: false,
+                margins: '5 0 0 0',
+                cmargins: '5 5 0 0',
+                width: 175,
+                minSize: 100,
+                maxSize: 250,
+                html: '<p>Secondary content like navigation links could go here</p>'
+            },{
+                title: 'Main Content',
+                collapsible: false,
+                region: 'center',
+                margins: '5 0 0 0',
+                html: '<h1>Main Page</h1><p>This is where the main content would go</p>'
+            }]
+        },
+
+        /*
+         * ================  CardLayout config (TabPanel)  =======================
+         */
+        // Note that the TabPanel component uses an internal CardLayout -- it is not
+        // something you have to explicitly configure.  However, it is still a perfect
+        // example of how this layout style can be used in a complex component.
+        cardTabs: {
+            xtype: 'tabpanel',
+            id: 'card-tabs-panel',
+            plain: true,  //remove the header border
+            activeTab: 0,
+            style: 'background-color:#dfe8f6; ',
+            defaults: {bodyStyle: 'padding:15px'},
+            items:[{
+                title: 'Tab 1',
+                html: 'This is tab 1 content.'
+            },{
+                title: 'Tab 2',
+                html: 'This is tab 2 content.'
+            },{
+                title: 'Tab 3',
+                html: 'This is tab 3 content.'
+            }]
+        },
+
+        /*
+         * ================  CardLayout config (Wizard)  =======================
+         */
+        cardWizard: {
+            id:'card-wizard-panel',
+            title: 'Card Layout (Wizard)',
+            layout:'card',
+            activeItem: 0,
+            bodyStyle: 'padding:15px',
+            defaults: {border:false},
+            bbar: ['->', {
+                id: 'card-prev',
+                text: '&amp;laquo; Previous',
+                handler: Ext.Function.bind(cardNav, this, [-1]),
+                disabled: true
+            },{
+                id: 'card-next',
+                text: 'Next &amp;raquo;',
+                handler: Ext.Function.bind(cardNav, this, [1])
+            }],
+            items: [{
+                id: 'card-0',
+                html: '<h1>Welcome to the Demo Wizard!</h1><p>Step 1 of 3</p><p>Please click the "Next" button to continue...</p>'
+            },{
+                id: 'card-1',
+                html: '<p>Step 2 of 3</p><p>Almost there.  Please click the "Next" button to continue...</p>'
+            },{
+                id: 'card-2',
+                html: '<h1>Congratulations!</h1><p>Step 3 of 3 - Complete</p>'
+            }]
+        },
+
+        /*
+         * ================  ColumnLayout config  =======================
+         */
+        column: {
+            id:'column-panel',
+            title: 'Column Layout',
+            layout: 'column',
+            bodyStyle: 'padding:5px',
+            defaults: {bodyStyle:'padding:15px'},
+            items: [{
+                title: 'Width = 0.25',
+                columnWidth: 0.25,
+                html: '<p>This is some short content.</p>'
+            },{
+                title: 'Width = 0.75',
+                columnWidth: 0.75,
+                html: '<p>This is some longer content.</p><p>This is some longer content.</p><p>This is some longer content.</p><p>This is some longer content.</p><p>This is some longer content.</p><p>This is some longer content.</p>'
+            },{
+                title: 'Width = 250px',
+                width: 250,
+                html: 'Not much here!'
+            }]
+        },
+
+        /*
+         * ================  FitLayout config  =======================
+         */
+        fit: {
+            id: 'fit-panel',
+            title: 'Fit Layout',
+            layout: 'fit',
+            items: {
+                title: 'Inner Panel',
+                html: '<p>This panel is fit within its container.</p>',
+                bodyStyle: 'padding:15px',
+                border: false
+            }
+        },
+
+        /*
+         * ================  FormLayout config  =======================
+         */
+        // NOTE: While you can create a basic Panel with layout:'form', practically
+        // you should usually use a FormPanel to also get its form-specific functionality.
+        // Note that the layout config is not required on FormPanels.
+        form: {
+            xtype: 'form', // since we are not using the default 'panel' xtype, we must specify it
+            id: 'form-panel',
+            labelWidth: 75,
+            title: 'Form Layout',
+            bodyStyle: 'padding:15px',
+            width: 350,
+            labelPad: 20,
+
+            defaults: {
+                width: 230,
+                labelSeparator: '',
+                msgTarget: 'side'
+            },
+            defaultType: 'textfield',
+            items: [{
+                    fieldLabel: 'First Name',
+                    name: 'first',
+                    allowBlank:false
+                },{
+                    fieldLabel: 'Last Name',
+                    name: 'last'
+                },{
+                    fieldLabel: 'Company',
+                    name: 'company'
+                },{
+                    fieldLabel: 'Email',
+                    name: 'email',
+                    vtype:'email'
+                }
+            ],
+            buttons: [{text: 'Save'},{text: 'Cancel'}]
+        },
+
+        /*
+         * ================  TableLayout config  =======================
+         */
+        table: {
+            id: 'table-panel',
+            title: 'Table Layout',
+            layout: {
+                type: 'table',
+                columns: 4
+            },
+            defaults: {
+                bodyStyle:'padding:15px 20px'
+            },
+            items: [{
+                title: 'Lots of Spanning',
+                html: '<p>Row spanning.</p><br /><p>Row spanning.</p><br /><p>Row spanning.</p><br /><p>Row spanning.</p><br /><p>Row spanning.</p><br /><p>Row spanning.</p>',
+                rowspan: 3
+            },{
+                title: 'Basic Table Cell',
+                html: '<p>Basic panel in a table cell.</p>',
+                cellId: 'basic-cell',
+                cellCls: 'custom-cls'
+            },{
+                html: '<p>Plain panel</p>'
+            },{
+                title: 'Another Cell',
+                html: '<p>Row spanning.</p><br /><p>Row spanning.</p><br /><p>Row spanning.</p><br /><p>Row spanning.</p>',
+                width: 300,
+                rowspan: 2
+            },{
+                html: 'Plain cell spanning two columns',
+                colspan: 2
+            },{
+                title: 'More Column Spanning',
+                html: '<p>Spanning three columns.</p>',
+                colspan: 3
+            },{
+                title: 'Spanning All Columns',
+                html: '<p>Spanning all columns.</p>',
+                colspan: 4
+            }]
+        },
+
+
+        /*
+         * ================  VBoxLayout config  =======================
+         */
+        vbox: {
+            id: 'vbox-panel',
+            title: 'vBox Layout',
+            layout: {
+                type: 'vbox',
+                pack: 'start',
+                align: 'stretch'
+            },
+            defaults: {
+                frame: true
+            },
+            items: [{
+                title: 'Panel 1',
+                flex: 1,
+                html: 'flex : 1'
+            }, {
+                title: 'Panel 2',
+                height: 100,
+                html: 'height: 100'
+            }, {
+                title: 'Panel 3',
+                flex: 2,
+                html: 'flex : 2'
+            }]
+        },
+
+        /*
+         * ================  HBoxLayout config  =======================
+         */
+        hbox: {
+            id: 'hbox-panel',
+            title: 'hBox Layout',
+            layout: {
+                type: 'hbox',
+                pack: 'start',
+                align: 'stretch'
+            },
+            defaults: {
+                frame: true
+            },
+            items: [{
+                title: 'Panel 1',
+                flex: 1,
+                html: 'flex : 1'
+            }, {
+                title: 'Panel 2',
+                width: 100,
+                html: 'width : 100'
+            }, {
+                title: 'Panel 3',
+                flex: 2,
+                html: 'flex : 2'
+            }]
+        }
+    };
+}
+
+</pre>
+        <!-- extjs/4.0.7/examples/layout-browser/layout-browser/layouts/combination.js -->
+        <pre>/*
+
+This file is part of Ext JS 4
+
+Copyright (c) 2011 Sencha Inc
+
+Contact:  http://www.sencha.com/contact
+
+GNU General Public License Usage
+This file may be used under the terms of the GNU General Public License version 3.0 as published by the Free Software Foundation and appearing in the file LICENSE included in the packaging of this file.  Please review the following information to ensure the GNU General Public License version 3.0 requirements will be met: http://www.gnu.org/copyleft/gpl.html.
+
+If you are unsure which license is appropriate for your use, please contact the sales department at http://www.sencha.com/contact.
+
+*/
+function getCombinationLayouts() {
+    // fake grid data used below in the tabsNestedLayouts config
+    var myData = [
+        ['3m Co',                               71.72, 0.02,  0.03,  '9/1 12:00am'],
+        ['Alcoa Inc',                           29.01, 0.42,  1.47,  '9/1 12:00am'],
+        ['Altria Group Inc',                    83.81, 0.28,  0.34,  '9/1 12:00am'],
+        ['American Express Company',            52.55, 0.01,  0.02,  '9/1 12:00am'],
+        ['American International Group, Inc.',  64.13, 0.31,  0.49,  '9/1 12:00am'],
+        ['AT&amp;T Inc.',                           31.61, -0.48, -1.54, '9/1 12:00am'],
+        ['Boeing Co.',                          75.43, 0.53,  0.71,  '9/1 12:00am'],
+        ['Caterpillar Inc.',                    67.27, 0.92,  1.39,  '9/1 12:00am'],
+        ['Citigroup, Inc.',                     49.37, 0.02,  0.04,  '9/1 12:00am'],
+        ['E.I. du Pont de Nemours and Company', 40.48, 0.51,  1.28,  '9/1 12:00am'],
+        ['Exxon Mobil Corp',                    68.1,  -0.43, -0.64, '9/1 12:00am'],
+        ['General Electric Company',            34.14, -0.08, -0.23, '9/1 12:00am'],
+        ['General Motors Corporation',          30.27, 1.09,  3.74,  '9/1 12:00am'],
+        ['Hewlett-Packard Co.',                 36.53, -0.03, -0.08, '9/1 12:00am'],
+        ['Honeywell Intl Inc',                  38.77, 0.05,  0.13,  '9/1 12:00am'],
+        ['Intel Corporation',                   19.88, 0.31,  1.58,  '9/1 12:00am'],
+        ['International Business Machines',     81.41, 0.44,  0.54,  '9/1 12:00am'],
+        ['Johnson &amp; Johnson',                   64.72, 0.06,  0.09,  '9/1 12:00am'],
+        ['JP Morgan &amp; Chase &amp; Co',              45.73, 0.07,  0.15,  '9/1 12:00am'],
+        ['McDonald\'s Corporation',             36.76, 0.86,  2.40,  '9/1 12:00am'],
+        ['Merck &amp; Co., Inc.',                   40.96, 0.41,  1.01,  '9/1 12:00am'],
+        ['Microsoft Corporation',               25.84, 0.14,  0.54,  '9/1 12:00am'],
+        ['Pfizer Inc',                          27.96, 0.4,   1.45,  '9/1 12:00am'],
+        ['The Coca-Cola Company',               45.07, 0.26,  0.58,  '9/1 12:00am'],
+        ['The Home Depot, Inc.',                34.64, 0.35,  1.02,  '9/1 12:00am'],
+        ['The Procter &amp; Gamble Company',        61.91, 0.01,  0.02,  '9/1 12:00am'],
+        ['United Technologies Corporation',     63.26, 0.55,  0.88,  '9/1 12:00am'],
+        ['Verizon Communications',              35.57, 0.39,  1.11,  '9/1 12:00am'],
+        ['Wal-Mart Stores, Inc.',               45.45, 0.73,  1.63,  '9/1 12:00am']
+    ];
+    
+    /**
+     * Custom function used for column renderer
+     * @param {Object} val
+     */
+    function change(val) {
+        if (val > 0) {
+            return '<span style="color:green;">' + val + '</span>';
+        } else if (val < 0) {
+            return '<span style="color:red;">' + val + '</span>';
+        }
+        return val;
+    }
+    
+    /**
+     * Custom function used for column renderer
+     * @param {Object} val
+     */
+    function pctChange(val) {
+        if (val > 0) {
+            return '<span style="color:green;">' + val + '%</span>';
+        } else if (val < 0) {
+            return '<span style="color:red;">' + val + '%</span>';
+        }
+        return val;
+    }
+    
+    return {
+        /*
+         * ================  TabPanel with nested layouts  =======================
+         */
+        tabsNestedLayouts: {
+             xtype: 'tabpanel',
+             id: 'tabs-nested-layouts-panel',
+             title: 'TabPanel with Nested Layouts',
+             activeTab: 0,
+             items:[{
+                 title: 'Foo',
+                 layout: 'border',
+                 items: [{
+                     region: 'north',
+                     title: 'North',
+                     height: 75,
+                     maxSize: 150,
+                     margins: '5 5 0 5',
+                     bodyStyle: 'padding:10px;',
+                     split: true,
+                     html: 'Some content'
+                 },{
+                     xtype: 'tabpanel',
+                     plain: true,
+                     region: 'center',
+                     margins: '0 5 5 5',
+                     activeTab: 0,
+                     items: [{
+                         title: 'Inner Tab 1',
+                         bodyStyle: 'padding:10px;',
+                         html: 'See Inner Tab 2 for another nested BorderLayout.'
+                     },{
+                         title: 'Inner Tab 2',
+                         cls: 'inner-tab-custom', // custom styles in layout-browser.css
+                         layout: 'border',
+                        // Make sure IE can still calculate dimensions after a resize when the tab is not active.
+                        // With display mode, if the tab is rendered but hidden, IE will mess up the layout on show:
+                         hideMode: Ext.isIE ? 'offsets' : 'display',
+                         items: [{
+                             title: 'West',
+                             region: 'west',
+                             collapsible: true,
+                             width: 150,
+                             minSize: 100,
+                             maxSize: 350,
+                             margins: '5 0 5 5',
+                             cmargins: '5 5 5 5',
+                             html: 'Hello',
+                             bodyStyle:'padding:10px;',
+                             split: true
+                         },{
+                             xtype: 'tabpanel',
+                             region: 'center',
+                             margins: '5 5 5 0',
+                             tabPosition: 'bottom',
+                             activeTab: 0,
+                             items: [{
+                                 // Panels that are used as tabs do not have title bars since the tab
+                                 // itself is the title container.  If you want to have a full title
+                                 // bar within a tab, you can easily nest another panel within the tab
+                                 // with layout:'fit' to acheive that:
+                                 title: 'Bottom Tab',
+                                 layout: 'fit',
+                                 items: {
+                                     title: 'Interior Content',
+                                     bodyStyle:'padding:10px;',
+                                     border: false,
+                                     html: 'See the next tab for a nested grid. The grid is not rendered until its tab is first accessed.'
+                                 }
+                             },{
+                                 // A common mistake when adding grids to a layout is creating a panel first,
+                                 // then adding the grid to it.  GridPanel (xtype:'grid') is a Panel subclass,
+                                 // so you can add it directly as an item into a container.  Typically you will
+                                 // want to specify layout:'fit' on GridPanels so that they'll size along with
+                                 // their container and take up the available space.
+                                 title: 'Nested Grid',
+                                 xtype: 'grid',
+                                 layout: 'fit',
+                                 store: Ext.create('Ext.data.ArrayStore', {
+                                     fields: [
+                                        {name: 'company'},
+                                        {name: 'price',      type: 'float'},
+                                        {name: 'change',     type: 'float'},
+                                        {name: 'pctChange',  type: 'float'},
+                                        {name: 'lastChange', type: 'date', dateFormat: 'n/j h:ia'}
+                                     ],
+                                     data: myData
+                                 }),
+                                 columns: [
+                                     {
+                                         text     : 'Company',
+                                         flex     : 1,
+                                         sortable : false, 
+                                         dataIndex: 'company'
+                                     },
+                                     {
+                                         text     : 'Price', 
+                                         width    : 75, 
+                                         sortable : true, 
+                                         renderer : 'usMoney', 
+                                         dataIndex: 'price'
+                                     },
+                                     {
+                                         text     : 'Change', 
+                                         width    : 75, 
+                                         sortable : true, 
+                                         renderer : change, 
+                                         dataIndex: 'change'
+                                     },
+                                     {
+                                         text     : '% Change', 
+                                         width    : 75, 
+                                         sortable : true, 
+                                         renderer : pctChange, 
+                                         dataIndex: 'pctChange'
+                                     },
+                                     {
+                                         text     : 'Last Updated', 
+                                         width    : 85, 
+                                         sortable : true, 
+                                         renderer : Ext.util.Format.dateRenderer('m/d/Y'), 
+                                         dataIndex: 'lastChange'
+                                     }
+                                 ],
+                                 stripeRows: true
+                             }]
+                         }]
+                     }]
+                 }]
+             },{
+                 title: 'Bar',
+                 bodyStyle: 'padding:10px;',
+                 html: 'Nothing to see here.'
+             }]
+            },
+
+        /*
+         * ================  Absolute Layout Form  =======================
+         */
+        // absform: ,
+
+        absoluteForm: {
+            title: 'Absolute Layout Form',
+            id: 'abs-form-panel',
+            layout: 'fit',
+            bodyPadding: 15,
+            items: {
+                title: 'New Email',
+                layout: 'fit',
+                frame: true,
+                items: {
+                    xtype: 'form',
+                    layout:'absolute',
+                    url:'save-form.php',
+                    padding: '5 5 0 5',
+                    border: false,
+                    cls: 'absolute-form-panel-body',
+                    
+                    defaultType: 'textfield',
+                    items: [{
+                        x: 0,
+                        y: 5,
+                        xtype: 'label',
+                        text: 'From:'
+                    },{
+                        x: 55,
+                        y: 0,
+                        name: 'from',
+                        hideLabel: true,
+                        anchor:'100%'  // anchor width by %
+                    },{
+                        x: 0,
+                        y: 32,
+                        xtype: 'label',
+                        text: 'To:'
+                    },{
+                        x: 55,
+                        y: 27,
+                        xtype: 'button',
+                        text: 'Contacts...'
+                    },{
+                        x: 127,
+                        y: 27,
+                        name: 'to',
+                        hideLabel: true,
+                        anchor: '100%'  // anchor width by %
+                    },{
+                        x: 0,
+                        y: 59,
+                        xtype: 'label',
+                        text: 'Subject:'
+                    },{
+                        x: 55,
+                        y: 54,
+                        name: 'subject',
+                        hideLabel: true,
+                        anchor: '100%'  // anchor width by %
+                    },{
+                        x: 0,
+                        y: 81,
+                        hideLabel: true,
+                        xtype: 'textarea',
+                        name: 'msg',
+                        anchor: '100% 100%'  // anchor width and height
+                    }]
+                },
+
+                dockedItems: [
+                    {
+                        xtype: 'toolbar',
+                        ignoreParentFrame: true,
+                        ignoreBorderManagement: true,
+                        cls: 'absolute-form-toolbar',
+                        items: [
+                            {
+                                 text: 'Send',
+                                 iconCls: 'icon-send'
+                            },'-',{
+                                 text: 'Save',
+                                 iconCls: 'icon-save'
+                            },{
+                                 text: 'Check Spelling',
+                                 iconCls: 'icon-spell'
+                            },'-',{
+                                 text: 'Print',
+                                 iconCls: 'icon-print'
+                            },'->',{
+                                 text: 'Attach a File',
+                                 iconCls: 'icon-attach'
+                            }
+                        ]
+                    }
+                ]
+            }
+        }
+    };
+}
+
+</pre>
+        <!-- extjs/4.0.7/examples/layout-browser/layout-browser/layouts/custom.js -->
+        <pre>/*
+
+This file is part of Ext JS 4
+
+Copyright (c) 2011 Sencha Inc
+
+Contact:  http://www.sencha.com/contact
+
+GNU General Public License Usage
+This file may be used under the terms of the GNU General Public License version 3.0 as published by the Free Software Foundation and appearing in the file LICENSE included in the packaging of this file.  Please review the following information to ensure the GNU General Public License version 3.0 requirements will be met: http://www.gnu.org/copyleft/gpl.html.
+
+If you are unsure which license is appropriate for your use, please contact the sales department at http://www.sencha.com/contact.
+
+*/
+function getCustomLayouts() {
+    return {
+        /*
+         * CenterLayout demo panel
+         */
+        centerLayout: {
+            id: 'center-panel',
+            layout: 'ux.center',
+            items: {
+                title: 'Centered Panel: 75% of container width and fit height',
+                layout: 'ux.center',
+                autoScroll: true,
+                widthRatio: 0.75,
+                bodyStyle: 'padding:20px 0;',
+                items: [{
+                    title: 'Inner Centered Panel',
+                    html: 'Fixed 300px wide and auto height. The container panel will also autoscroll if narrower than 300px.',
+                    width: 300,
+                    frame: true,
+                    autoHeight: true,
+                    bodyStyle: 'padding:10px 20px;'
+                }]
+            }
+        }
+    };
+
+}
+</pre>
+        <!-- extjs/4.0.7/examples/layout-browser/layout-browser/ux/layout/Center.js -->
+        <pre>/*
+
+This file is part of Ext JS 4
+
+Copyright (c) 2011 Sencha Inc
+
+Contact:  http://www.sencha.com/contact
+
+GNU General Public License Usage
+This file may be used under the terms of the GNU General Public License version 3.0 as published by the Free Software Foundation and appearing in the file LICENSE included in the packaging of this file.  Please review the following information to ensure the GNU General Public License version 3.0 requirements will be met: http://www.gnu.org/copyleft/gpl.html.
+
+If you are unsure which license is appropriate for your use, please contact the sales department at http://www.sencha.com/contact.
+
+*/
+/**
+ * @class Ext.ux.layout.Center
+ * @extends Ext.layout.container.Fit
+ * <p>This is a very simple layout style used to center contents within a container.  This layout works within
+ * nested containers and can also be used as expected as a Viewport layout to center the page layout.</p>
+ * <p>As a subclass of FitLayout, CenterLayout expects to have a single child panel of the container that uses
+ * the layout.  The layout does not require any config options, although the child panel contained within the
+ * layout must provide a fixed or percentage width.  The child panel's height will fit to the container by
+ * default, but you can specify <tt>autoHeight:true</tt> to allow it to autosize based on its content height.
+ * Example usage:</p>
+ * <pre><code>
+// The content panel is centered in the container
+var p = Ext.create('Ext.Panel', {
+    title: 'Center Layout',
+    layout: 'ux.center',
+    items: [{
+        title: 'Centered Content',
+        widthRatio: 0.75,
+        html: 'Some content'
+    }]
+});
+
+// If you leave the title blank and specify no border
+// you'll create a non-visual, structural panel just
+// for centering the contents in the main container.
+var p = Ext.create('Ext.Panel', {
+    layout: 'ux.center',
+    border: false,
+    items: [{
+        title: 'Centered Content',
+        width: 300,
+        autoHeight: true,
+        html: 'Some content'
+    }]
+});
+</code></pre>
+ */
+Ext.define('Ext.ux.layout.Center', {
+    extend: 'Ext.layout.container.Fit',
+    alias: 'layout.ux.center',
+    // private
+    setItemSize : function(item, width, height) {
+        this.owner.addCls('ux-layout-center');
+        item.addCls('ux-layout-center-item');
+        if (height > 0) {
+            if (width) {
+                width = item.width;
+                if (Ext.isNumber(item.widthRatio)) {
+                    width = Math.round(this.owner.el.getWidth() * item.widthRatio);
+                }
+            }
+            item.setSize(width, height);
+            item.margins.left = Math.round((this.owner.el.getWidth() - width) * 0.5);
+        }
+
+    }
+});
+
+</pre>
+    </div>
+    
+</body>
+</html>

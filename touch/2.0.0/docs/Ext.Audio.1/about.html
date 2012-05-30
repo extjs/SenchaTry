@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Ext.Audio Example</title>
+    <meta Name="description" content="Ext.Audio Example" />
+    <meta name="keywords" content="Sencha, Sencha Touch, Sencha Touch 2.0.0, Ext.Audio, audio, url" />
+    <link href="/assets/application.css" media="screen" rel="stylesheet" type="text/css" />
+    <style>
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    
+    <div>
+        <header>
+            <h1>Sencha Try</h1>
+        </header>
+        
+        <section id="readme">
+            <h1>Ext.Audio Example</h1>
+
+<p>Here is an example of the Ext.Audio component in a fullscreen container.</p>
+            <strong>Tags:</strong> <a href="/search/Sencha Touch">Sencha Touch</a> <a href="/search/Sencha Touch 2.0.0">Sencha Touch 2.0.0</a> <a href="/search/Ext.Audio">Ext.Audio</a> <a href="/search/audio">audio</a> <a href="/search/url">url</a> <br/>
+        </section>
+        <section id="example">
+            [example]
+        </section>
+        
+        <footer>
+            &copy; 2012 Sencha Inc.
+        </footer>
+    </div>
+    
+    <div class="hidden">
+        <!-- touch/2.0.0/docs/Ext.Audio.1/app.js -->
+        <pre>/*global Ext:false */
+Ext.application({
+    launch: function () {
+        Ext.create('Ext.Container', {
+            fullscreen: true,
+            layout: {
+                type: 'vbox',
+                pack: 'center',
+                align: 'stretch'
+            },
+            items: [{
+                xtype: 'toolbar',
+                docked: 'top',
+                title: 'Ext.Audio'
+            }, {
+                xtype: 'audio',
+                url: 'audio/crash.mp3'
+            }]
+        });
+    } // launch
+}); // application()
+</pre>
+    </div>
+    
+</body>
+</html>

@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Creating a custom component in Sencha Touch 2</title>
+    <meta Name="description" content="Creating a custom component in Sencha Touch 2" />
+    <meta name="keywords" content="Sencha, Sencha Touch, Sencha Touch 2.0.1" />
+    <link href="/assets/application.css" media="screen" rel="stylesheet" type="text/css" />
+    <style>
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    
+    <div>
+        <header>
+            <h1>Sencha Try</h1>
+        </header>
+        
+        <section id="readme">
+            <h1>Creating a custom component in Sencha Touch 2</h1>
+
+<p>The following example shows how you can create a simple custom component in Sencha Touch 2 by using the <code>Ext.define()</code> method.</p>
+            <strong>Tags:</strong> <a href="/search/Sencha Touch">Sencha Touch</a> <a href="/search/Sencha Touch 2.0.1">Sencha Touch 2.0.1</a> <br/>
+        </section>
+        <section id="example">
+            [example]
+        </section>
+        
+        <footer>
+            &copy; 2012 Sencha Inc.
+        </footer>
+    </div>
+    
+    <div class="hidden">
+        <!-- touch/2.0.1/demos/Ext.define.extend/app.js -->
+        <pre>/*global Ext:false */
+Ext.application({
+    launch: function () {
+        Ext.define('MyToolbar', {
+            extend: 'Ext.Toolbar',
+            alias: 'widget.mytoolbar',
+            config: {
+                items: [{
+                    text: 'Red',
+                    action: 'red'
+                }, {
+                    text: 'Orange',
+                    action: 'orange'
+                }, {
+                    text: 'Yellow',
+                    action: 'yellow'
+                }, {
+                    text: 'Green',
+                    action: 'green'
+                }, {
+                    text: 'Blue',
+                    action: 'blue'
+                }], // items
+                control: {
+                    'button[action=red]': {
+                        tap: 'onButtonTap'
+                    },
+                    'button[action=orange]': {
+                        tap: 'onButtonTap'
+                    },
+                    'button[action=yellow]': {
+                        tap: 'onButtonTap'
+                    },
+                    'button[action=green]': {
+                        tap: 'onGreenTap'
+                    },
+                    'button[action=blue]': {
+                        tap: 'onBlueTap'
+                    }
+                } // control
+            }, // config
+            onButtonTap: function (btn) {
+                Ext.Msg.alert('You clicked the ' + btn.getText() + ' button');
+            },
+            onGreenTap: function (btn) {
+                Ext.Msg.alert('Custom Green handler');
+            },
+            onBlueTap: function (btn) {
+                Ext.Msg.alert('Le Custom Blue handler');
+            } 
+        }); // define()
+        
+        Ext.create('Ext.Container', {
+            fullscreen: true,
+            items: [{
+                xtype: 'mytoolbar',
+                docked: 'top'
+            }] // items
+        }); // create()
+    } // launch
+}); // application()
+</pre>
+    </div>
+    
+</body>
+</html>

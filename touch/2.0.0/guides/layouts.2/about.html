@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Using Layouts in Sencha Touch 2</title>
+    <meta Name="description" content="Using Layouts in Sencha Touch 2" />
+    <meta name="keywords" content="Sencha, Sencha Touch, Sencha Touch 2.0.0" />
+    <link href="/assets/application.css" media="screen" rel="stylesheet" type="text/css" />
+    <style>
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    
+    <div>
+        <header>
+            <h1>Sencha Try</h1>
+        </header>
+        
+        <section id="readme">
+            <h1>Using Layouts in Sencha Touch 2</h1>
+
+<p>Sencha Touch employs a powerful layout engine that makes it easy to size and position your components on screen.</p>
+            <strong>Tags:</strong> <a href="/search/Sencha Touch">Sencha Touch</a> <a href="/search/Sencha Touch 2.0.0">Sencha Touch 2.0.0</a> <br/>
+        </section>
+        <section id="example">
+            [example]
+        </section>
+        
+        <footer>
+            &copy; 2012 Sencha Inc.
+        </footer>
+    </div>
+    
+    <div class="hidden">
+        <!-- touch/2.0.0/guides/layouts.2/app.js -->
+        <pre>/*global Ext:false */
+Ext.application({
+    launch: function () {
+        var container = Ext.create('Ext.Container', {
+            fullscreen: true,
+            layout: {
+                type: 'vbox',
+                align: 'start',
+                pack: 'start'
+            },
+            items: [{
+                docked: 'top',
+                xtype: 'titlebar',
+                title: 'VBox Layout'
+            },
+            {
+                docked: 'top',
+                xtype: 'toolbar',
+                items: [{
+                    xtype: 'container',
+                    html: 'Pack: ',
+                    style: 'color: #fff; padding: 0 10px; width: 85px;'
+                }, {
+                    xtype: 'segmentedbutton',
+                    allowDepress: false,
+                    items: [{
+                        text: 'Start',
+                        handler: function () {
+                            layout.setPack('start');
+                        },
+                        pressed: true
+                    }, {
+                        text: 'Center',
+                        handler: function () {
+                            layout.setPack('center');
+                        }
+                    }, {
+                        text: 'End',
+                        handler: function () {
+                            layout.setPack('end');
+                        }
+                    }]
+                }]
+            }, {
+                docked: 'top',
+                xtype: 'toolbar',
+                items: [{
+                    xtype: 'container',
+                    html: 'Align: ',
+                    style: 'color: #fff; padding: 0 10px; width: 85px;'
+                }, {
+                    xtype: 'segmentedbutton',
+                    allowDepress: false,
+                    items: [{
+                        text: 'Start',
+                        handler: function () {
+                            layout.setAlign('start');
+                        },
+                        pressed: true
+                    }, {
+                        text: 'Center',
+                        handler: function () {
+                            layout.setAlign('center');
+                        }
+                    }, {
+                        text: 'End',
+                        handler: function () {
+                            layout.setAlign('end');
+                        }
+                    }, {
+                        text: 'Stretch',
+                        handler: function () {
+                            layout.setAlign('stretch');
+                        }
+                    }]
+                }]
+            },
+            {
+                xtype: 'button',
+                text: 'Btn 1',
+                margin: 2
+            }, {
+                xtype: 'button',
+                text: 'Btn 2',
+                margin: 2
+            }, {
+                xtype: 'button',
+                text: 'Btn 3',
+                margin: 2
+            }]
+        });
+
+        var layout = container.getLayout();
+    } // launch
+}); // application()
+</pre>
+    </div>
+    
+</body>
+</html>

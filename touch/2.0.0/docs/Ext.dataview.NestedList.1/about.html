@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Ext.dataview.NestedList Example</title>
+    <meta Name="description" content="Ext.dataview.NestedList Example" />
+    <meta name="keywords" content="Sencha, Sencha Touch, Sencha Touch 2.0.0, Ext.dataview.NestedList, Ext.NestedList, nestedlist, Ext.data.TreeStore, defaultRootProperty, root, displayField" />
+    <link href="/assets/application.css" media="screen" rel="stylesheet" type="text/css" />
+    <style>
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    
+    <div>
+        <header>
+            <h1>Sencha Try</h1>
+        </header>
+        
+        <section id="readme">
+            <h1>Ext.dataview.NestedList Example</h1>
+            <strong>Tags:</strong> <a href="/search/Sencha Touch">Sencha Touch</a> <a href="/search/Sencha Touch 2.0.0">Sencha Touch 2.0.0</a> <a href="/search/Ext.dataview.NestedList">Ext.dataview.NestedList</a> <a href="/search/Ext.NestedList">Ext.NestedList</a> <a href="/search/nestedlist">nestedlist</a> <a href="/search/Ext.data.TreeStore">Ext.data.TreeStore</a> <a href="/search/defaultRootProperty">defaultRootProperty</a> <a href="/search/root">root</a> <a href="/search/displayField">displayField</a> <br/>
+        </section>
+        <section id="example">
+            [example]
+        </section>
+        
+        <footer>
+            &copy; 2012 Sencha Inc.
+        </footer>
+    </div>
+    
+    <div class="hidden">
+        <!-- touch/2.0.0/docs/Ext.dataview.NestedList.1/app.js -->
+        <pre>/*global Ext:false */
+Ext.application({
+    launch: function () {
+        var data = {
+            text: 'Groceries',
+            items: [{
+                text: 'Drinks',
+                items: [{
+                    text: 'Water',
+                    items: [{
+                        text: 'Sparkling',
+                        leaf: true
+                    }, {
+                        text: 'Still',
+                        leaf: true
+                    }]
+                }, {
+                    text: 'Coffee',
+                    leaf: true
+                }, {
+                    text: 'Espresso',
+                    leaf: true
+                }, {
+                    text: 'Redbull',
+                    leaf: true
+                }, {
+                    text: 'Coke',
+                    leaf: true
+                }, {
+                    text: 'Diet Coke',
+                    leaf: true
+                }]
+            }, {
+                text: 'Fruit',
+                items: [{
+                    text: 'Bananas',
+                    leaf: true
+                }, {
+                    text: 'Lemon',
+                    leaf: true
+                }]
+            }, {
+                text: 'Snacks',
+                items: [{
+                    text: 'Nuts',
+                    leaf: true
+                }, {
+                    text: 'Pretzels',
+                    leaf: true
+                }, {
+                    text: 'Wasabi Peas',
+                    leaf: true
+                }]
+            }]
+        };
+
+        Ext.define('ListItem', {
+            extend: 'Ext.data.Model',
+            config: {
+                fields: [{
+                    name: 'text',
+                    type: 'string'
+                }]
+            }
+        });
+
+        var store = Ext.create('Ext.data.TreeStore', {
+            model: 'ListItem',
+            defaultRootProperty: 'items',
+            root: data
+        });
+
+        var nestedList = Ext.create('Ext.NestedList', {
+            fullscreen: true,
+            title: 'Groceries',
+            displayField: 'text',
+            store: store
+        });
+    } // launch
+}); // application()
+</pre>
+    </div>
+    
+</body>
+</html>

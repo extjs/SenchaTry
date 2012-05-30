@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Accordion Layout</title>
+    <meta Name="description" content="Accordion Layout" />
+    <meta name="keywords" content="Sencha, Ext JS, Ext JS 4.0.7" />
+    <link href="/assets/application.css" media="screen" rel="stylesheet" type="text/css" />
+    <style>
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    
+    <div>
+        <header>
+            <h1>Sencha Try</h1>
+        </header>
+        
+        <section id="readme">
+            <h1>Accordion Layout</h1>
+            <strong>Tags:</strong> <a href="/search/Ext JS">Ext JS</a> <a href="/search/Ext JS 4.0.7">Ext JS 4.0.7</a> <br/>
+        </section>
+        <section id="example">
+            [example]
+        </section>
+        
+        <footer>
+            &copy; 2012 Sencha Inc.
+        </footer>
+    </div>
+    
+    <div class="hidden">
+        <!-- extjs/4.0.7/examples/layout/accordion/app.js -->
+        <pre>/*global Ext:false */
+/*
+
+This file is part of Ext JS 4
+
+Copyright (c) 2011 Sencha Inc
+
+Contact:  http://www.sencha.com/contact
+
+GNU General Public License Usage
+This file may be used under the terms of the GNU General Public License version 3.0 as published by the Free Software Foundation and appearing in the file LICENSE included in the packaging of this file.  Please review the following information to ensure the GNU General Public License version 3.0 requirements will be met: http://www.gnu.org/copyleft/gpl.html.
+
+If you are unsure which license is appropriate for your use, please contact the sales department at http://www.sencha.com/contact.
+
+*/
+Ext.require(['*']);
+
+Ext.onReady(function () {
+
+    // sample static data for the store
+    var myData = [
+        ['3m Co', 71.72, 0.02, 0.03, '9/1 12:00am'],
+        ['Alcoa Inc', 29.01, 0.42, 1.47, '9/1 12:00am'],
+        ['Altria Group Inc', 83.81, 0.28, 0.34, '9/1 12:00am'],
+        ['American Express Company', 52.55, 0.01, 0.02, '9/1 12:00am'],
+        ['American International Group, Inc.', 64.13, 0.31, 0.49, '9/1 12:00am'],
+        ['AT&amp;T Inc.', 31.61, -0.48, -1.54, '9/1 12:00am'],
+        ['Boeing Co.', 75.43, 0.53, 0.71, '9/1 12:00am'],
+        ['Caterpillar Inc.', 67.27, 0.92, 1.39, '9/1 12:00am'],
+        ['Citigroup, Inc.', 49.37, 0.02, 0.04, '9/1 12:00am'],
+        ['E.I. du Pont de Nemours and Company', 40.48, 0.51, 1.28, '9/1 12:00am'],
+        ['Exxon Mobil Corp', 68.1, -0.43, -0.64, '9/1 12:00am'],
+        ['General Electric Company', 34.14, -0.08, -0.23, '9/1 12:00am'],
+        ['General Motors Corporation', 30.27, 1.09, 3.74, '9/1 12:00am'],
+        ['Hewlett-Packard Co.', 36.53, -0.03, -0.08, '9/1 12:00am'],
+        ['Honeywell Intl Inc', 38.77, 0.05, 0.13, '9/1 12:00am'],
+        ['Intel Corporation', 19.88, 0.31, 1.58, '9/1 12:00am'],
+        ['International Business Machines', 81.41, 0.44, 0.54, '9/1 12:00am'],
+        ['Johnson &amp; Johnson', 64.72, 0.06, 0.09, '9/1 12:00am'],
+        ['JP Morgan &amp; Chase &amp; Co', 45.73, 0.07, 0.15, '9/1 12:00am'],
+        ['McDonald\'s Corporation', 36.76, 0.86, 2.40, '9/1 12:00am'],
+        ['Merck &amp; Co., Inc.', 40.96, 0.41, 1.01, '9/1 12:00am'],
+        ['Microsoft Corporation', 25.84, 0.14, 0.54, '9/1 12:00am'],
+        ['Pfizer Inc', 27.96, 0.4, 1.45, '9/1 12:00am'],
+        ['The Coca-Cola Company', 45.07, 0.26, 0.58, '9/1 12:00am'],
+        ['The Home Depot, Inc.', 34.64, 0.35, 1.02, '9/1 12:00am'],
+        ['The Procter &amp; Gamble Company', 61.91, 0.01, 0.02, '9/1 12:00am'],
+        ['United Technologies Corporation', 63.26, 0.55, 0.88, '9/1 12:00am'],
+        ['Verizon Communications', 35.57, 0.39, 1.11, '9/1 12:00am'],
+        ['Wal-Mart Stores, Inc.', 45.45, 0.73, 1.63, '9/1 12:00am']
+    ];
+
+    /**
+     * Custom function used for column renderer
+     * @param {Object} val
+     */
+    function change(val) {
+        if (val > 0) {
+            return '<span style="color:green;">' + val + '</span>';
+        } else if (val < 0) {
+            return '<span style="color:red;">' + val + '</span>';
+        }
+        return val;
+    }
+
+    /**
+     * Custom function used for column renderer
+     * @param {Object} val
+     */
+    function pctChange(val) {
+        if (val > 0) {
+            return '<span style="color:green;">' + val + '%</span>';
+        } else if (val < 0) {
+            return '<span style="color:red;">' + val + '%</span>';
+        }
+        return val;
+    }
+
+    // create the data store
+    var store = Ext.create('Ext.data.ArrayStore', {
+        fields: [{
+            name: 'company'
+        }, {
+            name: 'price',
+            type: 'float'
+        }, {
+            name: 'change',
+            type: 'float'
+        }, {
+            name: 'pctChange',
+            type: 'float'
+        }, {
+            name: 'lastChange',
+            type: 'date',
+            dateFormat: 'n/j h:ia'
+        }],
+        data: myData
+    });
+
+    // create the Grid
+    var grid = Ext.create('Ext.grid.Panel', {
+        hideCollapseTool: true,
+        store: store,
+        columnLines: true,
+        columns: [{
+            text: 'Company',
+            flex: 1,
+            sortable: false,
+            dataIndex: 'company'
+        }, {
+            text: 'Price',
+            width: 75,
+            sortable: true,
+            renderer: 'usMoney',
+            dataIndex: 'price'
+        }, {
+            text: 'Change',
+            width: 75,
+            sortable: true,
+            renderer: change,
+            dataIndex: 'change'
+        }, {
+            text: '% Change',
+            width: 75,
+            sortable: true,
+            renderer: pctChange,
+            dataIndex: 'pctChange'
+        }, {
+            text: 'Last Updated',
+            width: 85,
+            sortable: true,
+            renderer: Ext.util.Format.dateRenderer('m/d/Y'),
+            dataIndex: 'lastChange'
+        }, {
+            xtype: 'actioncolumn',
+            width: 50,
+            items: [{
+                icon: 'resources/icons/fam/delete.gif',
+                // Use a URL in the icon config
+                tooltip: 'Sell stock',
+                handler: function (grid, rowIndex, colIndex) {
+                    var rec = store.getAt(rowIndex);
+                    alert("Sell " + rec.get('company'));
+                }
+            }, {
+                getClass: function (v, meta, rec) { // Or return a class from a function
+                    if (rec.get('change') < 0) {
+                        this.items[1].tooltip = 'Hold stock';
+                        return 'alert-col';
+                    } else {
+                        this.items[1].tooltip = 'Buy stock';
+                        return 'buy-col';
+                    }
+                },
+                handler: function (grid, rowIndex, colIndex) {
+                    var rec = store.getAt(rowIndex);
+                    alert((rec.get('change') < 0 ? "Hold " : "Buy ") + rec.get('company'));
+                }
+            }]
+        }],
+        title: 'Array Grid (Click header to collapse)',
+        viewConfig: {
+            stripeRows: true
+        }
+    });
+
+    var item1 = grid;
+
+    var item2 = Ext.create('Ext.Panel', {
+        title: 'Accordion Item 2',
+        html: '&amp;lt;empty panel&amp;gt;',
+        cls: 'empty'
+    });
+
+    var item3 = Ext.create('Ext.Panel', {
+        title: 'Accordion Item 3',
+        html: '&amp;lt;empty panel&amp;gt;',
+        cls: 'empty'
+    });
+
+    var item4 = Ext.create('Ext.Panel', {
+        title: 'Accordion Item 4',
+        html: '&amp;lt;empty panel&amp;gt;',
+        cls: 'empty'
+    });
+
+    var item5 = Ext.create('Ext.Panel', {
+        title: 'Accordion Item 5',
+        html: '&amp;lt;empty panel&amp;gt;',
+        cls: 'empty'
+    });
+
+    var accordion = Ext.create('Ext.Panel', {
+        region: 'west',
+        margins: '5 0 5 5',
+        split: true,
+        width: 210,
+        layout: 'accordion',
+        items: [item1, item2, item3, item4, item5]
+    });
+
+    var viewport = Ext.create('Ext.Viewport', {
+        layout: 'border',
+        items: [
+        accordion,
+        {
+            region: 'center',
+            margins: '5 5 5 0',
+            cls: 'empty',
+            bodyStyle: 'background:#f1f1f1',
+            html: '<br/><br/>&amp;lt;empty center panel&amp;gt;'
+        }]
+    });
+});
+</pre>
+        <!-- extjs/4.0.7/examples/layout/accordion/examples.js -->
+        <pre>/*
+
+This file is part of Ext JS 4
+
+Copyright (c) 2011 Sencha Inc
+
+Contact:  http://www.sencha.com/contact
+
+GNU General Public License Usage
+This file may be used under the terms of the GNU General Public License version 3.0 as published by the Free Software Foundation and appearing in the file LICENSE included in the packaging of this file.  Please review the following information to ensure the GNU General Public License version 3.0 requirements will be met: http://www.gnu.org/copyleft/gpl.html.
+
+If you are unsure which license is appropriate for your use, please contact the sales department at http://www.sencha.com/contact.
+
+*/
+Ext.example = function(){
+    var msgCt;
+
+    function createBox(t, s){
+       // return ['<div class="msg">',
+       //         '<div class="x-box-tl"><div class="x-box-tr"><div class="x-box-tc"></div></div></div>',
+       //         '<div class="x-box-ml"><div class="x-box-mr"><div class="x-box-mc"><h3>', t, '</h3>', s, '</div></div></div>',
+       //         '<div class="x-box-bl"><div class="x-box-br"><div class="x-box-bc"></div></div></div>',
+       //         '</div>'].join('');
+       return '<div class="msg"><h3>' + t + '</h3><p>' + s + '</p></div>';
+    }
+    return {
+        msg : function(title, format){
+            if(!msgCt){
+                msgCt = Ext.DomHelper.insertFirst(document.body, {id:'msg-div'}, true);
+            }
+            var s = Ext.String.format.apply(String, Array.prototype.slice.call(arguments, 1));
+            var m = Ext.DomHelper.append(msgCt, createBox(title, s), true);
+            m.hide();
+            m.slideIn('t').ghost("t", { delay: 1000, remove: true});
+        },
+
+        init : function(){
+//            var t = Ext.get('exttheme');
+//            if(!t){ // run locally?
+//                return;
+//            }
+//            var theme = Cookies.get('exttheme') || 'aero';
+//            if(theme){
+//                t.dom.value = theme;
+//                Ext.getBody().addClass('x-'+theme);
+//            }
+//            t.on('change', function(){
+//                Cookies.set('exttheme', t.getValue());
+//                setTimeout(function(){
+//                    window.location.reload();
+//                }, 250);
+//            });
+//
+//            var lb = Ext.get('lib-bar');
+//            if(lb){
+//                lb.show();
+//            }
+        }
+    };
+}();
+
+Ext.example.shortBogusMarkup = '<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Sed metus nibh, '+
+    'sodales a, porta at, vulputate eget, dui. Pellentesque ut nisl. Maecenas tortor turpis, interdum non, sodales '+
+    'non, iaculis ac, lacus. Vestibulum auctor, tortor quis iaculis malesuada, libero lectus bibendum purus, sit amet '+
+    'tincidunt quam turpis vel lacus. In pellentesque nisl non sem. Suspendisse nunc sem, pretium eget, cursus a, fringilla.</p>';
+
+Ext.example.bogusMarkup = '<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Sed metus nibh, sodales a, '+
+    'porta at, vulputate eget, dui. Pellentesque ut nisl. Maecenas tortor turpis, interdum non, sodales non, iaculis ac, '+
+    'lacus. Vestibulum auctor, tortor quis iaculis malesuada, libero lectus bibendum purus, sit amet tincidunt quam turpis '+
+    'vel lacus. In pellentesque nisl non sem. Suspendisse nunc sem, pretium eget, cursus a, fringilla vel, urna.<br/><br/>'+
+    'Aliquam commodo ullamcorper erat. Nullam vel justo in neque porttitor laoreet. Aenean lacus dui, consequat eu, adipiscing '+
+    'eget, nonummy non, nisi. Morbi nunc est, dignissim non, ornare sed, luctus eu, massa. Vivamus eget quam. Vivamus tincidunt '+
+    'diam nec urna. Curabitur velit. Lorem ipsum dolor sit amet.</p>';
+
+//Ext.onReady(Ext.example.init, Ext.example);
+
+
+// old school cookie functions
+var Cookies = {};
+Cookies.set = function(name, value){
+     var argv = arguments;
+     var argc = arguments.length;
+     var expires = (argc > 2) ? argv[2] : null;
+     var path = (argc > 3) ? argv[3] : '/';
+     var domain = (argc > 4) ? argv[4] : null;
+     var secure = (argc > 5) ? argv[5] : false;
+     document.cookie = name + "=" + escape (value) +
+       ((expires === null) ? "" : ("; expires=" + expires.toGMTString())) +
+       ((path === null) ? "" : ("; path=" + path)) +
+       ((domain === null) ? "" : ("; domain=" + domain)) +
+       ((secure === true) ? "; secure" : "");
+};
+
+Cookies.get = function(name){
+    var arg = name + "=";
+    var alen = arg.length;
+    var clen = document.cookie.length;
+    var i = 0;
+    var j = 0;
+    while(i < clen){
+        j = i + alen;
+        if (document.cookie.substring(i, j) == arg)
+            return Cookies.getCookieVal(j);
+        i = document.cookie.indexOf(" ", i) + 1;
+        if(i === 0)
+            break;
+    }
+    return null;
+};
+
+Cookies.clear = function(name) {
+  if(Cookies.get(name)){
+    document.cookie = name + "=" +
+    "; expires=Thu, 01-Jan-70 00:00:01 GMT";
+  }
+};
+
+Cookies.getCookieVal = function(offset){
+   var endstr = document.cookie.indexOf(";", offset);
+   if(endstr === -1){
+       endstr = document.cookie.length;
+   }
+   return unescape(document.cookie.substring(offset, endstr));
+};
+</pre>
+    </div>
+    
+</body>
+</html>

@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Windows with Layouts</title>
+    <meta Name="description" content="Windows with Layouts" />
+    <meta name="keywords" content="Sencha, Ext JS, Ext JS 4.0.7" />
+    <link href="/assets/application.css" media="screen" rel="stylesheet" type="text/css" />
+    <style>
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    
+    <div>
+        <header>
+            <h1>Sencha Try</h1>
+        </header>
+        
+        <section id="readme">
+            <h1>Windows with Layouts</h1>
+
+<p>This example shows how Ext containers can be nested in windows to create advanced layouts.</p>
+            <strong>Tags:</strong> <a href="/search/Ext JS">Ext JS</a> <a href="/search/Ext JS 4.0.7">Ext JS 4.0.7</a> <br/>
+        </section>
+        <section id="example">
+            [example]
+        </section>
+        
+        <footer>
+            &copy; 2012 Sencha Inc.
+        </footer>
+    </div>
+    
+    <div class="hidden">
+        <!-- extjs/4.0.7/examples/window/layout/app.js -->
+        <pre>/*global Ext:false */
+/*
+
+This file is part of Ext JS 4
+
+Copyright (c) 2011 Sencha Inc
+
+Contact:  http://www.sencha.com/contact
+
+GNU General Public License Usage
+This file may be used under the terms of the GNU General Public License version 3.0 as published by the Free Software Foundation and appearing in the file LICENSE included in the packaging of this file.  Please review the following information to ensure the GNU General Public License version 3.0 requirements will be met: http://www.gnu.org/copyleft/gpl.html.
+
+If you are unsure which license is appropriate for your use, please contact the sales department at http://www.sencha.com/contact.
+
+*/
+Ext.require([
+    'Ext.tab.*',
+    'Ext.window.*',
+    'Ext.tip.*',
+    'Ext.layout.container.Border'
+]);
+Ext.onReady(function(){
+    var win,
+        button = Ext.get('show-btn');
+
+    button.on('click', function(){
+        if (!win) {
+            win = Ext.create('widget.window', {
+                title: 'Layout Window',
+                closable: true,
+                closeAction: 'hide',
+                width: 600,
+                minWidth: 350,
+                height: 350,
+                layout: 'border',
+                bodyStyle: 'padding: 5px;',
+                items: [{
+                    region: 'west',
+                    title: 'Navigation',
+                    width: 200,
+                    split: true,
+                    collapsible: true,
+                    floatable: false
+                }, {
+                    region: 'center',
+                    xtype: 'tabpanel',
+                    items: [{
+                        title: 'Bogus Tab',
+                        html: 'Hello world 1'
+                    }, {
+                        title: 'Another Tab',
+                        html: 'Hello world 2'
+                    }, {
+                        title: 'Closable Tab',
+                        html: 'Hello world 3',
+                        closable: true
+                    }]
+                }]
+            });
+        }
+        
+        button.dom.disabled = true;
+        if (win.isVisible()) {
+            win.hide(this, function() {
+                button.dom.disabled = false;
+            });
+        } else {
+            win.show(this, function() {
+                button.dom.disabled = false;
+            });
+        }
+    });
+});
+</pre>
+    </div>
+    
+</body>
+</html>

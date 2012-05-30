@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Ext.form.FieldContainer Example</title>
+    <meta Name="description" content="Ext.form.FieldContainer Example" />
+    <meta name="keywords" content="Sencha, Ext JS, Ext JS 4.1.0, Ext.form.FieldContainer" />
+    <link href="/assets/application.css" media="screen" rel="stylesheet" type="text/css" />
+    <style>
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    
+    <div>
+        <header>
+            <h1>Sencha Try</h1>
+        </header>
+        
+        <section id="readme">
+            <h1>Ext.form.FieldContainer Example</h1>
+            <strong>Tags:</strong> <a href="/search/Ext JS">Ext JS</a> <a href="/search/Ext JS 4.1.0">Ext JS 4.1.0</a> <a href="/search/Ext.form.FieldContainer">Ext.form.FieldContainer</a> <br/>
+        </section>
+        <section id="example">
+            [example]
+        </section>
+        
+        <footer>
+            &copy; 2012 Sencha Inc.
+        </footer>
+    </div>
+    
+    <div class="hidden">
+        <!-- extjs/4.1.0/docs/Ext.form.FieldContainer.1/app.js -->
+        <pre>/*global Ext:false */
+Ext.onReady(function() {
+    Ext.create('Ext.form.Panel', {
+        title: 'FieldContainer Example',
+        width: 550,
+        bodyPadding: 10,
+
+        items: [{
+            xtype: 'fieldcontainer',
+            fieldLabel: 'Last Three Jobs',
+            labelWidth: 100,
+
+            // The body area will contain three text fields, arranged
+            // horizontally, separated by draggable splitters.
+            layout: 'hbox',
+            items: [{
+                xtype: 'textfield',
+                flex: 1
+            }, {
+                xtype: 'splitter'
+            }, {
+                xtype: 'textfield',
+                flex: 1
+            }, {
+                xtype: 'splitter'
+            }, {
+                xtype: 'textfield',
+                flex: 1
+            }]
+        }],
+        renderTo: Ext.getBody()
+    });
+});
+</pre>
+    </div>
+    
+</body>
+</html>

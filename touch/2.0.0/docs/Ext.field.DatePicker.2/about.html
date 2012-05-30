@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Ext.field.DatePicker Example</title>
+    <meta Name="description" content="Ext.field.DatePicker Example" />
+    <meta name="keywords" content="Sencha, Sencha Touch, Sencha Touch 2.0.0, Ext.field.DatePicker, Ext.form.DatePicker, datepickerfield, getValue(), getFormattedValue(), field, form" />
+    <link href="/assets/application.css" media="screen" rel="stylesheet" type="text/css" />
+    <style>
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    
+    <div>
+        <header>
+            <h1>Sencha Try</h1>
+        </header>
+        
+        <section id="readme">
+            <h1>Ext.field.DatePicker Example</h1>
+            <strong>Tags:</strong> <a href="/search/Sencha Touch">Sencha Touch</a> <a href="/search/Sencha Touch 2.0.0">Sencha Touch 2.0.0</a> <a href="/search/Ext.field.DatePicker">Ext.field.DatePicker</a> <a href="/search/Ext.form.DatePicker">Ext.form.DatePicker</a> <a href="/search/datepickerfield">datepickerfield</a> <a href="/search/getValue()">getValue()</a> <a href="/search/getFormattedValue()">getFormattedValue()</a> <a href="/search/field">field</a> <a href="/search/form">form</a> <br/>
+        </section>
+        <section id="example">
+            [example]
+        </section>
+        
+        <footer>
+            &copy; 2012 Sencha Inc.
+        </footer>
+    </div>
+    
+    <div class="hidden">
+        <!-- touch/2.0.0/docs/Ext.field.DatePicker.2/app.js -->
+        <pre>/*global Ext:false */
+Ext.application({
+    launch: function () {
+        Ext.create('Ext.form.Panel', {
+            fullscreen: true,
+            items: [{
+                xtype: 'fieldset',
+                items: [{
+                    xtype: 'datepickerfield',
+                    label: 'Birthday',
+                    name: 'birthday',
+                    value: new Date()
+                }]
+            }, {
+                xtype: 'toolbar',
+                docked: 'bottom',
+                items: [{
+                    text: 'getValue',
+                    handler: function () {
+                        var datePickerField = Ext.ComponentQuery.query('datepickerfield')[0];
+                        Ext.Msg.alert(null, datePickerField.getValue());
+                    }
+                }, {
+                    xtype: 'spacer'
+                }, {
+                    text: 'getFormattedValue',
+                    handler: function () {
+                        var datePickerField = Ext.ComponentQuery.query('datepickerfield')[0];
+                        Ext.Msg.alert(null, datePickerField.getFormattedValue());
+                    }
+                }]
+            }]
+        });
+    } // launch
+}); // application()
+</pre>
+    </div>
+    
+</body>
+</html>

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Ext.form.field.File Example</title>
+    <meta Name="description" content="Ext.form.field.File Example" />
+    <meta name="keywords" content="Sencha, Ext JS, Ext JS 4.0.7, Ext.form.field.File, Ext.form.File, Ext.form.FileUploadField, Ext.ux.form.FileUploadField, filefield, fileuploadfield, fieldLabel, labelWidth, msgTarget, allowBlank, buttonText, form, field" />
+    <link href="/assets/application.css" media="screen" rel="stylesheet" type="text/css" />
+    <style>
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    
+    <div>
+        <header>
+            <h1>Sencha Try</h1>
+        </header>
+        
+        <section id="readme">
+            <h1>Ext.form.field.File Example</h1>
+            <strong>Tags:</strong> <a href="/search/Ext JS">Ext JS</a> <a href="/search/Ext JS 4.0.7">Ext JS 4.0.7</a> <a href="/search/Ext.form.field.File">Ext.form.field.File</a> <a href="/search/Ext.form.File">Ext.form.File</a> <a href="/search/Ext.form.FileUploadField">Ext.form.FileUploadField</a> <a href="/search/Ext.ux.form.FileUploadField">Ext.ux.form.FileUploadField</a> <a href="/search/filefield">filefield</a> <a href="/search/fileuploadfield">fileuploadfield</a> <a href="/search/fieldLabel">fieldLabel</a> <a href="/search/labelWidth">labelWidth</a> <a href="/search/msgTarget">msgTarget</a> <a href="/search/allowBlank">allowBlank</a> <a href="/search/buttonText">buttonText</a> <a href="/search/form">form</a> <a href="/search/field">field</a> <br/>
+        </section>
+        <section id="example">
+            [example]
+        </section>
+        
+        <footer>
+            &copy; 2012 Sencha Inc.
+        </footer>
+    </div>
+    
+    <div class="hidden">
+        <!-- extjs/4.0.7/docs/Ext.form.field.File.1/app.js -->
+        <pre>/*global Ext:false */
+Ext.onReady(function () {
+    Ext.create('Ext.form.Panel', {
+        title: 'Upload a Photo',
+        width: 400,
+        bodyPadding: 10,
+        frame: true,
+        renderTo: Ext.getBody(),
+        items: [{
+            xtype: 'filefield',
+            name: 'photo',
+            fieldLabel: 'Photo',
+            labelWidth: 50,
+            msgTarget: 'side',
+            allowBlank: false,
+            anchor: '100%',
+            buttonText: 'Select Photo...'
+        }],
+
+        buttons: [{
+            text: 'Upload',
+            handler: function () {
+                var form = this.up('form').getForm();
+                if (form.isValid()) {
+                    form.submit({
+                        url: 'photo-upload.php',
+                        waitMsg: 'Uploading your photo...',
+                        success: function (fp, o) {
+                            Ext.Msg.alert('Success', 'Your photo "' + o.result.file + '" has been uploaded.');
+                        }
+                    });
+                }
+            }
+        }]
+    });
+});
+</pre>
+    </div>
+    
+</body>
+</html>

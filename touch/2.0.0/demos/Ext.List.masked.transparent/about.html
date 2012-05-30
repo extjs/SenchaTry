@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Toggling the loading mask transparency on Ext.List component in Sencha Touch 2</title>
+    <meta Name="description" content="Toggling the loading mask transparency on Ext.List component in Sencha Touch 2" />
+    <meta name="keywords" content="Sencha, Sencha Touch, Sencha Touch 2.0.0" />
+    <link href="/assets/application.css" media="screen" rel="stylesheet" type="text/css" />
+    <style>
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    
+    <div>
+        <header>
+            <h1>Sencha Try</h1>
+        </header>
+        
+        <section id="readme">
+            <h1>Toggling the loading mask transparency on Ext.List component in Sencha Touch 2</h1>
+
+<p>The following example shows how you can toggle the loading mask transparency on an Ext.List (list) control in Sencha Touch 2 by setting the Boolean <code>transparent</code> config option on the <code>masked</code> config Ext.LoadMask object, or by calling the <code>setTransparent()</code> method at runtime.</p>
+            <strong>Tags:</strong> <a href="/search/Sencha Touch">Sencha Touch</a> <a href="/search/Sencha Touch 2.0.0">Sencha Touch 2.0.0</a> <br/>
+        </section>
+        <section id="example">
+            [example]
+        </section>
+        
+        <footer>
+            &copy; 2012 Sencha Inc.
+        </footer>
+    </div>
+    
+    <div class="hidden">
+        <!-- touch/2.0.0/demos/Ext.List.masked.transparent/app.js -->
+        <pre>/*global Ext:false */
+Ext.application({
+    launch: function () {
+        var myList = Ext.create('Ext.List', {
+            fullscreen: true,
+            itemTpl: '{name}',
+            items: [{
+                xtype: 'toolbar',
+                docked: 'top',
+                items: [{
+                    text: 'Toggle transparent',
+                    handler: function () {
+                        var mask = myList.getMasked();
+                        mask.setTransparent(!mask.getTransparent());
+                        mask.setMessage('transparent = ' + mask.getTransparent());
+                        myList.setMasked(mask);
+                    } // handler
+                }] // items (toolbar)
+            }], // items (list)
+            masked: {
+                xtype: 'loadmask',
+                transparent: true,
+                message: 'transparent = true'
+            }, // masked
+            store: {
+                fields: ['name'],
+                data: [{
+                    name: 'Red'
+                }, {
+                    name: 'Orange'
+                }, {
+                    name: 'Yellow'
+                }, {
+                    name: 'Green'
+                }, {
+                    name: 'Blue'
+                }] // data
+            } // store
+        }); // create()
+    } // launch
+}); // application()
+</pre>
+    </div>
+    
+</body>
+</html>

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Setting the icon alignment on an Ext.Button component using Sencha Touch 2</title>
+    <meta Name="description" content="Setting the icon alignment on an Ext.Button component using Sencha Touch 2" />
+    <meta name="keywords" content="Sencha, Sencha Touch, Sencha Touch 2.0.1" />
+    <link href="/assets/application.css" media="screen" rel="stylesheet" type="text/css" />
+    <style>
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    
+    <div>
+        <header>
+            <h1>Sencha Try</h1>
+        </header>
+        
+        <section id="readme">
+            <h1>Setting the icon alignment on an Ext.Button component using Sencha Touch 2</h1>
+
+<p>The following example shows how you can align the icon within an Ext.Button component using Sencha Touch 2 by setting the <code>iconAlign</code> config to <code>"top"</code>, <code>"bottom"</code>, <code>"left"</code>, or <code>"right"</code>.</p>
+            <strong>Tags:</strong> <a href="/search/Sencha Touch">Sencha Touch</a> <a href="/search/Sencha Touch 2.0.1">Sencha Touch 2.0.1</a> <br/>
+        </section>
+        <section id="example">
+            [example]
+        </section>
+        
+        <footer>
+            &copy; 2012 Sencha Inc.
+        </footer>
+    </div>
+    
+    <div class="hidden">
+        <!-- touch/2.0.1/demos/Ext.Button.iconAlign/app.js -->
+        <pre>/*global Ext:false */
+Ext.application({
+    launch: function () {
+        Ext.create('Ext.Panel', {
+            fullscreen: true,
+            styleHtmlContent: true,
+            defaults: {
+                margin: 5
+            }, // defaults
+            layout: {
+                type: 'vbox',
+                align: 'center'
+            },
+            items: [{
+                xtype: 'button',
+                text: '<code>iconAlign: left</code>',
+                iconAlign: 'left',
+                iconCls: 'arrow_left',
+                iconMask: true
+            }, {
+                xtype: 'button',
+                text: '<code>iconAlign: right</code>',
+                iconAlign: 'right',
+                iconCls: 'arrow_right',
+                iconMask: true
+            }, {
+                xtype: 'button',
+                text: '<code>iconAlign: top</code>',
+                iconAlign: 'top',
+                iconCls: 'arrow_up',
+                iconMask: true
+            }, {
+                xtype: 'button',
+                text: '<code>iconAlign: bottom</code>',
+                iconAlign: 'bottom',
+                iconCls: 'arrow_down',
+                iconMask: true
+            }] // items
+        }); // create()
+    } // launch
+}); // application()
+</pre>
+    </div>
+    
+</body>
+</html>

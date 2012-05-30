@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Using TabPanels in Sencha Touch 2</title>
+    <meta Name="description" content="Using TabPanels in Sencha Touch 2" />
+    <meta name="keywords" content="Sencha, Sencha Touch, Sencha Touch 2.0.0" />
+    <link href="/assets/application.css" media="screen" rel="stylesheet" type="text/css" />
+    <style>
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    
+    <div>
+        <header>
+            <h1>Sencha Try</h1>
+        </header>
+        
+        <section id="readme">
+            <h1>Using TabPanels in Sencha Touch 2</h1>
+
+<p>TabPanels are useful to swapping between different pages of an app, with either top or bottom tabs.</p>
+            <strong>Tags:</strong> <a href="/search/Sencha Touch">Sencha Touch</a> <a href="/search/Sencha Touch 2.0.0">Sencha Touch 2.0.0</a> <br/>
+        </section>
+        <section id="example">
+            [example]
+        </section>
+        
+        <footer>
+            &copy; 2012 Sencha Inc.
+        </footer>
+    </div>
+    
+    <div class="hidden">
+        <!-- touch/2.0.0/guides/tabs.1/app.js -->
+        <pre>/*global Ext:false */
+Ext.application({
+    launch: function () {
+        Ext.create('Ext.TabPanel', {
+            fullscreen: true,
+            tabBarPosition: 'bottom',
+            defaults: {
+                styleHtmlContent: true
+            },
+            items: [{
+                title: 'Home',
+                iconCls: 'home',
+                html: 'Home Screen'
+            }, {
+                title: 'Contact',
+                iconCls: 'user',
+                html: 'Contact Screen'
+            }]
+        });
+    } // launch
+}); // application()
+</pre>
+    </div>
+    
+</body>
+</html>

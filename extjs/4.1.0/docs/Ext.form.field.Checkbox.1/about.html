@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Ext.form.field.Checkbox Example</title>
+    <meta Name="description" content="Ext.form.field.Checkbox Example" />
+    <meta name="keywords" content="Sencha, Ext JS, Ext JS 4.1.0, Ext.form.field.Checkbox" />
+    <link href="/assets/application.css" media="screen" rel="stylesheet" type="text/css" />
+    <style>
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    
+    <div>
+        <header>
+            <h1>Sencha Try</h1>
+        </header>
+        
+        <section id="readme">
+            <h1>Ext.form.field.Checkbox Example</h1>
+            <strong>Tags:</strong> <a href="/search/Ext JS">Ext JS</a> <a href="/search/Ext JS 4.1.0">Ext JS 4.1.0</a> <a href="/search/Ext.form.field.Checkbox">Ext.form.field.Checkbox</a> <br/>
+        </section>
+        <section id="example">
+            [example]
+        </section>
+        
+        <footer>
+            &copy; 2012 Sencha Inc.
+        </footer>
+    </div>
+    
+    <div class="hidden">
+        <!-- extjs/4.1.0/docs/Ext.form.field.Checkbox.1/app.js -->
+        <pre>/*global Ext:false */
+Ext.onReady(function() {
+    Ext.create('Ext.form.Panel', {
+        bodyPadding: 10,
+        width: 300,
+        title: 'Pizza Order',
+        items: [{
+            xtype: 'fieldcontainer',
+            fieldLabel: 'Toppings',
+            defaultType: 'checkboxfield',
+            items: [{
+                boxLabel: 'Anchovies',
+                name: 'topping',
+                inputValue: '1',
+                id: 'checkbox1'
+            }, {
+                boxLabel: 'Artichoke Hearts',
+                name: 'topping',
+                inputValue: '2',
+                checked: true,
+                id: 'checkbox2'
+            }, {
+                boxLabel: 'Bacon',
+                name: 'topping',
+                inputValue: '3',
+                id: 'checkbox3'
+            }]
+        }],
+        bbar: [{
+            text: 'Select Bacon',
+            handler: function() {
+                Ext.getCmp('checkbox3').setValue(true);
+            }
+        }, '-',
+        {
+            text: 'Select All',
+            handler: function() {
+                Ext.getCmp('checkbox1').setValue(true);
+                Ext.getCmp('checkbox2').setValue(true);
+                Ext.getCmp('checkbox3').setValue(true);
+            }
+        }, {
+            text: 'Deselect All',
+            handler: function() {
+                Ext.getCmp('checkbox1').setValue(false);
+                Ext.getCmp('checkbox2').setValue(false);
+                Ext.getCmp('checkbox3').setValue(false);
+            }
+        }],
+        renderTo: Ext.getBody()
+    });
+});
+</pre>
+    </div>
+    
+</body>
+</html>

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Tree Example</title>
+    <meta Name="description" content="Tree Example" />
+    <meta name="keywords" content="Sencha, Ext JS, Ext JS 4.0.7, Ext.tree.Panel, tree, fields, columns, treecolumn, dataIndex, sortable, root, expanded, children, leaf" />
+    <link href="/assets/application.css" media="screen" rel="stylesheet" type="text/css" />
+    <style>
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    
+    <div>
+        <header>
+            <h1>Sencha Try</h1>
+        </header>
+        
+        <section id="readme">
+            <h1>Tree Example</h1>
+
+<p>Tree and grid now both extend from the same base class. All of the benefits of grid can now be used on trees.</p>
+            <strong>Tags:</strong> <a href="/search/Ext JS">Ext JS</a> <a href="/search/Ext JS 4.0.7">Ext JS 4.0.7</a> <a href="/search/Ext.tree.Panel">Ext.tree.Panel</a> <a href="/search/tree">tree</a> <a href="/search/fields">fields</a> <a href="/search/columns">columns</a> <a href="/search/treecolumn">treecolumn</a> <a href="/search/dataIndex">dataIndex</a> <a href="/search/sortable">sortable</a> <a href="/search/root">root</a> <a href="/search/expanded">expanded</a> <a href="/search/children">children</a> <a href="/search/leaf">leaf</a> <br/>
+        </section>
+        <section id="example">
+            [example]
+        </section>
+        
+        <footer>
+            &copy; 2012 Sencha Inc.
+        </footer>
+    </div>
+    
+    <div class="hidden">
+        <!-- extjs/4.0.7/guides/tree.2/app.js -->
+        <pre>/*global Ext:false */
+Ext.onReady(function () {
+    var tree = Ext.create('Ext.tree.Panel', {
+        renderTo: Ext.getBody(),
+        title: 'TreeGrid',
+        width: 300,
+        height: 150,
+        fields: ['name', 'description'],
+        columns: [{
+            xtype: 'treecolumn',
+            text: 'Name',
+            dataIndex: 'name',
+            width: 150,
+            sortable: true
+        }, {
+            text: 'Description',
+            dataIndex: 'description',
+            flex: 1,
+            sortable: true
+        }],
+        root: {
+            name: 'Root',
+            description: 'Root description',
+            expanded: true,
+            children: [{
+                name: 'Child 1',
+                description: 'Description 1',
+                leaf: true
+            }, {
+                name: 'Child 2',
+                description: 'Description 2',
+                leaf: true
+            }]
+        }
+    });
+});
+</pre>
+    </div>
+    
+</body>
+</html>

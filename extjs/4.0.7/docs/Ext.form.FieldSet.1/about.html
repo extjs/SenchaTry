@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Ext.form.FieldSet Example</title>
+    <meta Name="description" content="Ext.form.FieldSet Example" />
+    <meta name="keywords" content="Sencha, Ext JS, Ext JS 4.0.7, Ext.form.FieldSet, fieldset, columnWidth, title, collapsible, layout, checkboxToggle, collapsed, form" />
+    <link href="/assets/application.css" media="screen" rel="stylesheet" type="text/css" />
+    <style>
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    
+    <div>
+        <header>
+            <h1>Sencha Try</h1>
+        </header>
+        
+        <section id="readme">
+            <h1>Ext.form.FieldSet Example</h1>
+            <strong>Tags:</strong> <a href="/search/Ext JS">Ext JS</a> <a href="/search/Ext JS 4.0.7">Ext JS 4.0.7</a> <a href="/search/Ext.form.FieldSet">Ext.form.FieldSet</a> <a href="/search/fieldset">fieldset</a> <a href="/search/columnWidth">columnWidth</a> <a href="/search/title">title</a> <a href="/search/collapsible">collapsible</a> <a href="/search/layout">layout</a> <a href="/search/checkboxToggle">checkboxToggle</a> <a href="/search/collapsed">collapsed</a> <a href="/search/form">form</a> <br/>
+        </section>
+        <section id="example">
+            [example]
+        </section>
+        
+        <footer>
+            &copy; 2012 Sencha Inc.
+        </footer>
+    </div>
+    
+    <div class="hidden">
+        <!-- extjs/4.0.7/docs/Ext.form.FieldSet.1/app.js -->
+        <pre>/*global Ext:false */
+Ext.onReady(function () {
+    Ext.create('Ext.form.Panel', {
+        title: 'Simple Form with FieldSets',
+        labelWidth: 75, // label settings here cascade unless overridden
+        url: 'save-form.php',
+        frame: true,
+        bodyStyle: 'padding:5px 5px 0',
+        width: 550,
+        renderTo: Ext.getBody(),
+        layout: 'column', // arrange fieldsets side by side
+        defaults: {
+            bodyPadding: 4
+        },
+        items: [{
+            // Fieldset in Column 1 - collapsible via toggle button
+            xtype: 'fieldset',
+            columnWidth: 0.5,
+            title: 'Fieldset 1',
+            collapsible: true,
+            defaultType: 'textfield',
+            defaults: {
+                anchor: '100%'
+            },
+            layout: 'anchor',
+            items: [{
+                fieldLabel: 'Field 1',
+                name: 'field1'
+            }, {
+                fieldLabel: 'Field 2',
+                name: 'field2'
+            }]
+        }, {
+            // Fieldset in Column 2 - collapsible via checkbox, collapsed by default, contains a panel
+            xtype: 'fieldset',
+            title: 'Show Panel',
+            // title or checkboxToggle creates fieldset header
+            columnWidth: 0.5,
+            checkboxToggle: true,
+            collapsed: true,
+            // fieldset initially collapsed
+            layout: 'anchor',
+            items: [{
+                xtype: 'panel',
+                anchor: '100%',
+                title: 'Panel inside a fieldset',
+                frame: true,
+                height: 52
+            }]
+        }]
+    });
+});
+</pre>
+    </div>
+    
+</body>
+</html>

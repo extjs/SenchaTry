@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Ext.plugin.PullRefresh Example</title>
+    <meta Name="description" content="Ext.plugin.PullRefresh Example" />
+    <meta name="keywords" content="Sencha, Sencha Touch, Sencha Touch 2.0.1, Ext.plugin.PullRefresh" />
+    <link href="/assets/application.css" media="screen" rel="stylesheet" type="text/css" />
+    <style>
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    
+    <div>
+        <header>
+            <h1>Sencha Try</h1>
+        </header>
+        
+        <section id="readme">
+            <h1>Ext.plugin.PullRefresh Example</h1>
+            <strong>Tags:</strong> <a href="/search/Sencha Touch">Sencha Touch</a> <a href="/search/Sencha Touch 2.0.1">Sencha Touch 2.0.1</a> <a href="/search/Ext.plugin.PullRefresh">Ext.plugin.PullRefresh</a> <br/>
+        </section>
+        <section id="example">
+            [example]
+        </section>
+        
+        <footer>
+            &copy; 2012 Sencha Inc.
+        </footer>
+    </div>
+    
+    <div class="hidden">
+        <!-- touch/2.0.1/docs/Ext.plugin.PullRefresh.1/app.js -->
+        <pre>/*global Ext:false */
+Ext.application({
+    launch: function() {
+        var store = Ext.create('Ext.data.Store', {
+            fields: ['name', 'img', 'text'],
+            data: [{
+                name: 'edpsencer',
+                img: 'http://a2.twimg.com/profile_images/1175591906/Ed-presenting-cropped_reasonably_small.jpg',
+                text: 'Read about Sencha Touch'
+            }, {
+                name: 'rdougan',
+                img: 'http://a0.twimg.com/profile_images/1261180556/171265_10150129602722922_727937921_7778997_8387690_o_reasonably_small.jpg',
+                text: 'Javascript development'
+            }, {
+                name: 'philogb',
+                img: 'https://si0.twimg.com/profile_images/1249073521/ng_normal.png',
+                text: '@ikarienator nice burritos!'
+            }]
+        });
+
+        Ext.create('Ext.dataview.List', {
+            fullscreen: true,
+
+            store: store,
+
+            plugins: [{
+                xclass: 'Ext.plugin.PullRefresh',
+                pullRefreshText: 'Pull down for more new Tweets!'
+            }],
+
+            itemTpl: ['<img src="{img}" alt="{name} photo" />', '<div class="tweet"><b>{name}:</b> {text}</div>']
+        });
+    }
+});
+</pre>
+    </div>
+    
+</body>
+</html>

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Setting the text label alignment on an Ext.Button component in Ext JS</title>
+    <meta Name="description" content="Setting the text label alignment on an Ext.Button component in Ext JS" />
+    <meta name="keywords" content="Sencha, Ext JS, Ext JS 4.1.0, Ext.button.Button, Ext.Button, button" />
+    <link href="/assets/application.css" media="screen" rel="stylesheet" type="text/css" />
+    <style>
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    
+    <div>
+        <header>
+            <h1>Sencha Try</h1>
+        </header>
+        
+        <section id="readme">
+            <h1>Setting the text label alignment on an Ext.Button component in Ext JS</h1>
+
+<p>The following example shows how you can set the text label alignment on an Ext.Button component in Ext JS by setting the <code>textAlign</code> config.</p>
+            <strong>Tags:</strong> <a href="/search/Ext JS">Ext JS</a> <a href="/search/Ext JS 4.1.0">Ext JS 4.1.0</a> <a href="/search/Ext.button.Button">Ext.button.Button</a> <a href="/search/Ext.Button">Ext.Button</a> <a href="/search/button">button</a> <br/>
+        </section>
+        <section id="example">
+            [example]
+        </section>
+        
+        <footer>
+            &copy; 2012 Sencha Inc.
+        </footer>
+    </div>
+    
+    <div class="hidden">
+        <!-- extjs/4.1.0/demos/Ext.Button.textAlign.1/app.js -->
+        <pre>/*global Ext:false */
+Ext.onReady(function () {
+    Ext.create('Ext.Container', {
+        id:'container',
+        items: [
+            Ext.create('Ext.Button', {
+                text: '<code>textAlign: left</code>',
+                textAlign: 'left',
+                width: 240,
+                height: 50,
+                style: 'margin: 5px'
+            }), // create()
+            
+            Ext.create('Ext.Button', {
+                text: '<code>textAlign: center</code> (default)',
+                textAlign: 'center',
+                width: 240,
+                height: 50
+            }), // create()
+            
+            Ext.create('Ext.Button', {
+                text: '<code>textAlign: right</code>',
+                textAlign: 'right',
+                width: 240,
+                height: 50,
+                style: 'margin: 5px'
+            }) // create()
+        ], // items
+        renderTo: Ext.getBody()
+    }); // create()
+}); // onReady()
+</pre>
+    </div>
+    
+</body>
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Using Components in Sencha Touch 2</title>
+    <meta Name="description" content="Using Components in Sencha Touch 2" />
+    <meta name="keywords" content="Sencha, Sencha Touch, Sencha Touch 2.0.0" />
+    <link href="/assets/application.css" media="screen" rel="stylesheet" type="text/css" />
+    <style>
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    
+    <div>
+        <header>
+            <h1>Sencha Try</h1>
+        </header>
+        
+        <section id="readme">
+            <h1>Using Components in Sencha Touch 2</h1>
+
+<p>All of the Components in Sencha Touch follow the same pattern and API conventions - this guide teaches you all about it.</p>
+            <strong>Tags:</strong> <a href="/search/Sencha Touch">Sencha Touch</a> <a href="/search/Sencha Touch 2.0.0">Sencha Touch 2.0.0</a> <br/>
+        </section>
+        <section id="example">
+            [example]
+        </section>
+        
+        <footer>
+            &copy; 2012 Sencha Inc.
+        </footer>
+    </div>
+    
+    <div class="hidden">
+        <!-- touch/2.0.0/guides/components.3/app.js -->
+        <pre>/*global Ext:false */
+Ext.application({
+    launch: function () {
+        Ext.create('Ext.Container', {
+            fullscreen: true,
+            layout: 'fit',
+            items: [{
+                xtype: 'panel',
+                html: 'This panel is created by xtype'
+            }, {
+                xtype: 'toolbar',
+                title: 'So is the toolbar',
+                docked: 'top'
+            }]
+        });
+    } // launch
+}); // application()
+</pre>
+    </div>
+    
+</body>
+</html>

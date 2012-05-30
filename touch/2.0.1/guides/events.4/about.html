@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <title>events Example</title>
+    <meta Name="description" content="events Example" />
+    <meta name="keywords" content="Sencha, Sencha Touch, Sencha Touch 2.0.1" />
+    <link href="/assets/application.css" media="screen" rel="stylesheet" type="text/css" />
+    <style>
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    
+    <div>
+        <header>
+            <h1>Sencha Try</h1>
+        </header>
+        
+        <section id="readme">
+            <h1>events Example</h1>
+            <strong>Tags:</strong> <a href="/search/Sencha Touch">Sencha Touch</a> <a href="/search/Sencha Touch 2.0.1">Sencha Touch 2.0.1</a> <br/>
+        </section>
+        <section id="example">
+            [example]
+        </section>
+        
+        <footer>
+            &copy; 2012 Sencha Inc.
+        </footer>
+    </div>
+    
+    <div class="hidden">
+        <!-- touch/2.0.1/guides/events.4/app.js -->
+        <pre>/*global Ext:false */
+Ext.application({
+    launch: function() {
+        Ext.Viewport.add({
+            xtype: 'button',
+            centered: true,
+            text: 'Click me',
+
+            listeners: {
+                tap: function() {
+                    var randomWidth = 100 + Math.round(Math.random() * 200);
+
+                    this.setWidth(randomWidth);
+                },
+                widthchange: function(button, newWidth, oldWidth) {
+                    alert('My width changed from ' + oldWidth + ' to ' + newWidth);
+                }
+            }
+        });
+    }
+});
+</pre>
+    </div>
+    
+</body>
+</html>

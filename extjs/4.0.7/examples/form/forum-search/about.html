@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Combo with Templates and Ajax</title>
+    <meta Name="description" content="Combo with Templates and Ajax" />
+    <meta name="keywords" content="Sencha, Ext JS, Ext JS 4.0.7" />
+    <link href="/assets/application.css" media="screen" rel="stylesheet" type="text/css" />
+    <style>
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    
+    <div>
+        <header>
+            <h1>Sencha Try</h1>
+        </header>
+        
+        <section id="readme">
+            <h1>Combo with Templates and Ajax</h1>
+
+<p>This is a more advanced example that shows how you can combine Ext.Template and a remote data store to create a "live search" feature. Try searching for terms like "form", or "grid".</p>
+
+<p>Each item in the resulting list is a link which may be clicked to navigate to the found forum thread.</p>
+            <strong>Tags:</strong> <a href="/search/Ext JS">Ext JS</a> <a href="/search/Ext JS 4.0.7">Ext JS 4.0.7</a> <br/>
+        </section>
+        <section id="example">
+            [example]
+        </section>
+        
+        <footer>
+            &copy; 2012 Sencha Inc.
+        </footer>
+    </div>
+    
+    <div class="hidden">
+        <!-- extjs/4.0.7/examples/form/forum-search/app.js -->
+        <pre>/*global Ext:false */
+/*
+
+This file is part of Ext JS 4
+
+Copyright (c) 2011 Sencha Inc
+
+Contact:  http://www.sencha.com/contact
+
+GNU General Public License Usage
+This file may be used under the terms of the GNU General Public License version 3.0 as published by the Free Software Foundation and appearing in the file LICENSE included in the packaging of this file.  Please review the following information to ensure the GNU General Public License version 3.0 requirements will be met: http://www.gnu.org/copyleft/gpl.html.
+
+If you are unsure which license is appropriate for your use, please contact the sales department at http://www.sencha.com/contact.
+
+*/
+Ext.require([
+    'Ext.data.*',
+    'Ext.form.*'
+]);
+
+Ext.onReady(function(){
+
+    Ext.define("Post", {
+        extend: 'Ext.data.Model',
+        proxy: {
+            type: 'jsonp',
+            url : 'http://www.sencha.com/forum/topics-remote.php',
+            reader: {
+                type: 'json',
+                root: 'topics',
+                totalProperty: 'totalCount'
+            }
+        },
+
+        fields: [
+            {name: 'id', mapping: 'post_id'},
+            {name: 'title', mapping: 'topic_title'},
+            {name: 'topicId', mapping: 'topic_id'},
+            {name: 'author', mapping: 'author'},
+            {name: 'lastPost', mapping: 'post_time', type: 'date', dateFormat: 'timestamp'},
+            {name: 'excerpt', mapping: 'post_text'}
+        ]
+    });
+
+    ds = Ext.create('Ext.data.Store', {
+        pageSize: 10,
+        model: 'Post'
+    });
+
+    panel = Ext.create('Ext.panel.Panel', {
+        renderTo: Ext.getBody(),
+        title: 'Search the Ext Forums',
+        width: 600,
+        bodyPadding: 10,
+        layout: 'anchor',
+
+        items: [{
+            xtype: 'combo',
+            store: ds,
+            displayField: 'title',
+            typeAhead: false,
+            hideLabel: true,
+            hideTrigger:true,
+            anchor: '100%',
+
+            listConfig: {
+                loadingText: 'Searching...',
+                emptyText: 'No matching posts found.',
+
+                // Custom rendering template for each item
+                getInnerTpl: function() {
+                    return '<a class="search-item" href="http://www.sencha.com/forum/showthread.php?t={topicId}&amp;p={id}">' +
+                        '<h3><span>{[Ext.Date.format(values.lastPost, "M j, Y")]}<br />by {author}</span>{title}</h3>' +
+                        '{excerpt}' +
+                    '</a>';
+                }
+            },
+            pageSize: 10
+        }, {
+            xtype: 'component',
+            style: 'margin-top:10px',
+            html: 'Live search requires a minimum of 4 characters.'
+        }]
+    });
+});
+</pre>
+    </div>
+    
+</body>
+</html>

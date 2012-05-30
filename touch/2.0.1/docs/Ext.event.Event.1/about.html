@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Ext.event.Event Example</title>
+    <meta Name="description" content="Ext.event.Event Example" />
+    <meta name="keywords" content="Sencha, Sencha Touch, Sencha Touch 2.0.1, Ext.event.Event" />
+    <link href="/assets/application.css" media="screen" rel="stylesheet" type="text/css" />
+    <style>
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    
+    <div>
+        <header>
+            <h1>Sencha Try</h1>
+        </header>
+        
+        <section id="readme">
+            <h1>Ext.event.Event Example</h1>
+            <strong>Tags:</strong> <a href="/search/Sencha Touch">Sencha Touch</a> <a href="/search/Sencha Touch 2.0.1">Sencha Touch 2.0.1</a> <a href="/search/Ext.event.Event">Ext.event.Event</a> <br/>
+        </section>
+        <section id="example">
+            [example]
+        </section>
+        
+        <footer>
+            &copy; 2012 Sencha Inc.
+        </footer>
+    </div>
+    
+    <div class="hidden">
+        <!-- touch/2.0.1/docs/Ext.event.Event.1/app.js -->
+        <pre>/*global Ext:false */
+Ext.application({
+    launch: function() {
+        Ext.Viewport.add({
+            layout: 'fit',
+            items: [{
+                docked: 'top',
+                xtype: 'toolbar',
+                title: 'Ext.event.Event example!'
+            }, {
+                id: 'logger',
+                styleHtmlContent: true,
+                html: 'Tap somewhere!',
+                padding: 5
+            }]
+        });
+
+        Ext.Viewport.element.on({
+            tap: function(e, node) {
+                var string = '';
+
+                string += 'You tapped at: <strong>{ x: ' + e.pageX + ', y: ' + e.pageY + ' }</strong> <i>(e.pageX &amp; e.pageY)</i>';
+                string += '<hr />';
+                string += 'The HTMLElement you tapped has the className of: <strong>' + e.target.className + '</strong> <i>(e.target)</i>';
+                string += '<hr />';
+                string += 'The HTMLElement which has the listener has a className of: <strong>' + e.getTarget().className + '</strong> <i>(e.getTarget())</i>';
+
+                Ext.getCmp('logger').setHtml(string);
+            }
+        });
+    }
+});
+</pre>
+    </div>
+    
+</body>
+</html>

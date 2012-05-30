@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Ext.Spacer Example</title>
+    <meta Name="description" content="Ext.Spacer Example" />
+    <meta name="keywords" content="Sencha, Sencha Touch, Sencha Touch 2.0.1, Ext.Spacer" />
+    <link href="/assets/application.css" media="screen" rel="stylesheet" type="text/css" />
+    <style>
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    
+    <div>
+        <header>
+            <h1>Sencha Try</h1>
+        </header>
+        
+        <section id="readme">
+            <h1>Ext.Spacer Example</h1>
+            <strong>Tags:</strong> <a href="/search/Sencha Touch">Sencha Touch</a> <a href="/search/Sencha Touch 2.0.1">Sencha Touch 2.0.1</a> <a href="/search/Ext.Spacer">Ext.Spacer</a> <br/>
+        </section>
+        <section id="example">
+            [example]
+        </section>
+        
+        <footer>
+            &copy; 2012 Sencha Inc.
+        </footer>
+    </div>
+    
+    <div class="hidden">
+        <!-- touch/2.0.1/docs/Ext.Spacer.2/app.js -->
+        <pre>/*global Ext:false */
+Ext.application({
+    launch: function() {
+        Ext.create('Ext.Container', {
+            fullscreen: true,
+            layout: {
+                type: 'vbox',
+                pack: 'center',
+                align: 'stretch'
+            },
+            items: [{
+                xtype: 'toolbar',
+                docked: 'top',
+                items: [{
+                    xtype: 'button',
+                    text: 'Button One'
+                }, {
+                    xtype: 'spacer',
+                    width: 50
+                }, {
+                    xtype: 'button',
+                    text: 'Button Two'
+                }]
+            }, {
+                xtype: 'container',
+                items: [{
+                    xtype: 'button',
+                    text: 'Change Ext.Spacer width',
+                    handler: function() {
+                        //get the spacer using ComponentQuery
+                        var spacer = Ext.ComponentQuery.query('spacer')[0],
+                            from = 10,
+                            to = 250;
+
+                        //set the width to a random number
+                        spacer.setWidth(Math.floor(Math.random() * (to - from + 1) + from));
+                    }
+                }]
+            }]
+        });
+    }
+});
+</pre>
+    </div>
+    
+</body>
+</html>

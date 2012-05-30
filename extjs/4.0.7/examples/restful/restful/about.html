@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Rest Proxy Example</title>
+    <meta Name="description" content="Rest Proxy Example" />
+    <meta name="keywords" content="Sencha, Ext JS, Ext JS 4.0.7" />
+    <link href="/assets/application.css" media="screen" rel="stylesheet" type="text/css" />
+    <style>
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    
+    <div>
+        <header>
+            <h1>Sencha Try</h1>
+        </header>
+        
+        <section id="readme">
+            <h1>Rest Proxy Example</h1>
+
+<p>This example shows how to implement a Store using a REST proxy.</p>
+
+<p>Take note of the requests being generated in Firebug as you interact with the Grid.</p>
+
+<p>The Proxy in this example points to a single url <strong>app.php/users</strong>.  You may have to edit your web-server's configuration to allow the php back-end to be executable.  app.php implements a simple RESTful backend controller and simulates a database by storing records in the <code>$_SESSION</code>.</p>
+            <strong>Tags:</strong> <a href="/search/Ext JS">Ext JS</a> <a href="/search/Ext JS 4.0.7">Ext JS 4.0.7</a> <br/>
+        </section>
+        <section id="example">
+            [example]
+        </section>
+        
+        <footer>
+            &copy; 2012 Sencha Inc.
+        </footer>
+    </div>
+    
+    <div class="hidden">
+        <!-- extjs/4.0.7/examples/restful/restful/app.js -->
+        <pre>/*global Ext:false */
+/*
+
+This file is part of Ext JS 4
+
+Copyright (c) 2011 Sencha Inc
+
+Contact:  http://www.sencha.com/contact
+
+GNU General Public License Usage
+This file may be used under the terms of the GNU General Public License version 3.0 as published by the Free Software Foundation and appearing in the file LICENSE included in the packaging of this file.  Please review the following information to ensure the GNU General Public License version 3.0 requirements will be met: http://www.gnu.org/copyleft/gpl.html.
+
+If you are unsure which license is appropriate for your use, please contact the sales department at http://www.sencha.com/contact.
+
+*/
+Ext.require(['Ext.data.*', 'Ext.grid.*']);
+
+Ext.define('Person', {
+    extend: 'Ext.data.Model',
+    fields: [{
+        name: 'id',
+        type: 'int',
+        useNull: true
+    }, 'email', 'first', 'last'],
+    validations: [{
+        type: 'length',
+        field: 'email',
+        min: 1
+    }, {
+        type: 'length',
+        field: 'first',
+        min: 1
+    }, {
+        type: 'length',
+        field: 'last',
+        min: 1
+    }]
+});
+
+Ext.onReady(function(){
+
+    var store = Ext.create('Ext.data.Store', {
+        autoLoad: true,
+        autoSync: true,
+        model: 'Person',
+        proxy: {
+            type: 'rest',
+            url: 'app.php/users',
+            reader: {
+                type: 'json',
+                root: 'data'
+            },
+            writer: {
+                type: 'json'
+            }
+        },
+        listeners: {
+            write: function(store, operation){
+                var record = operation.getRecords()[0],
+                    name = Ext.String.capitalize(operation.action),
+                    verb;
+                    
+                    
+                if (name == 'Destroy') {
+                    record = operation.records[0];
+                    verb = 'Destroyed';
+                } else {
+                    verb = name + 'd';
+                }
+                Ext.example.msg(name, Ext.String.format("{0} user: {1}", verb, record.getId()));
+                
+            }
+        }
+    });
+    
+    var rowEditing = Ext.create('Ext.grid.plugin.RowEditing');
+    
+    var grid = Ext.create('Ext.grid.Panel', {
+        renderTo: document.body,
+        plugins: [rowEditing],
+        width: 400,
+        height: 300,
+        frame: true,
+        title: 'Users',
+        store: store,
+        iconCls: 'icon-user',
+        columns: [{
+            text: 'ID',
+            width: 40,
+            sortable: true,
+            dataIndex: 'id'
+        }, {
+            text: 'Email',
+            flex: 1,
+            sortable: true,
+            dataIndex: 'email',
+            field: {
+                xtype: 'textfield'
+            }
+        }, {
+            header: 'First',
+            width: 80,
+            sortable: true,
+            dataIndex: 'first',
+            field: {
+                xtype: 'textfield'
+            }
+        }, {
+            text: 'Last',
+            width: 80,
+            sortable: true,
+            dataIndex: 'last',
+            field: {
+                xtype: 'textfield'
+            }
+        }],
+        dockedItems: [{
+            xtype: 'toolbar',
+            items: [{
+                text: 'Add',
+                iconCls: 'icon-add',
+                handler: function(){
+                    // empty record
+                    store.insert(0, new Person());
+                    rowEditing.startEdit(0, 0);
+                }
+            }, '-', {
+                itemId: 'delete',
+                text: 'Delete',
+                iconCls: 'icon-delete',
+                disabled: true,
+                handler: function(){
+                    var selection = grid.getView().getSelectionModel().getSelection()[0];
+                    if (selection) {
+                        store.remove(selection);
+                    }
+                }
+            }]
+        }]
+    });
+    grid.getSelectionModel().on('selectionchange', function(selModel, selections){
+        grid.down('#delete').setDisabled(selections.length === 0);
+    });
+});
+
+</pre>
+        <!-- extjs/4.0.7/examples/restful/restful/examples.js -->
+        <pre>/*
+
+This file is part of Ext JS 4
+
+Copyright (c) 2011 Sencha Inc
+
+Contact:  http://www.sencha.com/contact
+
+GNU General Public License Usage
+This file may be used under the terms of the GNU General Public License version 3.0 as published by the Free Software Foundation and appearing in the file LICENSE included in the packaging of this file.  Please review the following information to ensure the GNU General Public License version 3.0 requirements will be met: http://www.gnu.org/copyleft/gpl.html.
+
+If you are unsure which license is appropriate for your use, please contact the sales department at http://www.sencha.com/contact.
+
+*/
+Ext.example = function(){
+    var msgCt;
+
+    function createBox(t, s){
+       // return ['<div class="msg">',
+       //         '<div class="x-box-tl"><div class="x-box-tr"><div class="x-box-tc"></div></div></div>',
+       //         '<div class="x-box-ml"><div class="x-box-mr"><div class="x-box-mc"><h3>', t, '</h3>', s, '</div></div></div>',
+       //         '<div class="x-box-bl"><div class="x-box-br"><div class="x-box-bc"></div></div></div>',
+       //         '</div>'].join('');
+       return '<div class="msg"><h3>' + t + '</h3><p>' + s + '</p></div>';
+    }
+    return {
+        msg : function(title, format){
+            if(!msgCt){
+                msgCt = Ext.DomHelper.insertFirst(document.body, {id:'msg-div'}, true);
+            }
+            var s = Ext.String.format.apply(String, Array.prototype.slice.call(arguments, 1));
+            var m = Ext.DomHelper.append(msgCt, createBox(title, s), true);
+            m.hide();
+            m.slideIn('t').ghost("t", { delay: 1000, remove: true});
+        },
+
+        init : function(){
+//            var t = Ext.get('exttheme');
+//            if(!t){ // run locally?
+//                return;
+//            }
+//            var theme = Cookies.get('exttheme') || 'aero';
+//            if(theme){
+//                t.dom.value = theme;
+//                Ext.getBody().addClass('x-'+theme);
+//            }
+//            t.on('change', function(){
+//                Cookies.set('exttheme', t.getValue());
+//                setTimeout(function(){
+//                    window.location.reload();
+//                }, 250);
+//            });
+//
+//            var lb = Ext.get('lib-bar');
+//            if(lb){
+//                lb.show();
+//            }
+        }
+    };
+}();
+
+Ext.example.shortBogusMarkup = '<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Sed metus nibh, '+
+    'sodales a, porta at, vulputate eget, dui. Pellentesque ut nisl. Maecenas tortor turpis, interdum non, sodales '+
+    'non, iaculis ac, lacus. Vestibulum auctor, tortor quis iaculis malesuada, libero lectus bibendum purus, sit amet '+
+    'tincidunt quam turpis vel lacus. In pellentesque nisl non sem. Suspendisse nunc sem, pretium eget, cursus a, fringilla.</p>';
+
+Ext.example.bogusMarkup = '<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Sed metus nibh, sodales a, '+
+    'porta at, vulputate eget, dui. Pellentesque ut nisl. Maecenas tortor turpis, interdum non, sodales non, iaculis ac, '+
+    'lacus. Vestibulum auctor, tortor quis iaculis malesuada, libero lectus bibendum purus, sit amet tincidunt quam turpis '+
+    'vel lacus. In pellentesque nisl non sem. Suspendisse nunc sem, pretium eget, cursus a, fringilla vel, urna.<br/><br/>'+
+    'Aliquam commodo ullamcorper erat. Nullam vel justo in neque porttitor laoreet. Aenean lacus dui, consequat eu, adipiscing '+
+    'eget, nonummy non, nisi. Morbi nunc est, dignissim non, ornare sed, luctus eu, massa. Vivamus eget quam. Vivamus tincidunt '+
+    'diam nec urna. Curabitur velit. Lorem ipsum dolor sit amet.</p>';
+
+//Ext.onReady(Ext.example.init, Ext.example);
+
+
+// old school cookie functions
+var Cookies = {};
+Cookies.set = function(name, value){
+     var argv = arguments;
+     var argc = arguments.length;
+     var expires = (argc > 2) ? argv[2] : null;
+     var path = (argc > 3) ? argv[3] : '/';
+     var domain = (argc > 4) ? argv[4] : null;
+     var secure = (argc > 5) ? argv[5] : false;
+     document.cookie = name + "=" + escape (value) +
+       ((expires === null) ? "" : ("; expires=" + expires.toGMTString())) +
+       ((path === null) ? "" : ("; path=" + path)) +
+       ((domain === null) ? "" : ("; domain=" + domain)) +
+       ((secure === true) ? "; secure" : "");
+};
+
+Cookies.get = function(name){
+    var arg = name + "=";
+    var alen = arg.length;
+    var clen = document.cookie.length;
+    var i = 0;
+    var j = 0;
+    while(i < clen){
+        j = i + alen;
+        if (document.cookie.substring(i, j) == arg)
+            return Cookies.getCookieVal(j);
+        i = document.cookie.indexOf(" ", i) + 1;
+        if(i === 0)
+            break;
+    }
+    return null;
+};
+
+Cookies.clear = function(name) {
+  if(Cookies.get(name)){
+    document.cookie = name + "=" +
+    "; expires=Thu, 01-Jan-70 00:00:01 GMT";
+  }
+};
+
+Cookies.getCookieVal = function(offset){
+   var endstr = document.cookie.indexOf(";", offset);
+   if(endstr === -1){
+       endstr = document.cookie.length;
+   }
+   return unescape(document.cookie.substring(offset, endstr));
+};
+</pre>
+    </div>
+    
+</body>
+</html>

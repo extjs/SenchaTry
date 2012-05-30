@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Specifying a custom style for the pressed state on an Ext.SegmentedButton component in Sencha Touch 2</title>
+    <meta Name="description" content="Specifying a custom style for the pressed state on an Ext.SegmentedButton component in Sencha Touch 2" />
+    <meta name="keywords" content="Sencha, Sencha Touch, Sencha Touch 2.0.1" />
+    <link href="/assets/application.css" media="screen" rel="stylesheet" type="text/css" />
+    <style>
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    
+    <div>
+        <header>
+            <h1>Sencha Try</h1>
+        </header>
+        
+        <section id="readme">
+            <h1>Specifying a custom style for the pressed state on an Ext.SegmentedButton component in Sencha Touch 2</h1>
+
+<p>The following example shows how you can specify a custom button style for the pressed state on an Ext.SegmentedButton component in Sencha Touch 2 by setting the <code>pressedCls</code> config object to the name of a style in your stylesheet.</p>
+            <strong>Tags:</strong> <a href="/search/Sencha Touch">Sencha Touch</a> <a href="/search/Sencha Touch 2.0.1">Sencha Touch 2.0.1</a> <br/>
+        </section>
+        <section id="example">
+            [example]
+        </section>
+        
+        <footer>
+            &copy; 2012 Sencha Inc.
+        </footer>
+    </div>
+    
+    <div class="hidden">
+        <!-- touch/2.0.1/demos/Ext.SegmentedButton.pressedCls/app.js -->
+        <pre>/*global Ext:false */
+Ext.application({
+    launch: function () {
+        Ext.create('Ext.Panel', {
+            fullscreen: true,
+            styleHtmlContent: true,
+            items: [{
+                xtype: 'segmentedbutton',
+                pressedCls: 'customPressedCls',
+                allowMultiple: true,
+                items: [{
+                    pressed: true,
+                    text: 'Red'
+                }, {
+                    text: 'Orange'
+                }, {
+                    text: 'Yellow'
+                }, {
+                    text: 'Green'
+                }, {
+                    text: 'Blue'
+                }] // items (segmentedbutton)
+            }] // items (panel)
+        }); // create()
+    } // launch
+}); // application()
+</pre>
+    </div>
+    
+</body>
+</html>

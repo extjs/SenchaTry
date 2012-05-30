@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Styling the required indicator on an Ext.field.Text control in Sencha Touch 2</title>
+    <meta Name="description" content="Styling the required indicator on an Ext.field.Text control in Sencha Touch 2" />
+    <meta name="keywords" content="Sencha, Sencha Touch, Sencha Touch 2.0.0" />
+    <link href="/assets/application.css" media="screen" rel="stylesheet" type="text/css" />
+    <style>
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    
+    <div>
+        <header>
+            <h1>Sencha Try</h1>
+        </header>
+        
+        <section id="readme">
+            <h1>Styling the required indicator on an Ext.field.Text control in Sencha Touch 2</h1>
+
+<p>The following example shows how you can style the "required" indicator text by on an Ext.field.Field control [in this case an Ext.field.Text (textfield) control] by creating a CSS selector and specifying the <code>requiredCls</code> config option.</p>
+            <strong>Tags:</strong> <a href="/search/Sencha Touch">Sencha Touch</a> <a href="/search/Sencha Touch 2.0.0">Sencha Touch 2.0.0</a> <br/>
+        </section>
+        <section id="example">
+            [example]
+        </section>
+        
+        <footer>
+            &copy; 2012 Sencha Inc.
+        </footer>
+    </div>
+    
+    <div class="hidden">
+        <!-- touch/2.0.0/demos/Ext.field.Text.requiredCls/app.js -->
+        <pre>/*global Ext:false */
+Ext.application({
+    launch: function () {
+        Ext.create('Ext.form.Panel', {
+            id: 'userForm',
+            fullscreen: true,
+            items: [{
+                xtype: 'toolbar',
+                ui: 'neutral',
+                docked: 'top',
+                items: [{
+                    xtype: 'checkboxfield',
+                    label: 'required:',
+                    name: 'isRequired',
+                    checked: true,
+                    listeners: {
+                        check: function () {
+                            this.up('formpanel').down('textfield[name=fName]').setRequired(true);
+                        }, // check
+                        uncheck: function () {
+                            this.up('formpanel').down('textfield[name=fName]').setRequired(false);
+                        } // uncheck
+                    } // listeners
+                }] // items
+            }, {
+                xtype: 'fieldset',
+                title: 'Tell us about yourself...',
+                items: [{
+                    xtype: 'textfield',
+                    label: 'First name:',
+                    name: 'fName',
+                    required: true,
+                    requiredCls: 'myReq'
+                }, {
+                    xtype: 'textfield',
+                    label: 'Last name:',
+                    name: 'lName'
+                }] // items
+            }, {
+                xtype: 'button',
+                text: 'Submit',
+                handler: function () {
+                    var values = this.up('formpanel#userForm').getValues();
+                    Ext.Msg.alert('userForm.getValues():', Ext.JSON.encode(values));
+                } // handler
+            }] // items
+        }); // create()
+    } // launch
+}); // application()
+</pre>
+    </div>
+    
+</body>
+</html>

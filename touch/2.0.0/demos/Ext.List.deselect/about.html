@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Preventing items from being selected in an Ext.List component in Sencha Touch 2</title>
+    <meta Name="description" content="Preventing items from being selected in an Ext.List component in Sencha Touch 2" />
+    <meta name="keywords" content="Sencha, Sencha Touch, Sencha Touch 2.0.0" />
+    <link href="/assets/application.css" media="screen" rel="stylesheet" type="text/css" />
+    <style>
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    
+    <div>
+        <header>
+            <h1>Sencha Try</h1>
+        </header>
+        
+        <section id="readme">
+            <h1>Preventing items from being selected in an Ext.List component in Sencha Touch 2</h1>
+
+<p>The following example shows how you can prevent items from being selected in an Ext.List (list) control in Sencha Touch 2 by listening for the <code>select</code> event and calling the <code>deselect()</code> method.</p>
+            <strong>Tags:</strong> <a href="/search/Sencha Touch">Sencha Touch</a> <a href="/search/Sencha Touch 2.0.0">Sencha Touch 2.0.0</a> <br/>
+        </section>
+        <section id="example">
+            [example]
+        </section>
+        
+        <footer>
+            &copy; 2012 Sencha Inc.
+        </footer>
+    </div>
+    
+    <div class="hidden">
+        <!-- touch/2.0.0/demos/Ext.List.deselect/app.js -->
+        <pre>/*global Ext:false */
+Ext.application({
+    launch: function () {
+        var myList = Ext.create('Ext.List', {
+            fullscreen: true,
+            items: [{
+                xtype: 'titlebar',
+                docked: 'top',
+                ui: 'neutral'
+            }], // items
+            store: {
+                fields: ['name', 'selectable'],
+                data: [{
+                    name: 'Red'
+                }, {
+                    name: 'Orange'
+                }, {
+                    name: 'Yellow',
+                    selectable: true
+                }, {
+                    name: 'Green (unselectable)',
+                    selectable: false
+                }, {
+                    name: 'Blue'
+                }] // data
+            }, // store
+            itemTpl: '{name}',
+            listeners: {
+                select: function (list, model) {
+                    var value = model.get('name');
+                    if (model.get('selectable') === false) {
+                        list.deselect(model);
+                        return false;
+                    }
+                    this.down('titlebar').setTitle(value);
+                } // select
+            } // listeners
+        }); // create()
+    } // launch
+}); // application()
+</pre>
+    </div>
+    
+</body>
+</html>

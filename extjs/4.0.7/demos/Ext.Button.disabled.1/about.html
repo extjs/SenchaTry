@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Disabling an Ext.Button component in Ext JS</title>
+    <meta Name="description" content="Disabling an Ext.Button component in Ext JS" />
+    <meta name="keywords" content="Sencha, Ext JS, Ext JS 4.0.7, Ext.button.Button, Ext.Button, button, disabled, setDisabled()" />
+    <link href="/assets/application.css" media="screen" rel="stylesheet" type="text/css" />
+    <style>
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    
+    <div>
+        <header>
+            <h1>Sencha Try</h1>
+        </header>
+        
+        <section id="readme">
+            <h1>Disabling an Ext.Button component in Ext JS</h1>
+
+<p>The following example shows how you can disable an Ext.Button component in Ext JS by setting the Boolean <code>disabled</code> config or by calling the <code>setDisabled()</code> method at runtime.</p>
+            <strong>Tags:</strong> <a href="/search/Ext JS">Ext JS</a> <a href="/search/Ext JS 4.0.7">Ext JS 4.0.7</a> <a href="/search/Ext.button.Button">Ext.button.Button</a> <a href="/search/Ext.Button">Ext.Button</a> <a href="/search/button">button</a> <a href="/search/disabled">disabled</a> <a href="/search/setDisabled()">setDisabled()</a> <br/>
+        </section>
+        <section id="example">
+            [example]
+        </section>
+        
+        <footer>
+            &copy; 2012 Sencha Inc.
+        </footer>
+    </div>
+    
+    <div class="hidden">
+        <!-- extjs/4.0.7/demos/Ext.Button.disabled.1/app.js -->
+        <pre>/*global Ext:false */
+Ext.onReady(function () {
+    var btn = Ext.create("Ext.Button", {
+        disabled: true,
+        handler: function () {
+            Ext.Msg.alert("", "You clicked the button.");
+        },
+        text: 'Button'
+    });
+    
+    Ext.create('Ext.Panel', {
+        bodyPadding: 20,
+        items: [btn],
+        renderTo: Ext.getBody(),
+        tbar: [{
+            xtype: "checkbox",
+            boxLabel: "disabled",
+            checked: btn.disabled,
+            handler: function () {
+                btn.setDisabled(this.checked);
+            }
+        }]
+    });
+});
+</pre>
+    </div>
+    
+</body>
+</html>

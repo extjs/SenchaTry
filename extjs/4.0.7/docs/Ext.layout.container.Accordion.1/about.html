@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Ext.layout.container.Accordion Example</title>
+    <meta Name="description" content="Ext.layout.container.Accordion Example" />
+    <meta name="keywords" content="Sencha, Ext JS, Ext JS 4.0.7, Ext.layout.container.Accordion, Ext.layout.AccorionLayout, accordion, layout, titleCollapse, animate, activeOnTop, container" />
+    <link href="/assets/application.css" media="screen" rel="stylesheet" type="text/css" />
+    <style>
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    
+    <div>
+        <header>
+            <h1>Sencha Try</h1>
+        </header>
+        
+        <section id="readme">
+            <h1>Ext.layout.container.Accordion Example</h1>
+            <strong>Tags:</strong> <a href="/search/Ext JS">Ext JS</a> <a href="/search/Ext JS 4.0.7">Ext JS 4.0.7</a> <a href="/search/Ext.layout.container.Accordion">Ext.layout.container.Accordion</a> <a href="/search/Ext.layout.AccorionLayout">Ext.layout.AccorionLayout</a> <a href="/search/accordion">accordion</a> <a href="/search/layout">layout</a> <a href="/search/titleCollapse">titleCollapse</a> <a href="/search/animate">animate</a> <a href="/search/activeOnTop">activeOnTop</a> <a href="/search/container">container</a> <br/>
+        </section>
+        <section id="example">
+            [example]
+        </section>
+        
+        <footer>
+            &copy; 2012 Sencha Inc.
+        </footer>
+    </div>
+    
+    <div class="hidden">
+        <!-- extjs/4.0.7/docs/Ext.layout.container.Accordion.1/app.js -->
+        <pre>/*global Ext:false */
+Ext.onReady(function () {
+    Ext.create('Ext.panel.Panel', {
+        title: 'Accordion Layout',
+        width: 300,
+        height: 300,
+        defaults: {
+            // applied to each contained panel
+            bodyStyle: 'padding:15px'
+        },
+        layout: {
+            // layout-specific configs go here
+            type: 'accordion',
+            titleCollapse: false,
+            animate: true,
+            activeOnTop: true
+        },
+        items: [{
+            title: 'Panel 1',
+            html: 'Panel content!'
+        }, {
+            title: 'Panel 2',
+            html: 'Panel content!'
+        }, {
+            title: 'Panel 3',
+            html: 'Panel content!'
+        }],
+        renderTo: Ext.getBody()
+    });
+});
+</pre>
+    </div>
+    
+</body>
+</html>

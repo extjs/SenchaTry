@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Specifying which side of the viewport an Ext.Msg component animates from in Sencha Touch 2</title>
+    <meta Name="description" content="Specifying which side of the viewport an Ext.Msg component animates from in Sencha Touch 2" />
+    <meta name="keywords" content="Sencha, Sencha Touch, Sencha Touch 2.0.1" />
+    <link href="/assets/application.css" media="screen" rel="stylesheet" type="text/css" />
+    <style>
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    
+    <div>
+        <header>
+            <h1>Sencha Try</h1>
+        </header>
+        
+        <section id="readme">
+            <h1>Specifying which side of the viewport an Ext.Msg component animates from in Sencha Touch 2</h1>
+
+<p>The following example shows how you can specify which side of the viewport an Ext.Msg component animates from during a slide animation in Sencha Touch 2 by specifying the <code>enter</code> and <code>exit</code> config options to <code>"left"</code>, <code>"right"</code>, <code>"top"</code>, or <code>"bottom"</code>.</p>
+            <strong>Tags:</strong> <a href="/search/Sencha Touch">Sencha Touch</a> <a href="/search/Sencha Touch 2.0.1">Sencha Touch 2.0.1</a> <br/>
+        </section>
+        <section id="example">
+            [example]
+        </section>
+        
+        <footer>
+            &copy; 2012 Sencha Inc.
+        </footer>
+    </div>
+    
+    <div class="hidden">
+        <!-- touch/2.0.1/demos/Ext.Msg.show.enter/app.js -->
+        <pre>/*global Ext:false */
+Ext.application({
+    launch: function () {
+        Ext.create('Ext.Panel', {
+            fullscreen: true,
+            items: [{
+                xtype: 'titlebar',
+                docked: 'top',
+                items: [{
+                    text: '<code>enter/exit:left</code>',
+                    handler: function () {
+                        showAlert('left', 'left');
+                    } // handler
+                }, {
+                    text: '<code>enter/exit:right</code>',
+                    handler: function () {
+                        showAlert('right', 'right');
+                    } // handler
+                }, {
+                    text: '<code>enter/exit:top</code>',
+                    handler: function () {
+                        showAlert('top', 'top');
+                    } // handler
+                }, {
+                    text: '<code>enter/exit:bottom</code>',
+                    handler: function () {
+                        showAlert('bottom', 'bottom');
+                    } // handler
+                }] // items
+            }] // items
+        }); // create()
+        
+        function showAlert(enterPos, exitPos) {
+            Ext.Msg.show({
+                title: 'enter: ' + enterPos + ", exit: " + exitPos,
+                showAnimation: 'slideIn',
+                hideAnimation: 'slideOut',
+                enter: enterPos,
+                exit: exitPos
+            }); // show()
+        } // showAlert()
+    } // launch
+}); // application()
+</pre>
+    </div>
+    
+</body>
+</html>

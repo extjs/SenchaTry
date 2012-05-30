@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Determining when a user clicks the Ext.Img component in Sencha Touch 2</title>
+    <meta Name="description" content="Determining when a user clicks the Ext.Img component in Sencha Touch 2" />
+    <meta name="keywords" content="Sencha, Sencha Touch, Sencha Touch 2.0.0" />
+    <link href="/assets/application.css" media="screen" rel="stylesheet" type="text/css" />
+    <style>
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    
+    <div>
+        <header>
+            <h1>Sencha Try</h1>
+        </header>
+        
+        <section id="readme">
+            <h1>Determining when a user clicks the Ext.Img component in Sencha Touch 2</h1>
+
+<p>The following example shows how you can determine whether an image was clicked using the Ext.Img component in Sencha Touch 2 by using the <code>listeners</code> config object and listening for the <code>tap</code> event.</p>
+            <strong>Tags:</strong> <a href="/search/Sencha Touch">Sencha Touch</a> <a href="/search/Sencha Touch 2.0.0">Sencha Touch 2.0.0</a> <br/>
+        </section>
+        <section id="example">
+            [example]
+        </section>
+        
+        <footer>
+            &copy; 2012 Sencha Inc.
+        </footer>
+    </div>
+    
+    <div class="hidden">
+        <!-- touch/2.0.0/demos/Ext.Img.listeners.tap/app.js -->
+        <pre>/*global Ext:false */
+Ext.application({
+    launch: function () {
+        var logo = Ext.create('Ext.Img', {
+            src: 'http://www.sencha.com/img/sencha-large.png',
+            mode: 'element',
+            listeners: {
+                tap: function (img, evt) {
+                    Ext.Msg.alert('You clicked the image');
+                } // tap
+            } // listeners
+        }); // create()
+        
+        Ext.create('Ext.Panel', {
+            fullscreen: true,
+            items: logo
+        }); // create()
+    } // launch
+}); // application()
+</pre>
+    </div>
+    
+</body>
+</html>

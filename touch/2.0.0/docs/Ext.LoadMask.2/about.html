@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Ext.LoadMask Example</title>
+    <meta Name="description" content="Ext.LoadMask Example" />
+    <meta name="keywords" content="Sencha, Sencha Touch, Sencha Touch 2.0.0, Ext.LoadMask, loadmask, masked, message, indicator" />
+    <link href="/assets/application.css" media="screen" rel="stylesheet" type="text/css" />
+    <style>
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    
+    <div>
+        <header>
+            <h1>Sencha Try</h1>
+        </header>
+        
+        <section id="readme">
+            <h1>Ext.LoadMask Example</h1>
+            <strong>Tags:</strong> <a href="/search/Sencha Touch">Sencha Touch</a> <a href="/search/Sencha Touch 2.0.0">Sencha Touch 2.0.0</a> <a href="/search/Ext.LoadMask">Ext.LoadMask</a> <a href="/search/loadmask">loadmask</a> <a href="/search/masked">masked</a> <a href="/search/message">message</a> <a href="/search/indicator">indicator</a> <br/>
+        </section>
+        <section id="example">
+            [example]
+        </section>
+        
+        <footer>
+            &copy; 2012 Sencha Inc.
+        </footer>
+    </div>
+    
+    <div class="hidden">
+        <!-- touch/2.0.0/docs/Ext.LoadMask.2/app.js -->
+        <pre>/*global Ext:false */
+Ext.application({
+    launch: function () {
+        Ext.Viewport.add({
+            masked: {
+                xtype: 'loadmask',
+                message: 'A message..',
+                indicator: false
+            }
+        });
+    } // launch
+}); // application()
+</pre>
+    </div>
+    
+</body>
+</html>

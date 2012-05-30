@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <title>dataview Example</title>
+    <meta Name="description" content="dataview Example" />
+    <meta name="keywords" content="Sencha, Sencha Touch, Sencha Touch 2.0.1" />
+    <link href="/assets/application.css" media="screen" rel="stylesheet" type="text/css" />
+    <style>
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    
+    <div>
+        <header>
+            <h1>Sencha Try</h1>
+        </header>
+        
+        <section id="readme">
+            <h1>dataview Example</h1>
+            <strong>Tags:</strong> <a href="/search/Sencha Touch">Sencha Touch</a> <a href="/search/Sencha Touch 2.0.1">Sencha Touch 2.0.1</a> <br/>
+        </section>
+        <section id="example">
+            [example]
+        </section>
+        
+        <footer>
+            &copy; 2012 Sencha Inc.
+        </footer>
+    </div>
+    
+    <div class="hidden">
+        <!-- touch/2.0.1/guides/dataview.1/app.js -->
+        <pre>/*global Ext:false */
+Ext.application({
+    launch: function() {
+        var touchTeam = Ext.create('Ext.DataView', {
+            fullscreen: true,
+
+            store: {
+                fields: ['name', 'age'],
+                data: [{
+                    name: 'Jamie Avins',
+                    age: 100
+                }, {
+                    name: 'Rob Dougan',
+                    age: 21
+                }, {
+                    name: 'Tommy Maintz',
+                    age: 24
+                }, {
+                    name: 'Jacky Nguyen',
+                    age: 24
+                }, {
+                    name: 'Ed Spencer',
+                    age: 26
+                }]
+            },
+
+            itemTpl: '{name} is {age} years old'
+        });
+    }
+});
+</pre>
+    </div>
+    
+</body>
+</html>

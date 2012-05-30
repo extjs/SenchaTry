@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Drawing and Charting Example</title>
+    <meta Name="description" content="Drawing and Charting Example" />
+    <meta name="keywords" content="Sencha, Ext JS, Ext JS 4.0.7, Ext.draw.Component, viewBox, circle, fill, radius" />
+    <link href="/assets/application.css" media="screen" rel="stylesheet" type="text/css" />
+    <style>
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    
+    <div>
+        <header>
+            <h1>Sencha Try</h1>
+        </header>
+        
+        <section id="readme">
+            <h1>Drawing and Charting Example</h1>
+
+<p>The drawing and charting packages enable you to create cross browser and cross device graphics in a versatile way.</p>
+            <strong>Tags:</strong> <a href="/search/Ext JS">Ext JS</a> <a href="/search/Ext JS 4.0.7">Ext JS 4.0.7</a> <a href="/search/Ext.draw.Component">Ext.draw.Component</a> <a href="/search/viewBox">viewBox</a> <a href="/search/circle">circle</a> <a href="/search/fill">fill</a> <a href="/search/radius">radius</a> <br/>
+        </section>
+        <section id="example">
+            [example]
+        </section>
+        
+        <footer>
+            &copy; 2012 Sencha Inc.
+        </footer>
+    </div>
+    
+    <div class="hidden">
+        <!-- extjs/4.0.7/guides/drawing_and_charting.1/app.js -->
+        <pre>/*global Ext:false */
+Ext.onReady(function () {
+    var drawComponent = Ext.create('Ext.draw.Component', {
+        viewBox: false,
+        items: [{
+            type: 'circle',
+            fill: '#ffc',
+            radius: 100,
+            x: 100,
+            y: 100
+        }]
+    });
+
+    Ext.create('Ext.Window', {
+        width: 230,
+        height: 230,
+        layout: 'fit',
+        items: [drawComponent]
+    }).show();
+});
+</pre>
+    </div>
+    
+</body>
+</html>

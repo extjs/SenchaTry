@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Ext.layout.container.Form Example</title>
+    <meta Name="description" content="Ext.layout.container.Form Example" />
+    <meta name="keywords" content="Sencha, Ext JS, Ext JS 4.1.0, Ext.layout.container.Form" />
+    <link href="/assets/application.css" media="screen" rel="stylesheet" type="text/css" />
+    <style>
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    
+    <div>
+        <header>
+            <h1>Sencha Try</h1>
+        </header>
+        
+        <section id="readme">
+            <h1>Ext.layout.container.Form Example</h1>
+            <strong>Tags:</strong> <a href="/search/Ext JS">Ext JS</a> <a href="/search/Ext JS 4.1.0">Ext JS 4.1.0</a> <a href="/search/Ext.layout.container.Form">Ext.layout.container.Form</a> <br/>
+        </section>
+        <section id="example">
+            [example]
+        </section>
+        
+        <footer>
+            &copy; 2012 Sencha Inc.
+        </footer>
+    </div>
+    
+    <div class="hidden">
+        <!-- extjs/4.1.0/docs/Ext.layout.container.Form.1/app.js -->
+        <pre>/*global Ext:false */
+Ext.onReady(function() {
+    Ext.create('Ext.Panel', {
+        width: 500,
+        height: 300,
+        title: "FormLayout Panel",
+        layout: 'form',
+        renderTo: Ext.getBody(),
+        bodyPadding: 5,
+        defaultType: 'textfield',
+        items: [{
+            fieldLabel: 'First Name',
+            name: 'first',
+            allowBlank: false
+        }, {
+            fieldLabel: 'Last Name',
+            name: 'last'
+        }, {
+            fieldLabel: 'Company',
+            name: 'company'
+        }, {
+            fieldLabel: 'Email',
+            name: 'email',
+            vtype: 'email'
+        }, {
+            fieldLabel: 'DOB',
+            name: 'dob',
+            xtype: 'datefield'
+        }, {
+            fieldLabel: 'Age',
+            name: 'age',
+            xtype: 'numberfield',
+            minValue: 0,
+            maxValue: 100
+        }, {
+            xtype: 'timefield',
+            fieldLabel: 'Time',
+            name: 'time',
+            minValue: '8:00am',
+            maxValue: '6:00pm'
+        }]
+    });
+});
+</pre>
+    </div>
+    
+</body>
+</html>

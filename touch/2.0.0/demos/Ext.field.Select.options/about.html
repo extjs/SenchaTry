@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Setting a list of options on an Ext.field.Select control in Sencha Touch 2</title>
+    <meta Name="description" content="Setting a list of options on an Ext.field.Select control in Sencha Touch 2" />
+    <meta name="keywords" content="Sencha, Sencha Touch, Sencha Touch 2.0.0" />
+    <link href="/assets/application.css" media="screen" rel="stylesheet" type="text/css" />
+    <style>
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    
+    <div>
+        <header>
+            <h1>Sencha Try</h1>
+        </header>
+        
+        <section id="readme">
+            <h1>Setting a list of options on an Ext.field.Select control in Sencha Touch 2</h1>
+
+<p>The following example shows how you can specify the items in an Ext.field.Select (selectfield) control by setting the <code>options</code> config option or by calling the <code>setOptions()</code> method at runtime.</p>
+            <strong>Tags:</strong> <a href="/search/Sencha Touch">Sencha Touch</a> <a href="/search/Sencha Touch 2.0.0">Sencha Touch 2.0.0</a> <br/>
+        </section>
+        <section id="example">
+            [example]
+        </section>
+        
+        <footer>
+            &copy; 2012 Sencha Inc.
+        </footer>
+    </div>
+    
+    <div class="hidden">
+        <!-- touch/2.0.0/demos/Ext.field.Select.options/app.js -->
+        <pre>/*global Ext:false */
+Ext.application({
+    launch: function () {
+        var otherOptions = [{
+            text: 'Tony',
+            value: 5
+        }, {
+            text: 'Angela',
+            value: 6
+        }, {
+            text: 'Samantha',
+            value: 7
+        }, {
+            text: 'Jonathan',
+            value: 8
+        }, {
+            text: 'Mona',
+            value: 9
+        }];
+        
+        Ext.create('Ext.form.Panel', {
+            fullscreen: true,
+            items: [{
+                xtype: 'toolbar',
+                docked: 'top',
+                items: [{
+                    xtype: 'button',
+                    text: 'change options',
+                    handler: function () {
+                        this.up('formpanel').down('selectfield').setOptions(otherOptions);
+                    } // handler
+                }] // items
+            }, {
+                xtype: 'fieldset',
+                items: [{
+                    xtype: 'selectfield',
+                    label: 'options:',
+                    name: 'mySelect',
+                    options: [{
+                        text: 'First',
+                        value: 0
+                    }, {
+                        text: 'Second',
+                        value: 1
+                    }, {
+                        text: 'Third',
+                        value: 14
+                    }], // options
+                    listeners: {
+                        change: function (select, newValue, oldValue) {
+                            if (oldValue) {
+                                var debug = Ext.String.format('<p><b>newValue:</b> {0}</p><p><b>oldValue:</b> {1}</p>',
+                                                Ext.JSON.encode(newValue.data),
+                                                Ext.JSON.encode(oldValue.data));
+                                Ext.Msg.alert('selectfield change dispatched:', debug);
+                            } else {
+                                alert('oldValue is undefined');
+                            }
+                        } // change
+                    } // listeners
+                }] // items (fieldset)
+            }] // items (formpanel)
+        }); // create()
+    } // launch
+}); // application()
+</pre>
+    </div>
+    
+</body>
+</html>

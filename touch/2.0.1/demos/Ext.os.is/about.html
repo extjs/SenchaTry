@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Determining the current device's operating system using Sencha Touch 2</title>
+    <meta Name="description" content="Determining the current device's operating system using Sencha Touch 2" />
+    <meta name="keywords" content="Sencha, Sencha Touch, Sencha Touch 2.0.1" />
+    <link href="/assets/application.css" media="screen" rel="stylesheet" type="text/css" />
+    <style>
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    
+    <div>
+        <header>
+            <h1>Sencha Try</h1>
+        </header>
+        
+        <section id="readme">
+            <h1>Determining the current device's operating system using Sencha Touch 2</h1>
+
+<p>The following example shows how you can determine which operating system the current device is running by using the properties in the <code>Ext.os</code> class.</p>
+            <strong>Tags:</strong> <a href="/search/Sencha Touch">Sencha Touch</a> <a href="/search/Sencha Touch 2.0.1">Sencha Touch 2.0.1</a> <br/>
+        </section>
+        <section id="example">
+            [example]
+        </section>
+        
+        <footer>
+            &copy; 2012 Sencha Inc.
+        </footer>
+    </div>
+    
+    <div class="hidden">
+        <!-- touch/2.0.1/demos/Ext.os.is/app.js -->
+        <pre>/*global Ext:false */
+Ext.application({
+    launch: function () {
+        Ext.define('OS', {
+            extend: 'Ext.data.Model'
+        }); // define()
+        
+        var store = Ext.create('Ext.data.Store', {
+            model: 'OS',
+            sorters: 'name',
+            fields: ['name', 'value'],
+            data: [{
+                name: 'iOS',
+                value: Ext.os.is('iOS')
+            }, {
+                name: 'iPad',
+                value: Ext.os.is('iPad')
+            }, {
+                name: 'iPhone',
+                value: Ext.os.is('iPhone')
+            }, {
+                name: 'iPod',
+                value: Ext.os.is('iPod')
+            }, {
+                name: 'Android',
+                value: Ext.os.is('Android')
+            }, {
+                name: 'WebOS',
+                value: Ext.os.is('WebOS')
+            }, {
+                name: 'BlackBerry',
+                value: Ext.os.is('Bada')
+            }, {
+                name: 'MacOS',
+                value: Ext.os.is('MacOS')
+            }, {
+                name: 'RIMTablet',
+                value: Ext.os.is('RIMTablet')
+            }, {
+                name: 'Windows',
+                value: Ext.os.is('Windows')
+            }, {
+                name: 'Linux',
+                value: Ext.os.is('Linux')
+            }, {
+                name: 'Other',
+                value: Ext.os.is('Other')
+            }] // data
+        }); // create()
+        
+        Ext.create('Ext.List', {
+            fullscreen: true,
+            itemTpl: '{name}: <code>{value}</code>',
+            store: store
+        }); // create()
+        
+        Ext.Msg.alert('You are using ' + Ext.os.name);
+    } // launch
+}); // application()
+</pre>
+    </div>
+    
+</body>
+</html>

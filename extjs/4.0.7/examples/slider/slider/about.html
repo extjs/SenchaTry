@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Ext Slider Example</title>
+    <meta Name="description" content="Ext Slider Example" />
+    <meta name="keywords" content="Sencha, Ext JS, Ext JS 4.0.7" />
+    <link href="/assets/application.css" media="screen" rel="stylesheet" type="text/css" />
+    <style>
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    
+    <div>
+        <header>
+            <h1>Sencha Try</h1>
+        </header>
+        
+        <section id="readme">
+            <h1>Ext Slider Example</h1>
+
+<p>Sliders support keyboard adjustments, configurable snapping, axis clicking and animation.</p>
+            <strong>Tags:</strong> <a href="/search/Ext JS">Ext JS</a> <a href="/search/Ext JS 4.0.7">Ext JS 4.0.7</a> <br/>
+        </section>
+        <section id="example">
+            [example]
+        </section>
+        
+        <footer>
+            &copy; 2012 Sencha Inc.
+        </footer>
+    </div>
+    
+    <div class="hidden">
+        <!-- extjs/4.0.7/examples/slider/slider/app.js -->
+        <pre>/*global Ext:false */
+/*
+
+This file is part of Ext JS 4
+
+Copyright (c) 2011 Sencha Inc
+
+Contact:  http://www.sencha.com/contact
+
+GNU General Public License Usage
+This file may be used under the terms of the GNU General Public License version 3.0 as published by the Free Software Foundation and appearing in the file LICENSE included in the packaging of this file.  Please review the following information to ensure the GNU General Public License version 3.0 requirements will be met: http://www.gnu.org/copyleft/gpl.html.
+
+If you are unsure which license is appropriate for your use, please contact the sales department at http://www.sencha.com/contact.
+
+*/
+Ext.require('Ext.slider.*');
+
+Ext.onReady(function(){
+
+    Ext.create('Ext.slider.Single', {
+        renderTo: 'basic-slider',
+        width: 214,
+        minValue: 0,
+        hideLabel: true,
+        useTips: false,
+        maxValue: 100
+    });
+
+    Ext.create('Ext.slider.Single', {
+        renderTo: 'increment-slider',
+        hideLabel: true,
+        useTips: false,
+        width: 214,
+        value:50,
+        increment: 10,
+        minValue: 0,
+        maxValue: 100
+    });
+
+    Ext.create('Ext.slider.Single', {
+        renderTo: 'vertical-slider',
+        hideLabel: true,
+        useTips: false,
+        height: 214,
+        vertical: true,
+        minValue: 0,
+        maxValue: 100
+    });
+
+    Ext.create('Ext.slider.Single', {
+        renderTo: 'tip-slider',
+        hideLabel: true,
+        width: 214,
+        minValue: 0,
+        maxValue: 100
+    });
+
+
+
+    Ext.create('Ext.slider.Single', {
+        renderTo: 'custom-tip-slider',
+        hideLabel: true,
+        width: 214,
+        increment: 10,
+        minValue: 0,
+        maxValue: 100,
+        tipText: function(thumb){
+            return Ext.String.format('<b>{0}% complete</b>', thumb.value);
+        }
+    });
+
+    Ext.create('Ext.slider.Single', {
+        renderTo: 'custom-slider',
+        hideLabel: true,
+        width: 214,
+        increment: 10,
+        minValue: 0,
+        maxValue: 100
+    });
+    
+    Ext.create('Ext.slider.Multi', {
+        renderTo: 'multi-slider-horizontal',
+        hideLabel: true,
+        width: 214,
+        minValue: 0,
+        maxValue: 100,
+        values: [10, 50, 90]
+    });
+    
+    Ext.create('Ext.slider.Multi', {
+        renderTo: 'multi-slider-vertical',
+        hideLabel: true,
+        vertical: true,
+        height: 214,
+        minValue: 0,
+        maxValue: 100,
+        values: [10, 50, 90]
+    });
+});
+
+</pre>
+    </div>
+    
+</body>
+</html>

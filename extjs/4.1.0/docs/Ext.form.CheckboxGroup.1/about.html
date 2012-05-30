@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Ext.form.CheckboxGroup Example</title>
+    <meta Name="description" content="Ext.form.CheckboxGroup Example" />
+    <meta name="keywords" content="Sencha, Ext JS, Ext JS 4.1.0, Ext.form.CheckboxGroup" />
+    <link href="/assets/application.css" media="screen" rel="stylesheet" type="text/css" />
+    <style>
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    
+    <div>
+        <header>
+            <h1>Sencha Try</h1>
+        </header>
+        
+        <section id="readme">
+            <h1>Ext.form.CheckboxGroup Example</h1>
+            <strong>Tags:</strong> <a href="/search/Ext JS">Ext JS</a> <a href="/search/Ext JS 4.1.0">Ext JS 4.1.0</a> <a href="/search/Ext.form.CheckboxGroup">Ext.form.CheckboxGroup</a> <br/>
+        </section>
+        <section id="example">
+            [example]
+        </section>
+        
+        <footer>
+            &copy; 2012 Sencha Inc.
+        </footer>
+    </div>
+    
+    <div class="hidden">
+        <!-- extjs/4.1.0/docs/Ext.form.CheckboxGroup.1/app.js -->
+        <pre>/*global Ext:false */
+Ext.onReady(function() {
+    Ext.create('Ext.form.Panel', {
+        title: 'Checkbox Group',
+        width: 300,
+        height: 125,
+        bodyPadding: 10,
+        renderTo: Ext.getBody(),
+        items: [{
+            xtype: 'checkboxgroup',
+            fieldLabel: 'Two Columns',
+            // Arrange checkboxes into two columns, distributed vertically
+            columns: 2,
+            vertical: true,
+            items: [{
+                boxLabel: 'Item 1',
+                name: 'rb',
+                inputValue: '1'
+            }, {
+                boxLabel: 'Item 2',
+                name: 'rb',
+                inputValue: '2',
+                checked: true
+            }, {
+                boxLabel: 'Item 3',
+                name: 'rb',
+                inputValue: '3'
+            }, {
+                boxLabel: 'Item 4',
+                name: 'rb',
+                inputValue: '4'
+            }, {
+                boxLabel: 'Item 5',
+                name: 'rb',
+                inputValue: '5'
+            }, {
+                boxLabel: 'Item 6',
+                name: 'rb',
+                inputValue: '6'
+            }]
+        }]
+    });
+});
+</pre>
+    </div>
+    
+</body>
+</html>

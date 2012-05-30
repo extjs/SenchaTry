@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Ext.grid.plugin.CellEditing Example</title>
+    <meta Name="description" content="Ext.grid.plugin.CellEditing Example" />
+    <meta name="keywords" content="Sencha, Ext JS, Ext JS 4.1.0, Ext.grid.plugin.CellEditing" />
+    <link href="/assets/application.css" media="screen" rel="stylesheet" type="text/css" />
+    <style>
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    
+    <div>
+        <header>
+            <h1>Sencha Try</h1>
+        </header>
+        
+        <section id="readme">
+            <h1>Ext.grid.plugin.CellEditing Example</h1>
+            <strong>Tags:</strong> <a href="/search/Ext JS">Ext JS</a> <a href="/search/Ext JS 4.1.0">Ext JS 4.1.0</a> <a href="/search/Ext.grid.plugin.CellEditing">Ext.grid.plugin.CellEditing</a> <br/>
+        </section>
+        <section id="example">
+            [example]
+        </section>
+        
+        <footer>
+            &copy; 2012 Sencha Inc.
+        </footer>
+    </div>
+    
+    <div class="hidden">
+        <!-- extjs/4.1.0/docs/Ext.grid.plugin.CellEditing.1/app.js -->
+        <pre>/*global Ext:false */
+Ext.onReady(function() {
+    Ext.create('Ext.data.Store', {
+        storeId: 'simpsonsStore',
+        fields: ['name', 'email', 'phone'],
+        data: {
+            'items': [{
+                "name": "Lisa",
+                "email": "lisa@simpsons.com",
+                "phone": "555-111-1224"
+            }, {
+                "name": "Bart",
+                "email": "bart@simpsons.com",
+                "phone": "555-222-1234"
+            }, {
+                "name": "Homer",
+                "email": "home@simpsons.com",
+                "phone": "555-222-1244"
+            }, {
+                "name": "Marge",
+                "email": "marge@simpsons.com",
+                "phone": "555-222-1254"
+            }]
+        },
+        proxy: {
+            type: 'memory',
+            reader: {
+                type: 'json',
+                root: 'items'
+            }
+        }
+    });
+
+    Ext.create('Ext.grid.Panel', {
+        title: 'Simpsons',
+        store: Ext.data.StoreManager.lookup('simpsonsStore'),
+        columns: [{
+            header: 'Name',
+            dataIndex: 'name',
+            editor: 'textfield'
+        }, {
+            header: 'Email',
+            dataIndex: 'email',
+            flex: 1,
+            editor: {
+                xtype: 'textfield',
+                allowBlank: false
+            }
+        }, {
+            header: 'Phone',
+            dataIndex: 'phone'
+        }],
+        selType: 'cellmodel',
+        plugins: [
+        Ext.create('Ext.grid.plugin.CellEditing', {
+            clicksToEdit: 1
+        })],
+        height: 200,
+        width: 400,
+        renderTo: Ext.getBody()
+    });
+});
+</pre>
+    </div>
+    
+</body>
+</html>

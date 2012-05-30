@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Ext.field.Password Example</title>
+    <meta Name="description" content="Ext.field.Password Example" />
+    <meta name="keywords" content="Sencha, Sencha Touch, Sencha Touch 2.0.1, Ext.field.Password" />
+    <link href="/assets/application.css" media="screen" rel="stylesheet" type="text/css" />
+    <style>
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    
+    <div>
+        <header>
+            <h1>Sencha Try</h1>
+        </header>
+        
+        <section id="readme">
+            <h1>Ext.field.Password Example</h1>
+            <strong>Tags:</strong> <a href="/search/Sencha Touch">Sencha Touch</a> <a href="/search/Sencha Touch 2.0.1">Sencha Touch 2.0.1</a> <a href="/search/Ext.field.Password">Ext.field.Password</a> <br/>
+        </section>
+        <section id="example">
+            [example]
+        </section>
+        
+        <footer>
+            &copy; 2012 Sencha Inc.
+        </footer>
+    </div>
+    
+    <div class="hidden">
+        <!-- touch/2.0.1/docs/Ext.field.Password.1/app.js -->
+        <pre>/*global Ext:false */
+Ext.application({
+    launch: function() {
+        Ext.create('Ext.form.Panel', {
+            fullscreen: true,
+            items: [{
+                xtype: 'fieldset',
+                title: 'Register',
+                items: [{
+                    xtype: 'emailfield',
+                    label: 'Email',
+                    name: 'email'
+                }, {
+                    xtype: 'passwordfield',
+                    label: 'Password',
+                    name: 'password'
+                }]
+            }]
+        });
+    }
+});
+</pre>
+    </div>
+    
+</body>
+</html>

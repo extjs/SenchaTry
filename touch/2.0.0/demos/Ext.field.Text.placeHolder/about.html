@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Setting the place holder text on an Ext.field.Text control in Sencha Touch 2</title>
+    <meta Name="description" content="Setting the place holder text on an Ext.field.Text control in Sencha Touch 2" />
+    <meta name="keywords" content="Sencha, Sencha Touch, Sencha Touch 2.0.0" />
+    <link href="/assets/application.css" media="screen" rel="stylesheet" type="text/css" />
+    <style>
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    
+    <div>
+        <header>
+            <h1>Sencha Try</h1>
+        </header>
+        
+        <section id="readme">
+            <h1>Setting the place holder text on an Ext.field.Text control in Sencha Touch 2</h1>
+
+<p>The following example shows how you can set the place holder text (the text that appears when the field is empty) on an Ext.field.Text control in Sencha Touch 2 by setting the <code>placeHolder</code> config option, or by calling the <code>setPlaceHolder()</code> method.</p>
+            <strong>Tags:</strong> <a href="/search/Sencha Touch">Sencha Touch</a> <a href="/search/Sencha Touch 2.0.0">Sencha Touch 2.0.0</a> <br/>
+        </section>
+        <section id="example">
+            [example]
+        </section>
+        
+        <footer>
+            &copy; 2012 Sencha Inc.
+        </footer>
+    </div>
+    
+    <div class="hidden">
+        <!-- touch/2.0.0/demos/Ext.field.Text.placeHolder/app.js -->
+        <pre>/*global Ext:false */
+Ext.application({
+    launch: function () {
+        Ext.create('Ext.form.FormPanel', {
+            fullscreen: true,
+            items: [{
+                xtype: 'fieldset',
+                items: [{
+                    xtype: 'textfield',
+                    name: 'pHolder',
+                    label: 'Set placeHolder:',
+                    placeHolder: '*** Type here ***',
+                    listeners: {
+                        keyup: function (txt, evt) {
+                            Ext.getCmp('tf').setPlaceHolder(txt.getValue());
+                        } // keyup
+                    } // listeners
+                }, {
+                    xtype: 'textfield',
+                    id: 'tf',
+                    name: 'demo',
+                    label: 'placeHolder demo:',
+                    placeHolder: 'Updated placeHolder text appears here'
+                }] // items
+            }] // items
+        }); // create()
+    } // launch
+}); // application()
+</pre>
+    </div>
+    
+</body>
+</html>

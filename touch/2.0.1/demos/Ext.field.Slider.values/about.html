@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Adding multiple thumbs to an Ext.field.Slider control in Sencha Touch 2</title>
+    <meta Name="description" content="Adding multiple thumbs to an Ext.field.Slider control in Sencha Touch 2" />
+    <meta name="keywords" content="Sencha, Sencha Touch, Sencha Touch 2.0.1" />
+    <link href="/assets/application.css" media="screen" rel="stylesheet" type="text/css" />
+    <style>
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    
+    <div>
+        <header>
+            <h1>Sencha Try</h1>
+        </header>
+        
+        <section id="readme">
+            <h1>Adding multiple thumbs to an Ext.field.Slider control in Sencha Touch 2</h1>
+
+<p>The following example shows how you can add multiple thumbs to an Ext.field.Slider control in Sencha Touch 2 by setting the <code>values</code> config to an array of values.</p>
+            <strong>Tags:</strong> <a href="/search/Sencha Touch">Sencha Touch</a> <a href="/search/Sencha Touch 2.0.1">Sencha Touch 2.0.1</a> <br/>
+        </section>
+        <section id="example">
+            [example]
+        </section>
+        
+        <footer>
+            &copy; 2012 Sencha Inc.
+        </footer>
+    </div>
+    
+    <div class="hidden">
+        <!-- touch/2.0.1/demos/Ext.field.Slider.values/app.js -->
+        <pre>/*global Ext:false */
+Ext.application({
+    launch: function () {
+        var debugValue,
+            debugValues;
+        
+        Ext.create('Ext.form.Panel', {
+            fullscreen: true,
+            items: [{
+                xtype: 'fieldset',
+                items: [{
+                    xtype: 'sliderfield',
+                    id: 'sl',
+                    label: 'slider:',
+                    minValue: 0,
+                    maxValue: 200,
+                    values: [40,140],
+                    listeners: {
+                        painted: function (sl) {
+                            debugValue = Ext.getCmp('debugValue');
+                            debugValues = Ext.getCmp('debugValues');
+                            
+                            debugValue.setValue(sl.getValue());
+                            debugValues.setValue(Ext.JSON.encode(sl.getValues()));
+                        }, // painted
+                        change: function (slider, thumb, newVal, oldVal) {
+                            debugValue.setValue(newVal);
+                            debugValues.setValue(Ext.JSON.encode(slider.getValues()));
+                        } // change
+                    } // listeners
+                }, {
+                    xtype: 'textfield',
+                    id: 'debugValue',
+                    label: 'value:',
+                    readOnly: true
+                }, {
+                    xtype: 'textfield',
+                    id: 'debugValues',
+                    label: 'values:',
+                    readOnly: true
+                }] // items (fieldset)
+            }] // items (panel)
+        }); // create()
+    } // launch
+}); // application()
+</pre>
+    </div>
+    
+</body>
+</html>

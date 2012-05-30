@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Displaying an icon in a dialog box using Ext JS</title>
+    <meta Name="description" content="Displaying an icon in a dialog box using Ext JS" />
+    <meta name="keywords" content="Sencha, Ext JS, Ext JS 4.0.7, Ext.MessageBox, Ext.Msg, show(), icon" />
+    <link href="/assets/application.css" media="screen" rel="stylesheet" type="text/css" />
+    <style>
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    
+    <div>
+        <header>
+            <h1>Sencha Try</h1>
+        </header>
+        
+        <section id="readme">
+            <h1>Displaying an icon in a dialog box using Ext JS</h1>
+
+<p>The following example shows how you can specify an icon in an Ext.Msg dialog box using the static <code>Ext.Msg.show()</code> method and specifying the Boolean <code>icon</code> config option.</p>
+            <strong>Tags:</strong> <a href="/search/Ext JS">Ext JS</a> <a href="/search/Ext JS 4.0.7">Ext JS 4.0.7</a> <a href="/search/Ext.MessageBox">Ext.MessageBox</a> <a href="/search/Ext.Msg">Ext.Msg</a> <a href="/search/show()">show()</a> <a href="/search/icon">icon</a> <br/>
+        </section>
+        <section id="example">
+            [example]
+        </section>
+        
+        <footer>
+            &copy; 2012 Sencha Inc.
+        </footer>
+    </div>
+    
+    <div class="hidden">
+        <!-- extjs/4.0.7/demos/Ext.Msg.show.icon.2/app.js -->
+        <pre>/*global Ext:false */
+Ext.onReady(function () {
+    Ext.create('Ext.Button', {
+        id: 'btn',
+        text: 'Click to launch dialog',
+        handler: function () {
+            Ext.Msg.show({
+                title: 'Status title',
+                msg: 'I\'m an Ext.Msg dialog with a custom icon.',
+                icon: 'customIcon'
+            });
+        },
+        renderTo: Ext.getBody()
+    });
+});
+</pre>
+    </div>
+    
+</body>
+</html>

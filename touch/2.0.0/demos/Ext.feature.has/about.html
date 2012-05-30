@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Determining if the user's browser supports a certain feature using Sencha Touch 2</title>
+    <meta Name="description" content="Determining if the user's browser supports a certain feature using Sencha Touch 2" />
+    <meta name="keywords" content="Sencha, Sencha Touch, Sencha Touch 2.0.0" />
+    <link href="/assets/application.css" media="screen" rel="stylesheet" type="text/css" />
+    <style>
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    
+    <div>
+        <header>
+            <h1>Sencha Try</h1>
+        </header>
+        
+        <section id="readme">
+            <h1>Determining if the user's browser supports a certain feature using Sencha Touch 2</h1>
+
+<p>The following example shows how you can verify if a browser feature exists on the current device by using the properties in the <code>Ext.feature.has</code> class.</p>
+            <strong>Tags:</strong> <a href="/search/Sencha Touch">Sencha Touch</a> <a href="/search/Sencha Touch 2.0.0">Sencha Touch 2.0.0</a> <br/>
+        </section>
+        <section id="example">
+            [example]
+        </section>
+        
+        <footer>
+            &copy; 2012 Sencha Inc.
+        </footer>
+    </div>
+    
+    <div class="hidden">
+        <!-- touch/2.0.0/demos/Ext.feature.has/app.js -->
+        <pre>/*global Ext:false */
+Ext.application({
+    launch: function () {
+        Ext.define('Feature', {
+            extend: 'Ext.data.Model'
+        }); // define()
+        
+        var store = Ext.create('Ext.data.Store', {
+            model: 'Feature',
+            sorters: 'feature',
+            fields: ['feature', 'value'],
+            data: [{
+                feature: 'Audio',
+                value: Ext.feature.has.Audio
+            }, {
+                feature: 'Canvas',
+                value: Ext.feature.has.Canvas
+            }, {
+                feature: 'ClassList',
+                value: Ext.feature.has.ClassList
+            }, {
+                feature: 'CreateContextualFragment',
+                value: Ext.feature.has.CreateContextualFragment
+            }, {
+                feature: 'Css3dTransforms',
+                value: Ext.feature.has.Css3dTransforms
+            }, {
+                feature: 'CssAnimations',
+                value: Ext.feature.has.CssAnimations
+            }, {
+                feature: 'CssTransforms',
+                value: Ext.feature.has.CssTransforms
+            }, {
+                feature: 'CssTransitions',
+                value: Ext.feature.has.CssTransitions
+            }, {
+                feature: 'DeviceMotion',
+                value: Ext.feature.has.DeviceMotion
+            }, {
+                feature: 'Geolocation',
+                value: Ext.feature.has.Geolocation
+            }, {
+                feature: 'History',
+                value: Ext.feature.has.History
+            }, {
+                feature: 'Orientation',
+                value: Ext.feature.has.Orientation
+            }, {
+                feature: 'OrientationChange',
+                value: Ext.feature.has.OrientationChange
+            }, {
+                feature: 'Range',
+                value: Ext.feature.has.Range
+            }, {
+                feature: 'SqlDatabase',
+                value: Ext.feature.has.SqlDatabase
+            }, {
+                feature: 'Svg',
+                value: Ext.feature.has.Svg
+            }, {
+                feature: 'Touch',
+                value: Ext.feature.has.Touch
+            }, {
+                feature: 'Video',
+                value: Ext.feature.has.Video
+            }, {
+                feature: 'Vml',
+                value: Ext.feature.has.Vml
+            }, {
+                feature: 'WebSockets',
+                value: Ext.feature.has.WebSockets
+            }] // data
+        }); // create()
+        
+        Ext.create('Ext.List', {
+            fullscreen: true,
+            itemTpl: '{feature}: <code>{value}</code>',
+            store: store
+        }); // create()
+    } // launch
+}); // application()
+</pre>
+    </div>
+    
+</body>
+</html>

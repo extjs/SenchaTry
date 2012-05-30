@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Ext.toolbar.Paging Example</title>
+    <meta Name="description" content="Ext.toolbar.Paging Example" />
+    <meta name="keywords" content="Sencha, Ext JS, Ext JS 4.0.7, Ext.toolbar.Paging, Ext.PagingToolbar, pagingtoolbar, dock, displayInfo, toolbar" />
+    <link href="/assets/application.css" media="screen" rel="stylesheet" type="text/css" />
+    <style>
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    
+    <div>
+        <header>
+            <h1>Sencha Try</h1>
+        </header>
+        
+        <section id="readme">
+            <h1>Ext.toolbar.Paging Example</h1>
+            <strong>Tags:</strong> <a href="/search/Ext JS">Ext JS</a> <a href="/search/Ext JS 4.0.7">Ext JS 4.0.7</a> <a href="/search/Ext.toolbar.Paging">Ext.toolbar.Paging</a> <a href="/search/Ext.PagingToolbar">Ext.PagingToolbar</a> <a href="/search/pagingtoolbar">pagingtoolbar</a> <a href="/search/dock">dock</a> <a href="/search/displayInfo">displayInfo</a> <a href="/search/toolbar">toolbar</a> <br/>
+        </section>
+        <section id="example">
+            [example]
+        </section>
+        
+        <footer>
+            &copy; 2012 Sencha Inc.
+        </footer>
+    </div>
+    
+    <div class="hidden">
+        <!-- extjs/4.0.7/docs/Ext.toolbar.Paging.1/app.js -->
+        <pre>/*global Ext:false */
+Ext.onReady(function () {
+    var itemsPerPage = 2; // set the number of items you want per page
+    var store = Ext.create('Ext.data.Store', {
+        id: 'simpsonsStore',
+        autoLoad: false,
+        fields: ['name', 'email', 'phone'],
+        pageSize: itemsPerPage,
+        // items per page
+        proxy: {
+            type: 'ajax',
+            url: 'pagingstore.js', // url that will load data with respect to start and limit params
+            reader: {
+                type: 'json',
+                root: 'items',
+                totalProperty: 'total'
+            }
+        }
+    });
+
+    // specify segment of data you want to load using params
+    store.load({
+        params: {
+            start: 0,
+            limit: itemsPerPage
+        }
+    });
+
+    Ext.create('Ext.grid.Panel', {
+        title: 'Simpsons',
+        store: store,
+        columns: [{
+            header: 'Name',
+            dataIndex: 'name'
+        }, {
+            header: 'Email',
+            dataIndex: 'email',
+            flex: 1
+        }, {
+            header: 'Phone',
+            dataIndex: 'phone'
+        }],
+        width: 400,
+        height: 125,
+        dockedItems: [{
+            xtype: 'pagingtoolbar',
+            store: store, // same store GridPanel is using
+            dock: 'bottom',
+            displayInfo: true
+        }],
+        renderTo: Ext.getBody()
+    });
+});
+</pre>
+    </div>
+    
+</body>
+</html>

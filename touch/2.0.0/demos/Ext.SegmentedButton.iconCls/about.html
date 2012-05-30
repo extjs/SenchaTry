@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Adding icons to an Ext.SegmentedButton component in Sencha Touch 2</title>
+    <meta Name="description" content="Adding icons to an Ext.SegmentedButton component in Sencha Touch 2" />
+    <meta name="keywords" content="Sencha, Sencha Touch, Sencha Touch 2.0.0" />
+    <link href="/assets/application.css" media="screen" rel="stylesheet" type="text/css" />
+    <style>
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    
+    <div>
+        <header>
+            <h1>Sencha Try</h1>
+        </header>
+        
+        <section id="readme">
+            <h1>Adding icons to an Ext.SegmentedButton component in Sencha Touch 2</h1>
+
+<p>The following example shows how you can add icons to an Ext.SegmentedButton component in Sencha Touch 2 by setting the <code>iconCls</code> and <code>iconMask</code> config objects.</p>
+            <strong>Tags:</strong> <a href="/search/Sencha Touch">Sencha Touch</a> <a href="/search/Sencha Touch 2.0.0">Sencha Touch 2.0.0</a> <br/>
+        </section>
+        <section id="example">
+            [example]
+        </section>
+        
+        <footer>
+            &copy; 2012 Sencha Inc.
+        </footer>
+    </div>
+    
+    <div class="hidden">
+        <!-- touch/2.0.0/demos/Ext.SegmentedButton.iconCls/app.js -->
+        <pre>/*global Ext:false */
+Ext.application({
+    launch: function () {
+        Ext.create('Ext.Panel', {
+            fullscreen: true,
+            styleHtmlContent: true,
+            items: [{
+                xtype: 'segmentedbutton',
+                items: [{
+                    iconCls: 'home',
+                    iconMask: true
+                }, {
+                    iconCls: 'settings',
+                    iconMask: true,
+                    text: 'Settings'
+                }, {
+                    iconCls: 'maps',
+                    iconMask: true,
+                    text: 'Maps'
+                }] // items
+            }] // items
+        }); // create()
+    } // launch
+}); // application()
+</pre>
+    </div>
+    
+</body>
+</html>

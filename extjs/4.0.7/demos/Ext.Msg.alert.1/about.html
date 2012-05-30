@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Displaying a simple alert message using the Ext.Msg class</title>
+    <meta Name="description" content="Displaying a simple alert message using the Ext.Msg class" />
+    <meta name="keywords" content="Sencha, Ext JS, Ext JS 4.0.7, Ext.MessageBox, Ext.Msg, alert()" />
+    <link href="/assets/application.css" media="screen" rel="stylesheet" type="text/css" />
+    <style>
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    
+    <div>
+        <header>
+            <h1>Sencha Try</h1>
+        </header>
+        
+        <section id="readme">
+            <h1>Displaying a simple alert message using the Ext.Msg class</h1>
+
+<p>The following example shows how you can create a simple modal alert message using the static <code>Ext.Msg.alert()</code> method.</p>
+            <strong>Tags:</strong> <a href="/search/Ext JS">Ext JS</a> <a href="/search/Ext JS 4.0.7">Ext JS 4.0.7</a> <a href="/search/Ext.MessageBox">Ext.MessageBox</a> <a href="/search/Ext.Msg">Ext.Msg</a> <a href="/search/alert()">alert()</a> <br/>
+        </section>
+        <section id="example">
+            [example]
+        </section>
+        
+        <footer>
+            &copy; 2012 Sencha Inc.
+        </footer>
+    </div>
+    
+    <div class="hidden">
+        <!-- extjs/4.0.7/demos/Ext.Msg.alert.1/app.js -->
+        <pre>/*global Ext:false */
+Ext.onReady(function () {
+    var numClicks = 0;
+    Ext.create('Ext.Button', {
+        text: 'Click to relaunch alert',
+        handler: function () {
+            Ext.Msg.alert('Status title', 'Alert was relaunched ' + (++numClicks) + " times.");
+        },
+        renderTo: Ext.getBody()
+    }); // create()
+    Ext.Msg.alert('Status title', 'I am an Ext.Msg.alert()');
+}); // onReady()
+</pre>
+    </div>
+    
+</body>
+</html>

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Creating a simple XTemplate list in Sencha Touch 2</title>
+    <meta Name="description" content="Creating a simple XTemplate list in Sencha Touch 2" />
+    <meta name="keywords" content="Sencha, Sencha Touch, Sencha Touch 2.0.0" />
+    <link href="/assets/application.css" media="screen" rel="stylesheet" type="text/css" />
+    <style>
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    
+    <div>
+        <header>
+            <h1>Sencha Try</h1>
+        </header>
+        
+        <section id="readme">
+            <h1>Creating a simple XTemplate list in Sencha Touch 2</h1>
+
+<p>The following example shows how you can create a simple list in an Ext.Container container in Sencha Touch 2 by specifying the <code>tpl</code> config object.</p>
+            <strong>Tags:</strong> <a href="/search/Sencha Touch">Sencha Touch</a> <a href="/search/Sencha Touch 2.0.0">Sencha Touch 2.0.0</a> <br/>
+        </section>
+        <section id="example">
+            [example]
+        </section>
+        
+        <footer>
+            &copy; 2012 Sencha Inc.
+        </footer>
+    </div>
+    
+    <div class="hidden">
+        <!-- touch/2.0.0/demos/Ext.Container.tpl/app.js -->
+        <pre>/*global Ext:false */
+Ext.application({
+    launch: function () {
+        Ext.create('Ext.Container', {
+            fullscreen: true,
+            styleHtmlContent: true,
+            data: [{
+                fname: 'Stratton',
+                lname: 'Sclavos',
+                role: 'Executive Chairman'
+            }, {
+                fname: 'Michael',
+                lname: 'Mullany',
+                role: 'CEO'
+            }, {
+                fname: 'Ted',
+                lname: 'Driscoll',
+                role: 'Vice President Worldwide Sales'
+            }, {
+                fname: 'Abraham',
+                lname: 'Elias',
+                role: 'Chief Technical Officer'
+            }, {
+                fname: 'Jeff',
+                lname: 'Hartley',
+                role: 'Vice President of Services and Training'
+            }, {
+                fname: 'Adam',
+                lname: 'Mishcon',
+                role: 'Vice President of Operations'
+            }, {
+                fname: 'Judy',
+                lname: 'Lin',
+                role: 'Vice President of Engineering'
+            }], // data
+            tpl: '<tpl for="."><div><strong>{lname}</strong>, {fname} <em class="muted">({role})</em></div></tpl>'
+        }); // create()
+    } // launch
+}); // application()
+</pre>
+    </div>
+    
+</body>
+</html>

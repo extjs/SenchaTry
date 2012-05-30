@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Populating an Ext.form.Panel container from a model using Sencha Touch 2</title>
+    <meta Name="description" content="Populating an Ext.form.Panel container from a model using Sencha Touch 2" />
+    <meta name="keywords" content="Sencha, Sencha Touch, Sencha Touch 2.0.0" />
+    <link href="/assets/application.css" media="screen" rel="stylesheet" type="text/css" />
+    <style>
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    
+    <div>
+        <header>
+            <h1>Sencha Try</h1>
+        </header>
+        
+        <section id="readme">
+            <h1>Populating an Ext.form.Panel container from a model using Sencha Touch 2</h1>
+
+<p>The following example shows how you can populate the field in an Ext.form.Panel (formpanel) container in Sencha Touch 2 by calling the <code>setRecord()</code> method and passing an Ext.data.Model instance.</p>
+            <strong>Tags:</strong> <a href="/search/Sencha Touch">Sencha Touch</a> <a href="/search/Sencha Touch 2.0.0">Sencha Touch 2.0.0</a> <br/>
+        </section>
+        <section id="example">
+            [example]
+        </section>
+        
+        <footer>
+            &copy; 2012 Sencha Inc.
+        </footer>
+    </div>
+    
+    <div class="hidden">
+        <!-- touch/2.0.0/demos/Ext.form.Panel.setRecord/app.js -->
+        <pre>/*global Ext:false */
+Ext.application({
+    launch: function () {
+        Ext.define('TeamModel', {
+            extend: 'Ext.data.Model',
+            config: {
+                fields: ['teamName', 'division', 'league']
+            } // config
+        }); // define()
+        
+        var form = Ext.create('Ext.form.Panel', {
+            fullscreen: true,
+            items: [{
+                xtype: 'toolbar',
+                docked: 'top',
+                items: [{
+                    text: 'setRecord(Giants)',
+                    handler: function () {
+                        var team = Ext.create('TeamModel', {
+                            teamName: 'San Francisco Giants',
+                            league: 'NL',
+                            division: 'West'
+                        }); // create()
+                        form.setRecord(team);
+                    } // handler
+                }, {
+                    text: 'setRecord(Tigers)',
+                    handler: function () {
+                        var team = Ext.create('TeamModel', {
+                            teamName: 'Detroit Tigers',
+                            league: 'AL',
+                            division: 'Central'
+                        }); // create()
+                        form.setRecord(team);
+                    } // handler
+                }] // items (toolbar)
+            }, {
+                xtype: 'fieldset',
+                items: [{
+                    xtype: 'textfield',
+                    name: 'teamName',
+                    label: 'Team Name:'
+                }, {
+                    xtype: 'selectfield',
+                    name: 'division',
+                    label: 'Division:',
+                    options: [{
+                        text: 'East',
+                        value: 'East'
+                    }, {
+                        text: 'Central',
+                        value: 'Central'
+                    }, {
+                        text: 'West',
+                        value: 'West'
+                    }] // options
+                }, {
+                    xtype: 'selectfield',
+                    name: 'league',
+                    label: 'League:',
+                    options: [{
+                        text: 'AL',
+                        value: 'AL'
+                    }, {
+                        text: 'NL',
+                        value: 'NL'
+                    }] // options
+                }] // items (fieldset)
+            }] // items (panel)
+        }); // create()
+    } // launch
+}); // application()
+</pre>
+    </div>
+    
+</body>
+</html>

@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Determining the user's platform using Ext JS</title>
+    <meta Name="description" content="Determining the user's platform using Ext JS" />
+    <meta name="keywords" content="Sencha, Ext JS, Ext JS 4.1.0" />
+    <link href="/assets/application.css" media="screen" rel="stylesheet" type="text/css" />
+    <style>
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    
+    <div>
+        <header>
+            <h1>Sencha Try</h1>
+        </header>
+        
+        <section id="readme">
+            <h1>Determining the user's platform using Ext JS</h1>
+
+<p>The following example shows how you can determine the current platform the application is running on using the static properties in the <code>Ext.is</code> class.</p>
+            <strong>Tags:</strong> <a href="/search/Ext JS">Ext JS</a> <a href="/search/Ext JS 4.1.0">Ext JS 4.1.0</a> <br/>
+        </section>
+        <section id="example">
+            [example]
+        </section>
+        
+        <footer>
+            &copy; 2012 Sencha Inc.
+        </footer>
+    </div>
+    
+    <div class="hidden">
+        <!-- extjs/4.1.0/demos/Ext.is.1/app.js -->
+        <pre>/*global Ext:false */
+Ext.onReady(function () {
+    var platformStore = Ext.create('Ext.data.Store', {
+        fields: ['name', 'value'],
+        data: {
+            items: [{
+                name: 'Ext.is.Android:',
+                value: Ext.is.Android
+            }, {
+                name: 'Ext.is.Blackberry:',
+                value: Ext.is.Blackberry
+            }, {
+                name: 'Ext.is.Desktop:',
+                value: Ext.is.Desktop
+            }, {
+                name: 'Ext.is.Linux:',
+                value: Ext.is.Linux
+            }, {
+                name: 'Ext.is.Mac:',
+                value: Ext.is.Mac
+            }, {
+                name: 'Ext.is.Phone:',
+                value: Ext.is.Phone
+            }, {
+                name: 'Ext.is.Standalone:',
+                value: Ext.is.Standalone
+            }, {
+                name: 'Ext.is.Tablet:',
+                value: Ext.is.Tablet
+            }, {
+                name: 'Ext.is.Windows:',
+                value: Ext.is.Windows
+            }, {
+                name: 'Ext.is.iOS:',
+                value: Ext.is.iOS
+            }, {
+                name: 'Ext.is.iPad:',
+                value: Ext.is.iPad
+            }, {
+                name: 'Ext.is.iPhone:',
+                value: Ext.is.iPhone
+            }, {
+                name: 'Ext.is.iPod:',
+                value: Ext.is.iPod
+            }]
+        },
+        proxy: {
+            type: 'memory',
+            reader: {
+                type: 'json',
+                root: 'items'
+            }
+        }
+    });
+    
+    Ext.create('Ext.grid.Panel', {
+        title: 'Ext.is example',
+        store: platformStore,
+        columns: [{
+            header: 'Name',
+            dataIndex: 'name'
+        }, {
+            header: 'Value',
+            dataIndex: 'value',
+            flex: 1
+        }],
+        height: 200,
+        width: 400,
+        renderTo: Ext.getBody()
+    });
+});
+</pre>
+    </div>
+    
+</body>
+</html>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Ext.form.field.Trigger Example</title>
+    <meta Name="description" content="Ext.form.field.Trigger Example" />
+    <meta name="keywords" content="Sencha, Ext JS, Ext JS 4.1.0, Ext.form.field.Trigger" />
+    <link href="/assets/application.css" media="screen" rel="stylesheet" type="text/css" />
+    <style>
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    
+    <div>
+        <header>
+            <h1>Sencha Try</h1>
+        </header>
+        
+        <section id="readme">
+            <h1>Ext.form.field.Trigger Example</h1>
+            <strong>Tags:</strong> <a href="/search/Ext JS">Ext JS</a> <a href="/search/Ext JS 4.1.0">Ext JS 4.1.0</a> <a href="/search/Ext.form.field.Trigger">Ext.form.field.Trigger</a> <br/>
+        </section>
+        <section id="example">
+            [example]
+        </section>
+        
+        <footer>
+            &copy; 2012 Sencha Inc.
+        </footer>
+    </div>
+    
+    <div class="hidden">
+        <!-- extjs/4.1.0/docs/Ext.form.field.Trigger.1/app.js -->
+        <pre>/*global Ext:false */
+Ext.onReady(function() {
+    Ext.define('Ext.ux.CustomTrigger', {
+        extend: 'Ext.form.field.Trigger',
+        alias: 'widget.customtrigger',
+
+        // override onTriggerClick
+        onTriggerClick: function() {
+            Ext.Msg.alert('Status', 'You clicked my trigger!');
+        }
+    });
+
+    Ext.create('Ext.form.FormPanel', {
+        title: 'Form with TriggerField',
+        bodyPadding: 5,
+        width: 350,
+        renderTo: Ext.getBody(),
+        items: [{
+            xtype: 'customtrigger',
+            fieldLabel: 'Sample Trigger',
+            emptyText: 'click the trigger'
+        }]
+    });
+});
+</pre>
+    </div>
+    
+</body>
+</html>

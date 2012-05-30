@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Ext.menu.CheckItem Example</title>
+    <meta Name="description" content="Ext.menu.CheckItem Example" />
+    <meta name="keywords" content="Sencha, Ext JS, Ext JS 4.0.7, Ext.menu.CheckItem, menucheckitem, menu" />
+    <link href="/assets/application.css" media="screen" rel="stylesheet" type="text/css" />
+    <style>
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    
+    <div>
+        <header>
+            <h1>Sencha Try</h1>
+        </header>
+        
+        <section id="readme">
+            <h1>Ext.menu.CheckItem Example</h1>
+            <strong>Tags:</strong> <a href="/search/Ext JS">Ext JS</a> <a href="/search/Ext JS 4.0.7">Ext JS 4.0.7</a> <a href="/search/Ext.menu.CheckItem">Ext.menu.CheckItem</a> <a href="/search/menucheckitem">menucheckitem</a> <a href="/search/menu">menu</a> <br/>
+        </section>
+        <section id="example">
+            [example]
+        </section>
+        
+        <footer>
+            &copy; 2012 Sencha Inc.
+        </footer>
+    </div>
+    
+    <div class="hidden">
+        <!-- extjs/4.0.7/docs/Ext.menu.CheckItem.1/app.js -->
+        <pre>/*global Ext:false */
+Ext.onReady(function () {
+    Ext.create('Ext.menu.Menu', {
+        width: 100,
+        height: 110,
+        floating: false, // usually you want this set to True (default)
+        renderTo: Ext.getBody(), // usually rendered by it's containing component
+        items: [{
+            xtype: 'menucheckitem',
+            text: 'select all'
+        }, {
+            xtype: 'menucheckitem',
+            text: 'select specific'
+        }, {
+            iconCls: 'add16',
+            text: 'icon item'
+        }, {
+            text: 'regular item'
+        }]
+    });
+});
+</pre>
+    </div>
+    
+</body>
+</html>

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Ext.layout.container.Column Example</title>
+    <meta Name="description" content="Ext.layout.container.Column Example" />
+    <meta name="keywords" content="Sencha, Ext JS, Ext JS 4.0.7, Ext.layout.container.Column, Ext.layout.ContainerLayout, layout, container" />
+    <link href="/assets/application.css" media="screen" rel="stylesheet" type="text/css" />
+    <style>
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    
+    <div>
+        <header>
+            <h1>Sencha Try</h1>
+        </header>
+        
+        <section id="readme">
+            <h1>Ext.layout.container.Column Example</h1>
+            <strong>Tags:</strong> <a href="/search/Ext JS">Ext JS</a> <a href="/search/Ext JS 4.0.7">Ext JS 4.0.7</a> <a href="/search/Ext.layout.container.Column">Ext.layout.container.Column</a> <a href="/search/Ext.layout.ContainerLayout">Ext.layout.ContainerLayout</a> <a href="/search/layout">layout</a> <a href="/search/container">container</a> <br/>
+        </section>
+        <section id="example">
+            [example]
+        </section>
+        
+        <footer>
+            &copy; 2012 Sencha Inc.
+        </footer>
+    </div>
+    
+    <div class="hidden">
+        <!-- extjs/4.0.7/docs/Ext.layout.container.Column.1/app.js -->
+        <pre>/*global Ext:false */
+Ext.onReady(function () {
+    // All columns are percentages -- they must add up to 1
+    Ext.create('Ext.panel.Panel', {
+        title: 'Column Layout - Percentage Only',
+        width: 350,
+        height: 250,
+        layout: 'column',
+        items: [{
+            title: 'Column 1',
+            columnWidth: 0.25
+        }, {
+            title: 'Column 2',
+            columnWidth: 0.55
+        }, {
+            title: 'Column 3',
+            columnWidth: 0.20
+        }],
+        renderTo: Ext.getBody()
+    });
+
+    // Mix of width and columnWidth -- all columnWidth values must add up
+    // to 1. The first column will take up exactly 120px, and the last two
+    // columns will fill the remaining container width.
+    Ext.create('Ext.Panel', {
+        title: 'Column Layout - Mixed',
+        width: 350,
+        height: 250,
+        layout: 'column',
+        items: [{
+            title: 'Column 1',
+            width: 120
+        }, {
+            title: 'Column 2',
+            columnWidth: 0.7
+        }, {
+            title: 'Column 3',
+            columnWidth: 0.3
+        }],
+        renderTo: Ext.getBody()
+    });
+});
+</pre>
+    </div>
+    
+</body>
+</html>

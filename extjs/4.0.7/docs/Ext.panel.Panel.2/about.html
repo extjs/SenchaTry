@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Ext.panel.Panel Example</title>
+    <meta Name="description" content="Ext.panel.Panel Example" />
+    <meta name="keywords" content="Sencha, Ext JS, Ext JS 4.0.7, Ext.panel.Panel, Ext.Panel, panel" />
+    <link href="/assets/application.css" media="screen" rel="stylesheet" type="text/css" />
+    <style>
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    
+    <div>
+        <header>
+            <h1>Sencha Try</h1>
+        </header>
+        
+        <section id="readme">
+            <h1>Ext.panel.Panel Example</h1>
+            <strong>Tags:</strong> <a href="/search/Ext JS">Ext JS</a> <a href="/search/Ext JS 4.0.7">Ext JS 4.0.7</a> <a href="/search/Ext.panel.Panel">Ext.panel.Panel</a> <a href="/search/Ext.Panel">Ext.Panel</a> <a href="/search/panel">panel</a> <br/>
+        </section>
+        <section id="example">
+            [example]
+        </section>
+        
+        <footer>
+            &copy; 2012 Sencha Inc.
+        </footer>
+    </div>
+    
+    <div class="hidden">
+        <!-- extjs/4.0.7/docs/Ext.panel.Panel.2/app.js -->
+        <pre>/*global Ext:false */
+Ext.onReady(function () {
+    var filterPanel = Ext.create('Ext.panel.Panel', {
+        bodyPadding: 5,
+        // Don't want content to crunch against the borders
+        width: 300,
+        title: 'Filters',
+        items: [{
+            xtype: 'datefield',
+            fieldLabel: 'Start date'
+        }, {
+            xtype: 'datefield',
+            fieldLabel: 'End date'
+        }],
+        renderTo: Ext.getBody()
+    });
+});
+</pre>
+    </div>
+    
+</body>
+</html>

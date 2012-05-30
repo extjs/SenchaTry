@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Specifying which side of the viewport an Ext.ActionSheet container animates from in Sencha Touch 2</title>
+    <meta Name="description" content="Specifying which side of the viewport an Ext.ActionSheet container animates from in Sencha Touch 2" />
+    <meta name="keywords" content="Sencha, Sencha Touch, Sencha Touch 2.0.1" />
+    <link href="/assets/application.css" media="screen" rel="stylesheet" type="text/css" />
+    <style>
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    
+    <div>
+        <header>
+            <h1>Sencha Try</h1>
+        </header>
+        
+        <section id="readme">
+            <h1>Specifying which side of the viewport an Ext.ActionSheet container animates from in Sencha Touch 2</h1>
+
+<p>The following example shows how you can specify which side of the viewport an Ext.ActionSheet container animates from in Sencha Touch 2 by setting the <code>enter</code> and <code>exit</code> config options.</p>
+            <strong>Tags:</strong> <a href="/search/Sencha Touch">Sencha Touch</a> <a href="/search/Sencha Touch 2.0.1">Sencha Touch 2.0.1</a> <br/>
+        </section>
+        <section id="example">
+            [example]
+        </section>
+        
+        <footer>
+            &copy; 2012 Sencha Inc.
+        </footer>
+    </div>
+    
+    <div class="hidden">
+        <!-- touch/2.0.1/demos/Ext.ActionSheet.enter/app.js -->
+        <pre>/*global Ext:false */
+Ext.application({
+    launch: function () {
+        var actionSheet = Ext.create('Ext.ActionSheet', {
+            enter: 'top',
+            exit: 'right',
+            hidden: true,
+            defaults: {
+                listeners: {
+                    tap: function () {
+                        actionSheet.hide();
+                    } // tap
+                } // listeners
+            }, // defaults
+            items: [{
+                text: 'Cancel',
+                handler: function () {
+                    /* cancel handler */
+                } // handler
+            }, {
+                text: 'Submit',
+                handler: function () {
+                    /* submit handler */
+                } // handler
+            }] // items
+        }); // create()
+        
+        Ext.create('Ext.Container', {
+            fullscreen: true,
+            items: [{
+                xtype: 'toolbar',
+                items: [{
+                    text: 'enter:top, exit:right',
+                    handler: function () {
+                        actionSheet.show();
+                    } // handler
+                }] // items (toolbar)
+            }] // items (container)
+        }); // create()
+        
+        Ext.Viewport.add(actionSheet);
+    } // launch
+}); // application()
+</pre>
+    </div>
+    
+</body>
+</html>

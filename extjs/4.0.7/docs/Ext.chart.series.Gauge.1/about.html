@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Ext.chart.series.Gauge Example</title>
+    <meta Name="description" content="Ext.chart.series.Gauge Example" />
+    <meta name="keywords" content="Sencha, Ext JS, Ext JS 4.0.7, Ext.chart.series.Gauge, gauge, field, donut, colorSet, chart, series" />
+    <link href="/assets/application.css" media="screen" rel="stylesheet" type="text/css" />
+    <style>
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    
+    <div>
+        <header>
+            <h1>Sencha Try</h1>
+        </header>
+        
+        <section id="readme">
+            <h1>Ext.chart.series.Gauge Example</h1>
+            <strong>Tags:</strong> <a href="/search/Ext JS">Ext JS</a> <a href="/search/Ext JS 4.0.7">Ext JS 4.0.7</a> <a href="/search/Ext.chart.series.Gauge">Ext.chart.series.Gauge</a> <a href="/search/gauge">gauge</a> <a href="/search/field">field</a> <a href="/search/donut">donut</a> <a href="/search/colorSet">colorSet</a> <a href="/search/chart">chart</a> <a href="/search/series">series</a> <br/>
+        </section>
+        <section id="example">
+            [example]
+        </section>
+        
+        <footer>
+            &copy; 2012 Sencha Inc.
+        </footer>
+    </div>
+    
+    <div class="hidden">
+        <!-- extjs/4.0.7/docs/Ext.chart.series.Gauge.1/app.js -->
+        <pre>/*global Ext:false */
+Ext.onReady(function () {
+    var store = Ext.create('Ext.data.JsonStore', {
+        fields: ['data'],
+        data: [{
+            'value': 80
+        }]
+    });
+
+    Ext.create('Ext.chart.Chart', {
+        renderTo: Ext.getBody(),
+        store: store,
+        width: 400,
+        height: 250,
+        animate: true,
+        insetPadding: 30,
+        axes: [{
+            type: 'gauge',
+            position: 'gauge',
+            minimum: 0,
+            maximum: 100,
+            steps: 10,
+            margin: 10
+        }],
+        series: [{
+            type: 'gauge',
+            field: 'value',
+            donut: 30,
+            colorSet: ['#F49D10', '#ddd']
+        }]
+    });
+
+    Ext.widget("button", {
+        renderTo: Ext.getBody(),
+        text: "Refresh",
+        handler: function () {
+            store.getAt(0).set('value', Math.round(Math.random() * 100));
+        }
+    });
+});
+</pre>
+    </div>
+    
+</body>
+</html>

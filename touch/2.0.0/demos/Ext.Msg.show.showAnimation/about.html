@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Setting animations when an Ext.Msg component is shown or hidden in Sencha Touch 2</title>
+    <meta Name="description" content="Setting animations when an Ext.Msg component is shown or hidden in Sencha Touch 2" />
+    <meta name="keywords" content="Sencha, Sencha Touch, Sencha Touch 2.0.0" />
+    <link href="/assets/application.css" media="screen" rel="stylesheet" type="text/css" />
+    <style>
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    
+    <div>
+        <header>
+            <h1>Sencha Try</h1>
+        </header>
+        
+        <section id="readme">
+            <h1>Setting animations when an Ext.Msg component is shown or hidden in Sencha Touch 2</h1>
+
+<p>The following example shows how you can add an animation when an Ext.Msg component is shown or hidden in Sencha Touch 2 by passing the <code>showAnimation</code> and/or <code>hideAnimation</code> config option to the <code>Ext.Msg.show()</code> method.</p>
+            <strong>Tags:</strong> <a href="/search/Sencha Touch">Sencha Touch</a> <a href="/search/Sencha Touch 2.0.0">Sencha Touch 2.0.0</a> <br/>
+        </section>
+        <section id="example">
+            [example]
+        </section>
+        
+        <footer>
+            &copy; 2012 Sencha Inc.
+        </footer>
+    </div>
+    
+    <div class="hidden">
+        <!-- touch/2.0.0/demos/Ext.Msg.show.showAnimation/app.js -->
+        <pre>/*global Ext:false */
+Ext.application({
+    launch: function () {
+        Ext.create('Ext.Panel', {
+            fullscreen: true,
+            items: [{
+                xtype: 'titlebar',
+                docked: 'top',
+                items: [{
+                    text: 'slideIn/slideOut',
+                    handler: function () {
+                        Ext.Msg.show({
+                            title:'slide animations',
+                            showAnimation: 'slideIn',
+                            hideAnimation: 'slideOut'
+                        }); // show()
+                    } // handler
+                }, {
+                    text: 'fadeIn/fadeOut',
+                    handler: function () {
+                        Ext.Msg.show({
+                            title:'fade animations',
+                            showAnimation: 'fadeIn',
+                            hideAnimation: 'fadeOut'
+                        }); // show()
+                    } // handler
+                }] // items
+            }] // items
+        }); // create()
+    } // launch
+}); // application()
+</pre>
+    </div>
+    
+</body>
+</html>

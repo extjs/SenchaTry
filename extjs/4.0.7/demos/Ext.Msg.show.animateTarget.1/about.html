@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Animating a dialog box using the Ext.Msg class and Ext JS</title>
+    <meta Name="description" content="Animating a dialog box using the Ext.Msg class and Ext JS" />
+    <meta name="keywords" content="Sencha, Ext JS, Ext JS 4.0.7, Ext.MessageBox, Ext.Msg, show(), animateTarget" />
+    <link href="/assets/application.css" media="screen" rel="stylesheet" type="text/css" />
+    <style>
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    
+    <div>
+        <header>
+            <h1>Sencha Try</h1>
+        </header>
+        
+        <section id="readme">
+            <h1>Animating a dialog box using the Ext.Msg class and Ext JS</h1>
+
+<p>The following example shows how you can add an animation when a dialog box opens and closes on an Ext.Msg dialog box using the static <code>Ext.Msg.show()</code> method and specifying the <code>animateTarget</code> config option.</p>
+            <strong>Tags:</strong> <a href="/search/Ext JS">Ext JS</a> <a href="/search/Ext JS 4.0.7">Ext JS 4.0.7</a> <a href="/search/Ext.MessageBox">Ext.MessageBox</a> <a href="/search/Ext.Msg">Ext.Msg</a> <a href="/search/show()">show()</a> <a href="/search/animateTarget">animateTarget</a> <br/>
+        </section>
+        <section id="example">
+            [example]
+        </section>
+        
+        <footer>
+            &copy; 2012 Sencha Inc.
+        </footer>
+    </div>
+    
+    <div class="hidden">
+        <!-- extjs/4.0.7/demos/Ext.Msg.show.animateTarget.1/app.js -->
+        <pre>/*global Ext:false */
+Ext.onReady(function () {
+    Ext.create('Ext.Button', {
+        id: 'btn',
+        text: 'Click to launch dialog',
+        handler: function () {
+            Ext.Msg.show({
+                animateTarget: 'btn',
+                title: 'Everyday I\'m animatin\'',
+                msg: 'I should have animated relative to the Ext.Button instance.<br><br>Didn\'t see? Close the dialog and try again.'
+            });
+        },
+        renderTo: Ext.getBody()
+    });
+});
+</pre>
+    </div>
+    
+</body>
+</html>

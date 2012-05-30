@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Programmatically setting an Ext.field.Toggle control in Sencha Touch 2</title>
+    <meta Name="description" content="Programmatically setting an Ext.field.Toggle control in Sencha Touch 2" />
+    <meta name="keywords" content="Sencha, Sencha Touch, Sencha Touch 2.0.1" />
+    <link href="/assets/application.css" media="screen" rel="stylesheet" type="text/css" />
+    <style>
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    
+    <div>
+        <header>
+            <h1>Sencha Try</h1>
+        </header>
+        
+        <section id="readme">
+            <h1>Programmatically setting an Ext.field.Toggle control in Sencha Touch 2</h1>
+
+<p>The following example shows how you programmatically set an Ext.field.Toggle (togglefield) control in Sencha Touch 2 by calling the <code>toggle()</code> or <code>setValue()</code> methods.</p>
+            <strong>Tags:</strong> <a href="/search/Sencha Touch">Sencha Touch</a> <a href="/search/Sencha Touch 2.0.1">Sencha Touch 2.0.1</a> <br/>
+        </section>
+        <section id="example">
+            [example]
+        </section>
+        
+        <footer>
+            &copy; 2012 Sencha Inc.
+        </footer>
+    </div>
+    
+    <div class="hidden">
+        <!-- touch/2.0.1/demos/Ext.field.Toggle.setValue/app.js -->
+        <pre>/*global Ext:false */
+Ext.application({
+    launch: function () {
+        Ext.create('Ext.form.Panel', {
+            fullscreen: true,
+            items: [{
+                xtype: 'toolbar',
+                docked: 'top',
+                items: [{
+                    xtype: 'segmentedbutton',
+                    items: [{
+                        text: '<code>toggle()</code>',
+                        handler: function (btn) {
+                            btn.up('formpanel').down('togglefield').toggle();
+                        } // handler
+                    }, {
+                        text: '<code>setValue(0)</code>',
+                        handler: function (btn) {
+                            btn.up('formpanel').down('togglefield').setValue(0);
+                        } // handler
+                    }, {
+                        text: '<code>setValue(1)</code>',
+                        handler: function (btn) {
+                            btn.up('formpanel').down('togglefield').setValue(1);
+                        } // handler
+                    }], // items (segmentedbutton)
+                    listeners: {
+                        toggle: function (segBtn, btn, isPressed) {
+                            segBtn.setPressedButtons([]);
+                        } // toggle
+                    } // listeners
+                }] // items (toolbar)
+            }, {
+                xtype: 'fieldset',
+                items: [{
+                    xtype: 'togglefield',
+                    label: 'togglefield:'
+                }] // items (fieldset)
+            }] // items (formpanel)
+        }); // create()
+    } // launch
+}); // application()
+</pre>
+    </div>
+    
+</body>
+</html>

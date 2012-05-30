@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Ext.button.Cycle Example</title>
+    <meta Name="description" content="Ext.button.Cycle Example" />
+    <meta name="keywords" content="Sencha, Ext JS, Ext JS 4.0.7, Ext.button.Cycle, Ext.CycleButton, cycle, showText, prependText, menu, iconCls, checked, changeHandler" />
+    <link href="/assets/application.css" media="screen" rel="stylesheet" type="text/css" />
+    <style>
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    
+    <div>
+        <header>
+            <h1>Sencha Try</h1>
+        </header>
+        
+        <section id="readme">
+            <h1>Ext.button.Cycle Example</h1>
+            <strong>Tags:</strong> <a href="/search/Ext JS">Ext JS</a> <a href="/search/Ext JS 4.0.7">Ext JS 4.0.7</a> <a href="/search/Ext.button.Cycle">Ext.button.Cycle</a> <a href="/search/Ext.CycleButton">Ext.CycleButton</a> <a href="/search/cycle">cycle</a> <a href="/search/showText">showText</a> <a href="/search/prependText">prependText</a> <a href="/search/menu">menu</a> <a href="/search/iconCls">iconCls</a> <a href="/search/checked">checked</a> <a href="/search/changeHandler">changeHandler</a> <br/>
+        </section>
+        <section id="example">
+            [example]
+        </section>
+        
+        <footer>
+            &copy; 2012 Sencha Inc.
+        </footer>
+    </div>
+    
+    <div class="hidden">
+        <!-- extjs/4.0.7/docs/Ext.button.Cycle.1/app.js -->
+        <pre>/*global Ext:false */
+Ext.onReady(function () {
+    Ext.create('Ext.button.Cycle', {
+        showText: true,
+        prependText: 'View as ',
+        renderTo: Ext.getBody(),
+        menu: {
+            id: 'view-type-menu',
+            items: [{
+                text: 'text only',
+                iconCls: 'view-text',
+                checked: true
+            }, {
+                text: 'HTML',
+                iconCls: 'view-html'
+            }]
+        },
+        changeHandler: function (cycleBtn, activeItem) {
+            Ext.Msg.alert('Change View', activeItem.text);
+        }
+    });
+});
+</pre>
+    </div>
+    
+</body>
+</html>

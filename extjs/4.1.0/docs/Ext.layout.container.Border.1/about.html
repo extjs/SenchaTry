@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Ext.layout.container.Border Example</title>
+    <meta Name="description" content="Ext.layout.container.Border Example" />
+    <meta name="keywords" content="Sencha, Ext JS, Ext JS 4.1.0, Ext.layout.container.Border" />
+    <link href="/assets/application.css" media="screen" rel="stylesheet" type="text/css" />
+    <style>
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    
+    <div>
+        <header>
+            <h1>Sencha Try</h1>
+        </header>
+        
+        <section id="readme">
+            <h1>Ext.layout.container.Border Example</h1>
+            <strong>Tags:</strong> <a href="/search/Ext JS">Ext JS</a> <a href="/search/Ext JS 4.1.0">Ext JS 4.1.0</a> <a href="/search/Ext.layout.container.Border">Ext.layout.container.Border</a> <br/>
+        </section>
+        <section id="example">
+            [example]
+        </section>
+        
+        <footer>
+            &copy; 2012 Sencha Inc.
+        </footer>
+    </div>
+    
+    <div class="hidden">
+        <!-- extjs/4.1.0/docs/Ext.layout.container.Border.1/app.js -->
+        <pre>/*global Ext:false */
+Ext.onReady(function() {
+    Ext.create('Ext.panel.Panel', {
+        width: 500,
+        height: 300,
+        title: 'Border Layout',
+        layout: 'border',
+        items: [{
+            title: 'South Region is resizable',
+            region: 'south',
+            // position for region
+            xtype: 'panel',
+            height: 100,
+            split: true,
+            // enable resizing
+            margins: '0 5 5 5'
+        }, {
+            // xtype: 'panel' implied by default
+            title: 'West Region is collapsible',
+            region: 'west',
+            xtype: 'panel',
+            margins: '5 0 0 5',
+            width: 200,
+            collapsible: true,
+            // make collapsible
+            id: 'west-region-container',
+            layout: 'fit'
+        }, {
+            title: 'Center Region',
+            region: 'center',
+            // center region is required, no width/height specified
+            xtype: 'panel',
+            layout: 'fit',
+            margins: '5 5 0 0'
+        }],
+        renderTo: Ext.getBody()
+    });
+});
+</pre>
+    </div>
+    
+</body>
+</html>

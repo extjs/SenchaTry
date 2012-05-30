@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Ext.container.Viewport Example</title>
+    <meta Name="description" content="Ext.container.Viewport Example" />
+    <meta name="keywords" content="Sencha, Ext JS, Ext JS 4.0.7, Ext.container.Viewport, Ext.Viewport, viewport, layout, items, container" />
+    <link href="/assets/application.css" media="screen" rel="stylesheet" type="text/css" />
+    <style>
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    
+    <div>
+        <header>
+            <h1>Sencha Try</h1>
+        </header>
+        
+        <section id="readme">
+            <h1>Ext.container.Viewport Example</h1>
+            <strong>Tags:</strong> <a href="/search/Ext JS">Ext JS</a> <a href="/search/Ext JS 4.0.7">Ext JS 4.0.7</a> <a href="/search/Ext.container.Viewport">Ext.container.Viewport</a> <a href="/search/Ext.Viewport">Ext.Viewport</a> <a href="/search/viewport">viewport</a> <a href="/search/layout">layout</a> <a href="/search/items">items</a> <a href="/search/container">container</a> <br/>
+        </section>
+        <section id="example">
+            [example]
+        </section>
+        
+        <footer>
+            &copy; 2012 Sencha Inc.
+        </footer>
+    </div>
+    
+    <div class="hidden">
+        <!-- extjs/4.0.7/docs/Ext.container.Viewport.1/app.js -->
+        <pre>/*global Ext:false */
+Ext.onReady(function () {
+    Ext.create('Ext.container.Viewport', {
+        layout: 'border',
+        items: [{
+            region: 'north',
+            html: '<h1 class="x-panel-header">Page Title</h1>',
+            autoHeight: true,
+            border: false,
+            margins: '0 0 5 0'
+        }, {
+            region: 'west',
+            collapsible: true,
+            title: 'Navigation',
+            width: 150
+            // could use a TreePanel or AccordionLayout for navigational items
+        }, {
+            region: 'south',
+            title: 'South Panel',
+            collapsible: true,
+            html: 'Information goes here',
+            split: true,
+            height: 100,
+            minHeight: 100
+        }, {
+            region: 'east',
+            title: 'East Panel',
+            collapsible: true,
+            split: true,
+            width: 150
+        }, {
+            region: 'center',
+            xtype: 'tabpanel',
+            // TabPanel itself has no title
+            activeTab: 0,
+            // First tab active by default
+            items: {
+                title: 'Default Tab',
+                html: 'The first tab\'s content. Others may be added dynamically'
+            }
+        }]
+    });
+});
+</pre>
+    </div>
+    
+</body>
+</html>

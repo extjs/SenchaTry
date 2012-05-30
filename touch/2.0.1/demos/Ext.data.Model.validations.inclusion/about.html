@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Validating that an Ext.data.Model field contains an approved value in Sencha Touch 2</title>
+    <meta Name="description" content="Validating that an Ext.data.Model field contains an approved value in Sencha Touch 2" />
+    <meta name="keywords" content="Sencha, Sencha Touch, Sencha Touch 2.0.1" />
+    <link href="/assets/application.css" media="screen" rel="stylesheet" type="text/css" />
+    <style>
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    
+    <div>
+        <header>
+            <h1>Sencha Try</h1>
+        </header>
+        
+        <section id="readme">
+            <h1>Validating that an Ext.data.Model field contains an approved value in Sencha Touch 2</h1>
+
+<p>The following example shows how you can validate that an Ext.data.Model object's value is in an acceptable value in Sencha Touch 2 by setting the <code>validations</code> object on the model and then creating an 'inclusion' validation with a <code>list</code> attribute of approved values.</p>
+            <strong>Tags:</strong> <a href="/search/Sencha Touch">Sencha Touch</a> <a href="/search/Sencha Touch 2.0.1">Sencha Touch 2.0.1</a> <br/>
+        </section>
+        <section id="example">
+            [example]
+        </section>
+        
+        <footer>
+            &copy; 2012 Sencha Inc.
+        </footer>
+    </div>
+    
+    <div class="hidden">
+        <!-- touch/2.0.1/demos/Ext.data.Model.validations.inclusion/app.js -->
+        <pre>/*global Ext:false */
+Ext.application({
+    launch: function () {
+        Ext.define('TeamModel', {
+            extend: 'Ext.data.Model',
+            config: {
+                fields: [{
+                    name: 'teamName',
+                    type: 'string'
+                }, {
+                    name: 'division',
+                    type: 'string'
+                }, {
+                    name: 'league',
+                    type: 'string'
+                }], // fields
+                validations: [{
+                    field: 'teamName',
+                    type: 'presence',
+                    message: 'Team Name is required.'
+                }, {
+                    field: 'division',
+                    type: 'presence',
+                    message: 'Division is required.'
+                }, {
+                    field: 'division',
+                    type: 'inclusion',
+                    list: ['East', 'Central', 'West'],
+                    message: 'Division must be one of: East, Central, West'
+                }, {
+                    field: 'league',
+                    type: 'presence',
+                    message: 'League is required.'
+                }, {
+                    field: 'league',
+                    type: 'inclusion',
+                    list: ['AL', 'NL'],
+                    message: 'League must be one of: AL, NL'
+                }] // validations
+            } // config
+        }); // define()
+        
+        var form = Ext.create('Ext.form.Panel', {
+            fullscreen: true,
+            items: [{
+                xtype: 'toolbar',
+                docked: 'top',
+                items: [{
+                    text: 'Validate form',
+                    handler: function () {
+                        var teamModel = Ext.create('TeamModel'),
+                            errors, errorMessage = '';
+                        
+                        form.updateRecord(teamModel);
+                        errors = teamModel.validate();
+                        
+                        if (!errors.isValid()) {
+                            errors.each(function (err) {
+                                errorMessage += err.getMessage() + '<br/>';
+                            }); // each()
+                            Ext.Msg.alert('Form is invalid!', errorMessage);
+                        } else {
+                            Ext.Msg.alert('Form is valid!', '');
+                        } // if
+                    } // handler
+                }] // items (toolbar)
+            }, {
+                xtype: 'fieldset',
+                items: [{
+                    xtype: 'textfield',
+                    name: 'teamName',
+                    label: 'Team Name:'
+                }, {
+                    xtype: 'textfield',
+                    name: 'division',
+                    label: 'Division:',
+                    placeHolder: 'East | Central | West'
+                }, {
+                    xtype: 'textfield',
+                    name: 'league',
+                    label: 'League:',
+                    placeHolder: 'AL | NL'
+                }] // items (fieldset)
+            }] // items (panel)
+        }); // create()
+    } // launch
+}); // application()
+</pre>
+    </div>
+    
+</body>
+</html>

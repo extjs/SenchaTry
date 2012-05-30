@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Ext.picker.Picker Example</title>
+    <meta Name="description" content="Ext.picker.Picker Example" />
+    <meta name="keywords" content="Sencha, Sencha Touch, Sencha Touch 2.0.1, Ext.picker.Picker" />
+    <link href="/assets/application.css" media="screen" rel="stylesheet" type="text/css" />
+    <style>
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    
+    <div>
+        <header>
+            <h1>Sencha Try</h1>
+        </header>
+        
+        <section id="readme">
+            <h1>Ext.picker.Picker Example</h1>
+            <strong>Tags:</strong> <a href="/search/Sencha Touch">Sencha Touch</a> <a href="/search/Sencha Touch 2.0.1">Sencha Touch 2.0.1</a> <a href="/search/Ext.picker.Picker">Ext.picker.Picker</a> <br/>
+        </section>
+        <section id="example">
+            [example]
+        </section>
+        
+        <footer>
+            &copy; 2012 Sencha Inc.
+        </footer>
+    </div>
+    
+    <div class="hidden">
+        <!-- touch/2.0.1/docs/Ext.picker.Picker.2/app.js -->
+        <pre>/*global Ext:false */
+Ext.application({
+    launch: function() {
+        var picker = Ext.create('Ext.Picker', {
+            doneButton: 'I\'m done!',
+            cancelButton: false,
+            slots: [{
+                name: 'limit_speed',
+                title: 'Speed',
+                data: [{
+                    text: '50 KB/s',
+                    value: 50
+                }, {
+                    text: '100 KB/s',
+                    value: 100
+                }, {
+                    text: '200 KB/s',
+                    value: 200
+                }, {
+                    text: '300 KB/s',
+                    value: 300
+                }]
+            }]
+        });
+        Ext.Viewport.add(picker);
+        picker.show();
+    }
+});
+</pre>
+    </div>
+    
+</body>
+</html>

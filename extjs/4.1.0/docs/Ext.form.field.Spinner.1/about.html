@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Ext.form.field.Spinner Example</title>
+    <meta Name="description" content="Ext.form.field.Spinner Example" />
+    <meta name="keywords" content="Sencha, Ext JS, Ext JS 4.1.0, Ext.form.field.Spinner" />
+    <link href="/assets/application.css" media="screen" rel="stylesheet" type="text/css" />
+    <style>
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    
+    <div>
+        <header>
+            <h1>Sencha Try</h1>
+        </header>
+        
+        <section id="readme">
+            <h1>Ext.form.field.Spinner Example</h1>
+            <strong>Tags:</strong> <a href="/search/Ext JS">Ext JS</a> <a href="/search/Ext JS 4.1.0">Ext JS 4.1.0</a> <a href="/search/Ext.form.field.Spinner">Ext.form.field.Spinner</a> <br/>
+        </section>
+        <section id="example">
+            [example]
+        </section>
+        
+        <footer>
+            &copy; 2012 Sencha Inc.
+        </footer>
+    </div>
+    
+    <div class="hidden">
+        <!-- extjs/4.1.0/docs/Ext.form.field.Spinner.1/app.js -->
+        <pre>/*global Ext:false */
+Ext.onReady(function() {
+    Ext.define('Ext.ux.CustomSpinner', {
+        extend: 'Ext.form.field.Spinner',
+        alias: 'widget.customspinner',
+
+        // override onSpinUp (using step isn't neccessary)
+        onSpinUp: function() {
+            var me = this;
+            if (!me.readOnly) {
+                var val = parseInt(me.getValue().split(' '), 10) || 0; // gets rid of " Pack", defaults to zero on parse failure
+                me.setValue((val + me.step) + ' Pack');
+            }
+        },
+
+        // override onSpinDown
+        onSpinDown: function() {
+            var val, me = this;
+            if (!me.readOnly) {
+                val = parseInt(me.getValue().split(' '), 10) || 0; // gets rid of " Pack", defaults to zero on parse failure
+                if (val <= me.step) {
+                    me.setValue('Dry!');
+                } else {
+                    me.setValue((val - me.step) + ' Pack');
+                }
+            }
+        }
+    });
+
+    Ext.create('Ext.form.FormPanel', {
+        title: 'Form with SpinnerField',
+        bodyPadding: 5,
+        width: 350,
+        renderTo: Ext.getBody(),
+        items: [{
+            xtype: 'customspinner',
+            fieldLabel: 'How Much Beer?',
+            step: 6
+        }]
+    });
+});
+</pre>
+    </div>
+    
+</body>
+</html>

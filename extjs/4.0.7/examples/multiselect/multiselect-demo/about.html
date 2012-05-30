@@ -1,0 +1,1110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <title>MultiSelect and ItemSelector</title>
+    <meta Name="description" content="MultiSelect and ItemSelector" />
+    <meta name="keywords" content="Sencha, Ext JS, Ext JS 4.0.7" />
+    <link href="/assets/application.css" media="screen" rel="stylesheet" type="text/css" />
+    <style>
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    
+    <div>
+        <header>
+            <h1>Sencha Try</h1>
+        </header>
+        
+        <section id="readme">
+            <h1>MultiSelect and ItemSelector</h1>
+
+<h2>MultiSelect</h2>
+
+<p>MultiSelect is a form field type that allows selection of one or more items from a list. The list is populated using a data Store. Items can be reordered via drag and drop if <code>ddReorder:true</code> is set.</p>
+
+<p>This example has <code>allowBlank:false</code> so a validation error will appear when the item's selections are cleared. Validations for <code>minSelections</code> and <code>maxSelections</code> can also be applied.</p>
+
+<h2>ItemSelector</h2>
+
+<p>ItemSelector is a specialized MultiSelect field that renders as a pair of MultiSelect field, one with available options and the other with selected options. A set of buttons in between allows items to be moved between the fields and reordered within the selection. Items can also be moved via drag and drop.</p>
+
+<p>All the same validations as MultiSelect are supported.</p>
+            <strong>Tags:</strong> <a href="/search/Ext JS">Ext JS</a> <a href="/search/Ext JS 4.0.7">Ext JS 4.0.7</a> <br/>
+        </section>
+        <section id="example">
+            [example]
+        </section>
+        
+        <footer>
+            &copy; 2012 Sencha Inc.
+        </footer>
+    </div>
+    
+    <div class="hidden">
+        <!-- extjs/4.0.7/examples/multiselect/multiselect-demo/app.js -->
+        <pre>/*global Ext:false */
+/*
+
+This file is part of Ext JS 4
+
+Copyright (c) 2011 Sencha Inc
+
+Contact:  http://www.sencha.com/contact
+
+GNU General Public License Usage
+This file may be used under the terms of the GNU General Public License version 3.0 as published by the Free Software Foundation and appearing in the file LICENSE included in the packaging of this file.  Please review the following information to ensure the GNU General Public License version 3.0 requirements will be met: http://www.gnu.org/copyleft/gpl.html.
+
+If you are unsure which license is appropriate for your use, please contact the sales department at http://www.sencha.com/contact.
+
+*/
+Ext.Loader.setConfig({enabled: true});
+Ext.Loader.setPath('Ext.ux', 'ux');
+Ext.require([
+    'Ext.form.Panel',
+    'Ext.ux.form.MultiSelect',
+    'Ext.ux.form.ItemSelector'
+]);
+
+Ext.onReady(function(){
+    
+    function createDockedItems(fieldId) {
+        return [{
+            xtype: 'toolbar',
+            dock: 'top',
+            items: {
+                text: 'Options',
+                menu: [{
+                    text: 'Set value (2,3)',
+                    handler: function(){
+                        Ext.getCmp(fieldId).setValue(['2', '3']);
+                    }
+                },{
+                    text: 'Toggle enabled',
+                    checked: true,
+                    checkHandler: function(item, checked){
+                        Ext.getCmp(fieldId).setDisabled(!checked);
+                    }
+                },{
+                    text: 'Toggle delimiter',
+                    checked: true,
+                    checkHandler: function(item, checked) {
+                        var field = Ext.getCmp(fieldId);
+                        if (checked) {
+                            field.delimiter = ',';
+                            Ext.Msg.alert('Delimiter Changed', 'The delimiter is now set to <b>","</b>. Click Save to ' +
+                                          'see that values are now submitted as a single parameter separated by the delimiter.');
+                        } else {
+                            field.delimiter = null;
+                            Ext.Msg.alert('Delimiter Changed', 'The delimiter is now set to <b>null</b>. Click Save to ' +
+                                          'see that values are now submitted as separate parameters.');
+                        }
+                    }
+                }]
+            }
+        }, {
+            xtype: 'toolbar',
+            dock: 'bottom',
+            ui: 'footer',
+            defaults: {
+                minWidth: 75
+            },
+            items: ['->', {
+                text: 'Clear',
+                handler: function(){
+                    var field = Ext.getCmp(fieldId);
+                    if (!field.readOnly &amp;&amp; !field.disabled) {
+                        field.clearValue();
+                    }
+                }
+            }, {
+                text: 'Reset',
+                handler: function() {
+                    Ext.getCmp(fieldId).up('form').getForm().reset();
+                }
+            }, {
+                text: 'Save',
+                handler: function(){
+                    var form = Ext.getCmp(fieldId).up('form').getForm();
+                    if (form.isValid()){
+                        Ext.Msg.alert('Submitted Values', 'The following will be sent to the server: <br />'+
+                            form.getValues(true));
+                    }
+                }
+            }]
+        }];
+    }
+
+    /*
+     * Ext.ux.form.MultiSelect Example Code
+     */
+    var msForm = Ext.widget('form', {
+        title: 'MultiSelect Test',
+        width: 400,
+        bodyPadding: 10,
+        renderTo: 'multiselect',
+        items:[{
+            anchor: '100%',
+            xtype: 'multiselect',
+            msgTarget: 'side',
+            fieldLabel: 'Multiselect',
+            name: 'multiselect',
+            id: 'multiselect-field',
+            allowBlank: false,
+            store: [[123,'One Hundred Twenty Three'],
+                    ['1', 'One'], ['2', 'Two'], ['3', 'Three'], ['4', 'Four'], ['5', 'Five'],
+                    ['6', 'Six'], ['7', 'Seven'], ['8', 'Eight'], ['9', 'Nine']],
+            value: ['3', '4', '6'],
+            ddReorder: true
+        }],
+        dockedItems: createDockedItems('multiselect-field')
+    });
+
+
+    var ds = Ext.create('Ext.data.ArrayStore', {
+        data: [[123,'One Hundred Twenty Three'],
+            ['1', 'One'], ['2', 'Two'], ['3', 'Three'], ['4', 'Four'], ['5', 'Five'],
+            ['6', 'Six'], ['7', 'Seven'], ['8', 'Eight'], ['9', 'Nine']],
+        fields: ['value','text'],
+        sortInfo: {
+            field: 'value',
+            direction: 'ASC'
+        }
+    });
+
+    /*
+     * Ext.ux.form.ItemSelector Example Code
+     */
+    var isForm = Ext.widget('form', {
+        title: 'ItemSelector Test',
+        width: 700,
+        bodyPadding: 10,
+        renderTo: 'itemselector',
+        items:[{
+            xtype: 'itemselector',
+            name: 'itemselector',
+            id: 'itemselector-field',
+            anchor: '100%',
+            fieldLabel: 'ItemSelector',
+            imagePath: '../ux/images/',
+            store: ds,
+            displayField: 'text',
+            valueField: 'value',
+            value: ['3', '4', '6'],
+            allowBlank: false,
+            msgTarget: 'side'
+        }],
+        dockedItems: createDockedItems('itemselector-field')
+    });
+
+});
+
+</pre>
+        <!-- extjs/4.0.7/examples/multiselect/multiselect-demo/ux/form/ItemSelector.js -->
+        <pre>/*
+
+This file is part of Ext JS 4
+
+Copyright (c) 2011 Sencha Inc
+
+Contact:  http://www.sencha.com/contact
+
+GNU General Public License Usage
+This file may be used under the terms of the GNU General Public License version 3.0 as published by the Free Software Foundation and appearing in the file LICENSE included in the packaging of this file.  Please review the following information to ensure the GNU General Public License version 3.0 requirements will be met: http://www.gnu.org/copyleft/gpl.html.
+
+If you are unsure which license is appropriate for your use, please contact the sales department at http://www.sencha.com/contact.
+
+*/
+/*
+ * Note that this control will most likely remain as an example, and not as a core Ext form
+ * control.  However, the API will be changing in a future release and so should not yet be
+ * treated as a final, stable API at this time.
+ */
+
+/**
+ * @class Ext.ux.form.ItemSelector
+ * @extends Ext.form.field.Base
+ * A control that allows selection of between two Ext.ux.form.MultiSelect controls.
+ *
+ *  @history
+ *    2008-06-19 bpm Original code contributed by Toby Stuart (with contributions from Robert Williams)
+ *
+ * @constructor
+ * Create a new ItemSelector
+ * @param {Object} config Configuration options
+ * @xtype itemselector 
+ */
+Ext.define('Ext.ux.form.ItemSelector', {
+    extend: 'Ext.ux.form.MultiSelect',
+    alias: ['widget.itemselectorfield', 'widget.itemselector'],
+    alternateClassName: ['Ext.ux.ItemSelector'],
+    requires: ['Ext.ux.layout.component.form.ItemSelector', 'Ext.button.Button'],
+    
+    hideNavIcons:false,
+
+    /**
+     * @cfg {Array} buttons Defines the set of buttons that should be displayed in between the ItemSelector
+     * fields. Defaults to <tt>['top', 'up', 'add', 'remove', 'down', 'bottom']</tt>. These names are used
+     * to build the button CSS class names, and to look up the button text labels in {@link #buttonsText}.
+     * This can be overridden with a custom Array to change which buttons are displayed or their order.
+     */
+    buttons: ['top', 'up', 'add', 'remove', 'down', 'bottom'],
+
+    buttonsText: {
+        top: "Move to Top",
+        up: "Move Up",
+        add: "Add to Selected",
+        remove: "Remove from Selected",
+        down: "Move Down",
+        bottom: "Move to Bottom"
+    },
+
+    /**
+     * @cfg {Array} multiselects An optional array of {@link Ext.ux.form.MultiSelect} config objects, containing
+     * additional configuration to be applied to the internal MultiSelect fields.
+     */
+    multiselects: [],
+
+    componentLayout: 'itemselectorfield',
+
+    fieldBodyCls: Ext.baseCSSPrefix + 'form-itemselector-body',
+
+
+    bindStore: function(store, initial) {
+        var me = this,
+            toField = me.toField,
+            fromField = me.fromField,
+            models;
+
+        me.callParent(arguments);
+
+        if (toField) {
+            // Clear both field stores
+            toField.store.removeAll();
+            fromField.store.removeAll();
+
+            // Clone the contents of the main store into the fromField
+            models = [];
+            me.store.each(function(model) {
+                models.push(model.copy(model.getId()));
+            });
+            fromField.store.add(models);
+        }
+    },
+
+    onRender: function(ct, position) {
+        var me = this,
+            baseCSSPrefix = Ext.baseCSSPrefix,
+            ddGroup = 'ItemSelectorDD-' + Ext.id(),
+            commonConfig = {
+                displayField: me.displayField,
+                valueField: me.valueField,
+                dragGroup: ddGroup,
+                dropGroup: ddGroup,
+                flex: 1,
+                hideLabel: true,
+                disabled: me.disabled
+            },
+            fromConfig = Ext.apply({
+                listTitle: 'Available',
+                store: Ext.create('Ext.data.Store', {model: me.store.model}), //blank store to begin
+                listeners: {
+                    boundList: {
+                        itemdblclick: me.onItemDblClick,
+                        scope: me
+                    }
+                }
+            }, me.multiselects[0], commonConfig),
+            toConfig = Ext.apply({
+                listTitle: 'Selected',
+                store: Ext.create('Ext.data.Store', {model: me.store.model}), //blank store to begin
+                listeners: {
+                    boundList: {
+                        itemdblclick: me.onItemDblClick,
+                        scope: me
+                    },
+                    change: me.onToFieldChange,
+                    scope: me
+                }
+            }, me.multiselects[1], commonConfig),
+            fromField = Ext.widget('multiselect', fromConfig),
+            toField = Ext.widget('multiselect', toConfig),
+            innerCt,
+            buttons = [];
+
+        // Skip MultiSelect's onRender as we don't want its content
+        Ext.ux.form.MultiSelect.superclass.onRender.call(me, ct, position);
+
+        me.fromField = fromField;
+        me.toField = toField;
+
+        if (!me.hideNavIcons) {
+            Ext.Array.forEach(me.buttons, function(name) {
+                buttons.push({
+                    xtype: 'button',
+                    tooltip: me.buttonsText[name],
+                    handler: me['on' + Ext.String.capitalize(name) + 'BtnClick'],
+                    cls: baseCSSPrefix + 'form-itemselector-btn',
+                    iconCls: baseCSSPrefix + 'form-itemselector-' + name,
+                    scope: me
+                });
+                //div separator to force vertical stacking
+                buttons.push({xtype: 'component', height: 3, width: 1, style: 'font-size:0;line-height:0'});
+            });
+        }
+
+        innerCt = me.innerCt = Ext.widget('container', {
+            renderTo: me.bodyEl,
+            layout: {
+                type: 'hbox',
+                align: 'middle'
+            },
+            items: [
+                me.fromField,
+                {
+                    xtype: 'container',
+                    margins: '0 4',
+                    items: buttons
+                },
+                me.toField
+            ]
+        });
+
+        // Must set upward link after first render
+        innerCt.ownerCt = me;
+
+        // Rebind the store so it gets cloned to the fromField
+        me.bindStore(me.store);
+
+        // Set the initial value
+        me.setRawValue(me.rawValue);
+    },
+    
+    onToFieldChange: function() {
+        this.checkChange();
+    },
+    
+    getSelections: function(list){
+        var store = list.getStore(),
+            selections = list.getSelectionModel().getSelection(),
+            i = 0,
+            len = selections.length;
+            
+        return Ext.Array.sort(selections, function(a, b){
+            a = store.indexOf(a);
+            b = store.indexOf(b);
+            
+            if (a < b) {
+                return -1;
+            } else if (a > b) {
+                return 1;
+            }
+            return 0;
+        });
+    },
+
+    onTopBtnClick : function() {
+        var list = this.toField.boundList,
+            store = list.getStore(),
+            selected = this.getSelections(list),
+            i = selected.length - 1,
+            selection;
+        
+        
+        store.suspendEvents();
+        for (; i > -1; --i) {
+            selection = selected[i];
+            store.remove(selected);
+            store.insert(0, selected);
+        }
+        store.resumeEvents();
+        list.refresh();    
+    },
+
+    onBottomBtnClick : function() {
+        var list = this.toField.boundList,
+            store = list.getStore(),
+            selected = this.getSelections(list),
+            i = 0,
+            len = selected.length,
+            selection;
+            
+        store.suspendEvents();
+        for (; i < len; ++i) {
+            selection = selected[i];
+            store.remove(selection);
+            store.add(selection);
+        }
+        store.resumeEvents();
+        list.refresh();
+    },
+
+    onUpBtnClick : function() {
+        var list = this.toField.boundList,
+            store = list.getStore(),
+            selected = this.getSelections(list),
+            i = 0,
+            len = selected.length,
+            selection,
+            index;
+            
+        store.suspendEvents();
+        for (; i < len; ++i) {
+            selection = selected[i];
+            index = Math.max(0, store.indexOf(selection) - 1);
+            store.remove(selection);
+            store.insert(index, selection);
+        }
+        store.resumeEvents();
+        list.refresh();
+    },
+
+    onDownBtnClick : function() {
+        var list = this.toField.boundList,
+            store = list.getStore(),
+            selected = this.getSelections(list),
+            i = 0,
+            len = selected.length,
+            max = store.getCount(),
+            selection,
+            index;
+            
+        store.suspendEvents();
+        for (; i < len; ++i) {
+            selection = selected[i];
+            index = Math.min(max, store.indexOf(selection) + 1);
+            store.remove(selection);
+            store.insert(index, selection);
+        }
+        store.resumeEvents();
+        list.refresh();
+    },
+
+    onAddBtnClick : function() {
+        var me = this,
+            fromList = me.fromField.boundList,
+            selected = this.getSelections(fromList);
+            
+        fromList.getStore().remove(selected);
+        this.toField.boundList.getStore().add(selected);
+    },
+
+    onRemoveBtnClick : function() {
+        var me = this,
+            toList = me.toField.boundList,
+            selected = this.getSelections(toList);
+            
+        toList.getStore().remove(selected);
+        this.fromField.boundList.getStore().add(selected);
+    },
+
+    onItemDblClick : function(view) {
+        var me = this;
+        if (view == me.toField.boundList){
+            me.onRemoveBtnClick();
+        }
+        else if (view == me.fromField.boundList) {
+            me.onAddBtnClick();
+        }
+    },
+
+    setRawValue: function(value) {
+        var me = this,
+            Array = Ext.Array,
+            toStore, fromStore, models;
+
+        value = Array.from(value);
+        me.rawValue = value;
+
+        if (me.toField) {
+            toStore = me.toField.boundList.getStore();
+            fromStore = me.fromField.boundList.getStore();
+
+            // Move any selected values back to the fromField
+            fromStore.add(toStore.getRange());
+            toStore.removeAll();
+
+            // Move the new values over to the toField
+            models = [];
+            Ext.Array.forEach(value, function(val) {
+                var undef,
+                    model = fromStore.findRecord(me.valueField, val, undef, undef, true, true);
+                if (model) {
+                    models.push(model);
+                }
+            });
+            fromStore.remove(models);
+            toStore.add(models);
+        }
+
+        return value;
+    },
+
+    getRawValue: function() {
+        var me = this,
+            toField = me.toField,
+            rawValue = me.rawValue;
+
+        if (toField) {
+            rawValue = Ext.Array.map(toField.boundList.getStore().getRange(), function(model) {
+                return model.get(me.valueField);
+            });
+        }
+
+        me.rawValue = rawValue;
+        return rawValue;
+    },
+
+    /**
+     * @private Cascade readOnly/disabled state to the sub-fields and buttons
+     */
+    updateReadOnly: function() {
+        var me = this,
+            readOnly = me.readOnly || me.disabled;
+
+        if (me.rendered) {
+            me.toField.setReadOnly(readOnly);
+            me.fromField.setReadOnly(readOnly);
+            Ext.Array.forEach(me.innerCt.query('button'), function(button) {
+                button.setDisabled(readOnly);
+            });
+        }
+    },
+    
+    onDisable: function(){
+        this.callParent();
+        var fromField = this.fromField;
+        
+        // if we have one, we have both, they get created at the same time    
+        if (fromField) {
+            fromField.disable();
+            this.toField.disable();
+        }
+    },
+    
+    onEnable: function(){
+        this.callParent();
+        var fromField = this.fromField;
+        
+        // if we have one, we have both, they get created at the same time    
+        if (fromField) {
+            fromField.enable();
+            this.toField.enable();
+        }
+    },
+
+    onDestroy: function() {
+        Ext.destroyMembers(this, 'innerCt');
+        this.callParent();
+    }
+
+});
+
+</pre>
+        <!-- extjs/4.0.7/examples/multiselect/multiselect-demo/ux/form/MultiSelect.js -->
+        <pre>/*
+
+This file is part of Ext JS 4
+
+Copyright (c) 2011 Sencha Inc
+
+Contact:  http://www.sencha.com/contact
+
+GNU General Public License Usage
+This file may be used under the terms of the GNU General Public License version 3.0 as published by the Free Software Foundation and appearing in the file LICENSE included in the packaging of this file.  Please review the following information to ensure the GNU General Public License version 3.0 requirements will be met: http://www.gnu.org/copyleft/gpl.html.
+
+If you are unsure which license is appropriate for your use, please contact the sales department at http://www.sencha.com/contact.
+
+*/
+/**
+ * @class Ext.ux.form.MultiSelect
+ * @extends Ext.form.field.Base
+ * A control that allows selection and form submission of multiple list items.
+ *
+ *  @history
+ *    2008-06-19 bpm Original code contributed by Toby Stuart (with contributions from Robert Williams)
+ *    2008-06-19 bpm Docs and demo code clean up
+ *
+ * @constructor
+ * Create a new MultiSelect
+ * @param {Object} config Configuration options
+ * @xtype multiselect
+ */
+Ext.define('Ext.ux.form.MultiSelect', {
+    extend: 'Ext.form.field.Base',
+    alternateClassName: 'Ext.ux.Multiselect',
+    alias: ['widget.multiselect', 'widget.multiselectfield'],
+    uses: [
+        'Ext.view.BoundList',
+        'Ext.form.FieldSet',
+        'Ext.ux.layout.component.form.MultiSelect',
+        'Ext.view.DragZone',
+        'Ext.view.DropZone'
+    ],
+
+    /**
+     * @cfg {String} listTitle An optional title to be displayed at the top of the selection list.
+     */
+
+    /**
+     * @cfg {String/Array} dragGroup The ddgroup name(s) for the MultiSelect DragZone (defaults to undefined).
+     */
+
+    /**
+     * @cfg {String/Array} dropGroup The ddgroup name(s) for the MultiSelect DropZone (defaults to undefined).
+     */
+
+    /**
+     * @cfg {Boolean} ddReorder Whether the items in the MultiSelect list are drag/drop reorderable (defaults to false).
+     */
+    ddReorder: false,
+
+    /**
+     * @cfg {Object/Array} tbar An optional toolbar to be inserted at the top of the control's selection list.
+     * This can be a {@link Ext.toolbar.Toolbar} object, a toolbar config, or an array of buttons/button configs
+     * to be added to the toolbar. See {@link Ext.panel.Panel#tbar}.
+     */
+
+    /**
+     * @cfg {String} appendOnly True if the list should only allow append drops when drag/drop is enabled
+     * (use for lists which are sorted, defaults to false).
+     */
+    appendOnly: false,
+
+    /**
+     * @cfg {String} displayField Name of the desired display field in the dataset (defaults to 'text').
+     */
+    displayField: 'text',
+
+    /**
+     * @cfg {String} valueField Name of the desired value field in the dataset (defaults to the
+     * value of {@link #displayField}).
+     */
+
+    /**
+     * @cfg {Boolean} allowBlank False to require at least one item in the list to be selected, true to allow no
+     * selection (defaults to true).
+     */
+    allowBlank: true,
+
+    /**
+     * @cfg {Number} minSelections Minimum number of selections allowed (defaults to 0).
+     */
+    minSelections: 0,
+
+    /**
+     * @cfg {Number} maxSelections Maximum number of selections allowed (defaults to Number.MAX_VALUE).
+     */
+    maxSelections: Number.MAX_VALUE,
+
+    /**
+     * @cfg {String} blankText Default text displayed when the control contains no items (defaults to 'This field is required')
+     */
+    blankText: 'This field is required',
+
+    /**
+     * @cfg {String} minSelectionsText Validation message displayed when {@link #minSelections} is not met (defaults to 'Minimum {0}
+     * item(s) required').  The {0} token will be replaced by the value of {@link #minSelections}.
+     */
+    minSelectionsText: 'Minimum {0} item(s) required',
+
+    /**
+     * @cfg {String} maxSelectionsText Validation message displayed when {@link #maxSelections} is not met (defaults to 'Maximum {0}
+     * item(s) allowed').  The {0} token will be replaced by the value of {@link #maxSelections}.
+     */
+    maxSelectionsText: 'Maximum {0} item(s) allowed',
+
+    /**
+     * @cfg {String} delimiter The string used to delimit the selected values when {@link #getSubmitValue submitting}
+     * the field as part of a form. Defaults to ','. If you wish to have the selected values submitted as separate
+     * parameters rather than a single delimited parameter, set this to <tt>null</tt>.
+     */
+    delimiter: ',',
+
+    /**
+     * @cfg {Ext.data.Store/Array} store The data source to which this MultiSelect is bound (defaults to <tt>undefined</tt>).
+     * Acceptable values for this property are:
+     * <div class="mdetail-params"><ul>
+     * <li><b>any {@link Ext.data.Store Store} subclass</b></li>
+     * <li><b>an Array</b> : Arrays will be converted to a {@link Ext.data.ArrayStore} internally.
+     * <div class="mdetail-params"><ul>
+     * <li><b>1-dimensional array</b> : (e.g., <tt>['Foo','Bar']</tt>)<div class="sub-desc">
+     * A 1-dimensional array will automatically be expanded (each array item will be the combo
+     * {@link #valueField value} and {@link #displayField text})</div></li>
+     * <li><b>2-dimensional array</b> : (e.g., <tt>[['f','Foo'],['b','Bar']]</tt>)<div class="sub-desc">
+     * For a multi-dimensional array, the value in index 0 of each item will be assumed to be the combo
+     * {@link #valueField value}, while the value at index 1 is assumed to be the combo {@link #displayField text}.
+     * </div></li></ul></div></li></ul></div>
+     */
+
+    componentLayout: 'multiselectfield',
+
+    fieldBodyCls: Ext.baseCSSPrefix + 'form-multiselect-body',
+
+
+    // private
+    initComponent: function(){
+        var me = this;
+
+        me.bindStore(me.store, true);
+        if (me.store.autoCreated) {
+            me.valueField = me.displayField = 'field1';
+            if (!me.store.expanded) {
+                me.displayField = 'field2';
+            }
+        }
+
+        if (!Ext.isDefined(me.valueField)) {
+            me.valueField = me.displayField;
+        }
+
+        me.callParent();
+    },
+
+    bindStore: function(store, initial) {
+        var me = this,
+            oldStore = me.store,
+            boundList = me.boundList;
+
+        if (oldStore &amp;&amp; !initial &amp;&amp; oldStore !== store &amp;&amp; oldStore.autoDestroy) {
+            oldStore.destroyStore();
+        }
+
+        me.store = store ? Ext.data.StoreManager.lookup(store) : null;
+        if (boundList) {
+            boundList.bindStore(store || null);
+        }
+    },
+
+
+    // private
+    onRender: function(ct, position) {
+        var me = this,
+            panel, boundList, selModel;
+
+        me.callParent(arguments);
+
+        boundList = me.boundList = Ext.create('Ext.view.BoundList', {
+            deferInitialRefresh: false,
+            multiSelect: true,
+            store: me.store,
+            displayField: me.displayField,
+            border: false,
+            disabled: me.disabled
+        });
+
+        selModel = boundList.getSelectionModel();
+        me.mon(selModel, {
+            selectionChange: me.onSelectionChange,
+            scope: me
+        });
+
+        panel = me.panel = Ext.create('Ext.panel.Panel', {
+            title: me.listTitle,
+            tbar: me.tbar,
+            items: [boundList],
+            renderTo: me.bodyEl,
+            layout: 'fit'
+        });
+
+        // Must set upward link after first render
+        panel.ownerCt = me;
+
+        // Set selection to current value
+        me.setRawValue(me.rawValue);
+    },
+
+    // No content generated via template, it's all added components
+    getSubTplMarkup: function() {
+        return '';
+    },
+
+    // private
+    afterRender: function() {
+        var me = this;
+        me.callParent();
+
+        if (me.ddReorder &amp;&amp; !me.dragGroup &amp;&amp; !me.dropGroup){
+            me.dragGroup = me.dropGroup = 'MultiselectDD-' + Ext.id();
+        }
+
+        if (me.draggable || me.dragGroup){
+            me.dragZone = Ext.create('Ext.view.DragZone', {
+                view: me.boundList,
+                ddGroup: me.dragGroup,
+                dragText: '{0} Item{1}'
+            });
+        }
+        if (me.droppable || me.dropGroup){
+            me.dropZone = Ext.create('Ext.view.DropZone', {
+                view: me.boundList,
+                ddGroup: me.dropGroup,
+                handleNodeDrop: function(data, dropRecord, position) {
+                    var view = this.view,
+                        store = view.getStore(),
+                        records = data.records,
+                        index;
+
+                    // remove the Models from the source Store
+                    data.view.store.remove(records);
+
+                    index = store.indexOf(dropRecord);
+                    if (position === 'after') {
+                        index++;
+                    }
+                    store.insert(index, records);
+                    view.getSelectionModel().select(records);
+                }
+            });
+        }
+    },
+
+    onSelectionChange: function() {
+        this.checkChange();
+    },
+
+    /**
+     * Clears any values currently selected.
+     */
+    clearValue: function() {
+        this.setValue([]);
+    },
+
+    /**
+     * Return the value(s) to be submitted for this field. The returned value depends on the {@link #delimiter}
+     * config: If it is set to a String value (like the default ',') then this will return the selected values
+     * joined by the delimiter. If it is set to <tt>null</tt> then the values will be returned as an Array.
+     */
+    getSubmitValue: function() {
+        var me = this,
+            delimiter = me.delimiter,
+            val = me.getValue();
+        return Ext.isString(delimiter) ? val.join(delimiter) : val;
+    },
+
+    // inherit docs
+    getRawValue: function() {
+        var me = this,
+            boundList = me.boundList;
+        if (boundList) {
+            me.rawValue = Ext.Array.map(boundList.getSelectionModel().getSelection(), function(model) {
+                return model.get(me.valueField);
+            });
+        }
+        return me.rawValue;
+    },
+
+    // inherit docs
+    setRawValue: function(value) {
+        var me = this,
+            boundList = me.boundList,
+            models;
+
+        value = Ext.Array.from(value);
+        me.rawValue = value;
+
+        if (boundList) {
+            models = [];
+            Ext.Array.forEach(value, function(val) {
+                var undef,
+                    model = me.store.findRecord(me.valueField, val, undef, undef, true, true);
+                if (model) {
+                    models.push(model);
+                }
+            });
+            boundList.getSelectionModel().select(models, false, true);
+        }
+
+        return value;
+    },
+
+    // no conversion
+    valueToRaw: function(value) {
+        return value;
+    },
+
+    // compare array values
+    isEqual: function(v1, v2) {
+        var fromArray = Ext.Array.from,
+            i, len;
+
+        v1 = fromArray(v1);
+        v2 = fromArray(v2);
+        len = v1.length;
+
+        if (len !== v2.length) {
+            return false;
+        }
+
+        for(i = 0; i < len; i++) {
+            if (v2[i] !== v1[i]) {
+                return false;
+            }
+        }
+
+        return true;
+    },
+
+    getErrors : function(value) {
+        var me = this,
+            format = Ext.String.format,
+            errors = me.callParent(arguments),
+            numSelected;
+
+        value = Ext.Array.from(value || me.getValue());
+        numSelected = value.length;
+
+        if (!me.allowBlank &amp;&amp; numSelected < 1) {
+            errors.push(me.blankText);
+        }
+        if (numSelected < this.minSelections) {
+            errors.push(format(me.minSelectionsText, me.minSelections));
+        }
+        if (numSelected > this.maxSelections) {
+            errors.push(format(me.maxSelectionsText, me.maxSelections));
+        }
+
+        return errors;
+    },
+
+    onDisable: function() {
+        var me = this;
+        
+        me.callParent();
+        me.updateReadOnly();
+        if (me.boundList) {
+            me.boundList.disable();
+        }
+    },
+
+    onEnable: function() {
+        var me = this;
+        
+        me.callParent();
+        me.updateReadOnly();
+        if (me.boundList) {
+            me.boundList.enable();
+        }
+    },
+
+    setReadOnly: function(readOnly) {
+        this.readOnly = readOnly;
+        this.updateReadOnly();
+    },
+
+    /**
+     * @private Lock or unlock the BoundList's selection model to match the current disabled/readonly state
+     */
+    updateReadOnly: function() {
+        var me = this,
+            boundList = me.boundList,
+            readOnly = me.readOnly || me.disabled;
+        if (boundList) {
+            boundList.getSelectionModel().setLocked(readOnly);
+        }
+    },
+
+    onDestroy: function(){
+        Ext.destroyMembers(this, 'panel', 'boundList', 'dragZone', 'dropZone');
+        this.callParent();
+    }
+});
+
+
+
+</pre>
+        <!-- extjs/4.0.7/examples/multiselect/multiselect-demo/ux/layout/component/form/ItemSelector.js -->
+        <pre>/*
+
+This file is part of Ext JS 4
+
+Copyright (c) 2011 Sencha Inc
+
+Contact:  http://www.sencha.com/contact
+
+GNU General Public License Usage
+This file may be used under the terms of the GNU General Public License version 3.0 as published by the Free Software Foundation and appearing in the file LICENSE included in the packaging of this file.  Please review the following information to ensure the GNU General Public License version 3.0 requirements will be met: http://www.gnu.org/copyleft/gpl.html.
+
+If you are unsure which license is appropriate for your use, please contact the sales department at http://www.sencha.com/contact.
+
+*/
+/**
+ * @private
+ * @class Ext.ux.layout.component.form.ItemSelector
+ * @extends Ext.layout.component.field.Field
+ * Layout class for {@link Ext.ux.form.ItemSelector} fields.
+ * @private
+ */
+Ext.define('Ext.ux.layout.component.form.ItemSelector', {
+    extend: 'Ext.layout.component.field.Field',
+    alias: ['layout.itemselectorfield'],
+
+    type: 'itemselectorfield',
+
+    /**
+     * @cfg {Number} height The height of the field. Defaults to 200.
+     */
+    defaultHeight: 200,
+
+    sizeBodyContents: function(width, height) {
+        var me = this;
+
+        if (!Ext.isNumber(height)) {
+            height = me.defaultHeight;
+        }
+
+        me.owner.innerCt.setSize(width, height);
+    }
+});
+</pre>
+        <!-- extjs/4.0.7/examples/multiselect/multiselect-demo/ux/layout/component/form/MultiSelect.js -->
+        <pre>/*
+
+This file is part of Ext JS 4
+
+Copyright (c) 2011 Sencha Inc
+
+Contact:  http://www.sencha.com/contact
+
+GNU General Public License Usage
+This file may be used under the terms of the GNU General Public License version 3.0 as published by the Free Software Foundation and appearing in the file LICENSE included in the packaging of this file.  Please review the following information to ensure the GNU General Public License version 3.0 requirements will be met: http://www.gnu.org/copyleft/gpl.html.
+
+If you are unsure which license is appropriate for your use, please contact the sales department at http://www.sencha.com/contact.
+
+*/
+/**
+ * @private
+ * @class Ext.ux.layout.component.form.MultiSelect
+ * @extends Ext.layout.component.field.Field
+ * Layout class for {@link Ext.ux.form.MultiSelect} fields.
+ * @private
+ */
+Ext.define('Ext.ux.layout.component.form.MultiSelect', {
+    extend: 'Ext.layout.component.field.Field',
+    alias: ['layout.multiselectfield'],
+
+    type: 'multiselectfield',
+
+    /**
+     * @cfg {Number} height The height of the field. Defaults to 200.
+     */
+    defaultHeight: 200,
+
+    sizeBodyContents: function(width, height) {
+        var me = this;
+
+        if (!Ext.isNumber(height)) {
+            height = me.defaultHeight;
+        }
+
+        me.owner.panel.setSize(width, height);
+    }
+});
+</pre>
+    </div>
+    
+</body>
+</html>

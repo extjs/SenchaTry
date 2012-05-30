@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Determining when the active item changes on an Ext.TabPanel container in Sencha Touch 2</title>
+    <meta Name="description" content="Determining when the active item changes on an Ext.TabPanel container in Sencha Touch 2" />
+    <meta name="keywords" content="Sencha, Sencha Touch, Sencha Touch 2.0.1" />
+    <link href="/assets/application.css" media="screen" rel="stylesheet" type="text/css" />
+    <style>
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    
+    <div>
+        <header>
+            <h1>Sencha Try</h1>
+        </header>
+        
+        <section id="readme">
+            <h1>Determining when the active item changes on an Ext.TabPanel container in Sencha Touch 2</h1>
+
+<p>The following example shows how you can determine when the active item changes on an Ext.TabPanel container in Sencha Touch 2 by listening for the <code>activeitemchange</code> event.</p>
+            <strong>Tags:</strong> <a href="/search/Sencha Touch">Sencha Touch</a> <a href="/search/Sencha Touch 2.0.1">Sencha Touch 2.0.1</a> <br/>
+        </section>
+        <section id="example">
+            [example]
+        </section>
+        
+        <footer>
+            &copy; 2012 Sencha Inc.
+        </footer>
+    </div>
+    
+    <div class="hidden">
+        <!-- touch/2.0.1/demos/Ext.TabPanel.activeitemchange/app.js -->
+        <pre>/*global Ext:false */
+Ext.application({
+    launch: function () {
+        Ext.create('Ext.TabPanel', {
+            fullscreen: true,
+            tabBarPosition: 'bottom',
+            defaults: {
+                styleHtmlContent: true
+            }, // defaults
+            listeners: {
+                activeitemchange: function (tabPanel, tab, oldTab) {
+                    Ext.Msg.alert('activeitemchange', 'Current tab: ' + tab.config.title);
+                } // activeitemchange
+            }, // listeners
+            items: [{
+                badgeText: '0',
+                html: 'Home container',
+                iconCls: 'home',
+                style: 'background-color:red;',
+                title: 'Home'
+            }, {
+                badgeText: 2,
+                html: 'Profile container',
+                iconCls: 'user',
+                style: 'background-color:green;',
+                title: 'Profile'
+            }, {
+                badgeText: 13,
+                html: 'Settings container',
+                iconCls: 'settings',
+                style: 'background-color: blue;',
+                title: 'Settings'
+            }] // items
+        }); // create()
+    } // launch
+}); // application()
+</pre>
+    </div>
+    
+</body>
+</html>

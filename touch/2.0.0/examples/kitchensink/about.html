@@ -1,0 +1,3193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Kitchen Sink</title>
+    <meta Name="description" content="Kitchen Sink" />
+    <meta name="keywords" content="Sencha, Sencha Touch, Sencha Touch 2.0.0" />
+    <link href="/assets/application.css" media="screen" rel="stylesheet" type="text/css" />
+    <style>
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    
+    <div>
+        <header>
+            <h1>Sencha Try</h1>
+        </header>
+        
+        <section id="readme">
+            <h1>Kitchen Sink</h1>
+            <strong>Tags:</strong> <a href="/search/Sencha Touch">Sencha Touch</a> <a href="/search/Sencha Touch 2.0.0">Sencha Touch 2.0.0</a> <br/>
+        </section>
+        <section id="example">
+            [example]
+        </section>
+        
+        <footer>
+            &copy; 2012 Sencha Inc.
+        </footer>
+    </div>
+    
+    <div class="hidden">
+        <!-- touch/2.0.0/examples/kitchensink/app.js -->
+        <pre>/*global Ext:false */
+/**
+ * Ext.application is the heart of your app. It sets the application name, can specify the icon and startup images to
+ * use when your app is added to the home screen, and sets up your application's dependencies - usually the models,
+ * views and controllers that your app uses.
+ */
+Ext.application({
+    name: 'Kitchensink',
+
+    //sets up the icon and startup screens for when the app is added to a phone/tablet home screen
+
+    glossOnIcon: false,
+    icon: {
+        57: 'resources/icons/icon.png',
+        72: 'resources/icons/icon@72.png',
+        114: 'resources/icons/icon@2x.png',
+        144: 'resources/icons/icon@114.png'
+    },
+
+    phoneStartupScreen: 'resources/loading/Homescreen.jpg',
+    tabletStartupScreen: 'resources/loading/Homescreen~ipad.jpg',
+
+    //loads the views used by the app from the app/view folder
+    views: [
+        //component demos
+        'NestedList', 'List', 'SourceOverlay', 'Buttons',
+        'Forms', 'Icons', 'BottomTabs',
+        'Map', 'Overlays', 'Tabs','Toolbars',
+        'Video', 'Audio', 'Carousel', 'TouchEvents',
+
+        //data and utility demos
+        'JSONP', 'YQL', 'Ajax', 'NestedLoading',
+
+        //card transition animation demos
+        'SlideLeft', 'SlideRight', 'SlideUp', 'SlideDown',
+        'CoverLeft', 'CoverRight', 'CoverUp', 'CoverDown',
+        'RevealLeft', 'RevealRight', 'RevealUp', 'RevealDown',
+        'Pop', 'Fade', 'Flip','Cube'
+    ],
+
+    //loads app/store/Demos.js, which contains the tree data for our main navigation NestedList
+    stores: ['Demos'],
+
+    //the Kitchen Sink has Phone and Tablet modes, which rearrange the screen based on the type
+    //of device detected
+    profiles: ['Tablet', 'Phone']
+});
+</pre>
+        <!-- touch/2.0.0/examples/kitchensink/app/controller/Main.js -->
+        <pre>/**
+ * @class Kitchensink.controller.Main
+ * @extends Ext.app.Controller
+ *
+ * This is an abstract base class that is extended by both the phone and tablet versions. This controller is
+ * never directly instantiated, it just provides a set of common functionality that the phone and tablet
+ * subclasses both extend.
+ */
+Ext.define('Kitchensink.controller.Main', {
+    extend: 'Ext.app.Controller',
+
+    config: {
+        /**
+         * @private
+         */
+        viewCache: [],
+
+        refs: {
+            nav: '#mainNestedList',
+            main: 'mainview',
+            toolbar: '#mainNavigationBar',
+            sourceButton: 'button[action=viewSource]',
+
+            sourceOverlay: {
+                selector: 'sourceoverlay',
+                xtype: 'sourceoverlay',
+                autoCreate: true
+            }
+        },
+
+        control: {
+            sourceButton: {
+                tap: 'onSourceTap'
+            },
+            nav: {
+                itemtap: 'onNavTap'
+            }
+        },
+
+        routes: {
+            'demo/:id': 'showViewById',
+            'menu/:id': 'showMenuById'
+        },
+
+        /**
+         * @cfg {Ext.data.Model} currentDemo The Demo that is currently loaded. This is set whenever showViewById
+         * is called and used by functions like onSourceTap to fetch the source code for the current demo.
+         */
+        currentDemo: undefined
+    },
+
+    /**
+     * Finds a given view by ID and shows it. End-point of the "demo/:id" route
+     */
+    showViewById: function(id) {
+        var nav = this.getNav(),
+            view = nav.getStore().getNodeById(id);
+
+        this.showView(view);
+        this.setCurrentDemo(view);
+        this.hideSheets();
+    },
+
+    /**
+     * Shows the source code for the {@link #currentDemo} in an overlay
+     */
+    onSourceTap: function() {
+        var overlay = this.getSourceOverlay(),
+            demo    = this.getCurrentDemo();
+
+        if (!overlay.getParent()) {
+            Ext.Viewport.add(overlay);
+        }
+        overlay.show();
+        overlay.setMasked({
+            xtype: 'loadmask',
+            message: 'Loading...'
+        });
+
+        if (demo) {
+            Ext.Ajax.request({
+                url: 'app/view/' + (demo.get('view') || demo.get('text')) + '.js',
+
+                callback: function(request, success, response) {
+                    overlay.setHtml(response.responseText);
+                    overlay.unmask();
+                }
+            });
+        }
+    },
+
+    /**
+     * @private
+     * In the kitchen sink we have a large number of dynamic views. If we were to keep all of them rendered
+     * we'd risk causing the browser to run out of memory, especially on older devices. If we destroy them as
+     * soon as we're done with them, the app can appear sluggish. Instead, we keep a small number of rendered
+     * views in a viewCache so that we can easily reuse recently used views while destroying those we haven't
+     * used in a while.
+     * @param {String} name The full class name of the view to create (e.g. "Kitchensink.view.Forms")
+     * @return {Ext.Component} The component, which may be from the cache
+     */
+    createView: function(name) {
+        var cache = this.getViewCache(),
+            ln = cache.length,
+            limit = 20,
+            view, i, oldView;
+
+        Ext.each(cache, function(item) {
+            if (item.viewName === name) {
+                view = item;
+                return;
+            }
+        }, this);
+
+        if (view) {
+            return view;
+        }
+
+        if (ln >= limit) {
+            for (i = 0; i < ln; i++) {
+                oldView = cache[i];
+                if (!oldView.isPainted()) {
+                    oldView.destroy();
+                    cache.splice(i, 1);
+                    break;
+                }
+            }
+        }
+
+        view = Ext.create(name);
+        view.viewName = name;
+        cache.push(view);
+        this.setViewCache(cache);
+
+        return view;
+    },
+
+    /**
+     * @private
+     * Returns the full class name of the view to construct for a given Demo
+     * @param {Kitchensink.model.Demo} item The demo
+     * @return {String} The full class name of the view
+     */
+    getViewName: function(item) {
+        var name = item.get('view') || item.get('text'),
+            ns   = 'Kitchensink.view.';
+
+        if (name == 'TouchEvents') {
+            if (this.getApplication().getCurrentProfile().getName() === 'Tablet') {
+                return ns + 'tablet.' + name;
+            } else {
+                return ns + 'phone.' + name;
+            }
+        } else {
+            return ns + name;
+        }
+    },
+    
+    /**
+     * we iterate over all of the floating sheet components and make sure they're hidden when we
+     * navigate to a new view. This stops things like Picker overlays staying visible when you hit
+     * the browser's back button
+     */
+    hideSheets: function() {
+        Ext.each(Ext.ComponentQuery.query('sheet'), function(sheet) {
+            sheet.setHidden(true);
+        });
+    }
+});
+</pre>
+        <!-- touch/2.0.0/examples/kitchensink/app/controller/phone/Main.js -->
+        <pre>/**
+ * @class Kitchensink.controller.phone.Main
+ * @extends Kitchensink.controller.Main
+ *
+ * This is the Main controller subclass for the 'phone' profile. Most of the functionality required for this controller
+ * is provided by the Kitchensink.controller.Main superclass, but we do need to add a couple of refs and control
+ * statements to provide a slightly different behavior for the phone.
+ *
+ * The Main superclass provides a couple of capabilities that we use here. Firstly it sets up a listener on the main
+ * navigation NestedList and redirects to the appropriate url for each view. For example, tapping on the 'Forms' item
+ * in the list will redirect to the url 'demos/forms'.
+ *
+ * Secondly, it sets up a route that listens for urls in the form above and calls the controller's showView function
+ * whenever one is detected. The showView function then just shows the appropriate view on the screen.
+ *
+ */
+Ext.define('Kitchensink.controller.phone.Main', {
+    extend: 'Kitchensink.controller.Main',
+
+    config: {
+        refs: {
+            touchEvents: 'touchevents',
+            consoleButton: 'button[action=showConsole]'
+        },
+
+        control: {
+            nav: {
+                back: 'onBackTap'
+            },
+            consoleButton: {
+                tap: 'showTouchEventConsole'
+            }
+        }
+    },
+
+    /**
+     * This is called whenever the user taps on an item in the main navigation NestedList
+     */
+    onNavTap: function(nestedList, list, index) {
+        var record = list.getStore().getAt(index);
+
+        if (record.isLeaf()) {
+            this.redirectTo(record);
+        } else {
+            this.getApplication().getHistory().add(Ext.create('Ext.app.Action', {
+                url: 'menu/' + record.get('id')
+            }));
+        }
+    },
+
+    /**
+     * In the Phone Profile only we support routing through to a menu page (urls like "menu/ui"). This function
+     * just sets everything up to show that menu
+     */
+    showMenuById: function(id) {
+        var nav  = this.getNav(),
+            store = nav.getStore(),
+            item = id == 'root' ? store.getRoot() : store.getNodeById(id);
+
+        if (item) {
+            nav.goToNode(item);
+            this.getToolbar().setTitle(item.get('text'));
+            this.getSourceButton().setHidden(true);
+            this.getSourceOverlay().setHidden(true);
+            this.hideSheets();
+        }
+    },
+
+    /**
+     * For a given Demo model instance, shows the appropriate view. This is the endpoint for all routes matching
+     * 'demo/:id', so is called automatically whenever the user navigates back or forward between demos.
+     * @param {Kitchensink.model.Demo} item The Demo model instance for which we want to show a view
+     */
+    showView: function(item) {
+        var nav    = this.getNav(),
+            title  = item.get('text'),
+            view   = this.createView(this.getViewName(item)),
+            layout = nav.getLayout(),
+            anim   = item.get('animation'),
+            initialAnim = layout.getAnimation(),
+            newAnim;
+
+        if (anim) {
+            layout.setAnimation(anim);
+            newAnim = layout.getAnimation();
+        }
+
+        nav.setDetailCard(view);
+        nav.goToNode(item.parentNode);
+        nav.goToLeaf(item);
+
+        if (newAnim) {
+            newAnim.on('animationend', function() {
+                layout.setAnimation(initialAnim);
+            }, this, { single: true });
+        }
+
+        this.getToolbar().setTitle(title);
+        this.getSourceButton().setHidden(false);
+    },
+
+    /**
+     * This is called whenever the user hits the Back button on the main navigation NestedList. It hides the
+     * "View Source" button as we do no want to see that when we are in the NestedList itself
+     */
+    onBackTap: function(nestedList, node) {
+        //this means we just hit back out of a detail card
+        if (node.isLeaf()) {
+            this.getSourceButton().setHidden(true);
+        }
+
+        this.getApplication().getHistory().add(Ext.create('Ext.app.Action', {
+            url: 'menu/' + node.parentNode.get('id')
+        }), true);
+    },
+
+    /**
+     * This is called whenever the user hits the 'Console' button on the TouchEvents view. It just makes sure
+     * that the view is showing the console card.
+     */
+    showTouchEventConsole: function(button) {
+        this.getTouchEvents().showConsole();
+    }
+});
+</pre>
+        <!-- touch/2.0.0/examples/kitchensink/app/controller/tablet/Main.js -->
+        <pre>/**
+ * @class Kitchensink.controller.tablet.Main
+ * @extends Kitchensink.controller.Main
+ *
+ * This is the Main controller subclass for the 'tablet' profile. Almost all of the functionality is implemented in the
+ * superclass, here we just define showView, which is the function that is called whenever any view is navigated to via
+ * the navigation NestedList or a url change.
+ */
+Ext.define('Kitchensink.controller.tablet.Main', {
+    extend: 'Kitchensink.controller.Main',
+
+    /**
+     * This is called whenever the user taps on an item in the main navigation NestedList
+     */
+    onNavTap: function(nestedList, list, index) {
+        var record = list.getStore().getAt(index);
+
+        if (record.isLeaf()) {
+            this.redirectTo(record);
+        }
+    },
+
+    /**
+     * For a given Demo model instance, shows the appropriate view. This is the endpoint for all routes matching
+     * 'demo/:id', so is called automatically whenever the user navigates back or forward between demos.
+     * @param {Kitchensink.model.Demo} item The Demo model instance for which we want to show a view
+     */
+    showView: function(item) {
+        var nav  = this.getNav(),
+            view = this.createView(this.getViewName(item)),
+            main = this.getMain(),
+            anim = item.get('animation'),
+            layout  = main.getLayout(),
+            initialAnim = layout.getAnimation(),
+            newAnim;
+
+        if (anim) {
+            layout.setAnimation(anim);
+            newAnim = layout.getAnimation();
+        }
+
+        nav.setDetailContainer(main);
+        nav.setDetailCard(view);
+        nav.goToNode(item.parentNode);
+        nav.goToLeaf(item);
+        nav.getActiveItem().select(item);
+
+        if (newAnim) {
+            newAnim.on('animationend', function() {
+                layout.setAnimation(initialAnim);
+            }, this, { single: true });
+        }
+
+        this.getToolbar().setTitle(item.get('text'));
+        this.getSourceButton().setHidden(false);
+//        nav.goToNode(item.parentNode);
+//        nav.goToLeaf(item);
+//    },
+//
+//    /**
+//     * This is how the view above should look once the animation is fixed
+//     */
+//    XshowView: function(item) {
+//        var nav  = this.getNav(),
+//            view = this.createView(this.getViewName(item));
+//
+//        nav.setDetailCard(view);
+//        nav.goToNode(item.parentNode);
+//        nav.goToLeaf(item);
+//        nav.getCurrentList().select(item);
+//
+//        this.getToolbar().setTitle(item.get('text'));
+//        this.getSourceButton().setHidden(false);
+//    },
+//
+//    /**
+//     * Ideally, even that could be reduced to this by implementing an ensureVisible function onto List
+//     * and NestedList
+//     */
+//    XshowView: function(item) {
+//        var nav = this.getNav();
+//
+//        nav.ensureVisible(item);
+//        nav.setDetailCard(this.createDemoView(item));
+//
+//        this.getToolbar().setTitle(item.get('text'));
+//        this.getSourceButton().setHidden(false);
+    },
+
+    showMenuById: Ext.emptyFn
+});
+</pre>
+        <!-- touch/2.0.0/examples/kitchensink/app/model/Cars.js -->
+        <pre>Ext.define('Kitchensink.model.Cars', {
+    extend: 'Ext.data.Model',
+    config: {
+        fields: [
+            {name: 'text', type: 'string'}
+        ]
+    }
+});
+</pre>
+        <!-- touch/2.0.0/examples/kitchensink/app/model/Demo.js -->
+        <pre>Ext.define('Kitchensink.model.Demo', {
+    extend: 'Ext.data.Model',
+
+    config: {
+        fields: [
+            {name: 'id',          type: 'string'},
+            {name: 'text',        type: 'string'},
+            {name: 'source',      type: 'string'},
+            {name: 'animation',   type: 'auto'},
+            {name: 'preventHide', type: 'boolean'},
+            {name: 'view',        type: 'string'}
+        ]
+    }
+});
+</pre>
+        <!-- touch/2.0.0/examples/kitchensink/app/model/Order.js -->
+        <pre>Ext.require('Kitchensink.model.OrderItem', function() {
+    Ext.define('Kitchensink.model.Order', {
+        extend: 'Ext.data.Model',
+        config: {
+            fields: ['id', 'status'],
+            hasMany: {
+                model: 'Kitchensink.model.OrderItem',
+                name: 'orderItems'
+            }
+        }
+    });
+});
+</pre>
+        <!-- touch/2.0.0/examples/kitchensink/app/model/OrderItem.js -->
+        <pre>Ext.define('Kitchensink.model.OrderItem', {
+    extend: 'Ext.data.Model',
+    config: {
+        fields: ['id', 'quantity', 'price', 'name']
+    }
+});
+</pre>
+        <!-- touch/2.0.0/examples/kitchensink/app/model/User.js -->
+        <pre>Ext.require('Kitchensink.model.Order', function() {
+    Ext.define('Kitchensink.model.User', {
+        extend: 'Ext.data.Model',
+        config: {
+            fields: ['id', 'name'],
+            hasMany: {
+                model: 'Kitchensink.model.Order',
+                name: 'orders'
+            },
+            proxy: {
+                type: 'ajax',
+                url : 'userData.json'
+            }
+        }
+    });
+});
+</pre>
+        <!-- touch/2.0.0/examples/kitchensink/app/profile/Base.js -->
+        <pre>Ext.define('Kitchensink.profile.Base', {
+    extend: 'Ext.app.Profile',
+
+    launch: function() {
+        var isBenchmarking = window.location.search.match(/(\?|&amp;)bm/);
+
+        if (isBenchmarking) {
+            Ext.Animator.on({
+                animationend: 'onAnimationEnd',
+                scope: this
+            });
+
+            this.benchmark = Ext.Viewport.add({
+                style: 'background-color: red; color: #FFF',
+                bottom: 0,
+                right: 0,
+                zIndex: 1000
+            });
+        }
+    },
+
+    onAnimationEnd: function(animator, animation, element) {
+        var delay = (Date.now() - animation.startTime) - animation.getDuration(),
+                benchmark = this.benchmark,
+                item;
+
+        item = benchmark.add({
+            html: element.id + ' <b>' + delay + '</b>'
+        });
+
+        setTimeout(function() {
+            item.destroy();
+        }, 5000);
+    }
+});
+</pre>
+        <!-- touch/2.0.0/examples/kitchensink/app/profile/Phone.js -->
+        <pre>Ext.define('Kitchensink.profile.Phone', {
+    extend: 'Kitchensink.profile.Base',
+
+    config: {
+        controllers: ['Main'],
+        views: ['Main', 'TouchEvents']
+    },
+
+    isActive: function() {
+        return Ext.os.is.Phone; // || Ext.os.is.Desktop;
+    },
+
+    launch: function() {
+        Ext.create('Kitchensink.view.phone.Main');
+
+        this.callParent();
+    }
+});
+</pre>
+        <!-- touch/2.0.0/examples/kitchensink/app/profile/Tablet.js -->
+        <pre>Ext.define('Kitchensink.profile.Tablet', {
+    extend: 'Kitchensink.profile.Base',
+
+    config: {
+        controllers: ['Main'],
+        views: ['Main', 'TouchEvents']
+    },
+
+    isActive: function() {
+        return Ext.os.is.Tablet || Ext.os.is.Desktop;
+    },
+
+    launch: function() {
+        Ext.create('Kitchensink.view.tablet.Main');
+
+        this.callParent();
+    }
+});
+</pre>
+        <!-- touch/2.0.0/examples/kitchensink/app/store/Demos.js -->
+        <pre>(function() {
+    var animations = {
+        text: 'Animations',
+        card: false,
+        id: 'animations',
+        items: [
+            {
+                text: 'Slide',
+                id: 'Slide',
+                items: [
+                    {
+                        text: 'Slide Left',
+                        id: 'SlideLeft',
+                        view: 'SlideLeft',
+                        card: false,
+                        animation: {
+                            type: 'slide'
+                        },
+                        leaf: true
+                    },
+                    {
+                        text: 'Slide Right',
+                        card: false,
+                        id: 'SlideRight',
+                        view: 'SlideRight',
+                        animation: {
+                            type: 'slide',
+                            direction: 'right'
+                        },
+                        leaf: true
+                    },
+                    {
+                        text: 'Slide Up',
+                        card: false,
+                        id: 'SlideUp',
+                        view: 'SlideUp',
+                        animation: {
+                            type: 'slide',
+                            direction: 'up'
+                        },
+                        leaf: true
+                    },
+                    {
+                        text: 'Slide Down',
+                        card: false,
+                        id: 'SlideDown',
+                        view: 'SlideDown',
+                        animation: {
+                            type: 'slide',
+                            direction: 'down'
+                        },
+                        leaf: true
+                    }
+                ]
+            },
+            {
+                text: 'Fade',
+                id: 'Fade',
+                card: false,
+                animation: {
+                    type: 'fade',
+                    duration: 500
+                },
+                leaf: true
+            }
+        ]};
+
+    if (!Ext.os.is.Android2) {
+        animations.items.push({
+            text: 'Cover',
+            id: 'Cover',
+            items: [
+                {
+                    text: 'Cover Left',
+                    card: false,
+                    view: 'CoverLeft',
+                    id: 'CoverLeft',
+                    animation: {
+                        type: 'cover'
+                    },
+                    leaf: true
+                },
+                {
+                    text: 'Cover Right',
+                    card: false,
+                    id: 'CoverRight',
+                    view: 'CoverRight',
+                    animation: {
+                        type: 'cover',
+                        direction: 'right'
+                    },
+                    leaf: true
+                },
+                {
+                    text: 'Cover Up',
+                    card: false,
+                    view: 'CoverUp',
+                    id: 'CoverUp',
+                    animation: {
+                        type: 'cover',
+                        direction: 'up'
+                    },
+                    leaf: true
+                },
+                {
+                    text: 'Cover Down',
+                    card: false,
+                    id: 'CoverDown',
+                    view: 'CoverDown',
+                    animation: {
+                        type: 'cover',
+                        direction: 'down'
+                    },
+                    leaf: true
+                }
+            ]
+        },
+        {
+            text: 'Reveal',
+            id: 'Reveal',
+            items: [
+                {
+                    text: 'Reveal Left',
+                    card: false,
+                    id: 'RevealLeft',
+                    view: 'RevealLeft',
+                    animation: {
+                        type: 'reveal'
+                    },
+                    leaf: true
+                },
+                {
+                    text: 'Reveal Right',
+                    card: false,
+                    id: 'RevealRight',
+                    view: 'RevealRight',
+                    animation: {
+                        direction: 'right',
+                        type: 'reveal'
+                    },
+                    leaf: true
+                },
+                {
+                    text: 'Reveal Up',
+                    card: false,
+                    id: 'RevealUp',
+                    view: 'RevealUp',
+                    animation: {
+                        direction: 'up',
+                        type: 'reveal'
+                    },
+                    leaf: true
+                },
+                {
+                    text: 'Reveal Down',
+                    card: false,
+                    id: 'RevealDown',
+                    view: 'RevealDown',
+                    animation: {
+                        direction: 'down',
+                        type: 'reveal'
+                    },
+                    leaf: true
+                }
+            ]
+        }, {
+            text: 'Pop',
+            id: 'Pop',
+            card: false,
+            animation: {
+                type: 'pop'
+            },
+            leaf: true
+        }, {
+            text: 'Flip',
+            id: 'Flip',
+            card: false,
+            animation: {
+                type: 'flip'
+            },
+            leaf: true
+        });
+    }
+
+    var root = {
+        id: 'root',
+        text: 'Kitchen Sink',
+        items: [
+            {
+                text: 'User Interface',
+                id: 'ui',
+                cls: 'launchscreen',
+                items: [
+                    {
+                        text: 'Buttons',
+                        leaf: true,
+                        id: 'buttons'
+                    },
+                    {
+                        text: 'Forms',
+                        leaf: true,
+                        id: 'forms'
+                    },
+                    {
+                        text: 'List',
+                        leaf: true,
+                        id: 'list'
+                    },
+                    {
+                        text: 'Nested List',
+                        view: 'NestedList',
+                        leaf: true,
+                        id: 'nestedlist'
+                    },
+                    {
+                        text: 'Icons',
+                        leaf: true,
+                        id: 'icons'
+                    },
+                    {
+                        text: 'Toolbars',
+                        leaf: true,
+                        id: 'toolbars'
+                    },
+                    {
+                        text: 'Carousel',
+                        leaf: true,
+                        id: 'carousel'
+                    },
+                    {
+                        text: 'Tabs',
+                        leaf: true,
+                        id: 'tabs'
+                    },
+                    {
+                        text: 'Bottom Tabs',
+                        view: 'BottomTabs',
+                        leaf: true,
+                        id: 'bottom-tabs'
+                    },
+                    {
+                        text: 'Overlays',
+                        leaf: true,
+                        id: 'overlays'
+                    }
+                ]
+            }
+        ]
+    };
+
+    //Ext.Array.each(animations, function(anim) {
+    //    root.items.push(anim);
+    //});
+
+    root.items.push(animations, {
+        text: 'Touch Events',
+        id: 'touchevents',
+        view: 'TouchEvents',
+        leaf: true
+    }, {
+        text: 'Data',
+        id: 'data',
+        items: [
+            {
+                text: 'Nested Loading',
+                view: 'NestedLoading',
+                leaf: true,
+                id: 'nestedloading'
+            },
+            {
+                text: 'JSONP',
+                leaf: true,
+                id: 'jsonp'
+            },
+            {
+                text: 'YQL',
+                leaf: true,
+                id: 'yql'
+            },
+            {
+                text: 'Ajax',
+                leaf: true,
+                id: 'ajax'
+            }
+        ]
+    }, {
+        text: 'Media',
+        id: 'media',
+        items: [
+            {
+                text: 'Video',
+                leaf: true,
+                id: 'video'
+            },
+            {
+                text: 'Audio',
+                leaf: true,
+                id: 'audio'
+            }
+        ]
+    });
+
+    Ext.define('Kitchensink.store.Demos', {
+        alias: 'store.Demos',
+        extend: 'Ext.data.TreeStore',
+        requires: ['Kitchensink.model.Demo'],
+
+        config: {
+            model: 'Kitchensink.model.Demo',
+            root: root,
+            defaultRootProperty: 'items'
+        }
+    });
+})();
+</pre>
+        <!-- touch/2.0.0/examples/kitchensink/app/view/Ajax.js -->
+        <pre>/**
+ * Demonstrates loading data over AJAX. See http://docs.sencha.com/touch/2-0/#!/guide/ajax for more
+ * background on Sencha Touch 2's AJAX capabilities
+ */
+Ext.define('Kitchensink.view.Ajax', {
+    extend: 'Ext.Container',
+    config: {
+        scrollable: true,
+        items: [
+            {
+                xtype: 'panel',
+                id: 'Ajax',
+                styleHtmlContent: true
+            },
+            {
+                docked: 'top',
+                xtype: 'toolbar',
+                items: [
+                    {
+                        text: 'Load using Ajax',
+                        handler: function() {
+                            var panel = Ext.getCmp('Ajax');
+
+                            panel.getParent().setMasked({
+                                xtype: 'loadmask',
+                                message: 'Loading...'
+                            });
+
+                            Ext.Ajax.request({
+                                url: 'test.json',
+                                success: function(response) {
+                                    panel.setHtml(response.responseText);
+                                    panel.getParent().unmask();
+                                }
+                            });
+                        }
+                    }
+                ]
+            }
+        ]
+    }
+});
+</pre>
+        <!-- touch/2.0.0/examples/kitchensink/app/view/Audio.js -->
+        <pre>/**
+ * Demonstrates usage of the Ext.Audio component
+ */
+Ext.define('Kitchensink.view.Audio', {
+    extend: 'Ext.Container',
+    requires: [
+        'Ext.Audio'
+    ],
+    config: {
+        layout: Ext.os.is.Android ? {
+            type: 'vbox',
+            pack: 'center',
+            align: 'center'
+        } : 'fit',
+        items: Ext.os.is.Android ? [
+            {
+                xtype: 'audio',
+                cls: 'myAudio',
+                url: '../audio/crash.mp3',
+                loop: true,
+                enableControls: false
+            },
+            {
+                xtype : 'button',
+                text  : 'Play audio',
+                margin: 20,
+                handler: function() {
+                    var audio = this.getParent().down('audio');
+
+                    if (audio.isPlaying()) {
+                        audio.pause();
+                        this.setText('Play audio');
+                    } else {
+                        audio.play();
+                        this.setText('Pause audio');
+                    }
+                }
+            }
+        ] : [
+            {
+                xtype: 'audio',
+                cls: 'myAudio',
+                url: '../audio/crash.mp3',
+                loop: true
+            }
+        ]
+    }
+});
+</pre>
+        <!-- touch/2.0.0/examples/kitchensink/app/view/BottomTabs.js -->
+        <pre>/**
+ * Demonstrates usage of the Ext.tab.Panel component with the tabBar docked to the bottom of the screen.
+ * See also app/view/Tabs.js for an example with the tabBar docked to the top
+ */
+Ext.define('Kitchensink.view.BottomTabs', {
+    extend: 'Ext.tab.Panel',
+
+    config: {
+        activeTab: 0,
+        tabBar: {
+            layout: {
+                pack : 'center',
+                align: 'center'
+            },
+            docked: 'bottom'
+        },
+        defaults: {
+            scrollable: true
+        },
+        items: [
+            {
+                title    : 'About',
+                html     : '<p>Docking tabs to the bottom will automatically change their style.</p>',
+                iconCls  : 'info',
+                cls      : 'card'
+            },
+            {
+                title    : 'Favorites',
+                html     : 'Badges <em>(like the 4, below)</em> can be added by setting <code>badgeText</code> when creating a tab or by using <code>setBadge()</code> on the tab later.',
+                iconCls  : 'favorites',
+                cls      : 'card dark',
+                badgeText: '4'
+            },
+            {
+                title    : 'Downloads',
+                id       : 'tab3',
+                html     : 'Badge labels will truncate if the text is wider than the tab.',
+                badgeText: 'Overflow test',
+                cls      : 'card',
+                iconCls  : 'download'
+            },
+            {
+                title    : 'Settings',
+                html     : 'Tabbars are <code>ui:"dark"</code> by default, but also have light variants.',
+                cls      : 'card dark',
+                iconCls  : 'settings'
+            },
+            {
+                title    : 'User',
+                html     : '<span class="action">User tapped User</span>',
+                cls      : 'card',
+                iconCls  : 'user'
+            }
+        ]
+    }
+});
+</pre>
+        <!-- touch/2.0.0/examples/kitchensink/app/view/Buttons.js -->
+        <pre>/**
+ * Demonstrates a range of Button options the framework offers out of the box
+ */
+Ext.define('Kitchensink.view.Buttons', {
+    extend: 'Ext.Container',
+
+    config: {
+        layout: {
+            type : 'vbox',
+            pack : 'center',
+            align: 'stretch'
+        },
+        cls   : 'card1',
+        defaults: {
+            xtype: 'container',
+            flex : 1,
+            layout: {
+                type : 'hbox',
+                align: 'middle'
+            },
+            defaults: {
+                xtype : 'button',
+                flex  : 1,
+                margin: 10
+            }
+        },
+        items: [
+            {
+                items: [
+                    {text: 'Normal'},
+                    {ui: 'round', text: 'Round'},
+                    {ui: 'small', text: 'Small'}
+                ]
+            },
+            {
+                items: [
+                    {ui: 'decline', text: 'Decline'},
+                    {ui: 'decline-round', text: 'Round'},
+                    {ui: 'decline-small', text: 'Small'}
+                ]
+            },
+            {
+                items: Ext.os.deviceType.toLowerCase() == "phone" ? [
+                    {ui: 'confirm', text: 'Confirm'},
+                    {ui: 'confirm-round', text: 'Round'},
+                    {ui: 'confirm-small', text: 'Small'}
+                ] : [
+                    {ui: 'confirm', text: 'Confirm'},
+                    {ui: 'confirm-round', text: 'Round'},
+                    {ui: 'confirm-small', text: 'Small'},
+                    {ui: 'back', text: 'Back'}
+                ]
+            }
+        ]
+    }
+});
+</pre>
+        <!-- touch/2.0.0/examples/kitchensink/app/view/Carousel.js -->
+        <pre>/**
+ * Demonstrates how use an Ext.Carousel in vertical and horizontal configurations
+ */
+Ext.define('Kitchensink.view.Carousel', {
+    extend: 'Ext.Container',
+
+    requires: [
+        'Ext.carousel.Carousel'
+    ],
+
+    config: {
+        cls: 'cards',
+        layout: {
+            type: 'vbox',
+            align: 'stretch'
+        },
+        defaults: {
+            flex: 1
+        },
+        items: [{
+            xtype: 'carousel',
+            items: [{
+                html: '<p>Swipe left to show the next card&amp;hellip;</p>',
+                cls: 'card'
+            },
+            {
+                html: '<p>You can also tap on either side of the indicators.</p>',
+                cls: 'card'
+            },
+            {
+                html: 'Card #3',
+                cls: 'card'
+            }]
+        }, {
+            xtype: 'carousel',
+            ui: 'light',
+            direction: 'vertical',
+            items: [{
+                html: '<p>Carousels can also be vertical <em>(swipe up)&amp;hellip;</p>',
+                cls: 'card dark'
+            },
+            {
+                html: 'And can also use <code>ui:light</code>.',
+                cls: 'card dark'
+            },
+            {
+                html: 'Card #3',
+                cls: 'card dark'
+            }]
+        }]
+    }
+});
+</pre>
+        <!-- touch/2.0.0/examples/kitchensink/app/view/CoverDown.js -->
+        <pre>/**
+ * Demonstrates a 'cover' card transition, which shows a new item by sliding it over the top of the 
+ * current item, in this case starting from the top
+ */
+Ext.define('Kitchensink.view.CoverDown', {
+    extend: 'Ext.Panel',
+    requires: ['Kitchensink.view.LoremIpsum'],
+    config: {
+        cls: 'card card4',
+        scrollable: true,
+        items: [{
+            docked: 'top',
+            html: 'Cover Down Animation'
+        }, {
+            xtype: 'loremipsum'
+        }]
+    }
+});
+</pre>
+        <!-- touch/2.0.0/examples/kitchensink/app/view/CoverLeft.js -->
+        <pre>/**
+ * Demonstrates a 'cover' card transition, which shows a new item by sliding it over the top of the
+ * current item, in this case starting from the left
+ */
+Ext.define('Kitchensink.view.CoverLeft', {
+    extend: 'Ext.Panel',
+    requires: ['Kitchensink.view.LoremIpsum2'],
+    config: {
+        cls: 'card card1',
+        scrollable: true,
+        items: [{
+            docked: 'top',
+            html: 'Cover Left Animation'
+        }, {
+            xtype: 'loremipsum2'
+        }]
+    }
+});
+</pre>
+        <!-- touch/2.0.0/examples/kitchensink/app/view/CoverRight.js -->
+        <pre>/**
+ * Demonstrates a 'cover' card transition, which shows a new item by sliding it over the top of the 
+ * current item, in this case starting from the right
+ */
+Ext.define('Kitchensink.view.CoverRight', {
+    extend: 'Ext.Panel',
+    requires: ['Kitchensink.view.LoremIpsum'],
+    config: {
+        cls: 'card card2',
+        scrollable: true,
+        items: [{
+            docked: 'top',
+            html: 'Cover Right Animation'
+        }, {
+            xtype: 'loremipsum'
+        }]
+    }
+});
+</pre>
+        <!-- touch/2.0.0/examples/kitchensink/app/view/CoverUp.js -->
+        <pre>/**
+ * Demonstrates a 'cover' card transition, which shows a new item by sliding it over the top of the
+ * current item, in this case starting from the bottom
+ */
+Ext.define('Kitchensink.view.CoverUp', {
+    extend: 'Ext.Panel',
+    requires: ['Kitchensink.view.LoremIpsum2'],
+    config: {
+        cls: 'card card3',
+        scrollable: true,
+        items: [{
+            docked: 'top',
+            html: 'Cover Up Animation'
+        }, {
+            xtype: 'loremipsum2'
+        }]
+    }
+});
+</pre>
+        <!-- touch/2.0.0/examples/kitchensink/app/view/Cube.js -->
+        <pre>Ext.define('Kitchensink.view.Cube', {
+    extend: 'Ext.Panel',
+    config: {
+        cls: 'card card1',
+        html: 'Cube Animation'
+    }
+});
+</pre>
+        <!-- touch/2.0.0/examples/kitchensink/app/view/EditorPanel.js -->
+        <pre>/**
+ * This is used by the NestedList example to allow editing of an item in the Store
+ */
+Ext.define('Kitchensink.view.EditorPanel', {
+    extend: 'Ext.form.Panel',
+    id: 'editorPanel',
+    config: {
+        modal: true,
+        hideOnMaskTap: false,
+        centered: true,
+        width: 300,
+        scrollable: false,
+        items: [{
+            xtype: 'fieldset',
+            items: [{
+                xtype: 'textfield',
+                name: 'text',
+                label: 'Name'
+            }]
+        }, {
+            docked: 'top',
+            xtype: 'toolbar',
+            title: 'Edit Item'
+        }, {
+            docked: 'bottom',
+            ui: 'light',
+            xtype: 'toolbar',
+            items: [{
+                text: 'Cancel',
+                handler: function() {
+                    Ext.getCmp('editorPanel').hide();
+                }
+            }, {
+                xtype: 'spacer'
+            }, {
+                text: 'Change',
+                ui: 'action',
+                handler: function() {
+                    var formPanel = Ext.getCmp('editorPanel'),
+                        formRecord = formPanel.getRecord();
+                    if (formRecord) {
+                        formRecord.set(formPanel.getValues());
+                        formRecord.commit();
+                    }
+                    formPanel.hide();
+                }
+            }]
+        }]
+    }
+});
+</pre>
+        <!-- touch/2.0.0/examples/kitchensink/app/view/Fade.js -->
+        <pre>/**
+ * Demonstrates a 'fade' card transition, which shows a new item by rendering it behind the current item
+ * then fading the current item out
+ */
+
+Ext.define('Kitchensink.view.Fade', {
+    extend: 'Ext.Panel',
+    requires: ['Kitchensink.view.LoremIpsum2'],
+    config: {
+        cls: 'card card5',
+        scrollable: true,
+        items: [{
+            docked: 'top',
+            html: 'Fade Animation'
+        }, {
+            xtype: 'loremipsum2'
+        }]
+    }
+});
+</pre>
+        <!-- touch/2.0.0/examples/kitchensink/app/view/Flip.js -->
+        <pre>/**
+ * Demonstrates a 'flip' card transition
+ */
+Ext.define('Kitchensink.view.Flip', {
+    extend: 'Ext.Panel',
+    requires: ['Kitchensink.view.LoremIpsum2'],
+    config: {
+        cls: 'card card2',
+        scrollable: true,
+        items: [{
+            docked: 'top',
+            html: 'Flip Animation'
+        }, {
+            xtype: 'loremipsum2'
+        }]
+    }
+});
+</pre>
+        <!-- touch/2.0.0/examples/kitchensink/app/view/Forms.js -->
+        <pre>/**
+ * Demonstrates a tabbed form panel. This uses a tab panel with 3 tabs - Basic, Sliders and Toolbars - each of which is
+ * defined below.
+ *
+ * See this in action at http://dev.sencha.com/deploy/sencha-touch-2-b3/examples/kitchensink/index.html#demo/forms
+ */
+Ext.define('Kitchensink.view.Forms', {
+    extend: 'Ext.tab.Panel',
+
+    requires: [
+        'Ext.form.Panel',
+        'Ext.form.FieldSet',
+        'Ext.field.Number',
+        'Ext.field.Spinner',
+        'Ext.field.Password',
+        'Ext.field.Email',
+        'Ext.field.Url',
+        'Ext.field.DatePicker',
+        'Ext.field.Select',
+        'Ext.field.Hidden',
+        'Ext.field.Radio',
+        'Ext.field.Slider',
+        'Ext.field.Toggle',
+        'Ext.field.Search'
+    ],
+
+    config: {
+        activeItem: 0,
+        tabBar: {
+            // docked: 'bottom',
+            ui: 'neutral',
+            layout: {
+                pack: 'center'
+            }
+        },
+        items: [
+            {
+                title: 'Basic',
+                xtype: 'formpanel',
+                id: 'basicform',
+                iconCls: 'refresh',
+                items: [
+                    {
+                        xtype: 'fieldset',
+                        title: 'Personal Info',
+                        instructions: 'Please enter the information above.',
+                        defaults: {
+                            labelWidth: '35%'
+                        },
+                        items: [
+                            {
+                                xtype         : 'textfield',
+                                name          : 'name',
+                                label         : 'Name',
+                                placeHolder   : 'Tom Roy',
+                                autoCapitalize: true,
+                                required      : true,
+                                clearIcon     : true
+                            },
+                            {
+                                xtype: 'passwordfield',
+                                name : 'password',
+                                label: 'Password'
+                            },
+                            {
+                                xtype      : 'emailfield',
+                                name       : 'email',
+                                label      : 'Email',
+                                placeHolder: 'me@sencha.com',
+                                clearIcon  : true
+                            },
+                            {
+                                xtype      : 'urlfield',
+                                name       : 'url',
+                                label      : 'Url',
+                                placeHolder: 'http://sencha.com',
+                                clearIcon  : true
+                            },
+                            {
+                                xtype      : 'spinnerfield',
+                                name       : 'spinner',
+                                label      : 'Spinner',
+                                minValue   : 0,
+                                maxValue   : 10,
+                                increment  : 1,
+                                cycle      : true
+                            },
+                            {
+                                xtype: 'checkboxfield',
+                                name : 'cool',
+                                label: 'Cool'
+                            },
+                            {
+                                xtype: 'datepickerfield',
+                                destroyPickerOnHide: true,
+                                name : 'date',
+                                label: 'Start Date',
+                                value: new Date(),
+                                picker: {
+                                    yearFrom: 1990
+                                }
+                            },
+                            {
+                                xtype: 'selectfield',
+                                name : 'rank',
+                                label: 'Rank',
+                                options: [
+                                    {
+                                        text : 'Master',
+                                        value: 'master'
+                                    },
+                                    {
+                                        text : 'Journeyman',
+                                        value: 'journeyman'
+                                    },
+                                    {
+                                        text : 'Apprentice',
+                                        value: 'apprentice'
+                                    }
+                                ]
+                            },
+                            {
+                                xtype: 'textareafield',
+                                name : 'bio',
+                                label: 'Bio'
+                            }
+                        ]
+                    },
+                    {
+                        xtype: 'fieldset',
+                        title: 'Favorite color',
+                        defaults: {
+                            xtype     : 'radiofield',
+                            labelWidth: '35%'
+                        },
+                        items: [
+                            {
+                                name : 'color',
+                                value: 'red',
+                                label: 'Red'
+                            },
+                            {
+                                name : 'color',
+                                label: 'Blue',
+                                value: 'blue'
+                            },
+                            {
+                                name : 'color',
+                                label: 'Green',
+                                value: 'green'
+                            },
+                            {
+                                name : 'color',
+                                label: 'Purple',
+                                value: 'purple'
+                            }
+                        ]
+                    },
+                    {
+                        xtype: 'panel',
+                        defaults: {
+                            xtype: 'button',
+                            style: 'margin: 0.1em',
+                            flex : 1
+                        },
+                        layout: {
+                            type: 'hbox'
+                        },
+                        items: [
+                            {
+                                text: 'Disable fields',
+                                scope: this,
+                                hasDisabled: false,
+                                handler: function(btn){
+                                    var form = Ext.getCmp('basicform');
+
+                                    if (btn.hasDisabled) {
+                                        form.enable();
+                                        btn.hasDisabled = false;
+                                        btn.setText('Disable fields');
+                                    } else {
+                                        form.disable();
+                                        btn.hasDisabled = true;
+                                        btn.setText('Enable fields');
+                                    }
+                                }
+                            },
+                            {
+                                text: 'Reset',
+                                handler: function(){
+                                    Ext.getCmp('basicform').reset();
+                                }
+                            }
+                        ]
+                    }
+                ]
+            },
+
+            {
+                title: 'Sliders',
+                xtype: 'formpanel',
+                items: [
+                    {
+                        xtype: 'fieldset',
+                        defaults: {
+                            labelWidth: '35%',
+                            labelAlign: 'top'
+                        },
+                        items: [
+                            {
+                                xtype: 'sliderfield',
+                                name: 'thumb',
+                                label: 'Single Thumb'
+                            },
+                            {
+                                xtype: 'sliderfield',
+                                name: 'multithumb',
+                                label: 'Multiple Thumbs',
+                                values: [10, 70]
+                            },
+                            {
+                                xtype: 'togglefield',
+                                name: 'toggle',
+                                label: 'Toggle'
+                            }
+                        ]
+                    }
+                ]
+            },
+
+            {
+                title: 'Toolbars',
+                xtype: 'panel',
+                items: [
+                    {
+                        styleHtmlContent: true
+                    },
+                    {
+                        docked: 'top',
+                        xtype: 'toolbar',
+                        items: [
+                            {
+                                xtype      : 'searchfield',
+                                placeHolder: 'Search',
+                                name       : 'searchfield'
+                            }
+                        ]
+                    },
+                    {
+                        docked: 'top',
+                        ui: 'light',
+                        xtype: 'toolbar',
+                        items: [
+                            {
+                                xtype      : 'textfield',
+                                placeHolder: 'Text',
+                                name       : 'searchfield'
+                            }
+                        ]
+                    },
+                    {
+                        docked: 'top',
+                        xtype: 'toolbar',
+                        items: [
+                            {
+                                xtype: 'selectfield',
+                                name : 'options',
+                                options: [
+                                    {text: 'This is just a big select with a super long option',  value: '1'},
+                                    {text: 'Another select item', value: '2'}
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    }
+});
+</pre>
+        <!-- touch/2.0.0/examples/kitchensink/app/view/Icons.js -->
+        <pre>/**
+ * Demonstrates some of the many icons that are bundled with Sencha Touch 2
+ */
+Ext.define('Kitchensink.view.Icons', {
+    extend: 'Ext.tab.Panel',
+
+    config: {
+        activeTab: 0,
+        layout: {
+            animation: {
+                type: 'slide',
+                duration: 250
+            }
+        },
+        tabBar: {
+            layout: {
+                pack : 'center',
+                align: 'center'
+            },
+            docked: 'bottom',
+            scrollable: false
+        },
+        defaults: {
+            scrollable: true
+        },
+        items: [
+            {
+                iconCls: 'info',
+                title  : 'Info',
+                cls    : 'card',
+                html   : 'Both toolbars and tabbars have built-in, ready to use icons.<br><br><em>Sencha Touch comes with over 300 icons that can optionally be included in your app via Sass and Compass.</em>'
+            },
+            {
+                iconCls: 'download',
+                title  : 'Download',
+                cls    : 'card dark',
+                html   : '<span class="action">User tapped Download</span>'
+            },
+            {
+                iconCls: 'favorites',
+                title  : 'Favorites',
+                cls    : 'card',
+                html   : '<span class="action">User tapped Favorites</span>'
+            },
+            {
+                iconCls: 'bookmarks',
+                title  : 'Bookmarks',
+                cls    : 'card dark',
+                html   : '<span class="action">User tapped Bookmarks</span>'
+            },
+            {
+                iconCls: 'more',
+                title  : 'More',
+                cls    : 'card',
+                html   : '<span class="action">User tapped More</span>'
+            },
+//            {
+//                iconCls: 'search',
+//                title  : 'Search',
+//                cls    : 'card card3',
+//                html   : 'Pressed Search'
+//            },
+//            {
+//                iconCls: 'settings',
+//                title  : 'Settings',
+//                cls    : 'card card3',
+//                html   : 'Pressed Settings'
+//            },
+//            {
+//                iconCls: 'team',
+//                title  : 'Team',
+//                cls    : 'card card3',
+//                html   : 'Pressed Team'
+//            },
+//            {
+//                iconCls: 'time',
+//                title  : 'Time',
+//                cls    : 'card card3',
+//                html   : 'Pressed Time'
+//            },
+//            {
+//                iconCls: 'user',
+//                title  : 'User',
+//                cls    : 'card card3',
+//                html   : 'Pressed User'
+//            },
+            {
+                xtype : 'toolbar',
+                ui: 'neutral',
+                docked: 'top',
+                scrollable: false,
+                defaults: {
+                    iconMask: true,
+                    ui      : 'plain'
+                },
+                items: [
+                    { iconCls: 'action' },
+                    { iconCls: 'add' },
+//                    { iconCls: 'arrow_up' },
+//                    { iconCls: 'arrow_right' },
+//                    { iconCls: 'arrow_down' },
+//                    { iconCls: 'arrow_left' },
+                    { iconCls: 'compose' },
+                    { iconCls: 'delete' },
+                    { iconCls: 'refresh' },
+                    { iconCls: 'reply' }
+//                    { iconCls: 'search' },
+//                    { iconCls: 'star' },
+//                    { iconCls: 'home' },
+//                    { iconCls: 'locate' },
+//                    { iconCls: 'maps' },
+//                    { iconCls: 'trash' }
+                ],
+                layout: {
+                    pack : 'center',
+                    align: 'center'
+                }
+            }
+        ]
+    }
+});
+</pre>
+        <!-- touch/2.0.0/examples/kitchensink/app/view/JSONP.js -->
+        <pre>/**
+ * Demonstrates how to issue JSON-P request to fetch weather data from a web API
+ */
+Ext.define('Kitchensink.view.JSONP', {
+    extend: 'Ext.Container',
+    config: {
+        scrollable: true,
+        items: [{
+                xtype: 'panel',
+                id: 'JSONP'
+            }, {
+            docked: 'top',
+            xtype: 'toolbar',
+            items: [{
+                text: 'Load using JSON-P',
+                handler: function() {
+                    var panel = Ext.getCmp('JSONP'),
+                        tpl = new Ext.XTemplate([
+                        '<div class="demo-weather">',
+                            '<tpl for=".">',
+                                '<div class="day">',
+                                    '<div class="date">{date}</div>',
+                                    '<tpl for="weatherIconUrl">',
+                                        '<img src="{value}">',
+                                    '</tpl>',
+                                    '<span class="temp">{tempMaxF}&amp;deg;<span class="temp_low">{tempMinF}&amp;deg;</span></span>',
+                                '</div>',
+                            '</tpl>',
+                        '</div>'
+                    ]);
+
+                    panel.getParent().setMasked({
+                        xtype: 'loadmask',
+                        message: 'Loading...'
+                    });
+
+                    Ext.data.JsonP.request({
+                        url: 'http://free.worldweatheronline.com/feed/weather.ashx',
+                        callbackKey: 'callback',
+                        params: {
+                            key: '23f6a0ab24185952101705',
+                            q: '94301', // Palo Alto
+                            format: 'json',
+                            num_of_days: 5
+                        },
+
+                        callback: function(success, result) {
+                            var weather = result.data.weather;
+
+                            if (weather) {
+                                panel.updateHtml(tpl.applyTemplate(weather));
+                            }
+                            else {
+                                alert('There was an error retrieving the weather.');
+                            }
+
+                            panel.getParent().unmask();
+                        }
+                    });
+                }
+            }]
+        }]
+    }
+});
+</pre>
+        <!-- touch/2.0.0/examples/kitchensink/app/view/List.js -->
+        <pre>/**
+ * Demonstrates how to create a simple List based on inline data.
+ * First we create a simple Contact model with first and last name fields, then we create a Store to contain
+ * the data, finally we create the List itself, which gets its data out of the Store
+ */
+Ext.define('Contact', {
+    extend: 'Ext.data.Model',
+    config: {
+        fields: ['firstName', 'lastName']
+    }
+});
+
+Ext.create('Ext.data.Store', {
+    id: 'ListStore',
+    model: 'Contact',
+    sorters: 'firstName',
+    grouper: function(record) {
+        return record.get('firstName')[0];
+    },
+    data: [
+        {firstName: 'Julio', lastName: 'Benesh'},
+        {firstName: 'Julio', lastName: 'Minich'},
+        {firstName: 'Tania', lastName: 'Ricco'},
+        {firstName: 'Odessa', lastName: 'Steuck'},
+        {firstName: 'Nelson', lastName: 'Raber'},
+        {firstName: 'Tyrone', lastName: 'Scannell'},
+        {firstName: 'Allan', lastName: 'Disbrow'},
+        {firstName: 'Cody', lastName: 'Herrell'},
+        {firstName: 'Julio', lastName: 'Burgoyne'},
+        {firstName: 'Jessie', lastName: 'Boedeker'},
+        {firstName: 'Allan', lastName: 'Leyendecker'},
+        {firstName: 'Javier', lastName: 'Lockley'},
+        {firstName: 'Guy', lastName: 'Reasor'},
+        {firstName: 'Jamie', lastName: 'Brummer'},
+        {firstName: 'Jessie', lastName: 'Casa'},
+        {firstName: 'Marcie', lastName: 'Ricca'},
+        {firstName: 'Gay', lastName: 'Lamoureaux'},
+        {firstName: 'Althea', lastName: 'Sturtz'},
+        {firstName: 'Kenya', lastName: 'Morocco'},
+        {firstName: 'Rae', lastName: 'Pasquariello'},
+        {firstName: 'Ted', lastName: 'Abundis'},
+        {firstName: 'Jessie', lastName: 'Schacherer'},
+        {firstName: 'Jamie', lastName: 'Gleaves'},
+        {firstName: 'Hillary', lastName: 'Spiva'},
+        {firstName: 'Elinor', lastName: 'Rockefeller'},
+        {firstName: 'Dona', lastName: 'Clauss'},
+        {firstName: 'Ashlee', lastName: 'Kennerly'},
+        {firstName: 'Alana', lastName: 'Wiersma'},
+        {firstName: 'Kelly', lastName: 'Holdman'},
+        {firstName: 'Mathew', lastName: 'Lofthouse'},
+        {firstName: 'Dona', lastName: 'Tatman'},
+        {firstName: 'Clayton', lastName: 'Clear'},
+        {firstName: 'Rosalinda', lastName: 'Urman'},
+        {firstName: 'Cody', lastName: 'Sayler'},
+        {firstName: 'Odessa', lastName: 'Averitt'},
+        {firstName: 'Ted', lastName: 'Poage'},
+        {firstName: 'Penelope', lastName: 'Gayer'},
+        {firstName: 'Katy', lastName: 'Bluford'},
+        {firstName: 'Kelly', lastName: 'Mchargue'},
+        {firstName: 'Kathrine', lastName: 'Gustavson'},
+        {firstName: 'Kelly', lastName: 'Hartson'},
+        {firstName: 'Carlene', lastName: 'Summitt'},
+        {firstName: 'Kathrine', lastName: 'Vrabel'},
+        {firstName: 'Roxie', lastName: 'Mcconn'},
+        {firstName: 'Margery', lastName: 'Pullman'},
+        {firstName: 'Avis', lastName: 'Bueche'},
+        {firstName: 'Esmeralda', lastName: 'Katzer'},
+        {firstName: 'Tania', lastName: 'Belmonte'},
+        {firstName: 'Malinda', lastName: 'Kwak'},
+        {firstName: 'Tanisha', lastName: 'Jobin'},
+        {firstName: 'Kelly', lastName: 'Dziedzic'},
+        {firstName: 'Darren', lastName: 'Devalle'},
+        {firstName: 'Julio', lastName: 'Buchannon'},
+        {firstName: 'Darren', lastName: 'Schreier'},
+        {firstName: 'Jamie', lastName: 'Pollman'},
+        {firstName: 'Karina', lastName: 'Pompey'},
+        {firstName: 'Hugh', lastName: 'Snover'},
+        {firstName: 'Zebra', lastName: 'Evilias'}
+    ]
+});
+
+Ext.define('Kitchensink.view.List', {
+    extend: 'Ext.tab.Panel',
+    config: {
+        activeItem: 2,
+        tabBar: {
+            docked: 'top',
+            ui: 'neutral',
+            layout: {
+                pack: 'center'
+            }
+        },
+        items: [{
+            title: 'Simple',
+            layout: Ext.os.deviceType == 'Phone' ? 'fit' : {
+                type: 'vbox',
+                align: 'center',
+                pack: 'center'
+            },
+            cls: 'demo-list',
+            items: [{
+                width: Ext.os.deviceType == 'Phone' ? null : 300,
+                height: Ext.os.deviceType == 'Phone' ? null : 500,
+                xtype: 'list',
+                store: 'ListStore',
+                itemTpl: '<div class="contact"><strong>{firstName}</strong> {lastName}</div>'
+            }]
+        }, {
+            title: 'Grouped',
+            layout: Ext.os.deviceType == 'Phone' ? 'fit' : {
+                type: 'vbox',
+                align: 'center',
+                pack: 'center'
+            },
+            cls: 'demo-list',
+            items: [{
+                width: Ext.os.deviceType == 'Phone' ? null : 300,
+                height: Ext.os.deviceType == 'Phone' ? null : 500,
+                xtype: 'list',
+                store: 'ListStore',
+                itemTpl: '<div class="contact"><strong>{firstName}</strong> {lastName}</div>',
+                grouped: true,
+                indexBar: true
+            }]
+        }, {
+            title: 'Disclosure',
+            layout: Ext.os.deviceType == 'Phone' ? 'fit' : {
+                type: 'vbox',
+                align: 'center',
+                pack: 'center'
+            },
+            cls: 'demo-list',
+            items: [{
+                width: Ext.os.deviceType == 'Phone' ? null : 300,
+                height: Ext.os.deviceType == 'Phone' ? null : 500,
+                xtype: 'list',
+                ui: 'round',
+                grouped: true,
+                pinHeaders: false,
+                onItemDisclosure: function(record, btn, index) {
+                    Ext.Msg.alert('Tap', 'Disclose more info for ' + record.get('firstName'), Ext.emptyFn);
+                },
+                store: 'ListStore', //getRange(0, 9),
+                itemTpl: '<div class="contact"><strong>{firstName}</strong> {lastName}</div>'
+            }]
+        }]
+    }
+});
+</pre>
+        <!-- touch/2.0.0/examples/kitchensink/app/view/LoremIpsum.js -->
+        <pre>/**
+ * This is a simple utility class that just renders a bunch of lorem ipsum text
+ */
+Ext.define('Kitchensink.view.LoremIpsum', {
+    extend: 'Ext.Component',
+    xtype: 'loremipsum',
+    config: {
+        html: "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In tempus libero ut mi porta tristique. Sed vel nulla metus. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Mauris imperdiet lobortis sem at placerat. Phasellus vitae quam arcu, sit amet vehicula urna. Vivamus rutrum cursus tempor. Fusce ullamcorper dolor a dolor vestibulum vitae viverra purus sollicitudin. Cras elit augue, lacinia id placerat nec, eleifend eu justo. Aliquam pellentesque ante ut lacus pharetra facilisis. Praesent varius accumsan nibh imperdiet porta. Duis eget mauris urna. Sed dictum felis eu metus consectetur ultricies. Aliquam erat volutpat. Donec cursus mauris quis sapien luctus quis consectetur leo mattis. Etiam sed magna purus.</p><p>Maecenas adipiscing ligula in urna dignissim dapibus. Maecenas vehicula, nisi sit amet ultricies placerat, orci tellus euismod nisl, vehicula lacinia nulla lectus at magna. Sed id orci est. Phasellus eget ultrices mauris. Ut elementum semper facilisis. Cras fermentum, leo vel elementum ornare, mauris lorem vehicula elit, adipiscing mollis enim magna vel ipsum. Proin sagittis, sapien vitae dignissim sodales, metus turpis sodales lacus, eget scelerisque nunc magna auctor tortor. Sed sagittis mi sit amet risus pretium vulputate vel eget sapien.</p>"
+    }
+});
+</pre>
+        <!-- touch/2.0.0/examples/kitchensink/app/view/LoremIpsum2.js -->
+        <pre>Ext.define('Kitchensink.view.LoremIpsum2', {
+    extend: 'Ext.Component',
+    xtype: 'loremipsum2',
+    config: {
+        html: "<p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?</p>"
+    }
+});
+</pre>
+        <!-- touch/2.0.0/examples/kitchensink/app/view/Map.js -->
+        <pre>/**
+ * Demonstrates a Map component
+ */
+Ext.define('Kitchensink.view.Map', {
+    extend: 'Ext.Map'
+});
+</pre>
+        <!-- touch/2.0.0/examples/kitchensink/app/view/NestedList.js -->
+        <pre>/**
+ * Demonstrates a NestedList, which uses a TreeStore to drill down through hierarchical data
+ */
+Ext.require('Ext.data.TreeStore', function() {
+    Ext.define('Kitchensink.view.NestedList', {
+        requires: ['Kitchensink.view.EditorPanel', 'Kitchensink.model.Cars'],
+        extend: 'Ext.Container',
+        config: {
+            layout: 'fit',
+            items: [{
+                xtype: 'nestedlist',
+                store: {
+                    type: 'tree',
+                    id: 'NestedListStore',
+                    model: 'Kitchensink.model.Cars',
+                    root: {},
+                    proxy: {
+                        type: 'ajax',
+                        url: 'carregions.json'
+                    }
+                },
+                displayField: 'text',
+                listeners: {
+                    leafitemtap: function(me, list, index, item) {
+                        var editorPanel = Ext.getCmp('editorPanel') || new Kitchensink.view.EditorPanel();
+                        editorPanel.setRecord(list.getStore().getAt(index));
+                        if (!editorPanel.getParent()) {
+                            Ext.Viewport.add(editorPanel);
+                        }
+                        editorPanel.show();
+                    }
+                }
+            }]
+        }
+    });
+});
+</pre>
+        <!-- touch/2.0.0/examples/kitchensink/app/view/NestedLoading.js -->
+        <pre>/*
+ * This panel sets up a DataView, which defines an XTemplate used to render our data. We also set up
+ * the toolbar with the "Load Nested Data" button here
+ */
+Ext.require(['Ext.data.Store', 'Kitchensink.model.User'], function() {
+    Ext.define('Kitchensink.view.NestedLoading', {
+        extend: 'Ext.Container',
+        config: {
+            layout: 'fit',
+            items: [
+                {
+                    docked: 'top',
+                    xtype: 'toolbar',
+                    items: [
+                        {
+                            text: 'Load Nested Data',
+                            handler: function() {
+                                Ext.getCmp('NestedLoadingDataView').getStore().load();
+                            }
+                        },
+                        {
+                            text: 'Explain',
+                            handler: function() {
+                                if (!this.explanation) {
+                                    this.explanation = Ext.create('Ext.Panel', {
+                                        modal: true,
+                                        hideOnMaskTap: true,
+                                        centered: true,
+                                        width: 300,
+                                        height: 200,
+                                        styleHtmlContent: true,
+                                        scrollable: true,
+                                        items: {
+                                            docked : 'top',
+                                            xtype: 'toolbar',
+                                            title: 'Loading Nested Data'
+                                        },
+                                        html: [
+                                            '<p>The data package can load deeply nested data in a single request. In this example we are loading a fictional',
+                                            'dataset containing Users, their Orders, and each Order\'s OrderItems.</p>',
+                                            '<p>Instead of pulling down each record in turn, we load the full data set in a single request and allow the data',
+                                            'package to automatically parse the nested data.</p>',
+                                            '<p>As one of the more complex examples, it is worth tapping the "Source" button to see how this is set up.</p>'
+                                        ].join("")
+                                    });
+                                    Ext.Viewport.add(this.explanation);
+                                }
+                                this.explanation.show();
+                            }
+                        }
+                    ]
+                },
+                {
+                    xtype: 'dataview',
+                    id: 'NestedLoadingDataView',
+                    emptyText: 'No Data Loaded',
+                    styleHtmlContent: true,
+                    /*
+                     * The XTemplate allows us to easily render the data from our User model, as well as
+                     * iterating over each User's Orders and OrderItems:
+                     */
+                    itemTpl: [
+                        '<div class="user">',
+                            '<h3>{name}\'s orders:</h3>',
+                            '<tpl for="orders">',
+                                '<div class="order" style="padding: 0 0 10px 20px;">',
+                                    'Order: {id} ({status})',
+                                    '<ul>',
+                                    '<tpl for="orderItems">',
+                                        '<li>{quantity} x {name}</li>',
+                                    '</tpl>',
+                                    '</ul>',
+                                '</div>',
+                            '</tpl>',
+                        '</div>'
+                    ].join(''),
+                    store: new Ext.data.Store({
+                        model: 'Kitchensink.model.User',
+                        autoLoad: false
+                    })
+                }
+            ]
+        }
+    });
+});
+</pre>
+        <!-- touch/2.0.0/examples/kitchensink/app/view/Overlays.js -->
+        <pre>/**
+ * Demonstrates a range of overlays ranging from alerts to action sheets
+ */
+Ext.define('Kitchensink.view.Overlays', {
+    extend: 'Ext.Container',
+    requires: ['Ext.MessageBox', 'Ext.ActionSheet', 'Ext.picker.Picker'],
+
+    config: {
+        padding: 20,
+        scrollable: true,
+        layout: {
+            type : 'vbox',
+            pack : 'top',
+            align: 'stretch'
+        },
+        defaults: {
+            xtype : 'button',
+            cls   : 'demobtn',
+            margin: '10 0'
+        },
+        items: [
+            {
+                text: 'Action Sheet',
+                model: false,
+                handler: function() {
+                    if (!this.actions) {
+                        this.actions = Ext.Viewport.add({
+                            xtype: 'actionsheet',
+                            items: [
+                                {
+
+                                    text: 'Delete draft',
+                                    ui: 'decline',
+                                    scope: this,
+                                    handler: function() {
+                                        this.actions.hide();
+                                    }
+                                },
+                                {
+                                    text: 'Save draft',
+                                    scope: this,
+                                    handler: function() {
+                                        this.actions.hide();
+                                    }
+                                },
+                                {
+                                    xtype: 'button',
+                                    text: 'Cancel',
+                                    scope: this,
+                                    handler: function() {
+                                        this.actions.hide();
+                                    }
+                                }
+                            ]
+                        });
+                    }
+
+                    this.actions.show();
+                }
+            },
+            {
+                text: 'Overlay',
+                handler: function() {
+                    if (!this.overlay) {
+                        this.overlay = Ext.Viewport.add({
+                            xtype: 'panel',
+                            modal: true,
+                            hideOnMaskTap: true,
+                            showAnimation: {
+                                type: 'popIn',
+                                duration: 250,
+                                easing: 'ease-out'
+                            },
+                            hideAnimation: {
+                                type: 'popOut',
+                                duration: 250,
+                                easing: 'ease-out'
+                            },
+                            centered: true,
+                            width: Ext.os.deviceType == 'Phone' ? 260 : 400,
+                            height: Ext.os.deviceType == 'Phone' ? 220 : 400,
+                            styleHtmlContent: true,
+                            html: '<p>This is a modal, centered and floating panel. hideOnMaskTap is true by default so ' +
+                                'we can tap anywhere outside the overlay to hide it.</p>',
+                            items: [
+                                {
+                                    docked: 'top',
+                                    xtype: 'toolbar',
+                                    title: 'Overlay Title'
+                                }
+                            ],
+                            scrollable: true
+                        });
+                    }
+
+                    this.overlay.show();
+                }
+            },
+            {
+                text: 'Alert',
+                handler: function() {
+                    Ext.Msg.alert('Title', 'The quick brown fox jumped over the lazy dog.', Ext.emptyFn);
+                }
+            },
+            {
+                text: 'Prompt',
+                handler: function() {
+                    Ext.Msg.prompt("Welcome!", "What's your first name?", Ext.emptyFn);
+                }
+            },
+            {
+                text: 'Confirm',
+                handler: function() {
+                    Ext.Msg.confirm("Confirmation", "Are you sure you want to do that?", Ext.emptyFn);
+                }
+            },
+            {
+                text: 'Picker',
+                handler: function() {
+                    if (!this.picker) {
+                        this.picker = Ext.Viewport.add({
+                            xtype: 'picker',
+                            slots: [
+                                {
+                                    name : 'limit_speed',
+                                    title: 'Speed',
+                                    data : [
+                                        {text: '50 KB/s', value: 50},
+                                        {text: '100 KB/s', value: 100},
+                                        {text: '200 KB/s', value: 200},
+                                        {text: '300 KB/s', value: 300}
+                                    ]
+                                }
+                            ]
+                        });
+                    }
+
+                    this.picker.show();
+                }
+            }
+        ]
+    }
+});
+</pre>
+        <!-- touch/2.0.0/examples/kitchensink/app/view/Pop.js -->
+        <pre>/**
+ * Demonstrates the 'pop' card transition
+ */
+
+Ext.define('Kitchensink.view.Pop', {
+    extend: 'Ext.Panel',
+    requires: ['Kitchensink.view.LoremIpsum'],
+    config: {
+        cls: 'card card3',
+        scrollable: true,
+        items: [{
+            docked: 'top',
+            html: 'Pop Animation'
+        }, {
+            xtype: 'loremipsum'
+        }]
+    }
+});
+</pre>
+        <!-- touch/2.0.0/examples/kitchensink/app/view/RevealDown.js -->
+        <pre>/**
+ * Demonstrates a 'reveal' card transition, which shows a new item by rendering the new item behind the current
+ * visible item, then sliding the old item away to reveal the new one, in this case starting from the top
+ */
+Ext.define('Kitchensink.view.RevealDown', {
+    extend: 'Ext.Panel',
+    requires: ['Kitchensink.view.LoremIpsum2'],
+    config: {
+        cls: 'card card4',
+        scrollable: true,
+        items: [{
+            docked: 'top',
+            html: 'Reveal Down Animation'
+        }, {
+            xtype: 'loremipsum2'
+        }]
+    }
+});
+</pre>
+        <!-- touch/2.0.0/examples/kitchensink/app/view/RevealLeft.js -->
+        <pre>/**
+ * Demonstrates a 'reveal' card transition, which shows a new item by rendering the new item behind the current
+ * visible item, then sliding the old item away to reveal the new one, in this case starting from the left
+ */
+Ext.define('Kitchensink.view.RevealLeft', {
+    extend: 'Ext.Panel',
+    requires: ['Kitchensink.view.LoremIpsum'],
+    config: {
+        cls: 'card card1',
+        scrollable: true,
+        items: [{
+            docked: 'top',
+            html: 'Reveal Left Animation'
+        }, {
+            xtype: 'loremipsum'
+        }]
+    }
+});
+</pre>
+        <!-- touch/2.0.0/examples/kitchensink/app/view/RevealRight.js -->
+        <pre>/**
+ * Demonstrates a 'reveal' card transition, which shows a new item by rendering the new item behind the current
+ * visible item, then sliding the old item away to reveal the new one, in this case starting from the right
+ */
+Ext.define('Kitchensink.view.RevealRight', {
+    extend: 'Ext.Panel',
+    requires: ['Kitchensink.view.LoremIpsum2'],
+    config: {
+        cls: 'card card2',
+        scrollable: true,
+        items: [{
+            docked: 'top',
+            html: 'Reveal Right Animation'
+        }, {
+            xtype: 'loremipsum2'
+        }]
+    }
+});
+</pre>
+        <!-- touch/2.0.0/examples/kitchensink/app/view/RevealUp.js -->
+        <pre>/**
+ * Demonstrates a 'reveal' card transition, which shows a new item by rendering the new item behind the current
+ * visible item, then sliding the old item away to reveal the new one, in this case starting from the bottom
+ */
+Ext.define('Kitchensink.view.RevealUp', {
+    extend: 'Ext.Panel',
+    requires: ['Kitchensink.view.LoremIpsum'],
+    config: {
+        cls: 'card card3',
+        scrollable: true,
+        items: [{
+            docked: 'top',
+            html: 'Reveal Up Animation'
+        }, {
+            xtype: 'loremipsum'
+        }]
+    }
+});
+</pre>
+        <!-- touch/2.0.0/examples/kitchensink/app/view/SlideDown.js -->
+        <pre>/**
+ * Demonstrates a 'slide' card transition, which shows a new item by sliding the new item in and
+ * the old item out simultaneously, in this case with the new item coming in from the top
+ */
+Ext.define('Kitchensink.view.SlideDown', {
+    extend: 'Ext.Panel',
+    requires: ['Kitchensink.view.LoremIpsum2'],
+    config: {
+        cls: 'card card4',
+        scrollable: true,
+        items: [{
+            docked: 'top',
+            html: 'Slide Down Animation'
+        }, {
+            xtype: 'loremipsum2'
+        }]
+    }
+});
+</pre>
+        <!-- touch/2.0.0/examples/kitchensink/app/view/SlideLeft.js -->
+        <pre>/**
+ * Demonstrates a 'slide' card transition, which shows a new item by sliding the new item in and
+ * the old item out simultaneously, in this case with the new item coming in from the right
+ */
+Ext.define('Kitchensink.view.SlideLeft', {
+    extend: 'Ext.Panel',
+    requires: ['Kitchensink.view.LoremIpsum'],
+    config: {
+        cls: 'card card1',
+        scrollable: true,
+        items: [{
+            docked: 'top',
+            html: 'Slide Left Animation'
+        }, {
+            xtype: 'loremipsum'
+        }]
+    }
+});
+</pre>
+        <!-- touch/2.0.0/examples/kitchensink/app/view/SlideRight.js -->
+        <pre>/**
+ * Demonstrates a 'slide' card transition, which shows a new item by sliding the new item in and
+ * the old item out simultaneously, in this case with the new item coming in from the left
+ */
+Ext.define('Kitchensink.view.SlideRight', {
+    extend: 'Ext.Panel',
+    requires: ['Kitchensink.view.LoremIpsum2'],
+    config: {
+        cls: 'card card2',
+        scrollable: true,
+        items: [{
+            docked: 'top',
+            html: 'Slide Right Animation'
+        }, {
+            xtype: 'loremipsum2'
+        }]
+    }
+});
+</pre>
+        <!-- touch/2.0.0/examples/kitchensink/app/view/SlideUp.js -->
+        <pre>/**
+ * Demonstrates a 'slide' card transition, which shows a new item by sliding the new item in and
+ * the old item out simultaneously, in this case with the new item coming in from the bottom
+ */
+Ext.define('Kitchensink.view.SlideUp', {
+    extend: 'Ext.Panel',
+    requires: ['Kitchensink.view.LoremIpsum'],
+    config: {
+        cls: 'card card3',
+        scrollable: true,
+        items: [{
+            docked: 'top',
+            html: 'Slide Up Animation'
+        }, {
+            xtype: 'loremipsum'
+        }]
+    }
+});
+</pre>
+        <!-- touch/2.0.0/examples/kitchensink/app/view/SourceOverlay.js -->
+        <pre>/**
+ * This is used to display the source code for any given example. Each example has a 'Source' button
+ * on its top toolbar that activates this
+ */
+Ext.define('Kitchensink.view.SourceOverlay', {
+    extend: 'Ext.Panel',
+    xtype: 'sourceoverlay',
+    config: {
+        cls: 'ux-code x-panel',
+        modal: true,
+        styleHtmlContent: true,
+        hideOnMaskTap: true,
+        top: Ext.os.deviceType == 'Phone' ? '10%' : '10%',
+        left: Ext.os.deviceType == 'Phone' ? '5%' : '10%',
+        right: Ext.os.deviceType == 'Phone' ? '5%' : '10%',
+        bottom: Ext.os.deviceType == 'Phone' ? '10%' : '10%',
+        scrollable: true
+    },
+
+    applyHtml: function(html) {
+        this.matches = [];
+
+        var v   = html,
+            fmt = '<span class="ux-code-{0}">{1}</span>';
+
+        var between = Ext.Function.bind(function(idx, length) {
+            for (var i = 0; i < this.matches.length; i++){
+                var m = this.matches[i],
+                    s = m[0],
+                    e = m[1];
+                /*if (s <= idx &amp;&amp; (idx + length) <= e){
+                    return true;
+                }*/
+                if ((s <= idx &amp;&amp; idx < e) || (s < (idx + length) &amp;&amp; (idx + length) <= e)){
+                    return true;
+                }
+            }
+            return false;
+        }, this);
+
+        var highlight = Ext.Function.bind(function(str, regex, cls, fn){
+            regex.compile(regex);
+            var match;
+
+            while (match = regex.exec(str)) {
+                var mdata = fn ? fn(match) : [match.index, match[0]],
+                    midx = mdata[0],
+                    mstr = mdata[1];
+                if (!between(midx, mstr.length)){
+                    var replacement = Ext.util.Format.format(fmt, cls, mstr),
+                        diff = (replacement.length - mstr.length);
+                    str = str.slice(0, midx) + replacement + str.slice(midx + mstr.length);
+                    regex.lastIndex = midx + replacement.length;
+                    for (var i = 0; i < this.matches.length; i++){
+                        var m = this.matches[i];
+                        if (m[1] < midx) continue;
+
+                        m[0] += diff;
+                        m[1] += diff;
+                    }
+                    this.matches.push([midx, regex.lastIndex]);
+                }
+            }
+            return str;
+        }, this);
+
+        // Escape HTML...whatever
+
+        // var htmlRE = /<((.|\w)*)>/ig, match;
+        // while (match = htmlRE.exec(v)) {
+            // v = v.slice(0, match.index) + Ext.util.Format.format('&amp;lt;{0}&amp;gt;', match[1]) + v.slice(match.index + match[0].length);
+        // }
+
+        v = v.replace(/</g, '&amp;lt;');
+        v = v.replace(/</g, '&amp;gt;');
+
+        // Block comments
+        v = highlight(v, /\/\*(.|\s)*?\*\//ig, 'comment');
+
+        // String literals
+        v = highlight(v, (/("|')[^\1\n\r]*?\1/ig), 'string');
+
+        // Line comments
+        v = highlight(v, /\/\/[^\n\r]*/ig, 'comment');
+
+        // Integers and Floats
+        v = highlight(v, /\d+\.?\d*/ig, 'number');
+
+        // Function names
+        v = highlight(v, /(\w+)\s*\:\s*function/ig, 'function', function(match){
+            return [match.index, match[1]];
+        });
+        v = highlight(v, /function (\w+)/ig, 'function', function(match){
+            return [match.index + 9, match[1]];
+        });
+
+        // Keywords
+        v = highlight(v, /\b(this|function|null|return|true|false|new|int|float|break|const|continue|delete|do|while|for|in|switch|case|throw|try|catch|typeof|instanceof|var|void|with|yield|if|else)\b/ig, 'keyword');
+
+        // Operators
+        v = highlight(v, /\.|\,|\:|\;|\=|\+|\-|\&amp;|\%|\*|\/|\!|\?|\<|\>|\||\^|\~/ig, 'operator');
+
+        return '<pre>' + v + '</pre>';
+    }
+});
+</pre>
+        <!-- touch/2.0.0/examples/kitchensink/app/view/Tabs.js -->
+        <pre>/**
+ * Demonstrates a very simple tab panel with 3 tabs
+ */
+Ext.define('Kitchensink.view.Tabs', {
+    extend: 'Ext.tab.Panel',
+
+    config: {
+        ui: 'light',
+        tabBar: {
+            layout: {
+                pack: 'center'
+            }
+        },
+        activeTab: 1,
+        defaults: {
+            scrollable: true
+        },
+        items: [
+            {
+                title: 'Tab 1',
+                html : 'By default, tabs are aligned to the top of a view.',
+                cls: 'card dark'
+            },
+            {
+                title: 'Tab 2',
+                html : 'A TabPanel can use different animations by setting <code>layout.animation.</code>',
+                cls  : 'card'
+            },
+            {
+                title: 'Tab 3',
+                html : '<span class="action">User tapped Tab 3</span>',
+                cls  : 'card dark'
+            }
+        ]
+    }
+});
+</pre>
+        <!-- touch/2.0.0/examples/kitchensink/app/view/Toolbars.js -->
+        <pre>/**
+ * Demonstrates several options available when using Toolbars
+ */
+Ext.define('Kitchensink.view.Toolbars', {
+    extend: 'Ext.Container',
+
+    requires: [
+        'Ext.SegmentedButton'
+    ],
+
+    config: {
+        cls: 'card',
+        html: 'Toolbars automatically come with <code>light</code> and <code>dark</code> UIs, but you can also make your own with Sass.',
+
+        items: !Ext.os.is.Phone ? [
+            {
+                xtype: 'toolbar',
+                ui: 'neutral',
+                docked: 'top',
+                scrollable: {
+                    direction: 'horizontal',
+                    indicators: false
+                },
+                items: [
+                    {
+                        text: 'Back',
+                        ui: 'back'
+                    },
+                    {
+                        text: 'Default',
+                        badgeText: '2'
+                    },
+                    {
+                        text: 'Round',
+                        ui: 'round'
+                    },
+                    {
+                        xtype: 'spacer'
+                    },
+                    {
+                        xtype: 'segmentedbutton',
+                        allowDepress: true,
+                        items: [
+                            {
+                                text: 'Option 1',
+                                pressed: true
+                            },
+                            {
+                                text: 'Option 2'
+                            },
+                            {
+                                text: 'Option 3'
+                            }
+                        ]
+                    },
+                    {
+                        xtype: 'spacer'
+                    },
+                    {
+                        text: 'Action',
+                        ui: 'action'
+                    },
+                    {
+                        text: 'Forward',
+                        ui: 'forward'
+                    }
+                ]
+            }
+        ] : [
+            {
+                xtype: 'toolbar',
+                ui: 'light',
+                docked: 'top',
+                scrollable: false,
+                items: [
+                    {
+                        xtype: 'spacer'
+                    },
+                    {
+                        text: 'Back',
+                        ui: 'back'
+                    },
+                    {
+                        text: 'Default',
+                        badgeText: '2'
+                    },
+                    {
+                        text: 'Round',
+                        ui: 'round'
+                    },
+                    {
+                        xtype: 'spacer'
+                    }
+                ]
+            },
+            {
+                xtype: 'toolbar',
+                ui: 'dark',
+                docked: 'bottom',
+                scrollable: false,
+                items: [
+                    {
+                        xtype: 'spacer'
+                    },
+                    {
+                        xtype: 'segmentedbutton',
+                        allowDepress: true,
+                        items: [
+                            {
+                                text: 'Option 1',
+                                pressed: true
+                            },
+                            {
+                                text: 'Option 2'
+                            },
+                            {
+                                text: 'Option 3'
+                            }
+                        ]
+                    },
+                    {
+                        xtype: 'spacer'
+                    }
+                ]
+            }
+        ]
+    },
+
+    // @private
+    constructor: function() {
+        this.on({
+            scope: this,
+            delegate: 'button',
+
+            tap: 'tapHandler'
+        });
+
+        this.callParent(arguments);
+    },
+
+    /**
+     * Called when any button in these view is tapped
+     */
+    tapHandler: function(button) {
+        this.setHtml("<span class=action>User tapped " + button.getText() + "</span>");
+    }
+});
+</pre>
+        <!-- touch/2.0.0/examples/kitchensink/app/view/TouchEvents.js -->
+        <pre>/**
+ * Presents a large touch zone and reports all of the touch events fired when the user interacts with it
+ */
+Ext.define('Kitchensink.view.TouchEvents', {
+    extend: 'Ext.Container',
+    xtype: 'touchevents',
+    
+    requires: [
+        'Kitchensink.view.touchevent.Info',
+        'Kitchensink.view.touchevent.Logger',
+        'Kitchensink.view.touchevent.Pad'
+    ],
+
+    initialize: function() {
+        this.callParent(arguments);
+
+        this.getEventDispatcher().addListener('element', '#touchpad', '*', this.onTouchPadEvent, this);
+    },
+
+    onTouchPadEvent: function(e, target, options, eventController) {
+        var eventName = eventController.info.eventName;
+
+        if (!eventName.match("mouse") &amp;&amp; eventName !== 'click') {
+            this.down('toucheventlogger').addLog(eventName);
+        }
+    }
+});
+</pre>
+        <!-- touch/2.0.0/examples/kitchensink/app/view/Video.js -->
+        <pre>/**
+ * Demonstrates the Ext.Video component
+ */
+Ext.define('Kitchensink.view.Video', {
+    extend: 'Ext.Container',
+    requires: [
+        'Ext.Video'
+    ],
+    config: {
+        layout: 'fit',
+        items: [{
+            xtype: 'video',
+            url: ['../video/resources/media/BigBuck.m4v', '../video/resources/media/BigBuck.webm'],
+            loop: true,
+            posterUrl: '../video/resources/images/cover.jpg'
+        }]
+    }
+});
+</pre>
+        <!-- touch/2.0.0/examples/kitchensink/app/view/YQL.js -->
+        <pre>/**
+ * Demonstrates using YQL to fetch data from remote sources (in this case loading from the Sencha blog)
+ */
+
+Ext.require('Ext.data.JsonP', function() {
+    Ext.YQL = {
+        useAllPublicTables: true,
+        yqlUrl: 'http://query.yahooapis.com/v1/public/yql',
+        request: function(cfg) {
+            var p = cfg.params || {};
+            p.q = cfg.query;
+            p.format = 'json';
+            if (this.useAllPublicTables) {
+                p.env = 'store://datatables.org/alltableswithkeys';
+            }
+
+            Ext.data.JsonP.request({
+                url: this.yqlUrl,
+                callbackKey: 'callback',
+                params: p,
+                callback: cfg.callback,
+                scope: cfg.scope || window
+            });
+        }
+    };
+
+    Ext.define('Kitchensink.view.YQL', {
+        extend: 'Ext.Container',
+        config: {
+            scrollable: true,
+            items: [
+                {
+                    xtype: 'panel',
+                    id   : 'YQL',
+                    styleHtmlContent: true
+                },
+                {
+                    docked: 'top',
+                    xtype: 'toolbar',
+                    items: [{
+                        text: 'Load using YQL',
+                        handler: function() {
+                            var panel = Ext.getCmp('YQL'),
+                                tpl = new Ext.XTemplate([
+                                    '<tpl for="item">',
+                                        '<div class="blog-post">',
+                                            '<h3><a href="{link}" target="_blank">{title}</a></h3>',
+                                            '<p>{description}</p>',
+                                        '</div>',
+                                    '</tpl>'
+                                ]);
+
+                            panel.getParent().setMasked({
+                                xtype: 'loadmask',
+                                message: 'Loading...'
+                            });
+
+                            Ext.YQL.request({
+                                query: "select * from rss where url='http://feeds.feedburner.com/extblog' limit 5",
+                                callback: function(success, response) {
+                                    if (success &amp;&amp; response.query &amp;&amp; response.query.results) {
+                                        panel.setHtml(tpl.apply(response.query.results));
+                                    }
+                                    else {
+                                        Ext.Msg.alert('Error', 'There was an error retrieving the YQL request.', Ext.emptyFn);
+                                    }
+
+                                    panel.getParent().unmask();
+                                }
+                            });
+                        }
+                    }
+                ]
+            }]
+        }
+    });
+});
+</pre>
+        <!-- touch/2.0.0/examples/kitchensink/app/view/phone/Main.js -->
+        <pre>Ext.define('Kitchensink.view.phone.Main', {
+    extend: 'Ext.dataview.NestedList',
+    requires: ['Ext.TitleBar'],
+
+    id: 'mainNestedList',
+
+    config: {
+        fullscreen: true,
+        title: 'Kitchen Sink',
+        useTitleAsBackText: false,
+        layout: {
+            animation: {
+                duration: 250,
+                easing: 'ease-in-out'
+            }
+        },
+
+        store: 'Demos',
+
+        toolbar: {
+            id: 'mainNavigationBar',
+            xtype : 'titlebar',
+            docked: 'top',
+            title : 'Kitchen Sink',
+
+            items: {
+                xtype : 'button',
+                id: 'viewSourceButton',
+                hidden: true,
+                align : 'right',
+                ui    : 'action',
+                action: 'viewSource',
+                text  : 'Source'
+            }
+        }
+    }
+});
+</pre>
+        <!-- touch/2.0.0/examples/kitchensink/app/view/phone/TouchEvents.js -->
+        <pre>Ext.define('Kitchensink.view.phone.TouchEvents', {
+    extend: 'Kitchensink.view.TouchEvents',
+
+    config: {
+        layout: 'card',
+
+        items: [
+            {
+                scrollable: true,
+
+                layout: {
+                    type: 'vbox',
+                    align: 'stretch'
+                },
+
+                items: [
+                    {
+                        xtype: 'button',
+                        ui: 'confirm',
+                        text: 'Console',
+                        margin: 10,
+                        action: 'showConsole'
+                    },
+                    {
+                        xtype: 'toucheventinfo'
+                    }
+                ]
+            },
+            {
+                layout: {
+                    type: 'vbox',
+                    align: 'stretch'
+                },
+                items: [
+                    {
+                        xtype: 'toucheventpad',
+                        flex: 1
+                    },
+                    {
+                        xtype: 'toucheventlogger',
+                        flex: 1
+                    }
+                ]
+            }
+        ]
+    },
+
+    showConsole: function() {
+        this.setActiveItem(1);
+    }
+});
+</pre>
+        <!-- touch/2.0.0/examples/kitchensink/app/view/tablet/Main.js -->
+        <pre>Ext.define('Kitchensink.view.tablet.Main', {
+    extend: 'Ext.Container',
+    xtype: 'mainview',
+
+    requires: [
+        'Ext.dataview.NestedList',
+        'Ext.navigation.Bar'
+    ],
+
+    config: {
+        fullscreen: true,
+
+        layout: {
+            type: 'card',
+            animation: {
+                type: 'slide',
+                direction: 'left',
+                duration: 250
+            }
+        },
+
+        items: [
+            {
+                id: 'launchscreen',
+                cls : 'card',
+                scrollable: true,
+                html: '<div><h2>Welcome to Sencha Touch <span class="version">' + Ext.version +'</span></h2><div class="feature main"><img src="resources/images/circle-touch.png" width="52" height="52"><p>This is the Kitchen Sink &amp;#8212; a collection of features and examples in an easy-to-browse format. Each example also has a &amp;#8220;view source&amp;#8221; button which shows how it was created.</p></div><h2>What&amp;#8217;s new</h2><div class="feature"><img src="resources/images/circle-performance.png" width="52" height="52"><h3>Unbelievable Performance</h3><p>Faster layouts and animations, smoother scrolling, and overall more responsive.</p></div><div class="feature"><img src="resources/images/circle-architecture.png" width="52" height="52"><h3>Improved Architecture</h3><p>Our new class system is simpler to write and easier to extend. All new MVC and state-management support.</p></div><div class="feature"><img src="resources/images/circle-native.png" width="52" height="52"><h3>Native Packaging</h3><p>Sencha SDK Tools now allow you to build your app for App Store distribution, on Windows and Mac.</p></div><div class="feature"><img src="resources/images/circle-learn.png" width="52" height="52"><h3>Easy to Learn</h3><p>With over 30 new guides, 6 new full-fledged demo apps, and improved documentation, Sencha Touch 2 is easier to learn than ever.</p></div></div><footer>Learn more at <a href="http://www.sencha.com/products/touch" target="blank">sencha.com/products/touch</a></footer>'
+            },
+            {
+                id: 'mainNestedList',
+                xtype : 'nestedlist',
+                useTitleAsBackText: false,
+                docked: 'left',
+                width : 250,
+                store: 'Demos'
+            },
+            {
+                id: 'mainNavigationBar',
+                xtype : 'titlebar',
+                docked: 'top',
+                title : 'Kitchen Sink',
+                items: {
+                    xtype : 'button',
+                    id: 'viewSourceButton',
+                    hidden: true,
+                    align : 'right',
+                    ui    : 'action',
+                    action: 'viewSource',
+                    text  : 'Source'
+                }
+            }
+        ]
+    }
+});
+</pre>
+        <!-- touch/2.0.0/examples/kitchensink/app/view/tablet/TouchEvents.js -->
+        <pre>Ext.define('Kitchensink.view.tablet.TouchEvents', {
+    extend: 'Kitchensink.view.TouchEvents',
+    
+    config: {
+        layout: {
+            type: 'hbox',
+            align: 'stretch'
+        },
+        
+        items: [
+            {
+                docked: 'left',
+                width: 250,
+                id: 'touchinfopanel',
+                
+                layout: {
+                    type: 'vbox',
+                    align: 'stretch'
+                },
+                
+                items: [
+                    {
+                        flex: 3,
+                        scrollable: true,
+                        
+                        layout: {
+                            type: 'vbox',
+                            align: 'stretch'
+                        },
+                        
+                        items: {
+                            xtype: 'toucheventinfo'
+                        }
+                    },
+                    {
+                        xtype: 'toucheventlogger',
+                        flex: 2
+                    }
+                ]
+            },
+            {
+                xtype: 'toucheventpad',
+                flex: 1
+            }
+        ]
+    }
+});
+</pre>
+        <!-- touch/2.0.0/examples/kitchensink/app/view/touchevent/Info.js -->
+        <pre>Ext.define('Kitchensink.view.touchevent.Info', {
+    extend: 'Ext.Component',
+    xtype: 'toucheventinfo',
+
+    config: {
+        styleHtmlContent: true,
+        html: [
+            '<p>Sencha Touch comes with a multitude of touch events available on components. Included touch events that can be used are:</p>',
+            '<ul>',
+                '<li>touchstart</li>',
+                '<li>touchmove</li>',
+                '<li>touchend</li>',
+                '<li>dragstart</li>',
+                '<li>drag</li>',
+                '<li>dragend</li>',
+                '<li>tap</li>',
+                '<li>singletap</li>',
+                '<li>doubletap</li>',
+                '<li>longpress</li>',
+                '<li>swipe</li>',
+                '<li>pinch (on iOS and Android 3+)</li>',
+                '<li>rotate (on iOS and Android 3+)</li>',
+            '</ul>'
+        ].join('')
+    }
+});
+</pre>
+        <!-- touch/2.0.0/examples/kitchensink/app/view/touchevent/Logger.js -->
+        <pre>Ext.define('Kitchensink.view.touchevent.Logger', {
+    extend: 'Ext.Container',
+    xtype: 'toucheventlogger',
+    
+    config: {
+        layout: 'fit',
+        items: [
+            {
+                xtype : 'toolbar',
+                docked: 'top',
+                ui    : 'light',
+                title : 'Event Log'
+            },
+            {
+                id: 'logger',
+                html: '<span>Try using gestures on the area to the right to see how events are fired.</span>',
+                scrollable: true,
+                styleHtmlContent: true
+            }
+        ]
+    },
+    
+    /**
+     * Adds a log message to the scrollable logging area, scrolls down to ensure the message is visible
+     * @param {String} log The log message
+     */
+    addLog: function(log) {
+        var logger   = Ext.getCmp('logger'),
+            scroller = logger.getScrollable().getScroller();
+
+        logger.innerHtmlElement.createChild({
+            html: log
+        });
+
+        setTimeout(function() {
+            scroller.scrollTo(0, scroller.getSize().y - scroller.getContainerSize().y);
+        }, 50);
+    }
+});
+</pre>
+        <!-- touch/2.0.0/examples/kitchensink/app/view/touchevent/Pad.js -->
+        <pre>Ext.define('Kitchensink.view.touchevent.Pad', {
+    extend: 'Ext.Container',
+    xtype: 'toucheventpad',
+    id: 'touchpad',
+    
+    config: {
+        flex: 1,
+        margin: 10,
+        
+        layout: {
+            type: 'vbox',
+            pack: 'center',
+            align: 'stretch'
+        },
+        
+        items: [
+            {
+                html: 'Touch here!'
+            }
+        ]
+    }
+});
+</pre>
+    </div>
+    
+</body>
+</html>

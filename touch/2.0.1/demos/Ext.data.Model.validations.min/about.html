@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Validating string lengths on an Ext.data.Model object using Sencha Touch 2</title>
+    <meta Name="description" content="Validating string lengths on an Ext.data.Model object using Sencha Touch 2" />
+    <meta name="keywords" content="Sencha, Sencha Touch, Sencha Touch 2.0.1" />
+    <link href="/assets/application.css" media="screen" rel="stylesheet" type="text/css" />
+    <style>
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    
+    <div>
+        <header>
+            <h1>Sencha Try</h1>
+        </header>
+        
+        <section id="readme">
+            <h1>Validating string lengths on an Ext.data.Model object using Sencha Touch 2</h1>
+
+<p>The following example shows how you can validate string lengths an Ext.store.Model object in Sencha Touch 2 by setting the <code>validations</code> object on the model and then creating a 'length' validation with a <code>min</code> and <code>max</code> attribute.</p>
+            <strong>Tags:</strong> <a href="/search/Sencha Touch">Sencha Touch</a> <a href="/search/Sencha Touch 2.0.1">Sencha Touch 2.0.1</a> <br/>
+        </section>
+        <section id="example">
+            [example]
+        </section>
+        
+        <footer>
+            &copy; 2012 Sencha Inc.
+        </footer>
+    </div>
+    
+    <div class="hidden">
+        <!-- touch/2.0.1/demos/Ext.data.Model.validations.min/app.js -->
+        <pre>/*global Ext:false */
+Ext.application({
+    launch: function () {
+        Ext.define('UserModel', {
+            extend: 'Ext.data.Model',
+            config: {
+                fields: [{
+                    name: 'username',
+                    type: 'string'
+                }], // fields
+                validations: [{
+                    field: 'username',
+                    type: 'presence',
+                    message: 'Username is required.'
+                }, {
+                    field: 'username',
+                    type: 'length',
+                    min: 6,
+                    max: 12,
+                    message: 'Username must be between 6 and 12 characters.'
+                }] // validations
+            } // config
+        }); // define()
+        
+        var form = Ext.create('Ext.form.Panel', {
+            fullscreen: true,
+            items: [{
+                xtype: 'titlebar',
+                docked: 'top',
+                items: [{
+                    text: 'Validate form',
+                    handler: function () {
+                        var values = form.getValues(),
+                            usr = Ext.create('UserModel', {
+                                username: values.usernameField
+                            }),
+                            errs = usr.validate(),
+                            msg = '';
+                        
+                        if (!errs.isValid()) {
+                            errs.each(function (err) {
+                                msg += err.getMessage() + '<br/>';
+                            }); // each()
+                            Ext.Msg.alert('ERROR', msg);
+                        } else {
+                            Ext.Msg.alert('SUCCESS', 'Looks like the model is valid!');
+                        } // if
+                    } // handler
+                }] // items (titlebar)
+            }, {
+                xtype: 'fieldset',
+                items: [{
+                    xtype: 'textfield',
+                    name: 'usernameField',
+                    label: 'Username:',
+                    required: true
+                }] // items (fieldset)
+            }] // items (container)
+        }); // create()
+    } // launch
+}); // application()
+</pre>
+    </div>
+    
+</body>
+</html>

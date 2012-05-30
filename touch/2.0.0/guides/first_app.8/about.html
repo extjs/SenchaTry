@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Building your First App</title>
+    <meta Name="description" content="Building your First App" />
+    <meta name="keywords" content="Sencha, Sencha Touch, Sencha Touch 2.0.0" />
+    <link href="/assets/application.css" media="screen" rel="stylesheet" type="text/css" />
+    <style>
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    
+    <div>
+        <header>
+            <h1>Sencha Try</h1>
+        </header>
+        
+        <section id="readme">
+            <h1>Building your First App</h1>
+
+<p>How to build your first app in 15 minutes flat. Includes a simple HTML page, a contact form and a blog feed.</p>
+            <strong>Tags:</strong> <a href="/search/Sencha Touch">Sencha Touch</a> <a href="/search/Sencha Touch 2.0.0">Sencha Touch 2.0.0</a> <br/>
+        </section>
+        <section id="example">
+            [example]
+        </section>
+        
+        <footer>
+            &copy; 2012 Sencha Inc.
+        </footer>
+    </div>
+    
+    <div class="hidden">
+        <!-- touch/2.0.0/guides/first_app.8/app.js -->
+        <pre>/*global Ext:false */
+//We've added a third and final item to our tab panel - scroll down to see it
+Ext.application({
+    name: 'Sencha',
+
+    launch: function () {
+        Ext.create("Ext.tab.Panel", {
+            fullscreen: true,
+            tabBarPosition: 'bottom',
+
+            items: [{
+                title: 'Home',
+                iconCls: 'home',
+                cls: 'home',
+                html: ['<img width="65%" src="http://staging.sencha.com/img/sencha.png" />',
+                        '<h1>Welcome to Sencha Touch</h1>',
+                        "<p>You're creating the Getting Started app. This demonstrates how ",
+                        "to use tabs, lists and forms to create a simple app</p>",
+                        '<h2>Sencha Touch 2</h2>'].join("")
+            }, {
+                xtype: 'nestedlist',
+                title: 'Blog',
+                iconCls: 'star',
+                displayField: 'title',
+
+                store: {
+                    type: 'tree',
+
+                    fields: ['title', 'link', 'author', 'contentSnippet', 'content',
+                    {
+                        name: 'leaf',
+                        defaultValue: true
+                    }],
+
+                    root: {
+                        leaf: false
+                    },
+
+                    proxy: {
+                        type: 'jsonp',
+                        url: 'https://ajax.googleapis.com/ajax/services/feed/load?v=1.0&amp;amp;q=http://feeds.feedburner.com/SenchaBlog',
+                        reader: {
+                            type: 'json',
+                            rootProperty: 'responseData.feed.entries'
+                        }
+                    }
+                },
+
+                detailCard: {
+                    xtype: 'panel',
+                    scrollable: true,
+                    styleHtmlContent: true
+                },
+
+                listeners: {
+                    itemtap: function (nestedList, list, index, element, post) {
+                        this.getDetailCard().setHtml(post.get('content'));
+                    }
+                }
+            },
+            //this is the new item
+            {
+                title: 'Contact',
+                iconCls: 'user',
+                xtype: 'formpanel',
+                url: 'contact.php',
+                layout: 'vbox',
+
+                items: [{
+                    xtype: 'fieldset',
+                    title: 'Contact Us',
+                    instructions: '(email address is optional)',
+                    items: [{
+                        xtype: 'textfield',
+                        label: 'Name'
+                    }, {
+                        xtype: 'emailfield',
+                        label: 'Email'
+                    }, {
+                        xtype: 'textareafield',
+                        label: 'Message'
+                    }]
+                }, {
+                    xtype: 'button',
+                    text: 'Send',
+                    ui: 'confirm',
+                    handler: function () {
+                        this.up('formpanel').submit();
+                    }
+                }]
+            }]
+        });
+    }
+});
+</pre>
+    </div>
+    
+</body>
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Programmatically closing an alert dialog using Ext JS</title>
+    <meta Name="description" content="Programmatically closing an alert dialog using Ext JS" />
+    <meta name="keywords" content="Sencha, Ext JS, Ext JS 4.0.7, Ext.MessageBox, Ext.Msg, alert(), close()" />
+    <link href="/assets/application.css" media="screen" rel="stylesheet" type="text/css" />
+    <style>
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    
+    <div>
+        <header>
+            <h1>Sencha Try</h1>
+        </header>
+        
+        <section id="readme">
+            <h1>Programmatically closing an alert dialog using Ext JS</h1>
+
+<p>The following example shows how you can programmatically close an Ext.Msg dialog box using the <code>close()</code> method.</p>
+            <strong>Tags:</strong> <a href="/search/Ext JS">Ext JS</a> <a href="/search/Ext JS 4.0.7">Ext JS 4.0.7</a> <a href="/search/Ext.MessageBox">Ext.MessageBox</a> <a href="/search/Ext.Msg">Ext.Msg</a> <a href="/search/alert()">alert()</a> <a href="/search/close()">close()</a> <br/>
+        </section>
+        <section id="example">
+            [example]
+        </section>
+        
+        <footer>
+            &copy; 2012 Sencha Inc.
+        </footer>
+    </div>
+    
+    <div class="hidden">
+        <!-- extjs/4.0.7/demos/Ext.Msg.alert.close.1/app.js -->
+        <pre>/*global Ext:false */
+Ext.onReady(function () {
+    Ext.create('Ext.Button', {
+        text: 'Click to launch alert',
+        handler: function (lbl) {
+            var alrt = Ext.Msg.alert("Self closing alert", "This alert will close in 3 seconds");
+            setTimeout(function (tgt) {
+                if (!tgt.hidden) {
+                    tgt.close();
+                } else {
+                    // alert is already closed.
+                }
+            }, 3000, alrt);
+        },
+        renderTo: Ext.getBody()
+    }); // create()
+}); // onReady()
+</pre>
+    </div>
+    
+</body>
+</html>

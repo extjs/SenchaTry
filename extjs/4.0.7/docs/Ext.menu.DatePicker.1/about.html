@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Ext.menu.DatePicker Example</title>
+    <meta Name="description" content="Ext.menu.DatePicker Example" />
+    <meta name="keywords" content="Sencha, Ext JS, Ext JS 4.0.7, Ext.menu.DatePicker, datemenu, menu" />
+    <link href="/assets/application.css" media="screen" rel="stylesheet" type="text/css" />
+    <style>
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    
+    <div>
+        <header>
+            <h1>Sencha Try</h1>
+        </header>
+        
+        <section id="readme">
+            <h1>Ext.menu.DatePicker Example</h1>
+            <strong>Tags:</strong> <a href="/search/Ext JS">Ext JS</a> <a href="/search/Ext JS 4.0.7">Ext JS 4.0.7</a> <a href="/search/Ext.menu.DatePicker">Ext.menu.DatePicker</a> <a href="/search/datemenu">datemenu</a> <a href="/search/menu">menu</a> <br/>
+        </section>
+        <section id="example">
+            [example]
+        </section>
+        
+        <footer>
+            &copy; 2012 Sencha Inc.
+        </footer>
+    </div>
+    
+    <div class="hidden">
+        <!-- extjs/4.0.7/docs/Ext.menu.DatePicker.1/app.js -->
+        <pre>/*global Ext:false */
+Ext.onReady(function () {
+    var dateMenu = Ext.create('Ext.menu.DatePicker', {
+        handler: function (dp, date) {
+            Ext.Msg.alert('Date Selected', 'You selected ' + Ext.Date.format(date, 'M j, Y'));
+        }
+    });
+
+    Ext.create('Ext.menu.Menu', {
+        width: 100,
+        height: 90,
+        floating: false, // usually you want this set to True (default)
+        renderTo: Ext.getBody(), // usually rendered by it's containing component
+        items: [{
+            text: 'choose a date',
+            menu: dateMenu
+        }, {
+            iconCls: 'add16',
+            text: 'icon item'
+        }, {
+            text: 'regular item'
+        }]
+    });
+});
+</pre>
+    </div>
+    
+</body>
+</html>

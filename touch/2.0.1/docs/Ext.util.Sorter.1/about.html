@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Ext.util.Sorter Example</title>
+    <meta Name="description" content="Ext.util.Sorter Example" />
+    <meta name="keywords" content="Sencha, Sencha Touch, Sencha Touch 2.0.1, Ext.util.Sorter" />
+    <link href="/assets/application.css" media="screen" rel="stylesheet" type="text/css" />
+    <style>
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    
+    <div>
+        <header>
+            <h1>Sencha Try</h1>
+        </header>
+        
+        <section id="readme">
+            <h1>Ext.util.Sorter Example</h1>
+            <strong>Tags:</strong> <a href="/search/Sencha Touch">Sencha Touch</a> <a href="/search/Sencha Touch 2.0.1">Sencha Touch 2.0.1</a> <a href="/search/Ext.util.Sorter">Ext.util.Sorter</a> <br/>
+        </section>
+        <section id="example">
+            [example]
+        </section>
+        
+        <footer>
+            &copy; 2012 Sencha Inc.
+        </footer>
+    </div>
+    
+    <div class="hidden">
+        <!-- touch/2.0.1/docs/Ext.util.Sorter.1/app.js -->
+        <pre>/*global Ext:false */
+Ext.application({
+    launch: function() {
+        var store = Ext.create('Ext.data.Store', {
+            fields: ['firstName', 'lastName'],
+            sorters: 'lastName',
+
+            data: [{
+                firstName: 'Tommy',
+                lastName: 'Maintz'
+            }, {
+                firstName: 'Rob',
+                lastName: 'Dougan'
+            }, {
+                firstName: 'Ed',
+                lastName: 'Spencer'
+            }, {
+                firstName: 'Jamie',
+                lastName: 'Avins'
+            }, {
+                firstName: 'Nick',
+                lastName: 'Poulden'
+            }]
+        });
+
+        Ext.create('Ext.List', {
+            fullscreen: true,
+            itemTpl: '<div class="contact">{firstName} <strong>{lastName}</strong></div>',
+            store: store
+        });
+    }
+});
+</pre>
+    </div>
+    
+</body>
+</html>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Setting the default value for an Ext.field.Spinner in Sencha Touch 2</title>
+    <meta Name="description" content="Setting the default value for an Ext.field.Spinner in Sencha Touch 2" />
+    <meta name="keywords" content="Sencha, Sencha Touch, Sencha Touch 2.0.1" />
+    <link href="/assets/application.css" media="screen" rel="stylesheet" type="text/css" />
+    <style>
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    
+    <div>
+        <header>
+            <h1>Sencha Try</h1>
+        </header>
+        
+        <section id="readme">
+            <h1>Setting the default value for an Ext.field.Spinner in Sencha Touch 2</h1>
+
+<p>The following example shows how you can set the default value on an Ext.field.Spinner (spinnerfield) component in Sencha Touch 2 when no value is defined by setting the <code>defaultValue</code> config option.</p>
+            <strong>Tags:</strong> <a href="/search/Sencha Touch">Sencha Touch</a> <a href="/search/Sencha Touch 2.0.1">Sencha Touch 2.0.1</a> <br/>
+        </section>
+        <section id="example">
+            [example]
+        </section>
+        
+        <footer>
+            &copy; 2012 Sencha Inc.
+        </footer>
+    </div>
+    
+    <div class="hidden">
+        <!-- touch/2.0.1/demos/Ext.field.Spinner.defaultValue/app.js -->
+        <pre>/*global Ext:false */
+Ext.application({
+    launch: function () {
+        Ext.create('Ext.form.Panel', {
+            fullscreen: true,
+            items: [{
+                xtype: 'fieldset',
+                instructions: '<code>value = undefined; defaultValue = 9;</code>',
+                items: [{
+                    xtype: 'spinnerfield',
+                    increment: 1,
+                    label: 'defaultValue = 9',
+                    value: undefined,
+                    defaultValue: 9,
+                    minValue: 1,
+                    maxValue: 12
+                }] // items (fieldset)
+            }] // items (formpanel)
+        }); // create()
+    } // launch
+}); // application()
+</pre>
+    </div>
+    
+</body>
+</html>

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Ext.toolbar.Toolbar Example</title>
+    <meta Name="description" content="Ext.toolbar.Toolbar Example" />
+    <meta name="keywords" content="Sencha, Ext JS, Ext JS 4.0.7, Ext.toolbar.Toolbar, Ext.Toolbar, toolbar" />
+    <link href="/assets/application.css" media="screen" rel="stylesheet" type="text/css" />
+    <style>
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    
+    <div>
+        <header>
+            <h1>Sencha Try</h1>
+        </header>
+        
+        <section id="readme">
+            <h1>Ext.toolbar.Toolbar Example</h1>
+            <strong>Tags:</strong> <a href="/search/Ext JS">Ext JS</a> <a href="/search/Ext JS 4.0.7">Ext JS 4.0.7</a> <a href="/search/Ext.toolbar.Toolbar">Ext.toolbar.Toolbar</a> <a href="/search/Ext.Toolbar">Ext.Toolbar</a> <a href="/search/toolbar">toolbar</a> <br/>
+        </section>
+        <section id="example">
+            [example]
+        </section>
+        
+        <footer>
+            &copy; 2012 Sencha Inc.
+        </footer>
+    </div>
+    
+    <div class="hidden">
+        <!-- extjs/4.0.7/docs/Ext.toolbar.Toolbar.1/app.js -->
+        <pre>/*global Ext:false */
+Ext.onReady(function () {
+    Ext.create('Ext.toolbar.Toolbar', {
+        renderTo: document.body,
+        width: 500,
+        items: [{
+            // xtype: 'button', // default for Toolbars
+            text: 'Button'
+        }, {
+            xtype: 'splitbutton',
+            text: 'Split Button'
+        },
+        // begin using the right-justified button container
+        '->', // same as { xtype: 'tbfill' }
+        {
+            xtype: 'textfield',
+            name: 'field1',
+            emptyText: 'enter search term'
+        },
+        // add a vertical separator bar between toolbar items
+        '-', // same as {xtype: 'tbseparator'} to create Ext.toolbar.Separator
+        'text 1', // same as {xtype: 'tbtext', text: 'text1'} to create Ext.toolbar.TextItem
+        {
+            xtype: 'tbspacer'
+        }, // same as ' ' to create Ext.toolbar.Spacer
+        'text 2',
+        {
+            xtype: 'tbspacer',
+            width: 50
+        }, // add a 50px space
+        'text 3']
+    });
+});
+</pre>
+    </div>
+    
+</body>
+</html>

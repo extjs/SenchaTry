@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Drawing and Charting Example</title>
+    <meta Name="description" content="Drawing and Charting Example" />
+    <meta name="keywords" content="Sencha, Ext JS, Ext JS 4.0.7, Ext.draw.Component, viewBox, surface, add(), circle, radius, fill, setAttributes(), animate(), to, duration" />
+    <link href="/assets/application.css" media="screen" rel="stylesheet" type="text/css" />
+    <style>
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    
+    <div>
+        <header>
+            <h1>Sencha Try</h1>
+        </header>
+        
+        <section id="readme">
+            <h1>Drawing and Charting Example</h1>
+
+<p>The drawing and charting packages enable you to create cross browser and cross device graphics in a versatile way.</p>
+            <strong>Tags:</strong> <a href="/search/Ext JS">Ext JS</a> <a href="/search/Ext JS 4.0.7">Ext JS 4.0.7</a> <a href="/search/Ext.draw.Component">Ext.draw.Component</a> <a href="/search/viewBox">viewBox</a> <a href="/search/surface">surface</a> <a href="/search/add()">add()</a> <a href="/search/circle">circle</a> <a href="/search/radius">radius</a> <a href="/search/fill">fill</a> <a href="/search/setAttributes()">setAttributes()</a> <a href="/search/animate()">animate()</a> <a href="/search/to">to</a> <a href="/search/duration">duration</a> <br/>
+        </section>
+        <section id="example">
+            [example]
+        </section>
+        
+        <footer>
+            &copy; 2012 Sencha Inc.
+        </footer>
+    </div>
+    
+    <div class="hidden">
+        <!-- extjs/4.0.7/guides/drawing_and_charting.2/app.js -->
+        <pre>/*global Ext:false */
+Ext.onReady(function () {
+    // Create a draw component
+    var drawComponent = Ext.create('Ext.draw.Component', {
+        viewBox: false
+    });
+
+    // Create a window to place the draw component in
+    Ext.create('Ext.Window', {
+        width: 220,
+        height: 230,
+        layout: 'fit',
+        items: [drawComponent]
+    }).show();
+
+    // Add a circle sprite
+    var myCircle = drawComponent.surface.add({
+        type: 'circle',
+        x: 100,
+        y: 100,
+        radius: 100,
+        fill: '#cc5'
+    });
+
+    // Now do stuff with the sprite, like changing its properties:
+    myCircle.setAttributes({
+        fill: '#ccc'
+    }, true);
+
+    // or animate an attribute on the sprite
+    myCircle.animate({
+        to: {
+            fill: '#555'
+        },
+        duration: 2000
+    });
+
+    // Add a mouseup listener to the sprite
+    myCircle.addListener('mouseup', function () {
+        alert('mouse upped!');
+    });
+});
+</pre>
+    </div>
+    
+</body>
+</html>

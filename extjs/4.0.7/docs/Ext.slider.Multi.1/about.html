@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Ext.slider.Multi Example</title>
+    <meta Name="description" content="Ext.slider.Multi Example" />
+    <meta name="keywords" content="Sencha, Ext JS, Ext JS 4.0.7, Ext.slider.Multi, Ext.slider.MultiSlider, multislider, values, increment, minValue, maxValue, constrainThumbs, slider" />
+    <link href="/assets/application.css" media="screen" rel="stylesheet" type="text/css" />
+    <style>
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    
+    <div>
+        <header>
+            <h1>Sencha Try</h1>
+        </header>
+        
+        <section id="readme">
+            <h1>Ext.slider.Multi Example</h1>
+            <strong>Tags:</strong> <a href="/search/Ext JS">Ext JS</a> <a href="/search/Ext JS 4.0.7">Ext JS 4.0.7</a> <a href="/search/Ext.slider.Multi">Ext.slider.Multi</a> <a href="/search/Ext.slider.MultiSlider">Ext.slider.MultiSlider</a> <a href="/search/multislider">multislider</a> <a href="/search/values">values</a> <a href="/search/increment">increment</a> <a href="/search/minValue">minValue</a> <a href="/search/maxValue">maxValue</a> <a href="/search/constrainThumbs">constrainThumbs</a> <a href="/search/slider">slider</a> <br/>
+        </section>
+        <section id="example">
+            [example]
+        </section>
+        
+        <footer>
+            &copy; 2012 Sencha Inc.
+        </footer>
+    </div>
+    
+    <div class="hidden">
+        <!-- extjs/4.0.7/docs/Ext.slider.Multi.1/app.js -->
+        <pre>/*global Ext:false */
+Ext.onReady(function () {
+    Ext.create('Ext.slider.Multi', {
+        width: 200,
+        values: [25, 50, 75],
+        increment: 5,
+        minValue: 0,
+        maxValue: 100,
+
+        // this defaults to true, setting to false allows the thumbs to pass each other
+        constrainThumbs: false,
+        renderTo: Ext.getBody()
+    });
+});
+</pre>
+    </div>
+    
+</body>
+</html>

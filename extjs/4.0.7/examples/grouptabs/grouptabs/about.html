@@ -1,0 +1,1256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <title>GroupTabs Example</title>
+    <meta Name="description" content="GroupTabs Example" />
+    <meta name="keywords" content="Sencha, Ext JS, Ext JS 4.0.7" />
+    <link href="/assets/application.css" media="screen" rel="stylesheet" type="text/css" />
+    <style>
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    
+    <div>
+        <header>
+            <h1>Sencha Try</h1>
+        </header>
+        
+        <section id="readme">
+            <h1>GroupTabs Example</h1>
+            <strong>Tags:</strong> <a href="/search/Ext JS">Ext JS</a> <a href="/search/Ext JS 4.0.7">Ext JS 4.0.7</a> <br/>
+        </section>
+        <section id="example">
+            [example]
+        </section>
+        
+        <footer>
+            &copy; 2012 Sencha Inc.
+        </footer>
+    </div>
+    
+    <div class="hidden">
+        <!-- extjs/4.0.7/examples/grouptabs/grouptabs/app.js -->
+        <pre>/*global Ext:false */
+/*
+
+This file is part of Ext JS 4
+
+Copyright (c) 2011 Sencha Inc
+
+Contact:  http://www.sencha.com/contact
+
+GNU General Public License Usage
+This file may be used under the terms of the GNU General Public License version 3.0 as published by the Free Software Foundation and appearing in the file LICENSE included in the packaging of this file.  Please review the following information to ensure the GNU General Public License version 3.0 requirements will be met: http://www.gnu.org/copyleft/gpl.html.
+
+If you are unsure which license is appropriate for your use, please contact the sales department at http://www.sencha.com/contact.
+
+*/
+Ext.Loader.setConfig({enabled: true});
+
+Ext.Loader.setPath('Ext.ux', 'ux');
+
+Ext.require([
+    'Ext.Viewport',
+    'Ext.tip.QuickTipManager',
+    'Ext.tab.Panel',
+    'Ext.ux.GroupTabPanel',
+    'Ext.grid.*'
+]);
+
+Ext.onReady(function() {
+    Ext.tip.QuickTipManager.init();
+    
+    // create some portlet tools using built in Ext tool ids
+    var tools = [{
+        type:'gear',
+        handler: function(){
+            Ext.Msg.alert('Message', 'The Settings tool was clicked.');
+        }
+    },{
+        type:'close',
+        handler: function(e, target, panel){
+            panel.ownerCt.remove(panel, true);
+        }
+    }];
+
+    Ext.create('Ext.Viewport', {
+        layout:'fit',
+        items:[{
+            xtype: 'grouptabpanel',
+            activeGroup: 0,
+            items: [{
+                mainItem: 1,
+                items: [{
+                    title: 'Tickets',
+                    iconCls: 'x-icon-tickets',
+                    tabTip: 'Tickets tabtip',
+                    //border: false,
+                    xtype: 'gridportlet',
+                    height: null
+                }, 
+                {
+                    xtype: 'portalpanel',
+                    title: 'Dashboard',
+                    tabTip: 'Dashboard tabtip',
+                    border: false,
+                    items: [{
+                        flex: 1,
+                        items: [{
+                            title: 'Portlet 1',
+                            html: '<div class="portlet-content">'+Ext.example.bogusMarkup+'</div>'
+                        },{
+                            
+                            title: 'Stock Portlet',
+                            items: {
+                                xtype: 'chartportlet'
+                            }
+                        },{
+                            title: 'Portlet 2',
+                            html: '<div class="portlet-content">'+Ext.example.bogusMarkup+'</div>'
+                        }]
+                    }]                  
+                }, {
+                    title: 'Subscriptions',
+                    iconCls: 'x-icon-subscriptions',
+                    tabTip: 'Subscriptions tabtip',
+                    style: 'padding: 10px;',
+                    border: false,
+                    layout: 'fit',
+                    items: [{
+                        xtype: 'tabpanel',
+                        activeTab: 1,
+                        items: [{
+                            title: 'Nested Tabs',
+                            html: Ext.example.shortBogusMarkup
+                        }]  
+                    }]  
+                }, {
+                    title: 'Users',
+                    iconCls: 'x-icon-users',
+                    tabTip: 'Users tabtip',
+                    style: 'padding: 10px;',
+                    html: Ext.example.shortBogusMarkup          
+                }]
+            }, {
+                expanded: true,
+                items: [{
+                    title: 'Configuration',
+                    iconCls: 'x-icon-configuration',
+                    tabTip: 'Configuration tabtip',
+                    style: 'padding: 10px;',
+                    html: Ext.example.shortBogusMarkup 
+                }, {
+                    title: 'Email Templates',
+                    iconCls: 'x-icon-templates',
+                    tabTip: 'Templates tabtip',
+                    style: 'padding: 10px;',
+                    border: false,
+                    items:{
+                            xtype: 'form', // since we are not using the default 'panel' xtype, we must specify it
+                            id: 'form-panel',
+                            labelWidth: 75,
+                            title: 'Form Layout',
+                            bodyStyle: 'padding:15px',
+                            labelPad: 20,
+                            defaults: {
+                                width: 230,
+                                labelSeparator: '',
+                                msgTarget: 'side'
+                            },
+                            defaultType: 'textfield',
+                            items: [{
+                                    fieldLabel: 'First Name',
+                                    name: 'first',
+                                    allowBlank:false
+                                },{
+                                    fieldLabel: 'Last Name',
+                                    name: 'last'
+                                },{
+                                    fieldLabel: 'Company',
+                                    name: 'company'
+                                },{
+                                    fieldLabel: 'Email',
+                                    name: 'email',
+                                    vtype:'email'
+                                }
+                            ],
+                            buttons: [{text: 'Save'},{text: 'Cancel'}]
+                        }
+                }]
+            }]
+        }]
+    });
+});
+
+</pre>
+        <!-- extjs/4.0.7/examples/grouptabs/grouptabs/examples.js -->
+        <pre>/*
+
+This file is part of Ext JS 4
+
+Copyright (c) 2011 Sencha Inc
+
+Contact:  http://www.sencha.com/contact
+
+GNU General Public License Usage
+This file may be used under the terms of the GNU General Public License version 3.0 as published by the Free Software Foundation and appearing in the file LICENSE included in the packaging of this file.  Please review the following information to ensure the GNU General Public License version 3.0 requirements will be met: http://www.gnu.org/copyleft/gpl.html.
+
+If you are unsure which license is appropriate for your use, please contact the sales department at http://www.sencha.com/contact.
+
+*/
+Ext.example = function(){
+    var msgCt;
+
+    function createBox(t, s){
+       // return ['<div class="msg">',
+       //         '<div class="x-box-tl"><div class="x-box-tr"><div class="x-box-tc"></div></div></div>',
+       //         '<div class="x-box-ml"><div class="x-box-mr"><div class="x-box-mc"><h3>', t, '</h3>', s, '</div></div></div>',
+       //         '<div class="x-box-bl"><div class="x-box-br"><div class="x-box-bc"></div></div></div>',
+       //         '</div>'].join('');
+       return '<div class="msg"><h3>' + t + '</h3><p>' + s + '</p></div>';
+    }
+    return {
+        msg : function(title, format){
+            if(!msgCt){
+                msgCt = Ext.DomHelper.insertFirst(document.body, {id:'msg-div'}, true);
+            }
+            var s = Ext.String.format.apply(String, Array.prototype.slice.call(arguments, 1));
+            var m = Ext.DomHelper.append(msgCt, createBox(title, s), true);
+            m.hide();
+            m.slideIn('t').ghost("t", { delay: 1000, remove: true});
+        },
+
+        init : function(){
+//            var t = Ext.get('exttheme');
+//            if(!t){ // run locally?
+//                return;
+//            }
+//            var theme = Cookies.get('exttheme') || 'aero';
+//            if(theme){
+//                t.dom.value = theme;
+//                Ext.getBody().addClass('x-'+theme);
+//            }
+//            t.on('change', function(){
+//                Cookies.set('exttheme', t.getValue());
+//                setTimeout(function(){
+//                    window.location.reload();
+//                }, 250);
+//            });
+//
+//            var lb = Ext.get('lib-bar');
+//            if(lb){
+//                lb.show();
+//            }
+        }
+    };
+}();
+
+Ext.example.shortBogusMarkup = '<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Sed metus nibh, '+
+    'sodales a, porta at, vulputate eget, dui. Pellentesque ut nisl. Maecenas tortor turpis, interdum non, sodales '+
+    'non, iaculis ac, lacus. Vestibulum auctor, tortor quis iaculis malesuada, libero lectus bibendum purus, sit amet '+
+    'tincidunt quam turpis vel lacus. In pellentesque nisl non sem. Suspendisse nunc sem, pretium eget, cursus a, fringilla.</p>';
+
+Ext.example.bogusMarkup = '<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Sed metus nibh, sodales a, '+
+    'porta at, vulputate eget, dui. Pellentesque ut nisl. Maecenas tortor turpis, interdum non, sodales non, iaculis ac, '+
+    'lacus. Vestibulum auctor, tortor quis iaculis malesuada, libero lectus bibendum purus, sit amet tincidunt quam turpis '+
+    'vel lacus. In pellentesque nisl non sem. Suspendisse nunc sem, pretium eget, cursus a, fringilla vel, urna.<br/><br/>'+
+    'Aliquam commodo ullamcorper erat. Nullam vel justo in neque porttitor laoreet. Aenean lacus dui, consequat eu, adipiscing '+
+    'eget, nonummy non, nisi. Morbi nunc est, dignissim non, ornare sed, luctus eu, massa. Vivamus eget quam. Vivamus tincidunt '+
+    'diam nec urna. Curabitur velit. Lorem ipsum dolor sit amet.</p>';
+
+//Ext.onReady(Ext.example.init, Ext.example);
+
+
+// old school cookie functions
+var Cookies = {};
+Cookies.set = function(name, value){
+     var argv = arguments;
+     var argc = arguments.length;
+     var expires = (argc > 2) ? argv[2] : null;
+     var path = (argc > 3) ? argv[3] : '/';
+     var domain = (argc > 4) ? argv[4] : null;
+     var secure = (argc > 5) ? argv[5] : false;
+     document.cookie = name + "=" + escape (value) +
+       ((expires === null) ? "" : ("; expires=" + expires.toGMTString())) +
+       ((path === null) ? "" : ("; path=" + path)) +
+       ((domain === null) ? "" : ("; domain=" + domain)) +
+       ((secure === true) ? "; secure" : "");
+};
+
+Cookies.get = function(name){
+    var arg = name + "=";
+    var alen = arg.length;
+    var clen = document.cookie.length;
+    var i = 0;
+    var j = 0;
+    while(i < clen){
+        j = i + alen;
+        if (document.cookie.substring(i, j) == arg)
+            return Cookies.getCookieVal(j);
+        i = document.cookie.indexOf(" ", i) + 1;
+        if(i === 0)
+            break;
+    }
+    return null;
+};
+
+Cookies.clear = function(name) {
+  if(Cookies.get(name)){
+    document.cookie = name + "=" +
+    "; expires=Thu, 01-Jan-70 00:00:01 GMT";
+  }
+};
+
+Cookies.getCookieVal = function(offset){
+   var endstr = document.cookie.indexOf(";", offset);
+   if(endstr == -1){
+       endstr = document.cookie.length;
+   }
+   return unescape(document.cookie.substring(offset, endstr));
+};
+</pre>
+        <!-- extjs/4.0.7/examples/grouptabs/grouptabs/portal/classes/ChartPortlet.js -->
+        <pre>/*
+
+This file is part of Ext JS 4
+
+Copyright (c) 2011 Sencha Inc
+
+Contact:  http://www.sencha.com/contact
+
+GNU General Public License Usage
+This file may be used under the terms of the GNU General Public License version 3.0 as published by the Free Software Foundation and appearing in the file LICENSE included in the packaging of this file.  Please review the following information to ensure the GNU General Public License version 3.0 requirements will be met: http://www.gnu.org/copyleft/gpl.html.
+
+If you are unsure which license is appropriate for your use, please contact the sales department at http://www.sencha.com/contact.
+
+*/
+Ext.define('Ext.app.ChartPortlet', {
+
+    extend: 'Ext.panel.Panel',
+    alias: 'widget.chartportlet',
+
+    requires: [
+        'Ext.data.JsonStore',
+        'Ext.chart.theme.Base',
+        'Ext.chart.series.Series',
+        'Ext.chart.series.Line',
+        'Ext.chart.axis.Numeric'
+    ],
+
+    generateData: function(){
+        var data = [{
+                name: 'x',
+                djia: 10000,
+                sp500: 1100
+            }],
+            i;
+        for (i = 1; i < 50; i++) {
+            data.push({
+                name: 'x' + i,
+                sp500: data[i - 1].sp500 + ((Math.floor(Math.random() * 2) % 2) ? -1 : 1) * Math.floor(Math.random() * 7),
+                djia: data[i - 1].djia + ((Math.floor(Math.random() * 2) % 2) ? -1 : 1) * Math.floor(Math.random() * 7)
+            });
+        }
+        return data;
+    },
+
+    initComponent: function(){
+
+        Ext.apply(this, {
+            layout: 'fit',
+            width: 600,
+            height: 300,
+            items: {
+                xtype: 'chart',
+                animate: false,
+                shadow: false,
+                store: Ext.create('Ext.data.JsonStore', {
+                    fields: ['name', 'sp500', 'djia'],
+                    data: this.generateData()
+                }),
+                legend: {
+                    position: 'bottom'
+                },
+                axes: [{
+                    type: 'Numeric',
+                    position: 'left',
+                    fields: ['djia'],
+                    title: 'Dow Jones Average',
+                    label: {
+                        font: '11px Arial'
+                    }
+                }, {
+                    type: 'Numeric',
+                    position: 'right',
+                    grid: false,
+                    fields: ['sp500'],
+                    title: 'S&amp;P 500',
+                    label: {
+                            font: '11px Arial'
+                        }
+                }],
+                series: [{
+                    type: 'line',
+                    lineWidth: 1,
+                    showMarkers: false,
+                    fill: true,
+                    axis: ['left', 'bottom'],
+                    xField: 'name',
+                    yField: 'djia',
+                    style: {
+                        'stroke-width': 1
+                    }
+                }, {
+                    type: 'line',
+                    lineWidth: 1,
+                    showMarkers: false,
+                    axis: ['right', 'bottom'],
+                    xField: 'name',
+                    yField: 'sp500',
+                    style: {
+                        'stroke-width': 1
+                    }
+                }]
+            }
+        });
+
+        this.callParent(arguments);
+    }
+});
+
+</pre>
+        <!-- extjs/4.0.7/examples/grouptabs/grouptabs/portal/classes/GridPortlet.js -->
+        <pre>/*
+
+This file is part of Ext JS 4
+
+Copyright (c) 2011 Sencha Inc
+
+Contact:  http://www.sencha.com/contact
+
+GNU General Public License Usage
+This file may be used under the terms of the GNU General Public License version 3.0 as published by the Free Software Foundation and appearing in the file LICENSE included in the packaging of this file.  Please review the following information to ensure the GNU General Public License version 3.0 requirements will be met: http://www.gnu.org/copyleft/gpl.html.
+
+If you are unsure which license is appropriate for your use, please contact the sales department at http://www.sencha.com/contact.
+
+*/
+Ext.define('Ext.app.GridPortlet', {
+
+    extend: 'Ext.grid.Panel',
+    alias: 'widget.gridportlet',
+    height: 300,
+    myData: [
+        ['3m Co',                               71.72, 0.02,  0.03,  '9/1 12:00am'],
+        ['Alcoa Inc',                           29.01, 0.42,  1.47,  '9/1 12:00am'],
+        ['Altria Group Inc',                    83.81, 0.28,  0.34,  '9/1 12:00am'],
+        ['American Express Company',            52.55, 0.01,  0.02,  '9/1 12:00am'],
+        ['American International Group, Inc.',  64.13, 0.31,  0.49,  '9/1 12:00am'],
+        ['AT&amp;T Inc.',                           31.61, -0.48, -1.54, '9/1 12:00am'],
+        ['Boeing Co.',                          75.43, 0.53,  0.71,  '9/1 12:00am'],
+        ['Caterpillar Inc.',                    67.27, 0.92,  1.39,  '9/1 12:00am'],
+        ['Citigroup, Inc.',                     49.37, 0.02,  0.04,  '9/1 12:00am'],
+        ['E.I. du Pont de Nemours and Company', 40.48, 0.51,  1.28,  '9/1 12:00am'],
+        ['Exxon Mobil Corp',                    68.1,  -0.43, -0.64, '9/1 12:00am'],
+        ['General Electric Company',            34.14, -0.08, -0.23, '9/1 12:00am'],
+        ['General Motors Corporation',          30.27, 1.09,  3.74,  '9/1 12:00am'],
+        ['Hewlett-Packard Co.',                 36.53, -0.03, -0.08, '9/1 12:00am'],
+        ['Honeywell Intl Inc',                  38.77, 0.05,  0.13,  '9/1 12:00am'],
+        ['Intel Corporation',                   19.88, 0.31,  1.58,  '9/1 12:00am'],
+        ['International Business Machines',     81.41, 0.44,  0.54,  '9/1 12:00am'],
+        ['Johnson &amp; Johnson',                   64.72, 0.06,  0.09,  '9/1 12:00am'],
+        ['JP Morgan &amp; Chase &amp; Co',              45.73, 0.07,  0.15,  '9/1 12:00am'],
+        ['McDonald\'s Corporation',             36.76, 0.86,  2.40,  '9/1 12:00am'],
+        ['Merck &amp; Co., Inc.',                   40.96, 0.41,  1.01,  '9/1 12:00am'],
+        ['Microsoft Corporation',               25.84, 0.14,  0.54,  '9/1 12:00am'],
+        ['Pfizer Inc',                          27.96, 0.4,   1.45,  '9/1 12:00am'],
+        ['The Coca-Cola Company',               45.07, 0.26,  0.58,  '9/1 12:00am'],
+        ['The Home Depot, Inc.',                34.64, 0.35,  1.02,  '9/1 12:00am'],
+        ['The Procter &amp; Gamble Company',        61.91, 0.01,  0.02,  '9/1 12:00am'],
+        ['United Technologies Corporation',     63.26, 0.55,  0.88,  '9/1 12:00am'],
+        ['Verizon Communications',              35.57, 0.39,  1.11,  '9/1 12:00am'],
+        ['Wal-Mart Stores, Inc.',               45.45, 0.73,  1.63,  '9/1 12:00am']
+    ],
+
+    /**
+     * Custom function used for column renderer
+     * @param {Object} val
+     */
+    change: function(val) {
+        if (val > 0) {
+            return '<span style="color:green;">' + val + '</span>';
+        } else if (val < 0) {
+            return '<span style="color:red;">' + val + '</span>';
+        }
+        return val;
+    },
+
+    /**
+     * Custom function used for column renderer
+     * @param {Object} val
+     */
+    pctChange: function(val) {
+        if (val > 0) {
+            return '<span style="color:green;">' + val + '%</span>';
+        } else if (val < 0) {
+            return '<span style="color:red;">' + val + '%</span>';
+        }
+        return val;
+    },
+
+    initComponent: function(){
+
+        var store = Ext.create('Ext.data.ArrayStore', {
+            fields: [
+               {name: 'company'},
+               {name: 'change',     type: 'float'},
+               {name: 'pctChange',  type: 'float'}
+            ],
+            data: this.myData
+        });
+
+        Ext.apply(this, {
+            //height: 300,
+            height: this.height,
+            store: store,
+            stripeRows: true,
+            columnLines: true,
+            columns: [{
+                id       :'company',
+                text   : 'Company',
+                //width: 120,
+                flex: 1,
+                sortable : true,
+                dataIndex: 'company'
+            },{
+                text   : 'Change',
+                width    : 75,
+                sortable : true,
+                renderer : this.change,
+                dataIndex: 'change'
+            },{
+                text   : '% Change',
+                width    : 75,
+                sortable : true,
+                renderer : this.pctChange,
+                dataIndex: 'pctChange'
+            }]
+        });
+
+        this.callParent(arguments);
+    }
+});
+
+</pre>
+        <!-- extjs/4.0.7/examples/grouptabs/grouptabs/portal/classes/PortalColumn.js -->
+        <pre>/*
+
+This file is part of Ext JS 4
+
+Copyright (c) 2011 Sencha Inc
+
+Contact:  http://www.sencha.com/contact
+
+GNU General Public License Usage
+This file may be used under the terms of the GNU General Public License version 3.0 as published by the Free Software Foundation and appearing in the file LICENSE included in the packaging of this file.  Please review the following information to ensure the GNU General Public License version 3.0 requirements will be met: http://www.gnu.org/copyleft/gpl.html.
+
+If you are unsure which license is appropriate for your use, please contact the sales department at http://www.sencha.com/contact.
+
+*/
+/**
+ * @class Ext.app.PortalColumn
+ * @extends Ext.container.Container
+ * A layout column class used internally be {@link Ext.app.PortalPanel}.
+ */
+Ext.define('Ext.app.PortalColumn', {
+    extend: 'Ext.container.Container',
+    alias: 'widget.portalcolumn',
+    layout: {
+        type: 'anchor'
+    },
+    defaultType: 'portlet',
+    cls: 'x-portal-column',
+    autoHeight: true
+    //
+    // This is a class so that it could be easily extended
+    // if necessary to provide additional behavior.
+    //
+});
+</pre>
+        <!-- extjs/4.0.7/examples/grouptabs/grouptabs/portal/classes/PortalDropZone.js -->
+        <pre>/*
+
+This file is part of Ext JS 4
+
+Copyright (c) 2011 Sencha Inc
+
+Contact:  http://www.sencha.com/contact
+
+GNU General Public License Usage
+This file may be used under the terms of the GNU General Public License version 3.0 as published by the Free Software Foundation and appearing in the file LICENSE included in the packaging of this file.  Please review the following information to ensure the GNU General Public License version 3.0 requirements will be met: http://www.gnu.org/copyleft/gpl.html.
+
+If you are unsure which license is appropriate for your use, please contact the sales department at http://www.sencha.com/contact.
+
+*/
+/**
+ * @class Ext.app.PortalDropZone
+ * @extends Ext.dd.DropTarget
+ * Internal class that manages drag/drop for {@link Ext.app.PortalPanel}.
+ */
+Ext.define('Ext.app.PortalDropZone', {
+    extend: 'Ext.dd.DropTarget',
+
+    constructor: function(portal, cfg) {
+        this.portal = portal;
+        Ext.dd.ScrollManager.register(portal.body);
+        Ext.app.PortalDropZone.superclass.constructor.call(this, portal.body, cfg);
+        portal.body.ddScrollConfig = this.ddScrollConfig;
+    },
+
+    ddScrollConfig: {
+        vthresh: 50,
+        hthresh: -1,
+        animate: true,
+        increment: 200
+    },
+
+    createEvent: function(dd, e, data, col, c, pos) {
+        return {
+            portal: this.portal,
+            panel: data.panel,
+            columnIndex: col,
+            column: c,
+            position: pos,
+            data: data,
+            source: dd,
+            rawEvent: e,
+            status: this.dropAllowed
+        };
+    },
+
+    notifyOver: function(dd, e, data) {
+        var xy = e.getXY(),
+            portal = this.portal,
+            proxy = dd.proxy;
+
+        // case column widths
+        if (!this.grid) {
+            this.grid = this.getGrid();
+        }
+
+        // handle case scroll where scrollbars appear during drag
+        var cw = portal.body.dom.clientWidth;
+        if (!this.lastCW) {
+            // set initial client width
+            this.lastCW = cw;
+        } else if (this.lastCW != cw) {
+            // client width has changed, so refresh layout &amp; grid calcs
+            this.lastCW = cw;
+            //portal.doLayout();
+            this.grid = this.getGrid();
+        }
+
+        // determine column
+        var colIndex = 0,
+            colRight = 0,
+            cols = this.grid.columnX,
+            len = cols.length,
+            cmatch = false;
+
+        for (len; colIndex < len; colIndex++) {
+            colRight = cols[colIndex].x + cols[colIndex].w;
+            if (xy[0] < colRight) {
+                cmatch = true;
+                break;
+            }
+        }
+        // no match, fix last index
+        if (!cmatch) {
+            colIndex--;
+        }
+
+        // find insert position
+        var overPortlet, pos = 0,
+            h = 0,
+            match = false,
+            overColumn = portal.items.getAt(colIndex),
+            portlets = overColumn.items.items,
+            overSelf = false;
+
+        len = portlets.length;
+
+        for (len; pos < len; pos++) {
+            overPortlet = portlets[pos];
+            h = overPortlet.el.getHeight();
+            if (h === 0) {
+                overSelf = true;
+            } else if ((overPortlet.el.getY() + (h / 2)) > xy[1]) {
+                match = true;
+                break;
+            }
+        }
+
+        pos = (match &amp;&amp; overPortlet ? pos : overColumn.items.getCount()) + (overSelf ? -1 : 0);
+        var overEvent = this.createEvent(dd, e, data, colIndex, overColumn, pos);
+
+        if (portal.fireEvent('validatedrop', overEvent) !== false &amp;&amp; portal.fireEvent('beforedragover', overEvent) !== false) {
+
+            // make sure proxy width is fluid in different width columns
+            proxy.getProxy().setWidth('auto');
+
+            if (overPortlet) {
+                proxy.moveProxy(overPortlet.el.dom.parentNode, match ? overPortlet.el.dom : null);
+            } else {
+                proxy.moveProxy(overColumn.el.dom, null);
+            }
+
+            this.lastPos = {
+                c: overColumn,
+                col: colIndex,
+                p: overSelf || (match &amp;&amp; overPortlet) ? pos : false
+            };
+            this.scrollPos = portal.body.getScroll();
+
+            portal.fireEvent('dragover', overEvent);
+            return overEvent.status;
+        } else {
+            return overEvent.status;
+        }
+
+    },
+
+    notifyOut: function() {
+        delete this.grid;
+    },
+
+    notifyDrop: function(dd, e, data) {
+        delete this.grid;
+        if (!this.lastPos) {
+            return;
+        }
+        var c = this.lastPos.c,
+            col = this.lastPos.col,
+            pos = this.lastPos.p,
+            panel = dd.panel,
+            dropEvent = this.createEvent(dd, e, data, col, c, pos !== false ? pos : c.items.getCount());
+
+        if (this.portal.fireEvent('validatedrop', dropEvent) !== false &amp;&amp; this.portal.fireEvent('beforedrop', dropEvent) !== false) {
+
+            // make sure panel is visible prior to inserting so that the layout doesn't ignore it
+            panel.el.dom.style.display = '';
+
+            if (pos !== false) {
+                c.insert(pos, panel);
+            } else {
+                c.add(panel);
+            }
+
+            dd.proxy.hide();
+            this.portal.fireEvent('drop', dropEvent);
+
+            // scroll position is lost on drop, fix it
+            var st = this.scrollPos.top;
+            if (st) {
+                var d = this.portal.body.dom;
+                setTimeout(function() {
+                    d.scrollTop = st;
+                },
+                10);
+            }
+
+        }
+        delete this.lastPos;
+        return true;
+    },
+
+    // internal cache of body and column coords
+    getGrid: function() {
+        var box = this.portal.body.getBox();
+        box.columnX = [];
+        this.portal.items.each(function(c) {
+            box.columnX.push({
+                x: c.el.getX(),
+                w: c.el.getWidth()
+            });
+        });
+        return box;
+    },
+
+    // unregister the dropzone from ScrollManager
+    unreg: function() {
+        Ext.dd.ScrollManager.unregister(this.portal.body);
+        Ext.app.PortalDropZone.superclass.unreg.call(this);
+    }
+});
+
+</pre>
+        <!-- extjs/4.0.7/examples/grouptabs/grouptabs/portal/classes/PortalPanel.js -->
+        <pre>/*
+
+This file is part of Ext JS 4
+
+Copyright (c) 2011 Sencha Inc
+
+Contact:  http://www.sencha.com/contact
+
+GNU General Public License Usage
+This file may be used under the terms of the GNU General Public License version 3.0 as published by the Free Software Foundation and appearing in the file LICENSE included in the packaging of this file.  Please review the following information to ensure the GNU General Public License version 3.0 requirements will be met: http://www.gnu.org/copyleft/gpl.html.
+
+If you are unsure which license is appropriate for your use, please contact the sales department at http://www.sencha.com/contact.
+
+*/
+/**
+ * @class Ext.app.PortalPanel
+ * @extends Ext.panel.Panel
+ * A {@link Ext.panel.Panel Panel} class used for providing drag-drop-enabled portal layouts.
+ */
+Ext.define('Ext.app.PortalPanel', {
+    extend: 'Ext.panel.Panel',
+    alias: 'widget.portalpanel',
+    requires: [
+        'Ext.layout.component.Body'
+    ],
+
+    cls: 'x-portal',
+    bodyCls: 'x-portal-body',
+    defaultType: 'portalcolumn',
+    componentLayout: 'body',
+    autoScroll: true,
+
+    initComponent : function() {
+        var me = this;
+
+        // Implement a Container beforeLayout call from the layout to this Container
+        this.layout = {
+            type : 'column'
+        };
+        this.callParent();
+
+        this.addEvents({
+            validatedrop: true,
+            beforedragover: true,
+            dragover: true,
+            beforedrop: true,
+            drop: true
+        });
+        this.on('drop', this.doLayout, this);
+    },
+
+    // Set columnWidth, and set first and last column classes to allow exact CSS targeting.
+    beforeLayout: function() {
+        var items = this.layout.getLayoutItems(),
+            len = items.length,
+            i = 0,
+            item;
+
+        for (; i < len; i++) {
+            item = items[i];
+            item.columnWidth = 1 / len;
+            item.removeCls(['x-portal-column-first', 'x-portal-column-last']);
+        }
+        items[0].addCls('x-portal-column-first');
+        items[len - 1].addCls('x-portal-column-last');
+        return this.callParent(arguments);
+    },
+
+    // private
+    initEvents : function(){
+        this.callParent();
+        this.dd = Ext.create('Ext.app.PortalDropZone', this, this.dropConfig);
+    },
+
+    // private
+    beforeDestroy : function() {
+        if (this.dd) {
+            this.dd.unreg();
+        }
+        Ext.app.PortalPanel.superclass.beforeDestroy.call(this);
+    }
+});
+
+</pre>
+        <!-- extjs/4.0.7/examples/grouptabs/grouptabs/portal/classes/Portlet.js -->
+        <pre>/*
+
+This file is part of Ext JS 4
+
+Copyright (c) 2011 Sencha Inc
+
+Contact:  http://www.sencha.com/contact
+
+GNU General Public License Usage
+This file may be used under the terms of the GNU General Public License version 3.0 as published by the Free Software Foundation and appearing in the file LICENSE included in the packaging of this file.  Please review the following information to ensure the GNU General Public License version 3.0 requirements will be met: http://www.gnu.org/copyleft/gpl.html.
+
+If you are unsure which license is appropriate for your use, please contact the sales department at http://www.sencha.com/contact.
+
+*/
+/**
+ * @class Ext.app.Portlet
+ * @extends Ext.panel.Panel
+ * A {@link Ext.panel.Panel Panel} class that is managed by {@link Ext.app.PortalPanel}.
+ */
+Ext.define('Ext.app.Portlet', {
+    extend: 'Ext.panel.Panel',
+    alias: 'widget.portlet',
+    layout: 'fit',
+    anchor: '100%',
+    frame: true,
+    closable: true,
+    collapsible: true,
+    animCollapse: true,
+    draggable: true,
+    cls: 'x-portlet',
+
+    // Override Panel's default doClose to provide a custom fade out effect
+    // when a portlet is removed from the portal
+    doClose: function() {
+        this.el.animate({
+            opacity: 0,
+            callback: function(){
+                this.fireEvent('close', this);
+                this[this.closeAction]();
+            },
+            scope: this
+        });
+    }
+});
+</pre>
+        <!-- extjs/4.0.7/examples/grouptabs/grouptabs/ux/GroupTabPanel.js -->
+        <pre>/*
+
+This file is part of Ext JS 4
+
+Copyright (c) 2011 Sencha Inc
+
+Contact:  http://www.sencha.com/contact
+
+GNU General Public License Usage
+This file may be used under the terms of the GNU General Public License version 3.0 as published by the Free Software Foundation and appearing in the file LICENSE included in the packaging of this file.  Please review the following information to ensure the GNU General Public License version 3.0 requirements will be met: http://www.gnu.org/copyleft/gpl.html.
+
+If you are unsure which license is appropriate for your use, please contact the sales department at http://www.sencha.com/contact.
+
+*/
+/**
+ * @author Nicolas Ferrero
+ * @class Ext.ux.GroupTabPanel
+ * @extends Ext.Container
+ * A TabPanel with grouping support.
+ */
+Ext.define('Ext.ux.GroupTabPanel', {
+    extend: 'Ext.Container',
+
+    alias: 'widget.grouptabpanel',
+
+    requires:[
+        'Ext.data.*',
+        'Ext.tree.*',
+        'Ext.layout.*'
+    ],
+
+    baseCls : Ext.baseCSSPrefix + 'grouptabpanel',
+
+    initComponent: function(config) {
+        var me = this,
+            items = [];
+
+        Ext.apply(me, config);
+
+        me.store = me.createItemsStore();
+        me.layout = {
+            type: 'hbox',
+            pack: 'start',
+            align: 'stretch'
+        };
+        me.defaults = {
+            border: false
+        };
+
+        me.items = Ext.each(me.items, function(item) {
+            items.push(item.items);
+        });
+
+        me.items = [{
+            xtype: 'treepanel',
+            cls: 'x-tree-panel x-grouptabbar',
+            width: 150,
+            rootVisible: false,
+            height: 400,
+            store: me.store,
+            hideHeaders: true,
+            useArrows: true,
+            animate: false,
+            viewConfig: {
+                overItemCls: ''
+            },
+            columns: [{
+                xtype: 'treecolumn',
+                sortable: false,
+                dataIndex: 'text',
+                flex: 1,
+                renderer: function (value, cell, node, idx1, idx2, store, tree) {
+                    var cls = '';
+
+                    if (!node.data.activeGroup) {
+                        cls += ' x-inactive-group';
+                    } else if (node.parentNode &amp;&amp; node.parentNode.parentNode === null) {
+                        cls += ' x-grouptab-first';
+                        if (node.previousSibling) {
+                            cls += ' x-grouptab-prev';
+                        }
+                    } else if (node.nextSibling === null) {
+                        cls += ' x-grouptab-last';
+                    } else {
+                        cls += ' x-grouptab-center';
+                    }
+                    if (node.data.activeTab) {
+                            cls += ' x-active-tab';
+                    }
+                    cell.tdCls= 'x-grouptab'+ cls;
+
+                    return value;
+                }
+             }]
+        },{
+            xtype: 'container',
+            flex: 1,
+            layout: 'card',
+            activeItem: me.mainItem,
+            baseCls: Ext.baseCSSPrefix + 'grouptabcontainer',
+            items: items
+        }];
+
+        me.addEvents(
+            /**
+             * @event beforetabchange
+             * Fires before a tab change (activated by {@link #setActiveTab}). Return false in any listener to cancel
+             * the tabchange
+             * @param {Ext.ux.GroupTabPanel} grouptabPanel The GroupTabPanel
+             * @param {Ext.Component} newCard The card that is about to be activated
+             * @param {Ext.Component} oldCard The card that is currently active
+             */
+            'beforetabchange',
+
+            /**
+             * @event tabchange
+             * Fires when a new tab has been activated (activated by {@link #setActiveTab}).
+             * @param {Ext.ux.GroupTabPanel} grouptabPanel The GroupTabPanel
+             * @param {Ext.Component} newCard The newly activated item
+             * @param {Ext.Component} oldCard The previously active item
+             */
+            'tabchange',
+
+            /**
+             * @event beforegroupchange
+             * Fires before a group change (activated by {@link #setActiveGroup}). Return false in any listener to cancel
+             * the groupchange
+             * @param {Ext.ux.GroupTabPanel} grouptabPanel The GroupTabPanel
+             * @param {Ext.Component} newGroup The root group card that is about to be activated
+             * @param {Ext.Component} oldGroup The root group card that is currently active
+             */
+            'beforegroupchange',
+
+            /**
+             * @event groupchange
+             * Fires when a new group has been activated (activated by {@link #setActiveGroup}).
+             * @param {Ext.ux.GroupTabPanel} grouptabPanel The GroupTabPanel
+             * @param {Ext.Component} newGroup The newly activated root group item
+             * @param {Ext.Component} oldGroup The previously active root group item
+             */
+            'groupchange'
+        );
+
+        me.callParent(arguments);
+        me.setActiveTab(me.activeTab);
+        me.setActiveGroup(me.activeGroup);
+        me.mon(me.down('treepanel').getSelectionModel(), 'select', me.onNodeSelect, me);
+    },
+
+    /**
+     * @private
+     * Node selection listener.
+     */
+    onNodeSelect: function (selModel, node) {
+        var me = this,
+            currentNode = me.store.getRootNode(),
+            parent;
+
+        if (node.parentNode &amp;&amp; node.parentNode.parentNode === null) {
+            parent = node;
+        } else {
+            parent = node.parentNode;
+        }
+
+        if (me.setActiveGroup(parent.get('id')) === false || me.setActiveTab(node.get('id')) === false) {
+            return false;
+        }
+
+        while(currentNode) {
+            currentNode.set('activeTab', false);
+            currentNode.set('activeGroup', false);
+            currentNode = currentNode.firstChild || currentNode.nextSibling || currentNode.parentNode.nextSibling;
+        }
+
+        parent.set('activeGroup', true);
+
+        parent.eachChild(function(child) {
+
+            child.set('activeGroup', true);
+        });
+        node.set('activeTab', true);
+        selModel.view.refresh();
+    },
+
+    /**
+     * Makes the given component active (makes it the visible card in the GroupTabPanel's CardLayout)
+     * @param {Ext.Component} cmp The component to make active
+     */
+    setActiveTab: function(cmp) {
+        var me = this,
+            newTab = cmp,
+            oldTab;
+
+        if(Ext.isString(cmp)) {
+            newTab = Ext.getCmp(newTab);
+        }
+
+        if (newTab === me.activeTab) {
+            return false;
+        }
+
+        oldTab = me.activeTab;
+        if (me.fireEvent('beforetabchange', me, newTab, oldTab) !== false) {
+             me.activeTab = newTab;
+             if (me.rendered) {
+                 me.down('container[baseCls=' + Ext.baseCSSPrefix + 'grouptabcontainer' + ']').getLayout().setActiveItem(newTab);
+             }
+             me.fireEvent('tabchange', me, newTab, oldTab);
+         }
+         return true;
+    },
+
+    /**
+     * Makes the given group active
+     * @param {Ext.Component} cmp The root component to make active.
+     */
+    setActiveGroup: function(cmp) {
+        var me = this,
+            newGroup = cmp,
+            oldGroup;
+
+        if(Ext.isString(cmp)) {
+            newGroup = Ext.getCmp(newGroup);
+        }
+
+        if (newGroup === me.activeGroup) {
+            return true;
+        }
+
+        oldGroup = me.activeGroup;
+        if (me.fireEvent('beforegroupchange', me, newGroup, oldGroup) !== false) {
+             me.activeGroup = newGroup;
+             me.fireEvent('groupchange', me, newGroup, oldGroup);
+         } else {
+             return false;
+         }
+         return true;
+    },
+
+    /**
+     * @private
+     * Creates the TreeStore used by the GroupTabBar.
+     */
+    createItemsStore: function() {
+        var me = this,
+            data = {
+            text:'.',
+            children: []
+        };
+        me.activeGroup = me.activeGroup || 0;
+
+        Ext.each(me.items, function(item, idx){
+            var items = item.items,
+                rootItem = (items[item.mainItem] || items[0]),
+                root = {
+                    children: []
+                };
+
+            if (!rootItem.id) {
+                rootItem.id = Ext.id();
+            }
+
+            root.id = rootItem.id;
+            root.text = rootItem.title;
+            root.iconCls = rootItem.iconCls;
+            delete rootItem.iconCls;
+            delete rootItem.title;
+            root.expanded = true;
+            root.activeGroup = (me.activeGroup === idx);
+            root.activeTab = root.activeGroup ? true : false;
+            if (root.activeTab) {
+                me.activeTab = root.id;
+            }
+
+            if (root.activeGroup) {
+                me.mainItem = item.mainItem || 0;
+                me.activeGroup = root.id;
+            }
+
+            Ext.each(item.items, function(childItem) {
+                if (!childItem.id) {
+                    childItem.id = Ext.id();
+                }
+                if(childItem.id !== root.id) {
+                    var child = {
+                        id: childItem.id,
+                        leaf: true,
+                        text: childItem.title,
+                        iconCls: childItem.iconCls,
+                        activeTab: false
+                    };
+                    delete childItem.title;
+                    delete childItem.iconCls;
+
+                    child.activeGroup = root.activeGroup;
+                    root.children.push(child);
+                }
+            }, me);
+
+            data.children.push(root);
+
+      }, me);
+
+       return Ext.create('Ext.data.TreeStore', {
+            fields: ['id', 'text', 'activeGroup', 'activeTab'],
+            root: {expanded: true},
+            proxy: {
+                type: 'memory',
+                data: data
+            }
+        });
+    },
+
+    /**
+     * Returns the item that is currently active inside this GroupTabPanel.
+     * @return {Ext.Component/Integer} The currently active item
+     */
+    getActiveTab: function() {
+        return this.activeTab;
+    },
+
+    /**
+     * Returns the root group item that is currently active inside this GroupTabPanel.
+     * @return {Ext.Component/Integer} The currently active root group item
+     */
+    getActiveGroup: function() {
+        return this.activeGroup;
+    }
+});
+
+</pre>
+    </div>
+    
+</body>
+</html>

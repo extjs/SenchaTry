@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Changing the icon in a dialog box using Ext JS</title>
+    <meta Name="description" content="Changing the icon in a dialog box using Ext JS" />
+    <meta name="keywords" content="Sencha, Ext JS, Ext JS 4.1.0" />
+    <link href="/assets/application.css" media="screen" rel="stylesheet" type="text/css" />
+    <style>
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    
+    <div>
+        <header>
+            <h1>Sencha Try</h1>
+        </header>
+        
+        <section id="readme">
+            <h1>Changing the icon in a dialog box using Ext JS</h1>
+
+<p>The following example shows how you can change the displayed icon in a Ext.Msg dialog box using the <code>setIcon()</code> method.</p>
+            <strong>Tags:</strong> <a href="/search/Ext JS">Ext JS</a> <a href="/search/Ext JS 4.1.0">Ext JS 4.1.0</a> <br/>
+        </section>
+        <section id="example">
+            [example]
+        </section>
+        
+        <footer>
+            &copy; 2012 Sencha Inc.
+        </footer>
+    </div>
+    
+    <div class="hidden">
+        <!-- extjs/4.1.0/demos/Ext.Msg.setIcon.1/app.js -->
+        <pre>/*global Ext:false */
+Ext.onReady(function () {
+    Ext.create('Ext.Button', {
+        text: 'Click to launch MessageBox',
+        handler: function () {
+            var msg = Ext.Msg.show({
+                title: 'Ext.Msg.setIcon() example',
+                msg: 'This example will change the displayed icon after 3 seconds.',
+                icon: Ext.Msg.INFO
+            }); // show()
+            setTimeout(function (target, ico) {
+                target.setIcon(ico);
+            }, 3000, msg, Ext.Msg.ERROR);
+        },
+        renderTo: Ext.getBody()
+    }); // create()
+}); // onReady()
+</pre>
+    </div>
+    
+</body>
+</html>

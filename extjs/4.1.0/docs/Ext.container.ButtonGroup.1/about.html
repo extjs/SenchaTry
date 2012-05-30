@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Ext.container.ButtonGroup Example</title>
+    <meta Name="description" content="Ext.container.ButtonGroup Example" />
+    <meta name="keywords" content="Sencha, Ext JS, Ext JS 4.1.0, Ext.container.ButtonGroup" />
+    <link href="/assets/application.css" media="screen" rel="stylesheet" type="text/css" />
+    <style>
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    
+    <div>
+        <header>
+            <h1>Sencha Try</h1>
+        </header>
+        
+        <section id="readme">
+            <h1>Ext.container.ButtonGroup Example</h1>
+            <strong>Tags:</strong> <a href="/search/Ext JS">Ext JS</a> <a href="/search/Ext JS 4.1.0">Ext JS 4.1.0</a> <a href="/search/Ext.container.ButtonGroup">Ext.container.ButtonGroup</a> <br/>
+        </section>
+        <section id="example">
+            [example]
+        </section>
+        
+        <footer>
+            &copy; 2012 Sencha Inc.
+        </footer>
+    </div>
+    
+    <div class="hidden">
+        <!-- extjs/4.1.0/docs/Ext.container.ButtonGroup.1/app.js -->
+        <pre>/*global Ext:false */
+Ext.onReady(function() {
+    Ext.create('Ext.panel.Panel', {
+        title: 'Panel with ButtonGroup',
+        width: 300,
+        height: 200,
+        renderTo: document.body,
+        bodyPadding: 10,
+        html: 'HTML Panel Content',
+        tbar: [{
+            xtype: 'buttongroup',
+            columns: 3,
+            title: 'Clipboard',
+            items: [{
+                text: 'Paste',
+                scale: 'large',
+                rowspan: 3,
+                iconCls: 'add',
+                iconAlign: 'top',
+                cls: 'btn-as-arrow'
+            }, {
+                xtype: 'splitbutton',
+                text: 'Menu Button',
+                scale: 'large',
+                rowspan: 3,
+                iconCls: 'add',
+                iconAlign: 'top',
+                arrowAlign: 'bottom',
+                menu: [{
+                    text: 'Menu Item 1'
+                }]
+            }, {
+                xtype: 'splitbutton',
+                text: 'Cut',
+                iconCls: 'add16',
+                menu: [{
+                    text: 'Cut Menu Item'
+                }]
+            }, {
+                text: 'Copy',
+                iconCls: 'add16'
+            }, {
+                text: 'Format',
+                iconCls: 'add16'
+            }]
+        }]
+    });
+});
+</pre>
+    </div>
+    
+</body>
+</html>

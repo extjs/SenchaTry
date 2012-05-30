@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Ext.Button Example</title>
+    <meta Name="description" content="Ext.Button Example" />
+    <meta name="keywords" content="Sencha, Sencha Touch, Sencha Touch 2.0.0, Ext.Button, button, text, handler, getText(), getIconCls(), setIconCls(), iconCls, iconMask" />
+    <link href="/assets/application.css" media="screen" rel="stylesheet" type="text/css" />
+    <style>
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    
+    <div>
+        <header>
+            <h1>Sencha Try</h1>
+        </header>
+        
+        <section id="readme">
+            <h1>Ext.Button Example</h1>
+
+<p>This example shows a bunch of icons on the screen in two toolbars. When you click on the center button, it switches the <code>iconCls</code> on every button on the page.</p>
+            <strong>Tags:</strong> <a href="/search/Sencha Touch">Sencha Touch</a> <a href="/search/Sencha Touch 2.0.0">Sencha Touch 2.0.0</a> <a href="/search/Ext.Button">Ext.Button</a> <a href="/search/button">button</a> <a href="/search/text">text</a> <a href="/search/handler">handler</a> <a href="/search/getText()">getText()</a> <a href="/search/getIconCls()">getIconCls()</a> <a href="/search/setIconCls()">setIconCls()</a> <a href="/search/iconCls">iconCls</a> <a href="/search/iconMask">iconMask</a> <br/>
+        </section>
+        <section id="example">
+            [example]
+        </section>
+        
+        <footer>
+            &copy; 2012 Sencha Inc.
+        </footer>
+    </div>
+    
+    <div class="hidden">
+        <!-- touch/2.0.0/docs/Ext.Button.5/app.js -->
+        <pre>/*global Ext:false */
+Ext.application({
+    launch: function () {
+        Ext.createWidget('container', {
+            fullscreen: true,
+            layout: {
+                type: 'vbox',
+                pack: 'center',
+                align: 'center'
+            },
+            items: [{
+                xtype: 'button',
+                text: 'Change iconCls',
+                handler: function () {
+                    // classes for all the icons to loop through.
+                    var availableIconCls = ['action', 'add', 'arrow_down', 'arrow_left', 'arrow_right', 'arrow_up', 'compose', 'delete', 'organize', 'refresh', 'reply', 'search', 'settings', 'star', 'trash', 'maps', 'locate', 'home'];
+                    // get the text of this button,
+                    // so we know which button we don't want to change
+                    var text = this.getText();
+
+                    // use ComponentQuery to find all buttons on the page
+                    // and loop through all of them
+                    Ext.Array.forEach(Ext.ComponentQuery.query('button'), function (button) {
+                        // if the button is the change iconCls button, continue
+                        if (button.getText() === text) {
+                            return;
+                        }
+
+                        // get the index of the new available iconCls
+                        var index = availableIconCls.indexOf(button.getIconCls()) + 1;
+
+                        // update the iconCls of the button with the next iconCls, if one exists.
+                        // if not, use the first one
+                        button.setIconCls(availableIconCls[(index === availableIconCls.length) ? 0 : index]);
+                    });
+                }
+            }, {
+                xtype: 'toolbar',
+                docked: 'top',
+                defaults: {
+                    iconMask: true
+                },
+                items: [{
+                    xtype: 'spacer'
+                }, {
+                    iconCls: 'action'
+                }, {
+                    iconCls: 'add'
+                }, {
+                    iconCls: 'arrow_down'
+                }, {
+                    iconCls: 'arrow_left'
+                }, {
+                    iconCls: 'arrow_up'
+                }, {
+                    iconCls: 'compose'
+                }, {
+                    iconCls: 'delete'
+                }, {
+                    iconCls: 'organize'
+                }, {
+                    iconCls: 'refresh'
+                }, {
+                    xtype: 'spacer'
+                }]
+            }, {
+                xtype: 'toolbar',
+                docked: 'bottom',
+                ui: 'light',
+                defaults: {
+                    iconMask: true
+                },
+                items: [{
+                    xtype: 'spacer'
+                }, {
+                    iconCls: 'reply'
+                }, {
+                    iconCls: 'search'
+                }, {
+                    iconCls: 'settings'
+                }, {
+                    iconCls: 'star'
+                }, {
+                    iconCls: 'trash'
+                }, {
+                    iconCls: 'maps'
+                }, {
+                    iconCls: 'locate'
+                }, {
+                    iconCls: 'home'
+                }, {
+                    xtype: 'spacer'
+                }]
+            }]
+        });
+    } // launch
+}); // application()
+</pre>
+    </div>
+    
+</body>
+</html>

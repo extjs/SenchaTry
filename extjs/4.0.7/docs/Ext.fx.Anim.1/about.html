@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Ext.fx.Anim Example</title>
+    <meta Name="description" content="Ext.fx.Anim Example" />
+    <meta name="keywords" content="Sencha, Ext JS, Ext JS 4.0.7, Ext.fx.Anim, target, duration, from, to, fx" />
+    <link href="/assets/application.css" media="screen" rel="stylesheet" type="text/css" />
+    <style>
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    
+    <div>
+        <header>
+            <h1>Sencha Try</h1>
+        </header>
+        
+        <section id="readme">
+            <h1>Ext.fx.Anim Example</h1>
+            <strong>Tags:</strong> <a href="/search/Ext JS">Ext JS</a> <a href="/search/Ext JS 4.0.7">Ext JS 4.0.7</a> <a href="/search/Ext.fx.Anim">Ext.fx.Anim</a> <a href="/search/target">target</a> <a href="/search/duration">duration</a> <a href="/search/from">from</a> <a href="/search/to">to</a> <a href="/search/fx">fx</a> <br/>
+        </section>
+        <section id="example">
+            [example]
+        </section>
+        
+        <footer>
+            &copy; 2012 Sencha Inc.
+        </footer>
+    </div>
+    
+    <div class="hidden">
+        <!-- extjs/4.0.7/docs/Ext.fx.Anim.1/app.js -->
+        <pre>/*global Ext:false */
+Ext.onReady(function () {
+    var myComponent = Ext.create('Ext.Component', {
+        renderTo: document.body,
+        width: 200,
+        height: 200,
+        style: 'border: 1px solid red;'
+    });
+
+    Ext.create('Ext.fx.Anim', {
+        target: myComponent,
+        duration: 1000,
+        from: {
+            width: 400 // starting width 400
+        },
+        to: {
+            width: 300, // end width 300
+            height: 300 // end height 300
+        }
+    });
+});
+</pre>
+    </div>
+    
+</body>
+</html>

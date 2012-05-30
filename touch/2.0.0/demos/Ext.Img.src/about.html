@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Displaying an image using the Ext.Img component in Sencha Touch 2</title>
+    <meta Name="description" content="Displaying an image using the Ext.Img component in Sencha Touch 2" />
+    <meta name="keywords" content="Sencha, Sencha Touch, Sencha Touch 2.0.0" />
+    <link href="/assets/application.css" media="screen" rel="stylesheet" type="text/css" />
+    <style>
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    
+    <div>
+        <header>
+            <h1>Sencha Try</h1>
+        </header>
+        
+        <section id="readme">
+            <h1>Displaying an image using the Ext.Img component in Sencha Touch 2</h1>
+
+<p>The following example shows how you can display an image using the Ext.Img component in Sencha Touch 2.</p>
+            <strong>Tags:</strong> <a href="/search/Sencha Touch">Sencha Touch</a> <a href="/search/Sencha Touch 2.0.0">Sencha Touch 2.0.0</a> <br/>
+        </section>
+        <section id="example">
+            [example]
+        </section>
+        
+        <footer>
+            &copy; 2012 Sencha Inc.
+        </footer>
+    </div>
+    
+    <div class="hidden">
+        <!-- touch/2.0.0/demos/Ext.Img.src/app.js -->
+        <pre>/*global Ext:false */
+Ext.application({
+    launch: function () {
+        var logo = Ext.create('Ext.Img', {
+            src: 'http://www.sencha.com/img/sencha-large.png',
+            id: 'logo',
+            width: 372,
+            height: 140
+        }); // create()
+        
+        Ext.create('Ext.Panel', {
+            fullscreen: true,
+            items: [
+                {
+                    xtype: 'titlebar',
+                    title: logo.getSrc(),
+                    ui: 'light'
+                },
+                logo
+            ] // items
+        }); // create()
+    } // launch
+}); // application()
+</pre>
+    </div>
+    
+</body>
+</html>

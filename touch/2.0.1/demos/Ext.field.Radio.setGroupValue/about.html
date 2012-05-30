@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Programmatically setting the selected item for an Ext.field.Radio control in Sencha Touch 2</title>
+    <meta Name="description" content="Programmatically setting the selected item for an Ext.field.Radio control in Sencha Touch 2" />
+    <meta name="keywords" content="Sencha, Sencha Touch, Sencha Touch 2.0.1" />
+    <link href="/assets/application.css" media="screen" rel="stylesheet" type="text/css" />
+    <style>
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    
+    <div>
+        <header>
+            <h1>Sencha Try</h1>
+        </header>
+        
+        <section id="readme">
+            <h1>Programmatically setting the selected item for an Ext.field.Radio control in Sencha Touch 2</h1>
+
+<p>The following example shows how you can programmatically set the select the item for an Ext.field.Radio control in Sencha Touch 2 by calling the <code>setGroupValue()</code> method.</p>
+            <strong>Tags:</strong> <a href="/search/Sencha Touch">Sencha Touch</a> <a href="/search/Sencha Touch 2.0.1">Sencha Touch 2.0.1</a> <br/>
+        </section>
+        <section id="example">
+            [example]
+        </section>
+        
+        <footer>
+            &copy; 2012 Sencha Inc.
+        </footer>
+    </div>
+    
+    <div class="hidden">
+        <!-- touch/2.0.1/demos/Ext.field.Radio.setGroupValue/app.js -->
+        <pre>/*global Ext:false */
+Ext.application({
+    launch: function () {
+        var form = Ext.create('Ext.form.Panel', {
+            fullscreen: true,
+            items: [{
+                xtype: 'toolbar',
+                docked: 'top',
+                items: [{
+                    text: 'set checked (senchatouch)',
+                    handler: function (btn, evt) {
+                        var value = 'senchatouch',
+                            radio = btn.up('formpanel').down('radiofield[name=product]');
+                        if (!radio.setGroupValue(value)) {
+                            Ext.Msg.alert(value + ' was not found');
+                        } // if
+                    } // handler
+                }] // items (toolbar)
+            }, {
+                xtype: 'fieldset',
+                defaults: {
+                    xtype: 'radiofield',
+                    labelWidth: 180,
+                    name: 'product'
+                }, // defaults
+                items: [{
+                    label: 'Ext JS',
+                    value: 'extjs'
+                }, {
+                    label: 'Sencha Touch',
+                    value: 'senchatouch'
+                }, {
+                    label: 'Sencha Designer',
+                    value: 'designer'
+                }] // items (fieldset)
+            }] // items (panel)
+        }); // create()
+    } // launch
+}); // application()
+</pre>
+    </div>
+    
+</body>
+</html>

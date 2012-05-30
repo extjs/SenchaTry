@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Ext.form.FieldSet Example</title>
+    <meta Name="description" content="Ext.form.FieldSet Example" />
+    <meta name="keywords" content="Sencha, Sencha Touch, Sencha Touch 2.0.0, Ext.form.FieldSet, fieldset, instructions, title, form" />
+    <link href="/assets/application.css" media="screen" rel="stylesheet" type="text/css" />
+    <style>
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    
+    <div>
+        <header>
+            <h1>Sencha Try</h1>
+        </header>
+        
+        <section id="readme">
+            <h1>Ext.form.FieldSet Example</h1>
+            <strong>Tags:</strong> <a href="/search/Sencha Touch">Sencha Touch</a> <a href="/search/Sencha Touch 2.0.0">Sencha Touch 2.0.0</a> <a href="/search/Ext.form.FieldSet">Ext.form.FieldSet</a> <a href="/search/fieldset">fieldset</a> <a href="/search/instructions">instructions</a> <a href="/search/title">title</a> <a href="/search/form">form</a> <br/>
+        </section>
+        <section id="example">
+            [example]
+        </section>
+        
+        <footer>
+            &copy; 2012 Sencha Inc.
+        </footer>
+    </div>
+    
+    <div class="hidden">
+        <!-- touch/2.0.0/docs/Ext.form.FieldSet.1/app.js -->
+        <pre>/*global Ext:false */
+Ext.application({
+    launch: function () {
+        Ext.create('Ext.form.Panel', {
+            fullscreen: true,
+            items: [{
+                xtype: 'fieldset',
+                title: 'About You',
+                instructions: 'Tell us all about yourself',
+                items: [{
+                    xtype: 'textfield',
+                    name: 'firstName',
+                    label: 'First Name'
+                }, {
+                    xtype: 'textfield',
+                    name: 'lastName',
+                    label: 'Last Name'
+                }]
+            }]
+        });
+    } // launch
+}); // application()
+</pre>
+    </div>
+    
+</body>
+</html>

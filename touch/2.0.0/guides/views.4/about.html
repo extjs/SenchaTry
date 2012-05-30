@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Using Views in your Applications</title>
+    <meta Name="description" content="Using Views in your Applications" />
+    <meta name="keywords" content="Sencha, Sencha Touch, Sencha Touch 2.0.0" />
+    <link href="/assets/application.css" media="screen" rel="stylesheet" type="text/css" />
+    <style>
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    
+    <div>
+        <header>
+            <h1>Sencha Try</h1>
+        </header>
+        
+        <section id="readme">
+            <h1>Using Views in your Applications</h1>
+
+<p>Describes what is meant by a View in Sencha Touch 2 and how to use them in your apps.</p>
+            <strong>Tags:</strong> <a href="/search/Sencha Touch">Sencha Touch</a> <a href="/search/Sencha Touch 2.0.0">Sencha Touch 2.0.0</a> <br/>
+        </section>
+        <section id="example">
+            [example]
+        </section>
+        
+        <footer>
+            &copy; 2012 Sencha Inc.
+        </footer>
+    </div>
+    
+    <div class="hidden">
+        <!-- touch/2.0.0/guides/views.4/app.js -->
+        <pre>/*global Ext:false */
+Ext.application({
+    launch: function () {
+        Ext.define('MyApp.view.Image', {
+            extend: 'Ext.Img',
+            config: {
+                title: null,
+                description: null
+            },
+
+            //sets up our tap event listener
+            initialize: function () {
+                this.callParent(arguments);
+                this.element.on('tap', this.onTap, this);
+            },
+
+            //this is called whenever you tap on the image
+            onTap: function () {
+                Ext.Msg.alert(this.getTitle(), this.getDescription());
+            }
+        });
+
+        //creates a full screen tappable image
+        Ext.create('MyApp.view.Image', {
+            title: 'Orion Nebula',
+            description: 'The Orion Nebula is rather pretty',
+            src: 'http://apod.nasa.gov/apod/image/1202/oriondeep_andreo_960.jpg',
+            fullscreen: true
+        });
+    } // launch
+}); // application()
+</pre>
+    </div>
+    
+</body>
+</html>

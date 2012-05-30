@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Ext.button.Split Example</title>
+    <meta Name="description" content="Ext.button.Split Example" />
+    <meta name="keywords" content="Sencha, Ext JS, Ext JS 4.1.0, Ext.button.Split" />
+    <link href="/assets/application.css" media="screen" rel="stylesheet" type="text/css" />
+    <style>
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    
+    <div>
+        <header>
+            <h1>Sencha Try</h1>
+        </header>
+        
+        <section id="readme">
+            <h1>Ext.button.Split Example</h1>
+            <strong>Tags:</strong> <a href="/search/Ext JS">Ext JS</a> <a href="/search/Ext JS 4.1.0">Ext JS 4.1.0</a> <a href="/search/Ext.button.Split">Ext.button.Split</a> <br/>
+        </section>
+        <section id="example">
+            [example]
+        </section>
+        
+        <footer>
+            &copy; 2012 Sencha Inc.
+        </footer>
+    </div>
+    
+    <div class="hidden">
+        <!-- extjs/4.1.0/docs/Ext.button.Split.1/app.js -->
+        <pre>/*global Ext:false */
+Ext.onReady(function() {
+    // display a dropdown menu:
+    Ext.create('Ext.button.Split', {
+        renderTo: Ext.getBody(),
+        text: 'Options',
+        // handle a click on the button itself
+        handler: function() {
+            alert("The button was clicked");
+        },
+        menu: new Ext.menu.Menu({
+            items: [
+            // these will render as dropdown menu items when the arrow is clicked:
+            {
+                text: 'Item 1',
+                handler: function() {
+                    alert("Item 1 clicked");
+                }
+            }, {
+                text: 'Item 2',
+                handler: function() {
+                    alert("Item 2 clicked");
+                }
+            }]
+        })
+    });
+});
+</pre>
+    </div>
+    
+</body>
+</html>

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Ext.field.Select Example</title>
+    <meta Name="description" content="Ext.field.Select Example" />
+    <meta name="keywords" content="Sencha, Sencha Touch, Sencha Touch 2.0.0, Ext.field.Select, Ext.form.Select, selectfield, options, value, field, form" />
+    <link href="/assets/application.css" media="screen" rel="stylesheet" type="text/css" />
+    <style>
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    
+    <div>
+        <header>
+            <h1>Sencha Try</h1>
+        </header>
+        
+        <section id="readme">
+            <h1>Ext.field.Select Example</h1>
+            <strong>Tags:</strong> <a href="/search/Sencha Touch">Sencha Touch</a> <a href="/search/Sencha Touch 2.0.0">Sencha Touch 2.0.0</a> <a href="/search/Ext.field.Select">Ext.field.Select</a> <a href="/search/Ext.form.Select">Ext.form.Select</a> <a href="/search/selectfield">selectfield</a> <a href="/search/options">options</a> <a href="/search/value">value</a> <a href="/search/field">field</a> <a href="/search/form">form</a> <br/>
+        </section>
+        <section id="example">
+            [example]
+        </section>
+        
+        <footer>
+            &copy; 2012 Sencha Inc.
+        </footer>
+    </div>
+    
+    <div class="hidden">
+        <!-- touch/2.0.0/docs/Ext.field.Select.1/app.js -->
+        <pre>/*global Ext:false */
+Ext.application({
+    launch: function () {
+        Ext.create('Ext.form.Panel', {
+            fullscreen: true,
+            items: [{
+                xtype: 'fieldset',
+                title: 'Select',
+                items: [{
+                    xtype: 'selectfield',
+                    label: 'Choose one',
+                    options: [{
+                        text: 'First Option',
+                        value: 'first'
+                    }, {
+                        text: 'Second Option',
+                        value: 'second'
+                    }, {
+                        text: 'Third Option',
+                        value: 'third'
+                    }]
+                }]
+            }]
+        });
+    } // launch
+}); // application()
+</pre>
+    </div>
+    
+</body>
+</html>

@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Adding a title header on an Ext.Picker control in Sencha Touch 2</title>
+    <meta Name="description" content="Adding a title header on an Ext.Picker control in Sencha Touch 2" />
+    <meta name="keywords" content="Sencha, Sencha Touch, Sencha Touch 2.0.0" />
+    <link href="/assets/application.css" media="screen" rel="stylesheet" type="text/css" />
+    <style>
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    
+    <div>
+        <header>
+            <h1>Sencha Try</h1>
+        </header>
+        
+        <section id="readme">
+            <h1>Adding a title header on an Ext.Picker control in Sencha Touch 2</h1>
+
+<p>The following example shows how you add a title header to an Ext.Picker (picker) control in Sencha Touch 2 by setting the <code>useTitle</code> config option or by calling the <code>setUseTitle()</code> method.</p>
+            <strong>Tags:</strong> <a href="/search/Sencha Touch">Sencha Touch</a> <a href="/search/Sencha Touch 2.0.0">Sencha Touch 2.0.0</a> <br/>
+        </section>
+        <section id="example">
+            [example]
+        </section>
+        
+        <footer>
+            &copy; 2012 Sencha Inc.
+        </footer>
+    </div>
+    
+    <div class="hidden">
+        <!-- touch/2.0.0/demos/Ext.Picker.useTitles/app.js -->
+        <pre>/*global Ext:false */
+Ext.application({
+    launch: function () {
+        var picker = Ext.create('Ext.Picker', {
+            useTitles: true,
+            slots: [{
+                name: 'months',
+                title: 'Months',
+                data: [{
+                    text: 'January',
+                    value: 0
+                }, {
+                    text: 'February',
+                    value: 1
+                }, {
+                    text: 'March',
+                    value: 2
+                }, {
+                    text: 'April',
+                    value: 3
+                }, {
+                    text: 'May',
+                    value: 4
+                }, {
+                    text: 'June',
+                    value: 5
+                }, {
+                    text: 'July',
+                    value: 6
+                }, {
+                    text: 'August',
+                    value: 7
+                }, {
+                    text: 'September',
+                    value: 8
+                }, {
+                    text: 'October',
+                    value: 9
+                }, {
+                    text: 'November',
+                    value: 10
+                }, {
+                    text: 'December',
+                    value: 11
+                }] // data
+            }] // slots
+        }); // create()
+        
+        Ext.create('Ext.Container', {
+            fullscreen: true,
+            items: [{
+                xtype: 'toolbar',
+                items: [{
+                    text: 'useTitles = true',
+                    handler: function () {
+                        picker.setUseTitles(true);
+                        picker.show();
+                    } // handler
+                }, {
+                    text: 'useTitles = false',
+                    handler: function () {
+                        picker.setUseTitles(false);
+                        picker.show();
+                    } // handler
+                }] // items (toolbar)
+            }] // items (container)
+        }); // create()
+        
+        Ext.Viewport.add(picker);
+    } // launch
+}); // application()
+</pre>
+    </div>
+    
+</body>
+</html>

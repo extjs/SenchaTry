@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Ext.grid.Panel Example</title>
+    <meta Name="description" content="Ext.grid.Panel Example" />
+    <meta name="keywords" content="Sencha, Ext JS, Ext JS 4.0.7, Ext.grid.Panel, Ext.ListView, Ext.grid.GridPanel, Ext.list.ListView, gridpanel, grid, columns" />
+    <link href="/assets/application.css" media="screen" rel="stylesheet" type="text/css" />
+    <style>
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    
+    <div>
+        <header>
+            <h1>Sencha Try</h1>
+        </header>
+        
+        <section id="readme">
+            <h1>Ext.grid.Panel Example</h1>
+            <strong>Tags:</strong> <a href="/search/Ext JS">Ext JS</a> <a href="/search/Ext JS 4.0.7">Ext JS 4.0.7</a> <a href="/search/Ext.grid.Panel">Ext.grid.Panel</a> <a href="/search/Ext.ListView">Ext.ListView</a> <a href="/search/Ext.grid.GridPanel">Ext.grid.GridPanel</a> <a href="/search/Ext.list.ListView">Ext.list.ListView</a> <a href="/search/gridpanel">gridpanel</a> <a href="/search/grid">grid</a> <a href="/search/columns">columns</a> <br/>
+        </section>
+        <section id="example">
+            [example]
+        </section>
+        
+        <footer>
+            &copy; 2012 Sencha Inc.
+        </footer>
+    </div>
+    
+    <div class="hidden">
+        <!-- extjs/4.0.7/docs/Ext.grid.Panel.1/app.js -->
+        <pre>/*global Ext:false */
+Ext.onReady(function () {
+    Ext.create('Ext.data.Store', {
+        storeId: 'simpsonsStore',
+        fields: ['name', 'email', 'phone'],
+        data: {
+            'items': [{
+                'name': 'Lisa',
+                "email": "lisa@simpsons.com",
+                "phone": "555-111-1224"
+            }, {
+                'name': 'Bart',
+                "email": "bart@simpsons.com",
+                "phone": "555-222-1234"
+            }, {
+                'name': 'Homer',
+                "email": "home@simpsons.com",
+                "phone": "555-222-1244"
+            }, {
+                'name': 'Marge',
+                "email": "marge@simpsons.com",
+                "phone": "555-222-1254"
+            }]
+        },
+        proxy: {
+            type: 'memory',
+            reader: {
+                type: 'json',
+                root: 'items'
+            }
+        }
+    });
+
+    Ext.create('Ext.grid.Panel', {
+        title: 'Simpsons',
+        store: Ext.data.StoreManager.lookup('simpsonsStore'),
+        columns: [{
+            header: 'Name',
+            dataIndex: 'name'
+        }, {
+            header: 'Email',
+            dataIndex: 'email',
+            flex: 1
+        }, {
+            header: 'Phone',
+            dataIndex: 'phone'
+        }],
+        height: 200,
+        width: 400,
+        renderTo: Ext.getBody()
+    });
+});
+</pre>
+    </div>
+    
+</body>
+</html>

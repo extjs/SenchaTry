@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Ext.layout.container.Absolute Example</title>
+    <meta Name="description" content="Ext.layout.container.Absolute Example" />
+    <meta name="keywords" content="Sencha, Ext JS, Ext JS 4.1.0, Ext.layout.container.Absolute" />
+    <link href="/assets/application.css" media="screen" rel="stylesheet" type="text/css" />
+    <style>
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    
+    <div>
+        <header>
+            <h1>Sencha Try</h1>
+        </header>
+        
+        <section id="readme">
+            <h1>Ext.layout.container.Absolute Example</h1>
+            <strong>Tags:</strong> <a href="/search/Ext JS">Ext JS</a> <a href="/search/Ext JS 4.1.0">Ext JS 4.1.0</a> <a href="/search/Ext.layout.container.Absolute">Ext.layout.container.Absolute</a> <br/>
+        </section>
+        <section id="example">
+            [example]
+        </section>
+        
+        <footer>
+            &copy; 2012 Sencha Inc.
+        </footer>
+    </div>
+    
+    <div class="hidden">
+        <!-- extjs/4.1.0/docs/Ext.layout.container.Absolute.1/app.js -->
+        <pre>/*global Ext:false */
+Ext.onReady(function() {
+    Ext.create('Ext.form.Panel', {
+        title: 'Absolute Layout',
+        width: 300,
+        height: 275,
+        layout: {
+            type: 'absolute'
+            // layout-specific configs go here
+            //itemCls: 'x-abs-layout-item',
+        },
+        url: 'save-form.php',
+        defaultType: 'textfield',
+        items: [{
+            x: 10,
+            y: 10,
+            xtype: 'label',
+            text: 'Send To:'
+        }, {
+            x: 80,
+            y: 10,
+            name: 'to',
+            anchor: '90%' // anchor width by percentage
+        }, {
+            x: 10,
+            y: 40,
+            xtype: 'label',
+            text: 'Subject:'
+        }, {
+            x: 80,
+            y: 40,
+            name: 'subject',
+            anchor: '90%' // anchor width by percentage
+        }, {
+            x: 0,
+            y: 80,
+            xtype: 'textareafield',
+            name: 'msg',
+            anchor: '100% 100%' // anchor width and height
+        }],
+        renderTo: Ext.getBody()
+    });
+});
+</pre>
+    </div>
+    
+</body>
+</html>

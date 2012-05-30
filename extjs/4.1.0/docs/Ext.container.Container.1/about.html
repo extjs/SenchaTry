@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Ext.container.Container Example</title>
+    <meta Name="description" content="Ext.container.Container Example" />
+    <meta name="keywords" content="Sencha, Ext JS, Ext JS 4.1.0, Ext.container.Container" />
+    <link href="/assets/application.css" media="screen" rel="stylesheet" type="text/css" />
+    <style>
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    
+    <div>
+        <header>
+            <h1>Sencha Try</h1>
+        </header>
+        
+        <section id="readme">
+            <h1>Ext.container.Container Example</h1>
+            <strong>Tags:</strong> <a href="/search/Ext JS">Ext JS</a> <a href="/search/Ext JS 4.1.0">Ext JS 4.1.0</a> <a href="/search/Ext.container.Container">Ext.container.Container</a> <br/>
+        </section>
+        <section id="example">
+            [example]
+        </section>
+        
+        <footer>
+            &copy; 2012 Sencha Inc.
+        </footer>
+    </div>
+    
+    <div class="hidden">
+        <!-- extjs/4.1.0/docs/Ext.container.Container.1/app.js -->
+        <pre>/*global Ext:false */
+Ext.onReady(function() {
+    // Explicitly create a Container
+    Ext.create('Ext.container.Container', {
+        layout: {
+            type: 'hbox'
+        },
+        width: 400,
+        renderTo: Ext.getBody(),
+        border: 1,
+        style: {
+            borderColor: '#000000',
+            borderStyle: 'solid',
+            borderWidth: '1px'
+        },
+        defaults: {
+            labelWidth: 80,
+            // implicitly create Container by specifying xtype
+            xtype: 'datefield',
+            flex: 1,
+            style: {
+                padding: '10px'
+            }
+        },
+        items: [{
+            xtype: 'datefield',
+            name: 'startDate',
+            fieldLabel: 'Start date'
+        }, {
+            xtype: 'datefield',
+            name: 'endDate',
+            fieldLabel: 'End date'
+        }]
+    });
+});
+</pre>
+    </div>
+    
+</body>
+</html>

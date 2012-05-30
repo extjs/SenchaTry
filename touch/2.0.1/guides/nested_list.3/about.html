@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <title>nested_list Example</title>
+    <meta Name="description" content="nested_list Example" />
+    <meta name="keywords" content="Sencha, Sencha Touch, Sencha Touch 2.0.1" />
+    <link href="/assets/application.css" media="screen" rel="stylesheet" type="text/css" />
+    <style>
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    
+    <div>
+        <header>
+            <h1>Sencha Try</h1>
+        </header>
+        
+        <section id="readme">
+            <h1>nested_list Example</h1>
+            <strong>Tags:</strong> <a href="/search/Sencha Touch">Sencha Touch</a> <a href="/search/Sencha Touch 2.0.1">Sencha Touch 2.0.1</a> <br/>
+        </section>
+        <section id="example">
+            [example]
+        </section>
+        
+        <footer>
+            &copy; 2012 Sencha Inc.
+        </footer>
+    </div>
+    
+    <div class="hidden">
+        <!-- touch/2.0.1/guides/nested_list.3/app.js -->
+        <pre>/*global Ext:false */
+Ext.application({
+    launch: function() {
+        Ext.define('ListItem', {
+            extend: 'Ext.data.Model',
+            config: {
+                fields: ['text']
+            }
+        });
+
+        var treeStore = Ext.create('Ext.data.TreeStore', {
+            model: 'ListItem',
+            defaultRootProperty: 'items',
+            root: {
+                items: [{
+                    text: 'Drinks',
+                    items: [{
+                        text: 'Water',
+                        items: [{
+                            text: 'Still',
+                            leaf: true
+                        }, {
+                            text: 'Sparkling',
+                            leaf: true
+                        }]
+                    }, {
+                        text: 'Soda',
+                        leaf: true
+                    }]
+                }, {
+                    text: 'Snacks',
+                    items: [{
+                        text: 'Nuts',
+                        leaf: true
+                    }, {
+                        text: 'Pretzels',
+                        leaf: true
+                    }, {
+                        text: 'Wasabi Peas',
+                        leaf: true
+                    }]
+                }]
+            }
+        });
+
+        Ext.create('Ext.NestedList', {
+            fullscreen: true,
+            store: treeStore,
+            detailCard: {
+                html: 'You are viewing the detail card!'
+            }
+        });
+    }
+});
+</pre>
+    </div>
+    
+</body>
+</html>

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Ext.util.Sorter Example</title>
+    <meta Name="description" content="Ext.util.Sorter Example" />
+    <meta name="keywords" content="Sencha, Sencha Touch, Sencha Touch 2.0.0, Ext.util.Sorter, util, Ext.data.Store, fields, sorters, sorterFn, direction, data" />
+    <link href="/assets/application.css" media="screen" rel="stylesheet" type="text/css" />
+    <style>
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    
+    <div>
+        <header>
+            <h1>Sencha Try</h1>
+        </header>
+        
+        <section id="readme">
+            <h1>Ext.util.Sorter Example</h1>
+            <strong>Tags:</strong> <a href="/search/Sencha Touch">Sencha Touch</a> <a href="/search/Sencha Touch 2.0.0">Sencha Touch 2.0.0</a> <a href="/search/Ext.util.Sorter">Ext.util.Sorter</a> <a href="/search/util">util</a> <a href="/search/Ext.data.Store">Ext.data.Store</a> <a href="/search/fields">fields</a> <a href="/search/sorters">sorters</a> <a href="/search/sorterFn">sorterFn</a> <a href="/search/direction">direction</a> <a href="/search/data">data</a> <br/>
+        </section>
+        <section id="example">
+            [example]
+        </section>
+        
+        <footer>
+            &copy; 2012 Sencha Inc.
+        </footer>
+    </div>
+    
+    <div class="hidden">
+        <!-- touch/2.0.0/docs/Ext.util.Sorter.2/app.js -->
+        <pre>/*global Ext:false */
+Ext.application({
+    launch: function () {
+        var store = Ext.create('Ext.data.Store', {
+            fields: ['person'],
+            sorters: [{
+                // Sort by first letter of last name, in descending order
+                sorterFn: function (record1, record2) {
+                    var name1 = record1.data.person.name.split('-')[1].substr(0, 1),
+                        name2 = record2.data.person.name.split('-')[1].substr(0, 1);
+
+                    return (name1 > name2) ? 1 : (name1 === name2 ? 0 : -1);
+                },
+                direction: 'DESC'
+            }],
+            data: [{
+                person: {
+                    name: 'Tommy-Maintz'
+                }
+            }, {
+                person: {
+                    name: 'Rob-Dougan'
+                }
+            }, {
+                person: {
+                    name: 'Ed-Spencer'
+                }
+            }, {
+                person: {
+                    name: 'Nick-Poulden'
+                }
+            }, {
+                person: {
+                    name: 'Jamie-Avins'
+                }
+            }]
+        });
+
+        Ext.create('Ext.List', {
+            fullscreen: true,
+            itemTpl: '{person.name}',
+            store: store
+        });
+    } // launch
+}); // application()
+</pre>
+    </div>
+    
+</body>
+</html>

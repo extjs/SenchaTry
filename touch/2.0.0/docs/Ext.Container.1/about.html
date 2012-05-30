@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Ext.Container Example</title>
+    <meta Name="description" content="Ext.Container Example" />
+    <meta name="keywords" content="Sencha, Sencha Touch, Sencha Touch 2.0.0, Ext.Container, layout, flex" />
+    <link href="/assets/application.css" media="screen" rel="stylesheet" type="text/css" />
+    <style>
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    
+    <div>
+        <header>
+            <h1>Sencha Try</h1>
+        </header>
+        
+        <section id="readme">
+            <h1>Ext.Container Example</h1>
+            <strong>Tags:</strong> <a href="/search/Sencha Touch">Sencha Touch</a> <a href="/search/Sencha Touch 2.0.0">Sencha Touch 2.0.0</a> <a href="/search/Ext.Container">Ext.Container</a> <a href="/search/layout">layout</a> <a href="/search/flex">flex</a> <br/>
+        </section>
+        <section id="example">
+            [example]
+        </section>
+        
+        <footer>
+            &copy; 2012 Sencha Inc.
+        </footer>
+    </div>
+    
+    <div class="hidden">
+        <!-- touch/2.0.0/docs/Ext.Container.1/app.js -->
+        <pre>/*global Ext:false */
+Ext.application({
+    launch: function () {
+        //this is the Panel we'll be adding below
+        var aboutPanel = Ext.create('Ext.Panel', {
+            html: 'About this app'
+        });
+
+        //this is the Panel we'll be adding to
+        var mainPanel = Ext.create('Ext.Panel', {
+            fullscreen: true,
+
+            layout: 'hbox',
+            defaults: {
+                flex: 1
+            },
+
+            items: {
+                html: 'First Panel',
+                style: 'background-color: #5E99CC;'
+            }
+        });
+
+        //now we add the first panel inside the second
+        mainPanel.add(aboutPanel);
+
+    } // launch
+}); // application()
+</pre>
+    </div>
+    
+</body>
+</html>

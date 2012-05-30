@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Ext.form.field.Base Example</title>
+    <meta Name="description" content="Ext.form.field.Base Example" />
+    <meta name="keywords" content="Sencha, Ext JS, Ext JS 4.0.7, Ext.form.field.Base, Ext.form.BaseField, Ext.form.Field, field, form" />
+    <link href="/assets/application.css" media="screen" rel="stylesheet" type="text/css" />
+    <style>
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    
+    <div>
+        <header>
+            <h1>Sencha Try</h1>
+        </header>
+        
+        <section id="readme">
+            <h1>Ext.form.field.Base Example</h1>
+            <strong>Tags:</strong> <a href="/search/Ext JS">Ext JS</a> <a href="/search/Ext JS 4.0.7">Ext JS 4.0.7</a> <a href="/search/Ext.form.field.Base">Ext.form.field.Base</a> <a href="/search/Ext.form.BaseField">Ext.form.BaseField</a> <a href="/search/Ext.form.Field">Ext.form.Field</a> <a href="/search/field">field</a> <a href="/search/form">form</a> <br/>
+        </section>
+        <section id="example">
+            [example]
+        </section>
+        
+        <footer>
+            &copy; 2012 Sencha Inc.
+        </footer>
+    </div>
+    
+    <div class="hidden">
+        <!-- extjs/4.0.7/docs/Ext.form.field.Base.1/app.js -->
+        <pre>/*global Ext:false */
+Ext.onReady(function () {
+    // A simple subclass of BaseField that creates a HTML5 search field. Redirects to the
+    // searchUrl when the Enter key is pressed.
+    Ext.define('Ext.form.SearchField', {
+        extend: 'Ext.form.field.Base',
+        alias: 'widget.searchfield',
+        inputType: 'search',
+        
+        // Config defining the search URL
+        searchUrl: 'http://www.google.com/search?q={0}',
+        
+        // Add specialkey listener
+        initComponent: function () {
+            this.callParent();
+            this.on('specialkey', this.checkEnterKey, this);
+        },
+        
+        // Handle enter key presses, execute the search if the field has a value
+        checkEnterKey: function (field, e) {
+            var value = this.getValue();
+            if (e.getKey() === e.ENTER &amp;&amp; !Ext.isEmpty(value)) {
+                location.href = Ext.String.format(this.searchUrl, value);
+            }
+        }
+    });
+    
+    Ext.create('Ext.form.Panel', {
+        title: 'BaseField Example',
+        bodyPadding: 5,
+        width: 250,
+        // Fields will be arranged vertically, stretched to full width
+        layout: 'anchor',
+        defaults: {
+            anchor: '100%'
+        },
+        items: [{
+            xtype: 'searchfield',
+            fieldLabel: 'Search',
+            name: 'query'
+        }],
+        renderTo: Ext.getBody()
+    });
+});
+</pre>
+    </div>
+    
+</body>
+</html>

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Creating a group of toggled Ext.Button components in Ext JS</title>
+    <meta Name="description" content="Creating a group of toggled Ext.Button components in Ext JS" />
+    <meta name="keywords" content="Sencha, Ext JS, Ext JS 4.1.0, Ext.button.Button, Ext.Button, button" />
+    <link href="/assets/application.css" media="screen" rel="stylesheet" type="text/css" />
+    <style>
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    
+    <div>
+        <header>
+            <h1>Sencha Try</h1>
+        </header>
+        
+        <section id="readme">
+            <h1>Creating a group of toggled Ext.Button components in Ext JS</h1>
+
+<p>The following example shows how you can create a group of related toggle Ext.Button components in Ext JS by setting the <code>toggleGroup</code> config. When two or more Ext.Button components share the same value for the <code>toggleGroup</code> config, only one of those buttons can be toggled at a time.</p>
+            <strong>Tags:</strong> <a href="/search/Ext JS">Ext JS</a> <a href="/search/Ext JS 4.1.0">Ext JS 4.1.0</a> <a href="/search/Ext.button.Button">Ext.button.Button</a> <a href="/search/Ext.Button">Ext.Button</a> <a href="/search/button">button</a> <br/>
+        </section>
+        <section id="example">
+            [example]
+        </section>
+        
+        <footer>
+            &copy; 2012 Sencha Inc.
+        </footer>
+    </div>
+    
+    <div class="hidden">
+        <!-- extjs/4.1.0/demos/Ext.Button.toggleGroup.1/app.js -->
+        <pre>/*global Ext:false */
+Ext.onReady(function () {
+    Ext.create('Ext.Container', {
+        items: [
+            {
+                xtype: 'label',
+                text: 'Rating: '
+            }, {
+                xtype: 'button',
+                enableToggle: true,
+                text: '1',
+                toggleGroup: 'ratings'
+            }, {
+                xtype: 'button',
+                enableToggle: true,
+                text: '2',
+                toggleGroup: 'ratings'
+            }, {
+                xtype: 'button',
+                enableToggle: true,
+                text: '3',
+                toggleGroup: 'ratings'
+            }, {
+                xtype: 'button',
+                enableToggle: true,
+                text: '4',
+                toggleGroup: 'ratings'
+            }, {
+                xtype: 'button',
+                enableToggle: true,
+                text: '5',
+                toggleGroup: 'ratings'
+            }
+        ], // items
+        renderTo: Ext.getBody()
+    }); // create()
+}); // onReady()
+</pre>
+    </div>
+    
+</body>
+</html>

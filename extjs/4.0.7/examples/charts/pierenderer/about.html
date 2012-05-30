@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Pie Renderer Example</title>
+    <meta Name="description" content="Pie Renderer Example" />
+    <meta name="keywords" content="Sencha, Ext JS, Ext JS 4.0.7" />
+    <link href="/assets/application.css" media="screen" rel="stylesheet" type="text/css" />
+    <style>
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    
+    <div>
+        <header>
+            <h1>Sencha Try</h1>
+        </header>
+        
+        <section id="readme">
+            <h1>Pie Renderer Example</h1>
+
+<p>Display 5 sets of random data using a pie chart. Reload data will randomly generate a new set of data in the store. A renderer has been set up on to dynamically change the length and color of each slice based on the data.  In addition contrast detection has been turned on to dynamically change the font color based on the color of the item it is on.</p>
+            <strong>Tags:</strong> <a href="/search/Ext JS">Ext JS</a> <a href="/search/Ext JS 4.0.7">Ext JS 4.0.7</a> <br/>
+        </section>
+        <section id="example">
+            [example]
+        </section>
+        
+        <footer>
+            &copy; 2012 Sencha Inc.
+        </footer>
+    </div>
+    
+    <div class="hidden">
+        <!-- extjs/4.0.7/examples/charts/pierenderer/app.js -->
+        <pre>/*global Ext:false */
+/*
+
+This file is part of Ext JS 4
+
+Copyright (c) 2011 Sencha Inc
+
+Contact:  http://www.sencha.com/contact
+
+GNU General Public License Usage
+This file may be used under the terms of the GNU General Public License version 3.0 as published by the Free Software Foundation and appearing in the file LICENSE included in the packaging of this file.  Please review the following information to ensure the GNU General Public License version 3.0 requirements will be met: http://www.gnu.org/copyleft/gpl.html.
+
+If you are unsure which license is appropriate for your use, please contact the sales department at http://www.sencha.com/contact.
+
+*/
+Ext.require('Ext.chart.*');
+Ext.require(['Ext.Window', 'Ext.fx.target.Sprite', 'Ext.layout.container.Fit']);
+
+Ext.onReady(function () {
+    store1.loadData(generateData(5, 20));
+
+    var win = Ext.create('Ext.Window', {
+        width: 800,
+        height: 600,
+        minHeight: 400,
+        minWidth: 550,
+        hidden: false,
+        maximizable: true,
+        title: 'Pie Renderer Chart',
+        renderTo: Ext.getBody(),
+        layout: 'fit',
+        tbar: [{
+            text: 'Reload Data',
+            handler: function() {
+                store1.loadData(generateData(5));
+            }
+        }],
+        items: {
+            id: 'chartCmp',
+            xtype: 'chart',
+            style: 'background:#fff',
+            animate: true,
+            shadow: true,
+            store: store1,
+            series: [{
+                type: 'pie',
+                animate: true,
+                angleField: 'data1', //bind angle span to visits
+                lengthField: 'data2', //bind pie slice length to views
+                highlight: {
+                  segment: {
+                    margin: 20
+                  }
+                },
+                label: {
+                    field: 'name',   //bind label text to name
+                    display: 'rotate', //rotate labels (also middle, out).
+                    font: '14px Arial',
+                    contrast: true
+                },                                
+                style: {
+                    'stroke-width': 1,
+                    'stroke': '#fff'
+                },
+                //add renderer
+                renderer: function(sprite, record, attr, index, store) {
+                    var value = (record.get('data1') >> 0) % 9;
+                    var color = [ "#94ae0a", "#115fa6","#a61120", "#ff8809", "#ffd13e", "#a61187", "#24ad9a", "#7c7474", "#a66111"][value];
+                    return Ext.apply(attr, {
+                        fill: color
+                    });
+                }
+            }]
+        }
+    });
+});
+
+</pre>
+        <!-- extjs/4.0.7/examples/charts/pierenderer/resources/example-data.js -->
+        <pre>/*
+
+This file is part of Ext JS 4
+
+Copyright (c) 2011 Sencha Inc
+
+Contact:  http://www.sencha.com/contact
+
+GNU General Public License Usage
+This file may be used under the terms of the GNU General Public License version 3.0 as published by the Free Software Foundation and appearing in the file LICENSE included in the packaging of this file.  Please review the following information to ensure the GNU General Public License version 3.0 requirements will be met: http://www.gnu.org/copyleft/gpl.html.
+
+If you are unsure which license is appropriate for your use, please contact the sales department at http://www.sencha.com/contact.
+
+*/
+Ext.require(['Ext.data.*']);
+
+Ext.onReady(function() {
+
+    window.generateData = function(n, floor){
+        var data = [],
+            p = (Math.random() *  11) + 1,
+            i;
+            
+        floor = (!floor &amp;&amp; floor !== 0)? 20 : floor;
+        
+        for (i = 0; i < (n || 12); i++) {
+            data.push({
+                name: Ext.Date.monthNames[i % 12],
+                data1: Math.floor(Math.max((Math.random() * 100), floor)),
+                data2: Math.floor(Math.max((Math.random() * 100), floor)),
+                data3: Math.floor(Math.max((Math.random() * 100), floor)),
+                data4: Math.floor(Math.max((Math.random() * 100), floor)),
+                data5: Math.floor(Math.max((Math.random() * 100), floor)),
+                data6: Math.floor(Math.max((Math.random() * 100), floor)),
+                data7: Math.floor(Math.max((Math.random() * 100), floor)),
+                data8: Math.floor(Math.max((Math.random() * 100), floor)),
+                data9: Math.floor(Math.max((Math.random() * 100), floor))
+            });
+        }
+        return data;
+    };
+    
+    window.generateDataNegative = function(n, floor){
+        var data = [],
+            p = (Math.random() *  11) + 1,
+            i;
+            
+        floor = (!floor &amp;&amp; floor !== 0)? 20 : floor;
+            
+        for (i = 0; i < (n || 12); i++) {
+            data.push({
+                name: Ext.Date.monthNames[i % 12],
+                data1: Math.floor(((Math.random() - 0.5) * 100), floor),
+                data2: Math.floor(((Math.random() - 0.5) * 100), floor),
+                data3: Math.floor(((Math.random() - 0.5) * 100), floor),
+                data4: Math.floor(((Math.random() - 0.5) * 100), floor),
+                data5: Math.floor(((Math.random() - 0.5) * 100), floor),
+                data6: Math.floor(((Math.random() - 0.5) * 100), floor),
+                data7: Math.floor(((Math.random() - 0.5) * 100), floor),
+                data8: Math.floor(((Math.random() - 0.5) * 100), floor),
+                data9: Math.floor(((Math.random() - 0.5) * 100), floor)
+            });
+        }
+        return data;
+    };
+
+    window.store1 = Ext.create('Ext.data.JsonStore', {
+        fields: ['name', 'data1', 'data2', 'data3', 'data4', 'data5', 'data6', 'data7', 'data9', 'data9'],
+        data: generateData()
+    });
+    window.storeNegatives = Ext.create('Ext.data.JsonStore', {
+        fields: ['name', 'data1', 'data2', 'data3', 'data4', 'data5', 'data6', 'data7', 'data9', 'data9'],
+        data: generateDataNegative()
+    });
+    window.store3 = Ext.create('Ext.data.JsonStore', {
+        fields: ['name', 'data1', 'data2', 'data3', 'data4', 'data5', 'data6', 'data7', 'data9', 'data9'],
+        data: generateData()
+    });
+    window.store4 = Ext.create('Ext.data.JsonStore', {
+        fields: ['name', 'data1', 'data2', 'data3', 'data4', 'data5', 'data6', 'data7', 'data9', 'data9'],
+        data: generateData()
+    });
+    window.store5 = Ext.create('Ext.data.JsonStore', {
+        fields: ['name', 'data1', 'data2', 'data3', 'data4', 'data5', 'data6', 'data7', 'data9', 'data9'],
+        data: generateData()
+    });    
+    
+    
+});
+
+</pre>
+    </div>
+    
+</body>
+</html>

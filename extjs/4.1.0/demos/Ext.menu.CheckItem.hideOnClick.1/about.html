@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Closing an Ext.menu.Menu component when the user toggles a menu checkbox item in Ext JS</title>
+    <meta Name="description" content="Closing an Ext.menu.Menu component when the user toggles a menu checkbox item in Ext JS" />
+    <meta name="keywords" content="Sencha, Ext JS, Ext JS 4.1.0" />
+    <link href="/assets/application.css" media="screen" rel="stylesheet" type="text/css" />
+    <style>
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    
+    <div>
+        <header>
+            <h1>Sencha Try</h1>
+        </header>
+        
+        <section id="readme">
+            <h1>Closing an Ext.menu.Menu component when the user toggles a menu checkbox item in Ext JS</h1>
+
+<p>The following example shows how you can automatically close an Ext.menu.Menu component when a user clicks on an Ext.menu.CheckItem component by setting the Boolean <code>hideOnClick</code> config object.</p>
+            <strong>Tags:</strong> <a href="/search/Ext JS">Ext JS</a> <a href="/search/Ext JS 4.1.0">Ext JS 4.1.0</a> <br/>
+        </section>
+        <section id="example">
+            [example]
+        </section>
+        
+        <footer>
+            &copy; 2012 Sencha Inc.
+        </footer>
+    </div>
+    
+    <div class="hidden">
+        <!-- extjs/4.1.0/demos/Ext.menu.CheckItem.hideOnClick.1/app.js -->
+        <pre>/*global Ext:false */
+Ext.onReady(function () {
+    Ext.create('Ext.Button', {
+        menu: [
+            {
+                text: 'Ext JS 4',
+                xtype: 'menucheckitem',
+                hideOnClick: true,
+                handler: function (item, evt) {
+                    Ext.Msg.alert(item.text + ' is checked?', item.checked.toString());
+                }
+            }, {
+                text: 'Ext JS 3',
+                xtype: 'menucheckitem',
+                hideOnClick: true,
+                handler: function (item, evt) {
+                    Ext.Msg.alert(item.text + ' is checked?', item.checked.toString());
+                }
+            }, {
+                xtype: 'menuseparator'
+            }, {
+                text: 'Sencha Touch 2',
+                xtype: 'menucheckitem'
+            }, {
+                text: 'Sencha Touch 1',
+                xtype: 'menucheckitem'
+            }
+        ], // menu
+        renderTo: Ext.getBody(),
+        text: 'Menu Button'
+    }).showMenu();
+}); // onReady()
+</pre>
+    </div>
+    
+</body>
+</html>

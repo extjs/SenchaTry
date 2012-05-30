@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Ext.field.DatePicker Example</title>
+    <meta Name="description" content="Ext.field.DatePicker Example" />
+    <meta name="keywords" content="Sencha, Sencha Touch, Sencha Touch 2.0.0, Ext.field.DatePicker, Ext.form.DatePicker, datepickerfield, value, setValue(), month, day, year, field, form" />
+    <link href="/assets/application.css" media="screen" rel="stylesheet" type="text/css" />
+    <style>
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    
+    <div>
+        <header>
+            <h1>Sencha Try</h1>
+        </header>
+        
+        <section id="readme">
+            <h1>Ext.field.DatePicker Example</h1>
+            <strong>Tags:</strong> <a href="/search/Sencha Touch">Sencha Touch</a> <a href="/search/Sencha Touch 2.0.0">Sencha Touch 2.0.0</a> <a href="/search/Ext.field.DatePicker">Ext.field.DatePicker</a> <a href="/search/Ext.form.DatePicker">Ext.form.DatePicker</a> <a href="/search/datepickerfield">datepickerfield</a> <a href="/search/value">value</a> <a href="/search/setValue()">setValue()</a> <a href="/search/month">month</a> <a href="/search/day">day</a> <a href="/search/year">year</a> <a href="/search/field">field</a> <a href="/search/form">form</a> <br/>
+        </section>
+        <section id="example">
+            [example]
+        </section>
+        
+        <footer>
+            &copy; 2012 Sencha Inc.
+        </footer>
+    </div>
+    
+    <div class="hidden">
+        <!-- touch/2.0.0/docs/Ext.field.DatePicker.1/app.js -->
+        <pre>/*global Ext:false */
+Ext.application({
+    launch: function () {
+        Ext.create('Ext.form.Panel', {
+            fullscreen: true,
+            items: [{
+                xtype: 'fieldset',
+                items: [{
+                    xtype: 'datepickerfield',
+                    label: 'Birthday',
+                    name: 'birthday',
+                    value: new Date()
+                }]
+            }, {
+                xtype: 'toolbar',
+                docked: 'bottom',
+                items: [{
+                    xtype: 'spacer'
+                }, {
+                    text: 'setValue',
+                    handler: function () {
+                        var datePickerField = Ext.ComponentQuery.query('datepickerfield')[0];
+                        
+                        var randomNumber = function (from, to) {
+                                return Math.floor(Math.random() * (to - from + 1) + from);
+                            };
+                        
+                        datePickerField.setValue({
+                            month: randomNumber(0, 11),
+                            day: randomNumber(0, 28),
+                            year: randomNumber(1980, 2011)
+                        });
+                    }
+                }, {
+                    xtype: 'spacer'
+                }]
+            }]
+        });
+    } // launch
+}); // application()
+</pre>
+    </div>
+    
+</body>
+</html>

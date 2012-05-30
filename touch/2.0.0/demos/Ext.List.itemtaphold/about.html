@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Detecting when an item is swiped or tapped and held on an Ext.List component in Sencha Touch 2</title>
+    <meta Name="description" content="Detecting when an item is swiped or tapped and held on an Ext.List component in Sencha Touch 2" />
+    <meta name="keywords" content="Sencha, Sencha Touch, Sencha Touch 2.0.0" />
+    <link href="/assets/application.css" media="screen" rel="stylesheet" type="text/css" />
+    <style>
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    
+    <div>
+        <header>
+            <h1>Sencha Try</h1>
+        </header>
+        
+        <section id="readme">
+            <h1>Detecting when an item is swiped or tapped and held on an Ext.List component in Sencha Touch 2</h1>
+
+<p>The following example shows how you can listen for swipe and tap hold (long press) events on an Ext.List component in Sencha Touch 2 by specifying a <code>listener</code> object and listening for the <code>itemswipe</code> and <code>itemtaphold</code> events.</p>
+            <strong>Tags:</strong> <a href="/search/Sencha Touch">Sencha Touch</a> <a href="/search/Sencha Touch 2.0.0">Sencha Touch 2.0.0</a> <br/>
+        </section>
+        <section id="example">
+            [example]
+        </section>
+        
+        <footer>
+            &copy; 2012 Sencha Inc.
+        </footer>
+    </div>
+    
+    <div class="hidden">
+        <!-- touch/2.0.0/demos/Ext.List.itemtaphold/app.js -->
+        <pre>/*global Ext:false */
+Ext.application({
+    launch: function () {
+        Ext.create('Ext.List', {
+            fullscreen: true,
+            store: {
+                fields: ['name'],
+                data: [{
+                    name: 'Red'
+                }, {
+                    name: 'Orange'
+                }, {
+                    name: 'Yellow'
+                }, {
+                    name: 'Green'
+                }, {
+                    name: 'Blue'
+                }] // data
+            }, // store
+            itemTpl: '{name}',
+            listeners: {
+                itemtaphold: function (list, idx, target, record, evt) {
+                    Ext.Msg.alert('itemtaphold', record.data.name);
+                }, // itemtaphold
+                itemswipe: function (list, idx, target, record, evt) {
+                    Ext.Msg.alert('itemswipe', record.data.name);
+                } // itemswipe
+            } // listeners
+        }); // create()
+    } // launch
+}); // application()
+</pre>
+    </div>
+    
+</body>
+</html>

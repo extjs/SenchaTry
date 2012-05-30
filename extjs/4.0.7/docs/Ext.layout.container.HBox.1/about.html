@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Ext.layout.container.HBox Example</title>
+    <meta Name="description" content="Ext.layout.container.HBox Example" />
+    <meta name="keywords" content="Sencha, Ext JS, Ext JS 4.0.7, Ext.layout.container.HBox, Ext.layout.HBoxLayout, hbox, layout, container, align, stretch" />
+    <link href="/assets/application.css" media="screen" rel="stylesheet" type="text/css" />
+    <style>
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    
+    <div>
+        <header>
+            <h1>Sencha Try</h1>
+        </header>
+        
+        <section id="readme">
+            <h1>Ext.layout.container.HBox Example</h1>
+            <strong>Tags:</strong> <a href="/search/Ext JS">Ext JS</a> <a href="/search/Ext JS 4.0.7">Ext JS 4.0.7</a> <a href="/search/Ext.layout.container.HBox">Ext.layout.container.HBox</a> <a href="/search/Ext.layout.HBoxLayout">Ext.layout.HBoxLayout</a> <a href="/search/hbox">hbox</a> <a href="/search/layout">layout</a> <a href="/search/container">container</a> <a href="/search/align">align</a> <a href="/search/stretch">stretch</a> <br/>
+        </section>
+        <section id="example">
+            [example]
+        </section>
+        
+        <footer>
+            &copy; 2012 Sencha Inc.
+        </footer>
+    </div>
+    
+    <div class="hidden">
+        <!-- extjs/4.0.7/docs/Ext.layout.container.HBox.1/app.js -->
+        <pre>/*global Ext:false */
+Ext.onReady(function () {
+    Ext.create('Ext.Panel', {
+        width: 500,
+        height: 300,
+        title: "HBoxLayout Panel",
+        layout: {
+            type: 'hbox',
+            align: 'stretch'
+        },
+        renderTo: document.body,
+        items: [{
+            xtype: 'panel',
+            title: 'Inner Panel One',
+            flex: 2
+        }, {
+            xtype: 'panel',
+            title: 'Inner Panel Two',
+            flex: 1
+        }, {
+            xtype: 'panel',
+            title: 'Inner Panel Three',
+            flex: 1
+        }]
+    });
+});
+</pre>
+    </div>
+    
+</body>
+</html>

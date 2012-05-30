@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Ext.Button Example</title>
+    <meta Name="description" content="Ext.Button Example" />
+    <meta name="keywords" content="Sencha, Sencha Touch, Sencha Touch 2.0.0, Ext.Button, button, align, ui, margin" />
+    <link href="/assets/application.css" media="screen" rel="stylesheet" type="text/css" />
+    <style>
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    
+    <div>
+        <header>
+            <h1>Sencha Try</h1>
+        </header>
+        
+        <section id="readme">
+            <h1>Ext.Button Example</h1>
+
+<p>Buttons also come with a range of different default UIs. Here are the included UIs available (if <code>$include-button-uis</code> is set to <code>true</code>):</p>
+
+<ul>
+<li><strong>normal</strong> - a basic gray button</li>
+<li><strong>back</strong> - a back button</li>
+<li><strong>forward</strong> - a forward button</li>
+<li><strong>round</strong> - a round button</li>
+<li><strong>action</strong> - shaded using the $base-color (dark blue by default)</li>
+<li><strong>decline</strong> - red</li>
+<li><strong>confirm</strong> - green</li>
+</ul>
+            <strong>Tags:</strong> <a href="/search/Sencha Touch">Sencha Touch</a> <a href="/search/Sencha Touch 2.0.0">Sencha Touch 2.0.0</a> <a href="/search/Ext.Button">Ext.Button</a> <a href="/search/button">button</a> <a href="/search/align">align</a> <a href="/search/ui">ui</a> <a href="/search/margin">margin</a> <br/>
+        </section>
+        <section id="example">
+            [example]
+        </section>
+        
+        <footer>
+            &copy; 2012 Sencha Inc.
+        </footer>
+    </div>
+    
+    <div class="hidden">
+        <!-- touch/2.0.0/docs/Ext.Button.4/app.js -->
+        <pre>/*global Ext:false */
+Ext.application({
+    launch: function () {
+        Ext.create('Ext.Container', {
+            fullscreen: true,
+            padding: 4,
+            defaults: {
+                xtype: 'button',
+                margin: 5
+            },
+            layout: {
+                type: 'vbox',
+                align: 'center'
+            },
+            items: [{
+                ui: 'normal',
+                text: 'normal'
+            }, {
+                ui: 'round',
+                text: 'round'
+            }, {
+                ui: 'action',
+                text: 'action'
+            }, {
+                ui: 'decline',
+                text: 'decline'
+            }, {
+                ui: 'confirm',
+                text: 'confirm'
+            }]
+        });
+    } // launch
+}); // application()
+</pre>
+    </div>
+    
+</body>
+</html>

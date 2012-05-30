@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Styling the cancel and done buttons on an Ext.Picker dialog in Sencha Touch 2</title>
+    <meta Name="description" content="Styling the cancel and done buttons on an Ext.Picker dialog in Sencha Touch 2" />
+    <meta name="keywords" content="Sencha, Sencha Touch, Sencha Touch 2.0.1" />
+    <link href="/assets/application.css" media="screen" rel="stylesheet" type="text/css" />
+    <style>
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    
+    <div>
+        <header>
+            <h1>Sencha Try</h1>
+        </header>
+        
+        <section id="readme">
+            <h1>Styling the cancel and done buttons on an Ext.Picker dialog in Sencha Touch 2</h1>
+
+<p>The following example shows how you can style the cancel and done buttons on an Ext.Picker dialog in Sencha Touch 2 by adding the <code>ui</code> config option within the <code>cancelButton</code> and <code>doneButton</code> config options.</p>
+            <strong>Tags:</strong> <a href="/search/Sencha Touch">Sencha Touch</a> <a href="/search/Sencha Touch 2.0.1">Sencha Touch 2.0.1</a> <br/>
+        </section>
+        <section id="example">
+            [example]
+        </section>
+        
+        <footer>
+            &copy; 2012 Sencha Inc.
+        </footer>
+    </div>
+    
+    <div class="hidden">
+        <!-- touch/2.0.1/demos/Ext.Picker.cancelButton.ui/app.js -->
+        <pre>/*global Ext:false */
+Ext.application({
+    launch: function () {
+        Ext.create('Ext.Panel', {
+            fullscreen: true,
+            items: [{
+                xtype: 'toolbar',
+                docked: 'top',
+                items: [{
+                    text: 'show Picker',
+                    handler: function () {
+                        picker.show();
+                    } // handler
+                }] // items
+            }] // items
+        }); // create
+        
+        var picker = Ext.create('Ext.Picker', {
+            cancelButton: {
+                ui: 'decline'
+            }, // cancelButton
+            doneButton: {
+                ui: 'confirm'
+            }, // doneButton
+            slots: [{
+                name: 'color',
+                data: [{
+                    text: 'Red',
+                    value: '#f00'
+                }, {
+                    text: 'Orange',
+                    value: '#ffb600'
+                }, {
+                    text: 'Yellow',
+                    value: '#ff0'
+                }, {
+                    text: 'Green',
+                    value: '#80ff4d'
+                }, {
+                    text: 'Blue',
+                    value: '#009dff'
+                }] // data
+            }] // slots
+        }); // create()
+        Ext.Viewport.add(picker);
+    } // launch
+}); // application()
+</pre>
+    </div>
+    
+</body>
+</html>

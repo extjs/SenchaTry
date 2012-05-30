@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Ext.tab.Panel Example</title>
+    <meta Name="description" content="Ext.tab.Panel Example" />
+    <meta name="keywords" content="Sencha, Ext JS, Ext JS 4.1.0, Ext.tab.Panel" />
+    <link href="/assets/application.css" media="screen" rel="stylesheet" type="text/css" />
+    <style>
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    
+    <div>
+        <header>
+            <h1>Sencha Try</h1>
+        </header>
+        
+        <section id="readme">
+            <h1>Ext.tab.Panel Example</h1>
+            <strong>Tags:</strong> <a href="/search/Ext JS">Ext JS</a> <a href="/search/Ext JS 4.1.0">Ext JS 4.1.0</a> <a href="/search/Ext.tab.Panel">Ext.tab.Panel</a> <br/>
+        </section>
+        <section id="example">
+            [example]
+        </section>
+        
+        <footer>
+            &copy; 2012 Sencha Inc.
+        </footer>
+    </div>
+    
+    <div class="hidden">
+        <!-- extjs/4.1.0/docs/Ext.tab.Panel.1/app.js -->
+        <pre>/*global Ext:false */
+Ext.onReady(function() {
+    Ext.create('Ext.tab.Panel', {
+        width: 400,
+        height: 400,
+        renderTo: document.body,
+        items: [{
+            title: 'Foo'
+        }, {
+            title: 'Bar',
+            tabConfig: {
+                title: 'Custom Title',
+                tooltip: 'A button tooltip'
+            }
+        }]
+    });
+});
+</pre>
+    </div>
+    
+</body>
+</html>

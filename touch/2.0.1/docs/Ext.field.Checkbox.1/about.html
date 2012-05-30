@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Ext.field.Checkbox Example</title>
+    <meta Name="description" content="Ext.field.Checkbox Example" />
+    <meta name="keywords" content="Sencha, Sencha Touch, Sencha Touch 2.0.1, Ext.field.Checkbox, Ext.form.Checkbox, checkboxfield" />
+    <link href="/assets/application.css" media="screen" rel="stylesheet" type="text/css" />
+    <style>
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    
+    <div>
+        <header>
+            <h1>Sencha Try</h1>
+        </header>
+        
+        <section id="readme">
+            <h1>Ext.field.Checkbox Example</h1>
+            <strong>Tags:</strong> <a href="/search/Sencha Touch">Sencha Touch</a> <a href="/search/Sencha Touch 2.0.1">Sencha Touch 2.0.1</a> <a href="/search/Ext.field.Checkbox">Ext.field.Checkbox</a> <a href="/search/Ext.form.Checkbox">Ext.form.Checkbox</a> <a href="/search/checkboxfield">checkboxfield</a> <br/>
+        </section>
+        <section id="example">
+            [example]
+        </section>
+        
+        <footer>
+            &copy; 2012 Sencha Inc.
+        </footer>
+    </div>
+    
+    <div class="hidden">
+        <!-- touch/2.0.1/docs/Ext.field.Checkbox.1/app.js -->
+        <pre>/*global Ext:false */
+Ext.application({
+    launch: function() {
+        var form = Ext.create('Ext.form.Panel', {
+            fullscreen: true,
+            items: [{
+                xtype: 'checkboxfield',
+                name: 'tomato',
+                label: 'Tomato',
+                value: 'tomato',
+                checked: true
+            }, {
+                xtype: 'checkboxfield',
+                name: 'salami',
+                label: 'Salami'
+            }, {
+                xtype: 'toolbar',
+                docked: 'bottom',
+                items: [{
+                    xtype: 'spacer'
+                }, {
+                    text: 'getValues',
+                    handler: function() {
+                        var form = Ext.ComponentQuery.query('formpanel')[0],
+                            values = form.getValues();
+
+                        Ext.Msg.alert(null, "Tomato: " + ((values.tomato) ? "yes" : "no") + "<br />Salami: " + ((values.salami) ? "yes" : "no"));
+                    }
+                }, {
+                    xtype: 'spacer'
+                }]
+            }]
+        });
+    }
+});
+</pre>
+    </div>
+    
+</body>
+</html>

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Ext.panel.Tool Example</title>
+    <meta Name="description" content="Ext.panel.Tool Example" />
+    <meta name="keywords" content="Sencha, Ext JS, Ext JS 4.0.7, Ext.panel.Tool, tool, tools, panel" />
+    <link href="/assets/application.css" media="screen" rel="stylesheet" type="text/css" />
+    <style>
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    
+    <div>
+        <header>
+            <h1>Sencha Try</h1>
+        </header>
+        
+        <section id="readme">
+            <h1>Ext.panel.Tool Example</h1>
+            <strong>Tags:</strong> <a href="/search/Ext JS">Ext JS</a> <a href="/search/Ext JS 4.0.7">Ext JS 4.0.7</a> <a href="/search/Ext.panel.Tool">Ext.panel.Tool</a> <a href="/search/tool">tool</a> <a href="/search/tools">tools</a> <a href="/search/panel">panel</a> <br/>
+        </section>
+        <section id="example">
+            [example]
+        </section>
+        
+        <footer>
+            &copy; 2012 Sencha Inc.
+        </footer>
+    </div>
+    
+    <div class="hidden">
+        <!-- extjs/4.0.7/docs/Ext.panel.Tool.1/app.js -->
+        <pre>/*global Ext:false */
+Ext.onReady(function () {
+    Ext.create('Ext.panel.Panel', {
+        width: 200,
+        height: 200,
+        renderTo: document.body,
+        title: 'A Panel',
+        tools: [{
+            type: 'help',
+            handler: function () {
+                // show help here
+            }
+        }, {
+            itemId: 'refresh',
+            type: 'refresh',
+            hidden: true,
+            handler: function () {
+                // do refresh
+            }
+        }, {
+            type: 'search',
+            handler: function (event, target, owner, tool) {
+                // do search
+                owner.child('#refresh').show();
+            }
+        }]
+    });
+});
+</pre>
+    </div>
+    
+</body>
+</html>

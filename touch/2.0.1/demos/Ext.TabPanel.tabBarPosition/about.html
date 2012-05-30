@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Setting the tab bar position on an Ext.TabPanel container in Sencha Touch 2</title>
+    <meta Name="description" content="Setting the tab bar position on an Ext.TabPanel container in Sencha Touch 2" />
+    <meta name="keywords" content="Sencha, Sencha Touch, Sencha Touch 2.0.1" />
+    <link href="/assets/application.css" media="screen" rel="stylesheet" type="text/css" />
+    <style>
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    
+    <div>
+        <header>
+            <h1>Sencha Try</h1>
+        </header>
+        
+        <section id="readme">
+            <h1>Setting the tab bar position on an Ext.TabPanel container in Sencha Touch 2</h1>
+
+<p>The following example shows how you can set the tab bar position on an Ext.TabPanel container in Sencha Touch 2 by setting the <code>tabBarPosition</code> config to <code>"bottom"</code> (default), or <code>"top"</code>.</p>
+            <strong>Tags:</strong> <a href="/search/Sencha Touch">Sencha Touch</a> <a href="/search/Sencha Touch 2.0.1">Sencha Touch 2.0.1</a> <br/>
+        </section>
+        <section id="example">
+            [example]
+        </section>
+        
+        <footer>
+            &copy; 2012 Sencha Inc.
+        </footer>
+    </div>
+    
+    <div class="hidden">
+        <!-- touch/2.0.1/demos/Ext.TabPanel.tabBarPosition/app.js -->
+        <pre>/*global Ext:false */
+Ext.application({
+    launch: function () {
+        Ext.create('Ext.TabPanel', {
+            fullscreen: true,
+            tabBarPosition: 'bottom',
+            styleHtmlContent: true,
+            items: [{
+                title: 'Home',
+                iconCls: 'home',
+                html: 'Home container'
+            }, {
+                title: 'Profile',
+                iconCls: 'user',
+                html: 'Profile container'
+            }, {
+                title: 'Settings',
+                iconCls: 'settings',
+                html: 'Settings container'
+            }] // items
+        }); // create()
+    } // launch
+}); // application()
+</pre>
+    </div>
+    
+</body>
+</html>

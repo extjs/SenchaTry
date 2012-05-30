@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Ext.Toolbar Example</title>
+    <meta Name="description" content="Ext.Toolbar Example" />
+    <meta name="keywords" content="Sencha, Sencha Touch, Sencha Touch 2.0.0, Ext.Toolbar, toolbar, docked, title, getDocked(), setDocked(), getUi(), setUi(), getTitle(), setTitle()" />
+    <link href="/assets/application.css" media="screen" rel="stylesheet" type="text/css" />
+    <style>
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    
+    <div>
+        <header>
+            <h1>Sencha Try</h1>
+        </header>
+        
+        <section id="readme">
+            <h1>Ext.Toolbar Example</h1>
+            <strong>Tags:</strong> <a href="/search/Sencha Touch">Sencha Touch</a> <a href="/search/Sencha Touch 2.0.0">Sencha Touch 2.0.0</a> <a href="/search/Ext.Toolbar">Ext.Toolbar</a> <a href="/search/toolbar">toolbar</a> <a href="/search/docked">docked</a> <a href="/search/title">title</a> <a href="/search/getDocked()">getDocked()</a> <a href="/search/setDocked()">setDocked()</a> <a href="/search/getUi()">getUi()</a> <a href="/search/setUi()">setUi()</a> <a href="/search/getTitle()">getTitle()</a> <a href="/search/setTitle()">setTitle()</a> <br/>
+        </section>
+        <section id="example">
+            [example]
+        </section>
+        
+        <footer>
+            &copy; 2012 Sencha Inc.
+        </footer>
+    </div>
+    
+    <div class="hidden">
+        <!-- touch/2.0.0/docs/Ext.Toolbar.1/app.js -->
+        <pre>/*global Ext:false */
+Ext.application({
+    launch: function () {
+        Ext.create('Ext.Container', {
+            fullscreen: true,
+            layout: {
+                type: 'vbox',
+                pack: 'center'
+            },
+            items: [{
+                xtype: 'toolbar',
+                docked: 'top',
+                title: 'My Toolbar'
+            }, {
+                xtype: 'container',
+                defaults: {
+                    xtype: 'button',
+                    margin: '10 10 0 10'
+                },
+                items: [{
+                    text: 'Toggle docked',
+                    handler: function () {
+                        var toolbar = Ext.ComponentQuery.query('toolbar')[0],
+                            newDocked = (toolbar.getDocked() === 'top') ? 'bottom' : 'top';
+                        
+                        toolbar.setDocked(newDocked);
+                    }
+                }, {
+                    text: 'Toggle UI',
+                    handler: function () {
+                        var toolbar = Ext.ComponentQuery.query('toolbar')[0],
+                            newUi = (toolbar.getUi() === 'light') ? 'dark' : 'light';
+
+                        toolbar.setUi(newUi);
+                    }
+                }, {
+                    text: 'Change title',
+                    handler: function () {
+                        var toolbar = Ext.ComponentQuery.query('toolbar')[0],
+                            titles = ['My Toolbar', 'Ext.Toolbar', 'Configurations are awesome!', 'Beautiful.'],
+                            //internally, the title configuration gets converted into a {@link Ext.Title} component,
+                            //so you must get the title configuration of that component
+                            title = toolbar.getTitle().getTitle(),
+                            newTitle = titles[titles.indexOf(title) + 1] || titles[0];
+
+                        toolbar.setTitle(newTitle);
+                    }
+                }]
+            }]
+        });
+    } // launch
+}); // application()
+</pre>
+    </div>
+    
+</body>
+</html>

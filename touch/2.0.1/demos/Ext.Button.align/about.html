@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Creating a simple Ext.TitleBar component using Sencha Touch 2</title>
+    <meta Name="description" content="Creating a simple Ext.TitleBar component using Sencha Touch 2" />
+    <meta name="keywords" content="Sencha, Sencha Touch, Sencha Touch 2.0.1" />
+    <link href="/assets/application.css" media="screen" rel="stylesheet" type="text/css" />
+    <style>
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    
+    <div>
+        <header>
+            <h1>Sencha Try</h1>
+        </header>
+        
+        <section id="readme">
+            <h1>Creating a simple Ext.TitleBar component using Sencha Touch 2</h1>
+
+<p>The following example shows how you can align Ext.Button components in an Ext.TitleBar container using Sencha Touch 2 by setting the <code>align</code> config.</p>
+            <strong>Tags:</strong> <a href="/search/Sencha Touch">Sencha Touch</a> <a href="/search/Sencha Touch 2.0.1">Sencha Touch 2.0.1</a> <br/>
+        </section>
+        <section id="example">
+            [example]
+        </section>
+        
+        <footer>
+            &copy; 2012 Sencha Inc.
+        </footer>
+    </div>
+    
+    <div class="hidden">
+        <!-- touch/2.0.1/demos/Ext.Button.align/app.js -->
+        <pre>/*global Ext:false */
+Ext.application({
+    launch: function () {
+        Ext.create('Ext.Panel', {
+            fullscreen: true,
+            styleHtmlContent: true,
+            items: [{
+                xtype: 'titlebar',
+                docked: 'top',
+                title: 'Panel title',
+                items: [{
+                    xtype: 'button',
+                    align: 'left',
+                    iconCls: 'arrow_left',
+                    iconMask: true,
+                    ui: 'plain',
+                    handler: function () {
+                        Ext.Msg.alert('You clicked the left button');
+                    } // handler
+                }, {
+                    xtype: 'button',
+                    align: 'right',
+                    iconCls: 'arrow_right',
+                    iconMask: true,
+                    ui: 'plain',
+                    handler: function () {
+                        Ext.Msg.alert('You clicked the right button');
+                    } // handler
+                }] // items
+            }, {
+                html: 'This is the body of the panel'
+            }] // items
+        }); // create()
+    } // launch
+}); // application()
+</pre>
+    </div>
+    
+</body>
+</html>

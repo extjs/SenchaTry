@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Ext.util.DelayedTask Example</title>
+    <meta Name="description" content="Ext.util.DelayedTask Example" />
+    <meta name="keywords" content="Sencha, Sencha Touch, Sencha Touch 2.0.0, Ext.util.DelayedTask, util, delay()" />
+    <link href="/assets/application.css" media="screen" rel="stylesheet" type="text/css" />
+    <style>
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    
+    <div>
+        <header>
+            <h1>Sencha Try</h1>
+        </header>
+        
+        <section id="readme">
+            <h1>Ext.util.DelayedTask Example</h1>
+            <strong>Tags:</strong> <a href="/search/Sencha Touch">Sencha Touch</a> <a href="/search/Sencha Touch 2.0.0">Sencha Touch 2.0.0</a> <a href="/search/Ext.util.DelayedTask">Ext.util.DelayedTask</a> <a href="/search/util">util</a> <a href="/search/delay()">delay()</a> <br/>
+        </section>
+        <section id="example">
+            [example]
+        </section>
+        
+        <footer>
+            &copy; 2012 Sencha Inc.
+        </footer>
+    </div>
+    
+    <div class="hidden">
+        <!-- touch/2.0.0/docs/Ext.util.DelayedTask.1/app.js -->
+        <pre>/*global Ext:false */
+Ext.application({
+    launch: function () {
+        //create a textfield where we can listen to text
+        var field = Ext.create('Ext.field.Text', {
+            xtype: 'textfield',
+            label: 'Length: 0'
+        });
+
+        //add the textfield into a fieldset
+        Ext.Viewport.add({
+            xtype: 'formpanel',
+            items: [{
+                xtype: 'fieldset',
+                items: [field],
+                instructions: 'Type into the field and watch the count go up after 500ms.'
+            }]
+        });
+
+        //create our delayed task with a function that returns the fields length as the fields label
+        var task = Ext.create('Ext.util.DelayedTask', function () {
+            field.setLabel('Length: ' + field.getValue().length);
+        });
+
+        // Wait 500ms before calling our function. If the user presses another key
+        // during that 500ms, it will be cancelled and we'll wait another 500ms.
+        field.on('keyup', function () {
+            task.delay(500);
+        });
+    } // launch
+}); // application()
+</pre>
+    </div>
+    
+</body>
+</html>

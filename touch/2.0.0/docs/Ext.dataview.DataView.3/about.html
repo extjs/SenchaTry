@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Ext.dataview.DataView Example</title>
+    <meta Name="description" content="Ext.dataview.DataView Example" />
+    <meta name="keywords" content="Sencha, Sencha Touch, Sencha Touch 2.0.0, Ext.dataview.DataView, Ext.DataView, dataview, cls, store, itemTpl" />
+    <link href="/assets/application.css" media="screen" rel="stylesheet" type="text/css" />
+    <style>
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    
+    <div>
+        <header>
+            <h1>Sencha Try</h1>
+        </header>
+        
+        <section id="readme">
+            <h1>Ext.dataview.DataView Example</h1>
+            <strong>Tags:</strong> <a href="/search/Sencha Touch">Sencha Touch</a> <a href="/search/Sencha Touch 2.0.0">Sencha Touch 2.0.0</a> <a href="/search/Ext.dataview.DataView">Ext.dataview.DataView</a> <a href="/search/Ext.DataView">Ext.DataView</a> <a href="/search/dataview">dataview</a> <a href="/search/cls">cls</a> <a href="/search/store">store</a> <a href="/search/itemTpl">itemTpl</a> <br/>
+        </section>
+        <section id="example">
+            [example]
+        </section>
+        
+        <footer>
+            &copy; 2012 Sencha Inc.
+        </footer>
+    </div>
+    
+    <div class="hidden">
+        <!-- touch/2.0.0/docs/Ext.dataview.DataView.3/app.js -->
+        <pre>/*global Ext:false */
+Ext.application({
+    launch: function () {
+        Ext.create('Ext.DataView', {
+            fullscreen: true,
+            cls: 'twitterView',
+            store: {
+                autoLoad: true,
+                fields: ['from_user', 'text', 'profile_image_url'],
+                proxy: {
+                    type: 'jsonp',
+                    url: 'http://search.twitter.com/search.json?q=Sencha Touch',
+                    reader: {
+                        type: 'json',
+                        rootProperty: 'results'
+                    }
+                }
+            },
+            itemTpl: '<img src="{profile_image_url}" /><h2>{from_user}</h2><p>;{text}</p><div style="clear:both;"></div>'
+        });
+    } // launch
+}); // application()
+</pre>
+    </div>
+    
+</body>
+</html>

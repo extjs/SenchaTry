@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Detecting when the user changes an Ext.field.Spinner control in Sencha Touch 2</title>
+    <meta Name="description" content="Detecting when the user changes an Ext.field.Spinner control in Sencha Touch 2" />
+    <meta name="keywords" content="Sencha, Sencha Touch, Sencha Touch 2.0.1" />
+    <link href="/assets/application.css" media="screen" rel="stylesheet" type="text/css" />
+    <style>
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    
+    <div>
+        <header>
+            <h1>Sencha Try</h1>
+        </header>
+        
+        <section id="readme">
+            <h1>Detecting when the user changes an Ext.field.Spinner control in Sencha Touch 2</h1>
+
+<p>The following example shows how you detect when the user changes an Ext.field.Spinner (spinnerfield) control in Sencha Touch 2 by listening for the <code>spin</code> event (or the <code>spinup</code> and <code>spindown</code> events separately).</p>
+            <strong>Tags:</strong> <a href="/search/Sencha Touch">Sencha Touch</a> <a href="/search/Sencha Touch 2.0.1">Sencha Touch 2.0.1</a> <br/>
+        </section>
+        <section id="example">
+            [example]
+        </section>
+        
+        <footer>
+            &copy; 2012 Sencha Inc.
+        </footer>
+    </div>
+    
+    <div class="hidden">
+        <!-- touch/2.0.1/demos/Ext.field.Spinner.spin/app.js -->
+        <pre>/*global Ext:false */
+Ext.application({
+    launch: function () {
+        var tmpl = Ext.create('Ext.XTemplate', '[{evt}] value: {value}, direction: \'{dir}\'');
+        
+        Ext.create('Ext.form.Panel', {
+            fullscreen: true,
+            items: [{
+                xtype: 'fieldset',
+                id: 'fset',
+                items: [{
+                    xtype: 'spinnerfield',
+                    label: 'value:',
+                    increment: 1,
+                    listeners: {
+                        spin: function (spinner, value, dir) {
+                            var str = tmpl.apply({evt:'spin', value:value, dir:dir});
+                            spinner.up('fieldset').setInstructions(str);
+                        } // spin
+                    } // listeners
+                }] // items (fieldset)
+            }] // items (formpanel)
+        }); // create()
+    } // launch
+}); // application()
+</pre>
+    </div>
+    
+</body>
+</html>

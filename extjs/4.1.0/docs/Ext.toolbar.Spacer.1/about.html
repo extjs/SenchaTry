@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Ext.toolbar.Spacer Example</title>
+    <meta Name="description" content="Ext.toolbar.Spacer Example" />
+    <meta name="keywords" content="Sencha, Ext JS, Ext JS 4.1.0, Ext.toolbar.Spacer" />
+    <link href="/assets/application.css" media="screen" rel="stylesheet" type="text/css" />
+    <style>
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    
+    <div>
+        <header>
+            <h1>Sencha Try</h1>
+        </header>
+        
+        <section id="readme">
+            <h1>Ext.toolbar.Spacer Example</h1>
+            <strong>Tags:</strong> <a href="/search/Ext JS">Ext JS</a> <a href="/search/Ext JS 4.1.0">Ext JS 4.1.0</a> <a href="/search/Ext.toolbar.Spacer">Ext.toolbar.Spacer</a> <br/>
+        </section>
+        <section id="example">
+            [example]
+        </section>
+        
+        <footer>
+            &copy; 2012 Sencha Inc.
+        </footer>
+    </div>
+    
+    <div class="hidden">
+        <!-- extjs/4.1.0/docs/Ext.toolbar.Spacer.1/app.js -->
+        <pre>/*global Ext:false */
+Ext.onReady(function() {
+    Ext.create('Ext.panel.Panel', {
+        title: 'Toolbar Spacer Example',
+        width: 300,
+        height: 200,
+        tbar: ['Item 1',
+        {
+            xtype: 'tbspacer'
+        }, // or ' '
+        'Item 2',
+        // space width is also configurable via javascript
+        {
+            xtype: 'tbspacer',
+            width: 50
+        }, // add a 50px space
+        'Item 3'],
+        renderTo: Ext.getBody()
+    });
+});
+</pre>
+    </div>
+    
+</body>
+</html>

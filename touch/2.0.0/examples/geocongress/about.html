@@ -1,0 +1,1158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <title>GeoCon</title>
+    <meta Name="description" content="GeoCon" />
+    <meta name="keywords" content="Sencha, Sencha Touch, Sencha Touch 2.0.0" />
+    <link href="/assets/application.css" media="screen" rel="stylesheet" type="text/css" />
+    <style>
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    
+    <div>
+        <header>
+            <h1>Sencha Try</h1>
+        </header>
+        
+        <section id="readme">
+            <h1>GeoCon</h1>
+            <strong>Tags:</strong> <a href="/search/Sencha Touch">Sencha Touch</a> <a href="/search/Sencha Touch 2.0.0">Sencha Touch 2.0.0</a> <br/>
+        </section>
+        <section id="example">
+            [example]
+        </section>
+        
+        <footer>
+            &copy; 2012 Sencha Inc.
+        </footer>
+    </div>
+    
+    <div class="hidden">
+        <!-- touch/2.0.0/examples/geocongress/app.js -->
+        <pre>/*global Ext:false */
+Ext.application({
+    name: 'GeoCon',
+    icon: 'resources/icons/icon.png',
+    glossOnIcon: false,
+    phoneStartupScreen: 'resources/loading/Homescreen.jpg',
+    tabletStartupScreen: 'resources/loading/Homescreen~ipad.jpg',
+
+    models: [
+        'Bill',
+        'Committee',
+        'Legislator',
+        'Vote'
+    ],
+
+    views : [
+        'Main'
+    ],
+
+    controllers: [
+        'SplashScreen',
+        'Legislator',
+        'Committee'
+    ],
+
+    stores: [
+        'Bills',
+        'Legislators',
+        'Committees',
+        'Votes',
+        'States',
+        'Districts'
+    ],
+
+    launch: function() {
+        Ext.create('GeoCon.view.Main');
+    }
+});
+
+</pre>
+        <!-- touch/2.0.0/examples/geocongress/app/controller/Committee.js -->
+        <pre>/**
+ * Controls the list of committees for a Legislator
+ */
+Ext.define('GeoCon.controller.Committee', {
+    extend: 'Ext.app.Controller',
+    requires: ['Ext.MessageBox'],
+
+    config: {
+        control: {
+            '#committeeList': {
+                itemtap: 'onCommitteeTap'
+            }
+        }
+    },
+
+    onCommitteeTap: function(dataview, index, target, record) {
+        Ext.Msg.confirm("Confirmation", "This link will open in a new window. Are you sure?", function(result) {
+            if (result == 'yes') {
+                window.location = 'http://www.govtrack.us/congress/committee.xpd?id=' + record.getId();
+            }
+        });
+    }
+});
+</pre>
+        <!-- touch/2.0.0/examples/geocongress/app/controller/Legislator.js -->
+        <pre>Ext.define('GeoCon.controller.Legislator', {
+    extend: 'Ext.app.Controller',
+
+    requires: ['GeoCon.view.legislator.TabPanel', 'GeoCon.view.bill.Show'],
+
+    config: {
+        control: {
+            '#legislatorTabPanel': {
+                activate: 'onLegislatorShow'
+            },
+            '#legislatorList': {
+                itemtap: 'onLegislatorTap'
+            },
+            '#billList': {
+                activate: 'onBillListActivate',
+                itemtap: 'onBillTap'
+            },
+            '#voteList': {
+                activate: 'onVoteListActivate'
+            },
+            '#legislatorBackButton': {
+                tap: function() {
+                    Ext.getCmp('splashScreen').animateTo('right');
+                    Ext.getCmp('viewport').setActiveItem(Ext.getCmp('splashScreen'));
+                }
+            },
+            '#billSummaryBackButton': {
+                tap: function() {
+                    Ext.getCmp('splashScreen').animateTo('right');
+                    Ext.getCmp('viewport').setActiveItem(Ext.getCmp('legislatorTabPanel'));
+                }
+            }
+        }
+    },
+
+    onLegislatorShow: function() {
+        Ext.getCmp('viewport').getLayout().getAnimation().setReverse(false);
+    },
+
+    onBillListActivate: function() {
+
+        if (this.currentBills != this.currentLegislator.bioguide_id) {
+            Ext.getStore('Bills').load({
+                params: {
+                    sponsor_id: this.currentLegislator.bioguide_id
+                }
+            });
+            this.currentBills = this.currentLegislator.bioguide_id;
+        }
+    },
+
+    onBillTap: function(dataview, index, target, record) {
+
+        var billSummary = Ext.getCmp('billSummary');
+        Ext.getCmp('splashScreen').animateTo('left');
+
+        if (billSummary) {
+            billSummary.setData(record.data);
+            Ext.getCmp('viewport').setActiveItem(billSummary);
+        } else {
+            Ext.getCmp('viewport').setActiveItem({
+                xclass: 'GeoCon.view.bill.Show',
+                data: record.data
+            });
+        }
+
+        Ext.getCmp('billSummaryToolbar').setTitle(record.data.bill_id);
+    },
+
+    onVoteListActivate: function() {
+
+        if (this.currentVotes != this.currentLegislator.bioguide_id) {
+
+            var storeParams = {
+                sections: "basic,voter_ids." + this.currentLegislator.bioguide_id
+            };
+            storeParams['voter_ids.' + this.currentLegislator.bioguide_id + '__exists'] = true;
+
+            Ext.getStore('Votes').load({
+                params: storeParams
+            });
+
+            this.currentVotes = this.currentLegislator.bioguide_id;
+        }
+    },
+
+    onLegislatorTap: function(dataview, index, target, record) {
+
+        if (this.currentLegislator == record.data) {
+            Ext.getCmp('viewport').setActiveItem(1);
+            return;
+        }
+
+        this.currentLegislator = record.data;
+
+        this.currentLegislator.committees = Ext.getStore('Committees').load({
+            params: {
+                bioguide_id: this.currentLegislator.bioguide_id
+            }
+        });
+
+        var legislator = Ext.getCmp('legislatorTabPanel');
+        Ext.getCmp('splashScreen').animateTo('left');
+
+        if (legislator) {
+            legislator.setData(this.currentLegislator);
+            Ext.getCmp('viewport').setActiveItem(1);
+        } else {
+            Ext.getCmp('viewport').setActiveItem({
+                xclass: 'GeoCon.view.legislator.TabPanel'
+            });
+        }
+
+        Ext.getCmp('legislatorBio').setData(this.currentLegislator);
+        Ext.getCmp('legislatorToolbar').setTitle(this.currentLegislator.title + " " + this.currentLegislator.lastname);
+        Ext.getCmp('legislatorTabPanel').setActiveItem(0);
+    }
+
+});
+</pre>
+        <!-- touch/2.0.0/examples/geocongress/app/controller/SplashScreen.js -->
+        <pre>Ext.define('GeoCon.controller.SplashScreen', {
+    extend: 'Ext.app.Controller',
+
+    requires: ['Ext.util.Geolocation'],
+
+    config: {
+        control: {
+            '#selectState': {
+                change: 'onStateChange'
+            },
+            '#lookupBtn': {
+                tap: 'onLookupTap'
+            },
+            '#settingsBtn': {
+                tap: 'onSettingsTap'
+            }
+        }
+    },
+
+    init: function() {
+        this.location = Ext.create('Ext.util.Geolocation', {
+            autoUpdate: false,
+            listeners: {
+                locationupdate: 'onLocationUpdate',
+                locationerror: 'onLocationError',
+                scope: this
+            }
+        });
+        this.location.updateLocation();
+    },
+
+    onSettingsTap: function() {
+        if (!this.hasLocation) {
+            this.onLocationError();
+            return;
+        }
+        var splashScreen = Ext.getCmp('splashScreen');
+
+        if (splashScreen.getActiveItem() == Ext.getCmp('settingsForm')) {
+            splashScreen.setActiveItem(Ext.getCmp('legislatorList'));
+        } else {
+            splashScreen.setActiveItem(Ext.getCmp('settingsForm'));
+        }
+    },
+
+    onLocationUpdate: function() {
+        this.hasLocation = true;
+        Ext.getStore('Districts').load({
+            params: {
+                latitude: this.location.getLatitude(),
+                longitude: this.location.getLongitude()
+            },
+            callback: function(records) {
+                var district = records &amp;&amp; records[0];
+
+                if (district) {
+                    var store = Ext.getStore('States'),
+                        idx = store.find('abbr', district.data.state),
+                        state = store.getAt(idx);
+
+                    this.currentDistrict = district.data.number;
+
+                    if (state) {
+                        this.currentState = state;
+                        this.loadLegislators();
+                        this.updateSettings();
+                    }
+                }
+            },
+            scope: this
+        });
+    },
+
+    onLocationError: function() {
+        this.hasLocation = true;
+        Ext.getStore('Districts').load({
+            params: {
+                latitude: 37.381592,
+                longitude: -122.135672
+            },
+            callback: function(records) {
+                var district = records &amp;&amp; records[0];
+
+                this.onSettingsTap();
+
+                if (district) {
+                    var store = Ext.getStore('States'),
+                        idx = store.find('abbr', district.data.state),
+                        state = store.getAt(idx);
+
+                    this.currentDistrict = district.data.number;
+
+                    if (state) {
+                        this.currentState = state;
+                        this.loadLegislators();
+                        this.updateSettings();
+                    }
+                }
+                Ext.Msg.alert('Geolocation Unavailable', 'Setting your default location to Sencha HQ');
+            },
+            scope: this
+        });
+    },
+
+    onStateChange: function(field, record) {
+        if (record) {
+            this.currentState = record;
+        }
+        if (Ext.getCmp('districtSpinner')) {
+            this.updateDistrict();
+        }
+    },
+
+    onLookupTap: function() {
+        this.currentDistrict = Ext.getCmp('districtSpinner').getValue();
+        this.loadLegislators();
+        this.onSettingsTap();
+    },
+
+    updateSettings: function() {
+        Ext.getCmp('selectState').setValue(this.currentState.data.abbr);
+        this.updateDistrict();
+    },
+
+    updateDistrict: function() {
+        Ext.getCmp('districtSpinner').setMaxValue(this.currentState.data.maxDistrict);
+        Ext.getCmp('districtSpinner').setValue(this.currentDistrict || 0);
+    },
+
+    /**
+     * Retrieves a list of Legislators for the given state and district. First loads
+     * the Legislators for the state and district, then then Senators for the whole state.
+     */
+    loadLegislators: function() {
+        var title = this.currentState.data.abbr + ' District ' + this.currentDistrict,
+            store = Ext.getStore('Legislators'),
+            splashToolbar = Ext.getCmp('splashToolbar');
+
+        // If the current legislators are already loaded, don't re-load
+        if (splashToolbar.getTitle() == title) {
+            return;
+        }
+
+        splashToolbar.setTitle(title);
+
+        // First look up the Representative, then the senators for the state.
+        // The current API doesn't support this in a single query
+        store.load({
+            params: {
+                state: this.currentState.data.abbr,
+                district: this.currentDistrict
+            },
+            callback: function() {
+                store.load({
+                    params: {
+                        state: this.currentState.data.abbr,
+                        title: 'Sen'
+                    },
+                    addRecords: true
+                });
+            },
+            scope: this
+        });
+    }
+
+});
+</pre>
+        <!-- touch/2.0.0/examples/geocongress/app/model/Bill.js -->
+        <pre>/**
+ * Represents a Bill
+ *
+ * Field documentation is available here:
+ * http://services.sunlightlabs.com/docs/Real_Time_Congress_API/bills/
+ */
+Ext.define('GeoCon.model.Bill', {
+    extend: 'Ext.data.Model',
+
+    config: {
+        fields: [
+            { name: 'abbreviated',          type: 'boolean' },
+            { name: 'actions',              type: 'object' },
+            { name: 'awaiting_signature',   type: 'boolean' },
+            { name: 'bill_id',              type: 'string' },
+            { name: 'bill_type',            type: 'string' },
+            { name: 'chamber',              type: 'string' },
+            { name: 'code',                 type: 'string' },
+            { name: 'committees',           type: 'object' },
+            { name: 'cosponsor_ids',        type: 'object' },
+            { name: 'cosponsors',           type: 'object' },
+            { name: 'cosponsors_count',     type: 'number' },
+            { name: 'enacted',              type: 'boolean' },
+            { name: 'introduced_at',        type: 'date' },
+            { name: 'keywords',             type: 'object' },
+            { name: 'last_action',          type: 'object' },
+            { name: 'last_action_at',       type: 'date' },
+            { name: 'last_passage_vote_at', type: 'date' },
+            { name: 'last_version',         type: 'object' },
+            { name: 'last_version_on',      type: 'string' },
+            { name: 'number',               type: 'number' },
+            { name: 'official_title',       type: 'string' },
+            { name: 'passage_votes',        type: 'object' },
+            { name: 'passage_votes_count',  type: 'number' },
+            { name: 'popular_title',        type: 'string' },
+            { name: 'related_bills',        type: 'object' },
+            { name: 'session',              type: 'number' },
+            { name: 'short_title',          type: 'string' },
+            { name: 'sponsor',              type: 'object' },
+            { name: 'sponsor_id',           type: 'string' },
+            { name: 'state',                type: 'string' },
+            { name: 'summary',              type: 'string' },
+            { name: 'titles',               type: 'object' },
+            { name: 'version_codes',        type: 'object' },
+            { name: 'version_info',         type: 'object' },
+            { name: 'versions_count',       type: 'number' },
+            { name: 'vetoed',               type: 'boolean' }
+        ]
+    }
+});
+</pre>
+        <!-- touch/2.0.0/examples/geocongress/app/model/Committee.js -->
+        <pre>Ext.define('GeoCon.model.Committee', {
+    extend: 'Ext.data.Model',
+    config: {
+        fields: [
+            { name: 'chamber',       type: 'string' },
+            { name: 'id',            type: 'string' },
+            { name: 'name',          type: 'string' },
+            { name: 'subcommittees', type: 'string' }
+        ]
+    }
+});
+</pre>
+        <!-- touch/2.0.0/examples/geocongress/app/model/Legislator.js -->
+        <pre>Ext.define('GeoCon.model.Legislator', {
+    extend: 'Ext.data.Model',
+    config: {
+        fields: [
+            { name: 'website',           type: 'string' },
+            { name: 'fax',               type: 'string' },
+            { name: 'govtrack_id',       type: 'string' },
+            { name: 'firstname',         type: 'string' },
+            { name: 'chamber',           type: 'string' },
+            { name: 'middlename',        type: 'string' },
+            { name: 'lastname',          type: 'string' },
+            { name: 'congress_office',   type: 'string' },
+            { name: 'eventful_id',       type: 'string' },
+            { name: 'phone',             type: 'string' },
+            { name: 'webform',           type: 'string' },
+            { name: 'youtube_url',       type: 'string' },
+            { name: 'nickname',          type: 'string' },
+            { name: 'gender',            type: 'string' },
+            { name: 'district',          type: 'string' },
+            { name: 'title',             type: 'string' },
+            {
+                // This field is used when we group Legislators on the Legislators List.
+                // We expand 'Rep' to 'Representative' and 'Sen' to 'Senator'
+                name: 'fullTitle',
+                type: 'string',
+                convert: function(v, record) {
+                    return record.data.title == 'Rep' ? 'Representatives' : 'Senators';
+                }
+            },
+            { name: 'congresspedia_url', type: 'string' },
+            { name: 'in_office',         type: 'boolean' },
+            { name: 'senate_class',      type: 'string' },
+            { name: 'name_suffix',       type: 'string' },
+            { name: 'twitter_id',        type: 'string' },
+            { name: 'birthdate',         type: 'string' },
+            { name: 'bioguide_id',       type: 'string' },
+            { name: 'fec_id',            type: 'string' },
+            { name: 'state',             type: 'string' },
+            { name: 'crp_id',            type: 'string' },
+            { name: 'official_rss',      type: 'string' },
+            { name: 'facebook_id',       type: 'string' },
+            { name: 'party',             type: 'string' },
+            { name: 'email',             type: 'string' },
+            { name: 'votesmart_id',      type: 'string' }
+        ]
+    }
+});
+</pre>
+        <!-- touch/2.0.0/examples/geocongress/app/model/Vote.js -->
+        <pre>Ext.define('GeoCon.model.Vote', {
+    extend: 'Ext.data.Model',
+    requires: 'Ext.DateExtras',
+
+    config: {
+        fields: [
+            { name: 'bill_id',        type: 'string' },
+            { name: 'chamber',        type: 'string' },
+            { name: 'how',            type: 'string' },
+            { name: 'number',         type: 'number' },
+            { name: 'passage_type',   type: 'string' },
+            { name: 'question',       type: 'string' },
+            { name: 'required',       type: 'string' },
+            { name: 'result',         type: 'string' },
+            { name: 'roll_id',        type: 'string' },
+            { name: 'roll_type',      type: 'string' },
+            { name: 'session',        type: 'number' },
+            { name: 'vote_breakdown', type: 'object' },
+            { name: 'vote_type',      type: 'string' },
+            { name: 'voted_at',       type: 'date' },
+            {
+                name: 'voted_at_str',
+                type: 'string',
+                convert: function(v, record) {
+                    return Ext.Date.format(record.data.voted_at, 'F j, Y');
+                }
+            },
+            { name: 'voter_ids',      type: 'object' },
+            { name: 'year',           type: 'number' }
+        ]
+    }
+});
+
+
+</pre>
+        <!-- touch/2.0.0/examples/geocongress/app/store/Bills.js -->
+        <pre>Ext.define('GeoCon.store.Bills', {
+    extend  : 'Ext.data.Store',
+
+    config: {
+        model: 'GeoCon.model.Bill',
+        groupField: 'state',
+
+        proxy: {
+            type: 'jsonp',
+            url: 'http://api.realtimecongress.org/api/v1/bills.json',
+
+            // The following must be set to disable extra parameters being sent to the API, which breaks it
+            noCache: false,
+            startParam: '',
+            pageParam: '',
+            limitParam: '',
+
+            extraParams: {
+                apikey: '8a341f85c657435989e75c9a83294762'
+            },
+
+            reader: {
+                type: 'json',
+                rootProperty: 'bills'
+            }
+        }
+    }
+});
+</pre>
+        <!-- touch/2.0.0/examples/geocongress/app/store/Committees.js -->
+        <pre>Ext.define('GeoCon.store.Committees', {
+    extend  : 'Ext.data.Store',
+
+    config: {
+        model: 'GeoCon.model.Committee',
+        groupField: 'chamber',
+
+        proxy: {
+            type: 'jsonp',
+            url: 'http://services.sunlightlabs.com/api/committees.allForLegislator',
+            callbackKey: 'jsonp',
+            extraParams: {
+                apikey: '8a341f85c657435989e75c9a83294762'
+            },
+            reader: {
+                type: 'json',
+                rootProperty: 'response.committees',
+                record: 'committee'
+            }
+        }
+    }
+});
+</pre>
+        <!-- touch/2.0.0/examples/geocongress/app/store/Districts.js -->
+        <pre>Ext.define('GeoCon.store.Districts', {
+    extend  : 'Ext.data.Store',
+
+    config: {
+        fields: [ 'state', 'number' ],
+
+        proxy: {
+            type: 'jsonp',
+            url: 'http://services.sunlightlabs.com/api/districts.getDistrictFromLatLong',
+            callbackKey: 'jsonp',
+            extraParams: {
+                apikey: '8a341f85c657435989e75c9a83294762'
+            },
+            reader: {
+                type: 'json',
+                rootProperty: 'response.districts',
+                record: 'district'
+            }
+        }
+    }
+});
+</pre>
+        <!-- touch/2.0.0/examples/geocongress/app/store/Legislators.js -->
+        <pre>Ext.define('GeoCon.store.Legislators', {
+    extend  : 'Ext.data.Store',
+
+    config: {
+        model: 'GeoCon.model.Legislator',
+        groupField: 'fullTitle',
+
+        proxy: {
+            type: 'jsonp',
+            url: 'http://services.sunlightlabs.com/api/legislators.getList.json',
+            callbackKey: 'jsonp',
+
+            // The following must be set to disable extra parameters being sent to the API, which breaks it
+            noCache: false,
+            startParam: '',
+            pageParam: '',
+            limitParam: '',
+
+            extraParams: {
+                apikey: '8a341f85c657435989e75c9a83294762'
+            },
+            reader: {
+                type: 'json',
+                rootProperty: 'response.legislators',
+                record: 'legislator'
+            }
+        }
+    }
+});
+</pre>
+        <!-- touch/2.0.0/examples/geocongress/app/store/States.js -->
+        <pre>/**
+ * List of states, their abbreviations and the number of districts
+ */
+Ext.define('GeoCon.store.States', {
+    extend  : 'Ext.data.Store',
+
+    config: {
+        fields: [
+            { name: 'state',       type: 'string' },
+            { name: 'abbr',        type: 'string' },
+            { name: 'maxDistrict', type: 'number' }
+        ],
+
+        data: [
+            { abbr: 'AL', state: 'Alabama',              maxDistrict: 10 },
+            { abbr: 'AK', state: 'Alaska',               maxDistrict: 0 },
+            { abbr: 'AZ', state: 'Arizona',              maxDistrict: 8 },
+            { abbr: 'AR', state: 'Arkansas',             maxDistrict: 7 },
+            { abbr: 'CA', state: 'California',           maxDistrict: 53 },
+            { abbr: 'CO', state: 'Colorado',             maxDistrict: 7 },
+            { abbr: 'CT', state: 'Connecticut',          maxDistrict: 6 },
+            { abbr: 'DE', state: 'Delaware',             maxDistrict: 0 },
+            { abbr: 'DC', state: 'District of Columbia', maxDistrict: 0 },
+            { abbr: 'FL', state: 'Florida',              maxDistrict: 25 },
+            { abbr: 'GA', state: 'Georgia',              maxDistrict: 13 },
+            { abbr: 'HI', state: 'Hawaii',               maxDistrict: 2 },
+            { abbr: 'ID', state: 'Idaho',                maxDistrict: 2 },
+            { abbr: 'IL', state: 'Illinois',             maxDistrict: 19 },
+            { abbr: 'IN', state: 'Indiana',              maxDistrict: 9 },
+            { abbr: 'IA', state: 'Iowa',                 maxDistrict: 5 },
+            { abbr: 'KS', state: 'Kansas',               maxDistrict: 4 },
+            { abbr: 'KY', state: 'Kentucky',             maxDistrict: 6 },
+            { abbr: 'LA', state: 'Louisiana',            maxDistrict: 7 },
+            { abbr: 'ME', state: 'Maine',                maxDistrict: 2 },
+            { abbr: 'MD', state: 'Maryland',             maxDistrict: 8 },
+            { abbr: 'MA', state: 'Massachusetts',        maxDistrict: 10 },
+            { abbr: 'MI', state: 'Michigan',             maxDistrict: 15 },
+            { abbr: 'MN', state: 'Minnesota',            maxDistrict: 8 },
+            { abbr: 'MS', state: 'Mississippi',          maxDistrict: 4 },
+            { abbr: 'MO', state: 'Missouri',             maxDistrict: 9 },
+            { abbr: 'MT', state: 'Montana',              maxDistrict: 0 },
+            { abbr: 'NE', state: 'Nebraska',             maxDistrict: 3 },
+            { abbr: 'NV', state: 'Nevada',               maxDistrict: 3 },
+            { abbr: 'NH', state: 'New Hampshire',        maxDistrict: 2 },
+            { abbr: 'NJ', state: 'New Jersey',           maxDistrict: 13 },
+            { abbr: 'NM', state: 'New Mexico',           maxDistrict: 3 },
+            { abbr: 'NY', state: 'New York',             maxDistrict: 29 },
+            { abbr: 'NC', state: 'North Carolina',       maxDistrict: 13 },
+            { abbr: 'ND', state: 'North Dakota',         maxDistrict: 0 },
+            { abbr: 'OH', state: 'Ohio',                 maxDistrict: 18 },
+            { abbr: 'OK', state: 'Oklahoma',             maxDistrict: 5 },
+            { abbr: 'OR', state: 'Oregon',               maxDistrict: 0 },
+            { abbr: 'PA', state: 'Pennsylvania',         maxDistrict: 19 },
+            { abbr: 'RI', state: 'Rhode Island',         maxDistrict: 2 },
+            { abbr: 'SC', state: 'South Carolina',       maxDistrict: 6 },
+            { abbr: 'SD', state: 'South Dakota',         maxDistrict: 0 },
+            { abbr: 'TN', state: 'Tennessee',            maxDistrict: 9 },
+            { abbr: 'TX', state: 'Texas',                maxDistrict: 32 },
+            { abbr: 'UT', state: 'Utah',                 maxDistrict: 3 },
+            { abbr: 'VT', state: 'Vermont',              maxDistrict: 0 },
+            { abbr: 'VA', state: 'Virginia',             maxDistrict: 11 },
+            { abbr: 'WA', state: 'Washington',           maxDistrict: 9 },
+            { abbr: 'WV', state: 'West Virginia',        maxDistrict: 3 },
+            { abbr: 'WI', state: 'Wisconsin',            maxDistrict: 8 },
+            { abbr: 'WY', state: 'Wyoming',              maxDistrict: 0 }
+        ]
+    }
+});
+</pre>
+        <!-- touch/2.0.0/examples/geocongress/app/store/Votes.js -->
+        <pre>Ext.define('GeoCon.store.Votes', {
+    extend: 'Ext.data.Store',
+    requires: ['Ext.data.proxy.JsonP'],
+
+    config: {
+        model: 'GeoCon.model.Vote',
+        groupField: 'voted_at_str',
+        groupDir: 'DESC',
+
+        proxy: {
+            type: 'jsonp',
+            url: 'http://api.realtimecongress.org/api/v1/votes.json',
+
+            // The following must be set to disable extra parameters being sent to the API, which breaks it
+            noCache: false,
+            startParam: '',
+            pageParam: '',
+            limitParam: '',
+
+            extraParams: {
+                apikey: '8a341f85c657435989e75c9a83294762'
+            },
+
+            reader: {
+                type: 'json',
+                rootProperty: 'votes'
+            }
+        }
+    }
+});
+</pre>
+        <!-- touch/2.0.0/examples/geocongress/app/view/Main.js -->
+        <pre>/**
+ * The main view is a Card panel, initially containing the splash screen
+ */
+Ext.define('GeoCon.view.Main', {
+    extend: 'Ext.Container',
+    requires: ['GeoCon.view.Splash'],
+
+    id: 'viewport',
+
+    config: {
+        layout: {
+            type: 'card',
+            animation: {
+                duration: 300,
+                easing: 'ease-in-out',
+                type: 'slide',
+                direction: 'left'
+            }
+        },
+        fullscreen: true,
+
+        items: [
+            { xclass: 'GeoCon.view.Splash' }
+        ]
+    }
+});
+</pre>
+        <!-- touch/2.0.0/examples/geocongress/app/view/Settings.js -->
+        <pre>/**
+ * The settings form panel
+ */
+Ext.define('GeoCon.view.Settings', {
+    extend: 'Ext.form.Panel',
+
+    requires: [
+        'Ext.form.FieldSet',
+        'Ext.field.Select',
+        'Ext.field.Spinner'
+    ],
+
+    id: 'settingsForm',
+
+    config: {
+        items: [
+            {
+                xtype: 'fieldset',
+                items: [
+                    {
+                        xtype: 'selectfield',
+                        label: 'State',
+                        store: 'States',
+                        displayField: 'state',
+                        valueField: 'abbr',
+                        id: 'selectState'
+                    },
+                    {
+                        xtype: 'spinnerfield',
+                        label: 'District',
+                        increment: 1,
+                        minValue: 0,
+                        maxValue: 0,
+                        id: 'districtSpinner'
+                    }
+                ]
+            },
+            {
+                xtype: 'button',
+                text: 'Lookup',
+                ui: 'confirm',
+                id: 'lookupBtn'
+            }
+        ]
+    }
+});
+</pre>
+        <!-- touch/2.0.0/examples/geocongress/app/view/Splash.js -->
+        <pre>/**
+ * Splash screen
+ */
+Ext.define('GeoCon.view.Splash', {
+    extend: 'Ext.Container',
+    id: 'splashScreen',
+
+    requires: [
+        'GeoCon.view.legislator.List',
+        'GeoCon.view.Settings'
+    ],
+
+    config: {
+        layout: {
+            type: 'card',
+            animation: {
+                type: 'flip'
+            }
+        },
+        items: [
+            {
+                xtype: 'toolbar',
+                docked: 'top',
+                id: 'splashToolbar',
+
+                title: 'Finding location...',
+
+                items: [
+                    {
+                        id: 'settingsBtn',
+                        xtype: 'button',
+                        iconCls: 'settings',
+                        ui: 'plain',
+                        iconMask: true
+                    }
+                ]
+            },
+            {
+                xclass: 'GeoCon.view.legislator.List'
+            },
+            {
+                xclass: 'GeoCon.view.Settings'
+            }
+        ]
+    },
+
+    animateTo: function(dir) {
+        Ext.getCmp('viewport').getLayout().setAnimation({
+            duration: 300,
+            easing: 'ease-in-out',
+            type: 'slide',
+            direction: dir
+        });
+    }
+
+});
+</pre>
+        <!-- touch/2.0.0/examples/geocongress/app/view/bill/List.js -->
+        <pre>/**
+ * A list of Bills
+ */
+Ext.define('GeoCon.view.bill.List', {
+    extend: 'Ext.dataview.List',
+
+    id: 'billList',
+
+    config: {
+        store: 'Bills',
+        grouped: true,
+
+        itemTpl: Ext.create('Ext.XTemplate',
+            '<div class="bill">',
+                '{[this.shortTitle(values.titles)]}',
+            '</div>',
+            {
+                shortTitle: function(titles) {
+                    return titles[0].title;
+                }
+            }
+        )
+    }
+});
+</pre>
+        <!-- touch/2.0.0/examples/geocongress/app/view/bill/Show.js -->
+        <pre>/**
+ * A summary of a Bill
+ */
+Ext.define('GeoCon.view.bill.Show', {
+    extend: 'Ext.Container',
+
+    id: 'billSummary',
+
+    config: {
+
+        scrollable: 'vertical',
+
+        items: [
+            {
+                id: 'billSummaryToolbar',
+                docked: 'top',
+                xtype: 'toolbar',
+                items: [
+                    {
+                        xtype: 'button',
+                        text: 'Back',
+                        ui: 'back',
+                        id: 'billSummaryBackButton'
+                    }
+                ]
+            }
+        ],
+        tpl: [
+            '{summary}'
+        ]
+    }
+});
+</pre>
+        <!-- touch/2.0.0/examples/geocongress/app/view/committee/List.js -->
+        <pre>/**
+ * A list of Committees
+ */
+Ext.define('GeoCon.view.committee.List', {
+    extend: 'Ext.dataview.List',
+
+    id: 'committeeList',
+
+    config: {
+        store: 'Committees',
+        scrollable: false,
+
+        itemTpl: [
+            '<div class="committee">{name}</div>'
+        ]
+    }
+});
+</pre>
+        <!-- touch/2.0.0/examples/geocongress/app/view/legislator/Bio.js -->
+        <pre>/**
+ * A Legislators Bio, including a mug shot and other general information such as contact info
+ */
+Ext.define('GeoCon.view.legislator.Bio', {
+    extend: 'Ext.Container',
+
+    id: 'legislatorBio',
+
+    config: {
+
+        tpl: Ext.create('Ext.XTemplate',
+            '<span class="legislator-pic" style="background-image: url(http://www.govtrack.us/data/photos/{govtrack_id}-50px.jpeg);"></span>',
+            '<div class="legislator-name">',
+                '<div class="title">{title} {firstname} {middlename} {lastname} ({party})</div>',
+                '<div class="district">{state} {district: this.ordinal}</div>',
+            '</div>',
+
+            '<div class="x-list-normal"><div class="x-list-header">Contact Info</div></div>',
+            '<div class="legislator-info">',
+                'Phone: {[this.notAvailable(values.phone)]}<br />',
+                'Email: {[this.notAvailable(values.email)]}<br />',
+                'Website: {[this.notAvailable(values.website)]}',
+            '</div>',
+
+            '<div class="x-list-normal"><div class="x-list-header">Committee Assignments</div></div>',
+            {
+                notAvailable: function(value) {
+                    return value ? value : 'Not Available';
+                },
+                emailNotAvailable: function(value) {
+                    return value ? '<a href="mailto:' + value + '">' + value + '</a>' : 'Not Available';
+                },
+                siteNotAvailable: function(value) {
+                    return value ? '<a href="' + value + '">' + value + '</a>' : 'Not Available';
+                },
+                ordinal: function(value) {
+                    if (isNaN(parseInt(value, 10))) {
+                        return value;
+                    }
+                    var endings = ['th', 'st', 'nd', 'rd'],
+                        digit = value % 10;
+
+                    if (value === 0) {
+                        return 'At-large District';
+                    }
+                    else if (digit > 3 || (value > 10 &amp;&amp; value < 20)) {
+                        return value + 'th District';
+                    }
+                    else {
+                        return value + endings[digit] + ' District';
+                    }
+                }
+            }
+        )
+    }
+});
+</pre>
+        <!-- touch/2.0.0/examples/geocongress/app/view/legislator/Info.js -->
+        <pre>/**
+ * Displays a Legislators Bio, with a list of Committees they are a sponsor of underneath
+ */
+Ext.define('GeoCon.view.legislator.Info', {
+    extend: 'Ext.Container',
+
+    requires: ['GeoCon.view.legislator.Bio', 'GeoCon.view.committee.List'],
+
+    id: 'legislatorInfo',
+
+    config: {
+
+        layout: 'vbox',
+        scrollable: 'vertical',
+
+        items: [
+            {
+                xclass: 'GeoCon.view.legislator.Bio'
+            },
+            {
+                xclass: 'GeoCon.view.committee.List'
+            }
+        ]
+    }
+});
+</pre>
+        <!-- touch/2.0.0/examples/geocongress/app/view/legislator/List.js -->
+        <pre>/**
+ * Displays a list of legislators
+ */
+Ext.define('GeoCon.view.legislator.List', {
+    extend: 'Ext.dataview.List',
+
+    id: 'legislatorList',
+
+    config: {
+        store: 'Legislators',
+        grouped: true,
+        emptyText: 'Loading list of Legislators...',
+        itemTpl: [
+            '<div class="legislator-list-item">',
+                '<span class="legislator-pic" style="background-image: url(http://www.govtrack.us/data/photos/{govtrack_id}-50px.jpeg);"></span>',
+                '{lastname}, {firstname} {middlename}',
+            '</div>'
+        ]
+    }
+});
+</pre>
+        <!-- touch/2.0.0/examples/geocongress/app/view/legislator/TabPanel.js -->
+        <pre>/**
+ * The container for a Legislator's Info, Sponsored Bills and Votes
+ */
+Ext.define('GeoCon.view.legislator.TabPanel', {
+    extend: 'Ext.tab.Panel',
+
+    requires: [
+        'GeoCon.view.legislator.Info',
+        'GeoCon.view.bill.List',
+        'GeoCon.view.vote.List'
+    ],
+
+    id: 'legislatorTabPanel',
+
+    config: {
+        items: [
+            {
+                id: 'legislatorToolbar',
+                docked: 'top',
+                xtype: 'toolbar',
+                items: [
+                    {
+                        xtype: 'button',
+                        text: 'Back',
+                        ui: 'back',
+                        id: 'legislatorBackButton'
+                    }
+                ]
+            },
+            { title: 'Bio',   xclass: 'GeoCon.view.legislator.Info' },
+            { title: 'Bills', xclass: 'GeoCon.view.bill.List' },
+            { title: 'Votes', xclass: 'GeoCon.view.vote.List' }
+        ]
+    }
+});
+</pre>
+        <!-- touch/2.0.0/examples/geocongress/app/view/vote/List.js -->
+        <pre>/**
+ * Displays a list of Votes
+ */
+Ext.define('GeoCon.view.vote.List', {
+    extend: 'Ext.dataview.List',
+
+    id: 'voteList',
+
+    config: {
+        store: 'Votes',
+        grouped: true,
+        disableSelection: true,
+
+        itemTpl: Ext.create('Ext.XTemplate',
+            '<div class="vote">',
+                '{question}',
+                '<div class="results">',
+                    '{result} {[this.voteBreakdown(values.vote_breakdown)]} {[this.required(values.required)]}',
+                '<div>',
+            '</div>',
+            {
+                voteBreakdown: function(voteBreakdown) {
+                    var str = '';
+
+                    if (voteBreakdown.total) {
+                        str = voteBreakdown.total.Yea + '-' + voteBreakdown.total.Nay;
+
+                        if (voteBreakdown.total['Not Voting']) {
+                            str += ", " + voteBreakdown.total['Not Voting'] + " not voting";
+                        }
+                    }
+
+                    return str;
+                },
+
+                required: function(required) {
+                    return required ? '(' + required + ' required)' : '';
+                }
+            }
+        )
+    }
+});
+</pre>
+        <!-- touch/2.0.0/examples/geocongress/app/view/vote/Show.js -->
+        <pre>
+</pre>
+    </div>
+    
+</body>
+</html>

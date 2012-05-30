@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Adding a colorpicker control to an Ext.menu.Menu component in Ext JS</title>
+    <meta Name="description" content="Adding a colorpicker control to an Ext.menu.Menu component in Ext JS" />
+    <meta name="keywords" content="Sencha, Ext JS, Ext JS 4.0.7, Ext.menu.ColorPicker, colormenu, menu" />
+    <link href="/assets/application.css" media="screen" rel="stylesheet" type="text/css" />
+    <style>
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    
+    <div>
+        <header>
+            <h1>Sencha Try</h1>
+        </header>
+        
+        <section id="readme">
+            <h1>Adding a colorpicker control to an Ext.menu.Menu component in Ext JS</h1>
+
+<p>The following example shows how you can add a colorpicker control to an Ext.menu.Menu component in Ext JS by specifying an <code>xtype</code> of "colormenu" on a menu item.</p>
+            <strong>Tags:</strong> <a href="/search/Ext JS">Ext JS</a> <a href="/search/Ext JS 4.0.7">Ext JS 4.0.7</a> <a href="/search/Ext.menu.ColorPicker">Ext.menu.ColorPicker</a> <a href="/search/colormenu">colormenu</a> <a href="/search/menu">menu</a> <br/>
+        </section>
+        <section id="example">
+            [example]
+        </section>
+        
+        <footer>
+            &copy; 2012 Sencha Inc.
+        </footer>
+    </div>
+    
+    <div class="hidden">
+        <!-- extjs/4.0.7/demos/Ext.menu.ColorPicker.1/app.js -->
+        <pre>/*global Ext:false */
+Ext.onReady(function () {
+    var btn = Ext.create('Ext.Button', {
+        menu: {
+            xtype: 'colormenu',
+            value: '000000',
+            handler: function (obj, rgb) {
+                Ext.Msg.alert('border-color: ' + rgb.toString());
+            } // handler
+        }, // menu
+        renderTo: Ext.getBody(),
+        text: 'Menu Button'
+    }).showMenu();
+}); // onReady()
+</pre>
+    </div>
+    
+</body>
+</html>

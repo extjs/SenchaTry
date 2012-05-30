@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Adding a loading mask to an Ext.panel.Panel container in Ext JS</title>
+    <meta Name="description" content="Adding a loading mask to an Ext.panel.Panel container in Ext JS" />
+    <meta name="keywords" content="Sencha, Ext JS, Ext JS 4.0.7, Ext.panel.Panel, Ext.Panel, panel, setLoading()" />
+    <link href="/assets/application.css" media="screen" rel="stylesheet" type="text/css" />
+    <style>
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    
+    <div>
+        <header>
+            <h1>Sencha Try</h1>
+        </header>
+        
+        <section id="readme">
+            <h1>Adding a loading mask to an Ext.panel.Panel container in Ext JS</h1>
+
+<p>The following example shows how you can add a loading mask to an Ext.panel.Panel container in Ext JS by calling the <code>setLoading()</code> method. You can clear the loading mask by calling the <code>setLoading()</code> method and passing <code>false</code>.</p>
+            <strong>Tags:</strong> <a href="/search/Ext JS">Ext JS</a> <a href="/search/Ext JS 4.0.7">Ext JS 4.0.7</a> <a href="/search/Ext.panel.Panel">Ext.panel.Panel</a> <a href="/search/Ext.Panel">Ext.Panel</a> <a href="/search/panel">panel</a> <a href="/search/setLoading()">setLoading()</a> <br/>
+        </section>
+        <section id="example">
+            [example]
+        </section>
+        
+        <footer>
+            &copy; 2012 Sencha Inc.
+        </footer>
+    </div>
+    
+    <div class="hidden">
+        <!-- extjs/4.0.7/demos/Ext.Panel.setLoading.1/app.js -->
+        <pre>/*global Ext:false */
+Ext.onReady(function () {
+    var pnl = Ext.create('Ext.Panel', {
+        height: 150,
+        renderTo: Ext.getBody(),
+        tbar: [{
+            text:"Panel setLoading()",
+            handler: function () {
+                pnl.setLoading();
+                // Clear the loading mask after 3 seconds
+                setTimeout(function (target) {
+                    target.setLoading(false);
+                }, 3000, pnl); // setTimeout()
+            } // handler
+        }] // tbar
+    }); // create()
+}); // onReady()
+</pre>
+    </div>
+    
+</body>
+</html>

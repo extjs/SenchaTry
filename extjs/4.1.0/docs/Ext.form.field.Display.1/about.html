@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Ext.form.field.Display Example</title>
+    <meta Name="description" content="Ext.form.field.Display Example" />
+    <meta name="keywords" content="Sencha, Ext JS, Ext JS 4.1.0, Ext.form.field.Display" />
+    <link href="/assets/application.css" media="screen" rel="stylesheet" type="text/css" />
+    <style>
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    
+    <div>
+        <header>
+            <h1>Sencha Try</h1>
+        </header>
+        
+        <section id="readme">
+            <h1>Ext.form.field.Display Example</h1>
+            <strong>Tags:</strong> <a href="/search/Ext JS">Ext JS</a> <a href="/search/Ext JS 4.1.0">Ext JS 4.1.0</a> <a href="/search/Ext.form.field.Display">Ext.form.field.Display</a> <br/>
+        </section>
+        <section id="example">
+            [example]
+        </section>
+        
+        <footer>
+            &copy; 2012 Sencha Inc.
+        </footer>
+    </div>
+    
+    <div class="hidden">
+        <!-- extjs/4.1.0/docs/Ext.form.field.Display.1/app.js -->
+        <pre>/*global Ext:false */
+Ext.onReady(function() {
+    Ext.create('Ext.form.Panel', {
+        renderTo: Ext.getBody(),
+        width: 175,
+        height: 120,
+        bodyPadding: 10,
+        title: 'Final Score',
+        items: [{
+            xtype: 'displayfield',
+            fieldLabel: 'Home',
+            name: 'home_score',
+            value: '10'
+        }, {
+            xtype: 'displayfield',
+            fieldLabel: 'Visitor',
+            name: 'visitor_score',
+            value: '11'
+        }],
+        buttons: [{
+            text: 'Update'
+        }]
+    });
+});
+</pre>
+    </div>
+    
+</body>
+</html>

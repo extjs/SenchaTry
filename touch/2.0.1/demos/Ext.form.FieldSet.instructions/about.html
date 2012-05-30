@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Setting the instructions on an Ext.form.FieldSet container in Sencha Touch 2</title>
+    <meta Name="description" content="Setting the instructions on an Ext.form.FieldSet container in Sencha Touch 2" />
+    <meta name="keywords" content="Sencha, Sencha Touch, Sencha Touch 2.0.1" />
+    <link href="/assets/application.css" media="screen" rel="stylesheet" type="text/css" />
+    <style>
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    
+    <div>
+        <header>
+            <h1>Sencha Try</h1>
+        </header>
+        
+        <section id="readme">
+            <h1>Setting the instructions on an Ext.form.FieldSet container in Sencha Touch 2</h1>
+
+<p>The following example shows how you can set the instructions on an Ext.form.FieldSet container in Sencha Touch 2 by using the <code>instructions</code> config option or calling the <code>setInstructions()</code> method.</p>
+            <strong>Tags:</strong> <a href="/search/Sencha Touch">Sencha Touch</a> <a href="/search/Sencha Touch 2.0.1">Sencha Touch 2.0.1</a> <br/>
+        </section>
+        <section id="example">
+            [example]
+        </section>
+        
+        <footer>
+            &copy; 2012 Sencha Inc.
+        </footer>
+    </div>
+    
+    <div class="hidden">
+        <!-- touch/2.0.1/demos/Ext.form.FieldSet.instructions/app.js -->
+        <pre>/*global Ext:false */
+Ext.application({
+    launch: function () {
+        var contactForm = Ext.create('Ext.form.FormPanel', {
+            fullscreen: true,
+            items: [{
+                xtype: 'toolbar',
+                docked: 'top',
+                items: {
+                    xtype: 'textfield',
+                    name: 'search',
+                    placeHolder: 'Set FieldSet instructions',
+                    listeners: {
+                        keyup: function (field, evt) {
+                            Ext.getCmp('myFieldSet').setInstructions(field.getValue());
+                        } // keyup
+                    } // listeners
+                } // titlebar
+            }, {
+                xtype: 'fieldset',
+                id: 'myFieldSet',
+                title: 'FieldSet title',
+                instructions: 'FieldSet instructions. <strong>Note:</strong> This can include <a href="http://sencha.com/" target="_blank">HTML</a> tags.',
+                items: [{
+                    xtype: 'textfield',
+                    name: 'fname',
+                    label: 'First name:'
+                }, {
+                    xtype: 'textfield',
+                    name: 'lname',
+                    label: 'Last name:'
+                }] // items (fieldset)
+            }] // items (formpanel)
+        }); // create()
+    } // launch
+}); // application()
+</pre>
+    </div>
+    
+</body>
+</html>

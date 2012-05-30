@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Ext.SegmentedButton Example</title>
+    <meta Name="description" content="Ext.SegmentedButton Example" />
+    <meta name="keywords" content="Sencha, Sencha Touch, Sencha Touch 2.0.0, Ext.SegmentedButton, segmentedbutton, allowMultiple, items, listeners, toggle" />
+    <link href="/assets/application.css" media="screen" rel="stylesheet" type="text/css" />
+    <style>
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    
+    <div>
+        <header>
+            <h1>Sencha Try</h1>
+        </header>
+        
+        <section id="readme">
+            <h1>Ext.SegmentedButton Example</h1>
+            <strong>Tags:</strong> <a href="/search/Sencha Touch">Sencha Touch</a> <a href="/search/Sencha Touch 2.0.0">Sencha Touch 2.0.0</a> <a href="/search/Ext.SegmentedButton">Ext.SegmentedButton</a> <a href="/search/segmentedbutton">segmentedbutton</a> <a href="/search/allowMultiple">allowMultiple</a> <a href="/search/items">items</a> <a href="/search/listeners">listeners</a> <a href="/search/toggle">toggle</a> <br/>
+        </section>
+        <section id="example">
+            [example]
+        </section>
+        
+        <footer>
+            &copy; 2012 Sencha Inc.
+        </footer>
+    </div>
+    
+    <div class="hidden">
+        <!-- touch/2.0.0/docs/Ext.SegmentedButton.1/app.js -->
+        <pre>/*global Ext:false */
+Ext.application({
+    launch: function () {
+        var segmentedButton = new Ext.SegmentedButton({
+            allowMultiple: true,
+            items: [{
+                text: 'Option 1'
+            }, {
+                text: 'Option 2',
+                pressed: true
+            }, {
+                text: 'Option 3'
+            }],
+            listeners: {
+                toggle: function (container, button, pressed) {
+                    Ext.Msg.alert("User toggled the '" + button.text + "' button: " + (pressed ? 'on' : 'off'));
+                }
+            }
+        });
+        Ext.Viewport.add({
+            xtype: 'container',
+            padding: 10,
+            items: [segmentedButton]
+        });
+    } // launch
+}); // application()
+</pre>
+    </div>
+    
+</body>
+</html>

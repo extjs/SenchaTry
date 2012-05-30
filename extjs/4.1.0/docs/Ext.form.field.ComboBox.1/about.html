@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Ext.form.field.ComboBox Example</title>
+    <meta Name="description" content="Ext.form.field.ComboBox Example" />
+    <meta name="keywords" content="Sencha, Ext JS, Ext JS 4.1.0, Ext.form.field.ComboBox" />
+    <link href="/assets/application.css" media="screen" rel="stylesheet" type="text/css" />
+    <style>
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    
+    <div>
+        <header>
+            <h1>Sencha Try</h1>
+        </header>
+        
+        <section id="readme">
+            <h1>Ext.form.field.ComboBox Example</h1>
+            <strong>Tags:</strong> <a href="/search/Ext JS">Ext JS</a> <a href="/search/Ext JS 4.1.0">Ext JS 4.1.0</a> <a href="/search/Ext.form.field.ComboBox">Ext.form.field.ComboBox</a> <br/>
+        </section>
+        <section id="example">
+            [example]
+        </section>
+        
+        <footer>
+            &copy; 2012 Sencha Inc.
+        </footer>
+    </div>
+    
+    <div class="hidden">
+        <!-- extjs/4.1.0/docs/Ext.form.field.ComboBox.1/app.js -->
+        <pre>/*global Ext:false */
+Ext.onReady(function() {
+    // The data store containing the list of states
+    var states = Ext.create('Ext.data.Store', {
+        fields: ['abbr', 'name'],
+        data: [{
+            "abbr": "AL",
+            "name": "Alabama"
+        }, {
+            "abbr": "AK",
+            "name": "Alaska"
+        }, {
+            "abbr": "AZ",
+            "name": "Arizona"
+        }
+        //...
+        ]
+    });
+
+    // Create the combo box, attached to the states data store
+    Ext.create('Ext.form.ComboBox', {
+        fieldLabel: 'Choose State',
+        store: states,
+        queryMode: 'local',
+        displayField: 'name',
+        valueField: 'abbr',
+        renderTo: Ext.getBody()
+    });
+});
+</pre>
+    </div>
+    
+</body>
+</html>

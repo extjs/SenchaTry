@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <title>events Example</title>
+    <meta Name="description" content="events Example" />
+    <meta name="keywords" content="Sencha, Sencha Touch, Sencha Touch 2.0.1" />
+    <link href="/assets/application.css" media="screen" rel="stylesheet" type="text/css" />
+    <style>
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    
+    <div>
+        <header>
+            <h1>Sencha Try</h1>
+        </header>
+        
+        <section id="readme">
+            <h1>events Example</h1>
+            <strong>Tags:</strong> <a href="/search/Sencha Touch">Sencha Touch</a> <a href="/search/Sencha Touch 2.0.1">Sencha Touch 2.0.1</a> <br/>
+        </section>
+        <section id="example">
+            [example]
+        </section>
+        
+        <footer>
+            &copy; 2012 Sencha Inc.
+        </footer>
+    </div>
+    
+    <div class="hidden">
+        <!-- touch/2.0.1/guides/events.3/app.js -->
+        <pre>/*global Ext:false */
+Ext.application({
+    launch: function() {
+        Ext.Viewport.add({
+            xtype: 'button',
+            centered: true,
+            text: 'My Button',
+
+            listeners: {
+                tap: function() {
+                    this.hide();
+                },
+                hide: function() {
+                    //waits 1 second (1000ms) then shows the button again
+                    Ext.defer(function() {
+                        this.show();
+                    }, 1000, this);
+                }
+            }
+        });
+    }
+});
+</pre>
+    </div>
+    
+</body>
+</html>

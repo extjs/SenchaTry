@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Allowing multiple selection on an Ext.List component in Sencha Touch 2</title>
+    <meta Name="description" content="Allowing multiple selection on an Ext.List component in Sencha Touch 2" />
+    <meta name="keywords" content="Sencha, Sencha Touch, Sencha Touch 2.0.1" />
+    <link href="/assets/application.css" media="screen" rel="stylesheet" type="text/css" />
+    <style>
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    
+    <div>
+        <header>
+            <h1>Sencha Try</h1>
+        </header>
+        
+        <section id="readme">
+            <h1>Allowing multiple selection on an Ext.List component in Sencha Touch 2</h1>
+
+<p>The following example shows how you can enable multiple item selection on an Ext.List component in Sencha Touch 2 by setting the <code>mode</code> config option.</p>
+            <strong>Tags:</strong> <a href="/search/Sencha Touch">Sencha Touch</a> <a href="/search/Sencha Touch 2.0.1">Sencha Touch 2.0.1</a> <br/>
+        </section>
+        <section id="example">
+            [example]
+        </section>
+        
+        <footer>
+            &copy; 2012 Sencha Inc.
+        </footer>
+    </div>
+    
+    <div class="hidden">
+        <!-- touch/2.0.1/demos/Ext.List.mode/app.js -->
+        <pre>/*global Ext:false */
+Ext.application({
+    launch: function () {
+        Ext.create('Ext.List', {
+            fullscreen: true,
+            mode: 'MULTI',
+            store: {
+                fields: ['name'],
+                data: [{
+                    name: 'Red'
+                }, {
+                    name: 'Orange'
+                }, {
+                    name: 'Yellow'
+                }, {
+                    name: 'Green'
+                }, {
+                    name: 'Blue'
+                }] // data
+            }, // store
+            itemTpl: '{name}',
+            listeners: {
+                selectionchange: function (list, records) {
+                    var names = [];
+                    Ext.Array.each(records, function (item) {
+                        names.push('<li>' + item.data.name + '</li>');
+                    }); // each()
+                    Ext.Msg.alert('You selected ' + records.length + ' item(s)', '<ul>' + names.join('') + '</ul>');
+                } // selectionchange
+            } // listeners
+        }); // create()
+    } // launch
+}); // application()
+</pre>
+    </div>
+    
+</body>
+</html>

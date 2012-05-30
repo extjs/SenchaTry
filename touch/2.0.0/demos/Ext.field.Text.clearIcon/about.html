@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Toggling the clear icon on an Ext.field.Text control in Sencha Touch 2</title>
+    <meta Name="description" content="Toggling the clear icon on an Ext.field.Text control in Sencha Touch 2" />
+    <meta name="keywords" content="Sencha, Sencha Touch, Sencha Touch 2.0.0" />
+    <link href="/assets/application.css" media="screen" rel="stylesheet" type="text/css" />
+    <style>
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    
+    <div>
+        <header>
+            <h1>Sencha Try</h1>
+        </header>
+        
+        <section id="readme">
+            <h1>Toggling the clear icon on an Ext.field.Text control in Sencha Touch 2</h1>
+
+<p>The following example shows how you can toggle the clear icon on an Ext.field.Text control in Sencha Touch 2 by using the Boolean <code>clearIcon</code> config option.</p>
+            <strong>Tags:</strong> <a href="/search/Sencha Touch">Sencha Touch</a> <a href="/search/Sencha Touch 2.0.0">Sencha Touch 2.0.0</a> <br/>
+        </section>
+        <section id="example">
+            [example]
+        </section>
+        
+        <footer>
+            &copy; 2012 Sencha Inc.
+        </footer>
+    </div>
+    
+    <div class="hidden">
+        <!-- touch/2.0.0/demos/Ext.field.Text.clearIcon/app.js -->
+        <pre>/*global Ext:false */
+Ext.application({
+    launch: function () {
+        Ext.create('Ext.form.FormPanel', {
+            fullscreen: true,
+            items: [{
+                xtype: 'fieldset',
+                title: 'FieldSet clearIcon example:',
+                items: [{
+                    xtype: 'textfield',
+                    label: 'clearIcon: true (default)',
+                    value: 'I will show a clear icon >>>',
+                    clearIcon: true
+                }, {
+                    xtype: 'textfield',
+                    label: 'clearIcon: false',
+                    value: 'I will NOT show a clear icon >>>',
+                    clearIcon: false
+                }] // items (fieldset)
+            }] // items (formpanel)
+        }); // create()
+    } // launch
+}); // application()
+</pre>
+    </div>
+    
+</body>
+</html>

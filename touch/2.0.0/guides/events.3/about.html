@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Understanding and Using Events in Sencha Touch 2</title>
+    <meta Name="description" content="Understanding and Using Events in Sencha Touch 2" />
+    <meta name="keywords" content="Sencha, Sencha Touch, Sencha Touch 2.0.0" />
+    <link href="/assets/application.css" media="screen" rel="stylesheet" type="text/css" />
+    <style>
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    
+    <div>
+        <header>
+            <h1>Sencha Try</h1>
+        </header>
+        
+        <section id="readme">
+            <h1>Understanding and Using Events in Sencha Touch 2</h1>
+
+<p>Most classes and components in Sencha Touch 2 fire useful events that you can respond to. Here we take a look at how they work.</p>
+            <strong>Tags:</strong> <a href="/search/Sencha Touch">Sencha Touch</a> <a href="/search/Sencha Touch 2.0.0">Sencha Touch 2.0.0</a> <br/>
+        </section>
+        <section id="example">
+            [example]
+        </section>
+        
+        <footer>
+            &copy; 2012 Sencha Inc.
+        </footer>
+    </div>
+    
+    <div class="hidden">
+        <!-- touch/2.0.0/guides/events.3/app.js -->
+        <pre>/*global Ext:false */
+Ext.application({
+    launch: function () {
+        Ext.Viewport.add({
+            xtype: 'button',
+            centered: true,
+            text: 'My Button',
+
+            listeners: {
+                tap: function () {
+                    this.hide();
+                },
+                hide: function () {
+                    //waits 1 second (1000ms) then shows the button again
+                    Ext.defer(function () {
+                        this.show();
+                    }, 1000, this);
+                }
+            }
+        });
+    } // launch
+}); // application()
+</pre>
+    </div>
+    
+</body>
+</html>

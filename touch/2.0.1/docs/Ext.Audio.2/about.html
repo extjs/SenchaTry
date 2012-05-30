@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Ext.Audio Example</title>
+    <meta Name="description" content="Ext.Audio Example" />
+    <meta name="keywords" content="Sencha, Sencha Touch, Sencha Touch 2.0.1, Ext.Audio" />
+    <link href="/assets/application.css" media="screen" rel="stylesheet" type="text/css" />
+    <style>
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    
+    <div>
+        <header>
+            <h1>Sencha Try</h1>
+        </header>
+        
+        <section id="readme">
+            <h1>Ext.Audio Example</h1>
+            <strong>Tags:</strong> <a href="/search/Sencha Touch">Sencha Touch</a> <a href="/search/Sencha Touch 2.0.1">Sencha Touch 2.0.1</a> <a href="/search/Ext.Audio">Ext.Audio</a> <br/>
+        </section>
+        <section id="example">
+            [example]
+        </section>
+        
+        <footer>
+            &copy; 2012 Sencha Inc.
+        </footer>
+    </div>
+    
+    <div class="hidden">
+        <!-- touch/2.0.1/docs/Ext.Audio.2/app.js -->
+        <pre>/*global Ext:false */
+Ext.application({
+    launch: function() {
+        Ext.create('Ext.Container', {
+            fullscreen: true,
+            layout: {
+                type: 'vbox',
+                pack: 'center'
+            },
+            items: [{
+                xtype: 'toolbar',
+                docked: 'top',
+                title: 'Ext.Audio'
+            }, {
+                xtype: 'toolbar',
+                docked: 'bottom',
+                defaults: {
+                    xtype: 'button',
+                    handler: function() {
+                        var container = this.getParent().getParent(),
+                            // use ComponentQuery to get the audio component (using its xtype)
+                            audio = container.down('audio');
+
+                        audio.toggle();
+                        this.setText(audio.isPlaying() ? 'Pause' : 'Play');
+                    }
+                },
+                items: [{
+                    text: 'Play',
+                    flex: 1
+                }]
+            }, {
+                html: 'Hidden audio!',
+                styleHtmlContent: true
+            }, {
+                xtype: 'audio',
+                hidden: true,
+                url: 'touch/examples/audio/crash.mp3'
+            }]
+        });
+    }
+});
+</pre>
+    </div>
+    
+</body>
+</html>

@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Setting text alignment on an Ext.picker.Slot control in Sencha Touch 2</title>
+    <meta Name="description" content="Setting text alignment on an Ext.picker.Slot control in Sencha Touch 2" />
+    <meta name="keywords" content="Sencha, Sencha Touch, Sencha Touch 2.0.1" />
+    <link href="/assets/application.css" media="screen" rel="stylesheet" type="text/css" />
+    <style>
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    
+    <div>
+        <header>
+            <h1>Sencha Try</h1>
+        </header>
+        
+        <section id="readme">
+            <h1>Setting text alignment on an Ext.picker.Slot control in Sencha Touch 2</h1>
+
+<p>The following example shows how you can set the text alignment on an Ext.picker.Slot (pickerslot) control in Sencha Touch 2 by setting the <code>align</code> config option.</p>
+            <strong>Tags:</strong> <a href="/search/Sencha Touch">Sencha Touch</a> <a href="/search/Sencha Touch 2.0.1">Sencha Touch 2.0.1</a> <br/>
+        </section>
+        <section id="example">
+            [example]
+        </section>
+        
+        <footer>
+            &copy; 2012 Sencha Inc.
+        </footer>
+    </div>
+    
+    <div class="hidden">
+        <!-- touch/2.0.1/demos/Ext.picker.Slot.align/app.js -->
+        <pre>/*global Ext:false */
+Ext.application({
+    launch: function () {
+        var data = [{
+            text: 'Red',
+            value: 0xf00
+        }, {
+            text: 'Orange',
+            value: 0xffb600
+        }, {
+            text: 'Yellow',
+            value: 0xff0
+        }, {
+            text: 'Green',
+            value: 0x80ff4d
+        }, {
+            text: 'Blue',
+            value: 0x009dff
+        }];
+        
+        Ext.create('Ext.Container', {
+            fullscreen: true,
+            items: [{
+                xtype: 'toolbar',
+                docked: 'top',
+                items: [{
+                    text: 'Launch picker',
+                    handler: function () {
+                        picker.show();
+                    } // handler
+                }] // items (toolbar)
+            }] // items (container)
+        }); // create()
+        
+        var picker = Ext.create('Ext.Picker', {
+            useTitles: true,
+            slots: [{
+                align: 'left',
+                name: 'align_left',
+                title: 'align = left',
+                data: data
+            }, {
+                align: 'center',
+                name: 'align_center',
+                title: 'align = center',
+                data: data
+            }, {
+                align: 'right',
+                name: 'align_right',
+                title: 'align = right',
+                data: data
+            }] // slots
+        }); // create()
+        
+        Ext.Viewport.add(picker);
+    } // launch
+}); // application()
+</pre>
+    </div>
+    
+</body>
+</html>

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Setting a loading mask on an Ext.List component in Sencha Touch 2</title>
+    <meta Name="description" content="Setting a loading mask on an Ext.List component in Sencha Touch 2" />
+    <meta name="keywords" content="Sencha, Sencha Touch, Sencha Touch 2.0.1" />
+    <link href="/assets/application.css" media="screen" rel="stylesheet" type="text/css" />
+    <style>
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    
+    <div>
+        <header>
+            <h1>Sencha Try</h1>
+        </header>
+        
+        <section id="readme">
+            <h1>Setting a loading mask on an Ext.List component in Sencha Touch 2</h1>
+
+<p>The following example shows how you can apply a load mask to an Ext.List (list) control in Sencha Touch 2 by setting the <code>masked</code> config option to an Ext.LoadMask object.</p>
+            <strong>Tags:</strong> <a href="/search/Sencha Touch">Sencha Touch</a> <a href="/search/Sencha Touch 2.0.1">Sencha Touch 2.0.1</a> <br/>
+        </section>
+        <section id="example">
+            [example]
+        </section>
+        
+        <footer>
+            &copy; 2012 Sencha Inc.
+        </footer>
+    </div>
+    
+    <div class="hidden">
+        <!-- touch/2.0.1/demos/Ext.List.masked/app.js -->
+        <pre>/*global Ext:false */
+Ext.application({
+    launch: function () {
+        Ext.create('Ext.List', {
+            fullscreen: true,
+            itemTpl: '{name}',
+            masked: {
+                xtype: 'loadmask',
+                message: 'Please wait while we fetch some more data... ' +
+                    '<hr>Still waiting? Seriously, this dialog won\'t ' +
+                    'disappear until you call <code>setMasked(false)</code>'
+            }, // masked
+            store: {
+                fields: ['name'],
+                data: [{
+                    name: 'Red'
+                }, {
+                    name: 'Orange'
+                }, {
+                    name: 'Yellow'
+                }, {
+                    name: 'Green'
+                }, {
+                    name: 'Blue'
+                }] // data
+            } // store
+        }); // create()
+    } // launch
+}); // application()
+</pre>
+    </div>
+    
+</body>
+</html>

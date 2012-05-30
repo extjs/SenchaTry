@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Programmatically selecting items in an Ext.List component in Sencha Touch 2</title>
+    <meta Name="description" content="Programmatically selecting items in an Ext.List component in Sencha Touch 2" />
+    <meta name="keywords" content="Sencha, Sencha Touch, Sencha Touch 2.0.1" />
+    <link href="/assets/application.css" media="screen" rel="stylesheet" type="text/css" />
+    <style>
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    
+    <div>
+        <header>
+            <h1>Sencha Try</h1>
+        </header>
+        
+        <section id="readme">
+            <h1>Programmatically selecting items in an Ext.List component in Sencha Touch 2</h1>
+
+<p>The following example shows how you can programmatically items in an Ext.List (list) control in Sencha Touch 2 by calling the <code>select()</code> or <code>selectAll()</code> method.</p>
+            <strong>Tags:</strong> <a href="/search/Sencha Touch">Sencha Touch</a> <a href="/search/Sencha Touch 2.0.1">Sencha Touch 2.0.1</a> <br/>
+        </section>
+        <section id="example">
+            [example]
+        </section>
+        
+        <footer>
+            &copy; 2012 Sencha Inc.
+        </footer>
+    </div>
+    
+    <div class="hidden">
+        <!-- touch/2.0.1/demos/Ext.List.select/app.js -->
+        <pre>/*global Ext:false */
+Ext.application({
+    launch: function () {
+        var myList = Ext.create('Ext.List', {
+            fullscreen: true,
+            mode: 'MULTI',
+            items: [{
+                xtype: 'toolbar',
+                docked: 'top',
+                items: [{
+                    text: 'Select item #1',
+                    handler: function () {
+                        myList.select(1);
+                    } // handler
+                }, {
+                    text: 'Select item #3',
+                    handler: function () {
+                        myList.select(3);
+                    } // handler
+                }, {
+                    text: 'Select items #0 &amp; #2',
+                    handler: function () {
+                        myList.select(0);
+                        myList.select(2, true);
+                    } // handler
+                }, {
+                    text: 'Select all',
+                    handler: function () {
+                        myList.selectAll();
+                    } // handler
+                }] // items
+            }], // items
+            store: {
+                fields: ['name', 'league', 'division'],
+                data: [{
+                    name: 'New York Yankees',
+                    league: 'AL',
+                    division: 'East'
+                }, {
+                    name: 'Tampa Bay',
+                    league: 'AL',
+                    division: 'East'
+                }, {
+                    name: 'Boston',
+                    league: 'AL',
+                    division: 'East'
+                }, {
+                    name: 'Toronto',
+                    league: 'AL',
+                    division: 'East'
+                }, {
+                    name: 'Baltimore',
+                    league: 'AL',
+                    division: 'East'
+                }, {
+                    name: 'Detroit',
+                    league: 'AL',
+                    division: 'Central'
+                }, {
+                    name: 'Cleveland',
+                    league: 'AL',
+                    division: 'Central'
+                }, {
+                    name: 'Chicago White Sox',
+                    league: 'AL',
+                    division: 'Central'
+                }, {
+                    name: 'Kansas City',
+                    league: 'AL',
+                    division: 'Central'
+                }, {
+                    name: 'Minnesota',
+                    league: 'AL',
+                    division: 'Central'
+                }, {
+                    name: 'Texas',
+                    league: 'AL',
+                    division: 'West'
+                }, {
+                    name: 'Los Angeles Angels',
+                    league: 'AL',
+                    division: 'West'
+                }, {
+                    name: 'Oakland',
+                    league: 'AL',
+                    division: 'West'
+                }, {
+                    name: 'Seattle',
+                    league: 'AL',
+                    division: 'West'
+                }] // data
+            }, // store
+            itemTpl: '{name}'
+        }); // create()
+    } // launch
+}); // application()
+</pre>
+    </div>
+    
+</body>
+</html>
