@@ -2,109 +2,95 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8"/>
-    <title>Ext.layout.container.Card Example</title>
-    <meta Name="description" content="Ext.layout.container.Card Example" />
+    <title>Ext.layout.container.Card Example | Sencha Try</title>
+    <meta name="description" content="Ext.layout.container.Card Example" />
     <meta name="keywords" content="Sencha, Ext JS, Ext JS 4.1.0, Ext.layout.container.Card" />
+    <meta name="author" content="Sencha Inc.">
     <link href="/assets/application.css" media="screen" rel="stylesheet" type="text/css" />
 </head>
 <body>
-    
-    <div>
-        <header>
-            <h1>Sencha Try</h1>
-        </header>
-        
-        <section id="readme">
-            <div class="intro"><h1>Ext.layout.container.Card Example</h1></div>
-            <div>
-                <a href="src.zip" download="extjs_4.1.0_docs_Ext.layout.container.Card.1.zip">DOWNLOAD</a>
-            </div>
-            <nav>
-                <h2>Tags:</h2>
-                <ul class="tags">
-                    <li><a href="/tags/Ext%20JS/">Ext JS</a></li>
-                    <li><a href="/tags/Ext%20JS%204.1.0/">Ext JS 4.1.0</a></li>
-                    <li><a href="/tags/Ext.layout.container.Card/">Ext.layout.container.Card</a></li>
-                </ul>
-            </nav>
-        </section>
-        
-        <section id="example">
-            [example]
-        </section>
-        
-        <nav>
-            <h2>See Also:</h2>
-            <ul class="seeAlso">
-                <li class="docs"><a href="http://docs.sencha.com/ext-js/4-1/#!/api/Ext.layout.container.Card" target="_blank">Ext.layout.container.Card Documentation</a></li>
-                <li class="video"><a href="http://docs.sencha.com/ext-js/4-1/#!/video/17917111" target="_blank">The Ext JS 4 Layout System Video</a></li>
-            </ul>
-        </nav>
-        
-        <footer>
-            &copy; 2012 Sencha Inc.
-        </footer>
-    </div>
-    
-    <div class="hidden">
-        <!-- extjs/4.1.0/docs/Ext.layout.container.Card.1/app.js -->
-        <pre>/*global Ext:false */
-Ext.onReady(function() {
-    var navigate = function(panel, direction) {
-            // This routine could contain business logic required to manage the navigation steps.
-            // It would call setActiveItem as needed, manage navigation button state, handle any
-            // branching logic that might be required, handle alternate actions like cancellation
-            // or finalization, etc.  A complete wizard implementation could get pretty
-            // sophisticated depending on the complexity required, and should probably be
-            // done as a subclass of CardLayout in a real-world implementation.
-            var layout = panel.getLayout();
-            layout[direction]();
-            Ext.getCmp('move-prev').setDisabled(!layout.getPrev());
-            Ext.getCmp('move-next').setDisabled(!layout.getNext());
-        };
 
-    Ext.create('Ext.panel.Panel', {
-        title: 'Example Wizard',
-        width: 300,
-        height: 200,
-        layout: 'card',
-        bodyStyle: 'padding:15px',
-        defaults: {
-            // applied to each contained panel
-            border: false
-        },
-        // just an example of one possible navigation scheme, using buttons
-        bbar: [{
-            id: 'move-prev',
-            text: 'Back',
-            handler: function(btn) {
-                navigate(btn.up("panel"), "prev");
-            },
-            disabled: true
-        }, '->', // greedy spacer so that the buttons are aligned to each side
-        {
-            id: 'move-next',
-            text: 'Next',
-            handler: function(btn) {
-                navigate(btn.up("panel"), "next");
-            }
-        }],
-        // the panels (or "cards") within the layout
-        items: [{
-            id: 'card-0',
-            html: '<h1>Welcome to the Wizard!</h1><p>Step 1 of 3</p>'
-        }, {
-            id: 'card-1',
-            html: '<p>Step 2 of 3</p>'
-        }, {
-            id: 'card-2',
-            html: '<h1>Congratulations!</h1><p>Step 3 of 3 - Complete</p>'
-        }],
-        renderTo: Ext.getBody()
-    });
-});
-</pre>
+    <div id="logo-container" class="skiptranslate">
+        <h1 id="logo"><a href="/"><img src="/assets/logo.png" alt="Sencha Try" /></a></h1>
+        <span id="glow"></span>
+    </div>
+    <ul>
+        <li class="with-sub">
+            <a href="#" class="dropdown">Sencha Network</a>
+            <div id="docs-dropdown" class="pop-nav zero">
+                <ul>
+                    <li><a href="http://sencha.com/">Sencha.com</a></li>
+                    <li><a href="http://sencha.com/products/io/">Sencha.io</a></li>
+                    <li><a href="http://market.sencha.com/">Sencha Market</a></li>
+                </ul>
+            </div>
+        </li>
+    </ul>
+    
+    <div id="content-wrapper" class="clearfix">
+        <div id="content">
+            <a href="/">Home</a> <span>/</span> <a href="/extjs/">Ext JS</a> <span>/</span> <a href="/extjs/4.1.0/">4.1.0</a> <span>/</span> Ext.layout.container.Card Example
+            <div class="developer">
+                <div class="column_nine">
+                    <div class="details">
+                        <div class="top-block border">
+                            <h2 class="alt">Ext.layout.container.Card Example</h2>
+                        </div>
+                        <div class="plain-text"></div>
+                        <h3>[example widget]</h3>
+                        <div>
+                            <ul class="developer-actions">
+                                <li class="request"><a href="src.zip" class="button-link center">Download</a></li>
+                            </ul>
+                        </div>
+                        <hr class="clear" />
+                        <h4>Tags</h4>
+                        <ul class="services-list alt clearfix tags">
+                            <li><a href="/tags/Ext%20JS/">Ext JS</a></li>
+                            <li><a href="/tags/Ext%20JS%204.1.0/">Ext JS 4.1.0</a></li>
+                            <li><a href="/tags/Ext.layout.container.Card/"><code>Ext.layout.container.Card</code></a></li>
+                        </ul>
+                        <h4>See Also</h4>
+                        <ul class="services-list alt clearfix see-also">
+                            <li class="docs"><a href="http://docs.sencha.com/ext-js/4-1/#!/api/Ext.layout.container.Card" target="_blank">Ext.layout.container.Card Documentation</a></li>
+                            <li class="video"><a href="http://docs.sencha.com/ext-js/4-1/#!/video/17917111" target="_blank">The Ext JS 4 Layout System Video</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
     
+    <div id="footer-content">
+        <div class="columns">
+            <ul class="column">
+                <li>
+                    <a class="main" href="http://sencha.com/company/">Company</a>
+                    <ul class="zero">
+                        <li class="first"><a href="http://www.sencha.com/contact/" rel="nofollow">Contact Us</a></li>
+                        <li class="last"><a href="/pages/terms/" rel="nofollow">Terms of Use</a></li>
+                    </ul>
+                </li>
+            </ul>
+            <ul class="column">
+                <li>
+                    <a class="main" href="/">Listings</a>
+                    <ul class="zero">
+                        <li class="first"><a href="/developers/">Full listing</a></li>
+                        <li class="last"><a href="/developers/by_location/">Geographic listing</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+        <hr />
+        <div id="copyright">
+            <p>&copy; 2012 Sencha Inc. All rights reserved.</p>
+        </div>
+    </div>
+
+    <div class="hidden">
+        <pre class="example" data-uri="/extjs/4.1.0/docs/Ext.layout.container.Card.1/app.js">(hidden)</pre>
+    </div>
+
 </body>
 </html>

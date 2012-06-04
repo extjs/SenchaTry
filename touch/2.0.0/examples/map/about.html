@@ -2,357 +2,94 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8"/>
-    <title>Map</title>
-    <meta Name="description" content="Map" />
+    <title>Map | Sencha Try</title>
+    <meta name="description" content="Map" />
     <meta name="keywords" content="Sencha, Sencha Touch, Sencha Touch 2.0.0" />
+    <meta name="author" content="Sencha Inc.">
     <link href="/assets/application.css" media="screen" rel="stylesheet" type="text/css" />
 </head>
 <body>
-    
-    <div>
-        <header>
-            <h1>Sencha Try</h1>
-        </header>
-        
-        <section id="readme">
-            <div class="intro"><h1>Map</h1></div>
-            <div>
-                <a href="src.zip" download="touch_2.0.0_examples_map.zip">DOWNLOAD</a>
-            </div>
-            <nav>
-                <h2>Tags:</h2>
-                <ul class="tags">
-                    <li><a href="/tags/Sencha%20Touch/">Sencha Touch</a></li>
-                    <li><a href="/tags/Sencha%20Touch%202.0.0/">Sencha Touch 2.0.0</a></li>
+
+    <div id="logo-container" class="skiptranslate">
+        <h1 id="logo"><a href="/"><img src="/assets/logo.png" alt="Sencha Try" /></a></h1>
+        <span id="glow"></span>
+    </div>
+    <ul>
+        <li class="with-sub">
+            <a href="#" class="dropdown">Sencha Network</a>
+            <div id="docs-dropdown" class="pop-nav zero">
+                <ul>
+                    <li><a href="http://sencha.com/">Sencha.com</a></li>
+                    <li><a href="http://sencha.com/products/io/">Sencha.io</a></li>
+                    <li><a href="http://market.sencha.com/">Sencha Market</a></li>
                 </ul>
-            </nav>
-        </section>
-        
-        <section id="example">
-            [example]
-        </section>
-        
-        
-        <footer>
-            &copy; 2012 Sencha Inc.
-        </footer>
+            </div>
+        </li>
+    </ul>
+    
+    <div id="content-wrapper" class="clearfix">
+        <div id="content">
+            <a href="/">Home</a> <span>/</span> <a href="/touch/">Touch</a> <span>/</span> <a href="/touch/2.0.0/">2.0.0</a> <span>/</span> Map
+            <div class="developer">
+                <div class="column_nine">
+                    <div class="details">
+                        <div class="top-block border">
+                            <h2 class="alt">Map</h2>
+                        </div>
+                        <div class="plain-text"></div>
+                        <h3>[example widget]</h3>
+                        <div>
+                            <ul class="developer-actions">
+                                <li class="request"><a href="src.zip" class="button-link center">Download</a></li>
+                            </ul>
+                        </div>
+                        <hr class="clear" />
+                        <h4>Tags</h4>
+                        <ul class="services-list alt clearfix tags">
+                            <li><a href="/tags/Sencha%20Touch/">Sencha Touch</a></li>
+                            <li><a href="/tags/Sencha%20Touch%202.0.0/">Sencha Touch 2.0.0</a></li>
+                        </ul>
+                        <h4>See Also</h4>
+                        <ul class="services-list alt clearfix see-also">
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
     
+    <div id="footer-content">
+        <div class="columns">
+            <ul class="column">
+                <li>
+                    <a class="main" href="http://sencha.com/company/">Company</a>
+                    <ul class="zero">
+                        <li class="first"><a href="http://www.sencha.com/contact/" rel="nofollow">Contact Us</a></li>
+                        <li class="last"><a href="/pages/terms/" rel="nofollow">Terms of Use</a></li>
+                    </ul>
+                </li>
+            </ul>
+            <ul class="column">
+                <li>
+                    <a class="main" href="/">Listings</a>
+                    <ul class="zero">
+                        <li class="first"><a href="/developers/">Full listing</a></li>
+                        <li class="last"><a href="/developers/by_location/">Geographic listing</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+        <hr />
+        <div id="copyright">
+            <p>&copy; 2012 Sencha Inc. All rights reserved.</p>
+        </div>
+    </div>
+
     <div class="hidden">
-        <!-- touch/2.0.0/examples/map/app.js -->
-        <pre>/*global Ext:false */
-/**
- * This is a demo application which shows the Ext.Map component in Sencha Touch.
- */
-Ext.application({
-    glossOnIcon: false,
-    icon: {
-        57: 'resources/icons/icon.png',
-        72: 'resources/icons/icon@72.png',
-        114: 'resources/icons/icon@2x.png',
-        144: 'resources/icons/icon@114.png'
-    },
-
-    phoneStartupScreen: 'resources/loading/Homescreen.jpg',
-    tabletStartupScreen: 'resources/loading/Homescreen~ipad.jpg',
-
-    requires: [
-        'Ext.Map',
-        'Ext.Button',
-        'Ext.SegmentedButton',
-        'Ext.Panel',
-        'Ext.Toolbar',
-        'Ext.plugin.google.Traffic',
-        'Ext.plugin.google.Tracker'
-    ],
-
-    launch: function() {
-        // The following is accomplished with the Google Map API
-        var position = new google.maps.LatLng(37.44885, -122.158592),  //Sencha HQ
-
-            infowindow = new google.maps.InfoWindow({
-                content: 'Sencha HQ'
-            }),
-
-            //Tracking Marker Image
-            image = new google.maps.MarkerImage(
-                'resources/images/point.png',
-                new google.maps.Size(32, 31),
-                new google.maps.Point(0, 0),
-                new google.maps.Point(16, 31)
-            ),
-
-            shadow = new google.maps.MarkerImage(
-                'resources/images/shadow.png',
-                new google.maps.Size(64, 52),
-                new google.maps.Point(0, 0),
-                new google.maps.Point(-5, 42)
-            ),
-
-            trackingButton = Ext.create('Ext.Button', {
-                iconMask: true,
-                iconCls: 'locate'
-            }),
-
-            trafficButton = Ext.create('Ext.Button', {
-                iconMask: true,
-                pressed: true,
-                iconCls: 'maps'
-            }),
-
-            toolbar = Ext.create('Ext.Toolbar', {
-                docked: 'top',
-                ui: 'light',
-                defaults: {
-                    iconMask: true
-                },
-                items: [
-                    {
-                        iconCls: 'home',
-                        handler: function() {
-                            //disable tracking
-                            var segmented = Ext.getCmp('segmented'),
-                                pressedButtons = segmented.getPressedButtons(),
-                                trafficIndex = pressedButtons.indexOf(trafficButton),
-                                newPressed = (trafficIndex != -1) ? [trafficButton] : [];
-                            segmented.setPressedButtons(newPressed);
-                            mapdemo.getMap().panTo(position);
-                        }
-                    },
-                    {
-                        id: 'segmented',
-                        xtype: 'segmentedbutton',
-                        allowMultiple: true,
-                        listeners: {
-                            toggle: function(buttons, button, active) {
-                                if (button == trafficButton) {
-                                    mapdemo.getPlugins()[1].setHidden(!active);
-                                }
-                                else if (button == trackingButton) {
-                                    var tracker = mapdemo.getPlugins()[0],
-                                        marker = tracker.getMarker();
-                                    marker.setVisible(active);
-                                    if (active) {
-                                        tracker.setTrackSuspended(false);
-                                        Ext.defer(function() {
-                                            tracker.getHost().on('centerchange', function() {
-                                                marker.setVisible(false);
-                                                tracker.setTrackSuspended(true);
-                                                var segmented = Ext.getCmp('segmented'),
-                                                    pressedButtons = segmented.getPressedButtons(),
-                                                    trafficIndex = pressedButtons.indexOf(trafficButton),
-                                                    newPressed = (trafficIndex != -1) ? [trafficButton] : [];
-                                                segmented.setPressedButtons(newPressed);
-                                            }, this, {single: true});
-                                        }, 50, this);
-                                    }
-                                }
-                            }
-                        },
-                        items: [
-                            trackingButton, trafficButton
-                        ]
-                    }
-                ]
-            });
-
-        var mapdemo = Ext.create('Ext.Map', {
-            mapOptions : {
-                center : new google.maps.LatLng(37.381592, -122.135672),  //nearby San Fran
-                zoom : 12,
-                mapTypeId : google.maps.MapTypeId.ROADMAP,
-                navigationControl: true,
-                navigationControlOptions: {
-                    style: google.maps.NavigationControlStyle.DEFAULT
-                }
-            },
-
-            plugins : [
-                new Ext.plugin.google.Tracker({
-                    trackSuspended: true,   //suspend tracking initially
-                    allowHighAccuracy: false,
-                    marker: new google.maps.Marker({
-                        position: position,
-                        title: 'My Current Location',
-                        shadow: shadow,
-                        icon: image
-                    })
-                }),
-                new Ext.plugin.google.Traffic()
-            ],
-
-            listeners: {
-                maprender: function(comp, map) {
-                    var marker = new google.maps.Marker({
-                        position: position,
-                        title : 'Sencha HQ',
-                        map: map
-                    });
-
-                    google.maps.event.addListener(marker, 'click', function() {
-                        infowindow.open(map, marker);
-                    });
-
-                    setTimeout(function() {
-                        map.panTo(position);
-                    }, 1000);
-                }
-
-            }
-        });
-
-        Ext.create('Ext.Panel', {
-            fullscreen: true,
-            layout: 'fit',
-            items: [toolbar, mapdemo]
-        });
-    }
-});
-</pre>
-        <!-- touch/2.0.0/examples/map/lib/plugin/google/Tracker.js -->
-        <pre>Ext.ns('Ext.plugin.google');
-
-Ext.define('Ext.plugin.google.Tracker', {
-    extend: 'Ext.util.GeoLocation',
-    alias : 'plugin.gmaptracker',
-
-    config: {
-        marker: null,
-
-        host: null,
-
-        trackSuspended: null
-    },
-
-    /**
-     * Initialize the plugin, binding to the host Ext.Map instance
-     * @param {Ext.Map} host
-     */
-    init : function(host) {
-        if (host &amp;&amp; host.isMap === true) {
-            this.setHost(host);
-            host.setGeo(this);
-        }
-    },
-
-    applyTrackSuspended: function(config) {
-        return Boolean(config);
-    },
-
-    updateTrackSuspended: function(trackSuspended) {
-        if (trackSuspended) {
-            this.un('locationupdate', this.updateTrack, this);
-            this.setAutoUpdate(null);
-        }
-        else {
-            this.on('locationupdate', this.updateTrack, this);
-            this.setAutoUpdate(true);
-        }
-    },
-
-    // @private
-    updateTrack: function() {
-        if (this.getTrackSuspended()) {
-            return;
-        }
-
-        var gm = (window.google || {}).maps,
-            marker = this.getMarker();
-
-        if (gm &amp;&amp; marker) {
-            marker.setMap(this.getHost().getMap());
-            marker.setPosition(new gm.LatLng(this.getLatitude(), this.getLongitude()));
-        }
-    },
-
-    suspendUpdates: function() {
-        this.setTrackSuspended(true);
-    },
-
-    resumeUpdates: function() {
-        this.setTrackSuspended(false);
-    }
-});
-</pre>
-        <!-- touch/2.0.0/examples/map/lib/plugin/google/Traffic.js -->
-        <pre>Ext.define('Ext.plugin.google.Traffic', {
-    extend: 'Ext.EventedBase',
-    alias: 'plugin.gmaptraffic',
-
-    config: {
-        /**
-         * @property {Boolean} hidden
-         */
-        hidden: null,
-
-        host: null
-    },
-
-    /**
-     * Initialize the plugin, binding to the host Ext.Map instance
-     * @param {Ext.Map} host
-     */
-    init : function(host) {
-        if (host &amp;&amp; host.isMap === true) {
-            this.setHost(host);
-            var map = host.getMap();
-
-            if (!map) {
-                host.on('maprender', 'onMapRender', this);
-            }
-            else {
-                this.onMapRender(host, map);
-            }
-        }
-    },
-
-    // @private
-    onMapRender : function(host, map) {
-        var overlay = this.getOverlay();
-
-        if (overlay &amp;&amp; !this.getHidden()) {
-            overlay.setMap(map);
-        }
-    },
-
-    getOverlay: function() {
-        if (!this.overlay &amp;&amp; (window.google || {}).maps) {
-            this.overlay = new google.maps.TrafficLayer();
-        }
-        return this.overlay;
-    },
-
-    applyHidden: function(config) {
-        return Boolean(config);
-    },
-
-    updateHidden: function(hidden) {
-        var overlay = this.getOverlay(),
-            host;
-        if (overlay) {
-            if (hidden) {
-                overlay.setMap(null);
-            }
-            else {
-                host = this.getHost();
-                if (host &amp;&amp; host.isMap === true) {
-                    overlay.setMap(host.getMap());
-                }
-            }
-        }
-    },
-
-    show : function() {
-        this.setHidden(false);
-
-    },
-
-    hide : function() {
-        this.setHidden(true);
-    }
-});
-</pre>
+        <pre class="example" data-uri="/touch/2.0.0/examples/map/app.js">(hidden)</pre>
+        <pre class="example" data-uri="/touch/2.0.0/examples/map/lib/plugin/google/Tracker.js">(hidden)</pre>
+        <pre class="example" data-uri="/touch/2.0.0/examples/map/lib/plugin/google/Traffic.js">(hidden)</pre>
     </div>
-    
+
 </body>
 </html>

@@ -2,115 +2,94 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8"/>
-    <title>XML Grid Example</title>
-    <meta Name="description" content="XML Grid Example" />
+    <title>XML Grid Example | Sencha Try</title>
+    <meta name="description" content="XML Grid Example" />
     <meta name="keywords" content="Sencha, Ext JS, Ext JS 4.0.7" />
+    <meta name="author" content="Sencha Inc.">
     <link href="/assets/application.css" media="screen" rel="stylesheet" type="text/css" />
 </head>
 <body>
-    
-    <div>
-        <header>
-            <h1>Sencha Try</h1>
-        </header>
-        
-        <section id="readme">
-            <div class="intro"><h1>XML Grid Example</h1>
 
-<p>This example shows how to load a grid with XML data.</p>
+    <div id="logo-container" class="skiptranslate">
+        <h1 id="logo"><a href="/"><img src="/assets/logo.png" alt="Sencha Try" /></a></h1>
+        <span id="glow"></span>
+    </div>
+    <ul>
+        <li class="with-sub">
+            <a href="#" class="dropdown">Sencha Network</a>
+            <div id="docs-dropdown" class="pop-nav zero">
+                <ul>
+                    <li><a href="http://sencha.com/">Sencha.com</a></li>
+                    <li><a href="http://sencha.com/products/io/">Sencha.io</a></li>
+                    <li><a href="http://market.sencha.com/">Sencha Market</a></li>
+                </ul>
+            </div>
+        </li>
+    </ul>
+    
+    <div id="content-wrapper" class="clearfix">
+        <div id="content">
+            <a href="/">Home</a> <span>/</span> <a href="/extjs/">Ext JS</a> <span>/</span> <a href="/extjs/4.0.7/">4.0.7</a> <span>/</span> XML Grid Example
+            <div class="developer">
+                <div class="column_nine">
+                    <div class="details">
+                        <div class="top-block border">
+                            <h2 class="alt">XML Grid Example</h2>
+                        </div>
+                        <div class="plain-text"><p>This example shows how to load a grid with XML data.</p>
 
 <p>The data in the grid is loaded from <em>sheldon.xml</em>, which is directly from an Amazon.com search.</p></div>
-            <div>
-                <a href="src.zip" download="extjs_4.0.7_examples_grid_xml-grid.zip">DOWNLOAD</a>
+                        <h3>[example widget]</h3>
+                        <div>
+                            <ul class="developer-actions">
+                                <li class="request"><a href="src.zip" class="button-link center">Download</a></li>
+                            </ul>
+                        </div>
+                        <hr class="clear" />
+                        <h4>Tags</h4>
+                        <ul class="services-list alt clearfix tags">
+                            <li><a href="/tags/Ext%20JS/">Ext JS</a></li>
+                            <li><a href="/tags/Ext%20JS%204.0.7/">Ext JS 4.0.7</a></li>
+                        </ul>
+                        <h4>See Also</h4>
+                        <ul class="services-list alt clearfix see-also">
+                        </ul>
+                    </div>
+                </div>
             </div>
-            <nav>
-                <h2>Tags:</h2>
-                <ul class="tags">
-                    <li><a href="/tags/Ext%20JS/">Ext JS</a></li>
-                    <li><a href="/tags/Ext%20JS%204.0.7/">Ext JS 4.0.7</a></li>
-                </ul>
-            </nav>
-        </section>
-        
-        <section id="example">
-            [example]
-        </section>
-        
-        
-        <footer>
-            &copy; 2012 Sencha Inc.
-        </footer>
+        </div>
     </div>
     
+    <div id="footer-content">
+        <div class="columns">
+            <ul class="column">
+                <li>
+                    <a class="main" href="http://sencha.com/company/">Company</a>
+                    <ul class="zero">
+                        <li class="first"><a href="http://www.sencha.com/contact/" rel="nofollow">Contact Us</a></li>
+                        <li class="last"><a href="/pages/terms/" rel="nofollow">Terms of Use</a></li>
+                    </ul>
+                </li>
+            </ul>
+            <ul class="column">
+                <li>
+                    <a class="main" href="/">Listings</a>
+                    <ul class="zero">
+                        <li class="first"><a href="/developers/">Full listing</a></li>
+                        <li class="last"><a href="/developers/by_location/">Geographic listing</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+        <hr />
+        <div id="copyright">
+            <p>&copy; 2012 Sencha Inc. All rights reserved.</p>
+        </div>
+    </div>
+
     <div class="hidden">
-        <!-- extjs/4.0.7/examples/grid/xml-grid/app.js -->
-        <pre>/*global Ext:false */
-/*
-
-This file is part of Ext JS 4
-
-Copyright (c) 2011 Sencha Inc
-
-Contact:  http://www.sencha.com/contact
-
-GNU General Public License Usage
-This file may be used under the terms of the GNU General Public License version 3.0 as published by the Free Software Foundation and appearing in the file LICENSE included in the packaging of this file.  Please review the following information to ensure the GNU General Public License version 3.0 requirements will be met: http://www.gnu.org/copyleft/gpl.html.
-
-If you are unsure which license is appropriate for your use, please contact the sales department at http://www.sencha.com/contact.
-
-*/
-Ext.require([
-    'Ext.data.*',
-    'Ext.grid.*'
-]);
-
-Ext.onReady(function(){
-    Ext.define('Book',{
-        extend: 'Ext.data.Model',
-        fields: [
-            // set up the fields mapping into the xml doc
-            // The first needs mapping, the others are very basic
-            {name: 'Author', mapping: 'ItemAttributes > Author'},
-            'Title', 'Manufacturer', 'ProductGroup'
-        ]
-    });
-
-    // create the Data Store
-    var store = Ext.create('Ext.data.Store', {
-        model: 'Book',
-        autoLoad: true,
-        proxy: {
-            // load using HTTP
-            type: 'ajax',
-            url: 'sheldon.xml',
-            // the return will be XML, so lets set up a reader
-            reader: {
-                type: 'xml',
-                // records will have an "Item" tag
-                record: 'Item',
-                idProperty: 'ASIN',
-                totalRecords: '@total'
-            }
-        }
-    });
-
-    // create the grid
-    var grid = Ext.create('Ext.grid.Panel', {
-        store: store,
-        columns: [
-            {text: "Author", flex: 1, dataIndex: 'Author', sortable: true},
-            {text: "Title", width: 180, dataIndex: 'Title', sortable: true},
-            {text: "Manufacturer", width: 115, dataIndex: 'Manufacturer', sortable: true},
-            {text: "Product Group", width: 100, dataIndex: 'ProductGroup', sortable: true}
-        ],
-        renderTo:'example-grid',
-        width: 540,
-        height: 200
-    });
-});
-
-</pre>
+        <pre class="example" data-uri="/extjs/4.0.7/examples/grid/xml-grid/app.js">(hidden)</pre>
     </div>
-    
+
 </body>
 </html>

@@ -2,189 +2,94 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8"/>
-    <title>History Example</title>
-    <meta Name="description" content="History Example" />
+    <title>History Example | Sencha Try</title>
+    <meta name="description" content="History Example" />
     <meta name="keywords" content="Sencha, Ext JS, Ext JS 4.0.7" />
+    <meta name="author" content="Sencha Inc.">
     <link href="/assets/application.css" media="screen" rel="stylesheet" type="text/css" />
 </head>
 <body>
-    
-    <div>
-        <header>
-            <h1>Sencha Try</h1>
-        </header>
-        
-        <section id="readme">
-            <div class="intro"><h1>History Example</h1>
 
-<p>This is a simple implementation of the <code>Ext.History</code> component for managing browser back/forward navigation within a single page.</p>
+    <div id="logo-container" class="skiptranslate">
+        <h1 id="logo"><a href="/"><img src="/assets/logo.png" alt="Sencha Try" /></a></h1>
+        <span id="glow"></span>
+    </div>
+    <ul>
+        <li class="with-sub">
+            <a href="#" class="dropdown">Sencha Network</a>
+            <div id="docs-dropdown" class="pop-nav zero">
+                <ul>
+                    <li><a href="http://sencha.com/">Sencha.com</a></li>
+                    <li><a href="http://sencha.com/products/io/">Sencha.io</a></li>
+                    <li><a href="http://market.sencha.com/">Sencha Market</a></li>
+                </ul>
+            </div>
+        </li>
+    </ul>
+    
+    <div id="content-wrapper" class="clearfix">
+        <div id="content">
+            <a href="/">Home</a> <span>/</span> <a href="/extjs/">Ext JS</a> <span>/</span> <a href="/extjs/4.0.7/">4.0.7</a> <span>/</span> History Example
+            <div class="developer">
+                <div class="column_nine">
+                    <div class="details">
+                        <div class="top-block border">
+                            <h2 class="alt">History Example</h2>
+                        </div>
+                        <div class="plain-text"><p>This is a simple implementation of the <code>Ext.History</code> component for managing browser back/forward navigation within a single page.</p>
 
 <p>It demonstrates managing history for multiple components within the page. Simply change tabs and use the browser Back and Forward buttons to navigate them.</p></div>
-            <div>
-                <a href="src.zip" download="extjs_4.0.7_examples_history_history.zip">DOWNLOAD</a>
+                        <h3>[example widget]</h3>
+                        <div>
+                            <ul class="developer-actions">
+                                <li class="request"><a href="src.zip" class="button-link center">Download</a></li>
+                            </ul>
+                        </div>
+                        <hr class="clear" />
+                        <h4>Tags</h4>
+                        <ul class="services-list alt clearfix tags">
+                            <li><a href="/tags/Ext%20JS/">Ext JS</a></li>
+                            <li><a href="/tags/Ext%20JS%204.0.7/">Ext JS 4.0.7</a></li>
+                        </ul>
+                        <h4>See Also</h4>
+                        <ul class="services-list alt clearfix see-also">
+                        </ul>
+                    </div>
+                </div>
             </div>
-            <nav>
-                <h2>Tags:</h2>
-                <ul class="tags">
-                    <li><a href="/tags/Ext%20JS/">Ext JS</a></li>
-                    <li><a href="/tags/Ext%20JS%204.0.7/">Ext JS 4.0.7</a></li>
-                </ul>
-            </nav>
-        </section>
-        
-        <section id="example">
-            [example]
-        </section>
-        
-        
-        <footer>
-            &copy; 2012 Sencha Inc.
-        </footer>
+        </div>
     </div>
     
+    <div id="footer-content">
+        <div class="columns">
+            <ul class="column">
+                <li>
+                    <a class="main" href="http://sencha.com/company/">Company</a>
+                    <ul class="zero">
+                        <li class="first"><a href="http://www.sencha.com/contact/" rel="nofollow">Contact Us</a></li>
+                        <li class="last"><a href="/pages/terms/" rel="nofollow">Terms of Use</a></li>
+                    </ul>
+                </li>
+            </ul>
+            <ul class="column">
+                <li>
+                    <a class="main" href="/">Listings</a>
+                    <ul class="zero">
+                        <li class="first"><a href="/developers/">Full listing</a></li>
+                        <li class="last"><a href="/developers/by_location/">Geographic listing</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+        <hr />
+        <div id="copyright">
+            <p>&copy; 2012 Sencha Inc. All rights reserved.</p>
+        </div>
+    </div>
+
     <div class="hidden">
-        <!-- extjs/4.0.7/examples/history/history/app.js -->
-        <pre>/*global Ext:false */
-/*
-
-This file is part of Ext JS 4
-
-Copyright (c) 2011 Sencha Inc
-
-Contact:  http://www.sencha.com/contact
-
-GNU General Public License Usage
-This file may be used under the terms of the GNU General Public License version 3.0 as published by the Free Software Foundation and appearing in the file LICENSE included in the packaging of this file.  Please review the following information to ensure the GNU General Public License version 3.0 requirements will be met: http://www.gnu.org/copyleft/gpl.html.
-
-If you are unsure which license is appropriate for your use, please contact the sales department at http://www.sencha.com/contact.
-
-*/
-Ext.require([
-    'Ext.util.History',
-    'Ext.tab.Panel'
-]);
-
-Ext.onReady(function() {
-    // The only requirement for this to work is that you must have a hidden field and
-    // an iframe available in the page with ids corresponding to Ext.History.fieldId
-    // and Ext.History.iframeId.  See history.html for an example.
-    Ext.History.init();
-
-    // Needed if you want to handle history for multiple components in the same page.
-    // Should be something that won't be in component ids.
-    var tokenDelimiter = ':';
-    
-    function onTabChange(tabPanel, tab) {
-        var tabs = [],
-            ownerCt = tabPanel.ownerCt, 
-            oldToken, newToken;
-
-        tabs.push(tab.id);
-        tabs.push(tabPanel.id);
-
-        while (ownerCt &amp;&amp; ownerCt.is('tabpanel')) {
-            tabs.push(ownerCt.id);
-            ownerCt = ownerCt.ownerCt;
-        }
-        
-        newToken = tabs.reverse().join(tokenDelimiter);
-        
-        oldToken = Ext.History.getToken();
-       
-        if (oldToken === null || oldToken.search(newToken) === -1) {
-            Ext.History.add(newToken);
-        }
-    }
-    
-    // Handle this change event in order to restore the UI to the appropriate history state
-    function onAfterRender() {
-        Ext.History.on('change', function(token) {
-            var parts, tabPanel, length, i;
-            
-            if (token) {
-                parts = token.split(tokenDelimiter);
-                length = parts.length;
-                
-                // setActiveTab in all nested tabs
-                for (i = 0; i < length - 1; i++) {
-                    Ext.getCmp(parts[i]).setActiveTab(Ext.getCmp(parts[i + 1]));
-                }
-            }
-        });
-        
-        // This is the initial default state.  Necessary if you navigate starting from the
-        // page without any existing history token params and go back to the start state.
-        var activeTab1 = Ext.getCmp('main-tabs').getActiveTab(),
-            activeTab2 = activeTab1.getActiveTab();
-            
-        onTabChange(activeTab1, activeTab2);
-    }
-    
-    Ext.create('Ext.TabPanel', {
-        renderTo: Ext.getBody(),
-        id: 'main-tabs',
-        height: 300,
-        width: 600,
-        activeTab: 0,
-        defaults: {
-            padding: 10
-        },
-        
-        items: [{
-            xtype: 'tabpanel',
-            title: 'Tab 1',
-            id: 'tab1',
-            activeTab: 0,
-            padding: 5,
-            border: true,
-            plain: true,
-            
-            defaults: {
-                padding: 10
-            },
-
-            items: [{
-                title: 'Sub-tab 1',
-                id: 'subtab1',
-                html: 'Sub-tab 1 content'
-            },{
-                title: 'Sub-tab 2',
-                id: 'subtab2',
-                html: 'Sub-tab 2 content'
-            },{
-                title: 'Sub-tab 3',
-                id: 'subtab3',
-                html: 'Sub-tab 3 content'
-            }],
-            
-            listeners: {
-                tabchange: onTabChange
-            }
-        },{
-            title: 'Tab 2',
-            id: 'tab2',
-            html: 'Tab 2 content'
-        },{
-            title: 'Tab 3',
-            id: 'tab3',
-            html: 'Tab 3 content'
-        },{
-            title: 'Tab 4',
-            id: 'tab4',
-            html: 'Tab 4 content'
-        },{
-            title: 'Tab 5',
-            id: 'tab5',
-            html: 'Tab 5 content'
-        }],
-        listeners: {
-            tabchange: onTabChange,
-            afterrender: onAfterRender 
-        }
-    });
-});
-</pre>
+        <pre class="example" data-uri="/extjs/4.0.7/examples/history/history/app.js">(hidden)</pre>
     </div>
-    
+
 </body>
 </html>

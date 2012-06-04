@@ -2,89 +2,94 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8"/>
-    <title>Ext.toolbar.Toolbar Example</title>
-    <meta Name="description" content="Ext.toolbar.Toolbar Example" />
+    <title>Ext.toolbar.Toolbar Example | Sencha Try</title>
+    <meta name="description" content="Ext.toolbar.Toolbar Example" />
     <meta name="keywords" content="Sencha, Ext JS, Ext JS 4.1.0, Ext.toolbar.Toolbar" />
+    <meta name="author" content="Sencha Inc.">
     <link href="/assets/application.css" media="screen" rel="stylesheet" type="text/css" />
 </head>
 <body>
-    
-    <div>
-        <header>
-            <h1>Sencha Try</h1>
-        </header>
-        
-        <section id="readme">
-            <div class="intro"><h1>Ext.toolbar.Toolbar Example</h1></div>
-            <div>
-                <a href="src.zip" download="extjs_4.1.0_docs_Ext.toolbar.Toolbar.3.zip">DOWNLOAD</a>
-            </div>
-            <nav>
-                <h2>Tags:</h2>
-                <ul class="tags">
-                    <li><a href="/tags/Ext%20JS/">Ext JS</a></li>
-                    <li><a href="/tags/Ext%20JS%204.1.0/">Ext JS 4.1.0</a></li>
-                    <li><a href="/tags/Ext.toolbar.Toolbar/">Ext.toolbar.Toolbar</a></li>
+
+    <div id="logo-container" class="skiptranslate">
+        <h1 id="logo"><a href="/"><img src="/assets/logo.png" alt="Sencha Try" /></a></h1>
+        <span id="glow"></span>
+    </div>
+    <ul>
+        <li class="with-sub">
+            <a href="#" class="dropdown">Sencha Network</a>
+            <div id="docs-dropdown" class="pop-nav zero">
+                <ul>
+                    <li><a href="http://sencha.com/">Sencha.com</a></li>
+                    <li><a href="http://sencha.com/products/io/">Sencha.io</a></li>
+                    <li><a href="http://market.sencha.com/">Sencha Market</a></li>
                 </ul>
-            </nav>
-        </section>
-        
-        <section id="example">
-            [example]
-        </section>
-        
-        <nav>
-            <h2>See Also:</h2>
-            <ul class="seeAlso">
-                <li class="docs"><a href="http://docs.sencha.com/ext-js/4-1/#!/api/Ext.toolbar.Toolbar" target="_blank">Ext.toolbar.Toolbar Documentation</a></li>
+            </div>
+        </li>
+    </ul>
+    
+    <div id="content-wrapper" class="clearfix">
+        <div id="content">
+            <a href="/">Home</a> <span>/</span> <a href="/extjs/">Ext JS</a> <span>/</span> <a href="/extjs/4.1.0/">4.1.0</a> <span>/</span> Ext.toolbar.Toolbar Example
+            <div class="developer">
+                <div class="column_nine">
+                    <div class="details">
+                        <div class="top-block border">
+                            <h2 class="alt">Ext.toolbar.Toolbar Example</h2>
+                        </div>
+                        <div class="plain-text"></div>
+                        <h3>[example widget]</h3>
+                        <div>
+                            <ul class="developer-actions">
+                                <li class="request"><a href="src.zip" class="button-link center">Download</a></li>
+                            </ul>
+                        </div>
+                        <hr class="clear" />
+                        <h4>Tags</h4>
+                        <ul class="services-list alt clearfix tags">
+                            <li><a href="/tags/Ext%20JS/">Ext JS</a></li>
+                            <li><a href="/tags/Ext%20JS%204.1.0/">Ext JS 4.1.0</a></li>
+                            <li><a href="/tags/Ext.toolbar.Toolbar/"><code>Ext.toolbar.Toolbar</code></a></li>
+                        </ul>
+                        <h4>See Also</h4>
+                        <ul class="services-list alt clearfix see-also">
+                            <li class="docs"><a href="http://docs.sencha.com/ext-js/4-1/#!/api/Ext.toolbar.Toolbar" target="_blank">Ext.toolbar.Toolbar Documentation</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div id="footer-content">
+        <div class="columns">
+            <ul class="column">
+                <li>
+                    <a class="main" href="http://sencha.com/company/">Company</a>
+                    <ul class="zero">
+                        <li class="first"><a href="http://www.sencha.com/contact/" rel="nofollow">Contact Us</a></li>
+                        <li class="last"><a href="/pages/terms/" rel="nofollow">Terms of Use</a></li>
+                    </ul>
+                </li>
             </ul>
-        </nav>
-        
-        <footer>
-            &copy; 2012 Sencha Inc.
-        </footer>
+            <ul class="column">
+                <li>
+                    <a class="main" href="/">Listings</a>
+                    <ul class="zero">
+                        <li class="first"><a href="/developers/">Full listing</a></li>
+                        <li class="last"><a href="/developers/by_location/">Geographic listing</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+        <hr />
+        <div id="copyright">
+            <p>&copy; 2012 Sencha Inc. All rights reserved.</p>
+        </div>
     </div>
-    
+
     <div class="hidden">
-        <!-- extjs/4.1.0/docs/Ext.toolbar.Toolbar.3/app.js -->
-        <pre>/*global Ext:false */
-Ext.onReady(function() {
-    var enableBtn = Ext.create('Ext.button.Button', {
-        text: 'Enable All Items',
-        disabled: true,
-        scope: this,
-        handler: function() {
-            //disable the enable button and enable the disable button
-            enableBtn.disable();
-            disableBtn.enable();
-
-            //enable the toolbar
-            toolbar.enable();
-        }
-    });
-
-    var disableBtn = Ext.create('Ext.button.Button', {
-        text: 'Disable All Items',
-        scope: this,
-        handler: function() {
-            //enable the enable button and disable button
-            disableBtn.disable();
-            enableBtn.enable();
-
-            //disable the toolbar
-            toolbar.disable();
-        }
-    });
-
-    var toolbar = Ext.create('Ext.toolbar.Toolbar', {
-        renderTo: document.body,
-        width: 400,
-        margin: '5 0 0 0',
-        items: [enableBtn, disableBtn]
-    });
-});
-</pre>
+        <pre class="example" data-uri="/extjs/4.1.0/docs/Ext.toolbar.Toolbar.3/app.js">(hidden)</pre>
     </div>
-    
+
 </body>
 </html>

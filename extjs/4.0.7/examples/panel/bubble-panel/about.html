@@ -2,134 +2,93 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8"/>
-    <title>Ext.Panel - BubblePanel</title>
-    <meta Name="description" content="Ext.Panel - BubblePanel" />
+    <title>Ext.Panel - BubblePanel | Sencha Try</title>
+    <meta name="description" content="Ext.Panel - BubblePanel" />
     <meta name="keywords" content="Sencha, Ext JS, Ext JS 4.0.7" />
+    <meta name="author" content="Sencha Inc.">
     <link href="/assets/application.css" media="screen" rel="stylesheet" type="text/css" />
 </head>
 <body>
-    
-    <div>
-        <header>
-            <h1>Sencha Try</h1>
-        </header>
-        
-        <section id="readme">
-            <div class="intro"><h1>Ext.Panel - BubblePanel</h1></div>
-            <div>
-                <a href="src.zip" download="extjs_4.0.7_examples_panel_bubble-panel.zip">DOWNLOAD</a>
-            </div>
-            <nav>
-                <h2>Tags:</h2>
-                <ul class="tags">
-                    <li><a href="/tags/Ext%20JS/">Ext JS</a></li>
-                    <li><a href="/tags/Ext%20JS%204.0.7/">Ext JS 4.0.7</a></li>
+
+    <div id="logo-container" class="skiptranslate">
+        <h1 id="logo"><a href="/"><img src="/assets/logo.png" alt="Sencha Try" /></a></h1>
+        <span id="glow"></span>
+    </div>
+    <ul>
+        <li class="with-sub">
+            <a href="#" class="dropdown">Sencha Network</a>
+            <div id="docs-dropdown" class="pop-nav zero">
+                <ul>
+                    <li><a href="http://sencha.com/">Sencha.com</a></li>
+                    <li><a href="http://sencha.com/products/io/">Sencha.io</a></li>
+                    <li><a href="http://market.sencha.com/">Sencha Market</a></li>
                 </ul>
-            </nav>
-        </section>
-        
-        <section id="example">
-            [example]
-        </section>
-        
-        
-        <footer>
-            &copy; 2012 Sencha Inc.
-        </footer>
+            </div>
+        </li>
+    </ul>
+    
+    <div id="content-wrapper" class="clearfix">
+        <div id="content">
+            <a href="/">Home</a> <span>/</span> <a href="/extjs/">Ext JS</a> <span>/</span> <a href="/extjs/4.0.7/">4.0.7</a> <span>/</span> Ext.Panel - BubblePanel
+            <div class="developer">
+                <div class="column_nine">
+                    <div class="details">
+                        <div class="top-block border">
+                            <h2 class="alt">Ext.Panel - BubblePanel</h2>
+                        </div>
+                        <div class="plain-text"></div>
+                        <h3>[example widget]</h3>
+                        <div>
+                            <ul class="developer-actions">
+                                <li class="request"><a href="src.zip" class="button-link center">Download</a></li>
+                            </ul>
+                        </div>
+                        <hr class="clear" />
+                        <h4>Tags</h4>
+                        <ul class="services-list alt clearfix tags">
+                            <li><a href="/tags/Ext%20JS/">Ext JS</a></li>
+                            <li><a href="/tags/Ext%20JS%204.0.7/">Ext JS 4.0.7</a></li>
+                        </ul>
+                        <h4>See Also</h4>
+                        <ul class="services-list alt clearfix see-also">
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
     
+    <div id="footer-content">
+        <div class="columns">
+            <ul class="column">
+                <li>
+                    <a class="main" href="http://sencha.com/company/">Company</a>
+                    <ul class="zero">
+                        <li class="first"><a href="http://www.sencha.com/contact/" rel="nofollow">Contact Us</a></li>
+                        <li class="last"><a href="/pages/terms/" rel="nofollow">Terms of Use</a></li>
+                    </ul>
+                </li>
+            </ul>
+            <ul class="column">
+                <li>
+                    <a class="main" href="/">Listings</a>
+                    <ul class="zero">
+                        <li class="first"><a href="/developers/">Full listing</a></li>
+                        <li class="last"><a href="/developers/by_location/">Geographic listing</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+        <hr />
+        <div id="copyright">
+            <p>&copy; 2012 Sencha Inc. All rights reserved.</p>
+        </div>
+    </div>
+
     <div class="hidden">
-        <!-- extjs/4.0.7/examples/panel/bubble-panel/app.js -->
-        <pre>/*global Ext:false */
-/*
-
-This file is part of Ext JS 4
-
-Copyright (c) 2011 Sencha Inc
-
-Contact:  http://www.sencha.com/contact
-
-GNU General Public License Usage
-This file may be used under the terms of the GNU General Public License version 3.0 as published by the Free Software Foundation and appearing in the file LICENSE included in the packaging of this file.  Please review the following information to ensure the GNU General Public License version 3.0 requirements will be met: http://www.gnu.org/copyleft/gpl.html.
-
-If you are unsure which license is appropriate for your use, please contact the sales department at http://www.sencha.com/contact.
-
-*/
-Ext.require([
-    'Ext.panel.*'
-]);
-
-Ext.onReady(function() {
-    Ext.create('widget.button', {
-        renderTo: 'button',
-        
-        text: 'Toggle UI: default-framed',
-        handler: function() {
-            var panel = Ext.getCmp('ui-panel'),
-                uis = ['default-framed', 'bubble'],
-                index = Ext.Array.indexOf(uis, panel.ui);
-            
-            if ((index + 1) >= uis.length) {
-                panel.setUI(uis[0]);
-            } else {
-                panel.setUI(uis[index + 1]);
-            }
-            
-            panel.doLayout();
-            
-            this.setText('Toggle UI: ' + panel.ui);
-        }
-    });
-    
-    // Normal panel
-    Ext.create('widget.panel', {
-        id: 'ui-panel',
-        
-        renderTo: 'panelCt',
-        
-        title: 'Plain Old Panel',
-        width: 400,
-        autoHeight: true,
-        frame: true,
-        
-        contentEl: 'bubble-markup',
-        
-        html: 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Sed metus nibh, sodales a, porta at, vulputate eget, dui. Pellentesque ut nisl. Maecenas tortor turpis, interdum non, sodales non, iaculis ac, lacus. Vestibulum auctor, tortor quis iaculis malesuada, libero lectus bibendum purus, sit amet tincidunt quam turpis vel lacus. In pellentesque nisl non sem. Suspendisse nunc sem, pretium eget, cursus a, fringilla vel, urna.<br /><br />Aliquam commodo ullamcorper erat. Nullam vel justo in neque porttitor laoreet. Aenean lacus dui, consequat eu, adipiscing eget, nonummy non, nisi. Morbi nunc est, dignissim non, ornare sed, luctus eu, massa. Vivamus eget quam. Vivamus tincidunt diam nec urna. Curabitur velit.'
-    });
-});
-
-</pre>
-        <!-- extjs/4.0.7/examples/panel/bubble-panel/resources/manifest.js -->
-        <pre>/*
-
-This file is part of Ext JS 4
-
-Copyright (c) 2011 Sencha Inc
-
-Contact:  http://www.sencha.com/contact
-
-GNU General Public License Usage
-This file may be used under the terms of the GNU General Public License version 3.0 as published by the Free Software Foundation and appearing in the file LICENSE included in the packaging of this file.  Please review the following information to ensure the GNU General Public License version 3.0 requirements will be met: http://www.gnu.org/copyleft/gpl.html.
-
-If you are unsure which license is appropriate for your use, please contact the sales department at http://www.sencha.com/contact.
-
-*/
-Ext.onReady(function() {
-    Ext.manifest = {
-        widgets: [
-            {
-                xtype: 'widget.panel',
-                ui: 'bubble'
-            },
-            {
-                xtype: 'widget.header',
-                ui: 'bubble'
-            }
-        ]
-    };
-});
-</pre>
+        <pre class="example" data-uri="/extjs/4.0.7/examples/panel/bubble-panel/app.js">(hidden)</pre>
+        <pre class="example" data-uri="/extjs/4.0.7/examples/panel/bubble-panel/resources/manifest.js">(hidden)</pre>
     </div>
-    
+
 </body>
 </html>

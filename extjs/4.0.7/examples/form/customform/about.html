@@ -2,244 +2,93 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8"/>
-    <title>Custom Form Fields</title>
-    <meta Name="description" content="Custom Form Fields" />
+    <title>Custom Form Fields | Sencha Try</title>
+    <meta name="description" content="Custom Form Fields" />
     <meta name="keywords" content="Sencha, Ext JS, Ext JS 4.0.7" />
+    <meta name="author" content="Sencha Inc.">
     <link href="/assets/application.css" media="screen" rel="stylesheet" type="text/css" />
 </head>
 <body>
-    
-    <div>
-        <header>
-            <h1>Sencha Try</h1>
-        </header>
-        
-        <section id="readme">
-            <div class="intro"><h1>Custom Form Fields</h1>
 
-<p>Ext provides many types of form fields to build interactive and rich forms. However, it also provides a complete framework for building new types of fields quickly. The search field below is an example.</p></div>
-            <div>
-                <a href="src.zip" download="extjs_4.0.7_examples_form_customform.zip">DOWNLOAD</a>
-            </div>
-            <nav>
-                <h2>Tags:</h2>
-                <ul class="tags">
-                    <li><a href="/tags/Ext%20JS/">Ext JS</a></li>
-                    <li><a href="/tags/Ext%20JS%204.0.7/">Ext JS 4.0.7</a></li>
+    <div id="logo-container" class="skiptranslate">
+        <h1 id="logo"><a href="/"><img src="/assets/logo.png" alt="Sencha Try" /></a></h1>
+        <span id="glow"></span>
+    </div>
+    <ul>
+        <li class="with-sub">
+            <a href="#" class="dropdown">Sencha Network</a>
+            <div id="docs-dropdown" class="pop-nav zero">
+                <ul>
+                    <li><a href="http://sencha.com/">Sencha.com</a></li>
+                    <li><a href="http://sencha.com/products/io/">Sencha.io</a></li>
+                    <li><a href="http://market.sencha.com/">Sencha Market</a></li>
                 </ul>
-            </nav>
-        </section>
-        
-        <section id="example">
-            [example]
-        </section>
-        
-        
-        <footer>
-            &copy; 2012 Sencha Inc.
-        </footer>
+            </div>
+        </li>
+    </ul>
+    
+    <div id="content-wrapper" class="clearfix">
+        <div id="content">
+            <a href="/">Home</a> <span>/</span> <a href="/extjs/">Ext JS</a> <span>/</span> <a href="/extjs/4.0.7/">4.0.7</a> <span>/</span> Custom Form Fields
+            <div class="developer">
+                <div class="column_nine">
+                    <div class="details">
+                        <div class="top-block border">
+                            <h2 class="alt">Custom Form Fields</h2>
+                        </div>
+                        <div class="plain-text"><p>Ext provides many types of form fields to build interactive and rich forms. However, it also provides a complete framework for building new types of fields quickly. The search field below is an example.</p></div>
+                        <h3>[example widget]</h3>
+                        <div>
+                            <ul class="developer-actions">
+                                <li class="request"><a href="src.zip" class="button-link center">Download</a></li>
+                            </ul>
+                        </div>
+                        <hr class="clear" />
+                        <h4>Tags</h4>
+                        <ul class="services-list alt clearfix tags">
+                            <li><a href="/tags/Ext%20JS/">Ext JS</a></li>
+                            <li><a href="/tags/Ext%20JS%204.0.7/">Ext JS 4.0.7</a></li>
+                        </ul>
+                        <h4>See Also</h4>
+                        <ul class="services-list alt clearfix see-also">
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
     
+    <div id="footer-content">
+        <div class="columns">
+            <ul class="column">
+                <li>
+                    <a class="main" href="http://sencha.com/company/">Company</a>
+                    <ul class="zero">
+                        <li class="first"><a href="http://www.sencha.com/contact/" rel="nofollow">Contact Us</a></li>
+                        <li class="last"><a href="/pages/terms/" rel="nofollow">Terms of Use</a></li>
+                    </ul>
+                </li>
+            </ul>
+            <ul class="column">
+                <li>
+                    <a class="main" href="/">Listings</a>
+                    <ul class="zero">
+                        <li class="first"><a href="/developers/">Full listing</a></li>
+                        <li class="last"><a href="/developers/by_location/">Geographic listing</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+        <hr />
+        <div id="copyright">
+            <p>&copy; 2012 Sencha Inc. All rights reserved.</p>
+        </div>
+    </div>
+
     <div class="hidden">
-        <!-- extjs/4.0.7/examples/form/customform/app.js -->
-        <pre>/*global Ext:false */
-/*
-
-This file is part of Ext JS 4
-
-Copyright (c) 2011 Sencha Inc
-
-Contact:  http://www.sencha.com/contact
-
-GNU General Public License Usage
-This file may be used under the terms of the GNU General Public License version 3.0 as published by the Free Software Foundation and appearing in the file LICENSE included in the packaging of this file.  Please review the following information to ensure the GNU General Public License version 3.0 requirements will be met: http://www.gnu.org/copyleft/gpl.html.
-
-If you are unsure which license is appropriate for your use, please contact the sales department at http://www.sencha.com/contact.
-
-*/
-Ext.Loader.setConfig({enabled: true});
-//Ext.Loader.setPath('Ext.ux', 'ux');
-Ext.require([
-    'Ext.data.*',
-    'Ext.panel.Panel',
-    'Ext.view.View',
-    'Ext.layout.container.Fit',
-    'Ext.toolbar.Paging',
-    'Ext.ux.form.SearchField'
-]);
-
-Ext.define('Post', {
-    extend: 'Ext.data.Model',
-    idProperty: 'post_id',
-    fields: [
-        {name: 'postId', mapping: 'post_id'},
-        {name: 'title', mapping: 'topic_title'},
-        {name: 'topicId', mapping: 'topic_id'},
-        {name: 'author', mapping: 'author'},
-        {name: 'lastPost', mapping: 'post_time', type: 'date', dateFormat: 'timestamp'},
-        {name: 'excerpt', mapping: 'post_text'}
-    ]
-});
-
-Ext.onReady(function(){
-    
-    var forumId = 4;
-
-    var store = Ext.create('Ext.data.Store', {
-        model: 'Post',
-        proxy: {
-            type: 'jsonp',
-            url: 'http://sencha.com/forum/topics-remote.php',
-            extraParams: {
-                forumId: forumId
-            },
-            reader: {
-                type: 'json',
-                root: 'topics',
-                totalProperty: 'totalCount'
-            }
-        },
-        listeners: {
-            beforeload: function(){
-                var params = store.getProxy().extraParams;
-                if (params.query) {
-                    delete params.forumId;
-                } else {
-                    params.forumId = forumId;
-                }
-            }
-        }
-    });
-    store.loadPage(1);
-
-    var resultTpl = Ext.create('Ext.XTemplate',
-        '<tpl for=".">',
-        '<div class="search-item">',
-            '<h3><span>{lastPost:this.formatDate}<br />by {author}</span>',
-            '<a href="http://sencha.com/forum/showthread.php?t={topicId}&amp;p={postId}" target="_blank">{title}</a></h3>',
-            '<p>{excerpt}</p>',
-        '</div></tpl>',
-    {
-        formatDate: function(value){
-            return Ext.Date.format(value, 'M j, Y');
-        }
-    });
-
-    var panel = Ext.create('Ext.panel.Panel', {
-        title: 'Forum Search',
-        height: 300,
-        width: 600,
-        renderTo: 'search-panel',
-        id: 'search-results',
-        layout: 'fit',
-        items: {
-            autoScroll: true,
-            xtype: 'dataview',
-            tpl: resultTpl,
-            store: store,
-            itemSelector: 'div.search-item'
-        },
-        dockedItems: [{
-            dock: 'top',
-            xtype: 'toolbar',
-            items: {
-                width: 400,
-                fieldLabel: 'Search',
-                labelWidth: 50,
-                xtype: 'searchfield',
-                store: store
-            }
-        }, {
-            dock: 'bottom',
-            xtype: 'pagingtoolbar',
-            store: store,
-            pageSize: 25,
-            displayInfo: true,
-            displayMsg: 'Topics {0} - {1} of {2}',
-            emptyMsg: 'No topics to display'
-        }]
-    });
-});
-
-</pre>
-        <!-- extjs/4.0.7/examples/form/customform/ux/form/SearchField.js -->
-        <pre>/*
-
-This file is part of Ext JS 4
-
-Copyright (c) 2011 Sencha Inc
-
-Contact:  http://www.sencha.com/contact
-
-GNU General Public License Usage
-This file may be used under the terms of the GNU General Public License version 3.0 as published by the Free Software Foundation and appearing in the file LICENSE included in the packaging of this file.  Please review the following information to ensure the GNU General Public License version 3.0 requirements will be met: http://www.gnu.org/copyleft/gpl.html.
-
-If you are unsure which license is appropriate for your use, please contact the sales department at http://www.sencha.com/contact.
-
-*/
-Ext.define('Ext.ux.form.SearchField', {
-    extend: 'Ext.form.field.Trigger',
-    
-    alias: 'widget.searchfield',
-    
-    trigger1Cls: Ext.baseCSSPrefix + 'form-clear-trigger',
-    
-    trigger2Cls: Ext.baseCSSPrefix + 'form-search-trigger',
-    
-    hasSearch : false,
-    paramName : 'query',
-    
-    initComponent: function(){
-        this.callParent(arguments);
-        this.on('specialkey', function(f, e){
-            if(e.getKey() == e.ENTER){
-                this.onTrigger2Click();
-            }
-        }, this);
-    },
-    
-    afterRender: function(){
-        this.callParent();
-        this.triggerEl.item(0).setDisplayed('none');  
-    },
-    
-    onTrigger1Click : function(){
-        var me = this,
-            store = me.store,
-            proxy = store.getProxy(),
-            val;
-            
-        if (me.hasSearch) {
-            me.setValue('');
-            proxy.extraParams[me.paramName] = '';
-            proxy.extraParams.start = 0;
-            store.load();
-            me.hasSearch = false;
-            me.triggerEl.item(0).setDisplayed('none');
-            me.doComponentLayout();
-        }
-    },
-
-    onTrigger2Click : function(){
-        var me = this,
-            store = me.store,
-            proxy = store.getProxy(),
-            value = me.getValue();
-            
-        if (value.length < 1) {
-            me.onTrigger1Click();
-            return;
-        }
-        proxy.extraParams[me.paramName] = value;
-        proxy.extraParams.start = 0;
-        store.load();
-        me.hasSearch = true;
-        me.triggerEl.item(0).setDisplayed('block');
-        me.doComponentLayout();
-    }
-});
-</pre>
+        <pre class="example" data-uri="/extjs/4.0.7/examples/form/customform/app.js">(hidden)</pre>
+        <pre class="example" data-uri="/extjs/4.0.7/examples/form/customform/ux/form/SearchField.js">(hidden)</pre>
     </div>
-    
+
 </body>
 </html>

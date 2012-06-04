@@ -2,119 +2,106 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8"/>
-    <title>Ext.grid.feature.GroupingSummary Example</title>
-    <meta Name="description" content="Ext.grid.feature.GroupingSummary Example" />
+    <title>Ext.grid.feature.GroupingSummary Example | Sencha Try</title>
+    <meta name="description" content="Ext.grid.feature.GroupingSummary Example" />
     <meta name="keywords" content="Sencha, Ext JS, Ext JS 4.0.7, Ext.grid.feature.GroupingSummary, feature, features, grid, groupHeaderTpl, groupingsummary, summaryRenderer, summaryType" />
+    <meta name="author" content="Sencha Inc.">
     <link href="/assets/application.css" media="screen" rel="stylesheet" type="text/css" />
 </head>
 <body>
-    
-    <div>
-        <header>
-            <h1>Sencha Try</h1>
-        </header>
-        
-        <section id="readme">
-            <div class="intro"><h1>Ext.grid.feature.GroupingSummary Example</h1></div>
-            <div>
-                <a href="src.zip" download="extjs_4.0.7_docs_Ext.grid.feature.GroupingSummary.1.zip">DOWNLOAD</a>
-            </div>
-            <nav>
-                <h2>Tags:</h2>
-                <ul class="tags">
-                    <li><a href="/tags/Ext%20JS/">Ext JS</a></li>
-                    <li><a href="/tags/Ext%20JS%204.0.7/">Ext JS 4.0.7</a></li>
-                    <li><a href="/tags/Ext.grid.feature.GroupingSummary/">Ext.grid.feature.GroupingSummary</a></li>
-                    <li><a href="/tags/feature/">feature</a></li>
-                    <li><a href="/tags/features/">features</a></li>
-                    <li><a href="/tags/grid/">grid</a></li>
-                    <li><a href="/tags/groupHeaderTpl/">groupHeaderTpl</a></li>
-                    <li><a href="/tags/groupingsummary/">groupingsummary</a></li>
-                    <li><a href="/tags/summaryRenderer/">summaryRenderer</a></li>
-                    <li><a href="/tags/summaryType/">summaryType</a></li>
-                </ul>
-            </nav>
-        </section>
-        
-        <section id="example">
-            [example]
-        </section>
-        
-        <nav>
-            <h2>See Also:</h2>
-            <ul class="seeAlso">
-                <li class="docs"><a href="http://docs.sencha.com/ext-js/4-0/#!/api/Ext.grid.feature.GroupingSummary" target="_blank">Ext.grid.feature.GroupingSummary Documentation</a></li>
-                <li class="guide"><a href="http://docs.sencha.com/ext-js/4-0/#!/guide/grid" target="_blank">The Grid Component Guide</a></li>
-                <li class="guide"><a href="http://docs.sencha.com/ext-js/4-0/#!/guide/direct_grid_pt1" target="_blank">Mapping a Grid to a MySQL table using Direct and PHP Guide (Part 1)</a></li>
-                <li class="guide"><a href="http://docs.sencha.com/ext-js/4-0/#!/guide/direct_grid_pt2" target="_blank">Mapping a Grid to a MySQL table using Direct and PHP Guide (Part 2)</a></li>
-                <li class="guide"><a href="http://docs.sencha.com/ext-js/4-0/#!/guide/editable_grid" target="_blank">Doing CRUD with the Editable Grid and Node.js Guide (Part 1)</a></li>
-                <li class="guide"><a href="http://docs.sencha.com/ext-js/4-0/#!/guide/editable_grid_pt2" target="_blank">Doing CRUD with the Editable Grid and Node.js Guide (Part 2)</a></li>
-            </ul>
-        </nav>
-        
-        <footer>
-            &copy; 2012 Sencha Inc.
-        </footer>
-    </div>
-    
-    <div class="hidden">
-        <!-- extjs/4.0.7/docs/Ext.grid.feature.GroupingSummary.1/app.js -->
-        <pre>/*global Ext:false */
-Ext.onReady(function () {
-    Ext.define('TestResult', {
-        extend: 'Ext.data.Model',
-        fields: ['student', 'subject',
-        {
-            name: 'mark',
-            type: 'int'
-        }]
-    });
 
-    Ext.create('Ext.grid.Panel', {
-        width: 200,
-        height: 240,
-        renderTo: document.body,
-        features: [{
-            groupHeaderTpl: 'Subject: {name}',
-            ftype: 'groupingsummary'
-        }],
-        store: {
-            model: 'TestResult',
-            groupField: 'subject',
-            data: [{
-                student: 'Student 1',
-                subject: 'Math',
-                mark: 84
-            }, {
-                student: 'Student 1',
-                subject: 'Science',
-                mark: 72
-            }, {
-                student: 'Student 2',
-                subject: 'Math',
-                mark: 96
-            }, {
-                student: 'Student 2',
-                subject: 'Science',
-                mark: 68
-            }]
-        },
-        columns: [{
-            dataIndex: 'student',
-            text: 'Name',
-            summaryType: 'count',
-            summaryRenderer: function (value) {
-                return Ext.String.format('{0} student{1}', value, (value !== 1) ? 's' : '');
-            }
-        }, {
-            dataIndex: 'mark',
-            text: 'Mark',
-            summaryType: 'average'
-        }]
-    });
-});
-</pre>
+    <div id="logo-container" class="skiptranslate">
+        <h1 id="logo"><a href="/"><img src="/assets/logo.png" alt="Sencha Try" /></a></h1>
+        <span id="glow"></span>
+    </div>
+    <ul>
+        <li class="with-sub">
+            <a href="#" class="dropdown">Sencha Network</a>
+            <div id="docs-dropdown" class="pop-nav zero">
+                <ul>
+                    <li><a href="http://sencha.com/">Sencha.com</a></li>
+                    <li><a href="http://sencha.com/products/io/">Sencha.io</a></li>
+                    <li><a href="http://market.sencha.com/">Sencha Market</a></li>
+                </ul>
+            </div>
+        </li>
+    </ul>
+    
+    <div id="content-wrapper" class="clearfix">
+        <div id="content">
+            <a href="/">Home</a> <span>/</span> <a href="/extjs/">Ext JS</a> <span>/</span> <a href="/extjs/4.0.7/">4.0.7</a> <span>/</span> Ext.grid.feature.GroupingSummary Example
+            <div class="developer">
+                <div class="column_nine">
+                    <div class="details">
+                        <div class="top-block border">
+                            <h2 class="alt">Ext.grid.feature.GroupingSummary Example</h2>
+                        </div>
+                        <div class="plain-text"></div>
+                        <h3>[example widget]</h3>
+                        <div>
+                            <ul class="developer-actions">
+                                <li class="request"><a href="src.zip" class="button-link center">Download</a></li>
+                            </ul>
+                        </div>
+                        <hr class="clear" />
+                        <h4>Tags</h4>
+                        <ul class="services-list alt clearfix tags">
+                            <li><a href="/tags/Ext%20JS/">Ext JS</a></li>
+                            <li><a href="/tags/Ext%20JS%204.0.7/">Ext JS 4.0.7</a></li>
+                            <li><a href="/tags/Ext.grid.feature.GroupingSummary/"><code>Ext.grid.feature.GroupingSummary</code></a></li>
+                            <li><a href="/tags/feature/"><code>feature</code></a></li>
+                            <li><a href="/tags/features/"><code>features</code></a></li>
+                            <li><a href="/tags/grid/"><code>grid</code></a></li>
+                            <li><a href="/tags/groupHeaderTpl/"><code>groupHeaderTpl</code></a></li>
+                            <li><a href="/tags/groupingsummary/"><code>groupingsummary</code></a></li>
+                            <li><a href="/tags/summaryRenderer/"><code>summaryRenderer</code></a></li>
+                            <li><a href="/tags/summaryType/"><code>summaryType</code></a></li>
+                        </ul>
+                        <h4>See Also</h4>
+                        <ul class="services-list alt clearfix see-also">
+                            <li class="docs"><a href="http://docs.sencha.com/ext-js/4-0/#!/api/Ext.grid.feature.GroupingSummary" target="_blank">Ext.grid.feature.GroupingSummary Documentation</a></li>
+                            <li class="guide"><a href="http://docs.sencha.com/ext-js/4-0/#!/guide/grid" target="_blank">The Grid Component Guide</a></li>
+                            <li class="guide"><a href="http://docs.sencha.com/ext-js/4-0/#!/guide/direct_grid_pt1" target="_blank">Mapping a Grid to a MySQL table using Direct and PHP Guide (Part 1)</a></li>
+                            <li class="guide"><a href="http://docs.sencha.com/ext-js/4-0/#!/guide/direct_grid_pt2" target="_blank">Mapping a Grid to a MySQL table using Direct and PHP Guide (Part 2)</a></li>
+                            <li class="guide"><a href="http://docs.sencha.com/ext-js/4-0/#!/guide/editable_grid" target="_blank">Doing CRUD with the Editable Grid and Node.js Guide (Part 1)</a></li>
+                            <li class="guide"><a href="http://docs.sencha.com/ext-js/4-0/#!/guide/editable_grid_pt2" target="_blank">Doing CRUD with the Editable Grid and Node.js Guide (Part 2)</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
     
+    <div id="footer-content">
+        <div class="columns">
+            <ul class="column">
+                <li>
+                    <a class="main" href="http://sencha.com/company/">Company</a>
+                    <ul class="zero">
+                        <li class="first"><a href="http://www.sencha.com/contact/" rel="nofollow">Contact Us</a></li>
+                        <li class="last"><a href="/pages/terms/" rel="nofollow">Terms of Use</a></li>
+                    </ul>
+                </li>
+            </ul>
+            <ul class="column">
+                <li>
+                    <a class="main" href="/">Listings</a>
+                    <ul class="zero">
+                        <li class="first"><a href="/developers/">Full listing</a></li>
+                        <li class="last"><a href="/developers/by_location/">Geographic listing</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+        <hr />
+        <div id="copyright">
+            <p>&copy; 2012 Sencha Inc. All rights reserved.</p>
+        </div>
+    </div>
+
+    <div class="hidden">
+        <pre class="example" data-uri="/extjs/4.0.7/docs/Ext.grid.feature.GroupingSummary.1/app.js">(hidden)</pre>
+    </div>
+
 </body>
 </html>

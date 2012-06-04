@@ -2,425 +2,94 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8"/>
-    <title>Progress Bar Pager Extension</title>
-    <meta Name="description" content="Progress Bar Pager Extension" />
+    <title>Progress Bar Pager Extension | Sencha Try</title>
+    <meta name="description" content="Progress Bar Pager Extension" />
     <meta name="keywords" content="Sencha, Ext JS, Ext JS 4.0.7" />
+    <meta name="author" content="Sencha Inc.">
     <link href="/assets/application.css" media="screen" rel="stylesheet" type="text/css" />
 </head>
 <body>
-    
-    <div>
-        <header>
-            <h1>Sencha Try</h1>
-        </header>
-        
-        <section id="readme">
-            <div class="intro"><h1>Progress Bar Pager Extension</h1></div>
-            <div>
-                <a href="src.zip" download="extjs_4.0.7_examples_grid_progress-bar-pager.zip">DOWNLOAD</a>
-            </div>
-            <nav>
-                <h2>Tags:</h2>
-                <ul class="tags">
-                    <li><a href="/tags/Ext%20JS/">Ext JS</a></li>
-                    <li><a href="/tags/Ext%20JS%204.0.7/">Ext JS 4.0.7</a></li>
+
+    <div id="logo-container" class="skiptranslate">
+        <h1 id="logo"><a href="/"><img src="/assets/logo.png" alt="Sencha Try" /></a></h1>
+        <span id="glow"></span>
+    </div>
+    <ul>
+        <li class="with-sub">
+            <a href="#" class="dropdown">Sencha Network</a>
+            <div id="docs-dropdown" class="pop-nav zero">
+                <ul>
+                    <li><a href="http://sencha.com/">Sencha.com</a></li>
+                    <li><a href="http://sencha.com/products/io/">Sencha.io</a></li>
+                    <li><a href="http://market.sencha.com/">Sencha Market</a></li>
                 </ul>
-            </nav>
-        </section>
-        
-        <section id="example">
-            [example]
-        </section>
-        
-        
-        <footer>
-            &copy; 2012 Sencha Inc.
-        </footer>
+            </div>
+        </li>
+    </ul>
+    
+    <div id="content-wrapper" class="clearfix">
+        <div id="content">
+            <a href="/">Home</a> <span>/</span> <a href="/extjs/">Ext JS</a> <span>/</span> <a href="/extjs/4.0.7/">4.0.7</a> <span>/</span> Progress Bar Pager Extension
+            <div class="developer">
+                <div class="column_nine">
+                    <div class="details">
+                        <div class="top-block border">
+                            <h2 class="alt">Progress Bar Pager Extension</h2>
+                        </div>
+                        <div class="plain-text"></div>
+                        <h3>[example widget]</h3>
+                        <div>
+                            <ul class="developer-actions">
+                                <li class="request"><a href="src.zip" class="button-link center">Download</a></li>
+                            </ul>
+                        </div>
+                        <hr class="clear" />
+                        <h4>Tags</h4>
+                        <ul class="services-list alt clearfix tags">
+                            <li><a href="/tags/Ext%20JS/">Ext JS</a></li>
+                            <li><a href="/tags/Ext%20JS%204.0.7/">Ext JS 4.0.7</a></li>
+                        </ul>
+                        <h4>See Also</h4>
+                        <ul class="services-list alt clearfix see-also">
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
     
+    <div id="footer-content">
+        <div class="columns">
+            <ul class="column">
+                <li>
+                    <a class="main" href="http://sencha.com/company/">Company</a>
+                    <ul class="zero">
+                        <li class="first"><a href="http://www.sencha.com/contact/" rel="nofollow">Contact Us</a></li>
+                        <li class="last"><a href="/pages/terms/" rel="nofollow">Terms of Use</a></li>
+                    </ul>
+                </li>
+            </ul>
+            <ul class="column">
+                <li>
+                    <a class="main" href="/">Listings</a>
+                    <ul class="zero">
+                        <li class="first"><a href="/developers/">Full listing</a></li>
+                        <li class="last"><a href="/developers/by_location/">Geographic listing</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+        <hr />
+        <div id="copyright">
+            <p>&copy; 2012 Sencha Inc. All rights reserved.</p>
+        </div>
+    </div>
+
     <div class="hidden">
-        <!-- extjs/4.0.7/examples/grid/progress-bar-pager/app.js -->
-        <pre>/*global Ext:false */
-/*
-
-This file is part of Ext JS 4
-
-Copyright (c) 2011 Sencha Inc
-
-Contact:  http://www.sencha.com/contact
-
-GNU General Public License Usage
-This file may be used under the terms of the GNU General Public License version 3.0 as published by the Free Software Foundation and appearing in the file LICENSE included in the packaging of this file.  Please review the following information to ensure the GNU General Public License version 3.0 requirements will be met: http://www.gnu.org/copyleft/gpl.html.
-
-If you are unsure which license is appropriate for your use, please contact the sales department at http://www.sencha.com/contact.
-
-*/
-Ext.Loader.setConfig({enabled: true});
-
-Ext.Loader.setPath('Ext.ux', 'ux');
-
-Ext.require([
-    'Ext.data.*',
-    'Ext.grid.*',
-    'Ext.util.*',
-    'Ext.ux.data.PagingMemoryProxy',
-    'Ext.ux.ProgressBarPager'
-]);
-
-Ext.onReady(function(){
-    
-    var myData = [
-        ['3m Co',71.72,0.02,0.03,'9/1 12:00am'],
-        ['Alcoa Inc',29.01,0.42,1.47,'9/1 12:00am'],
-        ['Altria Group Inc',83.81,0.28,0.34,'9/1 12:00am'],
-        ['American Express Company',52.55,0.01,0.02,'9/1 12:00am'],
-        ['American International Group, Inc.',64.13,0.31,0.49,'9/1 12:00am'],
-        ['AT&amp;T Inc.',31.61,-0.48,-1.54,'9/1 12:00am'],
-        ['Boeing Co.',75.43,0.53,0.71,'9/1 12:00am'],
-        ['Caterpillar Inc.',67.27,0.92,1.39,'9/1 12:00am'],
-        ['Citigroup, Inc.',49.37,0.02,0.04,'9/1 12:00am'],
-        ['E.I. du Pont de Nemours and Company',40.48,0.51,1.28,'9/1 12:00am'],
-        ['Exxon Mobil Corp',68.1,-0.43,-0.64,'9/1 12:00am'],
-        ['General Electric Company',34.14,-0.08,-0.23,'9/1 12:00am'],
-        ['General Motors Corporation',30.27,1.09,3.74,'9/1 12:00am'],
-        ['Hewlett-Packard Co.',36.53,-0.03,-0.08,'9/1 12:00am'],
-        ['Honeywell Intl Inc',38.77,0.05,0.13,'9/1 12:00am'],
-        ['Intel Corporation',19.88,0.31,1.58,'9/1 12:00am'],
-        ['International Business Machines',81.41,0.44,0.54,'9/1 12:00am'],
-        ['Johnson &amp; Johnson',64.72,0.06,0.09,'9/1 12:00am'],
-        ['JP Morgan &amp; Chase &amp; Co',45.73,0.07,0.15,'9/1 12:00am'],
-        ['McDonald\'s Corporation',36.76,0.86,2.40,'9/1 12:00am'],
-        ['Merck &amp; Co., Inc.',40.96,0.41,1.01,'9/1 12:00am'],
-        ['Microsoft Corporation',25.84,0.14,0.54,'9/1 12:00am'],
-        ['Pfizer Inc',27.96,0.4,1.45,'9/1 12:00am'],
-        ['The Coca-Cola Company',45.07,0.26,0.58,'9/1 12:00am'],
-        ['The Home Depot, Inc.',34.64,0.35,1.02,'9/1 12:00am'],
-        ['The Procter &amp; Gamble Company',61.91,0.01,0.02,'9/1 12:00am'],
-        ['United Technologies Corporation',63.26,0.55,0.88,'9/1 12:00am'],
-        ['Verizon Communications',35.57,0.39,1.11,'9/1 12:00am'],
-        ['Wal-Mart Stores, Inc.',45.45,0.73,1.63,'9/1 12:00am']
-    ];
-
-    // example of custom renderer function
-    function change(val){
-        if(val > 0){
-            return '<span style="color:green;">' + val + '</span>';
-        }else if(val < 0){
-            return '<span style="color:red;">' + val + '</span>';
-        }
-        return val;
-    }
-
-    // example of custom renderer function
-    function pctChange(val){
-        if(val > 0){
-            return '<span style="color:green;">' + val + '%</span>';
-        }else if(val < 0){
-            return '<span style="color:red;">' + val + '%</span>';
-        }
-        return val;
-    }
-
-    // register model
-    Ext.define('Company', {
-        extend: 'Ext.data.Model',
-        idProperty: 'company',
-        fields: [
-           {name: 'company'},
-           {name: 'price', type: 'float'},
-           {name: 'change', type: 'float'},
-           {name: 'pctChange', type: 'float'},
-           {name: 'lastChange', type: 'date', dateFormat: 'n/j h:ia'}
-        ]        
-    });
-    
-
-    // create the data store
-    var store = Ext.create('Ext.data.Store', {
-        model: 'Company',
-        remoteSort: true,
-        pageSize: 10,
-        proxy: {
-            type: 'pagingmemory',
-            data: myData,
-            reader: {
-                type: 'array'
-            }
-        }
-    });
-    
-    // create the Grid
-    var grid = Ext.create('Ext.grid.Panel', {
-        title:'Progress Bar Pager',
-        store: store,
-        columns: [{
-                id:'company',
-                text: 'Company',
-                sortable: true,
-                dataIndex: 'company',
-                flex: 1
-            },{
-                text: 'Price',
-                sortable: true,
-                renderer: Ext.util.Format.usMoney,
-                dataIndex: 'price',
-                width: 75
-            },{
-                text: 'Change',
-                sortable: true,
-                renderer: change,
-                dataIndex: 'change',
-                width: 75
-            },{
-                text: '% Change',
-                sortable: true,
-                renderer: pctChange,
-                dataIndex: 'pctChange',
-                width: 75
-            },{
-                text: 'Last Updated',
-                sortable: true,
-                dataIndex: 'lastChange',
-                width: 75
-        }],
-        stripeRows: true,
-        height:320,
-        width:600,
-        frame:true,
-        //resizable: {
-        //   handles: 's',
-        //   minHeight: 100
-        //},
-        bbar: Ext.create('Ext.PagingToolbar', {
-            pageSize: 10,
-            store: store,
-            displayInfo: true,
-            plugins: Ext.create('Ext.ux.ProgressBarPager', {})
-        })
-    });
-
-    grid.render('grid-example');
-
-    store.load();
-});
-</pre>
-        <!-- extjs/4.0.7/examples/grid/progress-bar-pager/ux/ProgressBarPager.js -->
-        <pre>/*
-
-This file is part of Ext JS 4
-
-Copyright (c) 2011 Sencha Inc
-
-Contact:  http://www.sencha.com/contact
-
-GNU General Public License Usage
-This file may be used under the terms of the GNU General Public License version 3.0 as published by the Free Software Foundation and appearing in the file LICENSE included in the packaging of this file.  Please review the following information to ensure the GNU General Public License version 3.0 requirements will be met: http://www.gnu.org/copyleft/gpl.html.
-
-If you are unsure which license is appropriate for your use, please contact the sales department at http://www.sencha.com/contact.
-
-*/
-/**
-* @class Ext.ux.ProgressBarPager
-* @extends Object
-* Plugin for displaying a progressbar inside of a paging toolbar instead of plain text
-* @constructor
-* Create a new ItemSelector
-* @param {Object} config Configuration options
-*/
-Ext.define('Ext.ux.ProgressBarPager', {
-    extend: 'Object',
-
-    requires: ['Ext.ProgressBar'],
-    /**
-     * @cfg {Integer} width
-     * <p>The default progress bar width.  Default is 225.</p>
-    */
-    width   : 225,
-    /**
-     * @cfg {String} defaultText
-    * <p>The text to display while the store is loading.  Default is 'Loading...'</p>
-     */
-    defaultText    : 'Loading...',
-    /**
-     * @cfg {Object} defaultAnimCfg
-     * <p>A {@link Ext.fx.Anim Ext.fx.Anim} configuration object.</p>
-     */
-    defaultAnimCfg : {
-        duration: 1000,
-        easing: 'bounceOut' 
-    },  
-    
-    constructor : function(config) {
-        if (config) {
-            Ext.apply(this, config);
-        }
-    },
-    //public
-    init : function (parent) {
-        var displayItem;
-        if(parent.displayInfo) {
-            this.parent = parent;
-
-            displayItem = parent.child("#displayItem");
-            if (displayItem) {
-                parent.remove(displayItem, true);
-            }
-
-            this.progressBar = Ext.create('Ext.ProgressBar', {
-                text    : this.defaultText,
-                width   : this.width,
-                animate : this.defaultAnimCfg
-            });
-
-            parent.displayItem = this.progressBar;
-
-            parent.add(parent.displayItem);
-            parent.doLayout();
-            Ext.apply(parent, this.parentOverrides);
-
-            this.progressBar.on('render', function(pb) {
-                pb.mon(pb.getEl().applyStyles('cursor:pointer'), 'click', this.handleProgressBarClick, this);
-            }, this, {single: true});
-        }
-    },
-    // private
-    // This method handles the click for the progress bar
-    handleProgressBarClick : function(e){
-        var parent = this.parent,
-            displayItem = parent.displayItem,
-            box = this.progressBar.getBox(),
-            xy = e.getXY(),
-            position = xy[0]- box.x,
-            pages = Math.ceil(parent.store.getTotalCount()/parent.pageSize),
-            newpage = Math.ceil(position/(displayItem.width/pages));
-
-        parent.store.loadPage(newpage);
-    },
-
-    // private, overriddes
-    parentOverrides  : {
-        // private
-        // This method updates the information via the progress bar.
-        updateInfo : function(){
-            if(this.displayItem){
-                var count = this.store.getCount(),
-                    pageData = this.getPageData(),
-                    message = count === 0 ?
-                    this.emptyMsg :
-                    Ext.String.format(
-                        this.displayMsg,
-                        pageData.fromRecord, pageData.toRecord, this.store.getTotalCount()
-                    ),
-                    percentage = pageData.pageCount > 0 ? (pageData.currentPage / pageData.pageCount) : 0;
-
-                this.displayItem.updateProgress(percentage, message, this.animate || this.defaultAnimConfig);
-            }
-        }
-    }
-});
-
-
-</pre>
-        <!-- extjs/4.0.7/examples/grid/progress-bar-pager/ux/data/PagingMemoryProxy.js -->
-        <pre>/*
-
-This file is part of Ext JS 4
-
-Copyright (c) 2011 Sencha Inc
-
-Contact:  http://www.sencha.com/contact
-
-GNU General Public License Usage
-This file may be used under the terms of the GNU General Public License version 3.0 as published by the Free Software Foundation and appearing in the file LICENSE included in the packaging of this file.  Please review the following information to ensure the GNU General Public License version 3.0 requirements will be met: http://www.gnu.org/copyleft/gpl.html.
-
-If you are unsure which license is appropriate for your use, please contact the sales department at http://www.sencha.com/contact.
-
-*/
-/**
- * @class Ext.ux.data.PagingMemoryProxy
- * @extends Ext.data.proxy.Memory
- * <p>Paging Memory Proxy, allows to use paging grid with in memory dataset</p>
- */
-Ext.define('Ext.ux.data.PagingMemoryProxy', {
-    extend: 'Ext.data.proxy.Memory',
-    alias: 'proxy.pagingmemory',
-    alternateClassName: 'Ext.data.PagingMemoryProxy',
-
-    read : function(operation, callback, scope){
-        var reader = this.getReader(),
-            result = reader.read(this.data),
-            sorters, filters, sorterFn, records;
-
-        scope = scope || this;
-        // filtering
-        filters = operation.filters;
-        if (filters.length > 0) {
-            //at this point we have an array of  Ext.util.Filter objects to filter with,
-            //so here we construct a function that combines these filters by ANDing them together
-            records = [];
-
-            Ext.each(result.records, function(record) {
-                var isMatch = true,
-                    length = filters.length,
-                    i;
-
-                for (i = 0; i < length; i++) {
-                    var filter = filters[i],
-                        fn     = filter.filterFn,
-                        scope  = filter.scope;
-
-                    isMatch = isMatch &amp;&amp; fn.call(scope, record);
-                }
-                if (isMatch) {
-                    records.push(record);
-                }
-            }, this);
-
-            result.records = records;
-            result.totalRecords = result.total = records.length;
-        }
-        
-        // sorting
-        sorters = operation.sorters;
-        if (sorters.length > 0) {
-            //construct an amalgamated sorter function which combines all of the Sorters passed
-            sorterFn = function(r1, r2) {
-                var result = sorters[0].sort(r1, r2),
-                    length = sorters.length,
-                    i;
-                
-                    //if we have more than one sorter, OR any additional sorter functions together
-                    for (i = 1; i < length; i++) {
-                        result = result || sorters[i].sort.call(this, r1, r2);
-                    }                
-               
-                return result;
-            };
-    
-            result.records.sort(sorterFn);
-        }
-        
-        // paging (use undefined cause start can also be 0 (thus false))
-        if (operation.start !== undefined &amp;&amp; operation.limit !== undefined) {
-            result.records = result.records.slice(operation.start, operation.start + operation.limit);
-            result.count = result.records.length;
-        }
-
-        Ext.apply(operation, {
-            resultSet: result
-        });
-        
-        operation.setCompleted();
-        operation.setSuccessful();
-
-        Ext.Function.defer(function () {
-            Ext.callback(callback, scope, [operation]);
-        }, 10);
-    }
-});
-
-</pre>
+        <pre class="example" data-uri="/extjs/4.0.7/examples/grid/progress-bar-pager/app.js">(hidden)</pre>
+        <pre class="example" data-uri="/extjs/4.0.7/examples/grid/progress-bar-pager/ux/ProgressBarPager.js">(hidden)</pre>
+        <pre class="example" data-uri="/extjs/4.0.7/examples/grid/progress-bar-pager/ux/data/PagingMemoryProxy.js">(hidden)</pre>
     </div>
-    
+
 </body>
 </html>

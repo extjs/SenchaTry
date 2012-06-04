@@ -2,372 +2,126 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8"/>
-    <title>Column Chart</title>
-    <meta Name="description" content="Column Chart" />
+    <title>Column Chart | Sencha Try</title>
+    <meta name="description" content="Column Chart" />
     <meta name="keywords" content="Sencha, Ext JS, Ext JS 4.0.7, Ext.apply(), Ext.chart.CategoryAxis, Ext.chart.Chart, Ext.chart.ColumnChart, Ext.chart.ColumnSeries, Ext.chart.NumericAxis, Ext.chart.StackedColumnChart, Ext.chart.axis.Category, Ext.chart.axis.Numeric, Ext.chart.series.Column, Ext.chart.theme.Base, Ext.define(), angle, animate, axisLabelBottom, axisLabelLeft, axisTitleBottom, axisTitleLeft, callParent(), category, chart, column, duration, easing, gradients, numeric, stops, theme" />
+    <meta name="author" content="Sencha Inc.">
     <link href="/assets/application.css" media="screen" rel="stylesheet" type="text/css" />
 </head>
 <body>
-    
-    <div>
-        <header>
-            <h1>Sencha Try</h1>
-        </header>
-        
-        <section id="readme">
-            <div class="intro"><h1>Column Chart</h1>
 
-<p>Display a sets of random data in a column series. Reload data will randomly generate a new set of data in the store.</p></div>
-            <div>
-                <a href="src.zip" download="extjs_4.0.7_examples_charts_column2.zip">DOWNLOAD</a>
-            </div>
-            <nav>
-                <h2>Tags:</h2>
-                <ul class="tags">
-                    <li><a href="/tags/Ext%20JS/">Ext JS</a></li>
-                    <li><a href="/tags/Ext%20JS%204.0.7/">Ext JS 4.0.7</a></li>
-                    <li><a href="/tags/Ext.apply%28%29/">Ext.apply()</a></li>
-                    <li><a href="/tags/Ext.chart.CategoryAxis/">Ext.chart.CategoryAxis</a></li>
-                    <li><a href="/tags/Ext.chart.Chart/">Ext.chart.Chart</a></li>
-                    <li><a href="/tags/Ext.chart.ColumnChart/">Ext.chart.ColumnChart</a></li>
-                    <li><a href="/tags/Ext.chart.ColumnSeries/">Ext.chart.ColumnSeries</a></li>
-                    <li><a href="/tags/Ext.chart.NumericAxis/">Ext.chart.NumericAxis</a></li>
-                    <li><a href="/tags/Ext.chart.StackedColumnChart/">Ext.chart.StackedColumnChart</a></li>
-                    <li><a href="/tags/Ext.chart.axis.Category/">Ext.chart.axis.Category</a></li>
-                    <li><a href="/tags/Ext.chart.axis.Numeric/">Ext.chart.axis.Numeric</a></li>
-                    <li><a href="/tags/Ext.chart.series.Column/">Ext.chart.series.Column</a></li>
-                    <li><a href="/tags/Ext.chart.theme.Base/">Ext.chart.theme.Base</a></li>
-                    <li><a href="/tags/Ext.define%28%29/">Ext.define()</a></li>
-                    <li><a href="/tags/angle/">angle</a></li>
-                    <li><a href="/tags/animate/">animate</a></li>
-                    <li><a href="/tags/axisLabelBottom/">axisLabelBottom</a></li>
-                    <li><a href="/tags/axisLabelLeft/">axisLabelLeft</a></li>
-                    <li><a href="/tags/axisTitleBottom/">axisTitleBottom</a></li>
-                    <li><a href="/tags/axisTitleLeft/">axisTitleLeft</a></li>
-                    <li><a href="/tags/callParent%28%29/">callParent()</a></li>
-                    <li><a href="/tags/category/">category</a></li>
-                    <li><a href="/tags/chart/">chart</a></li>
-                    <li><a href="/tags/column/">column</a></li>
-                    <li><a href="/tags/duration/">duration</a></li>
-                    <li><a href="/tags/easing/">easing</a></li>
-                    <li><a href="/tags/gradients/">gradients</a></li>
-                    <li><a href="/tags/numeric/">numeric</a></li>
-                    <li><a href="/tags/stops/">stops</a></li>
-                    <li><a href="/tags/theme/">theme</a></li>
+    <div id="logo-container" class="skiptranslate">
+        <h1 id="logo"><a href="/"><img src="/assets/logo.png" alt="Sencha Try" /></a></h1>
+        <span id="glow"></span>
+    </div>
+    <ul>
+        <li class="with-sub">
+            <a href="#" class="dropdown">Sencha Network</a>
+            <div id="docs-dropdown" class="pop-nav zero">
+                <ul>
+                    <li><a href="http://sencha.com/">Sencha.com</a></li>
+                    <li><a href="http://sencha.com/products/io/">Sencha.io</a></li>
+                    <li><a href="http://market.sencha.com/">Sencha Market</a></li>
                 </ul>
-            </nav>
-        </section>
-        
-        <section id="example">
-            [example]
-        </section>
-        
-        <nav>
-            <h2>See Also:</h2>
-            <ul class="seeAlso">
-                <li class="docs"><a href="http://docs.sencha.com/ext-js/4-0/#!/api/Ext.chart.Chart" target="_blank">Ext.chart.Chart Documentation</a></li>
-                <li class="docs"><a href="http://docs.sencha.com/ext-js/4-0/#!/api/Ext.chart.axis.Numeric" target="_blank">Ext.chart.axis.Numeric Documentation</a></li>
-                <li class="docs"><a href="http://docs.sencha.com/ext-js/4-0/#!/api/Ext.chart.axis.Category" target="_blank">Ext.chart.axis.Category Documentation</a></li>
-                <li class="docs"><a href="http://docs.sencha.com/ext-js/4-0/#!/api/Ext.chart.series.Column" target="_blank">Ext.chart.series.Column Documentation</a></li>
-                <li class="guide"><a href="http://docs.sencha.com/ext-js/4-0/#!/guide/drawing_and_charting" target="_blank">Drawing and Charting Guide</a></li>
+            </div>
+        </li>
+    </ul>
+    
+    <div id="content-wrapper" class="clearfix">
+        <div id="content">
+            <a href="/">Home</a> <span>/</span> <a href="/extjs/">Ext JS</a> <span>/</span> <a href="/extjs/4.0.7/">4.0.7</a> <span>/</span> Column Chart
+            <div class="developer">
+                <div class="column_nine">
+                    <div class="details">
+                        <div class="top-block border">
+                            <h2 class="alt">Column Chart</h2>
+                        </div>
+                        <div class="plain-text"><p>Display a sets of random data in a column series. Reload data will randomly generate a new set of data in the store.</p></div>
+                        <h3>[example widget]</h3>
+                        <div>
+                            <ul class="developer-actions">
+                                <li class="request"><a href="src.zip" class="button-link center">Download</a></li>
+                            </ul>
+                        </div>
+                        <hr class="clear" />
+                        <h4>Tags</h4>
+                        <ul class="services-list alt clearfix tags">
+                            <li><a href="/tags/Ext%20JS/">Ext JS</a></li>
+                            <li><a href="/tags/Ext%20JS%204.0.7/">Ext JS 4.0.7</a></li>
+                            <li><a href="/tags/Ext.apply%28%29/"><code>Ext.apply()</code></a></li>
+                            <li><a href="/tags/Ext.chart.CategoryAxis/"><code>Ext.chart.CategoryAxis</code></a></li>
+                            <li><a href="/tags/Ext.chart.Chart/"><code>Ext.chart.Chart</code></a></li>
+                            <li><a href="/tags/Ext.chart.ColumnChart/"><code>Ext.chart.ColumnChart</code></a></li>
+                            <li><a href="/tags/Ext.chart.ColumnSeries/"><code>Ext.chart.ColumnSeries</code></a></li>
+                            <li><a href="/tags/Ext.chart.NumericAxis/"><code>Ext.chart.NumericAxis</code></a></li>
+                            <li><a href="/tags/Ext.chart.StackedColumnChart/"><code>Ext.chart.StackedColumnChart</code></a></li>
+                            <li><a href="/tags/Ext.chart.axis.Category/"><code>Ext.chart.axis.Category</code></a></li>
+                            <li><a href="/tags/Ext.chart.axis.Numeric/"><code>Ext.chart.axis.Numeric</code></a></li>
+                            <li><a href="/tags/Ext.chart.series.Column/"><code>Ext.chart.series.Column</code></a></li>
+                            <li><a href="/tags/Ext.chart.theme.Base/"><code>Ext.chart.theme.Base</code></a></li>
+                            <li><a href="/tags/Ext.define%28%29/"><code>Ext.define()</code></a></li>
+                            <li><a href="/tags/angle/"><code>angle</code></a></li>
+                            <li><a href="/tags/animate/"><code>animate</code></a></li>
+                            <li><a href="/tags/axisLabelBottom/"><code>axisLabelBottom</code></a></li>
+                            <li><a href="/tags/axisLabelLeft/"><code>axisLabelLeft</code></a></li>
+                            <li><a href="/tags/axisTitleBottom/"><code>axisTitleBottom</code></a></li>
+                            <li><a href="/tags/axisTitleLeft/"><code>axisTitleLeft</code></a></li>
+                            <li><a href="/tags/callParent%28%29/"><code>callParent()</code></a></li>
+                            <li><a href="/tags/category/"><code>category</code></a></li>
+                            <li><a href="/tags/chart/"><code>chart</code></a></li>
+                            <li><a href="/tags/column/"><code>column</code></a></li>
+                            <li><a href="/tags/duration/"><code>duration</code></a></li>
+                            <li><a href="/tags/easing/"><code>easing</code></a></li>
+                            <li><a href="/tags/gradients/"><code>gradients</code></a></li>
+                            <li><a href="/tags/numeric/"><code>numeric</code></a></li>
+                            <li><a href="/tags/stops/"><code>stops</code></a></li>
+                            <li><a href="/tags/theme/"><code>theme</code></a></li>
+                        </ul>
+                        <h4>See Also</h4>
+                        <ul class="services-list alt clearfix see-also">
+                            <li class="docs"><a href="http://docs.sencha.com/ext-js/4-0/#!/api/Ext.chart.Chart" target="_blank">Ext.chart.Chart Documentation</a></li>
+                            <li class="docs"><a href="http://docs.sencha.com/ext-js/4-0/#!/api/Ext.chart.axis.Numeric" target="_blank">Ext.chart.axis.Numeric Documentation</a></li>
+                            <li class="docs"><a href="http://docs.sencha.com/ext-js/4-0/#!/api/Ext.chart.axis.Category" target="_blank">Ext.chart.axis.Category Documentation</a></li>
+                            <li class="docs"><a href="http://docs.sencha.com/ext-js/4-0/#!/api/Ext.chart.series.Column" target="_blank">Ext.chart.series.Column Documentation</a></li>
+                            <li class="guide"><a href="http://docs.sencha.com/ext-js/4-0/#!/guide/drawing_and_charting" target="_blank">Drawing and Charting Guide</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div id="footer-content">
+        <div class="columns">
+            <ul class="column">
+                <li>
+                    <a class="main" href="http://sencha.com/company/">Company</a>
+                    <ul class="zero">
+                        <li class="first"><a href="http://www.sencha.com/contact/" rel="nofollow">Contact Us</a></li>
+                        <li class="last"><a href="/pages/terms/" rel="nofollow">Terms of Use</a></li>
+                    </ul>
+                </li>
             </ul>
-        </nav>
-        
-        <footer>
-            &copy; 2012 Sencha Inc.
-        </footer>
+            <ul class="column">
+                <li>
+                    <a class="main" href="/">Listings</a>
+                    <ul class="zero">
+                        <li class="first"><a href="/developers/">Full listing</a></li>
+                        <li class="last"><a href="/developers/by_location/">Geographic listing</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+        <hr />
+        <div id="copyright">
+            <p>&copy; 2012 Sencha Inc. All rights reserved.</p>
+        </div>
     </div>
-    
+
     <div class="hidden">
-        <!-- extjs/4.0.7/examples/charts/column2/app.js -->
-        <pre>/*global Ext:false */
-/*
-
-This file is part of Ext JS 4
-
-Copyright (c) 2011 Sencha Inc
-
-Contact:  http://www.sencha.com/contact
-
-GNU General Public License Usage
-This file may be used under the terms of the GNU General Public License version 3.0 as published by the Free Software Foundation and appearing in the file LICENSE included in the packaging of this file.  Please review the following information to ensure the GNU General Public License version 3.0 requirements will be met: http://www.gnu.org/copyleft/gpl.html.
-
-If you are unsure which license is appropriate for your use, please contact the sales department at http://www.sencha.com/contact.
-
-*/
-Ext.require('Ext.chart.*');
-Ext.require(['Ext.Window', 'Ext.layout.container.Fit', 'Ext.fx.target.Sprite']);
-
-Ext.onReady(function () {
-    store1.loadData(generateData(5, 0));
-    
-    var colors = ['url(#v-1)',
-                  'url(#v-2)',
-                  'url(#v-3)',
-                  'url(#v-4)',
-                  'url(#v-5)'];
-    
-    var baseColor = '#eee';
-    
-    Ext.define('Ext.chart.theme.Fancy', {
-        extend: 'Ext.chart.theme.Base',
-        
-        constructor: function(config) {
-            this.callParent([Ext.apply({
-                axis: {
-                    fill: baseColor,
-                    stroke: baseColor
-                },
-                axisLabelLeft: {
-                    fill: baseColor
-                },
-                axisLabelBottom: {
-                    fill: baseColor
-                },
-                axisTitleLeft: {
-                    fill: baseColor
-                },
-                axisTitleBottom: {
-                    fill: baseColor
-                },
-                colors: colors
-            }, config)]);
-        }
-    });
- 
-    var win = Ext.create('Ext.Window', {
-        width: 800,
-        height: 600,
-        minHeight: 400,
-        minWidth: 550,
-        hidden: false,
-        maximizable: true,
-        title: 'Column Chart',
-        renderTo: Ext.getBody(),
-        layout: 'fit',
-        tbar: [{
-            text: 'Reload Data',
-            handler: function() {
-                store1.loadData(generateData(5, 0));
-            }
-        }],
-        items: {
-            id: 'chartCmp',
-            xtype: 'chart',
-            theme: 'Fancy',
-            animate: {
-                easing: 'bounceOut',
-                duration: 750
-            },
-            store: store1,
-            background: {
-                fill: 'rgb(17, 17, 17)'
-            },
-            gradients: [
-            {
-                'id': 'v-1',
-                'angle': 0,
-                stops: {
-                    0: {
-                        color: 'rgb(212, 40, 40)'
-                    },
-                    100: {
-                        color: 'rgb(117, 14, 14)'
-                    }
-                }
-            },
-            {
-                'id': 'v-2',
-                'angle': 0,
-                stops: {
-                    0: {
-                        color: 'rgb(180, 216, 42)'
-                    },
-                    100: {
-                        color: 'rgb(94, 114, 13)'
-                    }
-                }
-            },
-            {
-                'id': 'v-3',
-                'angle': 0,
-                stops: {
-                    0: {
-                        color: 'rgb(43, 221, 115)'
-                    },
-                    100: {
-                        color: 'rgb(14, 117, 56)'
-                    }
-                }
-            },
-            {
-                'id': 'v-4',
-                'angle': 0,
-                stops: {
-                    0: {
-                        color: 'rgb(45, 117, 226)'
-                    },
-                    100: {
-                        color: 'rgb(14, 56, 117)'
-                    }
-                }
-            },
-            {
-                'id': 'v-5',
-                'angle': 0,
-                stops: {
-                    0: {
-                        color: 'rgb(187, 45, 222)'
-                    },
-                    100: {
-                        color: 'rgb(85, 10, 103)'
-                    }
-                }
-            }],
-            axes: [{
-                type: 'Numeric',
-                position: 'left',
-                fields: ['data1'],
-                minimum: 0,
-                maximum: 100,
-                label: {
-                    renderer: Ext.util.Format.numberRenderer('0,0')
-                },
-                title: 'Number of Hits',
-                grid: {
-                    odd: {
-                        stroke: '#555'
-                    },
-                    even: {
-                        stroke: '#555'
-                    }
-                }
-            }, {
-                type: 'Category',
-                position: 'bottom',
-                fields: ['name'],
-                title: 'Month of the Year'
-            }],
-            series: [{
-                type: 'column',
-                axis: 'left',
-                highlight: true,
-                label: {
-                  display: 'insideEnd',
-                  'text-anchor': 'middle',
-                    field: 'data1',
-                    orientation: 'horizontal',
-                    fill: '#fff',
-                    font: '17px Arial'
-                },
-                renderer: function(sprite, storeItem, barAttr, i, store) {
-                    barAttr.fill = colors[i % colors.length];
-                    return barAttr;
-                },
-                style: {
-                    opacity: 0.95
-                },
-                xField: 'name',
-                yField: 'data1'
-            }]
-        }
-    });
-});
-
-</pre>
-        <!-- extjs/4.0.7/examples/charts/column2/resources/example-data.js -->
-        <pre>/*
-
-This file is part of Ext JS 4
-
-Copyright (c) 2011 Sencha Inc
-
-Contact:  http://www.sencha.com/contact
-
-GNU General Public License Usage
-This file may be used under the terms of the GNU General Public License version 3.0 as published by the Free Software Foundation and appearing in the file LICENSE included in the packaging of this file.  Please review the following information to ensure the GNU General Public License version 3.0 requirements will be met: http://www.gnu.org/copyleft/gpl.html.
-
-If you are unsure which license is appropriate for your use, please contact the sales department at http://www.sencha.com/contact.
-
-*/
-Ext.require(['Ext.data.*']);
-
-Ext.onReady(function() {
-
-    window.generateData = function(n, floor){
-        var data = [],
-            p = (Math.random() *  11) + 1,
-            i;
-            
-        floor = (!floor &amp;&amp; floor !== 0)? 20 : floor;
-        
-        for (i = 0; i < (n || 12); i++) {
-            data.push({
-                name: Ext.Date.monthNames[i % 12],
-                data1: Math.floor(Math.max((Math.random() * 100), floor)),
-                data2: Math.floor(Math.max((Math.random() * 100), floor)),
-                data3: Math.floor(Math.max((Math.random() * 100), floor)),
-                data4: Math.floor(Math.max((Math.random() * 100), floor)),
-                data5: Math.floor(Math.max((Math.random() * 100), floor)),
-                data6: Math.floor(Math.max((Math.random() * 100), floor)),
-                data7: Math.floor(Math.max((Math.random() * 100), floor)),
-                data8: Math.floor(Math.max((Math.random() * 100), floor)),
-                data9: Math.floor(Math.max((Math.random() * 100), floor))
-            });
-        }
-        return data;
-    };
-    
-    window.generateDataNegative = function(n, floor){
-        var data = [],
-            p = (Math.random() *  11) + 1,
-            i;
-            
-        floor = (!floor &amp;&amp; floor !== 0)? 20 : floor;
-            
-        for (i = 0; i < (n || 12); i++) {
-            data.push({
-                name: Ext.Date.monthNames[i % 12],
-                data1: Math.floor(((Math.random() - 0.5) * 100), floor),
-                data2: Math.floor(((Math.random() - 0.5) * 100), floor),
-                data3: Math.floor(((Math.random() - 0.5) * 100), floor),
-                data4: Math.floor(((Math.random() - 0.5) * 100), floor),
-                data5: Math.floor(((Math.random() - 0.5) * 100), floor),
-                data6: Math.floor(((Math.random() - 0.5) * 100), floor),
-                data7: Math.floor(((Math.random() - 0.5) * 100), floor),
-                data8: Math.floor(((Math.random() - 0.5) * 100), floor),
-                data9: Math.floor(((Math.random() - 0.5) * 100), floor)
-            });
-        }
-        return data;
-    };
-
-    window.store1 = Ext.create('Ext.data.JsonStore', {
-        fields: ['name', 'data1', 'data2', 'data3', 'data4', 'data5', 'data6', 'data7', 'data9', 'data9'],
-        data: generateData()
-    });
-    window.storeNegatives = Ext.create('Ext.data.JsonStore', {
-        fields: ['name', 'data1', 'data2', 'data3', 'data4', 'data5', 'data6', 'data7', 'data9', 'data9'],
-        data: generateDataNegative()
-    });
-    window.store3 = Ext.create('Ext.data.JsonStore', {
-        fields: ['name', 'data1', 'data2', 'data3', 'data4', 'data5', 'data6', 'data7', 'data9', 'data9'],
-        data: generateData()
-    });
-    window.store4 = Ext.create('Ext.data.JsonStore', {
-        fields: ['name', 'data1', 'data2', 'data3', 'data4', 'data5', 'data6', 'data7', 'data9', 'data9'],
-        data: generateData()
-    });
-    window.store5 = Ext.create('Ext.data.JsonStore', {
-        fields: ['name', 'data1', 'data2', 'data3', 'data4', 'data5', 'data6', 'data7', 'data9', 'data9'],
-        data: generateData()
-    });    
-    
-    
-});
-
-</pre>
+        <pre class="example" data-uri="/extjs/4.0.7/examples/charts/column2/app.js">(hidden)</pre>
+        <pre class="example" data-uri="/extjs/4.0.7/examples/charts/column2/resources/example-data.js">(hidden)</pre>
     </div>
-    
+
 </body>
 </html>

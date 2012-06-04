@@ -2,295 +2,122 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8"/>
-    <title>Stacked Bar Chart Sample</title>
-    <meta Name="description" content="Stacked Bar Chart Sample" />
+    <title>Stacked Bar Chart Sample | Sencha Try</title>
+    <meta name="description" content="Stacked Bar Chart Sample" />
     <meta name="keywords" content="Sencha, Ext JS, Ext JS 4.0.7, Ext.Window, Ext.chart.BarChart, Ext.chart.BarSeries, Ext.chart.Chart, Ext.chart.StackedBarChart, Ext.chart.series.Bar, Ext.chart.theme.Base, Ext.util.Format, angle, animate, axes, axis, axisLabel, axisTitle, bar, chart, display, gradient, loadData(), numberRenderer(), orientation, renderer, shadow, stops, text-anchor, theme" />
+    <meta name="author" content="Sencha Inc.">
     <link href="/assets/application.css" media="screen" rel="stylesheet" type="text/css" />
 </head>
 <body>
-    
-    <div>
-        <header>
-            <h1>Sencha Try</h1>
-        </header>
-        
-        <section id="readme">
-            <div class="intro"><h1>Stacked Bar Chart Sample</h1>
 
-<p>Display a sets of random data in a bar series. Reload data will randomly generate a new set of data in the store.</p></div>
-            <div>
-                <a href="src.zip" download="extjs_4.0.7_examples_charts_bar.zip">DOWNLOAD</a>
-            </div>
-            <nav>
-                <h2>Tags:</h2>
-                <ul class="tags">
-                    <li><a href="/tags/Ext%20JS/">Ext JS</a></li>
-                    <li><a href="/tags/Ext%20JS%204.0.7/">Ext JS 4.0.7</a></li>
-                    <li><a href="/tags/Ext.Window/">Ext.Window</a></li>
-                    <li><a href="/tags/Ext.chart.BarChart/">Ext.chart.BarChart</a></li>
-                    <li><a href="/tags/Ext.chart.BarSeries/">Ext.chart.BarSeries</a></li>
-                    <li><a href="/tags/Ext.chart.Chart/">Ext.chart.Chart</a></li>
-                    <li><a href="/tags/Ext.chart.StackedBarChart/">Ext.chart.StackedBarChart</a></li>
-                    <li><a href="/tags/Ext.chart.series.Bar/">Ext.chart.series.Bar</a></li>
-                    <li><a href="/tags/Ext.chart.theme.Base/">Ext.chart.theme.Base</a></li>
-                    <li><a href="/tags/Ext.util.Format/">Ext.util.Format</a></li>
-                    <li><a href="/tags/angle/">angle</a></li>
-                    <li><a href="/tags/animate/">animate</a></li>
-                    <li><a href="/tags/axes/">axes</a></li>
-                    <li><a href="/tags/axis/">axis</a></li>
-                    <li><a href="/tags/axisLabel/">axisLabel</a></li>
-                    <li><a href="/tags/axisTitle/">axisTitle</a></li>
-                    <li><a href="/tags/bar/">bar</a></li>
-                    <li><a href="/tags/chart/">chart</a></li>
-                    <li><a href="/tags/display/">display</a></li>
-                    <li><a href="/tags/gradient/">gradient</a></li>
-                    <li><a href="/tags/loadData%28%29/">loadData()</a></li>
-                    <li><a href="/tags/numberRenderer%28%29/">numberRenderer()</a></li>
-                    <li><a href="/tags/orientation/">orientation</a></li>
-                    <li><a href="/tags/renderer/">renderer</a></li>
-                    <li><a href="/tags/shadow/">shadow</a></li>
-                    <li><a href="/tags/stops/">stops</a></li>
-                    <li><a href="/tags/text-anchor/">text-anchor</a></li>
-                    <li><a href="/tags/theme/">theme</a></li>
+    <div id="logo-container" class="skiptranslate">
+        <h1 id="logo"><a href="/"><img src="/assets/logo.png" alt="Sencha Try" /></a></h1>
+        <span id="glow"></span>
+    </div>
+    <ul>
+        <li class="with-sub">
+            <a href="#" class="dropdown">Sencha Network</a>
+            <div id="docs-dropdown" class="pop-nav zero">
+                <ul>
+                    <li><a href="http://sencha.com/">Sencha.com</a></li>
+                    <li><a href="http://sencha.com/products/io/">Sencha.io</a></li>
+                    <li><a href="http://market.sencha.com/">Sencha Market</a></li>
                 </ul>
-            </nav>
-        </section>
-        
-        <section id="example">
-            [example]
-        </section>
-        
-        <nav>
-            <h2>See Also:</h2>
-            <ul class="seeAlso">
-                <li class="docs"><a href="http://docs.sencha.com/ext-js/4-0/#!/api/Ext.chart.Chart" target="_blank">Ext.chart.Chart Documentation</a></li>
-                <li class="docs"><a href="http://docs.sencha.com/ext-js/4-0/#!/api/Ext.chart.series.Bar" target="_blank">Ext.chart.series.Bar Documentation</a></li>
-                <li class="guide"><a href="http://docs.sencha.com/ext-js/4-0/#!/guide/drawing_and_charting" target="_blank">Drawing and Charting Guide</a></li>
+            </div>
+        </li>
+    </ul>
+    
+    <div id="content-wrapper" class="clearfix">
+        <div id="content">
+            <a href="/">Home</a> <span>/</span> <a href="/extjs/">Ext JS</a> <span>/</span> <a href="/extjs/4.0.7/">4.0.7</a> <span>/</span> Stacked Bar Chart Sample
+            <div class="developer">
+                <div class="column_nine">
+                    <div class="details">
+                        <div class="top-block border">
+                            <h2 class="alt">Stacked Bar Chart Sample</h2>
+                        </div>
+                        <div class="plain-text"><p>Display a sets of random data in a bar series. Reload data will randomly generate a new set of data in the store.</p></div>
+                        <h3>[example widget]</h3>
+                        <div>
+                            <ul class="developer-actions">
+                                <li class="request"><a href="src.zip" class="button-link center">Download</a></li>
+                            </ul>
+                        </div>
+                        <hr class="clear" />
+                        <h4>Tags</h4>
+                        <ul class="services-list alt clearfix tags">
+                            <li><a href="/tags/Ext%20JS/">Ext JS</a></li>
+                            <li><a href="/tags/Ext%20JS%204.0.7/">Ext JS 4.0.7</a></li>
+                            <li><a href="/tags/Ext.Window/"><code>Ext.Window</code></a></li>
+                            <li><a href="/tags/Ext.chart.BarChart/"><code>Ext.chart.BarChart</code></a></li>
+                            <li><a href="/tags/Ext.chart.BarSeries/"><code>Ext.chart.BarSeries</code></a></li>
+                            <li><a href="/tags/Ext.chart.Chart/"><code>Ext.chart.Chart</code></a></li>
+                            <li><a href="/tags/Ext.chart.StackedBarChart/"><code>Ext.chart.StackedBarChart</code></a></li>
+                            <li><a href="/tags/Ext.chart.series.Bar/"><code>Ext.chart.series.Bar</code></a></li>
+                            <li><a href="/tags/Ext.chart.theme.Base/"><code>Ext.chart.theme.Base</code></a></li>
+                            <li><a href="/tags/Ext.util.Format/"><code>Ext.util.Format</code></a></li>
+                            <li><a href="/tags/angle/"><code>angle</code></a></li>
+                            <li><a href="/tags/animate/"><code>animate</code></a></li>
+                            <li><a href="/tags/axes/"><code>axes</code></a></li>
+                            <li><a href="/tags/axis/"><code>axis</code></a></li>
+                            <li><a href="/tags/axisLabel/"><code>axisLabel</code></a></li>
+                            <li><a href="/tags/axisTitle/"><code>axisTitle</code></a></li>
+                            <li><a href="/tags/bar/"><code>bar</code></a></li>
+                            <li><a href="/tags/chart/"><code>chart</code></a></li>
+                            <li><a href="/tags/display/"><code>display</code></a></li>
+                            <li><a href="/tags/gradient/"><code>gradient</code></a></li>
+                            <li><a href="/tags/loadData%28%29/"><code>loadData()</code></a></li>
+                            <li><a href="/tags/numberRenderer%28%29/"><code>numberRenderer()</code></a></li>
+                            <li><a href="/tags/orientation/"><code>orientation</code></a></li>
+                            <li><a href="/tags/renderer/"><code>renderer</code></a></li>
+                            <li><a href="/tags/shadow/"><code>shadow</code></a></li>
+                            <li><a href="/tags/stops/"><code>stops</code></a></li>
+                            <li><a href="/tags/text-anchor/"><code>text-anchor</code></a></li>
+                            <li><a href="/tags/theme/"><code>theme</code></a></li>
+                        </ul>
+                        <h4>See Also</h4>
+                        <ul class="services-list alt clearfix see-also">
+                            <li class="docs"><a href="http://docs.sencha.com/ext-js/4-0/#!/api/Ext.chart.Chart" target="_blank">Ext.chart.Chart Documentation</a></li>
+                            <li class="docs"><a href="http://docs.sencha.com/ext-js/4-0/#!/api/Ext.chart.series.Bar" target="_blank">Ext.chart.series.Bar Documentation</a></li>
+                            <li class="guide"><a href="http://docs.sencha.com/ext-js/4-0/#!/guide/drawing_and_charting" target="_blank">Drawing and Charting Guide</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div id="footer-content">
+        <div class="columns">
+            <ul class="column">
+                <li>
+                    <a class="main" href="http://sencha.com/company/">Company</a>
+                    <ul class="zero">
+                        <li class="first"><a href="http://www.sencha.com/contact/" rel="nofollow">Contact Us</a></li>
+                        <li class="last"><a href="/pages/terms/" rel="nofollow">Terms of Use</a></li>
+                    </ul>
+                </li>
             </ul>
-        </nav>
-        
-        <footer>
-            &copy; 2012 Sencha Inc.
-        </footer>
+            <ul class="column">
+                <li>
+                    <a class="main" href="/">Listings</a>
+                    <ul class="zero">
+                        <li class="first"><a href="/developers/">Full listing</a></li>
+                        <li class="last"><a href="/developers/by_location/">Geographic listing</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+        <hr />
+        <div id="copyright">
+            <p>&copy; 2012 Sencha Inc. All rights reserved.</p>
+        </div>
     </div>
-    
+
     <div class="hidden">
-        <!-- extjs/4.0.7/examples/charts/bar/app.js -->
-        <pre>/*global Ext:false */
-/*
-
-This file is part of Ext JS 4
-
-Copyright (c) 2011 Sencha Inc
-
-Contact:  http://www.sencha.com/contact
-
-GNU General Public License Usage
-This file may be used under the terms of the GNU General Public License version 3.0 as published by the Free Software Foundation and appearing in the file LICENSE included in the packaging of this file.  Please review the following information to ensure the GNU General Public License version 3.0 requirements will be met: http://www.gnu.org/copyleft/gpl.html.
-
-If you are unsure which license is appropriate for your use, please contact the sales department at http://www.sencha.com/contact.
-
-*/
-Ext.require('Ext.chart.*');
-Ext.require(['Ext.Window', 'Ext.fx.target.Sprite', 'Ext.layout.container.Fit']);
-
-Ext.onReady(function () {
-    Ext.chart.theme.White = Ext.extend(Ext.chart.theme.Base, {
-        constructor: function() {
-           Ext.chart.theme.White.superclass.constructor.call(this, {
-               axis: {
-                   stroke: 'rgb(8,69,148)',
-                   'stroke-width': 1
-               },
-               axisLabel: {
-                   fill: 'rgb(8,69,148)',
-                   font: '12px Arial',
-                   'font-family': '"Arial',
-                   spacing: 2,
-                   padding: 5,
-                   renderer: function(v) { return v; }
-               },
-               axisTitle: {
-                  font: 'bold 18px Arial'
-               }
-           });
-        }
-    });
-
-    var win = Ext.create('Ext.Window', {
-        width: 800,
-        height: 600,
-        minHeight: 400,
-        minWidth: 550,
-        hidden: false,
-        maximizable: true,
-        title: 'Bar Chart',
-        renderTo: Ext.getBody(),
-        layout: 'fit',
-        tbar: [{
-            text: 'Reload Data',
-            handler: function() {
-                store1.loadData(generateData());
-            }
-        }],
-        items: {
-            id: 'chartCmp',
-            xtype: 'chart',
-            animate: true,
-            shadow: true,
-            store: store1,
-            axes: [{
-                type: 'Numeric',
-                position: 'bottom',
-                fields: ['data1'],
-                label: {
-                    renderer: Ext.util.Format.numberRenderer('0,0')
-                },
-                title: 'Number of Hits',
-                grid: true,
-                minimum: 0
-            }, {
-                type: 'Category',
-                position: 'left',
-                fields: ['name'],
-                title: 'Month of the Year'
-            }],
-            theme: 'White',
-            background: {
-              gradient: {
-                id: 'backgroundGradient',
-                angle: 45,
-                stops: {
-                  0: {
-                    color: '#ffffff'
-                  },
-                  100: {
-                    color: '#eaf1f8'
-                  }
-                }
-              }
-            },
-            series: [{
-                type: 'bar',
-                axis: 'bottom',
-                highlight: true,
-                tips: {
-                  trackMouse: true,
-                  width: 140,
-                  height: 28,
-                  renderer: function(storeItem, item) {
-                    this.setTitle(storeItem.get('name') + ': ' + storeItem.get('data1') + ' views');
-                  }
-                },
-                label: {
-                  display: 'insideEnd',
-                    field: 'data1',
-                    renderer: Ext.util.Format.numberRenderer('0'),
-                    orientation: 'horizontal',
-                    color: '#333',
-                  'text-anchor': 'middle'
-                },
-                xField: 'name',
-                yField: ['data1']
-            }]
-        }
-    });
-});
-
-</pre>
-        <!-- extjs/4.0.7/examples/charts/bar/resources/example-data.js -->
-        <pre>/*
-
-This file is part of Ext JS 4
-
-Copyright (c) 2011 Sencha Inc
-
-Contact:  http://www.sencha.com/contact
-
-GNU General Public License Usage
-This file may be used under the terms of the GNU General Public License version 3.0 as published by the Free Software Foundation and appearing in the file LICENSE included in the packaging of this file.  Please review the following information to ensure the GNU General Public License version 3.0 requirements will be met: http://www.gnu.org/copyleft/gpl.html.
-
-If you are unsure which license is appropriate for your use, please contact the sales department at http://www.sencha.com/contact.
-
-*/
-Ext.require(['Ext.data.*']);
-
-Ext.onReady(function() {
-
-    window.generateData = function(n, floor){
-        var data = [],
-            p = (Math.random() *  11) + 1,
-            i;
-            
-        floor = (!floor &amp;&amp; floor !== 0)? 20 : floor;
-        
-        for (i = 0; i < (n || 12); i++) {
-            data.push({
-                name: Ext.Date.monthNames[i % 12],
-                data1: Math.floor(Math.max((Math.random() * 100), floor)),
-                data2: Math.floor(Math.max((Math.random() * 100), floor)),
-                data3: Math.floor(Math.max((Math.random() * 100), floor)),
-                data4: Math.floor(Math.max((Math.random() * 100), floor)),
-                data5: Math.floor(Math.max((Math.random() * 100), floor)),
-                data6: Math.floor(Math.max((Math.random() * 100), floor)),
-                data7: Math.floor(Math.max((Math.random() * 100), floor)),
-                data8: Math.floor(Math.max((Math.random() * 100), floor)),
-                data9: Math.floor(Math.max((Math.random() * 100), floor))
-            });
-        }
-        return data;
-    };
-    
-    window.generateDataNegative = function(n, floor){
-        var data = [],
-            p = (Math.random() *  11) + 1,
-            i;
-            
-        floor = (!floor &amp;&amp; floor !== 0)? 20 : floor;
-            
-        for (i = 0; i < (n || 12); i++) {
-            data.push({
-                name: Ext.Date.monthNames[i % 12],
-                data1: Math.floor(((Math.random() - 0.5) * 100), floor),
-                data2: Math.floor(((Math.random() - 0.5) * 100), floor),
-                data3: Math.floor(((Math.random() - 0.5) * 100), floor),
-                data4: Math.floor(((Math.random() - 0.5) * 100), floor),
-                data5: Math.floor(((Math.random() - 0.5) * 100), floor),
-                data6: Math.floor(((Math.random() - 0.5) * 100), floor),
-                data7: Math.floor(((Math.random() - 0.5) * 100), floor),
-                data8: Math.floor(((Math.random() - 0.5) * 100), floor),
-                data9: Math.floor(((Math.random() - 0.5) * 100), floor)
-            });
-        }
-        return data;
-    };
-
-    window.store1 = Ext.create('Ext.data.JsonStore', {
-        fields: ['name', 'data1', 'data2', 'data3', 'data4', 'data5', 'data6', 'data7', 'data9', 'data9'],
-        data: generateData()
-    });
-    window.storeNegatives = Ext.create('Ext.data.JsonStore', {
-        fields: ['name', 'data1', 'data2', 'data3', 'data4', 'data5', 'data6', 'data7', 'data9', 'data9'],
-        data: generateDataNegative()
-    });
-    window.store3 = Ext.create('Ext.data.JsonStore', {
-        fields: ['name', 'data1', 'data2', 'data3', 'data4', 'data5', 'data6', 'data7', 'data9', 'data9'],
-        data: generateData()
-    });
-    window.store4 = Ext.create('Ext.data.JsonStore', {
-        fields: ['name', 'data1', 'data2', 'data3', 'data4', 'data5', 'data6', 'data7', 'data9', 'data9'],
-        data: generateData()
-    });
-    window.store5 = Ext.create('Ext.data.JsonStore', {
-        fields: ['name', 'data1', 'data2', 'data3', 'data4', 'data5', 'data6', 'data7', 'data9', 'data9'],
-        data: generateData()
-    });    
-    
-    
-});
-
-</pre>
+        <pre class="example" data-uri="/extjs/4.0.7/examples/charts/bar/app.js">(hidden)</pre>
+        <pre class="example" data-uri="/extjs/4.0.7/examples/charts/bar/resources/example-data.js">(hidden)</pre>
     </div>
-    
+
 </body>
 </html>

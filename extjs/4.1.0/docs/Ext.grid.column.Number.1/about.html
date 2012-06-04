@@ -2,120 +2,94 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8"/>
-    <title>Ext.grid.column.Number Example</title>
-    <meta Name="description" content="Ext.grid.column.Number Example" />
+    <title>Ext.grid.column.Number Example | Sencha Try</title>
+    <meta name="description" content="Ext.grid.column.Number Example" />
     <meta name="keywords" content="Sencha, Ext JS, Ext JS 4.1.0, Ext.grid.column.Number" />
+    <meta name="author" content="Sencha Inc.">
     <link href="/assets/application.css" media="screen" rel="stylesheet" type="text/css" />
 </head>
 <body>
-    
-    <div>
-        <header>
-            <h1>Sencha Try</h1>
-        </header>
-        
-        <section id="readme">
-            <div class="intro"><h1>Ext.grid.column.Number Example</h1></div>
-            <div>
-                <a href="src.zip" download="extjs_4.1.0_docs_Ext.grid.column.Number.1.zip">DOWNLOAD</a>
-            </div>
-            <nav>
-                <h2>Tags:</h2>
-                <ul class="tags">
-                    <li><a href="/tags/Ext%20JS/">Ext JS</a></li>
-                    <li><a href="/tags/Ext%20JS%204.1.0/">Ext JS 4.1.0</a></li>
-                    <li><a href="/tags/Ext.grid.column.Number/">Ext.grid.column.Number</a></li>
-                </ul>
-            </nav>
-        </section>
-        
-        <section id="example">
-            [example]
-        </section>
-        
-        <nav>
-            <h2>See Also:</h2>
-            <ul class="seeAlso">
-                <li class="docs"><a href="http://docs.sencha.com/ext-js/4-1/#!/api/Ext.grid.column.Number" target="_blank">Ext.grid.column.Number Documentation</a></li>
-            </ul>
-        </nav>
-        
-        <footer>
-            &copy; 2012 Sencha Inc.
-        </footer>
-    </div>
-    
-    <div class="hidden">
-        <!-- extjs/4.1.0/docs/Ext.grid.column.Number.1/app.js -->
-        <pre>/*global Ext:false */
-Ext.onReady(function() {
-    Ext.create('Ext.data.Store', {
-        storeId: 'sampleStore',
-        fields: [{
-            name: 'symbol',
-            type: 'string'
-        }, {
-            name: 'price',
-            type: 'number'
-        }, {
-            name: 'change',
-            type: 'number'
-        }, {
-            name: 'volume',
-            type: 'number'
-        }],
-        data: [{
-            symbol: "msft",
-            price: 25.76,
-            change: 2.43,
-            volume: 61606325
-        }, {
-            symbol: "goog",
-            price: 525.73,
-            change: 0.81,
-            volume: 3053782
-        }, {
-            symbol: "apple",
-            price: 342.41,
-            change: 1.35,
-            volume: 24484858
-        }, {
-            symbol: "sencha",
-            price: 142.08,
-            change: 8.85,
-            volume: 5556351
-        }]
-    });
 
-    Ext.create('Ext.grid.Panel', {
-        title: 'Number Column Demo',
-        store: Ext.data.StoreManager.lookup('sampleStore'),
-        columns: [{
-            text: 'Symbol',
-            dataIndex: 'symbol',
-            flex: 1
-        }, {
-            text: 'Current Price',
-            dataIndex: 'price',
-            renderer: Ext.util.Format.usMoney
-        }, {
-            text: 'Change',
-            dataIndex: 'change',
-            xtype: 'numbercolumn',
-            format: '0.00'
-        }, {
-            text: 'Volume',
-            dataIndex: 'volume',
-            xtype: 'numbercolumn',
-            format: '0,000'
-        }],
-        height: 200,
-        width: 400,
-        renderTo: Ext.getBody()
-    });
-});
-</pre>
+    <div id="logo-container" class="skiptranslate">
+        <h1 id="logo"><a href="/"><img src="/assets/logo.png" alt="Sencha Try" /></a></h1>
+        <span id="glow"></span>
+    </div>
+    <ul>
+        <li class="with-sub">
+            <a href="#" class="dropdown">Sencha Network</a>
+            <div id="docs-dropdown" class="pop-nav zero">
+                <ul>
+                    <li><a href="http://sencha.com/">Sencha.com</a></li>
+                    <li><a href="http://sencha.com/products/io/">Sencha.io</a></li>
+                    <li><a href="http://market.sencha.com/">Sencha Market</a></li>
+                </ul>
+            </div>
+        </li>
+    </ul>
+    
+    <div id="content-wrapper" class="clearfix">
+        <div id="content">
+            <a href="/">Home</a> <span>/</span> <a href="/extjs/">Ext JS</a> <span>/</span> <a href="/extjs/4.1.0/">4.1.0</a> <span>/</span> Ext.grid.column.Number Example
+            <div class="developer">
+                <div class="column_nine">
+                    <div class="details">
+                        <div class="top-block border">
+                            <h2 class="alt">Ext.grid.column.Number Example</h2>
+                        </div>
+                        <div class="plain-text"></div>
+                        <h3>[example widget]</h3>
+                        <div>
+                            <ul class="developer-actions">
+                                <li class="request"><a href="src.zip" class="button-link center">Download</a></li>
+                            </ul>
+                        </div>
+                        <hr class="clear" />
+                        <h4>Tags</h4>
+                        <ul class="services-list alt clearfix tags">
+                            <li><a href="/tags/Ext%20JS/">Ext JS</a></li>
+                            <li><a href="/tags/Ext%20JS%204.1.0/">Ext JS 4.1.0</a></li>
+                            <li><a href="/tags/Ext.grid.column.Number/"><code>Ext.grid.column.Number</code></a></li>
+                        </ul>
+                        <h4>See Also</h4>
+                        <ul class="services-list alt clearfix see-also">
+                            <li class="docs"><a href="http://docs.sencha.com/ext-js/4-1/#!/api/Ext.grid.column.Number" target="_blank">Ext.grid.column.Number Documentation</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
     
+    <div id="footer-content">
+        <div class="columns">
+            <ul class="column">
+                <li>
+                    <a class="main" href="http://sencha.com/company/">Company</a>
+                    <ul class="zero">
+                        <li class="first"><a href="http://www.sencha.com/contact/" rel="nofollow">Contact Us</a></li>
+                        <li class="last"><a href="/pages/terms/" rel="nofollow">Terms of Use</a></li>
+                    </ul>
+                </li>
+            </ul>
+            <ul class="column">
+                <li>
+                    <a class="main" href="/">Listings</a>
+                    <ul class="zero">
+                        <li class="first"><a href="/developers/">Full listing</a></li>
+                        <li class="last"><a href="/developers/by_location/">Geographic listing</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+        <hr />
+        <div id="copyright">
+            <p>&copy; 2012 Sencha Inc. All rights reserved.</p>
+        </div>
+    </div>
+
+    <div class="hidden">
+        <pre class="example" data-uri="/extjs/4.1.0/docs/Ext.grid.column.Number.1/app.js">(hidden)</pre>
+    </div>
+
 </body>
 </html>

@@ -2,118 +2,106 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8"/>
-    <title>Ext.grid.plugin.RowEditing Example</title>
-    <meta Name="description" content="Ext.grid.plugin.RowEditing Example" />
+    <title>Ext.grid.plugin.RowEditing Example | Sencha Try</title>
+    <meta name="description" content="Ext.grid.plugin.RowEditing Example" />
     <meta name="keywords" content="Sencha, Ext JS, Ext JS 4.0.7, Ext.grid.plugin.RowEditing, clicksToEdit, grid, plugin, plugins, rowediting, rowmodel, selType" />
+    <meta name="author" content="Sencha Inc.">
     <link href="/assets/application.css" media="screen" rel="stylesheet" type="text/css" />
 </head>
 <body>
-    
-    <div>
-        <header>
-            <h1>Sencha Try</h1>
-        </header>
-        
-        <section id="readme">
-            <div class="intro"><h1>Ext.grid.plugin.RowEditing Example</h1></div>
-            <div>
-                <a href="src.zip" download="extjs_4.0.7_docs_Ext.grid.plugin.RowEditing.1.zip">DOWNLOAD</a>
-            </div>
-            <nav>
-                <h2>Tags:</h2>
-                <ul class="tags">
-                    <li><a href="/tags/Ext%20JS/">Ext JS</a></li>
-                    <li><a href="/tags/Ext%20JS%204.0.7/">Ext JS 4.0.7</a></li>
-                    <li><a href="/tags/Ext.grid.plugin.RowEditing/">Ext.grid.plugin.RowEditing</a></li>
-                    <li><a href="/tags/clicksToEdit/">clicksToEdit</a></li>
-                    <li><a href="/tags/grid/">grid</a></li>
-                    <li><a href="/tags/plugin/">plugin</a></li>
-                    <li><a href="/tags/plugins/">plugins</a></li>
-                    <li><a href="/tags/rowediting/">rowediting</a></li>
-                    <li><a href="/tags/rowmodel/">rowmodel</a></li>
-                    <li><a href="/tags/selType/">selType</a></li>
-                </ul>
-            </nav>
-        </section>
-        
-        <section id="example">
-            [example]
-        </section>
-        
-        <nav>
-            <h2>See Also:</h2>
-            <ul class="seeAlso">
-                <li class="docs"><a href="http://docs.sencha.com/ext-js/4-0/#!/api/Ext.grid.plugin.RowEditing" target="_blank">Ext.grid.plugin.RowEditing Documentation</a></li>
-                <li class="guide"><a href="http://docs.sencha.com/ext-js/4-0/#!/guide/grid" target="_blank">The Grid Component Guide</a></li>
-                <li class="guide"><a href="http://docs.sencha.com/ext-js/4-0/#!/guide/direct_grid_pt1" target="_blank">Mapping a Grid to a MySQL table using Direct and PHP Guide (Part 1)</a></li>
-                <li class="guide"><a href="http://docs.sencha.com/ext-js/4-0/#!/guide/direct_grid_pt2" target="_blank">Mapping a Grid to a MySQL table using Direct and PHP Guide (Part 2)</a></li>
-                <li class="guide"><a href="http://docs.sencha.com/ext-js/4-0/#!/guide/editable_grid" target="_blank">Doing CRUD with the Editable Grid and Node.js Guide (Part 1)</a></li>
-                <li class="guide"><a href="http://docs.sencha.com/ext-js/4-0/#!/guide/editable_grid_pt2" target="_blank">Doing CRUD with the Editable Grid and Node.js Guide (Part 2)</a></li>
-            </ul>
-        </nav>
-        
-        <footer>
-            &copy; 2012 Sencha Inc.
-        </footer>
-    </div>
-    
-    <div class="hidden">
-        <!-- extjs/4.0.7/docs/Ext.grid.plugin.RowEditing.1/app.js -->
-        <pre>/*global Ext:false */
-Ext.onReady(function () {
-    Ext.create('Ext.data.Store', {
-        storeId: 'simpsonsStore',
-        fields: ['name', 'email', 'phone'],
-        data: [{
-            "name": "Lisa",
-            "email": "lisa@simpsons.com",
-            "phone": "555-111-1224"
-        }, {
-            "name": "Bart",
-            "email": "bart@simpsons.com",
-            "phone": "555-222-1234"
-        }, {
-            "name": "Homer",
-            "email": "home@simpsons.com",
-            "phone": "555-222-1244"
-        }, {
-            "name": "Marge",
-            "email": "marge@simpsons.com",
-            "phone": "555-222-1254"
-        }]
-    });
 
-    Ext.create('Ext.grid.Panel', {
-        title: 'Simpsons',
-        store: 'simpsonsStore',
-        columns: [{
-            header: 'Name',
-            dataIndex: 'name',
-            editor: 'textfield'
-        }, {
-            header: 'Email',
-            dataIndex: 'email',
-            flex: 1,
-            editor: {
-                xtype: 'textfield',
-                allowBlank: false
-            }
-        }, {
-            header: 'Phone',
-            dataIndex: 'phone'
-        }],
-        selType: 'rowmodel',
-        plugins: [
-        Ext.create('Ext.grid.plugin.RowEditing', {
-            clicksToEdit: 1
-        })],
-        height: 200,
-        width: 400,
-        renderTo: Ext.getBody()
-    });
-});
-</pre>
+    <div id="logo-container" class="skiptranslate">
+        <h1 id="logo"><a href="/"><img src="/assets/logo.png" alt="Sencha Try" /></a></h1>
+        <span id="glow"></span>
+    </div>
+    <ul>
+        <li class="with-sub">
+            <a href="#" class="dropdown">Sencha Network</a>
+            <div id="docs-dropdown" class="pop-nav zero">
+                <ul>
+                    <li><a href="http://sencha.com/">Sencha.com</a></li>
+                    <li><a href="http://sencha.com/products/io/">Sencha.io</a></li>
+                    <li><a href="http://market.sencha.com/">Sencha Market</a></li>
+                </ul>
+            </div>
+        </li>
+    </ul>
+    
+    <div id="content-wrapper" class="clearfix">
+        <div id="content">
+            <a href="/">Home</a> <span>/</span> <a href="/extjs/">Ext JS</a> <span>/</span> <a href="/extjs/4.0.7/">4.0.7</a> <span>/</span> Ext.grid.plugin.RowEditing Example
+            <div class="developer">
+                <div class="column_nine">
+                    <div class="details">
+                        <div class="top-block border">
+                            <h2 class="alt">Ext.grid.plugin.RowEditing Example</h2>
+                        </div>
+                        <div class="plain-text"></div>
+                        <h3>[example widget]</h3>
+                        <div>
+                            <ul class="developer-actions">
+                                <li class="request"><a href="src.zip" class="button-link center">Download</a></li>
+                            </ul>
+                        </div>
+                        <hr class="clear" />
+                        <h4>Tags</h4>
+                        <ul class="services-list alt clearfix tags">
+                            <li><a href="/tags/Ext%20JS/">Ext JS</a></li>
+                            <li><a href="/tags/Ext%20JS%204.0.7/">Ext JS 4.0.7</a></li>
+                            <li><a href="/tags/Ext.grid.plugin.RowEditing/"><code>Ext.grid.plugin.RowEditing</code></a></li>
+                            <li><a href="/tags/clicksToEdit/"><code>clicksToEdit</code></a></li>
+                            <li><a href="/tags/grid/"><code>grid</code></a></li>
+                            <li><a href="/tags/plugin/"><code>plugin</code></a></li>
+                            <li><a href="/tags/plugins/"><code>plugins</code></a></li>
+                            <li><a href="/tags/rowediting/"><code>rowediting</code></a></li>
+                            <li><a href="/tags/rowmodel/"><code>rowmodel</code></a></li>
+                            <li><a href="/tags/selType/"><code>selType</code></a></li>
+                        </ul>
+                        <h4>See Also</h4>
+                        <ul class="services-list alt clearfix see-also">
+                            <li class="docs"><a href="http://docs.sencha.com/ext-js/4-0/#!/api/Ext.grid.plugin.RowEditing" target="_blank">Ext.grid.plugin.RowEditing Documentation</a></li>
+                            <li class="guide"><a href="http://docs.sencha.com/ext-js/4-0/#!/guide/grid" target="_blank">The Grid Component Guide</a></li>
+                            <li class="guide"><a href="http://docs.sencha.com/ext-js/4-0/#!/guide/direct_grid_pt1" target="_blank">Mapping a Grid to a MySQL table using Direct and PHP Guide (Part 1)</a></li>
+                            <li class="guide"><a href="http://docs.sencha.com/ext-js/4-0/#!/guide/direct_grid_pt2" target="_blank">Mapping a Grid to a MySQL table using Direct and PHP Guide (Part 2)</a></li>
+                            <li class="guide"><a href="http://docs.sencha.com/ext-js/4-0/#!/guide/editable_grid" target="_blank">Doing CRUD with the Editable Grid and Node.js Guide (Part 1)</a></li>
+                            <li class="guide"><a href="http://docs.sencha.com/ext-js/4-0/#!/guide/editable_grid_pt2" target="_blank">Doing CRUD with the Editable Grid and Node.js Guide (Part 2)</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
     
+    <div id="footer-content">
+        <div class="columns">
+            <ul class="column">
+                <li>
+                    <a class="main" href="http://sencha.com/company/">Company</a>
+                    <ul class="zero">
+                        <li class="first"><a href="http://www.sencha.com/contact/" rel="nofollow">Contact Us</a></li>
+                        <li class="last"><a href="/pages/terms/" rel="nofollow">Terms of Use</a></li>
+                    </ul>
+                </li>
+            </ul>
+            <ul class="column">
+                <li>
+                    <a class="main" href="/">Listings</a>
+                    <ul class="zero">
+                        <li class="first"><a href="/developers/">Full listing</a></li>
+                        <li class="last"><a href="/developers/by_location/">Geographic listing</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+        <hr />
+        <div id="copyright">
+            <p>&copy; 2012 Sencha Inc. All rights reserved.</p>
+        </div>
+    </div>
+
+    <div class="hidden">
+        <pre class="example" data-uri="/extjs/4.0.7/docs/Ext.grid.plugin.RowEditing.1/app.js">(hidden)</pre>
+    </div>
+
 </body>
 </html>

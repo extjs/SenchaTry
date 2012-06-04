@@ -2,525 +2,94 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8"/>
-    <title>Toolbar with Menus</title>
-    <meta Name="description" content="Toolbar with Menus" />
+    <title>Toolbar with Menus | Sencha Try</title>
+    <meta name="description" content="Toolbar with Menus" />
     <meta name="keywords" content="Sencha, Ext JS, Ext JS 4.0.7" />
+    <meta name="author" content="Sencha Inc.">
     <link href="/assets/application.css" media="screen" rel="stylesheet" type="text/css" />
 </head>
 <body>
-    
-    <div>
-        <header>
-            <h1>Sencha Try</h1>
-        </header>
-        
-        <section id="readme">
-            <div class="intro"><h1>Toolbar with Menus</h1></div>
-            <div>
-                <a href="src.zip" download="extjs_4.0.7_examples_menu_menus.zip">DOWNLOAD</a>
-            </div>
-            <nav>
-                <h2>Tags:</h2>
-                <ul class="tags">
-                    <li><a href="/tags/Ext%20JS/">Ext JS</a></li>
-                    <li><a href="/tags/Ext%20JS%204.0.7/">Ext JS 4.0.7</a></li>
+
+    <div id="logo-container" class="skiptranslate">
+        <h1 id="logo"><a href="/"><img src="/assets/logo.png" alt="Sencha Try" /></a></h1>
+        <span id="glow"></span>
+    </div>
+    <ul>
+        <li class="with-sub">
+            <a href="#" class="dropdown">Sencha Network</a>
+            <div id="docs-dropdown" class="pop-nav zero">
+                <ul>
+                    <li><a href="http://sencha.com/">Sencha.com</a></li>
+                    <li><a href="http://sencha.com/products/io/">Sencha.io</a></li>
+                    <li><a href="http://market.sencha.com/">Sencha Market</a></li>
                 </ul>
-            </nav>
-        </section>
-        
-        <section id="example">
-            [example]
-        </section>
-        
-        
-        <footer>
-            &copy; 2012 Sencha Inc.
-        </footer>
+            </div>
+        </li>
+    </ul>
+    
+    <div id="content-wrapper" class="clearfix">
+        <div id="content">
+            <a href="/">Home</a> <span>/</span> <a href="/extjs/">Ext JS</a> <span>/</span> <a href="/extjs/4.0.7/">4.0.7</a> <span>/</span> Toolbar with Menus
+            <div class="developer">
+                <div class="column_nine">
+                    <div class="details">
+                        <div class="top-block border">
+                            <h2 class="alt">Toolbar with Menus</h2>
+                        </div>
+                        <div class="plain-text"></div>
+                        <h3>[example widget]</h3>
+                        <div>
+                            <ul class="developer-actions">
+                                <li class="request"><a href="src.zip" class="button-link center">Download</a></li>
+                            </ul>
+                        </div>
+                        <hr class="clear" />
+                        <h4>Tags</h4>
+                        <ul class="services-list alt clearfix tags">
+                            <li><a href="/tags/Ext%20JS/">Ext JS</a></li>
+                            <li><a href="/tags/Ext%20JS%204.0.7/">Ext JS 4.0.7</a></li>
+                        </ul>
+                        <h4>See Also</h4>
+                        <ul class="services-list alt clearfix see-also">
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
     
+    <div id="footer-content">
+        <div class="columns">
+            <ul class="column">
+                <li>
+                    <a class="main" href="http://sencha.com/company/">Company</a>
+                    <ul class="zero">
+                        <li class="first"><a href="http://www.sencha.com/contact/" rel="nofollow">Contact Us</a></li>
+                        <li class="last"><a href="/pages/terms/" rel="nofollow">Terms of Use</a></li>
+                    </ul>
+                </li>
+            </ul>
+            <ul class="column">
+                <li>
+                    <a class="main" href="/">Listings</a>
+                    <ul class="zero">
+                        <li class="first"><a href="/developers/">Full listing</a></li>
+                        <li class="last"><a href="/developers/by_location/">Geographic listing</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+        <hr />
+        <div id="copyright">
+            <p>&copy; 2012 Sencha Inc. All rights reserved.</p>
+        </div>
+    </div>
+
     <div class="hidden">
-        <!-- extjs/4.0.7/examples/menu/menus/app.js -->
-        <pre>/*global Ext:false */
-/*
-
-This file is part of Ext JS 4
-
-Copyright (c) 2011 Sencha Inc
-
-Contact:  http://www.sencha.com/contact
-
-GNU General Public License Usage
-This file may be used under the terms of the GNU General Public License version 3.0 as published by the Free Software Foundation and appearing in the file LICENSE included in the packaging of this file.  Please review the following information to ensure the GNU General Public License version 3.0 requirements will be met: http://www.gnu.org/copyleft/gpl.html.
-
-If you are unsure which license is appropriate for your use, please contact the sales department at http://www.sencha.com/contact.
-
-*/
-Ext.require(['*']);
-
-// TODO: The "Users" menu containing buttons is completely screwed: ButtonGroup needs work.
-
-Ext.onReady(function(){
-    Ext.QuickTips.init();
-
-    var dateMenu = Ext.create('Ext.menu.DatePicker', {
-        handler: function(dp, date){
-            Ext.example.msg('Date Selected', 'You choose {0}.', Ext.Date.format(date, 'M j, Y'));
-
-        }
-    });
-
-    var colorMenu = Ext.create('Ext.menu.ColorPicker', {
-        handler: function(cm, color){
-            Ext.example.msg('Color Selected', '<span style="color:#' + color + ';">You choose {0}.</span>', color);
-        }
-    });
-
-    var store = Ext.create('Ext.data.ArrayStore', {
-        fields: ['abbr', 'state'],
-        data : Ext.example.states
-    });
-
-    var combo = Ext.create('Ext.form.field.ComboBox', {
-        hideLabel: true,
-        store: store,
-        displayField: 'state',
-        typeAhead: true,
-        queryMode: 'local',
-        triggerAction: 'all',
-        emptyText: 'Select a state...',
-        selectOnFocus: true,
-        width: 135,
-        iconCls: 'no-icon'
-    });
-
-    var menu = Ext.create('Ext.menu.Menu', {
-        id: 'mainMenu',
-        style: {
-            overflow: 'visible'     // For the Combo popup
-        },
-        items: [
-            combo,                  // A Field in a Menu
-            {
-                text: 'I like Ext',
-                checked: true,       // when checked has a boolean value, it is assumed to be a CheckItem
-                checkHandler: onItemCheck
-            }, '-', {
-                text: 'Radio Options',
-                menu: {        // <-- submenu by nested config object
-                    items: [
-                        // stick any markup in a menu
-                        '<b class="menu-title">Choose a Theme</b>',
-                        {
-                            text: 'Aero Glass',
-                            checked: true,
-                            group: 'theme',
-                            checkHandler: onItemCheck
-                        }, {
-                            text: 'Vista Black',
-                            checked: false,
-                            group: 'theme',
-                            checkHandler: onItemCheck
-                        }, {
-                            text: 'Gray Theme',
-                            checked: false,
-                            group: 'theme',
-                            checkHandler: onItemCheck
-                        }, {
-                            text: 'Default Theme',
-                            checked: false,
-                            group: 'theme',
-                            checkHandler: onItemCheck
-                        }
-                    ]
-                }
-           },{
-               text: 'Choose a Date',
-               iconCls: 'calendar',
-               menu: dateMenu // <-- submenu by reference
-           },{
-               text: 'Choose a Color',
-               menu: colorMenu // <-- submenu by reference
-           }
-        ]
-    });
-
-    var tb = Ext.create('Ext.toolbar.Toolbar');
-    tb.suspendLayout = true;
-    tb.render('toolbar');
-
-    tb.add({
-            text:'Button w/ Menu',
-            iconCls: 'bmenu',  // <-- icon
-            menu: menu  // assign menu by instance
-        }, {
-            text: 'Users',
-            iconCls: 'user',
-            menu: {
-                xtype: 'menu',
-                plain: true,
-                items: {
-                    xtype: 'buttongroup',
-                    title: 'User options',
-                    columns: 2,
-                    defaults: {
-                        xtype: 'button',
-                        scale: 'large',
-                        iconAlign: 'left'
-                    },
-                    items: [{
-                        text: 'User<br/>manager',
-                        iconCls: 'edit',
-                        width: 90
-                    },{
-                        iconCls: 'add',
-                        tooltip: 'Add user',
-                        width: 40
-                    },{
-                        colspan: 2,
-                        text: 'Import',
-                        scale: 'small',
-                        width: 130
-                    },{
-                        colspan: 2,
-                        text: 'Who is online?',
-                        scale: 'small',
-                        width: 130
-                    }]
-                }
-            }
-        },
-        Ext.create('Ext.button.Split', {
-            text: 'Split Button',
-            handler: onButtonClick,
-            tooltip: {text:'This is a an example QuickTip for a toolbar item', title:'Tip Title'},
-            iconCls: 'blist',
-            // Menus can be built/referenced by using nested menu config objects
-            menu : {
-                items: [{
-                    text: '<b>Bold</b>', handler: onItemClick
-                }, {
-                    text: '<i>Italic</i>', handler: onItemClick
-                }, {
-                    text: '<u>Underline</u>', handler: onItemClick
-                }, '-', {
-                    text: 'Pick a Color',
-                    handler: onItemClick,
-                    menu: {
-                        showSeparator: false,
-                        items: [
-                            Ext.create('Ext.ColorPalette', {
-                                listeners: {
-                                    select: function(cp, color){
-                                        Ext.example.msg('Color Selected', 'You chose {0}.', color);
-                                    }
-                                }
-                            }), '-',
-                            {
-                                text: 'More Colors...',
-                                handler: onItemClick
-                            }
-                        ]
-                    }
-                }, {
-                    text: 'Extellent!',
-                    handler: onItemClick
-                }]
-            }
-        }), '-', {
-        text: 'Toggle Me',
-        enableToggle: true,
-        toggleHandler: onItemToggle,
-        pressed: true
-    });
-
-    menu.add(' ');
-
-    // Menus have a rich api for
-    // adding and removing elements dynamically
-    var item = menu.add({
-        text: 'Dynamically added Item'
-    });
-    // items support full Observable API
-    item.on('click', onItemClick);
-
-    // items can easily be looked up
-    menu.add({
-        text: 'Disabled Item',
-        id: 'disableMe'  // <-- Items can also have an id for easy lookup
-        // disabled: true   <-- allowed but for sake of example we use long way below
-    });
-    // access items by id or index
-    menu.items.get('disableMe').disable();
-
-    // They can also be referenced by id in or components
-    tb.add('-', {
-        icon: 'resources/css/images/list-items.gif', // icons can also be specified inline
-        cls: 'x-btn-icon',
-        tooltip: '<b>Quick Tips</b><br/>Icon only button with tooltip',
-        handler: function(){
-            Ext.example.msg('Button Click','You clicked the "icon only" button.');
-        }
-    }, '-');
-
-    var scrollMenu = Ext.create('Ext.menu.Menu');
-    for (var i = 0; i < 50; ++i){
-        scrollMenu.add({
-            text: 'Item ' + (i + 1),
-            handler: onItemClick
-        });
-    }
-    // scrollable menu
-    tb.add({
-        icon: 'resources/css/images/preview.png',
-        cls: 'x-btn-text-icon',
-        text: 'Scrolling Menu',
-        menu: scrollMenu
-    });
-
-    tb.add({
-        text: 'Link',
-        url: 'http://www.google.com/search',
-        baseParams: {
-            q: 'html+anchor+tag'
-        },
-        tooltip: 'This is a link. You can right click. You can see where it will take you'
-    });
-
-    // add a combobox to the toolbar
-    var combo = Ext.create('Ext.form.field.ComboBox', {
-        hideLabel: true,
-        store: store,
-        displayField: 'state',
-        typeAhead: true,
-        mode: 'local',
-        triggerAction: 'all',
-        emptyText:'Select a state...',
-        selectOnFocus:true,
-        width:135
-    });
-    tb.add(combo);
-    tb.suspendLayout = false;
-    tb.doLayout();
-
-    // functions to display feedback
-    function onButtonClick(btn){
-        Ext.example.msg('Button Click','You clicked the "{0}" button.', btn.text);
-    }
-
-    function onItemClick(item){
-        Ext.example.msg('Menu Click', 'You clicked the "{0}" menu item.', item.text);
-    }
-
-    function onItemCheck(item, checked){
-        Ext.example.msg('Item Check', 'You {1} the "{0}" menu item.', item.text, checked ? 'checked' : 'unchecked');
-    }
-
-    function onItemToggle(item, pressed){
-        Ext.example.msg('Button Toggled', 'Button "{0}" was toggled to {1}.', item.text, pressed);
-    }
-
-});
-
-</pre>
-        <!-- extjs/4.0.7/examples/menu/menus/examples.js -->
-        <pre>/*
-
-This file is part of Ext JS 4
-
-Copyright (c) 2011 Sencha Inc
-
-Contact:  http://www.sencha.com/contact
-
-GNU General Public License Usage
-This file may be used under the terms of the GNU General Public License version 3.0 as published by the Free Software Foundation and appearing in the file LICENSE included in the packaging of this file.  Please review the following information to ensure the GNU General Public License version 3.0 requirements will be met: http://www.gnu.org/copyleft/gpl.html.
-
-If you are unsure which license is appropriate for your use, please contact the sales department at http://www.sencha.com/contact.
-
-*/
-Ext.example = function(){
-    var msgCt;
-
-    function createBox(t, s){
-       // return ['<div class="msg">',
-       //         '<div class="x-box-tl"><div class="x-box-tr"><div class="x-box-tc"></div></div></div>',
-       //         '<div class="x-box-ml"><div class="x-box-mr"><div class="x-box-mc"><h3>', t, '</h3>', s, '</div></div></div>',
-       //         '<div class="x-box-bl"><div class="x-box-br"><div class="x-box-bc"></div></div></div>',
-       //         '</div>'].join('');
-       return '<div class="msg"><h3>' + t + '</h3><p>' + s + '</p></div>';
-    }
-    return {
-        msg : function(title, format){
-            if(!msgCt){
-                msgCt = Ext.DomHelper.insertFirst(document.body, {id:'msg-div'}, true);
-            }
-            var s = Ext.String.format.apply(String, Array.prototype.slice.call(arguments, 1));
-            var m = Ext.DomHelper.append(msgCt, createBox(title, s), true);
-            m.hide();
-            m.slideIn('t').ghost("t", { delay: 1000, remove: true});
-        },
-
-        init : function(){
-//            var t = Ext.get('exttheme');
-//            if(!t){ // run locally?
-//                return;
-//            }
-//            var theme = Cookies.get('exttheme') || 'aero';
-//            if(theme){
-//                t.dom.value = theme;
-//                Ext.getBody().addClass('x-'+theme);
-//            }
-//            t.on('change', function(){
-//                Cookies.set('exttheme', t.getValue());
-//                setTimeout(function(){
-//                    window.location.reload();
-//                }, 250);
-//            });
-//
-//            var lb = Ext.get('lib-bar');
-//            if(lb){
-//                lb.show();
-//            }
-        }
-    };
-}();
-
-Ext.example.shortBogusMarkup = '<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Sed metus nibh, '+
-    'sodales a, porta at, vulputate eget, dui. Pellentesque ut nisl. Maecenas tortor turpis, interdum non, sodales '+
-    'non, iaculis ac, lacus. Vestibulum auctor, tortor quis iaculis malesuada, libero lectus bibendum purus, sit amet '+
-    'tincidunt quam turpis vel lacus. In pellentesque nisl non sem. Suspendisse nunc sem, pretium eget, cursus a, fringilla.</p>';
-
-Ext.example.bogusMarkup = '<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Sed metus nibh, sodales a, '+
-    'porta at, vulputate eget, dui. Pellentesque ut nisl. Maecenas tortor turpis, interdum non, sodales non, iaculis ac, '+
-    'lacus. Vestibulum auctor, tortor quis iaculis malesuada, libero lectus bibendum purus, sit amet tincidunt quam turpis '+
-    'vel lacus. In pellentesque nisl non sem. Suspendisse nunc sem, pretium eget, cursus a, fringilla vel, urna.<br/><br/>'+
-    'Aliquam commodo ullamcorper erat. Nullam vel justo in neque porttitor laoreet. Aenean lacus dui, consequat eu, adipiscing '+
-    'eget, nonummy non, nisi. Morbi nunc est, dignissim non, ornare sed, luctus eu, massa. Vivamus eget quam. Vivamus tincidunt '+
-    'diam nec urna. Curabitur velit. Lorem ipsum dolor sit amet.</p>';
-
-//Ext.onReady(Ext.example.init, Ext.example);
-
-
-// old school cookie functions
-var Cookies = {};
-Cookies.set = function(name, value){
-     var argv = arguments;
-     var argc = arguments.length;
-     var expires = (argc > 2) ? argv[2] : null;
-     var path = (argc > 3) ? argv[3] : '/';
-     var domain = (argc > 4) ? argv[4] : null;
-     var secure = (argc > 5) ? argv[5] : false;
-     document.cookie = name + "=" + escape (value) +
-       ((expires === null) ? "" : ("; expires=" + expires.toGMTString())) +
-       ((path === null) ? "" : ("; path=" + path)) +
-       ((domain === null) ? "" : ("; domain=" + domain)) +
-       ((secure === true) ? "; secure" : "");
-};
-
-Cookies.get = function(name){
-    var arg = name + "=";
-    var alen = arg.length;
-    var clen = document.cookie.length;
-    var i = 0;
-    var j = 0;
-    while(i < clen){
-        j = i + alen;
-        if (document.cookie.substring(i, j) == arg)
-            return Cookies.getCookieVal(j);
-        i = document.cookie.indexOf(" ", i) + 1;
-        if(i === 0)
-            break;
-    }
-    return null;
-};
-
-Cookies.clear = function(name) {
-  if(Cookies.get(name)){
-    document.cookie = name + "=" +
-    "; expires=Thu, 01-Jan-70 00:00:01 GMT";
-  }
-};
-
-Cookies.getCookieVal = function(offset){
-   var endstr = document.cookie.indexOf(";", offset);
-   if(endstr === -1){
-       endstr = document.cookie.length;
-   }
-   return unescape(document.cookie.substring(offset, endstr));
-};
-</pre>
-        <!-- extjs/4.0.7/examples/menu/menus/states.js -->
-        <pre>/*
-
-This file is part of Ext JS 4
-
-Copyright (c) 2011 Sencha Inc
-
-Contact:  http://www.sencha.com/contact
-
-GNU General Public License Usage
-This file may be used under the terms of the GNU General Public License version 3.0 as published by the Free Software Foundation and appearing in the file LICENSE included in the packaging of this file.  Please review the following information to ensure the GNU General Public License version 3.0 requirements will be met: http://www.gnu.org/copyleft/gpl.html.
-
-If you are unsure which license is appropriate for your use, please contact the sales department at http://www.sencha.com/contact.
-
-*/
-// some data used in the examples
-Ext.namespace('Ext.example');
-
-Ext.example.states = [
-        ['AL', 'Alabama', 'The Heart of Dixie'],
-        ['AK', 'Alaska', 'The Land of the Midnight Sun'],
-        ['AZ', 'Arizona', 'The Grand Canyon State'],
-        ['AR', 'Arkansas', 'The Natural State'],
-        ['CA', 'California', 'The Golden State'],
-        ['CO', 'Colorado', 'The Mountain State'],
-        ['CT', 'Connecticut', 'The Constitution State'],
-        ['DE', 'Delaware', 'The First State'],
-        ['DC', 'District of Columbia', "The Nation's Capital"],
-        ['FL', 'Florida', 'The Sunshine State'],
-        ['GA', 'Georgia', 'The Peach State'],
-        ['HI', 'Hawaii', 'The Aloha State'],
-        ['ID', 'Idaho', 'Famous Potatoes'],
-        ['IL', 'Illinois', 'The Prairie State'],
-        ['IN', 'Indiana', 'The Hospitality State'],
-        ['IA', 'Iowa', 'The Corn State'],
-        ['KS', 'Kansas', 'The Sunflower State'],
-        ['KY', 'Kentucky', 'The Bluegrass State'],
-        ['LA', 'Louisiana', 'The Bayou State'],
-        ['ME', 'Maine', 'The Pine Tree State'],
-        ['MD', 'Maryland', 'Chesapeake State'],
-        ['MA', 'Massachusetts', 'The Spirit of America'],
-        ['MI', 'Michigan', 'Great Lakes State'],
-        ['MN', 'Minnesota', 'North Star State'],
-        ['MS', 'Mississippi', 'Magnolia State'],
-        ['MO', 'Missouri', 'Show Me State'],
-        ['MT', 'Montana', 'Big Sky Country'],
-        ['NE', 'Nebraska', 'Beef State'],
-        ['NV', 'Nevada', 'Silver State'],
-        ['NH', 'New Hampshire', 'Granite State'],
-        ['NJ', 'New Jersey', 'Garden State'],
-        ['NM', 'New Mexico', 'Land of Enchantment'],
-        ['NY', 'New York', 'Empire State'],
-        ['NC', 'North Carolina', 'First in Freedom'],
-        ['ND', 'North Dakota', 'Peace Garden State'],
-        ['OH', 'Ohio', 'The Heart of it All'],
-        ['OK', 'Oklahoma', 'Oklahoma is OK'],
-        ['OR', 'Oregon', 'Pacific Wonderland'],
-        ['PA', 'Pennsylvania', 'Keystone State'],
-        ['RI', 'Rhode Island', 'Ocean State'],
-        ['SC', 'South Carolina', 'Nothing Could be Finer'],
-        ['SD', 'South Dakota', 'Great Faces, Great Places'],
-        ['TN', 'Tennessee', 'Volunteer State'],
-        ['TX', 'Texas', 'Lone Star State'],
-        ['UT', 'Utah', 'Salt Lake State'],
-        ['VT', 'Vermont', 'Green Mountain State'],
-        ['VA', 'Virginia', 'Mother of States'],
-        ['WA', 'Washington', 'Green Tree State'],
-        ['WV', 'West Virginia', 'Mountain State'],
-        ['WI', 'Wisconsin', "America's Dairyland"],
-        ['WY', 'Wyoming', 'Like No Place on Earth']
-    ];
-</pre>
+        <pre class="example" data-uri="/extjs/4.0.7/examples/menu/menus/app.js">(hidden)</pre>
+        <pre class="example" data-uri="/extjs/4.0.7/examples/menu/menus/examples.js">(hidden)</pre>
+        <pre class="example" data-uri="/extjs/4.0.7/examples/menu/menus/states.js">(hidden)</pre>
     </div>
-    
+
 </body>
 </html>

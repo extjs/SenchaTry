@@ -2,495 +2,92 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8"/>
-    <title>VBox Layout</title>
-    <meta Name="description" content="VBox Layout" />
+    <title>VBox Layout | Sencha Try</title>
+    <meta name="description" content="VBox Layout" />
     <meta name="keywords" content="Sencha, Ext JS, Ext JS 4.0.7" />
+    <meta name="author" content="Sencha Inc.">
     <link href="/assets/application.css" media="screen" rel="stylesheet" type="text/css" />
 </head>
 <body>
-    
-    <div>
-        <header>
-            <h1>Sencha Try</h1>
-        </header>
-        
-        <section id="readme">
-            <div class="intro"><h1>VBox Layout</h1></div>
-            <div>
-                <a href="src.zip" download="extjs_4.0.7_examples_layout_vbox.zip">DOWNLOAD</a>
-            </div>
-            <nav>
-                <h2>Tags:</h2>
-                <ul class="tags">
-                    <li><a href="/tags/Ext%20JS/">Ext JS</a></li>
-                    <li><a href="/tags/Ext%20JS%204.0.7/">Ext JS 4.0.7</a></li>
+
+    <div id="logo-container" class="skiptranslate">
+        <h1 id="logo"><a href="/"><img src="/assets/logo.png" alt="Sencha Try" /></a></h1>
+        <span id="glow"></span>
+    </div>
+    <ul>
+        <li class="with-sub">
+            <a href="#" class="dropdown">Sencha Network</a>
+            <div id="docs-dropdown" class="pop-nav zero">
+                <ul>
+                    <li><a href="http://sencha.com/">Sencha.com</a></li>
+                    <li><a href="http://sencha.com/products/io/">Sencha.io</a></li>
+                    <li><a href="http://market.sencha.com/">Sencha Market</a></li>
                 </ul>
-            </nav>
-        </section>
-        
-        <section id="example">
-            [example]
-        </section>
-        
-        
-        <footer>
-            &copy; 2012 Sencha Inc.
-        </footer>
+            </div>
+        </li>
+    </ul>
+    
+    <div id="content-wrapper" class="clearfix">
+        <div id="content">
+            <a href="/">Home</a> <span>/</span> <a href="/extjs/">Ext JS</a> <span>/</span> <a href="/extjs/4.0.7/">4.0.7</a> <span>/</span> VBox Layout
+            <div class="developer">
+                <div class="column_nine">
+                    <div class="details">
+                        <div class="top-block border">
+                            <h2 class="alt">VBox Layout</h2>
+                        </div>
+                        <div class="plain-text"></div>
+                        <h3>[example widget]</h3>
+                        <div>
+                            <ul class="developer-actions">
+                                <li class="request"><a href="src.zip" class="button-link center">Download</a></li>
+                            </ul>
+                        </div>
+                        <hr class="clear" />
+                        <h4>Tags</h4>
+                        <ul class="services-list alt clearfix tags">
+                            <li><a href="/tags/Ext%20JS/">Ext JS</a></li>
+                            <li><a href="/tags/Ext%20JS%204.0.7/">Ext JS 4.0.7</a></li>
+                        </ul>
+                        <h4>See Also</h4>
+                        <ul class="services-list alt clearfix see-also">
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
     
+    <div id="footer-content">
+        <div class="columns">
+            <ul class="column">
+                <li>
+                    <a class="main" href="http://sencha.com/company/">Company</a>
+                    <ul class="zero">
+                        <li class="first"><a href="http://www.sencha.com/contact/" rel="nofollow">Contact Us</a></li>
+                        <li class="last"><a href="/pages/terms/" rel="nofollow">Terms of Use</a></li>
+                    </ul>
+                </li>
+            </ul>
+            <ul class="column">
+                <li>
+                    <a class="main" href="/">Listings</a>
+                    <ul class="zero">
+                        <li class="first"><a href="/developers/">Full listing</a></li>
+                        <li class="last"><a href="/developers/by_location/">Geographic listing</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+        <hr />
+        <div id="copyright">
+            <p>&copy; 2012 Sencha Inc. All rights reserved.</p>
+        </div>
+    </div>
+
     <div class="hidden">
-        <!-- extjs/4.0.7/examples/layout/vbox/app.js -->
-        <pre>/*global Ext:false */
-/*
-
-This file is part of Ext JS 4
-
-Copyright (c) 2011 Sencha Inc
-
-Contact:  http://www.sencha.com/contact
-
-GNU General Public License Usage
-This file may be used under the terms of the GNU General Public License version 3.0 as published by the Free Software Foundation and appearing in the file LICENSE included in the packaging of this file.  Please review the following information to ensure the GNU General Public License version 3.0 requirements will be met: http://www.gnu.org/copyleft/gpl.html.
-
-If you are unsure which license is appropriate for your use, please contact the sales department at http://www.sencha.com/contact.
-
-*/
-Ext.onReady(function () {
-    var currentName;
-    var replace = function (config, name) {
-            var btns = Ext.getCmp('btns');
-            if (name &amp;&amp; name != currentName) {
-                currentName = name;
-                btns.remove(0);
-                btns.add(Ext.apply(config));
-            }
-        };
-
-    var viewport = Ext.create('Ext.Viewport', {
-        layout: 'border',
-
-        items: [{
-            id: 'btns',
-            region: 'west',
-            baseCls: 'x-plain',
-            split: true,
-            width: 150,
-            minWidth: 100,
-            maxWidth: 250,
-            layout: 'fit',
-            margins: '5 0 5 5',
-            items: {
-                baseCls: 'x-plain',
-                html: '<p style="padding:10px;color:#556677;font-size:11px;">Select a configuration to the right &amp;raquo;</p>'
-            }
-        }, {
-            region: 'center',
-            margins: '5 5 5 0',
-            layout: 'anchor',
-            items: [{
-                anchor: '100%',
-                baseCls: 'x-plain',
-                layout: {
-                    type: 'hbox',
-                    padding: 10
-                },
-                defaults: {
-                    margins: '0 5 0 0',
-                    pressed: false,
-                    toggleGroup: 'btns',
-                    allowDepress: false
-                },
-                items: [{
-                    xtype: 'button',
-                    text: 'Spaced / Align: left',
-                    handler: function () {
-                        replace({
-                            layout: {
-                                type: 'vbox',
-                                padding: '5',
-                                align: 'left'
-                            },
-                            defaults: {
-                                margins: '0 0 5 0'
-                            },
-                            items: [{
-                                xtype: 'button',
-                                text: 'Button 1'
-                            }, {
-                                xtype: 'tbspacer',
-                                flex: 1
-                            }, {
-                                xtype: 'button',
-                                text: 'Button 2'
-                            }, {
-                                xtype: 'button',
-                                text: 'Button 3'
-                            }, {
-                                xtype: 'button',
-                                text: 'Button 4',
-                                margins: '0'
-                            }]
-                        }, 'spaced');
-                    }
-                }, {
-                    xtype: 'button',
-                    text: 'Multi-Spaced / Align: left',
-                    handler: function () {
-                        replace({
-                            layout: {
-                                type: 'vbox',
-                                padding: '5',
-                                align: 'left'
-                            },
-                            defaults: {
-                                margins: '0 0 5 0'
-                            },
-                            items: [{
-                                xtype: 'button',
-                                text: 'Button 1'
-                            }, {
-                                xtype: 'tbspacer',
-                                flex: 1
-                            }, {
-                                xtype: 'button',
-                                text: 'Button 2'
-                            }, {
-                                xtype: 'tbspacer',
-                                flex: 1
-                            }, {
-                                xtype: 'button',
-                                text: 'Button 3'
-                            }, {
-                                xtype: 'tbspacer',
-                                flex: 1
-                            }, {
-                                xtype: 'button',
-                                text: 'Button 4',
-                                margins: '0'
-                            }]
-                        }, 'multi spaced - align left');
-                    }
-                }, {
-                    xtype: 'button',
-                    text: 'Align: left',
-                    handler: function () {
-                        replace({
-                            layout: {
-                                type: 'vbox',
-                                padding: '5',
-                                align: 'left'
-                            },
-                            defaults: {
-                                margins: '0 0 5 0'
-                            },
-                            items: [{
-                                xtype: 'button',
-                                text: 'Button 1'
-                            }, {
-                                xtype: 'button',
-                                text: 'Button 2'
-                            }, {
-                                xtype: 'button',
-                                text: 'Button 3'
-                            }, {
-                                xtype: 'button',
-                                text: 'Button 4'
-                            }]
-                        }, 'align left');
-                    }
-                }, {
-                    xtype: 'button',
-                    text: 'Align: center',
-                    handler: function () {
-                        replace({
-                            layout: {
-                                type: 'vbox',
-                                padding: '5',
-                                align: 'center'
-                            },
-                            defaults: {
-                                margins: '0 0 5 0'
-                            },
-                            items: [{
-                                xtype: 'button',
-                                text: 'Button 1'
-                            }, {
-                                xtype: 'button',
-                                text: 'Button 2'
-                            }, {
-                                xtype: 'button',
-                                text: 'Button 3'
-                            }, {
-                                xtype: 'button',
-                                text: 'Button 4'
-                            }]
-                        }, 'align center');
-                    }
-                }, {
-                    xtype: 'button',
-                    text: 'Align: stretch',
-                    handler: function () {
-                        replace({
-                            layout: {
-                                type: 'vbox',
-                                padding: '5',
-                                align: 'stretch'
-                            },
-                            defaults: {
-                                margins: '0 0 5 0'
-                            },
-                            items: [{
-                                xtype: 'button',
-                                text: 'Button 1'
-                            }, {
-                                xtype: 'button',
-                                text: 'Button 2'
-                            }, {
-                                xtype: 'button',
-                                text: 'Button 3'
-                            }, {
-                                xtype: 'button',
-                                text: 'Button 4'
-                            }]
-                        }, 'align stretch');
-                    }
-                }, {
-                    xtype: 'button',
-                    text: 'Align: stretchmax',
-                    handler: function () {
-                        replace({
-                            layout: {
-                                type: 'vbox',
-                                padding: '5',
-                                align: 'stretchmax'
-                            },
-                            defaults: {
-                                margins: '0 0 5 0'
-                            },
-                            items: [{
-                                xtype: 'button',
-                                text: 'Jamie'
-                            }, {
-                                xtype: 'button',
-                                text: 'Aaron'
-                            }, {
-                                xtype: 'button',
-                                text: 'Tommy'
-                            }, {
-                                xtype: 'button',
-                                text: 'Ed '
-                            }]
-                        }, 'align stretchmax');
-                    }
-                }]
-            }, {
-                anchor: '100%',
-                baseCls: 'x-plain',
-                layout: {
-                    type: 'hbox',
-                    padding: '0 10 10'
-                },
-                defaults: {
-                    margins: '0 5 0 0',
-                    pressed: false,
-                    toggleGroup: 'btns',
-                    allowDepress: false
-                },
-                items: [{
-                    xtype: 'button',
-                    text: 'Flex: Even / Align: center',
-                    handler: function () {
-                        replace({
-                            layout: {
-                                type: 'vbox',
-                                padding: '5',
-                                align: 'center'
-                            },
-                            defaults: {
-                                margins: '0 0 5 0'
-                            },
-                            items: [{
-                                xtype: 'button',
-                                text: 'Button 1',
-                                flex: 1
-                            }, {
-                                xtype: 'button',
-                                text: 'Button 2',
-                                flex: 1
-                            }, {
-                                xtype: 'button',
-                                text: 'Button 3',
-                                flex: 1
-                            }, {
-                                xtype: 'button',
-                                text: 'Button 4',
-                                flex: 1,
-                                margins: '0'
-                            }]
-                        }, 'align flex even');
-                    }
-                }, {
-                    xtype: 'button',
-                    text: 'Flex: Ratio / Align: center',
-                    handler: function () {
-                        replace({
-                            layout: {
-                                type: 'vbox',
-                                padding: '5',
-                                align: 'center'
-                            },
-                            defaults: {
-                                margins: '0 0 5 0'
-                            },
-                            items: [{
-                                xtype: 'button',
-                                text: 'Button 1',
-                                flex: 1
-                            }, {
-                                xtype: 'button',
-                                text: 'Button 2',
-                                flex: 1
-                            }, {
-                                xtype: 'button',
-                                text: 'Button 3',
-                                flex: 1
-                            }, {
-                                xtype: 'button',
-                                text: 'Button 4',
-                                flex: 3,
-                                margins: '0'
-                            }]
-                        }, 'align flex ratio');
-                    }
-                }, {
-                    xtype: 'button',
-                    text: 'Flex + Stretch',
-                    handler: function () {
-                        replace({
-                            layout: {
-                                type: 'vbox',
-                                padding: '5',
-                                align: 'stretch'
-                            },
-                            defaults: {
-                                margins: '0 0 5 0'
-                            },
-                            items: [{
-                                xtype: 'button',
-                                text: 'Button 1',
-                                flex: 1
-                            }, {
-                                xtype: 'button',
-                                text: 'Button 2',
-                                flex: 1
-                            }, {
-                                xtype: 'button',
-                                text: 'Button 3',
-                                flex: 1
-                            }, {
-                                xtype: 'button',
-                                text: 'Button 4',
-                                flex: 3,
-                                margins: '0'
-                            }]
-                        }, 'align flex + stretch');
-                    }
-                }, {
-                    xtype: 'button',
-                    text: 'Pack: start / Align: center',
-                    handler: function () {
-                        replace({
-                            layout: {
-                                type: 'vbox',
-                                padding: '5',
-                                pack: 'start',
-                                align: 'center'
-                            },
-                            defaults: {
-                                margins: '0 0 5 0'
-                            },
-                            items: [{
-                                xtype: 'button',
-                                text: 'Button 1'
-                            }, {
-                                xtype: 'button',
-                                text: 'Button 2'
-                            }, {
-                                xtype: 'button',
-                                text: 'Button 3'
-                            }, {
-                                xtype: 'button',
-                                text: 'Button 4'
-                            }]
-                        }, 'align pack start + align center');
-                    }
-                }, {
-                    xtype: 'button',
-                    text: 'Pack: center / Align: center',
-                    handler: function () {
-                        replace({
-                            layout: {
-                                type: 'vbox',
-                                padding: '5',
-                                pack: 'center',
-                                align: 'center'
-                            },
-                            defaults: {
-                                margins: '0 0 5 0'
-                            },
-                            items: [{
-                                xtype: 'button',
-                                text: 'Button 1'
-                            }, {
-                                xtype: 'button',
-                                text: 'Button 2'
-                            }, {
-                                xtype: 'button',
-                                text: 'Button 3'
-                            }, {
-                                xtype: 'button',
-                                text: 'Button 4',
-                                margins: '0'
-                            }]
-                        }, 'align pack center + align center');
-                    }
-                }, {
-                    xtype: 'button',
-                    text: 'Pack: end / Align: center',
-                    handler: function () {
-                        replace({
-                            layout: {
-                                type: 'vbox',
-                                padding: '5',
-                                pack: 'end',
-                                align: 'center'
-                            },
-                            defaults: {
-                                margins: '0 0 5 0'
-                            },
-                            items: [{
-                                xtype: 'button',
-                                text: 'Button 1'
-                            }, {
-                                xtype: 'button',
-                                text: 'Button 2'
-                            }, {
-                                xtype: 'button',
-                                text: 'Button 3'
-                            }, {
-                                xtype: 'button',
-                                text: 'Button 4',
-                                margins: '0'
-                            }]
-                        }, 'align pack end + align center');
-                    }
-                }]
-            }]
-        }]
-    });
-});
-</pre>
+        <pre class="example" data-uri="/extjs/4.0.7/examples/layout/vbox/app.js">(hidden)</pre>
     </div>
-    
+
 </body>
 </html>

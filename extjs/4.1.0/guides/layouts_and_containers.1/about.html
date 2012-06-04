@@ -2,68 +2,92 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8"/>
-    <title>Layouts and Containers Example</title>
-    <meta Name="description" content="Layouts and Containers Example" />
+    <title>Layouts and Containers Example | Sencha Try</title>
+    <meta name="description" content="Layouts and Containers Example" />
     <meta name="keywords" content="Sencha, Ext JS, Ext JS 4.1.0" />
+    <meta name="author" content="Sencha Inc.">
     <link href="/assets/application.css" media="screen" rel="stylesheet" type="text/css" />
 </head>
 <body>
-    
-    <div>
-        <header>
-            <h1>Sencha Try</h1>
-        </header>
-        
-        <section id="readme">
-            <div class="intro"><h1>Layouts and Containers Example</h1>
 
-<p>The layout system handles the sizing and positioning of every component in your application.</p></div>
-            <div>
-                <a href="src.zip" download="extjs_4.1.0_guides_layouts_and_containers.1.zip">DOWNLOAD</a>
-            </div>
-            <nav>
-                <h2>Tags:</h2>
-                <ul class="tags">
-                    <li><a href="/tags/Ext%20JS/">Ext JS</a></li>
-                    <li><a href="/tags/Ext%20JS%204.1.0/">Ext JS 4.1.0</a></li>
+    <div id="logo-container" class="skiptranslate">
+        <h1 id="logo"><a href="/"><img src="/assets/logo.png" alt="Sencha Try" /></a></h1>
+        <span id="glow"></span>
+    </div>
+    <ul>
+        <li class="with-sub">
+            <a href="#" class="dropdown">Sencha Network</a>
+            <div id="docs-dropdown" class="pop-nav zero">
+                <ul>
+                    <li><a href="http://sencha.com/">Sencha.com</a></li>
+                    <li><a href="http://sencha.com/products/io/">Sencha.io</a></li>
+                    <li><a href="http://market.sencha.com/">Sencha Market</a></li>
                 </ul>
-            </nav>
-        </section>
-        
-        <section id="example">
-            [example]
-        </section>
-        
-        
-        <footer>
-            &copy; 2012 Sencha Inc.
-        </footer>
+            </div>
+        </li>
+    </ul>
+    
+    <div id="content-wrapper" class="clearfix">
+        <div id="content">
+            <a href="/">Home</a> <span>/</span> <a href="/extjs/">Ext JS</a> <span>/</span> <a href="/extjs/4.1.0/">4.1.0</a> <span>/</span> Layouts and Containers Example
+            <div class="developer">
+                <div class="column_nine">
+                    <div class="details">
+                        <div class="top-block border">
+                            <h2 class="alt">Layouts and Containers Example</h2>
+                        </div>
+                        <div class="plain-text"><p>The layout system handles the sizing and positioning of every component in your application.</p></div>
+                        <h3>[example widget]</h3>
+                        <div>
+                            <ul class="developer-actions">
+                                <li class="request"><a href="src.zip" class="button-link center">Download</a></li>
+                            </ul>
+                        </div>
+                        <hr class="clear" />
+                        <h4>Tags</h4>
+                        <ul class="services-list alt clearfix tags">
+                            <li><a href="/tags/Ext%20JS/">Ext JS</a></li>
+                            <li><a href="/tags/Ext%20JS%204.1.0/">Ext JS 4.1.0</a></li>
+                        </ul>
+                        <h4>See Also</h4>
+                        <ul class="services-list alt clearfix see-also">
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
     
+    <div id="footer-content">
+        <div class="columns">
+            <ul class="column">
+                <li>
+                    <a class="main" href="http://sencha.com/company/">Company</a>
+                    <ul class="zero">
+                        <li class="first"><a href="http://www.sencha.com/contact/" rel="nofollow">Contact Us</a></li>
+                        <li class="last"><a href="/pages/terms/" rel="nofollow">Terms of Use</a></li>
+                    </ul>
+                </li>
+            </ul>
+            <ul class="column">
+                <li>
+                    <a class="main" href="/">Listings</a>
+                    <ul class="zero">
+                        <li class="first"><a href="/developers/">Full listing</a></li>
+                        <li class="last"><a href="/developers/by_location/">Geographic listing</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+        <hr />
+        <div id="copyright">
+            <p>&copy; 2012 Sencha Inc. All rights reserved.</p>
+        </div>
+    </div>
+
     <div class="hidden">
-        <!-- extjs/4.1.0/guides/layouts_and_containers.1/app.js -->
-        <pre>/*global Ext:false */
-Ext.onReady(function() {
-    Ext.create('Ext.panel.Panel', {
-        renderTo: Ext.getBody(),
-        width: 400,
-        height: 300,
-        title: 'Container Panel',
-        items: [{
-            xtype: 'panel',
-            title: 'Child Panel 1',
-            height: 100,
-            width: '75%'
-        }, {
-            xtype: 'panel',
-            title: 'Child Panel 2',
-            height: 100,
-            width: '75%'
-        }]
-    });
-});
-</pre>
+        <pre class="example" data-uri="/extjs/4.1.0/guides/layouts_and_containers.1/app.js">(hidden)</pre>
     </div>
-    
+
 </body>
 </html>

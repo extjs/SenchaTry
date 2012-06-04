@@ -11,7 +11,7 @@
 <body>
 
     <div id="logo-container" class="skiptranslate">
-        <h1 id="logo"><a href="/"><img src="/assets/senchatry.png" alt="Sencha Try" /></a></h1>
+        <h1 id="logo"><a href="/"><img src="/assets/logo.png" alt="Sencha Try" /></a></h1>
         <span id="glow"></span>
     </div>
     <ul>
@@ -26,7 +26,7 @@
             </div>
         </li>
     </ul>
-
+    
     <div id="content-wrapper" class="clearfix">
         <div id="content">
             <a href="/">Home</a> <span>/</span> <a href="/extjs/">Ext JS</a> <span>/</span> <a href="/extjs/4.0.7/">4.0.7</a> <span>/</span> Checking whether an array contains a specific value using the Ext.Array class
@@ -36,8 +36,8 @@
                         <div class="top-block border">
                             <h2 class="alt">Checking whether an array contains a specific value using the Ext.Array class</h2>
                         </div>
-                        <div class="plain-text"></div>
-                        <h2>[example widget]</h2>
+                        <div class="plain-text"><p>The following example shows how you can determine if an array contains a specific value using the static <code>Ext.Array.contains()</code> method.</p></div>
+                        <h3>[example widget]</h3>
                         <div>
                             <ul class="developer-actions">
                                 <li class="request"><a href="src.zip" class="button-link center">Download</a></li>
@@ -60,7 +60,7 @@
             </div>
         </div>
     </div>
-
+    
     <div id="footer-content">
         <div class="columns">
             <ul class="column">
@@ -83,54 +83,13 @@
             </ul>
         </div>
         <hr />
-
         <div id="copyright">
             <p>&copy; 2012 Sencha Inc. All rights reserved.</p>
         </div>
     </div>
 
     <div class="hidden">
-        <pre class="example" data-uri="/extjs/4.0.7/demos/Ext.Array.contains.1/app.js">/*global Ext:false */
-Ext.application({
-    name: 'Ext.Array.clean()',
-    launch: function () {
-        /* Create two arrays. The 'dirty' array contains empty items. The 'clean' array filters empty items using the static Ext.Array.clean() method. */
-        var arr = ['The', 'quick', 'brown', 'fox', 'jumps', 'over', 'the', 'lazy', 'dog'];
-        
-        /* Create a panel to display the output. */
-        var panel = Ext.create('Ext.Panel', {
-            id: 'pan',
-            title: 'Ext.Array.contains() Example',
-            height: 200,
-            bodyPadding: 10,
-            padding: 20,
-            dockedItems: [{
-                xtype: 'toolbar',
-                dock: 'top',
-                items: [{
-                    xtype: 'textfield',
-                    id: 'key'
-                }, {
-                    xtype: 'button',
-                    text: 'Check',
-                    handler: function () {
-                        var value = Ext.getCmp('key').getValue();
-                        Ext.getCmp('foo').setText(" contains '" + value + "'? " + Ext.Array.contains(arr, value));
-                    }
-                }]
-            }],
-            items: [{
-                xtype: 'label',
-                text: JSON.stringify(arr)
-            }, {
-                xtype: 'label',
-                id: 'foo',
-                text: ''
-            }],
-            renderTo: Ext.getBody()
-        });
-    }
-});</pre>
+        <pre class="example" data-uri="/extjs/4.0.7/demos/Ext.Array.contains.1/app.js">(hidden)</pre>
     </div>
 
 </body>

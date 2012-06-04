@@ -2,151 +2,92 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8"/>
-    <title>Ext Component Loading</title>
-    <meta Name="description" content="Ext Component Loading" />
+    <title>Ext Component Loading | Sencha Try</title>
+    <meta name="description" content="Ext Component Loading" />
     <meta name="keywords" content="Sencha, Ext JS, Ext JS 4.0.7" />
+    <meta name="author" content="Sencha Inc.">
     <link href="/assets/application.css" media="screen" rel="stylesheet" type="text/css" />
 </head>
 <body>
-    
-    <div>
-        <header>
-            <h1>Sencha Try</h1>
-        </header>
-        
-        <section id="readme">
-            <div class="intro"><h1>Ext Component Loading</h1>
 
-<p>This example demonstrates loading various types of content into components/container via AJAX.</p></div>
-            <div>
-                <a href="src.zip" download="extjs_4.0.7_examples_component-loader_component-loader.zip">DOWNLOAD</a>
-            </div>
-            <nav>
-                <h2>Tags:</h2>
-                <ul class="tags">
-                    <li><a href="/tags/Ext%20JS/">Ext JS</a></li>
-                    <li><a href="/tags/Ext%20JS%204.0.7/">Ext JS 4.0.7</a></li>
+    <div id="logo-container" class="skiptranslate">
+        <h1 id="logo"><a href="/"><img src="/assets/logo.png" alt="Sencha Try" /></a></h1>
+        <span id="glow"></span>
+    </div>
+    <ul>
+        <li class="with-sub">
+            <a href="#" class="dropdown">Sencha Network</a>
+            <div id="docs-dropdown" class="pop-nav zero">
+                <ul>
+                    <li><a href="http://sencha.com/">Sencha.com</a></li>
+                    <li><a href="http://sencha.com/products/io/">Sencha.io</a></li>
+                    <li><a href="http://market.sencha.com/">Sencha Market</a></li>
                 </ul>
-            </nav>
-        </section>
-        
-        <section id="example">
-            [example]
-        </section>
-        
-        
-        <footer>
-            &copy; 2012 Sencha Inc.
-        </footer>
+            </div>
+        </li>
+    </ul>
+    
+    <div id="content-wrapper" class="clearfix">
+        <div id="content">
+            <a href="/">Home</a> <span>/</span> <a href="/extjs/">Ext JS</a> <span>/</span> <a href="/extjs/4.0.7/">4.0.7</a> <span>/</span> Ext Component Loading
+            <div class="developer">
+                <div class="column_nine">
+                    <div class="details">
+                        <div class="top-block border">
+                            <h2 class="alt">Ext Component Loading</h2>
+                        </div>
+                        <div class="plain-text"><p>This example demonstrates loading various types of content into components/container via AJAX.</p></div>
+                        <h3>[example widget]</h3>
+                        <div>
+                            <ul class="developer-actions">
+                                <li class="request"><a href="src.zip" class="button-link center">Download</a></li>
+                            </ul>
+                        </div>
+                        <hr class="clear" />
+                        <h4>Tags</h4>
+                        <ul class="services-list alt clearfix tags">
+                            <li><a href="/tags/Ext%20JS/">Ext JS</a></li>
+                            <li><a href="/tags/Ext%20JS%204.0.7/">Ext JS 4.0.7</a></li>
+                        </ul>
+                        <h4>See Also</h4>
+                        <ul class="services-list alt clearfix see-also">
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
     
+    <div id="footer-content">
+        <div class="columns">
+            <ul class="column">
+                <li>
+                    <a class="main" href="http://sencha.com/company/">Company</a>
+                    <ul class="zero">
+                        <li class="first"><a href="http://www.sencha.com/contact/" rel="nofollow">Contact Us</a></li>
+                        <li class="last"><a href="/pages/terms/" rel="nofollow">Terms of Use</a></li>
+                    </ul>
+                </li>
+            </ul>
+            <ul class="column">
+                <li>
+                    <a class="main" href="/">Listings</a>
+                    <ul class="zero">
+                        <li class="first"><a href="/developers/">Full listing</a></li>
+                        <li class="last"><a href="/developers/by_location/">Geographic listing</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+        <hr />
+        <div id="copyright">
+            <p>&copy; 2012 Sencha Inc. All rights reserved.</p>
+        </div>
+    </div>
+
     <div class="hidden">
-        <!-- extjs/4.0.7/examples/component-loader/component-loader/app.js -->
-        <pre>/*global Ext:false */
-/*
-
-This file is part of Ext JS 4
-
-Copyright (c) 2011 Sencha Inc
-
-Contact:  http://www.sencha.com/contact
-
-GNU General Public License Usage
-This file may be used under the terms of the GNU General Public License version 3.0 as published by the Free Software Foundation and appearing in the file LICENSE included in the packaging of this file.  Please review the following information to ensure the GNU General Public License version 3.0 requirements will be met: http://www.gnu.org/copyleft/gpl.html.
-
-If you are unsure which license is appropriate for your use, please contact the sales department at http://www.sencha.com/contact.
-
-*/
-Ext.require([
-    'Ext.panel.Panel',
-    'Ext.form.field.Number'
-]);
-
-Ext.onReady(function(){
-    var main = Ext.create('Ext.panel.Panel', {
-        renderTo: document.body,
-        width: 800,
-        height: 400,
-        layout: {
-            type: 'hbox',
-            align: 'stretch',
-            padding: 5
-        },
-        items: [{
-            flex: 1,
-            margins: '0 2 0 0',
-            title: 'Load raw html',
-            styleHtmlContent: true,
-            bodyPadding: 5,
-            loader: {
-                autoLoad: true,
-                url: 'content.html'
-            }
-        }, {
-            flex: 1,
-            margins: '0 2 0 3',
-            title: 'Load data for template',
-            bodyPadding: 5,
-            tpl: 'Favorite Colors<br /><br /><tpl for="."><b>{name}</b> - <span style="color: #{hex};">{color}</span><br /></tpl>',
-            loader: {
-                autoLoad: true,
-                url: 'data.json',
-                renderer: 'data'
-            }
-        }, {
-            flex: 1,
-            margins: '0 0 0 3',
-            layout: {
-                type: 'vbox',
-                align: 'stretch',
-                padding: '5 5 0 5'
-            },
-            defaults: {
-                margins: '0 0 5 0'
-            },
-            title: 'Load Dynamic Components - No autoLoad',
-            itemId: 'dynamic',
-            dockedItems: [{
-                dock: 'bottom',
-                xtype: 'toolbar',
-                items: [' ',{
-                    fieldLabel: '# to load',
-                    labelWidth: 60,
-                    xtype: 'numberfield',
-                    value: 5,
-                    minValue: 1,
-                    size: 5,
-                    itemId: 'toLoad'
-                }, {
-                    text: 'Load!',
-                    handler: function(){
-                        var dynamic = main.child('#dynamic'),
-                            value = dynamic.down('#toLoad').getValue();
-                            
-                        dynamic.getLoader().load({
-                            params: {
-                                total: value
-                            }
-                        });
-                    }
-                }]
-            }],
-            loader: {
-                loadMask: true,
-                removeAll: true,
-                url: 'boxes.php',
-                renderer: 'component',
-                success: function(loader){
-                    var panel = loader.getTarget();
-                    panel.setTitle('Loaded ' + panel.items.getCount() + ' items');
-                }
-            }
-        }]    
-    });
-});
-
-</pre>
+        <pre class="example" data-uri="/extjs/4.0.7/examples/component-loader/component-loader/app.js">(hidden)</pre>
     </div>
-    
+
 </body>
 </html>

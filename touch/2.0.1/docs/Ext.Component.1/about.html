@@ -2,78 +2,97 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8"/>
-    <title>Ext.Component Example</title>
-    <meta Name="description" content="Ext.Component Example" />
+    <title>Ext.Component Example | Sencha Try</title>
+    <meta name="description" content="Ext.Component Example" />
     <meta name="keywords" content="Sencha, Sencha Touch, Sencha Touch 2.0.1, Ext.Component, Ext.lib.Component" />
+    <meta name="author" content="Sencha Inc.">
     <link href="/assets/application.css" media="screen" rel="stylesheet" type="text/css" />
 </head>
 <body>
-    
-    <div>
-        <header>
-            <h1>Sencha Try</h1>
-        </header>
-        
-        <section id="readme">
-            <div class="intro"><h1>Ext.Component Example</h1></div>
-            <div>
-                <a href="src.zip" download="touch_2.0.1_docs_Ext.Component.1.zip">DOWNLOAD</a>
-            </div>
-            <nav>
-                <h2>Tags:</h2>
-                <ul class="tags">
-                    <li><a href="/tags/Sencha%20Touch/">Sencha Touch</a></li>
-                    <li><a href="/tags/Sencha%20Touch%202.0.1/">Sencha Touch 2.0.1</a></li>
-                    <li><a href="/tags/Ext.Component/">Ext.Component</a></li>
-                    <li><a href="/tags/Ext.lib.Component/">Ext.lib.Component</a></li>
+
+    <div id="logo-container" class="skiptranslate">
+        <h1 id="logo"><a href="/"><img src="/assets/logo.png" alt="Sencha Try" /></a></h1>
+        <span id="glow"></span>
+    </div>
+    <ul>
+        <li class="with-sub">
+            <a href="#" class="dropdown">Sencha Network</a>
+            <div id="docs-dropdown" class="pop-nav zero">
+                <ul>
+                    <li><a href="http://sencha.com/">Sencha.com</a></li>
+                    <li><a href="http://sencha.com/products/io/">Sencha.io</a></li>
+                    <li><a href="http://market.sencha.com/">Sencha Market</a></li>
                 </ul>
-            </nav>
-        </section>
-        
-        <section id="example">
-            [example]
-        </section>
-        
-        <nav>
-            <h2>See Also:</h2>
-            <ul class="seeAlso">
-                <li class="docs"><a href="http://docs.sencha.com/touch/2-0/#!/api/Ext.Component" target="_blank">Ext.Component Documentation</a></li>
-                <li class="guide"><a href="http://docs.sencha.com/touch/2-0/#!/guide/components" target="_blank">Components Guide</a></li>
-                <li class="guide"><a href="http://docs.sencha.com/touch/2-0/#!/guide/events" target="_blank">Events Guide</a></li>
+            </div>
+        </li>
+    </ul>
+    
+    <div id="content-wrapper" class="clearfix">
+        <div id="content">
+            <a href="/">Home</a> <span>/</span> <a href="/touch/">Touch</a> <span>/</span> <a href="/touch/2.0.1/">2.0.1</a> <span>/</span> Ext.Component Example
+            <div class="developer">
+                <div class="column_nine">
+                    <div class="details">
+                        <div class="top-block border">
+                            <h2 class="alt">Ext.Component Example</h2>
+                        </div>
+                        <div class="plain-text"></div>
+                        <h3>[example widget]</h3>
+                        <div>
+                            <ul class="developer-actions">
+                                <li class="request"><a href="src.zip" class="button-link center">Download</a></li>
+                            </ul>
+                        </div>
+                        <hr class="clear" />
+                        <h4>Tags</h4>
+                        <ul class="services-list alt clearfix tags">
+                            <li><a href="/tags/Sencha%20Touch/">Sencha Touch</a></li>
+                            <li><a href="/tags/Sencha%20Touch%202.0.1/">Sencha Touch 2.0.1</a></li>
+                            <li><a href="/tags/Ext.Component/"><code>Ext.Component</code></a></li>
+                            <li><a href="/tags/Ext.lib.Component/"><code>Ext.lib.Component</code></a></li>
+                        </ul>
+                        <h4>See Also</h4>
+                        <ul class="services-list alt clearfix see-also">
+                            <li class="docs"><a href="http://docs.sencha.com/touch/2-0/#!/api/Ext.Component" target="_blank">Ext.Component Documentation</a></li>
+                            <li class="guide"><a href="http://docs.sencha.com/touch/2-0/#!/guide/components" target="_blank">Components Guide</a></li>
+                            <li class="guide"><a href="http://docs.sencha.com/touch/2-0/#!/guide/events" target="_blank">Events Guide</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div id="footer-content">
+        <div class="columns">
+            <ul class="column">
+                <li>
+                    <a class="main" href="http://sencha.com/company/">Company</a>
+                    <ul class="zero">
+                        <li class="first"><a href="http://www.sencha.com/contact/" rel="nofollow">Contact Us</a></li>
+                        <li class="last"><a href="/pages/terms/" rel="nofollow">Terms of Use</a></li>
+                    </ul>
+                </li>
             </ul>
-        </nav>
-        
-        <footer>
-            &copy; 2012 Sencha Inc.
-        </footer>
+            <ul class="column">
+                <li>
+                    <a class="main" href="/">Listings</a>
+                    <ul class="zero">
+                        <li class="first"><a href="/developers/">Full listing</a></li>
+                        <li class="last"><a href="/developers/by_location/">Geographic listing</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+        <hr />
+        <div id="copyright">
+            <p>&copy; 2012 Sencha Inc. All rights reserved.</p>
+        </div>
     </div>
-    
+
     <div class="hidden">
-        <!-- touch/2.0.1/docs/Ext.Component.1/app.js -->
-        <pre>/*global Ext:false */
-Ext.application({
-    launch: function() {
-        var panel = Ext.create('Ext.Panel', {
-            layout: 'hbox',
-
-            items: [{
-                xtype: 'panel',
-                flex: 1,
-                html: 'Left Panel, 1/3rd of total size',
-                style: 'background-color: #5E99CC;'
-            }, {
-                xtype: 'panel',
-                flex: 2,
-                html: 'Right Panel, 2/3rds of total size',
-                style: 'background-color: #759E60;'
-            }]
-        });
-
-        Ext.Viewport.add(panel);
-    }
-});
-</pre>
+        <pre class="example" data-uri="/touch/2.0.1/docs/Ext.Component.1/app.js">(hidden)</pre>
     </div>
-    
+
 </body>
 </html>

@@ -2,67 +2,92 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8"/>
-    <title>Determining when a user clicks the Ext.Img component in Sencha Touch 2</title>
-    <meta Name="description" content="Determining when a user clicks the Ext.Img component in Sencha Touch 2" />
+    <title>Determining when a user clicks the Ext.Img component in Sencha Touch 2 | Sencha Try</title>
+    <meta name="description" content="Determining when a user clicks the Ext.Img component in Sencha Touch 2" />
     <meta name="keywords" content="Sencha, Sencha Touch, Sencha Touch 2.0.0" />
+    <meta name="author" content="Sencha Inc.">
     <link href="/assets/application.css" media="screen" rel="stylesheet" type="text/css" />
 </head>
 <body>
-    
-    <div>
-        <header>
-            <h1>Sencha Try</h1>
-        </header>
-        
-        <section id="readme">
-            <div class="intro"><h1>Determining when a user clicks the Ext.Img component in Sencha Touch 2</h1>
 
-<p>The following example shows how you can determine whether an image was clicked using the Ext.Img component in Sencha Touch 2 by using the <code>listeners</code> config object and listening for the <code>tap</code> event.</p></div>
-            <div>
-                <a href="src.zip" download="touch_2.0.0_demos_Ext.Img.listeners.tap.zip">DOWNLOAD</a>
-            </div>
-            <nav>
-                <h2>Tags:</h2>
-                <ul class="tags">
-                    <li><a href="/tags/Sencha%20Touch/">Sencha Touch</a></li>
-                    <li><a href="/tags/Sencha%20Touch%202.0.0/">Sencha Touch 2.0.0</a></li>
+    <div id="logo-container" class="skiptranslate">
+        <h1 id="logo"><a href="/"><img src="/assets/logo.png" alt="Sencha Try" /></a></h1>
+        <span id="glow"></span>
+    </div>
+    <ul>
+        <li class="with-sub">
+            <a href="#" class="dropdown">Sencha Network</a>
+            <div id="docs-dropdown" class="pop-nav zero">
+                <ul>
+                    <li><a href="http://sencha.com/">Sencha.com</a></li>
+                    <li><a href="http://sencha.com/products/io/">Sencha.io</a></li>
+                    <li><a href="http://market.sencha.com/">Sencha Market</a></li>
                 </ul>
-            </nav>
-        </section>
-        
-        <section id="example">
-            [example]
-        </section>
-        
-        
-        <footer>
-            &copy; 2012 Sencha Inc.
-        </footer>
+            </div>
+        </li>
+    </ul>
+    
+    <div id="content-wrapper" class="clearfix">
+        <div id="content">
+            <a href="/">Home</a> <span>/</span> <a href="/touch/">Touch</a> <span>/</span> <a href="/touch/2.0.0/">2.0.0</a> <span>/</span> Determining when a user clicks the Ext.Img component in Sencha Touch 2
+            <div class="developer">
+                <div class="column_nine">
+                    <div class="details">
+                        <div class="top-block border">
+                            <h2 class="alt">Determining when a user clicks the Ext.Img component in Sencha Touch 2</h2>
+                        </div>
+                        <div class="plain-text"><p>The following example shows how you can determine whether an image was clicked using the Ext.Img component in Sencha Touch 2 by using the <code>listeners</code> config object and listening for the <code>tap</code> event.</p></div>
+                        <h3>[example widget]</h3>
+                        <div>
+                            <ul class="developer-actions">
+                                <li class="request"><a href="src.zip" class="button-link center">Download</a></li>
+                            </ul>
+                        </div>
+                        <hr class="clear" />
+                        <h4>Tags</h4>
+                        <ul class="services-list alt clearfix tags">
+                            <li><a href="/tags/Sencha%20Touch/">Sencha Touch</a></li>
+                            <li><a href="/tags/Sencha%20Touch%202.0.0/">Sencha Touch 2.0.0</a></li>
+                        </ul>
+                        <h4>See Also</h4>
+                        <ul class="services-list alt clearfix see-also">
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
     
+    <div id="footer-content">
+        <div class="columns">
+            <ul class="column">
+                <li>
+                    <a class="main" href="http://sencha.com/company/">Company</a>
+                    <ul class="zero">
+                        <li class="first"><a href="http://www.sencha.com/contact/" rel="nofollow">Contact Us</a></li>
+                        <li class="last"><a href="/pages/terms/" rel="nofollow">Terms of Use</a></li>
+                    </ul>
+                </li>
+            </ul>
+            <ul class="column">
+                <li>
+                    <a class="main" href="/">Listings</a>
+                    <ul class="zero">
+                        <li class="first"><a href="/developers/">Full listing</a></li>
+                        <li class="last"><a href="/developers/by_location/">Geographic listing</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+        <hr />
+        <div id="copyright">
+            <p>&copy; 2012 Sencha Inc. All rights reserved.</p>
+        </div>
+    </div>
+
     <div class="hidden">
-        <!-- touch/2.0.0/demos/Ext.Img.listeners.tap/app.js -->
-        <pre>/*global Ext:false */
-Ext.application({
-    launch: function () {
-        var logo = Ext.create('Ext.Img', {
-            src: 'http://www.sencha.com/img/sencha-large.png',
-            mode: 'element',
-            listeners: {
-                tap: function (img, evt) {
-                    Ext.Msg.alert('You clicked the image');
-                } // tap
-            } // listeners
-        }); // create()
-        
-        Ext.create('Ext.Panel', {
-            fullscreen: true,
-            items: logo
-        }); // create()
-    } // launch
-}); // application()
-</pre>
+        <pre class="example" data-uri="/touch/2.0.0/demos/Ext.Img.listeners.tap/app.js">(hidden)</pre>
     </div>
-    
+
 </body>
 </html>

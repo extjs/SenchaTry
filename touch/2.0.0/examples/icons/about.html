@@ -2,170 +2,92 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8"/>
-    <title>Icons</title>
-    <meta Name="description" content="Icons" />
+    <title>Icons | Sencha Try</title>
+    <meta name="description" content="Icons" />
     <meta name="keywords" content="Sencha, Sencha Touch, Sencha Touch 2.0.0" />
+    <meta name="author" content="Sencha Inc.">
     <link href="/assets/application.css" media="screen" rel="stylesheet" type="text/css" />
 </head>
 <body>
-    
-    <div>
-        <header>
-            <h1>Sencha Try</h1>
-        </header>
-        
-        <section id="readme">
-            <div class="intro"><h1>Icons</h1></div>
-            <div>
-                <a href="src.zip" download="touch_2.0.0_examples_icons.zip">DOWNLOAD</a>
-            </div>
-            <nav>
-                <h2>Tags:</h2>
-                <ul class="tags">
-                    <li><a href="/tags/Sencha%20Touch/">Sencha Touch</a></li>
-                    <li><a href="/tags/Sencha%20Touch%202.0.0/">Sencha Touch 2.0.0</a></li>
+
+    <div id="logo-container" class="skiptranslate">
+        <h1 id="logo"><a href="/"><img src="/assets/logo.png" alt="Sencha Try" /></a></h1>
+        <span id="glow"></span>
+    </div>
+    <ul>
+        <li class="with-sub">
+            <a href="#" class="dropdown">Sencha Network</a>
+            <div id="docs-dropdown" class="pop-nav zero">
+                <ul>
+                    <li><a href="http://sencha.com/">Sencha.com</a></li>
+                    <li><a href="http://sencha.com/products/io/">Sencha.io</a></li>
+                    <li><a href="http://market.sencha.com/">Sencha Market</a></li>
                 </ul>
-            </nav>
-        </section>
-        
-        <section id="example">
-            [example]
-        </section>
-        
-        
-        <footer>
-            &copy; 2012 Sencha Inc.
-        </footer>
+            </div>
+        </li>
+    </ul>
+    
+    <div id="content-wrapper" class="clearfix">
+        <div id="content">
+            <a href="/">Home</a> <span>/</span> <a href="/touch/">Touch</a> <span>/</span> <a href="/touch/2.0.0/">2.0.0</a> <span>/</span> Icons
+            <div class="developer">
+                <div class="column_nine">
+                    <div class="details">
+                        <div class="top-block border">
+                            <h2 class="alt">Icons</h2>
+                        </div>
+                        <div class="plain-text"></div>
+                        <h3>[example widget]</h3>
+                        <div>
+                            <ul class="developer-actions">
+                                <li class="request"><a href="src.zip" class="button-link center">Download</a></li>
+                            </ul>
+                        </div>
+                        <hr class="clear" />
+                        <h4>Tags</h4>
+                        <ul class="services-list alt clearfix tags">
+                            <li><a href="/tags/Sencha%20Touch/">Sencha Touch</a></li>
+                            <li><a href="/tags/Sencha%20Touch%202.0.0/">Sencha Touch 2.0.0</a></li>
+                        </ul>
+                        <h4>See Also</h4>
+                        <ul class="services-list alt clearfix see-also">
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
     
+    <div id="footer-content">
+        <div class="columns">
+            <ul class="column">
+                <li>
+                    <a class="main" href="http://sencha.com/company/">Company</a>
+                    <ul class="zero">
+                        <li class="first"><a href="http://www.sencha.com/contact/" rel="nofollow">Contact Us</a></li>
+                        <li class="last"><a href="/pages/terms/" rel="nofollow">Terms of Use</a></li>
+                    </ul>
+                </li>
+            </ul>
+            <ul class="column">
+                <li>
+                    <a class="main" href="/">Listings</a>
+                    <ul class="zero">
+                        <li class="first"><a href="/developers/">Full listing</a></li>
+                        <li class="last"><a href="/developers/by_location/">Geographic listing</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+        <hr />
+        <div id="copyright">
+            <p>&copy; 2012 Sencha Inc. All rights reserved.</p>
+        </div>
+    </div>
+
     <div class="hidden">
-        <!-- touch/2.0.0/examples/icons/app.js -->
-        <pre>/*global Ext:false */
-/**
- * This is a simple example which shows some of the built-in icons that are supported in Sencha Touch.
- */
-
-// Define our application
-Ext.application({
-    glossOnIcon: false,
-    icon: {
-        57: 'resources/icons/icon.png',
-        72: 'resources/icons/icon@72.png',
-        114: 'resources/icons/icon@2x.png',
-        144: 'resources/icons/icon@114.png'
-    },
-
-    phoneStartupScreen: 'resources/loading/Homescreen.jpg',
-    tabletStartupScreen: 'resources/loading/Homescreen~ipad.jpg',
-
-    // Require the components which will be used in this example
-    requires: [
-        'Ext.tab.Panel',
-        'Ext.Toolbar'
-    ],
-
-    /**
-     * The launch method is called when the browser is ready, and the application can launch.
-     *
-     * In this method we will create a TabPanel which will demonstrate the different icons you can have on taps. Then we will also
-     * create a docked top toolbar with a bunch of buttons which also show icons.
-     */
-    launch: function() {
-        // Create the tab panel component
-        Ext.create('Ext.tab.Panel', {
-            // Make the tab panel fullscreen
-            fullscreen: true,
-
-            // Give the tabBar a custom configuration
-            tabBar: {
-                // Dock it to the bottom
-                docked: 'bottom',
-
-                // Change the layout so each of the tabs are centered vertically and horizontally
-                layout: {
-                    pack: 'center',
-                    align: 'center'
-                },
-
-                // Make the tabbar scrollable horizontally, and disabled the indicators
-                scrollable: {
-                    direction: 'horizontal',
-                    indicators: false
-                }
-            },
-
-            // Set the UI of the tabbar to light
-            ui  : 'light',
-
-            defaults: {
-                // Add some text about the example into the tabpanel as html and style it using default CSS
-                html: "Both toolbars and tabbars have built-in, ready to use icons. Styling custom icons is no hassle.<p><small>If you can't see all of the buttons below, try scrolling left/right.</small></p>"
-            },
-
-            // Add a bunch of items into the tabpanel, with iconCls'
-            items: [
-                { iconCls: 'bookmarks', title: 'Bookmarks' },
-                { iconCls: 'download',  title: 'Download' },
-                { iconCls: 'favorites', title: 'Favorites' },
-                { iconCls: 'info',      title: 'Info' },
-                { iconCls: 'more',      title: 'More' },
-                { iconCls: 'search',    title: 'Search' },
-                { iconCls: 'settings',  title: 'Settings' },
-                { iconCls: 'team',      title: 'Team' },
-                { iconCls: 'time',      title: 'Time' },
-                { iconCls: 'user',      title: 'User' },
-
-                // Also add a toolbar
-                {
-                    xtype: 'toolbar',
-
-                    // Dock it to the top
-                    docked: 'top',
-
-                    html: null,
-
-                    // Center all items horizontally and vertically
-                    layout: {
-                        pack: 'center',
-                        align: 'center'
-                    },
-
-                    // Make the toolbar scrollable
-                    scrollable: {
-                        direction: 'horizontal',
-                        indicators: false
-                    },
-
-                    // Add some default configurations to all items added to this toolbar
-                    defaults: {
-                        // iconMask is used when you need an pictos icon in a button
-                        iconMask: true,
-                        ui: 'plain'
-                    },
-
-                    // Add a bunch of buttons into the toolbar
-                    items: [
-                        { iconCls: 'action' },
-                        { iconCls: 'add' },
-                        { iconCls: 'arrow_up' },
-                        { iconCls: 'arrow_right' },
-                        { iconCls: 'arrow_down' },
-                        { iconCls: 'arrow_left' },
-                        { iconCls: 'compose' },
-                        { iconCls: 'delete' },
-                        { iconCls: 'refresh' },
-                        { iconCls: 'reply' },
-                        { iconCls: 'search' },
-                        { iconCls: 'star' },
-                        { iconCls: 'trash' }
-                    ]
-                }
-            ]
-        });
-    }
-});
-</pre>
+        <pre class="example" data-uri="/touch/2.0.0/examples/icons/app.js">(hidden)</pre>
     </div>
-    
+
 </body>
 </html>

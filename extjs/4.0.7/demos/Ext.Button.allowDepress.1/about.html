@@ -11,7 +11,7 @@
 <body>
 
     <div id="logo-container" class="skiptranslate">
-        <h1 id="logo"><a href="/"><img src="/assets/senchatry.png" alt="Sencha Try" /></a></h1>
+        <h1 id="logo"><a href="/"><img src="/assets/logo.png" alt="Sencha Try" /></a></h1>
         <span id="glow"></span>
     </div>
     <ul>
@@ -26,7 +26,7 @@
             </div>
         </li>
     </ul>
-
+    
     <div id="content-wrapper" class="clearfix">
         <div id="content">
             <a href="/">Home</a> <span>/</span> <a href="/extjs/">Ext JS</a> <span>/</span> <a href="/extjs/4.0.7/">4.0.7</a> <span>/</span> Preventing an Ext.Button component from being depressed in Ext JS
@@ -36,8 +36,8 @@
                         <div class="top-block border">
                             <h2 class="alt">Preventing an Ext.Button component from being depressed in Ext JS</h2>
                         </div>
-                        <div class="plain-text"></div>
-                        <h2>[example widget]</h2>
+                        <div class="plain-text"><p>The following example shows how you can prevent an Ext.Button component from being depressed by setting the Boolean <code>allowDepress</code> config to <code>false</code>.</p></div>
+                        <h3>[example widget]</h3>
                         <div>
                             <ul class="developer-actions">
                                 <li class="request"><a href="src.zip" class="button-link center">Download</a></li>
@@ -62,7 +62,7 @@
             </div>
         </div>
     </div>
-
+    
     <div id="footer-content">
         <div class="columns">
             <ul class="column">
@@ -85,47 +85,13 @@
             </ul>
         </div>
         <hr />
-
         <div id="copyright">
             <p>&copy; 2012 Sencha Inc. All rights reserved.</p>
         </div>
     </div>
 
     <div class="hidden">
-        <pre class="example" data-uri="/extjs/4.0.7/demos/Ext.Button.allowDepress.1/app.js">/*global Ext:false */
-Ext.onReady(function () {
-    var ch = Ext.create('Ext.form.field.Checkbox', {
-        boxLabel: 'allowDepress',
-        handler: function () {
-            btn.allowDepress = this.checked;
-            btn.setText('<code>allowDepress: ' + btn.allowDepress + '</code>');
-        } // handler
-    }); // create()
-    
-    var toggleBtn = Ext.create('Ext.Button', {
-        handler: function () {
-            btn.toggle();
-        },
-        // handler
-        text: 'toggle()'
-    }); // create()
-    
-    var btn = Ext.create('Ext.Button', {
-        allowDepress: ch.checked,
-        enableToggle: true,
-        text: '<code>allowDepress: ' + ch.checked + '</code>'
-    }); // create()
-    
-    Ext.create('Ext.Panel', {
-        bodyPadding: 20,
-        items: [btn],
-        renderTo: Ext.getBody(),
-        tbar: [
-            ch,
-            toggleBtn
-        ] // tbar
-    }); // create()
-}); // onReady()</pre>
+        <pre class="example" data-uri="/extjs/4.0.7/demos/Ext.Button.allowDepress.1/app.js">(hidden)</pre>
     </div>
 
 </body>

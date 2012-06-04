@@ -2,208 +2,96 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8"/>
-    <title>Windows Example</title>
-    <meta Name="description" content="Windows Example" />
+    <title>Windows Example | Sencha Try</title>
+    <meta name="description" content="Windows Example" />
     <meta name="keywords" content="Sencha, Ext JS, Ext JS 4.0.7" />
+    <meta name="author" content="Sencha Inc.">
     <link href="/assets/application.css" media="screen" rel="stylesheet" type="text/css" />
 </head>
 <body>
-    
-    <div>
-        <header>
-            <h1>Sencha Try</h1>
-        </header>
-        
-        <section id="readme">
-            <div class="intro"><h1>Windows Example</h1>
 
-<p>This illustrates the <code>headerPosition</code> config of Panels, and also relative z-index management.</p>
+    <div id="logo-container" class="skiptranslate">
+        <h1 id="logo"><a href="/"><img src="/assets/logo.png" alt="Sencha Try" /></a></h1>
+        <span id="glow"></span>
+    </div>
+    <ul>
+        <li class="with-sub">
+            <a href="#" class="dropdown">Sencha Network</a>
+            <div id="docs-dropdown" class="pop-nav zero">
+                <ul>
+                    <li><a href="http://sencha.com/">Sencha.com</a></li>
+                    <li><a href="http://sencha.com/products/io/">Sencha.io</a></li>
+                    <li><a href="http://market.sencha.com/">Sencha Market</a></li>
+                </ul>
+            </div>
+        </li>
+    </ul>
+    
+    <div id="content-wrapper" class="clearfix">
+        <div id="content">
+            <a href="/">Home</a> <span>/</span> <a href="/extjs/">Ext JS</a> <span>/</span> <a href="/extjs/4.0.7/">4.0.7</a> <span>/</span> Windows Example
+            <div class="developer">
+                <div class="column_nine">
+                    <div class="details">
+                        <div class="top-block border">
+                            <h2 class="alt">Windows Example</h2>
+                        </div>
+                        <div class="plain-text"><p>This illustrates the <code>headerPosition</code> config of Panels, and also relative z-index management.</p>
 
 <p>The third Window owns two floating Windows who's z-indices are managed relative to <em>its</em> z-index. When that Window is occluded by another Window, and you click to bring it to the front, both its dependent Windows move to the front too.</p>
 
 <p>This also illustrates constraining Windows.</p></div>
-            <div>
-                <a href="src.zip" download="extjs_4.0.7_examples_window_window.zip">DOWNLOAD</a>
+                        <h3>[example widget]</h3>
+                        <div>
+                            <ul class="developer-actions">
+                                <li class="request"><a href="src.zip" class="button-link center">Download</a></li>
+                            </ul>
+                        </div>
+                        <hr class="clear" />
+                        <h4>Tags</h4>
+                        <ul class="services-list alt clearfix tags">
+                            <li><a href="/tags/Ext%20JS/">Ext JS</a></li>
+                            <li><a href="/tags/Ext%20JS%204.0.7/">Ext JS 4.0.7</a></li>
+                        </ul>
+                        <h4>See Also</h4>
+                        <ul class="services-list alt clearfix see-also">
+                        </ul>
+                    </div>
+                </div>
             </div>
-            <nav>
-                <h2>Tags:</h2>
-                <ul class="tags">
-                    <li><a href="/tags/Ext%20JS/">Ext JS</a></li>
-                    <li><a href="/tags/Ext%20JS%204.0.7/">Ext JS 4.0.7</a></li>
-                </ul>
-            </nav>
-        </section>
-        
-        <section id="example">
-            [example]
-        </section>
-        
-        
-        <footer>
-            &copy; 2012 Sencha Inc.
-        </footer>
+        </div>
     </div>
     
+    <div id="footer-content">
+        <div class="columns">
+            <ul class="column">
+                <li>
+                    <a class="main" href="http://sencha.com/company/">Company</a>
+                    <ul class="zero">
+                        <li class="first"><a href="http://www.sencha.com/contact/" rel="nofollow">Contact Us</a></li>
+                        <li class="last"><a href="/pages/terms/" rel="nofollow">Terms of Use</a></li>
+                    </ul>
+                </li>
+            </ul>
+            <ul class="column">
+                <li>
+                    <a class="main" href="/">Listings</a>
+                    <ul class="zero">
+                        <li class="first"><a href="/developers/">Full listing</a></li>
+                        <li class="last"><a href="/developers/by_location/">Geographic listing</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+        <hr />
+        <div id="copyright">
+            <p>&copy; 2012 Sencha Inc. All rights reserved.</p>
+        </div>
+    </div>
+
     <div class="hidden">
-        <!-- extjs/4.0.7/examples/window/window/app.js -->
-        <pre>/*global Ext:false */
-/*
-
-This file is part of Ext JS 4
-
-Copyright (c) 2011 Sencha Inc
-
-Contact:  http://www.sencha.com/contact
-
-GNU General Public License Usage
-This file may be used under the terms of the GNU General Public License version 3.0 as published by the Free Software Foundation and appearing in the file LICENSE included in the packaging of this file.  Please review the following information to ensure the GNU General Public License version 3.0 requirements will be met: http://www.gnu.org/copyleft/gpl.html.
-
-If you are unsure which license is appropriate for your use, please contact the sales department at http://www.sencha.com/contact.
-
-*/
-Ext.require([
-    'Ext.window.Window',
-    'Ext.tab.*',
-    'Ext.toolbar.Spacer',
-    'Ext.layout.container.Card',
-    'Ext.layout.container.Border'
-]);
-
-Ext.onReady(function(){
-    var floater,
-        constrainedWin,
-        constrainedWin2;
-
-    Ext.util.Region.override({
-        colors: ['red', 'orange', 'yellow', 'green', 'blue', 'indigo', 'violet'],
-        nextColor: 0,
-        show: function(){
-            var style = {
-                display: 'block',
-                position: 'absolute',
-                top: this.top + 'px',
-                left: this.left + 'px',
-                height: ((this.bottom - this.top) + 1) + 'px',
-                width: ((this.right - this.left) + 1) + 'px',
-                opacity: 0.3,
-                'pointer-events': 'none',
-                'z-index': 9999999
-            };
-            if (!this.highlightEl) {
-                style['background-color'] = this.colors[this.nextColor];
-                Ext.util.Region.prototype.nextColor++;
-                this.highlightEl = Ext.getBody().createChild({
-                    style: style
-                });
-                if (this.nextColor >= this.colors.length) {
-                    this.nextColor = 0;
-                }
-            } else {
-                this.highlightEl.setStyle(style);
-            }
-        },
-        hide: function(){
-            if (this.highlightEl) {
-                this.highlightEl.setStyle({
-                    display: 'none'
-                });
-            }
-        }
-    });
-
-    var win2 = Ext.create('widget.window', {
-        height: 200,
-        width: 400,
-        x: 450,
-        y: 450,
-        title: 'Constraining Window, plain: true',
-        closable: false,
-        plain: true,
-        layout: 'fit',
-        items: [floater = Ext.create('Ext.Component', {
-            xtype: 'component',
-            floating: {
-                shadow: false
-            },
-            height: 50,
-            width: 50,
-            x: 175,
-            y: 75
-        }), constrainedWin = Ext.create('Ext.Window', {
-            title: 'Constrained Window',
-            width: 100,
-            height: 100,
-            x: 20,
-            y: 20,
-            constrain: true,
-            layout: 'fit',
-            items: {
-                border: false
-            }
-        }), constrainedWin2 = Ext.create('Ext.Window', {
-            title: 'Header-Constrained Win',
-            width: 100,
-            height: 100,
-            x: 120,
-            y: 120,
-            constrainHeader: true,
-            layout: 'fit',
-            items: {
-                border: false
-            }
-        }),{
-            border: false
-        }]
-    });
-    win2.show();
-    floater.show();
-    constrainedWin.show();
-    constrainedWin2.show();
-
-    Ext.create('Ext.Window', {
-        title: 'Left Header, plain: true',
-        width: 400,
-        height: 200,
-        x: 10,
-        y: 200,
-        plain: true,
-        headerPosition: 'left',
-        layout: 'fit',
-        items: {
-            border: false
-        }
-    }).show();
-
-    Ext.create('Ext.Window', {
-        title: 'Right Header, plain: true',
-        width: 400,
-        height: 200,
-        x: 450,
-        y: 200,
-        headerPosition: 'right',
-        layout: 'fit',
-        items: {
-            border: false
-        }
-    }).show();
-
-    Ext.create('Ext.Window', {
-        title: 'Bottom Header, plain: true',
-        width: 400,
-        height: 200,
-        x: 10,
-        y: 450,
-        plain: true,
-        headerPosition: 'bottom',
-        layout: 'fit',
-        items: {
-            border: false
-        }
-    }).show();
-});
-
-</pre>
+        <pre class="example" data-uri="/extjs/4.0.7/examples/window/window/app.js">(hidden)</pre>
     </div>
-    
+
 </body>
 </html>

@@ -2,867 +2,107 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8"/>
-    <title>Device APIs</title>
-    <meta Name="description" content="Device APIs" />
+    <title>Device APIs | Sencha Try</title>
+    <meta name="description" content="Device APIs" />
     <meta name="keywords" content="Sencha, Sencha Touch, Sencha Touch 2.0.0" />
+    <meta name="author" content="Sencha Inc.">
     <link href="/assets/application.css" media="screen" rel="stylesheet" type="text/css" />
 </head>
 <body>
-    
-    <div>
-        <header>
-            <h1>Sencha Try</h1>
-        </header>
-        
-        <section id="readme">
-            <div class="intro"><h1>Device APIs</h1></div>
-            <div>
-                <a href="src.zip" download="touch_2.0.0_examples_device.zip">DOWNLOAD</a>
-            </div>
-            <nav>
-                <h2>Tags:</h2>
-                <ul class="tags">
-                    <li><a href="/tags/Sencha%20Touch/">Sencha Touch</a></li>
-                    <li><a href="/tags/Sencha%20Touch%202.0.0/">Sencha Touch 2.0.0</a></li>
+
+    <div id="logo-container" class="skiptranslate">
+        <h1 id="logo"><a href="/"><img src="/assets/logo.png" alt="Sencha Try" /></a></h1>
+        <span id="glow"></span>
+    </div>
+    <ul>
+        <li class="with-sub">
+            <a href="#" class="dropdown">Sencha Network</a>
+            <div id="docs-dropdown" class="pop-nav zero">
+                <ul>
+                    <li><a href="http://sencha.com/">Sencha.com</a></li>
+                    <li><a href="http://sencha.com/products/io/">Sencha.io</a></li>
+                    <li><a href="http://market.sencha.com/">Sencha Market</a></li>
                 </ul>
-            </nav>
-        </section>
-        
-        <section id="example">
-            [example]
-        </section>
-        
-        
-        <footer>
-            &copy; 2012 Sencha Inc.
-        </footer>
+            </div>
+        </li>
+    </ul>
+    
+    <div id="content-wrapper" class="clearfix">
+        <div id="content">
+            <a href="/">Home</a> <span>/</span> <a href="/touch/">Touch</a> <span>/</span> <a href="/touch/2.0.0/">2.0.0</a> <span>/</span> Device APIs
+            <div class="developer">
+                <div class="column_nine">
+                    <div class="details">
+                        <div class="top-block border">
+                            <h2 class="alt">Device APIs</h2>
+                        </div>
+                        <div class="plain-text"></div>
+                        <h3>[example widget]</h3>
+                        <div>
+                            <ul class="developer-actions">
+                                <li class="request"><a href="src.zip" class="button-link center">Download</a></li>
+                            </ul>
+                        </div>
+                        <hr class="clear" />
+                        <h4>Tags</h4>
+                        <ul class="services-list alt clearfix tags">
+                            <li><a href="/tags/Sencha%20Touch/">Sencha Touch</a></li>
+                            <li><a href="/tags/Sencha%20Touch%202.0.0/">Sencha Touch 2.0.0</a></li>
+                        </ul>
+                        <h4>See Also</h4>
+                        <ul class="services-list alt clearfix see-also">
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
     
+    <div id="footer-content">
+        <div class="columns">
+            <ul class="column">
+                <li>
+                    <a class="main" href="http://sencha.com/company/">Company</a>
+                    <ul class="zero">
+                        <li class="first"><a href="http://www.sencha.com/contact/" rel="nofollow">Contact Us</a></li>
+                        <li class="last"><a href="/pages/terms/" rel="nofollow">Terms of Use</a></li>
+                    </ul>
+                </li>
+            </ul>
+            <ul class="column">
+                <li>
+                    <a class="main" href="/">Listings</a>
+                    <ul class="zero">
+                        <li class="first"><a href="/developers/">Full listing</a></li>
+                        <li class="last"><a href="/developers/by_location/">Geographic listing</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+        <hr />
+        <div id="copyright">
+            <p>&copy; 2012 Sencha Inc. All rights reserved.</p>
+        </div>
+    </div>
+
     <div class="hidden">
-        <!-- touch/2.0.0/examples/device/app.js -->
-        <pre>/*global Ext:false */
-Ext.application({
-    name: 'Device',
-
-    stores: ['Images'],
-
-    views: [
-        'Main',
-        'Information',
-        'Camera',
-        'Connection',
-        'Notification',
-        'Orientation',
-        'Geolocation'
-    ],
-
-    controllers: [
-        'Application',
-        'Camera',
-        'Notification',
-        'Connection'
-    ],
-
-    launch: function() {
-        Ext.create('Device.view.Main');
-    }
-});
-</pre>
-        <!-- touch/2.0.0/examples/device/app/controller/Application.js -->
-        <pre>Ext.define('Device.controller.Application', {
-    extend: 'Ext.app.Controller',
-
-    config: {
-        refs: {
-            main: 'main'
-        },
-        control: {
-            tabbar: {
-                activetabchange: 'onActiveTabChange'
-            }
-        }
-    },
-
-    onActiveTabChange: function(tabBar, newTab, oldTab) {
-        var index = tabBar.indexOf(newTab);
-        this.getMain().setActiveItem(index + 1);
-    }
-});
-</pre>
-        <!-- touch/2.0.0/examples/device/app/controller/Camera.js -->
-        <pre>Ext.define('Device.controller.Camera', {
-    extend: 'Ext.app.Controller',
-
-    config: {
-        refs: {
-            camera: 'camera',
-            imageList: 'imageList'
-        },
-
-        control: {
-            'button[text=Capture]': {
-                tap: 'onCapture'
-            },
-            'button[text=Select]': {
-                tap: 'onSelect'
-            },
-            'imageList': {
-                select: 'onItemSelect'
-            },
-            'imageView button[ui=back]': {
-                tap: 'onBackButtonTap'
-            }
-        }
-    },
-
-    launch: function() {
-        this.getImageList().setStore(Ext.getStore('Images'));
-    },
-
-    /**
-     * Tells the device to take a picture, using the Camera.capture device API.
-     */
-    onCapture: function() {
-        Ext.device.Camera.capture({
-            success: this.onCaptureSuccess,
-            scope: this,
-            source: 'camera',
-            destination: 'file'
-        });
-    },
-
-    /**
-     * Tells the device to select a picture, using the Camera.capture device API.
-     */
-    onSelect: function() {
-        Ext.device.Camera.capture({
-            success: this.onCaptureSuccess,
-            scope: this,
-            source: 'library',
-            destination: 'file'
-        });
-    },
-
-    /**
-     * The device API returns a URI for the image, so lets add that into the image list store
-     */
-    onCaptureSuccess: function(uri) {
-        Ext.getStore('Images').add({src: uri});
-    },
-
-    /**
-     * When a user taps on an image, show the imageView view, and update the view to show the new image
-     */
-    onItemSelect: function(list, record) {
-        this.getCamera().push({
-            xtype: 'image',
-            cls: 'image-view',
-            src: record.get('src')
-        });
-    },
-
-    /**
-     * When the user taps on the back button in the image view, do back to the images list
-     */
-    onBackButtonTap: function() {
-        this.getCamera().setActiveItem(0);
-    }
-});
-</pre>
-        <!-- touch/2.0.0/examples/device/app/controller/Connection.js -->
-        <pre>Ext.define('Device.controller.Connection', {
-    extend: 'Ext.app.Controller',
-
-    config: {
-        refs: {
-            connectionView: 'connection'
-        }
-    }
-});
-</pre>
-        <!-- touch/2.0.0/examples/device/app/controller/Notification.js -->
-        <pre>Ext.define('Device.controller.Notification', {
-    extend: 'Ext.app.Controller',
-
-    config: {
-        refs: {
-            notificationView: 'notification'
-        },
-
-        control: {
-            'button[action=simple]': {
-                tap: 'onSimpleTap'
-            },
-            'button[action=multiple]': {
-                tap: 'onMultipleTap'
-            },
-            'button[action=text]': {
-                tap: 'onTextTap'
-            },
-            'button[action=login]': {
-                tap: 'onLoginTap'
-            },
-            'button[action=vibrate]': {
-                tap: 'onVibrateTap'
-            }
-        }
-    },
-
-    /**
-     * Opens a simple notification with 1 button
-     */
-    onSimpleTap: function() {
-        Ext.device.Notification.show({
-            title: 'One Button',
-            message: 'This is a simple notification with one button.',
-            callback: function(button) {
-                //When the user taps a button, show another notification
-                Ext.device.Notification.show({
-                    message: 'You pressed: "' + button + '"'
-                });
-            }
-        });
-    },
-
-    /**
-     * Opens a notification with multiple buttons
-     */
-    onMultipleTap: function() {
-        Ext.device.Notification.show({
-            title: 'Multiple Buttons',
-            message: 'This is a notification with multiple buttons.',
-            buttons: ["Cancel", "Login", "Another"],
-            callback: function(button) {
-                //When the user taps a button, show another notification
-                Ext.device.Notification.show({
-                    message: 'You pressed: "' + button + '"'
-                });
-            }
-        });
-    },
-
-    /**
-     * Shows a notification with a textfield
-     */
-    onTextTap: function() {
-        Ext.device.Notification.show({
-            title: 'My Title',
-            message: 'A message',
-            style: "text",
-            buttons: ["Cancel", "Login"],
-            callback: function(button, values, options) {
-                //When the user taps a button, show another notification
-                Ext.device.Notification.show({
-                    message: 'You typed: "' + values + '"'
-                });
-            }
-        });
-    },
-
-    /**
-     * Shows a notification witha  textfield and password field
-     */
-    onLoginTap: function() {
-        Ext.device.Notification.show({
-            title: 'My Title',
-            message: 'A message',
-            style: "login",
-            buttons: ["Cancel", "Login"],
-            callback: function(button, values, options) {
-                //When the user taps a button, show another notification
-                Ext.device.Notification.show({
-                    message: 'You typed: "' + values + '"'
-                });
-            }
-        });
-    },
-
-    /**
-     * Vibrates the device
-     */
-    onVibrateTap: function() {
-        Ext.device.Notification.vibrate();
-    }
-});
-</pre>
-        <!-- touch/2.0.0/examples/device/app/controller/Orientation.js -->
-        <pre>Ext.define('Device.controller.Orientation', {
-    extend: 'Ext.app.Controller',
-
-    config: {
-        orientationView: 'orientation'
-    }
-});
-</pre>
-        <!-- touch/2.0.0/examples/device/app/store/Images.js -->
-        <pre>/**
- * A simple store for image URIs/sources for various images, which we get using
- * the device API.
- */
-Ext.define('Device.store.Images', {
-    extend: 'Ext.data.Store',
-
-    config: {
-        fields: ['src']
-    }
-});
-</pre>
-        <!-- touch/2.0.0/examples/device/app/view/Camera.js -->
-        <pre>/**
- * The camera tap in the main Viewport. Used to capture a new image, select a image already taken,
- * and to view images captured/selected.
- * Uses the {@link Ext.device.Camera} API.
- */
-Ext.define('Device.view.Camera', {
-    extend: 'Ext.navigation.View',
-    xtype: 'camera',
-
-    requires: [
-        'Ext.device.Camera',
-        'Device.view.camera.ImageList',
-        'Ext.Img'
-    ],
-
-    config: {
-        title  : 'Camera',
-        iconCls: 'photo1',
-        autoDestroy: false,
-
-        navigationBar: {
-            ui: 'light'
-        },
-
-        items: [
-            {
-                xtype: 'imageList',
-                title: 'Photos',
-                items: [
-                    {
-                        ui: 'light',
-                        xtype : 'toolbar',
-                        docked: 'bottom',
-                        layout: {
-                            type: 'hbox',
-                            pack: 'center'
-                        },
-                        defaults: {
-                            iconMask: true
-                        },
-                        items: [
-                            {
-                                text: 'Capture',
-                                iconCls: 'photo_black2'
-                            },
-                            {
-                                text: 'Select',
-                                iconCls: 'photos2'
-                            }
-                        ]
-                    }
-                ]
-            }
-        ]
-    }
-});
-</pre>
-        <!-- touch/2.0.0/examples/device/app/view/Connection.js -->
-        <pre>Ext.define('Device.view.Connection', {
-    extend: 'Ext.Container',
-    xtype: 'connection',
-
-    requires: [
-        'Ext.device.Connection'
-    ],
-
-    config: {
-        layout : 'card',
-        title  : 'Connection',
-        iconCls: 'wifi3',
-        styleHtmlContent: true,
-        tpl: Ext.XTemplate([
-            '<tpl if="online">',
-                'You are currently <b>online</b> using a <b>{type}</b>.',
-            '</tpl>',
-            '<tpl if="!online">',
-                'You are currently <b>offline</b>.',
-            '</tpl>'
-        ])
-    },
-
-    initialize: function() {
-        this.callParent();
-
-        Ext.device.Connection.on({
-            scope: this,
-            onlinechange: this.onlineChange
-        });
-
-        this.setData({
-            online: Ext.device.Connection.getOnline(),
-            type: Ext.device.Connection.getType()
-        });
-    },
-
-    onlineChange: function(online, type) {
-        this.setData({
-            online: online,
-            type: type
-        });
-    }
-});
-</pre>
-        <!-- touch/2.0.0/examples/device/app/view/Geolocation.js -->
-        <pre>/**
- *
- */
-Ext.define('Device.view.Geolocation', {
-    extend: 'Ext.Container',
-    xtype: 'geolocation',
-
-    requires: [
-        'Ext.device.Geolocation',
-        'Ext.device.Notification',
-        'Ext.Map',
-        'Ext.TitleBar',
-        'Ext.tab.Bar',
-        'Ext.SegmentedButton'
-    ],
-
-    config: {
-        title  : 'Geolocation',
-        iconCls: 'maps',
-        layout: 'fit',
-
-        masked: {
-            xtype: 'loadmask'
-        },
-
-        items: [
-            {
-                xtype: 'titlebar',
-                ui: 'neutral',
-                docked: 'top',
-                items: [
-                    {
-                        xtype: 'segmentedbutton',
-                        align: 'left',
-                        items: [
-                            {
-                                action: 'watch',
-                                text: 'Watch'
-                            }
-                        ]
-                    },
-                    {
-                        action: 'refresh',
-                        align: 'right',
-                        iconCls: 'refresh',
-                        iconMask: true
-                    }
-                ]
-            },
-            {
-                xtype: 'map'
-            }
-        ],
-
-        control: {
-            'button[action=refresh]': {
-                tap: 'refresh'
-            },
-            'segmentedbutton': {
-                toggle: 'watchToggle'
-            }
-        }
-    },
-
-    initialize: function() {
-        this.callParent(arguments);
-
-        this.on({
-            scope: this,
-            painted: 'onPainted'
-        });
-
-        //Tracking Marker Image
-        this.map = this.down('map');
-
-        this.marker = new google.maps.Marker({
-            map: this.map.getMap()
-        });
-    },
-
-    onPainted: function() {
-        this.refresh();
-    },
-
-    refresh: function() {
-        Ext.device.Geolocation.getCurrentPosition({
-            scope: this,
-            success: function(position) {
-                this.setMasked(false);
-                this.map.setMapCenter(position.coords);
-                this.marker.setPosition(new google.maps.LatLng(position.coords.latitude, position.coords.longitude));
-            },
-            failure: function() {
-                this.setMasked(false);
-                Ext.device.Notification.show({
-                    title: 'Geolocation',
-                    message: 'Something went wrong.'
-                });
-            }
-        });
-    },
-
-    watchToggle: function(segmentedButton, button, pressed) {
-        if (pressed) {
-            Ext.device.Geolocation.watchPosition({
-                frequency: 3000,
-                scope: this,
-                callback: function(position) {
-                    this.map.setMapCenter(position.coords);
-                    this.marker.setPosition(new google.maps.LatLng(position.coords.latitude, position.coords.longitude));
-                },
-                failure: function() {
-                    Ext.device.Notification.show({
-                        title: 'Geolocation',
-                        message: 'Something went wrong.'
-                    });
-                }
-            });
-        } else {
-            Ext.device.Geolocation.clearWatch();
-        }
-    }
-});
-</pre>
-        <!-- touch/2.0.0/examples/device/app/view/Information.js -->
-        <pre>/**
- *
- */
-Ext.define('Device.view.Information', {
-    extend: 'Ext.Container',
-
-    requires: [
-        'Ext.device.Device'
-    ],
-
-    config: {
-        cls: 'information',
-        scrollable: 'vertical',
-        styleHtmlContent: true,
-        items: [
-            {
-                html: 'This is a simple example showing some of the Device APIs available in Sencha Touch 2.<br/><br/>All of our device APIs work in a browser, in the Sencha Native Packager and PhoneGap.'
-            },
-            {
-                cls: 'device-information',
-                id: 'deviceInformation',
-                tpl: '<strong>Name:</strong> {name}<br /><strong>UUID:</strong> {uuid}</br ><strong>Platform:</strong> {platform}'
-            }
-        ]
-    },
-
-    initialize: function() {
-        var uuid = Ext.device.Device.uuid;
-        if (uuid.length > 10) {
-            uuid = uuid.substring(0, 16) + '...';
-        }
-
-        Ext.getCmp('deviceInformation').setData({
-            name: Ext.device.Device.name,
-            uuid: uuid,
-            platform: Ext.device.Device.platform
-        });
-    }
-});
-</pre>
-        <!-- touch/2.0.0/examples/device/app/view/Main.js -->
-        <pre>Ext.define('Device.view.Main', {
-    extend: 'Ext.Container',
-    xtype: 'main',
-
-    config: {
-        fullscreen: true,
-
-        layout: {
-            type: 'card'
-        },
-
-        items: [
-            {
-                xtype: 'toolbar',
-                docked: 'top',
-                title: 'Device API'
-            },
-
-            {
-                xtype: 'tabbar',
-                docked: 'bottom',
-                items: [
-                    {
-                        title: 'Notifications',
-                        iconCls: 'mail',
-                        className: 'Device.view.Information'
-                    },
-                    {
-                        title: 'Camera',
-                        iconCls: 'photo1',
-                        className: 'Device.view.Camera'
-                    },
-                    {
-                        title: 'Orientation',
-                        iconCls: 'compass1',
-                        className: 'Device.view.Orientation'
-                    },
-                    {
-                        title: 'Connection',
-                        iconCls: 'wifi3',
-                        className: 'Device.view.Connection'
-                    },
-                    {
-                        title: 'Geolocation',
-                        iconCls: 'maps',
-                        className: 'Device.view.Geolocation'
-                    }
-                ]
-            },
-
-            { xclass: 'Device.view.Information' },
-            { xclass: 'Device.view.Notification' },
-            { xclass: 'Device.view.Camera' },
-            { xclass: 'Device.view.Orientation' },
-            { xclass: 'Device.view.Connection' },
-            { xclass: 'Device.view.Geolocation' }
-        ]
-    }
-});
-</pre>
-        <!-- touch/2.0.0/examples/device/app/view/Notification.js -->
-        <pre>/**
- * The notification tap. Used to show off various bits of the {@link Ext.device.Notification} device API.
- */
-Ext.define('Device.view.Notification', {
-    extend: 'Ext.Container',
-    xtype: 'notification',
-
-    requires: [
-        'Ext.device.Notification'
-    ],
-
-    config: {
-        scrollable: true,
-        padding: '10 10 0 10',
-
-        defaults: {
-            margin: '0 0 10 0',
-            xtype: 'button'
-        },
-
-        items: [
-            {
-                xtype: 'title',
-                title: 'Standard Notifications'
-            },
-            {
-                text: 'Simple',
-                action: 'simple'
-            },
-            {
-                text: 'Multiple Buttons',
-                action: 'multiple',
-                margin: '0 0 30 0'
-            },
-
-            {
-                xtype: 'title',
-                title: 'Other'
-            },
-            {
-                xtype: 'button',
-                text: 'Vibrate',
-                action: 'vibrate'
-            }
-        ]
-    }
-});
-</pre>
-        <!-- touch/2.0.0/examples/device/app/view/Orientation.js -->
-        <pre>Ext.define('Device.view.Orientation', {
-    extend: 'Ext.Container',
-
-    requires: [
-        'Ext.device.Orientation'
-    ],
-
-    config: {
-        title: 'Orientation',
-        iconCls: 'compass1',
-
-        items: [
-            {
-                xtype: 'titlebar',
-                docked: 'top',
-                ui: 'light',
-                items: [
-                    {
-                        text: 'Reset',
-                        align: 'right'
-                    }
-                ]
-            },
-            {
-                id: 'information',
-                styleHtmlContent: true,
-                html: 'no information received'
-            },
-            {
-                id: 'cube',
-                html: '<div></div><div></div><div></div><div></div><div></div><div></div>',
-                centered: true
-            }
-        ]
-    },
-
-    initialize: function() {
-        this.on({
-            painted: 'onPainted',
-            erased : 'onErased'
-        });
-
-        this.on({
-            delegate: 'button',
-            tap: 'onReset'
-        });
-
-        if (!Ext.feature.has.Css3dTransforms) {
-            Ext.getCmp('cube').hide();
-        }
-    },
-
-    onReset: function() {
-        this.originalOrientation = null;
-    },
-
-    onPainted: function() {
-        Ext.device.Orientation.on('orientationchange', 'onDeviceOrientation', this);
-    },
-
-    onErased: function() {
-        Ext.device.Orientation.un('orientationchange', 'onDeviceOrientation', this);
-        this.originalOrientation = null;
-    },
-
-    onDeviceOrientation: function(e) {
-        var alpha = Math.round(e.alpha),
-            beta = Math.round(e.beta),
-            gamma = Math.round(e.gamma),
-            origin;
-
-        if (!this.originalOrientation) {
-            this.originalOrientation = {
-                alpha: alpha,
-                beta: beta,
-                gamma: gamma
-            };
-
-            return;
-        }
-        else {
-            origin = this.originalOrientation;
-
-            alpha -= origin.alpha;
-            beta -= origin.beta;
-            gamma -= origin.beta;
-        }
-
-        Ext.getCmp('information').setHtml([
-            'This example is best viewed when your phone is on a flat surface.<br /><br />',
-            '<b>alpha</b>: ' + alpha,
-            '<br /><b>beta</b>: ' + beta,
-            '<br /><b>gamma</b>: ' + gamma
-        ].join(''));
-
-        if (!this.originalOrientation) {
-            this.originalOrientation = {
-                alpha: alpha,
-                beta: beta,
-                gamma: gamma
-            };
-
-            return;
-        }
-        else {
-            origin = this.originalOrientation;
-
-            alpha -= origin.alpha;
-            beta -= origin.beta;
-            gamma -= origin.beta;
-        }
-
-        if (Ext.feature.has.Css3dTransforms) {
-            Ext.getCmp('cube').element.dom.style.webkitTransform = 'rotateX('+beta+'deg) rotateY('+alpha+'deg)';
-        }
-    }
-});
-</pre>
-        <!-- touch/2.0.0/examples/device/app/view/camera/ImageList.js -->
-        <pre>Ext.define('Device.view.camera.ImageList', {
-    extend: 'Ext.dataview.DataView',
-    xtype: 'imageList',
-
-    config: {
-        cls: 'imageList',
-        itemTpl: '<div class="x-img" style="background-image: url({src});">',
-        store: 'Images'
-    },
-
-    initialize: function() {
-        this.callParent();
-
-        this.container.getDataItemConfig = this.getDataItemConfig;
-    },
-
-    getDataItemConfig: function(xtype, record, itemConfig) {
-        return {
-            xtype: xtype,
-            record: record,
-            defaults: itemConfig,
-            src: record.get('src')
-        };
-    }
-});
-</pre>
-        <!-- touch/2.0.0/examples/device/app/view/camera/ImageView.js -->
-        <pre>Ext.define('Device.view.camera.ImageView', {
-    extend: 'Ext.Container',
-    xtype: 'imageView',
-
-    config: {
-        // layout: 'fit',
-        scrollable: true,
-        items: [
-            {
-                docked: 'top',
-                xtype: 'toolbar',
-                items: [
-                    {
-                        ui: 'back',
-                        text: 'Back'
-                    }
-                ]
-            },
-            {
-                xtype: 'image',
-                cls: 'imageView',
-                width: 1000,
-                height: 1000
-            }
-        ]
-    }
-});
-</pre>
+        <pre class="example" data-uri="/touch/2.0.0/examples/device/app.js">(hidden)</pre>
+        <pre class="example" data-uri="/touch/2.0.0/examples/device/app/controller/Application.js">(hidden)</pre>
+        <pre class="example" data-uri="/touch/2.0.0/examples/device/app/controller/Camera.js">(hidden)</pre>
+        <pre class="example" data-uri="/touch/2.0.0/examples/device/app/controller/Connection.js">(hidden)</pre>
+        <pre class="example" data-uri="/touch/2.0.0/examples/device/app/controller/Notification.js">(hidden)</pre>
+        <pre class="example" data-uri="/touch/2.0.0/examples/device/app/controller/Orientation.js">(hidden)</pre>
+        <pre class="example" data-uri="/touch/2.0.0/examples/device/app/store/Images.js">(hidden)</pre>
+        <pre class="example" data-uri="/touch/2.0.0/examples/device/app/view/Camera.js">(hidden)</pre>
+        <pre class="example" data-uri="/touch/2.0.0/examples/device/app/view/Connection.js">(hidden)</pre>
+        <pre class="example" data-uri="/touch/2.0.0/examples/device/app/view/Geolocation.js">(hidden)</pre>
+        <pre class="example" data-uri="/touch/2.0.0/examples/device/app/view/Information.js">(hidden)</pre>
+        <pre class="example" data-uri="/touch/2.0.0/examples/device/app/view/Main.js">(hidden)</pre>
+        <pre class="example" data-uri="/touch/2.0.0/examples/device/app/view/Notification.js">(hidden)</pre>
+        <pre class="example" data-uri="/touch/2.0.0/examples/device/app/view/Orientation.js">(hidden)</pre>
+        <pre class="example" data-uri="/touch/2.0.0/examples/device/app/view/camera/ImageList.js">(hidden)</pre>
+        <pre class="example" data-uri="/touch/2.0.0/examples/device/app/view/camera/ImageView.js">(hidden)</pre>
     </div>
-    
+
 </body>
 </html>

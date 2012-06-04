@@ -2,119 +2,105 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8"/>
-    <title>Ext.grid.feature.RowBody Example</title>
-    <meta Name="description" content="Ext.grid.feature.RowBody Example" />
+    <title>Ext.grid.feature.RowBody Example | Sencha Try</title>
+    <meta name="description" content="Ext.grid.feature.RowBody Example" />
     <meta name="keywords" content="Sencha, Ext JS, Ext JS 4.0.7, Ext.grid.feature.RowBody, feature, features, ftype, getAdditionalData, grid, rowbody" />
+    <meta name="author" content="Sencha Inc.">
     <link href="/assets/application.css" media="screen" rel="stylesheet" type="text/css" />
 </head>
 <body>
-    
-    <div>
-        <header>
-            <h1>Sencha Try</h1>
-        </header>
-        
-        <section id="readme">
-            <div class="intro"><h1>Ext.grid.feature.RowBody Example</h1></div>
-            <div>
-                <a href="src.zip" download="extjs_4.0.7_docs_Ext.grid.feature.RowBody.1.zip">DOWNLOAD</a>
-            </div>
-            <nav>
-                <h2>Tags:</h2>
-                <ul class="tags">
-                    <li><a href="/tags/Ext%20JS/">Ext JS</a></li>
-                    <li><a href="/tags/Ext%20JS%204.0.7/">Ext JS 4.0.7</a></li>
-                    <li><a href="/tags/Ext.grid.feature.RowBody/">Ext.grid.feature.RowBody</a></li>
-                    <li><a href="/tags/feature/">feature</a></li>
-                    <li><a href="/tags/features/">features</a></li>
-                    <li><a href="/tags/ftype/">ftype</a></li>
-                    <li><a href="/tags/getAdditionalData/">getAdditionalData</a></li>
-                    <li><a href="/tags/grid/">grid</a></li>
-                    <li><a href="/tags/rowbody/">rowbody</a></li>
-                </ul>
-            </nav>
-        </section>
-        
-        <section id="example">
-            [example]
-        </section>
-        
-        <nav>
-            <h2>See Also:</h2>
-            <ul class="seeAlso">
-                <li class="docs"><a href="http://docs.sencha.com/ext-js/4-0/#!/api/Ext.grid.feature.RowBody" target="_blank">Ext.grid.feature.RowBody Documentation</a></li>
-                <li class="guide"><a href="http://docs.sencha.com/ext-js/4-0/#!/guide/grid" target="_blank">The Grid Component Guide</a></li>
-                <li class="guide"><a href="http://docs.sencha.com/ext-js/4-0/#!/guide/direct_grid_pt1" target="_blank">Mapping a Grid to a MySQL table using Direct and PHP Guide (Part 1)</a></li>
-                <li class="guide"><a href="http://docs.sencha.com/ext-js/4-0/#!/guide/direct_grid_pt2" target="_blank">Mapping a Grid to a MySQL table using Direct and PHP Guide (Part 2)</a></li>
-                <li class="guide"><a href="http://docs.sencha.com/ext-js/4-0/#!/guide/editable_grid" target="_blank">Doing CRUD with the Editable Grid and Node.js Guide (Part 1)</a></li>
-                <li class="guide"><a href="http://docs.sencha.com/ext-js/4-0/#!/guide/editable_grid_pt2" target="_blank">Doing CRUD with the Editable Grid and Node.js Guide (Part 2)</a></li>
-            </ul>
-        </nav>
-        
-        <footer>
-            &copy; 2012 Sencha Inc.
-        </footer>
-    </div>
-    
-    <div class="hidden">
-        <!-- extjs/4.0.7/docs/Ext.grid.feature.RowBody.1/app.js -->
-        <pre>/*global Ext:false */
-Ext.onReady(function () {
-    Ext.define('Animal', {
-        extend: 'Ext.data.Model',
-        fields: ['name', 'latin', 'desc']
-    });
 
-    Ext.create('Ext.grid.Panel', {
-        width: 400,
-        height: 300,
-        renderTo: Ext.getBody(),
-        store: {
-            model: 'Animal',
-            data: [{
-                name: 'Tiger',
-                latin: 'Panthera tigris',
-                desc: 'The largest cat species, weighing up to 306 kg (670 lb).'
-            }, {
-                name: 'Roman snail',
-                latin: 'Helix pomatia',
-                desc: 'A species of large, edible, air-breathing land snail.'
-            }, {
-                name: 'Yellow-winged darter',
-                latin: 'Sympetrum flaveolum',
-                desc: 'A dragonfly found in Europe and mid and Northern China.'
-            }, {
-                name: 'Superb Fairy-wren',
-                latin: 'Malurus cyaneus',
-                desc: 'Common and familiar across south-eastern Australia.'
-            }]
-        },
-        columns: [{
-            dataIndex: 'name',
-            text: 'Common name',
-            width: 125
-        }, {
-            dataIndex: 'latin',
-            text: 'Scientific name',
-            flex: 1
-        }],
-        features: [{
-            ftype: 'rowbody',
-            getAdditionalData: function (data, rowIndex, record, orig) {
-                var headerCt = this.view.headerCt,
-                    colspan = headerCt.getColumnCount();
-                // Usually you would style the my-body-class in CSS file
-                return {
-                    rowBody: '<div style="padding: 1em;">' + record.get("desc") + '</div>',
-                    rowBodyCls: "my-body-class",
-                    rowBodyColspan: colspan
-                };
-            }
-        }]
-    });
-});
-</pre>
+    <div id="logo-container" class="skiptranslate">
+        <h1 id="logo"><a href="/"><img src="/assets/logo.png" alt="Sencha Try" /></a></h1>
+        <span id="glow"></span>
+    </div>
+    <ul>
+        <li class="with-sub">
+            <a href="#" class="dropdown">Sencha Network</a>
+            <div id="docs-dropdown" class="pop-nav zero">
+                <ul>
+                    <li><a href="http://sencha.com/">Sencha.com</a></li>
+                    <li><a href="http://sencha.com/products/io/">Sencha.io</a></li>
+                    <li><a href="http://market.sencha.com/">Sencha Market</a></li>
+                </ul>
+            </div>
+        </li>
+    </ul>
+    
+    <div id="content-wrapper" class="clearfix">
+        <div id="content">
+            <a href="/">Home</a> <span>/</span> <a href="/extjs/">Ext JS</a> <span>/</span> <a href="/extjs/4.0.7/">4.0.7</a> <span>/</span> Ext.grid.feature.RowBody Example
+            <div class="developer">
+                <div class="column_nine">
+                    <div class="details">
+                        <div class="top-block border">
+                            <h2 class="alt">Ext.grid.feature.RowBody Example</h2>
+                        </div>
+                        <div class="plain-text"></div>
+                        <h3>[example widget]</h3>
+                        <div>
+                            <ul class="developer-actions">
+                                <li class="request"><a href="src.zip" class="button-link center">Download</a></li>
+                            </ul>
+                        </div>
+                        <hr class="clear" />
+                        <h4>Tags</h4>
+                        <ul class="services-list alt clearfix tags">
+                            <li><a href="/tags/Ext%20JS/">Ext JS</a></li>
+                            <li><a href="/tags/Ext%20JS%204.0.7/">Ext JS 4.0.7</a></li>
+                            <li><a href="/tags/Ext.grid.feature.RowBody/"><code>Ext.grid.feature.RowBody</code></a></li>
+                            <li><a href="/tags/feature/"><code>feature</code></a></li>
+                            <li><a href="/tags/features/"><code>features</code></a></li>
+                            <li><a href="/tags/ftype/"><code>ftype</code></a></li>
+                            <li><a href="/tags/getAdditionalData/"><code>getAdditionalData</code></a></li>
+                            <li><a href="/tags/grid/"><code>grid</code></a></li>
+                            <li><a href="/tags/rowbody/"><code>rowbody</code></a></li>
+                        </ul>
+                        <h4>See Also</h4>
+                        <ul class="services-list alt clearfix see-also">
+                            <li class="docs"><a href="http://docs.sencha.com/ext-js/4-0/#!/api/Ext.grid.feature.RowBody" target="_blank">Ext.grid.feature.RowBody Documentation</a></li>
+                            <li class="guide"><a href="http://docs.sencha.com/ext-js/4-0/#!/guide/grid" target="_blank">The Grid Component Guide</a></li>
+                            <li class="guide"><a href="http://docs.sencha.com/ext-js/4-0/#!/guide/direct_grid_pt1" target="_blank">Mapping a Grid to a MySQL table using Direct and PHP Guide (Part 1)</a></li>
+                            <li class="guide"><a href="http://docs.sencha.com/ext-js/4-0/#!/guide/direct_grid_pt2" target="_blank">Mapping a Grid to a MySQL table using Direct and PHP Guide (Part 2)</a></li>
+                            <li class="guide"><a href="http://docs.sencha.com/ext-js/4-0/#!/guide/editable_grid" target="_blank">Doing CRUD with the Editable Grid and Node.js Guide (Part 1)</a></li>
+                            <li class="guide"><a href="http://docs.sencha.com/ext-js/4-0/#!/guide/editable_grid_pt2" target="_blank">Doing CRUD with the Editable Grid and Node.js Guide (Part 2)</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
     
+    <div id="footer-content">
+        <div class="columns">
+            <ul class="column">
+                <li>
+                    <a class="main" href="http://sencha.com/company/">Company</a>
+                    <ul class="zero">
+                        <li class="first"><a href="http://www.sencha.com/contact/" rel="nofollow">Contact Us</a></li>
+                        <li class="last"><a href="/pages/terms/" rel="nofollow">Terms of Use</a></li>
+                    </ul>
+                </li>
+            </ul>
+            <ul class="column">
+                <li>
+                    <a class="main" href="/">Listings</a>
+                    <ul class="zero">
+                        <li class="first"><a href="/developers/">Full listing</a></li>
+                        <li class="last"><a href="/developers/by_location/">Geographic listing</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+        <hr />
+        <div id="copyright">
+            <p>&copy; 2012 Sencha Inc. All rights reserved.</p>
+        </div>
+    </div>
+
+    <div class="hidden">
+        <pre class="example" data-uri="/extjs/4.0.7/docs/Ext.grid.feature.RowBody.1/app.js">(hidden)</pre>
+    </div>
+
 </body>
 </html>

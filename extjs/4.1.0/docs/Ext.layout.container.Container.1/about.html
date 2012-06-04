@@ -2,168 +2,95 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8"/>
-    <title>Ext.layout.container.Container Example</title>
-    <meta Name="description" content="Ext.layout.container.Container Example" />
+    <title>Ext.layout.container.Container Example | Sencha Try</title>
+    <meta name="description" content="Ext.layout.container.Container Example" />
     <meta name="keywords" content="Sencha, Ext JS, Ext JS 4.1.0, Ext.layout.container.Container" />
+    <meta name="author" content="Sencha Inc.">
     <link href="/assets/application.css" media="screen" rel="stylesheet" type="text/css" />
 </head>
 <body>
-    
-    <div>
-        <header>
-            <h1>Sencha Try</h1>
-        </header>
-        
-        <section id="readme">
-            <div class="intro"><h1>Ext.layout.container.Container Example</h1></div>
-            <div>
-                <a href="src.zip" download="extjs_4.1.0_docs_Ext.layout.container.Container.1.zip">DOWNLOAD</a>
-            </div>
-            <nav>
-                <h2>Tags:</h2>
-                <ul class="tags">
-                    <li><a href="/tags/Ext%20JS/">Ext JS</a></li>
-                    <li><a href="/tags/Ext%20JS%204.1.0/">Ext JS 4.1.0</a></li>
-                    <li><a href="/tags/Ext.layout.container.Container/">Ext.layout.container.Container</a></li>
+
+    <div id="logo-container" class="skiptranslate">
+        <h1 id="logo"><a href="/"><img src="/assets/logo.png" alt="Sencha Try" /></a></h1>
+        <span id="glow"></span>
+    </div>
+    <ul>
+        <li class="with-sub">
+            <a href="#" class="dropdown">Sencha Network</a>
+            <div id="docs-dropdown" class="pop-nav zero">
+                <ul>
+                    <li><a href="http://sencha.com/">Sencha.com</a></li>
+                    <li><a href="http://sencha.com/products/io/">Sencha.io</a></li>
+                    <li><a href="http://market.sencha.com/">Sencha Market</a></li>
                 </ul>
-            </nav>
-        </section>
-        
-        <section id="example">
-            [example]
-        </section>
-        
-        <nav>
-            <h2>See Also:</h2>
-            <ul class="seeAlso">
-                <li class="docs"><a href="http://docs.sencha.com/ext-js/4-1/#!/api/Ext.layout.container.Container" target="_blank">Ext.layout.container.Container Documentation</a></li>
-                <li class="video"><a href="http://docs.sencha.com/ext-js/4-1/#!/video/17917111" target="_blank">The Ext JS 4 Layout System Video</a></li>
+            </div>
+        </li>
+    </ul>
+    
+    <div id="content-wrapper" class="clearfix">
+        <div id="content">
+            <a href="/">Home</a> <span>/</span> <a href="/extjs/">Ext JS</a> <span>/</span> <a href="/extjs/4.1.0/">4.1.0</a> <span>/</span> Ext.layout.container.Container Example
+            <div class="developer">
+                <div class="column_nine">
+                    <div class="details">
+                        <div class="top-block border">
+                            <h2 class="alt">Ext.layout.container.Container Example</h2>
+                        </div>
+                        <div class="plain-text"></div>
+                        <h3>[example widget]</h3>
+                        <div>
+                            <ul class="developer-actions">
+                                <li class="request"><a href="src.zip" class="button-link center">Download</a></li>
+                            </ul>
+                        </div>
+                        <hr class="clear" />
+                        <h4>Tags</h4>
+                        <ul class="services-list alt clearfix tags">
+                            <li><a href="/tags/Ext%20JS/">Ext JS</a></li>
+                            <li><a href="/tags/Ext%20JS%204.1.0/">Ext JS 4.1.0</a></li>
+                            <li><a href="/tags/Ext.layout.container.Container/"><code>Ext.layout.container.Container</code></a></li>
+                        </ul>
+                        <h4>See Also</h4>
+                        <ul class="services-list alt clearfix see-also">
+                            <li class="docs"><a href="http://docs.sencha.com/ext-js/4-1/#!/api/Ext.layout.container.Container" target="_blank">Ext.layout.container.Container Documentation</a></li>
+                            <li class="video"><a href="http://docs.sencha.com/ext-js/4-1/#!/video/17917111" target="_blank">The Ext JS 4 Layout System Video</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div id="footer-content">
+        <div class="columns">
+            <ul class="column">
+                <li>
+                    <a class="main" href="http://sencha.com/company/">Company</a>
+                    <ul class="zero">
+                        <li class="first"><a href="http://www.sencha.com/contact/" rel="nofollow">Contact Us</a></li>
+                        <li class="last"><a href="/pages/terms/" rel="nofollow">Terms of Use</a></li>
+                    </ul>
+                </li>
             </ul>
-        </nav>
-        
-        <footer>
-            &copy; 2012 Sencha Inc.
-        </footer>
+            <ul class="column">
+                <li>
+                    <a class="main" href="/">Listings</a>
+                    <ul class="zero">
+                        <li class="first"><a href="/developers/">Full listing</a></li>
+                        <li class="last"><a href="/developers/by_location/">Geographic listing</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+        <hr />
+        <div id="copyright">
+            <p>&copy; 2012 Sencha Inc. All rights reserved.</p>
+        </div>
     </div>
-    
+
     <div class="hidden">
-        <!-- extjs/4.1.0/docs/Ext.layout.container.Container.1/app.js -->
-        <pre>/*global Ext:false */
-Ext.onReady(function() {
-    Ext.define('Employee', {
-        extend: 'Ext.data.Model',
-        fields: [{
-            name: 'rating',
-            type: 'int'
-        }, {
-            name: 'salary',
-            type: 'float'
-        }, {
-            name: 'name'
-        }]
-    });
-
-    function createFakeData(count) {
-        var firstNames = ['Ed', 'Tommy', 'Aaron', 'Abe', 'Jamie', 'Adam', 'Dave', 'David', 'Jay', 'Nicolas', 'Nige'],
-            lastNames = ['Spencer', 'Maintz', 'Conran', 'Elias', 'Avins', 'Mishcon', 'Kaneda', 'Davis', 'Robinson', 'Ferrero', 'White'],
-            ratings = [1, 2, 3, 4, 5],
-            salaries = [100, 400, 900, 1500, 1000000];
-
-        var data = [];
-        for (var i = 0; i < (count || 25); i++) {
-            var ratingId = Math.floor(Math.random() * ratings.length),
-                salaryId = Math.floor(Math.random() * salaries.length),
-                firstNameId = Math.floor(Math.random() * firstNames.length),
-                lastNameId = Math.floor(Math.random() * lastNames.length),
-
-                rating = ratings[ratingId],
-                salary = salaries[salaryId],
-                name = Ext.String.format("{0} {1}", firstNames[firstNameId], lastNames[lastNameId]);
-
-            data.push({
-                rating: rating,
-                salary: salary,
-                name: name
-            });
-        }
-        store.loadData(data);
-    }
-
-    // create the Data Store
-    var store = Ext.create('Ext.data.Store', {
-        id: 'store',
-        model: 'Employee',
-        proxy: {
-            type: 'memory'
-        }
-    });
-    createFakeData(10);
-
-    var grid = Ext.create('Ext.grid.Panel', {
-        title: 'Grid loaded with varying number of records',
-        anchor: '100%',
-        store: store,
-        columns: [{
-            xtype: 'rownumberer',
-            width: 40,
-            sortable: false
-        }, {
-            text: 'Name',
-            flex: 1,
-            sortable: true,
-            dataIndex: 'name'
-        }, {
-            text: 'Rating',
-            width: 125,
-            sortable: true,
-            dataIndex: 'rating'
-        }, {
-            text: 'Salary',
-            width: 125,
-            sortable: true,
-            dataIndex: 'salary',
-            align: 'right',
-            renderer: Ext.util.Format.usMoney
-        }]
-    });
-
-    Ext.create('Ext.panel.Panel', {
-        renderTo: document.body,
-        width: 800,
-        height: 600,
-        layout: {
-            type: 'anchor',
-            reserveScrollbar: true // There will be a gap even when there's no scrollbar
-        },
-        autoScroll: true,
-        items: grid,
-        tbar: {
-            defaults: {
-                handler: function(b) {
-                    createFakeData(b.count);
-                }
-            },
-            items: [{
-                text: '10 Items',
-                count: 10
-            }, {
-                text: '100 Items',
-                count: 100
-            }, {
-                text: '300 Items',
-                count: 300
-            }, {
-                text: '1000 Items',
-                count: 1000
-            }, {
-                text: '5000 Items',
-                count: 5000
-            }]
-        }
-    });
-});
-</pre>
+        <pre class="example" data-uri="/extjs/4.1.0/docs/Ext.layout.container.Container.1/app.js">(hidden)</pre>
     </div>
-    
+
 </body>
 </html>

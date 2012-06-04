@@ -2,102 +2,107 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8"/>
-    <title>Ext.form.field.File Example</title>
-    <meta Name="description" content="Ext.form.field.File Example" />
+    <title>Ext.form.field.File Example | Sencha Try</title>
+    <meta name="description" content="Ext.form.field.File Example" />
     <meta name="keywords" content="Sencha, Ext JS, Ext JS 4.0.7, Ext.form.File, Ext.form.FileUploadField, Ext.form.field.File, Ext.ux.form.FileUploadField, allowBlank, buttonText, field, fieldLabel, filefield, fileuploadfield, form, labelWidth, msgTarget" />
+    <meta name="author" content="Sencha Inc.">
     <link href="/assets/application.css" media="screen" rel="stylesheet" type="text/css" />
 </head>
 <body>
-    
-    <div>
-        <header>
-            <h1>Sencha Try</h1>
-        </header>
-        
-        <section id="readme">
-            <div class="intro"><h1>Ext.form.field.File Example</h1></div>
-            <div>
-                <a href="src.zip" download="extjs_4.0.7_docs_Ext.form.field.File.1.zip">DOWNLOAD</a>
-            </div>
-            <nav>
-                <h2>Tags:</h2>
-                <ul class="tags">
-                    <li><a href="/tags/Ext%20JS/">Ext JS</a></li>
-                    <li><a href="/tags/Ext%20JS%204.0.7/">Ext JS 4.0.7</a></li>
-                    <li><a href="/tags/Ext.form.File/">Ext.form.File</a></li>
-                    <li><a href="/tags/Ext.form.FileUploadField/">Ext.form.FileUploadField</a></li>
-                    <li><a href="/tags/Ext.form.field.File/">Ext.form.field.File</a></li>
-                    <li><a href="/tags/Ext.ux.form.FileUploadField/">Ext.ux.form.FileUploadField</a></li>
-                    <li><a href="/tags/allowBlank/">allowBlank</a></li>
-                    <li><a href="/tags/buttonText/">buttonText</a></li>
-                    <li><a href="/tags/field/">field</a></li>
-                    <li><a href="/tags/fieldLabel/">fieldLabel</a></li>
-                    <li><a href="/tags/filefield/">filefield</a></li>
-                    <li><a href="/tags/fileuploadfield/">fileuploadfield</a></li>
-                    <li><a href="/tags/form/">form</a></li>
-                    <li><a href="/tags/labelWidth/">labelWidth</a></li>
-                    <li><a href="/tags/msgTarget/">msgTarget</a></li>
-                </ul>
-            </nav>
-        </section>
-        
-        <section id="example">
-            [example]
-        </section>
-        
-        <nav>
-            <h2>See Also:</h2>
-            <ul class="seeAlso">
-                <li class="docs"><a href="http://docs.sencha.com/ext-js/4-0/#!/api/Ext.form.field.File" target="_blank">Ext.form.field.File Documentation</a></li>
-                <li class="guide"><a href="http://docs.sencha.com/ext-js/4-0/#!/guide/forms" target="_blank">The Form Package Guide</a></li>
-            </ul>
-        </nav>
-        
-        <footer>
-            &copy; 2012 Sencha Inc.
-        </footer>
-    </div>
-    
-    <div class="hidden">
-        <!-- extjs/4.0.7/docs/Ext.form.field.File.1/app.js -->
-        <pre>/*global Ext:false */
-Ext.onReady(function () {
-    Ext.create('Ext.form.Panel', {
-        title: 'Upload a Photo',
-        width: 400,
-        bodyPadding: 10,
-        frame: true,
-        renderTo: Ext.getBody(),
-        items: [{
-            xtype: 'filefield',
-            name: 'photo',
-            fieldLabel: 'Photo',
-            labelWidth: 50,
-            msgTarget: 'side',
-            allowBlank: false,
-            anchor: '100%',
-            buttonText: 'Select Photo...'
-        }],
 
-        buttons: [{
-            text: 'Upload',
-            handler: function () {
-                var form = this.up('form').getForm();
-                if (form.isValid()) {
-                    form.submit({
-                        url: 'photo-upload.php',
-                        waitMsg: 'Uploading your photo...',
-                        success: function (fp, o) {
-                            Ext.Msg.alert('Success', 'Your photo "' + o.result.file + '" has been uploaded.');
-                        }
-                    });
-                }
-            }
-        }]
-    });
-});
-</pre>
+    <div id="logo-container" class="skiptranslate">
+        <h1 id="logo"><a href="/"><img src="/assets/logo.png" alt="Sencha Try" /></a></h1>
+        <span id="glow"></span>
+    </div>
+    <ul>
+        <li class="with-sub">
+            <a href="#" class="dropdown">Sencha Network</a>
+            <div id="docs-dropdown" class="pop-nav zero">
+                <ul>
+                    <li><a href="http://sencha.com/">Sencha.com</a></li>
+                    <li><a href="http://sencha.com/products/io/">Sencha.io</a></li>
+                    <li><a href="http://market.sencha.com/">Sencha Market</a></li>
+                </ul>
+            </div>
+        </li>
+    </ul>
+    
+    <div id="content-wrapper" class="clearfix">
+        <div id="content">
+            <a href="/">Home</a> <span>/</span> <a href="/extjs/">Ext JS</a> <span>/</span> <a href="/extjs/4.0.7/">4.0.7</a> <span>/</span> Ext.form.field.File Example
+            <div class="developer">
+                <div class="column_nine">
+                    <div class="details">
+                        <div class="top-block border">
+                            <h2 class="alt">Ext.form.field.File Example</h2>
+                        </div>
+                        <div class="plain-text"></div>
+                        <h3>[example widget]</h3>
+                        <div>
+                            <ul class="developer-actions">
+                                <li class="request"><a href="src.zip" class="button-link center">Download</a></li>
+                            </ul>
+                        </div>
+                        <hr class="clear" />
+                        <h4>Tags</h4>
+                        <ul class="services-list alt clearfix tags">
+                            <li><a href="/tags/Ext%20JS/">Ext JS</a></li>
+                            <li><a href="/tags/Ext%20JS%204.0.7/">Ext JS 4.0.7</a></li>
+                            <li><a href="/tags/Ext.form.File/"><code>Ext.form.File</code></a></li>
+                            <li><a href="/tags/Ext.form.FileUploadField/"><code>Ext.form.FileUploadField</code></a></li>
+                            <li><a href="/tags/Ext.form.field.File/"><code>Ext.form.field.File</code></a></li>
+                            <li><a href="/tags/Ext.ux.form.FileUploadField/"><code>Ext.ux.form.FileUploadField</code></a></li>
+                            <li><a href="/tags/allowBlank/"><code>allowBlank</code></a></li>
+                            <li><a href="/tags/buttonText/"><code>buttonText</code></a></li>
+                            <li><a href="/tags/field/"><code>field</code></a></li>
+                            <li><a href="/tags/fieldLabel/"><code>fieldLabel</code></a></li>
+                            <li><a href="/tags/filefield/"><code>filefield</code></a></li>
+                            <li><a href="/tags/fileuploadfield/"><code>fileuploadfield</code></a></li>
+                            <li><a href="/tags/form/"><code>form</code></a></li>
+                            <li><a href="/tags/labelWidth/"><code>labelWidth</code></a></li>
+                            <li><a href="/tags/msgTarget/"><code>msgTarget</code></a></li>
+                        </ul>
+                        <h4>See Also</h4>
+                        <ul class="services-list alt clearfix see-also">
+                            <li class="docs"><a href="http://docs.sencha.com/ext-js/4-0/#!/api/Ext.form.field.File" target="_blank">Ext.form.field.File Documentation</a></li>
+                            <li class="guide"><a href="http://docs.sencha.com/ext-js/4-0/#!/guide/forms" target="_blank">The Form Package Guide</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
     
+    <div id="footer-content">
+        <div class="columns">
+            <ul class="column">
+                <li>
+                    <a class="main" href="http://sencha.com/company/">Company</a>
+                    <ul class="zero">
+                        <li class="first"><a href="http://www.sencha.com/contact/" rel="nofollow">Contact Us</a></li>
+                        <li class="last"><a href="/pages/terms/" rel="nofollow">Terms of Use</a></li>
+                    </ul>
+                </li>
+            </ul>
+            <ul class="column">
+                <li>
+                    <a class="main" href="/">Listings</a>
+                    <ul class="zero">
+                        <li class="first"><a href="/developers/">Full listing</a></li>
+                        <li class="last"><a href="/developers/by_location/">Geographic listing</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+        <hr />
+        <div id="copyright">
+            <p>&copy; 2012 Sencha Inc. All rights reserved.</p>
+        </div>
+    </div>
+
+    <div class="hidden">
+        <pre class="example" data-uri="/extjs/4.0.7/docs/Ext.form.field.File.1/app.js">(hidden)</pre>
+    </div>
+
 </body>
 </html>

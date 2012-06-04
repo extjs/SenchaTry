@@ -2,109 +2,92 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8"/>
-    <title>Validating string lengths on an Ext.data.Model object using Sencha Touch 2</title>
-    <meta Name="description" content="Validating string lengths on an Ext.data.Model object using Sencha Touch 2" />
+    <title>Validating string lengths on an Ext.data.Model object using Sencha Touch 2 | Sencha Try</title>
+    <meta name="description" content="Validating string lengths on an Ext.data.Model object using Sencha Touch 2" />
     <meta name="keywords" content="Sencha, Sencha Touch, Sencha Touch 2.0.0" />
+    <meta name="author" content="Sencha Inc.">
     <link href="/assets/application.css" media="screen" rel="stylesheet" type="text/css" />
 </head>
 <body>
-    
-    <div>
-        <header>
-            <h1>Sencha Try</h1>
-        </header>
-        
-        <section id="readme">
-            <div class="intro"><h1>Validating string lengths on an Ext.data.Model object using Sencha Touch 2</h1>
 
-<p>The following example shows how you can validate string lengths an Ext.store.Model object in Sencha Touch 2 by setting the <code>validations</code> object on the model and then creating a 'length' validation with a <code>min</code> and <code>max</code> attribute.</p></div>
-            <div>
-                <a href="src.zip" download="touch_2.0.0_demos_Ext.data.Model.validations.min.zip">DOWNLOAD</a>
-            </div>
-            <nav>
-                <h2>Tags:</h2>
-                <ul class="tags">
-                    <li><a href="/tags/Sencha%20Touch/">Sencha Touch</a></li>
-                    <li><a href="/tags/Sencha%20Touch%202.0.0/">Sencha Touch 2.0.0</a></li>
+    <div id="logo-container" class="skiptranslate">
+        <h1 id="logo"><a href="/"><img src="/assets/logo.png" alt="Sencha Try" /></a></h1>
+        <span id="glow"></span>
+    </div>
+    <ul>
+        <li class="with-sub">
+            <a href="#" class="dropdown">Sencha Network</a>
+            <div id="docs-dropdown" class="pop-nav zero">
+                <ul>
+                    <li><a href="http://sencha.com/">Sencha.com</a></li>
+                    <li><a href="http://sencha.com/products/io/">Sencha.io</a></li>
+                    <li><a href="http://market.sencha.com/">Sencha Market</a></li>
                 </ul>
-            </nav>
-        </section>
-        
-        <section id="example">
-            [example]
-        </section>
-        
-        
-        <footer>
-            &copy; 2012 Sencha Inc.
-        </footer>
+            </div>
+        </li>
+    </ul>
+    
+    <div id="content-wrapper" class="clearfix">
+        <div id="content">
+            <a href="/">Home</a> <span>/</span> <a href="/touch/">Touch</a> <span>/</span> <a href="/touch/2.0.0/">2.0.0</a> <span>/</span> Validating string lengths on an Ext.data.Model object using Sencha Touch 2
+            <div class="developer">
+                <div class="column_nine">
+                    <div class="details">
+                        <div class="top-block border">
+                            <h2 class="alt">Validating string lengths on an Ext.data.Model object using Sencha Touch 2</h2>
+                        </div>
+                        <div class="plain-text"><p>The following example shows how you can validate string lengths an Ext.store.Model object in Sencha Touch 2 by setting the <code>validations</code> object on the model and then creating a 'length' validation with a <code>min</code> and <code>max</code> attribute.</p></div>
+                        <h3>[example widget]</h3>
+                        <div>
+                            <ul class="developer-actions">
+                                <li class="request"><a href="src.zip" class="button-link center">Download</a></li>
+                            </ul>
+                        </div>
+                        <hr class="clear" />
+                        <h4>Tags</h4>
+                        <ul class="services-list alt clearfix tags">
+                            <li><a href="/tags/Sencha%20Touch/">Sencha Touch</a></li>
+                            <li><a href="/tags/Sencha%20Touch%202.0.0/">Sencha Touch 2.0.0</a></li>
+                        </ul>
+                        <h4>See Also</h4>
+                        <ul class="services-list alt clearfix see-also">
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
     
+    <div id="footer-content">
+        <div class="columns">
+            <ul class="column">
+                <li>
+                    <a class="main" href="http://sencha.com/company/">Company</a>
+                    <ul class="zero">
+                        <li class="first"><a href="http://www.sencha.com/contact/" rel="nofollow">Contact Us</a></li>
+                        <li class="last"><a href="/pages/terms/" rel="nofollow">Terms of Use</a></li>
+                    </ul>
+                </li>
+            </ul>
+            <ul class="column">
+                <li>
+                    <a class="main" href="/">Listings</a>
+                    <ul class="zero">
+                        <li class="first"><a href="/developers/">Full listing</a></li>
+                        <li class="last"><a href="/developers/by_location/">Geographic listing</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+        <hr />
+        <div id="copyright">
+            <p>&copy; 2012 Sencha Inc. All rights reserved.</p>
+        </div>
+    </div>
+
     <div class="hidden">
-        <!-- touch/2.0.0/demos/Ext.data.Model.validations.min/app.js -->
-        <pre>/*global Ext:false */
-Ext.application({
-    launch: function () {
-        Ext.define('UserModel', {
-            extend: 'Ext.data.Model',
-            config: {
-                fields: [{
-                    name: 'username',
-                    type: 'string'
-                }], // fields
-                validations: [{
-                    field: 'username',
-                    type: 'presence',
-                    message: 'Username is required.'
-                }, {
-                    field: 'username',
-                    type: 'length',
-                    min: 6,
-                    max: 12,
-                    message: 'Username must be between 6 and 12 characters.'
-                }] // validations
-            } // config
-        }); // define()
-        
-        var form = Ext.create('Ext.form.Panel', {
-            fullscreen: true,
-            items: [{
-                xtype: 'titlebar',
-                docked: 'top',
-                items: [{
-                    text: 'Validate form',
-                    handler: function () {
-                        var values = form.getValues(),
-                            usr = Ext.create('UserModel', {
-                                username: values.usernameField
-                            }),
-                            errs = usr.validate(),
-                            msg = '';
-                        
-                        if (!errs.isValid()) {
-                            errs.each(function (err) {
-                                msg += err.getMessage() + '<br/>';
-                            }); // each()
-                            Ext.Msg.alert('ERROR', msg);
-                        } else {
-                            Ext.Msg.alert('SUCCESS', 'Looks like the model is valid!');
-                        } // if
-                    } // handler
-                }] // items (titlebar)
-            }, {
-                xtype: 'fieldset',
-                items: [{
-                    xtype: 'textfield',
-                    name: 'usernameField',
-                    label: 'Username:',
-                    required: true
-                }] // items (fieldset)
-            }] // items (container)
-        }); // create()
-    } // launch
-}); // application()
-</pre>
+        <pre class="example" data-uri="/touch/2.0.0/demos/Ext.data.Model.validations.min/app.js">(hidden)</pre>
     </div>
-    
+
 </body>
 </html>

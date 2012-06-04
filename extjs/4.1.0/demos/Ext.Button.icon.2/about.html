@@ -2,62 +2,95 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8"/>
-    <title>Displaying an icon on a Button component using Ext JS</title>
-    <meta Name="description" content="Displaying an icon on a Button component using Ext JS" />
+    <title>Displaying an icon on a Button component using Ext JS | Sencha Try</title>
+    <meta name="description" content="Displaying an icon on a Button component using Ext JS" />
     <meta name="keywords" content="Sencha, Ext JS, Ext JS 4.1.0, Ext.Button, Ext.button.Button, button" />
+    <meta name="author" content="Sencha Inc.">
     <link href="/assets/application.css" media="screen" rel="stylesheet" type="text/css" />
 </head>
 <body>
-    
-    <div>
-        <header>
-            <h1>Sencha Try</h1>
-        </header>
-        
-        <section id="readme">
-            <div class="intro"><h1>Displaying an icon on a Button component using Ext JS</h1>
 
-<p>The following example shows how you can display an icon on an Ext.Button control by setting the <code>icon</code> property to a file path or a data URI.</p></div>
-            <div>
-                <a href="src.zip" download="extjs_4.1.0_demos_Ext.Button.icon.2.zip">DOWNLOAD</a>
-            </div>
-            <nav>
-                <h2>Tags:</h2>
-                <ul class="tags">
-                    <li><a href="/tags/Ext%20JS/">Ext JS</a></li>
-                    <li><a href="/tags/Ext%20JS%204.1.0/">Ext JS 4.1.0</a></li>
-                    <li><a href="/tags/Ext.Button/">Ext.Button</a></li>
-                    <li><a href="/tags/Ext.button.Button/">Ext.button.Button</a></li>
-                    <li><a href="/tags/button/">button</a></li>
+    <div id="logo-container" class="skiptranslate">
+        <h1 id="logo"><a href="/"><img src="/assets/logo.png" alt="Sencha Try" /></a></h1>
+        <span id="glow"></span>
+    </div>
+    <ul>
+        <li class="with-sub">
+            <a href="#" class="dropdown">Sencha Network</a>
+            <div id="docs-dropdown" class="pop-nav zero">
+                <ul>
+                    <li><a href="http://sencha.com/">Sencha.com</a></li>
+                    <li><a href="http://sencha.com/products/io/">Sencha.io</a></li>
+                    <li><a href="http://market.sencha.com/">Sencha Market</a></li>
                 </ul>
-            </nav>
-        </section>
-        
-        <section id="example">
-            [example]
-        </section>
-        
-        
-        <footer>
-            &copy; 2012 Sencha Inc.
-        </footer>
+            </div>
+        </li>
+    </ul>
+    
+    <div id="content-wrapper" class="clearfix">
+        <div id="content">
+            <a href="/">Home</a> <span>/</span> <a href="/extjs/">Ext JS</a> <span>/</span> <a href="/extjs/4.1.0/">4.1.0</a> <span>/</span> Displaying an icon on a Button component using Ext JS
+            <div class="developer">
+                <div class="column_nine">
+                    <div class="details">
+                        <div class="top-block border">
+                            <h2 class="alt">Displaying an icon on a Button component using Ext JS</h2>
+                        </div>
+                        <div class="plain-text"><p>The following example shows how you can display an icon on an Ext.Button control by setting the <code>icon</code> property to a file path or a data URI.</p></div>
+                        <h3>[example widget]</h3>
+                        <div>
+                            <ul class="developer-actions">
+                                <li class="request"><a href="src.zip" class="button-link center">Download</a></li>
+                            </ul>
+                        </div>
+                        <hr class="clear" />
+                        <h4>Tags</h4>
+                        <ul class="services-list alt clearfix tags">
+                            <li><a href="/tags/Ext%20JS/">Ext JS</a></li>
+                            <li><a href="/tags/Ext%20JS%204.1.0/">Ext JS 4.1.0</a></li>
+                            <li><a href="/tags/Ext.Button/"><code>Ext.Button</code></a></li>
+                            <li><a href="/tags/Ext.button.Button/"><code>Ext.button.Button</code></a></li>
+                            <li><a href="/tags/button/"><code>button</code></a></li>
+                        </ul>
+                        <h4>See Also</h4>
+                        <ul class="services-list alt clearfix see-also">
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
     
+    <div id="footer-content">
+        <div class="columns">
+            <ul class="column">
+                <li>
+                    <a class="main" href="http://sencha.com/company/">Company</a>
+                    <ul class="zero">
+                        <li class="first"><a href="http://www.sencha.com/contact/" rel="nofollow">Contact Us</a></li>
+                        <li class="last"><a href="/pages/terms/" rel="nofollow">Terms of Use</a></li>
+                    </ul>
+                </li>
+            </ul>
+            <ul class="column">
+                <li>
+                    <a class="main" href="/">Listings</a>
+                    <ul class="zero">
+                        <li class="first"><a href="/developers/">Full listing</a></li>
+                        <li class="last"><a href="/developers/by_location/">Geographic listing</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+        <hr />
+        <div id="copyright">
+            <p>&copy; 2012 Sencha Inc. All rights reserved.</p>
+        </div>
+    </div>
+
     <div class="hidden">
-        <!-- extjs/4.1.0/demos/Ext.Button.icon.2/app.js -->
-        <pre>/*global Ext:false */
-Ext.application({
-    name: 'Ext.Array.clean()',
-    launch: function () {
-        Ext.create('Ext.Button', {
-            text: 'I\'m a button!',
-            icon: 'data:application/ico;base64,AAABAAEAEBAAAAEAIABoBAAAFgAAACgAAAAQAAAAIAAAAAEAIAAAAAAAQAQAABMLAAATCwAAAAAAAAAAAAAAAAACAAAABAAAAAgAAAANAAAAEQAAABUAAAAYAAAAGRg4ADcfUQCpFj4AUwAAABoAAAAaAAAAFwAAABAAAAAKAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIlwCUB9WAP8dTwBgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACVoEkAjYQj/H1YA/x1RAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACt/QBAodi3PJmsZ/yNhCP8gWAG/AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAALphnEC2RXYAtiU7vK4BA/yl2Lf8mbBr/I2IJ/wAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQpz4gEJYinxaYI/8UnCP/FaI1/xanPP8boTz/II4u/yVwG/8AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQtWBgErBN7xKiOf8Upz//FqxH/xewT/8XtFP/GLdQ/xe4Rv8XsTT/AAAAAAAAAAAAAAAAAAAAAAAAAAARwXowE8Bu/xW7Yv8Vr1j/F7Rg/xi3Zf8Zu2j/Gb5p/xm/Y/8Zvln/GLxLnwAAAAAAAAAAAAAAAAAAAAAAAAAAFMmBrxjMgv8Ywnj/F7hv/xi8dv8ZwHn/GcJ7/xnEef8ZxHT/GcJo7xnAXSAAAAAAAAAAAAAAAAAAAAAAAAAAACHSm/8j1aL/HMmO/xi8ff8ZwYP/GcSG/xnGhv8Zx4T/GcZ+7xnFdTAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA91sX/PdXD/zXEqf8guof/GcOK/xrGjf8ayIzvGsiJgBnIhRAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAPdfH/z3Wxf86zrn/Lq+L/xzBje8axo+AGsiPEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAD3Xx88918f/PdbF/zK2ms8vrosQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA918dQPdfH/z3Xx/891sUwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAD3Xx58918f/PdfHMAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAPdfHUD3Xx68918cQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAD19f+P9vX/h/YA/wf19fwHAADwBwAA4AcAAMAHAP/AB///wA///8Af///Af///wf8AAMP/AADj/wAA8f8AAA==',
-            renderTo: Ext.getBody()
-        });
-    } // launch
-}); // Ext.application()
-</pre>
+        <pre class="example" data-uri="/extjs/4.1.0/demos/Ext.Button.icon.2/app.js">(hidden)</pre>
     </div>
-    
+
 </body>
 </html>
