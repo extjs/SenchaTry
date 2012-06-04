@@ -96,7 +96,36 @@
     </div>
 
     <div class="hidden">
-        <pre class="example" data-uri="/extjs/4.0.7/docs/Ext.tab.Panel.3/app.js">(hidden)</pre>
+        <pre class="example" data-uri="/extjs/4.0.7/docs/Ext.tab.Panel.3/app.js">/*global Ext:false */
+Ext.onReady(function () {
+    var tabs = Ext.create('Ext.tab.Panel', {
+        width: 400,
+        height: 400,
+        renderTo: document.body,
+        items: [{
+            title: 'Home',
+            html: 'Home',
+            itemId: 'home'
+        }, {
+            title: 'Users',
+            html: 'Users',
+            itemId: 'users',
+            hidden: true
+        }, {
+            title: 'Tickets',
+            html: 'Tickets',
+            itemId: 'tickets'
+        }]
+    });
+
+    setTimeout(function () {
+        tabs.child('#home').tab.hide();
+        var users = tabs.child('#users');
+        users.tab.show();
+        tabs.setActiveTab(users);
+    }, 1000);
+});
+</pre>
     </div>
 
 </body>

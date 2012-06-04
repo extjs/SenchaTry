@@ -91,7 +91,32 @@
     </div>
 
     <div class="hidden">
-        <pre class="example" data-uri="/extjs/4.1.0/demos/Ext.Button.arrowAlign.1/app.js">(hidden)</pre>
+        <pre class="example" data-uri="/extjs/4.1.0/demos/Ext.Button.arrowAlign.1/app.js">/*global Ext:false */
+Ext.onReady(function () {
+    Ext.create('Ext.Container', {
+        items:[
+            Ext.create('Ext.Button', {
+                arrowAlign: 'right',
+                menu: [
+                    {text: 'A wild submenu appears.'},
+                    {text: 'It\'s super effective!'}
+                ], // menu
+                text: '<code>arrowAlign: right</code>'
+            }), // create()
+            
+            Ext.create('Ext.Button', {
+                arrowAlign: 'bottom',
+                menu: [
+                    {text: 'A wild submenu appears.'},
+                    {text: 'It\'s super effective!'}
+                ], // menu
+                text: '<code>arrowAlign: bottom</code>'
+            }) // create()
+        ], // items
+        renderTo: Ext.getBody()
+    }); // create()
+}); // onReady()
+</pre>
     </div>
 
 </body>

@@ -92,7 +92,18 @@
     </div>
 
     <div class="hidden">
-        <pre class="example" data-uri="/extjs/4.0.7/demos/Ext.Button.toggleHandler.1/app.js">(hidden)</pre>
+        <pre class="example" data-uri="/extjs/4.0.7/demos/Ext.Button.toggleHandler.1/app.js">/*global Ext:false */
+Ext.onReady(function () {
+    Ext.create('Ext.Button', {
+        enableToggle: true,
+        text: 'Sencha',
+        toggleHandler: function (button, state) {
+            Ext.Msg.alert('', button.text + ' button is toggled? <code>' + state.toString() + '</code>');
+        }, // toggleHandler
+        renderTo: Ext.getBody()
+    }); // create()
+}); // onReady()
+</pre>
     </div>
 
 </body>

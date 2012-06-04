@@ -92,7 +92,25 @@
     </div>
 
     <div class="hidden">
-        <pre class="example" data-uri="/touch/2.0.1/docs/Ext.dataview.List.1/app.js">(hidden)</pre>
+        <pre class="example" data-uri="/touch/2.0.1/docs/Ext.dataview.List.1/app.js">/*global Ext:false */
+Ext.application({
+    launch: function() {
+        Ext.create('Ext.List', {
+            fullscreen: true,
+            itemTpl: '{title}',
+            data: [{
+                title: 'Item 1'
+            }, {
+                title: 'Item 2'
+            }, {
+                title: 'Item 3'
+            }, {
+                title: 'Item 4'
+            }]
+        });
+    }
+});
+</pre>
     </div>
 
 </body>

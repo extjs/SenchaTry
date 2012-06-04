@@ -91,7 +91,18 @@
     </div>
 
     <div class="hidden">
-        <pre class="example" data-uri="/touch/2.0.0/docs/Ext.Img.1/app.js">(hidden)</pre>
+        <pre class="example" data-uri="/touch/2.0.0/docs/Ext.Img.1/app.js">/*global Ext:false */
+Ext.application({
+    launch: function () {
+        var img = Ext.create('Ext.Img', {
+            src: 'http://www.sencha.com/assets/images/sencha-avatar-64x64.png',
+            height: 64,
+            width: 64
+        });
+        Ext.Viewport.add(img);
+    } // launch
+}); // application()
+</pre>
     </div>
 
 </body>

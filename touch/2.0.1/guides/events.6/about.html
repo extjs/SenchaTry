@@ -86,7 +86,27 @@
     </div>
 
     <div class="hidden">
-        <pre class="example" data-uri="/touch/2.0.1/guides/events.6/app.js">(hidden)</pre>
+        <pre class="example" data-uri="/touch/2.0.1/guides/events.6/app.js">/*global Ext:false */
+Ext.application({
+    launch: function() {
+        var myButton = Ext.Viewport.add({
+            xtype: 'button',
+            centered: true,
+            text: 'Click me',
+
+            listeners: {
+                tap: function() {
+                    alert('First tap listener');
+                }
+            }
+        });
+
+        myButton.on('tap', function() {
+            alert("Second tap listener");
+        });
+    }
+});
+</pre>
     </div>
 
 </body>

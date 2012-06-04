@@ -89,7 +89,37 @@
     </div>
 
     <div class="hidden">
-        <pre class="example" data-uri="/extjs/4.1.0/docs/Ext.layout.container.Accordion.1/app.js">(hidden)</pre>
+        <pre class="example" data-uri="/extjs/4.1.0/docs/Ext.layout.container.Accordion.1/app.js">/*global Ext:false */
+Ext.onReady(function() {
+    Ext.create('Ext.panel.Panel', {
+        title: 'Accordion Layout',
+        width: 300,
+        height: 300,
+        defaults: {
+            // applied to each contained panel
+            bodyStyle: 'padding:15px'
+        },
+        layout: {
+            // layout-specific configs go here
+            type: 'accordion',
+            titleCollapse: false,
+            animate: true,
+            activeOnTop: true
+        },
+        items: [{
+            title: 'Panel 1',
+            html: 'Panel content!'
+        }, {
+            title: 'Panel 2',
+            html: 'Panel content!'
+        }, {
+            title: 'Panel 3',
+            html: 'Panel content!'
+        }],
+        renderTo: Ext.getBody()
+    });
+});
+</pre>
     </div>
 
 </body>

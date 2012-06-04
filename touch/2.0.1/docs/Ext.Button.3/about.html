@@ -88,7 +88,21 @@
     </div>
 
     <div class="hidden">
-        <pre class="example" data-uri="/touch/2.0.1/docs/Ext.Button.3/app.js">(hidden)</pre>
+        <pre class="example" data-uri="/touch/2.0.1/docs/Ext.Button.3/app.js">/*global Ext:false */
+Ext.application({
+    launch: function() {
+        Ext.create('Ext.Container', {
+            fullscreen: true,
+            padding: 10,
+            items: {
+                xtype: 'button',
+                text: 'My Button',
+                badgeText: '2'
+            }
+        });
+    }
+});
+</pre>
     </div>
 
 </body>

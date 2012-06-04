@@ -88,7 +88,42 @@
     </div>
 
     <div class="hidden">
-        <pre class="example" data-uri="/extjs/4.1.0/docs/Ext.grid.plugin.DragDrop.1/app.js">(hidden)</pre>
+        <pre class="example" data-uri="/extjs/4.1.0/docs/Ext.grid.plugin.DragDrop.1/app.js">/*global Ext:false */
+Ext.onReady(function() {
+    Ext.create('Ext.data.Store', {
+        storeId: 'simpsonsStore',
+        fields: ['name'],
+        data: [
+            ["Lisa"],
+            ["Bart"],
+            ["Homer"],
+            ["Marge"]
+        ],
+        proxy: {
+            type: 'memory',
+            reader: 'array'
+        }
+    });
+
+    Ext.create('Ext.grid.Panel', {
+        store: 'simpsonsStore',
+        columns: [{
+            header: 'Name',
+            dataIndex: 'name',
+            flex: true
+        }],
+        viewConfig: {
+            plugins: {
+                ptype: 'gridviewdragdrop',
+                dragText: 'Drag and drop to reorganize'
+            }
+        },
+        height: 200,
+        width: 400,
+        renderTo: Ext.getBody()
+    });
+});
+</pre>
     </div>
 
 </body>

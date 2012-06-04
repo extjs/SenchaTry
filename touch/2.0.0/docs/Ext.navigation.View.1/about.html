@@ -94,7 +94,31 @@
     </div>
 
     <div class="hidden">
-        <pre class="example" data-uri="/touch/2.0.0/docs/Ext.navigation.View.1/app.js">(hidden)</pre>
+        <pre class="example" data-uri="/touch/2.0.0/docs/Ext.navigation.View.1/app.js">/*global Ext:false */
+Ext.application({
+    launch: function () {
+        var view = Ext.create('Ext.NavigationView', {
+            fullscreen: true,
+            items: [{
+                title: 'First',
+                items: [{
+                    xtype: 'button',
+                    text: 'Push a new view!',
+                    handler: function () {
+                        //use the push() method to push another view. It works much like
+                        //add() or setActiveItem(). it accepts a view instance, or you can give it
+                        //a view config.
+                        view.push({
+                            title: 'Second',
+                            html: 'Second view!'
+                        });
+                    }
+                }]
+            }]
+        });
+    } // launch
+}); // application()
+</pre>
     </div>
 
 </body>

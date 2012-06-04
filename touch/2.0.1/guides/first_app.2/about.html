@@ -86,7 +86,22 @@
     </div>
 
     <div class="hidden">
-        <pre class="example" data-uri="/touch/2.0.1/guides/first_app.2/app.js">(hidden)</pre>
+        <pre class="example" data-uri="/touch/2.0.1/guides/first_app.2/app.js">/*global Ext:false */
+Ext.application({
+    name: 'Sencha',
+
+    launch: function() {
+        Ext.create("Ext.tab.Panel", {
+            fullscreen: true,
+            items: [{
+                title: 'Home',
+                iconCls: 'home',
+                html: 'Welcome'
+            }]
+        });
+    }
+});
+</pre>
     </div>
 
 </body>

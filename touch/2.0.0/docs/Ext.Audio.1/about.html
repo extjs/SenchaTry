@@ -90,7 +90,28 @@
     </div>
 
     <div class="hidden">
-        <pre class="example" data-uri="/touch/2.0.0/docs/Ext.Audio.1/app.js">(hidden)</pre>
+        <pre class="example" data-uri="/touch/2.0.0/docs/Ext.Audio.1/app.js">/*global Ext:false */
+Ext.application({
+    launch: function () {
+        Ext.create('Ext.Container', {
+            fullscreen: true,
+            layout: {
+                type: 'vbox',
+                pack: 'center',
+                align: 'stretch'
+            },
+            items: [{
+                xtype: 'toolbar',
+                docked: 'top',
+                title: 'Ext.Audio'
+            }, {
+                xtype: 'audio',
+                url: 'audio/crash.mp3'
+            }]
+        });
+    } // launch
+}); // application()
+</pre>
     </div>
 
 </body>

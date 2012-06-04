@@ -89,7 +89,28 @@
     </div>
 
     <div class="hidden">
-        <pre class="example" data-uri="/touch/2.0.0/docs/Ext.Spacer.1/app.js">(hidden)</pre>
+        <pre class="example" data-uri="/touch/2.0.0/docs/Ext.Spacer.1/app.js">/*global Ext:false */
+Ext.application({
+    launch: function () {
+        Ext.create('Ext.Container', {
+            fullscreen: true,
+            items: [{
+                xtype: 'toolbar',
+                docked: 'top',
+                items: [{
+                    xtype: 'button',
+                    text: 'Button One'
+                }, {
+                    xtype: 'spacer'
+                }, {
+                    xtype: 'button',
+                    text: 'Button Two'
+                }]
+            }]
+        });
+    } // launch
+}); // application()
+</pre>
     </div>
 
 </body>

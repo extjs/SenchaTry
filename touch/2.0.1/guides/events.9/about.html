@@ -86,7 +86,39 @@
     </div>
 
     <div class="hidden">
-        <pre class="example" data-uri="/touch/2.0.1/guides/events.9/app.js">(hidden)</pre>
+        <pre class="example" data-uri="/touch/2.0.1/guides/events.9/app.js">/*global Ext:false */
+Ext.application({
+    launch: function() {
+        var myButton = Ext.Viewport.add({
+            xtype: 'button',
+            centered: true,
+            text: 'Listener Disabled'
+        });
+
+        var handler = function() {
+                alert('listener called');
+            };
+
+        Ext.Viewport.add({
+            xtype: 'togglefield',
+            docked: 'bottom',
+            label: 'Toggle Listener',
+
+            listeners: {
+                change: function(field, thumb, enabled) {
+                    if (enabled) {
+                        myButton.on('tap', handler);
+                        myButton.setText('Listener Enabled');
+                    } else {
+                        myButton.un('tap', handler);
+                        myButton.setText('Listener Disabled');
+                    }
+                }
+            }
+        });
+    }
+});
+</pre>
     </div>
 
 </body>

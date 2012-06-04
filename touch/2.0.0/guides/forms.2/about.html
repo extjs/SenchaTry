@@ -86,7 +86,28 @@
     </div>
 
     <div class="hidden">
-        <pre class="example" data-uri="/touch/2.0.0/guides/forms.2/app.js">(hidden)</pre>
+        <pre class="example" data-uri="/touch/2.0.0/guides/forms.2/app.js">/*global Ext:false */
+Ext.application({
+    launch: function () {
+        Ext.create('Ext.form.Panel', {
+            fullscreen: true,
+            items: [{
+                xtype: 'textfield',
+                name: 'name',
+                label: 'Name'
+            }, {
+                xtype: 'emailfield',
+                name: 'email',
+                label: 'Email'
+            }, {
+                xtype: 'passwordfield',
+                name: 'password',
+                label: 'Password'
+            }]
+        });
+    } // launch
+}); // application()
+</pre>
     </div>
 
 </body>

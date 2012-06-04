@@ -86,7 +86,34 @@
     </div>
 
     <div class="hidden">
-        <pre class="example" data-uri="/touch/2.0.1/guides/tabs.3/app.js">(hidden)</pre>
+        <pre class="example" data-uri="/touch/2.0.1/guides/tabs.3/app.js">/*global Ext:false */
+Ext.application({
+    launch: function() {
+        Ext.create('Ext.TabPanel', {
+            fullscreen: true,
+
+            defaults: {
+                styleHtmlContent: true
+            },
+
+            layout: {
+                type: 'card',
+                animation: {
+                    type: 'fade'
+                }
+            },
+
+            items: [{
+                title: 'Home',
+                html: 'Home Screen'
+            }, {
+                title: 'Contact',
+                html: 'Contact Screen'
+            }]
+        });
+    }
+});
+</pre>
     </div>
 
 </body>

@@ -86,7 +86,25 @@
     </div>
 
     <div class="hidden">
-        <pre class="example" data-uri="/touch/2.0.1/guides/components.3/app.js">(hidden)</pre>
+        <pre class="example" data-uri="/touch/2.0.1/guides/components.3/app.js">/*global Ext:false */
+Ext.application({
+    launch: function() {
+        Ext.create('Ext.Container', {
+            fullscreen: true,
+            layout: 'fit',
+
+            items: [{
+                xtype: 'panel',
+                html: 'This panel is created by xtype'
+            }, {
+                xtype: 'toolbar',
+                title: 'So is the toolbar',
+                docked: 'top'
+            }]
+        });
+    }
+});
+</pre>
     </div>
 
 </body>

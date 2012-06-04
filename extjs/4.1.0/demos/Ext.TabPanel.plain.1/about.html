@@ -86,7 +86,31 @@
     </div>
 
     <div class="hidden">
-        <pre class="example" data-uri="/extjs/4.1.0/demos/Ext.TabPanel.plain.1/app.js">(hidden)</pre>
+        <pre class="example" data-uri="/extjs/4.1.0/demos/Ext.TabPanel.plain.1/app.js">/*global Ext:false */
+Ext.onReady(function () {
+    Ext.create('Ext.TabPanel', {
+        plain: true,
+        items: [{
+            title: '<code>plain: true</code>',
+            html: 'The quick brown fox jumps over the lazy dog'
+        }], // items
+        height: 100,
+        padding: 10,
+        renderTo: Ext.getBody()
+    }); // create()
+    
+    Ext.create('Ext.TabPanel', {
+        plain: false,
+        items: [{
+            title: '<code>plain: false</code>',
+            html: 'The quick brown fox jumps over the lazy dog'
+        }], // items
+        height: 100,
+        padding: 10,
+        renderTo: Ext.getBody()
+    }); // create()
+}); // onReady()
+</pre>
     </div>
 
 </body>

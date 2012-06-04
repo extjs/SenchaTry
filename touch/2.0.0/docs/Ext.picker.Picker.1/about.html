@@ -92,7 +92,33 @@
     </div>
 
     <div class="hidden">
-        <pre class="example" data-uri="/touch/2.0.0/docs/Ext.picker.Picker.1/app.js">(hidden)</pre>
+        <pre class="example" data-uri="/touch/2.0.0/docs/Ext.picker.Picker.1/app.js">/*global Ext:false */
+Ext.application({
+    launch: function () {
+        var picker = Ext.create('Ext.Picker', {
+            slots: [{
+                name: 'limit_speed',
+                title: 'Speed',
+                data: [{
+                    text: '50 KB/s',
+                    value: 50
+                }, {
+                    text: '100 KB/s',
+                    value: 100
+                }, {
+                    text: '200 KB/s',
+                    value: 200
+                }, {
+                    text: '300 KB/s',
+                    value: 300
+                }]
+            }]
+        });
+        Ext.Viewport.add(picker);
+        picker.show();
+    } // launch
+}); // application()
+</pre>
     </div>
 
 </body>

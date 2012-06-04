@@ -88,7 +88,35 @@
     </div>
 
     <div class="hidden">
-        <pre class="example" data-uri="/extjs/4.1.0/docs/Ext.panel.Tool.1/app.js">(hidden)</pre>
+        <pre class="example" data-uri="/extjs/4.1.0/docs/Ext.panel.Tool.1/app.js">/*global Ext:false */
+Ext.onReady(function() {
+    Ext.create('Ext.panel.Panel', {
+        width: 200,
+        height: 200,
+        renderTo: document.body,
+        title: 'A Panel',
+        tools: [{
+            type: 'help',
+            handler: function() {
+                // show help here
+            }
+        }, {
+            itemId: 'refresh',
+            type: 'refresh',
+            hidden: true,
+            handler: function() {
+                // do refresh
+            }
+        }, {
+            type: 'search',
+            handler: function(event, target, owner, tool) {
+                // do search
+                owner.child('#refresh').show();
+            }
+        }]
+    });
+});
+</pre>
     </div>
 
 </body>

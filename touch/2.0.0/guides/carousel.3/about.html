@@ -86,7 +86,53 @@
     </div>
 
     <div class="hidden">
-        <pre class="example" data-uri="/touch/2.0.0/guides/carousel.3/app.js">(hidden)</pre>
+        <pre class="example" data-uri="/touch/2.0.0/guides/carousel.3/app.js">/*global Ext:false */
+Ext.application({
+    launch: function () {
+        Ext.create('Ext.Carousel', {
+            fullscreen: true,
+            items: [{
+                xtype: 'list',
+                items: {
+                    xtype: 'toolbar',
+                    docked: 'top',
+                    title: 'Sencha Touch Team'
+                },
+                store: {
+                    fields: ['name'],
+                    data: [{
+                        name: 'Rob'
+                    }, {
+                        name: 'Ed'
+                    }, {
+                        name: 'Jacky'
+                    }, {
+                        name: 'Jamie'
+                    }, {
+                        name: 'Tommy'
+                    }, {
+                        name: 'Abe'
+                    }]
+                },
+                itemTpl: '{name}'
+            }, {
+                xtype: 'fieldset',
+                items: [{
+                    xtype: 'toolbar',
+                    docked: 'top',
+                    title: 'Login'
+                }, {
+                    xtype: 'textfield',
+                    label: 'Name'
+                }, {
+                    xtype: 'passwordfield',
+                    label: 'Password'
+                }]
+            }]
+        });
+    } // launch
+}); // application()
+</pre>
     </div>
 
 </body>

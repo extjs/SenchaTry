@@ -86,7 +86,29 @@
     </div>
 
     <div class="hidden">
-        <pre class="example" data-uri="/touch/2.0.1/guides/floating_components.3/app.js">(hidden)</pre>
+        <pre class="example" data-uri="/touch/2.0.1/guides/floating_components.3/app.js">/*global Ext:false */
+Ext.application({
+    launch: function() {
+        Ext.Viewport.add({
+            xtype: 'container',
+            layout: 'hbox',
+            items: [{
+                flex: 1,
+                html: 'left item',
+                style: 'background:#eee;'
+            }, {
+                flex: 2,
+                html: 'right, item',
+                items: [{
+                    xtype: 'panel',
+                    html: 'This is a centered panel within this container',
+                    centered: true
+                }]
+            }]
+        });
+    }
+});
+</pre>
     </div>
 
 </body>

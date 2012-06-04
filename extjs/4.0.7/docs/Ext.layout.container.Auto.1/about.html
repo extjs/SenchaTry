@@ -93,7 +93,28 @@
     </div>
 
     <div class="hidden">
-        <pre class="example" data-uri="/extjs/4.0.7/docs/Ext.layout.container.Auto.1/app.js">(hidden)</pre>
+        <pre class="example" data-uri="/extjs/4.0.7/docs/Ext.layout.container.Auto.1/app.js">/*global Ext:false */
+Ext.onReady(function () {
+    Ext.create('Ext.Panel', {
+        width: 500,
+        height: 280,
+        title: "AutoLayout Panel",
+        layout: 'auto',
+        renderTo: document.body,
+        items: [{
+            xtype: 'panel',
+            title: 'Top Inner Panel',
+            width: '75%',
+            height: 90
+        }, {
+            xtype: 'panel',
+            title: 'Bottom Inner Panel',
+            width: '75%',
+            height: 90
+        }]
+    });
+});
+</pre>
     </div>
 
 </body>

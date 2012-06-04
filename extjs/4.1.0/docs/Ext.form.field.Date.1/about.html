@@ -88,7 +88,29 @@
     </div>
 
     <div class="hidden">
-        <pre class="example" data-uri="/extjs/4.1.0/docs/Ext.form.field.Date.1/app.js">(hidden)</pre>
+        <pre class="example" data-uri="/extjs/4.1.0/docs/Ext.form.field.Date.1/app.js">/*global Ext:false */
+Ext.onReady(function() {
+    Ext.create('Ext.form.Panel', {
+        renderTo: Ext.getBody(),
+        width: 300,
+        bodyPadding: 10,
+        title: 'Dates',
+        items: [{
+            xtype: 'datefield',
+            anchor: '100%',
+            fieldLabel: 'From',
+            name: 'from_date',
+            maxValue: new Date() // limited to the current date or prior
+        }, {
+            xtype: 'datefield',
+            anchor: '100%',
+            fieldLabel: 'To',
+            name: 'to_date',
+            value: new Date() // defaults to today
+        }]
+    });
+});
+</pre>
     </div>
 
 </body>

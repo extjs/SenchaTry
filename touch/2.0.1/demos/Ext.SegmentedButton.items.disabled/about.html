@@ -86,7 +86,43 @@
     </div>
 
     <div class="hidden">
-        <pre class="example" data-uri="/touch/2.0.1/demos/Ext.SegmentedButton.items.disabled/app.js">(hidden)</pre>
+        <pre class="example" data-uri="/touch/2.0.1/demos/Ext.SegmentedButton.items.disabled/app.js">/*global Ext:false */
+Ext.application({
+    launch: function () {
+        Ext.create('Ext.Container', {
+            fullscreen: true,
+            items: [{
+                xtype: 'toolbar',
+                docked: 'top',
+                items: [{
+                    xtype: 'segmentedbutton',
+                    allowDepress: false,
+                    items: [{
+                        text: 'Tony',
+                        pressed: true
+                    }, {
+                        text: 'Angela'
+                    }, {
+                        text: 'Samantha',
+                        disabled: true
+                    }, {
+                        text: 'Jonathan',
+                        disabled: true
+                    }, {
+                        text: 'Mona',
+                        hidden: true
+                    }], // items (segmentedbutton)
+                    listeners: {
+                        toggle: function (segBtn, btn, isPressed) {
+                            Ext.Msg.alert('toggle', btn.getText() + ' was pressed.');
+                        } // toggle
+                    } // listeners
+                }] // items (toolbar)
+            }] // items (container)
+        }); // create()
+    } // launch
+}); // application()
+</pre>
     </div>
 
 </body>

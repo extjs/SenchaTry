@@ -92,7 +92,31 @@
     </div>
 
     <div class="hidden">
-        <pre class="example" data-uri="/extjs/4.0.7/demos/Ext.Button.disabled.1/app.js">(hidden)</pre>
+        <pre class="example" data-uri="/extjs/4.0.7/demos/Ext.Button.disabled.1/app.js">/*global Ext:false */
+Ext.onReady(function () {
+    var btn = Ext.create("Ext.Button", {
+        disabled: true,
+        handler: function () {
+            Ext.Msg.alert("", "You clicked the button.");
+        },
+        text: 'Button'
+    });
+    
+    Ext.create('Ext.Panel', {
+        bodyPadding: 20,
+        items: [btn],
+        renderTo: Ext.getBody(),
+        tbar: [{
+            xtype: "checkbox",
+            boxLabel: "disabled",
+            checked: btn.disabled,
+            handler: function () {
+                btn.setDisabled(this.checked);
+            }
+        }]
+    });
+});
+</pre>
     </div>
 
 </body>

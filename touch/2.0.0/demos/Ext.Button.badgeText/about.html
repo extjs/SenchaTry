@@ -86,7 +86,27 @@
     </div>
 
     <div class="hidden">
-        <pre class="example" data-uri="/touch/2.0.0/demos/Ext.Button.badgeText/app.js">(hidden)</pre>
+        <pre class="example" data-uri="/touch/2.0.0/demos/Ext.Button.badgeText/app.js">/*global Ext:false */
+Ext.application({
+    launch: function () {
+        var clickCount = 0;
+        
+        Ext.create('Ext.Container', {
+            fullscreen: true,
+            styleHtmlContent: true,
+            items: [{
+                xtype: 'button',
+                text: 'badgeText',
+                badgeText: '0',
+                width: 150,
+                handler: function () {
+                    this.setBadgeText(++clickCount);
+                } // handler
+            }] // items
+        }); // create()
+    } // launch
+}); // application()
+</pre>
     </div>
 
 </body>

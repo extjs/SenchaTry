@@ -91,7 +91,22 @@
     </div>
 
     <div class="hidden">
-        <pre class="example" data-uri="/extjs/4.0.7/demos/Ext.Msg.show.icon.2/app.js">(hidden)</pre>
+        <pre class="example" data-uri="/extjs/4.0.7/demos/Ext.Msg.show.icon.2/app.js">/*global Ext:false */
+Ext.onReady(function () {
+    Ext.create('Ext.Button', {
+        id: 'btn',
+        text: 'Click to launch dialog',
+        handler: function () {
+            Ext.Msg.show({
+                title: 'Status title',
+                msg: 'I\'m an Ext.Msg dialog with a custom icon.',
+                icon: 'customIcon'
+            });
+        },
+        renderTo: Ext.getBody()
+    });
+});
+</pre>
     </div>
 
 </body>

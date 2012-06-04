@@ -88,7 +88,26 @@
     </div>
 
     <div class="hidden">
-        <pre class="example" data-uri="/touch/2.0.1/docs/Ext.ActionSheet.1/app.js">(hidden)</pre>
+        <pre class="example" data-uri="/touch/2.0.1/docs/Ext.ActionSheet.1/app.js">/*global Ext:false */
+Ext.application({
+    launch: function() {
+        var actionSheet = Ext.create('Ext.ActionSheet', {
+            items: [{
+                text: 'Delete draft',
+                ui: 'decline'
+            }, {
+                text: 'Save draft'
+            }, {
+                text: 'Cancel',
+                ui: 'confirm'
+            }]
+        });
+
+        Ext.Viewport.add(actionSheet);
+        actionSheet.show();
+    }
+});
+</pre>
     </div>
 
 </body>

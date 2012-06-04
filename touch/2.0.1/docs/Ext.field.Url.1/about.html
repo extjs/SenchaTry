@@ -89,7 +89,24 @@
     </div>
 
     <div class="hidden">
-        <pre class="example" data-uri="/touch/2.0.1/docs/Ext.field.Url.1/app.js">(hidden)</pre>
+        <pre class="example" data-uri="/touch/2.0.1/docs/Ext.field.Url.1/app.js">/*global Ext:false */
+Ext.application({
+    launch: function() {
+        Ext.create('Ext.form.Panel', {
+            fullscreen: true,
+            items: [{
+                xtype: 'fieldset',
+                title: 'Add Bookmark',
+                items: [{
+                    xtype: 'urlfield',
+                    label: 'Url',
+                    name: 'url'
+                }]
+            }]
+        });
+    }
+});
+</pre>
     </div>
 
 </body>

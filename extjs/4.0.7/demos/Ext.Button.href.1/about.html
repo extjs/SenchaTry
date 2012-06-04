@@ -91,7 +91,15 @@
     </div>
 
     <div class="hidden">
-        <pre class="example" data-uri="/extjs/4.0.7/demos/Ext.Button.href.1/app.js">(hidden)</pre>
+        <pre class="example" data-uri="/extjs/4.0.7/demos/Ext.Button.href.1/app.js">/*global Ext:false */
+Ext.onReady(function () {
+    Ext.create('Ext.Button', {
+        href: 'http://sencha.com/',
+        renderTo: Ext.getBody(),
+        text: 'Go to Sencha.com'
+    }); // create()
+}); // onReady()
+</pre>
     </div>
 
 </body>

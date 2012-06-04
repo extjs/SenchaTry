@@ -94,7 +94,25 @@
     </div>
 
     <div class="hidden">
-        <pre class="example" data-uri="/touch/2.0.0/docs/Ext.layout.VBox.1/app.js">(hidden)</pre>
+        <pre class="example" data-uri="/touch/2.0.0/docs/Ext.layout.VBox.1/app.js">/*global Ext:false */
+Ext.application({
+    launch: function () {
+        Ext.create('Ext.Container', {
+            fullscreen: true,
+            layout: 'vbox',
+            items: [{
+                html: 'Awesome banner',
+                style: 'background-color: #759E60;',
+                flex: 1
+            }, {
+                html: 'Some wonderful information',
+                style: 'background-color: #5E99CC;',
+                flex: 2
+            }]
+        });
+    } // launch
+}); // application()
+</pre>
     </div>
 
 </body>

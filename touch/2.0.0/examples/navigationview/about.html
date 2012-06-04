@@ -86,14 +86,429 @@
     </div>
 
     <div class="hidden">
-        <pre class="example" data-uri="/touch/2.0.0/examples/navigationview/app.js">(hidden)</pre>
-        <pre class="example" data-uri="/touch/2.0.0/examples/navigationview/app/controller/Application.js">(hidden)</pre>
-        <pre class="example" data-uri="/touch/2.0.0/examples/navigationview/app/model/Contact.js">(hidden)</pre>
-        <pre class="example" data-uri="/touch/2.0.0/examples/navigationview/app/store/Contacts.js">(hidden)</pre>
-        <pre class="example" data-uri="/touch/2.0.0/examples/navigationview/app/view/Contacts.js">(hidden)</pre>
-        <pre class="example" data-uri="/touch/2.0.0/examples/navigationview/app/view/Main.js">(hidden)</pre>
-        <pre class="example" data-uri="/touch/2.0.0/examples/navigationview/app/view/contact/Edit.js">(hidden)</pre>
-        <pre class="example" data-uri="/touch/2.0.0/examples/navigationview/app/view/contact/Show.js">(hidden)</pre>
+        <pre class="example" data-uri="/touch/2.0.0/examples/navigationview/app.js">/*global Ext:false */
+Ext.application({
+    name: 'AddressBook',
+
+    phoneStartupScreen: 'resources/loading/Homescreen.jpg',
+    tabletStartupScreen: 'resources/loading/Homescreen~ipad.jpg',
+
+    glossOnIcon: false,
+    icon: {
+        57: 'resources/icons/icon.png',
+        72: 'resources/icons/icon@72.png',
+        114: 'resources/icons/icon@2x.png',
+        144: 'resources/icons/icon@114.png'
+    },
+
+    models: ['Contact'],
+    stores: ['Contacts'],
+    views: ['Main'],
+    controllers: ['Application'],
+
+    launch: function() {
+        Ext.Viewport.add({
+            xclass: 'AddressBook.view.Main'
+        });
+    }
+});
+</pre>
+        <pre class="example" data-uri="/touch/2.0.0/examples/navigationview/app/controller/Application.js">Ext.define('AddressBook.controller.Application', {
+    extend: 'Ext.app.Controller',
+
+    config: {
+        refs: {
+            main: 'mainview',
+            editButton: '#editButton',
+            contacts: 'contacts',
+            showContact: 'contact-show',
+            editContact: 'contact-edit',
+            saveButton: '#saveButton'
+        },
+
+        control: {
+            main: {
+                push: 'onMainPush',
+                pop: 'onMainPop'
+            },
+            editButton: {
+                tap: 'onContactEdit'
+            },
+            contacts: {
+                itemtap: 'onContactSelect'
+            },
+            saveButton: {
+                tap: 'onContactSave'
+            },
+            editContact: {
+                change: 'onContactChange'
+            }
+        }
+    },
+
+    onMainPush: function(view, item) {
+        var editButton = this.getEditButton();
+
+        if (item.xtype == "contact-show") {
+            this.getContacts().deselectAll();
+
+            this.showEditButton();
+        } else {
+            this.hideEditButton();
+        }
+    },
+
+    onMainPop: function(view, item) {
+        if (item.xtype == "contact-edit") {
+            this.showEditButton();
+        } else {
+            this.hideEditButton();
+        }
+    },
+
+    onContactSelect: function(list, index, node, record) {
+        var editButton = this.getEditButton();
+
+        if (!this.showContact) {
+            this.showContact = Ext.create('AddressBook.view.contact.Show');
+        }
+
+        // Bind the record onto the show contact view
+        this.showContact.setRecord(record);
+
+        // Push the show contact view into the navigation view
+        this.getMain().push(this.showContact);
+    },
+
+    onContactEdit: function() {
+        if (!this.editContact) {
+            this.editContact = Ext.create('AddressBook.view.contact.Edit');
+        }
+
+        // Bind the record onto the edit contact view
+        this.editContact.setRecord(this.getShowContact().getRecord());
+
+        this.getMain().push(this.editContact);
+    },
+
+    onContactChange: function() {
+        this.showSaveButton();
+    },
+
+    onContactSave: function() {
+        var record = this.getEditContact().saveRecord();
+
+        this.getShowContact().updateRecord(record);
+
+        this.getMain().pop();
+    },
+
+    showEditButton: function() {
+        var editButton = this.getEditButton();
+
+        if (!editButton.isHidden()) {
+            return;
+        }
+
+        this.hideSaveButton();
+
+        editButton.show();
+    },
+
+    hideEditButton: function() {
+        var editButton = this.getEditButton();
+
+        if (editButton.isHidden()) {
+            return;
+        }
+
+        editButton.hide();
+    },
+
+    showSaveButton: function() {
+        var saveButton = this.getSaveButton();
+
+        if (!saveButton.isHidden()) {
+            return;
+        }
+
+        saveButton.show();
+    },
+
+    hideSaveButton: function() {
+        var saveButton = this.getSaveButton();
+
+        if (saveButton.isHidden()) {
+            return;
+        }
+
+        saveButton.hide();
+    }
+});
+</pre>
+        <pre class="example" data-uri="/touch/2.0.0/examples/navigationview/app/model/Contact.js">Ext.define('AddressBook.model.Contact', {
+    extend: 'Ext.data.Model',
+
+    config: {
+        fields: [
+            'firstName',
+            'lastName',
+            'headshot',
+            'title',
+            'telephone',
+            'city',
+            'state',
+            'country',
+            'latitude',
+            'longitude'
+        ]
+    }
+});
+</pre>
+        <pre class="example" data-uri="/touch/2.0.0/examples/navigationview/app/store/Contacts.js">Ext.define('AddressBook.store.Contacts', {
+    extend: 'Ext.data.Store',
+
+    config: {
+        model: 'AddressBook.model.Contact',
+        autoLoad: true,
+        sorters: 'firstName',
+        grouper: {
+            groupFn: function(record) {
+                return record.get('lastName')[0];
+            }
+        },
+        proxy: {
+            type: 'ajax',
+            url: 'contacts.json'
+        }
+    }
+});
+</pre>
+        <pre class="example" data-uri="/touch/2.0.0/examples/navigationview/app/view/Contacts.js">Ext.define('AddressBook.view.Contacts', {
+    extend: 'Ext.List',
+    xtype: 'contacts',
+
+    config: {
+        title: 'Address Book',
+        cls: 'x-contacts',
+
+        store: 'Contacts',
+        itemTpl: [
+            '<div class="headshot" style="background-image:url(resources/images/headshots/{headshot});"></div>',
+            '{firstName} {lastName}',
+            '<span>{title}</span>'
+        ].join('')
+    }
+});
+</pre>
+        <pre class="example" data-uri="/touch/2.0.0/examples/navigationview/app/view/Main.js">Ext.define('AddressBook.view.Main', {
+    extend: 'Ext.navigation.View',
+    xtype: 'mainview',
+
+    requires: [
+        'AddressBook.view.Contacts',
+        'AddressBook.view.contact.Show',
+        'AddressBook.view.contact.Edit'
+    ],
+
+    config: {
+        autoDestroy: false,
+
+        navigationBar: {
+            ui: 'sencha',
+            items: [
+                {
+                    xtype: 'button',
+                    id: 'editButton',
+                    text: 'Edit',
+                    align: 'right',
+                    hidden: true,
+                    hideAnimation: Ext.os.is.Android ? false : {
+                        type: 'fadeOut',
+                        duration: 200
+                    },
+                    showAnimation: Ext.os.is.Android ? false : {
+                        type: 'fadeIn',
+                        duration: 200
+                    }
+                },
+                {
+                    xtype: 'button',
+                    id: 'saveButton',
+                    text: 'Save',
+                    ui: 'sencha',
+                    align: 'right',
+                    hidden: true,
+                    hideAnimation: Ext.os.is.Android ? false : {
+                        type: 'fadeOut',
+                        duration: 200
+                    },
+                    showAnimation: Ext.os.is.Android ? false : {
+                        type: 'fadeIn',
+                        duration: 200
+                    }
+                }
+            ]
+        },
+
+        items: [
+            { xtype: 'contacts' }
+        ]
+    }
+});
+</pre>
+        <pre class="example" data-uri="/touch/2.0.0/examples/navigationview/app/view/contact/Edit.js">Ext.define('AddressBook.view.contact.Edit', {
+    extend: 'Ext.Container',
+    xtype: 'contact-edit',
+
+    config: {
+        title: 'Edit',
+        layout: 'fit',
+
+        items: [
+            {
+                xtype: 'formpanel',
+                items: [
+                    {
+                        xtype: 'fieldset',
+                        defaults: {
+                            labelWidth: '35%'
+                        },
+                        title: 'Information',
+                        items: [
+                            {
+                                xtype: 'textfield',
+                                label: 'First Name',
+                                name: 'firstName'
+                            },
+                            {
+                                xtype: 'textfield',
+                                label: 'Last Name',
+                                name: 'lastName'
+                            },
+                            {
+                                xtype: 'textfield',
+                                label: 'Title',
+                                name: 'title'
+                            }
+                        ]
+                    },
+                    {
+                        xtype: 'fieldset',
+                        defaults: {
+                            labelWidth: '35%'
+                        },
+                        title: 'Contact Information',
+                        items: [
+                            {
+                                xtype: 'textfield',
+                                label: 'Telephone',
+                                name: 'telephone'
+                            }
+                        ]
+                    },
+                    {
+                        xtype: 'fieldset',
+                        title: 'Address',
+                        defaults: {
+                            labelWidth: '35%'
+                        },
+                        items: [
+                            {
+                                xtype: 'textfield',
+                                label: 'City',
+                                name: 'city'
+                            },
+                            {
+                                xtype: 'textfield',
+                                label: 'State',
+                                name: 'state'
+                            },
+                            {
+                                xtype: 'textfield',
+                                label: 'Country',
+                                name: 'country'
+                            }
+                        ]
+                    }
+                ]
+            }
+        ],
+
+        listeners: {
+            delegate: 'textfield',
+            keyup: 'onKeyUp'
+        },
+
+        record: null
+    },
+
+    updateRecord: function(newRecord) {
+        this.down('formpanel').setRecord(newRecord);
+    },
+
+    saveRecord: function() {
+        var formPanel = this.down('formpanel'),
+            record = formPanel.getRecord();
+
+        formPanel.updateRecord(record);
+
+        return record;
+    },
+
+    onKeyUp: function() {
+        this.fireEvent('change', this);
+    }
+});
+</pre>
+        <pre class="example" data-uri="/touch/2.0.0/examples/navigationview/app/view/contact/Show.js">Ext.define('AddressBook.view.contact.Show', {
+    extend: 'Ext.Container',
+    xtype: 'contact-show',
+
+    config: {
+        title: 'Information',
+        baseCls: 'x-show-contact',
+        layout: 'vbox',
+
+        items: [
+            {
+                id: 'content',
+                tpl: [
+                    '<div class="top">',
+                        '<div class="headshot" style="background-image:url(resources/images/headshots/{headshot});"></div>',
+                        '<div class="name">{firstName} {lastName}<span>{title}</span></div>',
+                    '</div>'
+                ].join('')
+            },
+            {
+                xtype: 'map',
+                flex: 1,
+                mapOptions: {
+                    zoomControl: false,
+                    panControl: false,
+                    rotateControl: false,
+                    streetViewControl: false,
+                    mapTypeControl: false,
+                    zoom: 13
+                }
+            }
+        ],
+
+        record: null
+    },
+
+    updateRecord: function(newRecord) {
+        if (newRecord) {
+            this.down('#content').setData(newRecord.data);
+
+            this.down('map').setMapCenter({
+                latitude: newRecord.data.latitude,
+                longitude: newRecord.data.longitude
+            });
+        }
+    }
+});
+</pre>
     </div>
 
 </body>

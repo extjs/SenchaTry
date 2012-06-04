@@ -89,7 +89,12 @@
     </div>
 
     <div class="hidden">
-        <pre class="example" data-uri="/extjs/4.0.7/demos/Ext.Version.getVersion.1/app.js">(hidden)</pre>
+        <pre class="example" data-uri="/extjs/4.0.7/demos/Ext.Version.getVersion.1/app.js">/*global Ext:false */
+Ext.onReady(function () {
+    Ext.Msg.show({title: 'Built using Sencha Ext JS ' + Ext.getVersion('extjs'),
+        closable: false});
+});
+</pre>
     </div>
 
 </body>

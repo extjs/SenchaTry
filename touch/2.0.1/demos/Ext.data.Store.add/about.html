@@ -86,7 +86,34 @@
     </div>
 
     <div class="hidden">
-        <pre class="example" data-uri="/touch/2.0.1/demos/Ext.data.Store.add/app.js">(hidden)</pre>
+        <pre class="example" data-uri="/touch/2.0.1/demos/Ext.data.Store.add/app.js">/*global Ext:false */
+Ext.application({
+    launch: function () {
+        var myStore = Ext.create('Ext.data.Store', {
+            storeId: 'MyStore',
+            fields: ['txt']
+        }); // create()
+        
+        Ext.create('Ext.List', {
+            fullscreen: true,
+            store: 'MyStore',
+            itemTpl: '{txt}',
+            items: [{
+                xtype: 'titlebar',
+                docked: 'top',
+                items: [{
+                    text: 'Add item',
+                    handler: function () {
+                        var now = new Date(),
+                            value = now.toLocaleDateString() + ' ' + now.toLocaleTimeString();
+                        myStore.add({txt: value});
+                    } // handler
+                }] // items (titlebar)
+            }] // items (list)
+        }); // create()
+    } // launch
+}); // application()
+</pre>
     </div>
 
 </body>

@@ -86,7 +86,31 @@
     </div>
 
     <div class="hidden">
-        <pre class="example" data-uri="/touch/2.0.1/demos/Ext.SegmentedButton.iconCls/app.js">(hidden)</pre>
+        <pre class="example" data-uri="/touch/2.0.1/demos/Ext.SegmentedButton.iconCls/app.js">/*global Ext:false */
+Ext.application({
+    launch: function () {
+        Ext.create('Ext.Panel', {
+            fullscreen: true,
+            styleHtmlContent: true,
+            items: [{
+                xtype: 'segmentedbutton',
+                items: [{
+                    iconCls: 'home',
+                    iconMask: true
+                }, {
+                    iconCls: 'settings',
+                    iconMask: true,
+                    text: 'Settings'
+                }, {
+                    iconCls: 'maps',
+                    iconMask: true,
+                    text: 'Maps'
+                }] // items
+            }] // items
+        }); // create()
+    } // launch
+}); // application()
+</pre>
     </div>
 
 </body>

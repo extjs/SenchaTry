@@ -86,7 +86,33 @@
     </div>
 
     <div class="hidden">
-        <pre class="example" data-uri="/touch/2.0.0/guides/list.1/app.js">(hidden)</pre>
+        <pre class="example" data-uri="/touch/2.0.0/guides/list.1/app.js">/*global Ext:false */
+Ext.application({
+    launch: function () {
+        Ext.create('Ext.List', {
+            fullscreen: true,
+            store: {
+                fields: ['name'],
+                data: [{
+                    name: 'Cowper'
+                }, {
+                    name: 'Everett'
+                }, {
+                    name: 'University'
+                }, {
+                    name: 'Forest'
+                }]
+            },
+            itemTpl: '{name}',
+            listeners: {
+                select: function (view, record) {
+                    Ext.Msg.alert('Selected!', 'You selected ' + record.get('name'));
+                }
+            }
+        });
+    } // launch
+}); // application()
+</pre>
     </div>
 
 </body>

@@ -94,7 +94,30 @@
     </div>
 
     <div class="hidden">
-        <pre class="example" data-uri="/touch/2.0.0/docs/Ext.tab.Panel.1/app.js">(hidden)</pre>
+        <pre class="example" data-uri="/touch/2.0.0/docs/Ext.tab.Panel.1/app.js">/*global Ext:false */
+Ext.application({
+    launch: function () {
+        Ext.create('Ext.TabPanel', {
+            fullscreen: true,
+            tabBarPosition: 'bottom',
+
+            defaults: {
+                styleHtmlContent: true
+            },
+
+            items: [{
+                title: 'Home',
+                iconCls: 'home',
+                html: 'Home Screen'
+            }, {
+                title: 'Contact',
+                iconCls: 'user',
+                html: 'Contact Screen'
+            }]
+        });
+    } // launch
+}); // application()
+</pre>
     </div>
 
 </body>

@@ -88,7 +88,39 @@
     </div>
 
     <div class="hidden">
-        <pre class="example" data-uri="/touch/2.0.1/docs/Ext.util.Sorter.1/app.js">(hidden)</pre>
+        <pre class="example" data-uri="/touch/2.0.1/docs/Ext.util.Sorter.1/app.js">/*global Ext:false */
+Ext.application({
+    launch: function() {
+        var store = Ext.create('Ext.data.Store', {
+            fields: ['firstName', 'lastName'],
+            sorters: 'lastName',
+
+            data: [{
+                firstName: 'Tommy',
+                lastName: 'Maintz'
+            }, {
+                firstName: 'Rob',
+                lastName: 'Dougan'
+            }, {
+                firstName: 'Ed',
+                lastName: 'Spencer'
+            }, {
+                firstName: 'Jamie',
+                lastName: 'Avins'
+            }, {
+                firstName: 'Nick',
+                lastName: 'Poulden'
+            }]
+        });
+
+        Ext.create('Ext.List', {
+            fullscreen: true,
+            itemTpl: '<div class="contact">{firstName} <strong>{lastName}</strong></div>',
+            store: store
+        });
+    }
+});
+</pre>
     </div>
 
 </body>

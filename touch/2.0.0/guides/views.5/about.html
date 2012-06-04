@@ -86,7 +86,23 @@
     </div>
 
     <div class="hidden">
-        <pre class="example" data-uri="/touch/2.0.0/guides/views.5/app.js">(hidden)</pre>
+        <pre class="example" data-uri="/touch/2.0.0/guides/views.5/app.js">/*global Ext:false */
+Ext.application({
+    launch: function () {
+        Ext.define('MyApp.view.MyView', {
+            extend: 'Ext.Panel',
+            config: {
+                border: 10
+            }
+        });
+
+        var view = Ext.create('MyApp.view.MyView');
+        alert(view.getBorder()); //alerts 10
+        view.setBorder(15);
+        alert(view.getBorder()); //now alerts 15
+    } // launch
+}); // application()
+</pre>
     </div>
 
 </body>

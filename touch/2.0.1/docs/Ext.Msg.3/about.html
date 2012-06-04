@@ -88,7 +88,13 @@
     </div>
 
     <div class="hidden">
-        <pre class="example" data-uri="/touch/2.0.1/docs/Ext.Msg.3/app.js">(hidden)</pre>
+        <pre class="example" data-uri="/touch/2.0.1/docs/Ext.Msg.3/app.js">/*global Ext:false */
+Ext.application({
+    launch: function() {
+        Ext.Msg.confirm("Confirmation", "Are you sure you want to do that?", Ext.emptyFn);
+    }
+});
+</pre>
     </div>
 
 </body>

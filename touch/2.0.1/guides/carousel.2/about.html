@@ -86,7 +86,28 @@
     </div>
 
     <div class="hidden">
-        <pre class="example" data-uri="/touch/2.0.1/guides/carousel.2/app.js">(hidden)</pre>
+        <pre class="example" data-uri="/touch/2.0.1/guides/carousel.2/app.js">/*global Ext:false */
+Ext.application({
+    launch: function() {
+        Ext.create('Ext.Carousel', {
+            fullscreen: true,
+            direction: 'vertical',
+
+            defaults: {
+                styleHtmlContent: true
+            },
+
+            items: [{
+                html: 'Item 1',
+                style: 'background-color: #759E60'
+            }, {
+                html: 'Item 2',
+                style: 'background-color: #5E99CC'
+            }]
+        });
+    }
+});
+</pre>
     </div>
 
 </body>

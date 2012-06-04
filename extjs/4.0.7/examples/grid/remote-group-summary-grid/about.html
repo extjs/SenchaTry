@@ -86,11 +86,843 @@
     </div>
 
     <div class="hidden">
-        <pre class="example" data-uri="/extjs/4.0.7/examples/grid/remote-group-summary-grid/app.js">(hidden)</pre>
-        <pre class="example" data-uri="/extjs/4.0.7/examples/grid/remote-group-summary-grid/ux/ajax/JsonSimlet.js">(hidden)</pre>
-        <pre class="example" data-uri="/extjs/4.0.7/examples/grid/remote-group-summary-grid/ux/ajax/SimManager.js">(hidden)</pre>
-        <pre class="example" data-uri="/extjs/4.0.7/examples/grid/remote-group-summary-grid/ux/ajax/SimXhr.js">(hidden)</pre>
-        <pre class="example" data-uri="/extjs/4.0.7/examples/grid/remote-group-summary-grid/ux/ajax/Simlet.js">(hidden)</pre>
+        <pre class="example" data-uri="/extjs/4.0.7/examples/grid/remote-group-summary-grid/app.js">/*global Ext:false */
+/*
+
+This file is part of Ext JS 4
+
+Copyright (c) 2011 Sencha Inc
+
+Contact:  http://www.sencha.com/contact
+
+GNU General Public License Usage
+This file may be used under the terms of the GNU General Public License version 3.0 as published by the Free Software Foundation and appearing in the file LICENSE included in the packaging of this file.  Please review the following information to ensure the GNU General Public License version 3.0 requirements will be met: http://www.gnu.org/copyleft/gpl.html.
+
+If you are unsure which license is appropriate for your use, please contact the sales department at http://www.sencha.com/contact.
+
+*/
+Ext.Loader.setConfig({ enabled: true });
+Ext.Loader.setPath('Ext.ux', 'ux');
+
+Ext.require([
+    'Ext.grid.*',
+    'Ext.data.*',
+    'Ext.ux.ajax.SimManager'
+]);
+
+Ext.define('Task', {
+    extend: 'Ext.data.Model',
+    idProperty: 'taskId',
+    fields: [
+        {name: 'projectId', type: 'int'},
+        {name: 'project', type: 'string'},
+        {name: 'taskId', type: 'int'},
+        {name: 'description', type: 'string'},
+        {name: 'estimate', type: 'float'},
+        {name: 'rate', type: 'float'},
+        {name: 'cost', type: 'float'},
+        {name: 'due', type: 'date', dateFormat:'m/d/Y'}
+    ]
+});
+
+Ext.onReady(function(){
+    initAjaxSim();
+
+    var store = Ext.create('Ext.data.Store', {
+        model: 'Task',
+        autoLoad: true,
+        remoteSort: true,
+        remoteGroup: true,
+        proxy: {
+            type: 'ajax',
+            //url: 'remote-group-summary-grid.json',
+            url: 'remote-group-summary-data',
+            reader: {
+                type: 'json',
+                root: 'data'
+            }
+        },
+        sorters: {property: 'due', direction: 'ASC'},
+        groupField: 'project'
+    });
+    
+    var grid = Ext.create('Ext.grid.Panel', {
+        width: 800,
+        height: 450,
+        title: 'Sponsored Projects',
+        renderTo: Ext.getBody(),
+        store: store,
+        viewConfig: {
+            stripeRows: false
+        },
+        dockedItems: [{
+            dock: 'top',
+            xtype: 'toolbar',
+            items: [{
+                text: 'Show Summary',
+                pressed: true,
+                enableToggle: true,
+                toggleHandler: function(btn, pressed){
+                    var view = grid.getView();
+                    view.getFeature('group').toggleSummaryRow(pressed);
+                    view.refresh();
+                }
+            }]
+        }],
+        features: [{
+            id: 'group',
+            ftype: 'groupingsummary',
+            groupHeaderTpl: '{name}',
+            hideGroupedHeader: true,
+            remoteRoot: 'summaryData'
+        }],
+        columns: [{
+            text: 'Task',
+            flex: 1,
+            sortable: true,
+            tdCls: 'task',
+            dataIndex: 'description',
+            hideable: false,
+            summaryRenderer: function(value, summaryData, dataIndex) {
+                return ((value === 0 || value > 1) ? '(' + value + ' Tasks)' : '(1 Task)');
+            }
+        }, {
+            header: 'Project',
+            width: 20,
+            sortable: true,
+            dataIndex: 'project'
+        }, {
+            header: 'Due Date',
+            width: 80,
+            sortable: true,
+            dataIndex: 'due',
+            renderer: Ext.util.Format.dateRenderer('m/d/Y')
+        }, {
+            header: 'Estimate',
+            width: 75,
+            sortable: true,
+            dataIndex: 'estimate',
+            renderer: function(value, metaData, record, rowIdx, colIdx, store, view){
+                return value + ' hours';
+            },
+            summaryRenderer: function(value, summaryData, dataIndex) {
+                return value + ' hours';
+            }
+        }, {
+            header: 'Rate',
+            width: 75,
+            sortable: true,
+            renderer: Ext.util.Format.usMoney,
+            summaryRenderer: Ext.util.Format.usMoney,
+            dataIndex: 'rate',
+            summaryType: 'average'
+        }, {
+            id: 'cost',
+            header: 'Cost',
+            width: 75,
+            sortable: false,
+            groupable: false,
+            renderer: function(value, metaData, record, rowIdx, colIdx, store, view) {
+                return Ext.util.Format.usMoney(record.get('estimate') * record.get('rate'));
+            },
+            dataIndex: 'cost',
+            summaryRenderer: Ext.util.Format.usMoney
+        }]
+    });
+});
+
+/*
+ * Setup our faux Ajax response "simlet".
+ */
+function initAjaxSim () {
+    Ext.ux.ajax.SimManager.register({
+        'remote-group-summary-data' : {
+            stype: 'json',
+
+            data: [
+                {projectId: 100, project: 'Forms: Field Anchoring', taskId: 112, description: 'Integrate 2.0 Forms with 2.0 Layouts', estimate: 6, rate: 150, due:'06/24/2007'},
+                {projectId: 100, project: 'Forms: Field Anchoring', taskId: 113, description: 'Implement AnchorLayout', estimate: 4, rate: 150, due:'06/25/2007'},
+                {projectId: 100, project: 'Forms: Field Anchoring', taskId: 114, description: 'Add support for multiple types of anchors', estimate: 4, rate: 150, due:'06/27/2007'},
+                {projectId: 100, project: 'Forms: Field Anchoring', taskId: 115, description: 'Testing and debugging', estimate: 8, rate: 0, due:'06/29/2007'},
+                {projectId: 101, project: 'Grid: Single-level Grouping', taskId: 101, description: 'Add required rendering "hooks" to GridView', estimate: 6, rate: 100, due:'07/01/2007'},
+                {projectId: 101, project: 'Grid: Single-level Grouping', taskId: 102, description: 'Extend GridView and override rendering functions', estimate: 6, rate: 100, due:'07/03/2007'},
+                {projectId: 101, project: 'Grid: Single-level Grouping', taskId: 103, description: 'Extend Store with grouping functionality', estimate: 4, rate: 100, due:'07/04/2007'},
+                {projectId: 101, project: 'Grid: Single-level Grouping', taskId: 121, description: 'Default CSS Styling', estimate: 2, rate: 100, due:'07/05/2007'},
+                {projectId: 101, project: 'Grid: Single-level Grouping', taskId: 104, description: 'Testing and debugging', estimate: 6, rate: 100, due:'07/06/2007'},
+                {projectId: 102, project: 'Grid: Summary Rows', taskId: 105, description: 'Ext Grid plugin integration', estimate: 4, rate: 125, due:'07/01/2007'},
+                {projectId: 102, project: 'Grid: Summary Rows', taskId: 106, description: 'Summary creation during rendering phase', estimate: 4, rate: 125, due:'07/02/2007'},
+                {projectId: 102, project: 'Grid: Summary Rows', taskId: 107, description: 'Dynamic summary updates in editor grids', estimate: 6, rate: 125, due:'07/05/2007'},
+                {projectId: 102, project: 'Grid: Summary Rows', taskId: 108, description: 'Remote summary integration', estimate: 4, rate: 125, due:'07/05/2007'},
+                {projectId: 102, project: 'Grid: Summary Rows', taskId: 109, description: 'Summary renderers and calculators', estimate: 4, rate: 125, due:'07/06/2007'},
+                {projectId: 102, project: 'Grid: Summary Rows', taskId: 110, description: 'Integrate summaries with GroupingView', estimate: 10, rate: 125, due:'07/11/2007'},
+                {projectId: 102, project: 'Grid: Summary Rows', taskId: 111, description: 'Testing and debugging', estimate: 8, rate: 125, due:'07/15/2007'}
+            ],
+
+            getGroupSummary: function (groupField, rows, ctx) {
+                var ret = Ext.apply({}, rows[0]);
+                ret.cost = 0;
+                ret.estimate = 0;
+                Ext.each(rows, function (row) {
+                    ret.estimate += row.estimate;
+                    ret.cost += row.estimate * row.rate;
+                });
+                ret.estimate *= -1;
+                ret.cost *= -1;
+                return ret;
+            }
+        }
+    });
+}
+
+</pre>
+        <pre class="example" data-uri="/extjs/4.0.7/examples/grid/remote-group-summary-grid/ux/ajax/JsonSimlet.js">/*
+
+This file is part of Ext JS 4
+
+Copyright (c) 2011 Sencha Inc
+
+Contact:  http://www.sencha.com/contact
+
+GNU General Public License Usage
+This file may be used under the terms of the GNU General Public License version 3.0 as published by the Free Software Foundation and appearing in the file LICENSE included in the packaging of this file.  Please review the following information to ensure the GNU General Public License version 3.0 requirements will be met: http://www.gnu.org/copyleft/gpl.html.
+
+If you are unsure which license is appropriate for your use, please contact the sales department at http://www.sencha.com/contact.
+
+*/
+/**
+ * @class Ext.ux.ajax.JsonSimlet
+ */
+Ext.define('Ext.ux.ajax.JsonSimlet', function () {
+
+    function makeSortFn (def, cmp) {
+        var order = def.direction,
+            sign = (order && order.toUpperCase() == 'DESC') ? -1 : 1;
+
+        return function (leftRec, rightRec) {
+            var lhs = leftRec[def.property],
+                rhs = rightRec[def.property],
+                c = (lhs < rhs) ? -1 : ((rhs < lhs) ? 1 : 0);
+
+            if (c || !cmp) {
+                return c * sign;
+            }
+
+            return cmp(leftRec, rightRec);
+        }
+    }
+
+    function makeSortFns (defs, cmp) {
+        for (var sortFn = cmp, i = defs && defs.length; i; ) {
+            sortFn = makeSortFn(defs[--i], sortFn);
+        }
+        return sortFn;
+    }
+
+    return {
+        extend: 'Ext.ux.ajax.Simlet',
+        alias: 'simlet.json',
+
+        getData: function (ctx) {
+            var me = this,
+                data = me.data,
+                params = ctx.params,
+                order = (params.group || '') + (params.sort || ''),
+                fields,
+                sortFn,
+                i;
+
+            if (!order) {
+                return data;
+            }
+
+            if (order == me.currentOrder) {
+                return me.sortedData;
+            }
+
+            ctx.sortSpec = fields = params.sort && Ext.decode(params.sort);
+            sortFn = makeSortFns(fields);
+
+            ctx.groupSpec = fields = params.group && Ext.decode(params.group);
+            sortFn = makeSortFns(fields, sortFn);
+
+            data = data.slice(0); // preserve 'physical' order of raw data...
+            data.sort(sortFn);
+
+            me.sortedData = data;
+            me.currentOrder = order;
+
+            return data;
+        },
+
+        getPage: function (ctx, data) {
+            var ret = data,
+                length = data.length,
+                start = ctx.params.start || 0,
+                end = ctx.params.limit ? Math.min(length, start + ctx.params.limit) : length;
+
+            if (start || end < length) {
+                ret = ret.slice(start, end);
+            }
+
+            return ret;
+        },
+
+        getGroupSummary: function (groupField, rows, ctx) {
+            return rows[0];
+        },
+
+        getSummary: function (ctx, data, page) {
+            var me = this,
+                groupField = ctx.groupSpec[0].property,
+                accum,
+                todo = {},
+                summary = [],
+                fieldValue,
+                lastFieldValue;
+
+            Ext.each(page, function (rec) {
+                fieldValue = rec[groupField];
+                todo[fieldValue] = true;
+            });
+
+            function flush () {
+                if (accum) {
+                    summary.push(me.getGroupSummary(groupField, accum, ctx));
+                    accum = null;
+                }
+            }
+
+            // data is ordered primarily by the groupField, so one pass can pick up all
+            // the summaries one at a time.
+            Ext.each(data, function (rec) {
+                fieldValue = rec[groupField];
+
+                if (lastFieldValue !== fieldValue) {
+                    flush();
+                    lastFieldValue = fieldValue;
+                }
+
+                if (!todo[fieldValue]) {
+                    // if we have even 1 summary, we have summarized all that we need
+                    // (again because data and page are ordered by groupField)
+                    return !summary.length;
+                }
+
+                if (accum) {
+                    accum.push(rec);
+                } else {
+                    accum = [rec];
+                }
+
+                return true;
+            });
+
+            flush(); // make sure that last pesky summary goes...
+
+            return summary;
+        },
+
+        doGet: function (ctx) {
+            var me = this,
+                data = me.getData(ctx),
+                page = me.getPage(ctx, data),
+                response = {
+                    data: page,
+                    totalRecords: data.length
+                },
+                ret = this.callParent(arguments); // pick up status/statusText
+
+            if (ctx.groupSpec) {
+                response.summaryData = me.getSummary(ctx, data, page);
+            }
+
+            ret.responseText = Ext.encode(response);
+            return ret;
+        }
+    };
+}());
+
+</pre>
+        <pre class="example" data-uri="/extjs/4.0.7/examples/grid/remote-group-summary-grid/ux/ajax/SimManager.js">/*
+
+This file is part of Ext JS 4
+
+Copyright (c) 2011 Sencha Inc
+
+Contact:  http://www.sencha.com/contact
+
+GNU General Public License Usage
+This file may be used under the terms of the GNU General Public License version 3.0 as published by the Free Software Foundation and appearing in the file LICENSE included in the packaging of this file.  Please review the following information to ensure the GNU General Public License version 3.0 requirements will be met: http://www.gnu.org/copyleft/gpl.html.
+
+If you are unsure which license is appropriate for your use, please contact the sales department at http://www.sencha.com/contact.
+
+*/
+/**
+ * @author Don Griffin
+ * @class Ext.ux.ajax.SimManager
+ *
+ * This singleton manages simulated Ajax responses. This allows application logic to be
+ * written unaware that its Ajax calls are being handled by simulations ("simlets"). This
+ * is currently done by hooking {@link Ext.data.Connection} methods, so all users of that
+ * class (and {@link Ext.Ajax} since it is a derived class) qualify for simulation.
+ *
+ * The requires hooks are inserted when either the {@link #init} method is called or the
+ * first {@link Simlet} is registered. For example:
+ *
+ *      Ext.onReady(function () {
+ *          initAjaxSim();
+ *
+ *          // normal stuff
+ *      });
+ *
+ *      function initAjaxSim () {
+ *          Ext.ux.ajax.SimManager.init({
+ *              delay: 300
+ *          }).register({
+ *              '/app/data/url': {
+ *                  stype: 'json',  // use JsonSimlet (stype is like xtype for components)
+ *                  data: [
+ *                      { foo: 42, bar: 'abc' },
+ *                      ...
+ *                  ]
+ *              }
+ *          });
+ *      }
+ *
+ * As many URL's as desired can be registered and associated with a {@link Simlet}. To make
+ * non-simulated Ajax requests once this singleton is initialized, add a `nosim:true` option
+ * to the Ajax options:
+ *
+ *      Ext.Ajax.request({
+ *          url: 'page.php',
+ *          nosim: true, // ignored by normal Ajax request
+ *          params: {
+ *              id: 1
+ *          },
+ *          success: function(response){
+ *              var text = response.responseText;
+ *              // process server response here
+ *          }
+ *      });
+ *
+ * @markdown
+ */
+Ext.define('Ext.ux.ajax.SimManager', {
+    singleton: true,
+
+    requires: [
+        'Ext.data.Connection',
+        'Ext.ux.ajax.SimXhr',
+        'Ext.ux.ajax.Simlet',
+        'Ext.ux.ajax.JsonSimlet'
+    ],
+
+    /**
+     * @cfg {Ext.ux.ajax.Simlet} defaultSimlet
+     * The {@link Simlet} instance to use for non-matching URL's. By default, this will
+     * return 404. Set this to null to use real Ajax calls for non-matching URL's.
+     */
+
+    /**
+     * @cfg {String} defaultType
+     * The default `stype` to apply to generic {@link Simlet} configuration objects. The
+     * default is 'basic'.
+     */
+    defaultType: 'basic',
+
+    /**
+     * @cfg {Number} delay
+     * The number of milliseconds to delay before delivering a response to an async request.
+     */
+    delay: 150,
+
+    /**
+     * @prop {Boolean} ready
+     * True once this singleton has initialized and applied its Ajax hooks.
+     * @private
+     */
+    ready: false,
+
+    constructor: function () {
+        this.simlets = {};
+    },
+
+    getXhr: function (url) {
+        // Strip down to base URL (no query parameters or hash):
+        var me = this,
+            index = url.indexOf('?');
+
+        if (index < 0) {
+            index = url.indexOf('#');
+        }
+        if (index > 0) {
+            url = url.substring(0, index);
+        }
+
+        var simlet = me.simlets[url] || me.defaultSimlet;
+
+        if (simlet) {
+            return Ext.create('Ext.ux.ajax.SimXhr', { mgr: me, simlet: simlet });
+        }
+        return null;
+    },
+
+    /**
+     * Initializes this singleton and applies configuration options.
+     * @param {Object} config An optional object with configuration properties to apply.
+     * @return {SimManager} this
+     * @markdown
+     */
+    init: function (config) {
+        var me = this,
+            proto = Ext.data.Connection.prototype,
+            newXhr = proto.getXhrInstance,
+            setOptions = proto.setOptions,
+            url;
+
+        Ext.apply(me, config);
+
+        if (!me.ready) {
+            me.ready = true;
+
+            if (!('defaultSimlet' in me)) {
+                me.defaultSimlet = Ext.create('Ext.ux.ajax.Simlet', {
+                    status: 404,
+                    statusText: 'Not Found'
+                });
+            }
+
+            proto.getXhrInstance = function () {
+                // the only way 'url' will be null is for nosim...
+                var xhr = url && me.getXhr(url);
+                if (!xhr) {
+                    xhr = newXhr.call(this);
+                }
+                return xhr;
+            };
+
+            proto.setOptions = function (options) {
+                var ret = setOptions.apply(this, arguments);
+                // remember the URL so we can give the right Simlet to the SimXhr...
+                url = options.nosim ? null : ret.url;
+                return ret;
+            };
+        }
+
+        return me;
+    },
+
+    /**
+     * Registeres one or more {@link Simlet} instances.
+     * @param {Array/Object} simlet Either a {@link Simlet} instance or config, an Array
+     * of such elements or an Object keyed by URL with values that are {@link Simlet}
+     * instances or configs.
+     * @markdown
+     */
+    register: function (simlet) {
+        var me = this,
+            i, n;
+
+        me.init();
+
+        function reg (one) {
+            var simlet = one;
+            if (!simlet.isSimlet) {
+                simlet = Ext.create('simlet.' + (simlet.stype || me.defaultType), one);
+            }
+            me.simlets[one.url] = simlet;
+        }
+
+        if (Ext.isArray(simlet)) {
+            Ext.each(simlet, reg);
+        } else if (simlet.isSimlet || simlet.url) {
+            reg(simlet);
+        } else {
+            Ext.Object.each(simlet, function (url, s) {
+                s.url = url;
+                reg(s);
+            });
+        }
+
+        return me;
+    }
+});
+
+</pre>
+        <pre class="example" data-uri="/extjs/4.0.7/examples/grid/remote-group-summary-grid/ux/ajax/SimXhr.js">/*
+
+This file is part of Ext JS 4
+
+Copyright (c) 2011 Sencha Inc
+
+Contact:  http://www.sencha.com/contact
+
+GNU General Public License Usage
+This file may be used under the terms of the GNU General Public License version 3.0 as published by the Free Software Foundation and appearing in the file LICENSE included in the packaging of this file.  Please review the following information to ensure the GNU General Public License version 3.0 requirements will be met: http://www.gnu.org/copyleft/gpl.html.
+
+If you are unsure which license is appropriate for your use, please contact the sales department at http://www.sencha.com/contact.
+
+*/
+/**
+ * @author Don Griffin
+ * @class Ext.ux.ajax.SimXhr
+ *
+ * Simulates an XMLHttpRequest object's methods and properties but is backed by a
+ * {@link Simlet} instance that provides the data.
+ */
+Ext.define('Ext.ux.ajax.SimXhr', {
+    readyState: 0,
+
+    mgr: null,
+    simlet: null,
+
+    constructor: function (config) {
+        var me = this;
+
+        Ext.apply(me, config);
+        me.requestHeaders = {};
+    },
+
+    abort: function () {
+        var me = this;
+
+        if (me.timer) {
+            clearTimeout(me.timer);
+            me.timer = null;
+        }
+        me.aborted = true;
+    },
+
+    getAllResponseHeaders: function () {
+        var headers = [];
+        Ext.Object.each(this.responseHeaders, function (name, value) {
+            headers.push(name + ': ' + value);
+        });
+        return headers.join('\x0d\x0a');
+    },
+
+    getResponseHeader: function (header) {
+        var headers = this.responseHeaders;
+        return (headers && headers[header]) || null;
+    },
+
+    open: function (method, url, async, user, password) {
+        var me = this;
+        me.method = method;
+        me.url = url;
+        me.async = async !== false;
+        me.user = user;
+        me.password = password;
+
+        me.setReadyState(1);
+    },
+
+    overrideMimeType: function (mimeType) {
+        this.mimeType = mimeType;
+    },
+
+    schedule: function () {
+        var me = this;
+        me.timer = setTimeout(function () {
+            me.onTick();
+        }, me.mgr.delay);
+    },
+
+    send: function (body) {
+        var me = this;
+
+        me.body = body;
+
+        if (me.async) {
+            me.schedule();
+        } else {
+            me.onComplete();
+        }
+    },
+
+    setReadyState: function (state) {
+        var me = this;
+        if (me.readyState != state) {
+            me.readyState = state;
+            me.onreadystatechange();
+        }
+    },
+
+    setRequestHeader: function (header, value) {
+        this.requestHeaders[header] = value;
+    },
+
+    // handlers
+
+    onreadystatechange: Ext.emptyFn,
+
+    onComplete: function () {
+        var me = this;
+
+        me.readyState = 4;
+        Ext.apply(me, me.simlet.exec(me));
+    },
+
+    onTick: function () {
+        var me = this;
+
+        me.timer = null;
+        me.onComplete();
+        me.onreadystatechange();
+    }
+});
+
+</pre>
+        <pre class="example" data-uri="/extjs/4.0.7/examples/grid/remote-group-summary-grid/ux/ajax/Simlet.js">/*
+
+This file is part of Ext JS 4
+
+Copyright (c) 2011 Sencha Inc
+
+Contact:  http://www.sencha.com/contact
+
+GNU General Public License Usage
+This file may be used under the terms of the GNU General Public License version 3.0 as published by the Free Software Foundation and appearing in the file LICENSE included in the packaging of this file.  Please review the following information to ensure the GNU General Public License version 3.0 requirements will be met: http://www.gnu.org/copyleft/gpl.html.
+
+If you are unsure which license is appropriate for your use, please contact the sales department at http://www.sencha.com/contact.
+
+*/
+/**
+ * @author Don Griffin
+ * @class Ext.ux.ajax.Simlet
+ *
+ * This is a base class for more advanced "simlets" (simulated servers). A simlet is asked
+ * to provide a response given a {@link SimXhr} instance.
+ */
+Ext.define('Ext.ux.ajax.Simlet', function () {
+    var urlRegex = /([^?#]*)(#.*)?$/,
+        dateRegex = /^(\d{4})-(\d{2})-(\d{2})T(\d{2}):(\d{2}):(\d{2}(?:\.\d*)?)Z$/,
+        intRegex = /^[+-]?\d+$/,
+        floatRegex = /^[+-]?\d+\.\d+$/;
+
+    function parseParamValue (value) {
+        var m;
+
+        if (Ext.isDefined(value)) {
+            value = decodeURIComponent(value);
+
+            if (intRegex.test(value)) {
+                value = parseInt(value, 10);
+            } else if (floatRegex.test(value)) {
+                value = parseFloat(value);
+            } else if (!!(m = dateRegex.test(value))) {
+                value = new Date(Date.UTC(+m[1], +m[2]-1, +m[3], +m[4], +m[5], +m[6]));
+            }
+        }
+
+        return value;
+    }
+
+    return {
+        alias: 'simlet.basic',
+
+        isSimlet: true,
+
+        responseProps: ['responseText', 'responseXML', 'status', 'statusText'],
+
+        /**
+         * @cfg {Number} responseText
+         */
+
+        /**
+         * @cfg {Number} responseXML
+         */
+
+        /**
+         * @cfg {Object} responseHeaders
+         */
+
+        /**
+         * @cfg {Number} status
+         */
+        status: 200,
+
+        /**
+         * @cfg {String} statusText
+         */
+        statusText: 'OK',
+
+        constructor: function (config) {
+            Ext.apply(this, config);
+        },
+
+        doGet: function (ctx) {
+            var me = this,
+                ret = {};
+
+            Ext.each(me.responseProps, function (prop) {
+                if (prop in me) {
+                    ret[prop] = me[prop];
+                }
+            });
+
+            return ret;
+        },
+
+        /**
+         * Performs the action requested by the given XHR and returns an object to be applied
+         * on to the XHR (containing `status`, `responseText`, etc.). For the most part,
+         * this is delegated to `doMethod` methods on this class, such as `doGet`.
+         *
+         * @param {SimXhr} xhr The simulated XMLHttpRequest instance.
+         * @returns {Object} The response properties to add to the XMLHttpRequest.
+         * @markdown
+         */
+        exec: function (xhr) {
+            var me = this,
+                ret = {},
+                method = 'do' + Ext.String.capitalize(xhr.method.toLowerCase()), // doGet
+                fn = me[method];
+
+            if (fn) {
+                ret = fn.call(me, {
+                        xhr: xhr,
+                        params: me.parseQueryString(xhr.url)
+                    });
+            } else {
+                ret = { status: 405, statusText: 'Method Not Allowed' };
+            }
+
+            return ret;
+        },
+
+        parseQueryString : function (str) {
+            var m = urlRegex.exec(str),
+                ret = {},
+                key,
+                value,
+                i, n;
+
+            if (m && m[1]) {
+                var pair, parts = m[1].split('&');
+
+                for (i = 0, n = parts.length; i < n; ++i) {
+                    if ((pair = parts[i].split('='))[0]) {
+                        key = decodeURIComponent(pair.shift());
+                        value = parseParamValue((pair.length > 1) ? pair.join('=') : pair[0]);
+
+                        if (!(key in ret)) {
+                            ret[key] = value;
+                        } else if (Ext.isArray(ret[key])) {
+                            ret[key].push(value);
+                        } else {
+                            ret[key] = [ret[key], value];
+                        }
+                    }
+                }
+            }
+
+            return ret;
+        }
+    };
+}());
+
+</pre>
     </div>
 
 </body>

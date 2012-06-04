@@ -88,7 +88,20 @@
     </div>
 
     <div class="hidden">
-        <pre class="example" data-uri="/extjs/4.1.0/docs/Ext.toolbar.TextItem.1/app.js">(hidden)</pre>
+        <pre class="example" data-uri="/extjs/4.1.0/docs/Ext.toolbar.TextItem.1/app.js">/*global Ext:false */
+Ext.onReady(function() {
+    Ext.create('Ext.panel.Panel', {
+        title: 'Panel with TextItem',
+        width: 300,
+        height: 200,
+        tbar: [{
+            xtype: 'tbtext',
+            text: 'Sample Text Item'
+        }],
+        renderTo: Ext.getBody()
+    });
+});
+</pre>
     </div>
 
 </body>

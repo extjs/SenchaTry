@@ -89,7 +89,20 @@
     </div>
 
     <div class="hidden">
-        <pre class="example" data-uri="/touch/2.0.0/docs/Ext.Button.1/app.js">(hidden)</pre>
+        <pre class="example" data-uri="/touch/2.0.0/docs/Ext.Button.1/app.js">/*global Ext:false */
+Ext.application({
+    launch: function () {
+        var button = Ext.create('Ext.Button', {
+            text: 'Button'
+        });
+        Ext.Viewport.add({
+            xtype: 'container',
+            padding: 10,
+            items: [button]
+        });
+    } // launch
+}); // application()
+</pre>
     </div>
 
 </body>

@@ -88,7 +88,26 @@
     </div>
 
     <div class="hidden">
-        <pre class="example" data-uri="/extjs/4.1.0/docs/Ext.draw.Text.1/app.js">(hidden)</pre>
+        <pre class="example" data-uri="/extjs/4.1.0/docs/Ext.draw.Text.1/app.js">/*global Ext:false */
+Ext.onReady(function() {
+    Ext.create('Ext.panel.Panel', {
+        title: 'Panel with VerticalTextItem',
+        width: 300,
+        height: 200,
+        lbar: {
+            layout: {
+                align: 'center'
+            },
+            items: [{
+                xtype: 'text',
+                text: 'Sample VerticalTextItem',
+                degrees: 90
+            }]
+        },
+        renderTo: Ext.getBody()
+    });
+});
+</pre>
     </div>
 
 </body>

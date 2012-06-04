@@ -89,7 +89,19 @@
     </div>
 
     <div class="hidden">
-        <pre class="example" data-uri="/extjs/4.1.0/demos/Ext.Button.listeners.click.1/app.js">(hidden)</pre>
+        <pre class="example" data-uri="/extjs/4.1.0/demos/Ext.Button.listeners.click.1/app.js">/*global Ext:false */
+Ext.onReady(function () {
+    Ext.create('Ext.Button', {
+        text: 'Click to launch MessageBox',
+        listeners: {
+            click: function () {
+                Ext.Msg.alert('You clicked the button');
+            } // click
+        }, // listeners
+        renderTo: Ext.getBody()
+    }); // create()
+}); // onReady()
+</pre>
     </div>
 
 </body>

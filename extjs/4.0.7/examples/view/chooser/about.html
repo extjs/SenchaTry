@@ -86,14 +86,1281 @@
     </div>
 
     <div class="hidden">
-        <pre class="example" data-uri="/extjs/4.0.7/examples/view/chooser/IconBrowser.js">(hidden)</pre>
-        <pre class="example" data-uri="/extjs/4.0.7/examples/view/chooser/InfoPanel.js">(hidden)</pre>
-        <pre class="example" data-uri="/extjs/4.0.7/examples/view/chooser/Window.js">(hidden)</pre>
-        <pre class="example" data-uri="/extjs/4.0.7/examples/view/chooser/app.js">(hidden)</pre>
-        <pre class="example" data-uri="/extjs/4.0.7/examples/view/chooser/ux/DataView/Animated.js">(hidden)</pre>
-        <pre class="example" data-uri="/extjs/4.0.7/examples/view/chooser/ux/DataView/DragSelector.js">(hidden)</pre>
-        <pre class="example" data-uri="/extjs/4.0.7/examples/view/chooser/ux/DataView/Draggable.js">(hidden)</pre>
-        <pre class="example" data-uri="/extjs/4.0.7/examples/view/chooser/ux/DataView/LabelEditor.js">(hidden)</pre>
+        <pre class="example" data-uri="/extjs/4.0.7/examples/view/chooser/IconBrowser.js">/*
+
+This file is part of Ext JS 4
+
+Copyright (c) 2011 Sencha Inc
+
+Contact:  http://www.sencha.com/contact
+
+GNU General Public License Usage
+This file may be used under the terms of the GNU General Public License version 3.0 as published by the Free Software Foundation and appearing in the file LICENSE included in the packaging of this file.  Please review the following information to ensure the GNU General Public License version 3.0 requirements will be met: http://www.gnu.org/copyleft/gpl.html.
+
+If you are unsure which license is appropriate for your use, please contact the sales department at http://www.sencha.com/contact.
+
+*/
+/**
+ * @class Ext.chooser.IconBrowser
+ * @extends Ext.view.View
+ * @author Ed Spencer
+ * 
+ * This is a really basic subclass of Ext.view.View. All we're really doing here is providing the template that dataview
+ * should use (the tpl property below), and a Store to get the data from. In this case we're loading data from a JSON
+ * file over AJAX.
+ */
+Ext.define('Ext.chooser.IconBrowser', {
+    extend: 'Ext.view.View',
+    alias: 'widget.iconbrowser',
+    
+    uses: 'Ext.data.Store',
+    
+    singleSelect: true,
+    overItemCls: 'x-view-over',
+    itemSelector: 'div.thumb-wrap',
+    tpl: [
+        // '<div class="details">',
+            '<tpl for=".">',
+                '<div class="thumb-wrap">',
+                    '<div class="thumb">',
+                    (!Ext.isIE6 ? '<img src="icons/{thumb}" />' : '<div style="width:74px;height:74px;filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src=\'icons/{thumb}\')"></div>'),
+                    '</div>',
+                    '<span>{name}</span>',
+                '</div>',
+            '</tpl>'
+        // '</div>'
+    ],
+    
+    initComponent: function() {
+        this.store = Ext.create('Ext.data.Store', {
+            autoLoad: true,
+            fields: ['name', 'thumb', 'url', 'type'],
+            proxy: {
+                type: 'ajax',
+                url : 'icons.json',
+                reader: {
+                    type: 'json',
+                    root: ''
+                }
+            }
+        });
+        
+        this.callParent(arguments);
+        this.store.sort();
+    }
+});
+</pre>
+        <pre class="example" data-uri="/extjs/4.0.7/examples/view/chooser/InfoPanel.js">/*
+
+This file is part of Ext JS 4
+
+Copyright (c) 2011 Sencha Inc
+
+Contact:  http://www.sencha.com/contact
+
+GNU General Public License Usage
+This file may be used under the terms of the GNU General Public License version 3.0 as published by the Free Software Foundation and appearing in the file LICENSE included in the packaging of this file.  Please review the following information to ensure the GNU General Public License version 3.0 requirements will be met: http://www.gnu.org/copyleft/gpl.html.
+
+If you are unsure which license is appropriate for your use, please contact the sales department at http://www.sencha.com/contact.
+
+*/
+/**
+ * @class Ext.chooser.InfoPanel
+ * @extends Ext.panel.Panel
+ * @author Ed Spencer
+ * 
+ * This panel subclass just displays information about an image. We have a simple template set via the tpl property,
+ * and a single function (loadRecord) which updates the contents with information about another image.
+ */
+Ext.define('Ext.chooser.InfoPanel', {
+    extend: 'Ext.panel.Panel',
+    alias : 'widget.infopanel',
+    id: 'img-detail-panel',
+
+    width: 150,
+    minWidth: 150,
+
+    tpl: [
+        '<div class="details">',
+            '<tpl for=".">',
+                    (!Ext.isIE6? '<img src="icons/{thumb}" />' : 
+                    '<div style="width:74px;height:74px;filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src=\'icons/{thumb}\')"></div>'),
+                '<div class="details-info">',
+                    '<b>Example Name:</b>',
+                    '<span>{name}</span>',
+                    '<b>Example URL:</b>',
+                    '<span><a href="http://dev.sencha.com/deploy/touch/examples/{url}" target="_blank">{url}.html</a></span>',
+                    '<b>Type:</b>',
+                    '<span>{type}</span>',
+                '</div>',
+            '</tpl>',
+        '</div>'
+    ],
+
+    /**
+     * Loads a given image record into the panel. Animates the newly-updated panel in from the left over 250ms.
+     */
+    loadRecord: function(image) {
+        this.body.hide();
+        this.tpl.overwrite(this.body, image.data);
+        this.body.slideIn('l', {
+            duration: 250
+        });
+    }
+});
+</pre>
+        <pre class="example" data-uri="/extjs/4.0.7/examples/view/chooser/Window.js">/*
+
+This file is part of Ext JS 4
+
+Copyright (c) 2011 Sencha Inc
+
+Contact:  http://www.sencha.com/contact
+
+GNU General Public License Usage
+This file may be used under the terms of the GNU General Public License version 3.0 as published by the Free Software Foundation and appearing in the file LICENSE included in the packaging of this file.  Please review the following information to ensure the GNU General Public License version 3.0 requirements will be met: http://www.gnu.org/copyleft/gpl.html.
+
+If you are unsure which license is appropriate for your use, please contact the sales department at http://www.sencha.com/contact.
+
+*/
+/**
+ * @class Ext.chooser.Window
+ * @extends Ext.window.Window
+ * @author Ed Spencer
+ * 
+ * This is a simple subclass of the built-in Ext.window.Window class. Although it weighs in at 100+ lines, most of this
+ * is just configuration. This Window class uses a border layout and creates a DataView in the central region and an
+ * information panel in the east. It also sets up a toolbar to enable sorting and filtering of the items in the 
+ * DataView. We add a few simple methods to the class at the bottom, see the comments inline for details.
+ */
+Ext.define('Ext.chooser.Window', {
+    extend: 'Ext.window.Window',
+    uses: [
+        'Ext.layout.container.Border',
+        'Ext.form.field.Text',
+        'Ext.form.field.ComboBox',
+        'Ext.toolbar.TextItem'
+    ],
+    
+    height: 400,
+    width : 600,
+    title : 'Choose an Image',
+    closeAction: 'hide',
+    layout: 'border',
+    // modal: true,
+    border: false,
+    bodyBorder: false,
+    
+    /**
+     * initComponent is a great place to put any code that needs to be run when a new instance of a component is
+     * created. Here we just specify the items that will go into our Window, plus the Buttons that we want to appear
+     * at the bottom. Finally we call the superclass initComponent.
+     */
+    initComponent: function() {
+        this.items = [
+            {
+                xtype: 'panel',
+                region: 'center',
+                autoScroll: true,
+                
+                items: {
+                    xtype: 'iconbrowser',
+                    id: 'img-chooser-view',
+                    listeners: {
+                        scope: this,
+                        selectionchange: this.onIconSelect,
+                        itemdblclick: this.fireImageSelected
+                    }
+                },
+                
+                tbar: [
+                    {
+                        xtype: 'textfield',
+                        name : 'filter',
+                        fieldLabel: 'Filter',
+                        labelAlign: 'right',
+                        labelWidth: 35,
+                        listeners: {
+                            scope : this,
+                            buffer: 50,
+                            change: this.filter
+                        }
+                    },
+                    ' ',
+                    {
+                        xtype: 'combo',
+                        fieldLabel: 'Sort By',
+                        labelAlign: 'right',
+                        labelWidth: 45,
+                        valueField: 'field',
+                        displayField: 'label',
+                        value: 'Type',
+                        editable: false,
+                        store: Ext.create('Ext.data.Store', {
+                            fields: ['field', 'label'],
+                            sorters: 'type',
+                            proxy : {
+                                type: 'memory',
+                                data  : [{label: 'Name', field: 'name'}, {label: 'Type', field: 'type'}]
+                            }
+                        }),
+                        listeners: {
+                            scope : this,
+                            select: this.sort
+                        }
+                    }
+                ]
+            },
+            {
+                xtype: 'infopanel',
+                region: 'east',
+                split: true
+            }
+        ];
+        
+        this.buttons = [
+            {
+                text: 'OK',
+                scope: this,
+                handler: this.fireImageSelected
+            },
+            {
+                text: 'Cancel',
+                scope: this,
+                handler: function() {
+                    this.hide();
+                }
+            }
+        ];
+        
+        this.callParent(arguments);
+        
+        /**
+         * Specifies a new event that this component will fire when the user selects an item. The event is fired by the
+         * fireImageSelected function below. Other components can listen to this event and take action when it is fired
+         */
+        this.addEvents(
+            /**
+             * @event selected
+             * Fired whenever the user selects an image by double clicked it or clicking the window's OK button
+             * @param {Ext.data.Model} image The image that was selected
+             */
+            'selected'
+        );
+    },
+    
+    /**
+     * @private
+     * Called whenever the user types in the Filter textfield. Filters the DataView's store
+     */
+    filter: function(field, newValue) {
+        var store = this.down('iconbrowser').store,
+            dataview = this.down('dataview');
+        
+        store.suspendEvents();
+        store.clearFilter();
+        dataview.getSelectionModel().clearSelections();
+        store.resumeEvents();
+        store.filter({
+            property: 'name',
+            anyMatch: true,
+            value   : newValue
+        });
+    },
+    
+    /**
+     * @private
+     * Called whenever the user changes the sort field using the top toolbar's combobox
+     */
+    sort: function() {
+        var field = this.down('combobox').getValue();
+        
+        this.down('dataview').store.sort(field);
+    },
+    
+    /**
+     * Called whenever the user clicks on an item in the DataView. This tells the info panel in the east region to
+     * display the details of the image that was clicked on
+     */
+    onIconSelect: function(dataview, selections) {
+        var selected = selections[0];
+        
+        if (selected) {
+            this.down('infopanel').loadRecord(selected);
+        }
+    },
+    
+    /**
+     * Fires the 'selected' event, informing other components that an image has been selected
+     */
+    fireImageSelected: function() {
+        var selectedImage = this.down('iconbrowser').selModel.getSelection()[0];
+        
+        if (selectedImage) {
+            this.fireEvent('selected', selectedImage);
+            this.hide();
+        }
+    }
+});
+</pre>
+        <pre class="example" data-uri="/extjs/4.0.7/examples/view/chooser/app.js">/*global Ext:false */
+/*
+
+This file is part of Ext JS 4
+
+Copyright (c) 2011 Sencha Inc
+
+Contact:  http://www.sencha.com/contact
+
+GNU General Public License Usage
+This file may be used under the terms of the GNU General Public License version 3.0 as published by the Free Software Foundation and appearing in the file LICENSE included in the packaging of this file.  Please review the following information to ensure the GNU General Public License version 3.0 requirements will be met: http://www.gnu.org/copyleft/gpl.html.
+
+If you are unsure which license is appropriate for your use, please contact the sales department at http://www.sencha.com/contact.
+
+*/
+/*
+ * This example features a window with a DataView from which the user can select images to add to a <div> on the page.
+ * To create the example we create simple subclasses of Window, DataView and Panel. When the user selects an image
+ * we just add it to the page using the insertSelectedImage function below.
+ * 
+ * Our subclasses all sit under the Ext.chooser namespace so the first thing we do is tell Ext's class loader that it
+ * can find those classes in this directory (InfoPanel.js, IconBrowser.js and Window.js). Then we just need to require
+ * those files and pass in an onReady callback that will be called as soon as everything is loaded.
+ */
+Ext.Loader.setConfig({enabled: true});
+Ext.Loader.setPath('Ext.chooser', '.');
+Ext.Loader.setPath('Ext.ux', 'ux');
+
+Ext.require([
+    'Ext.button.Button',
+    'Ext.data.proxy.Ajax',
+    'Ext.chooser.InfoPanel',
+    'Ext.chooser.IconBrowser',
+    'Ext.chooser.Window',
+    'Ext.ux.DataView.Animated',
+    'Ext.toolbar.Spacer'
+]);
+
+Ext.onReady(function() {
+    /*
+     * This button just opens the window. We render it into the 'buttons' div and set its
+     * handler to simply show the window
+     */
+    var insertButton = Ext.create('Ext.button.Button', {
+        text: "Insert Image",
+        renderTo: 'buttons',
+        handler : function() {
+            win.show();
+        }
+    });
+    
+    /*
+     * Here is where we create the window from which the user can select images to insert into the 'images' div.
+     * This window is a simple subclass of Ext.window.Window, and you can see its source code in Window.js.
+     * All we do here is attach a listener for when the 'selected' event is fired - when this happens it means
+     * the user has double clicked an image in the window so we call our insertSelectedImage function to add it
+     * to the DOM (see below).
+     */
+    var win = Ext.create('Ext.chooser.Window', {
+        id: 'img-chooser-dlg',
+        animateTarget: insertButton.getEl(),
+        listeners: {
+            selected: insertSelectedImage
+        }
+    });
+    
+    /*
+     * This function is called whenever the user double-clicks an image inside the window. It creates
+     * a new <img> tag inside the 'images' div and immediately hides it. We then call the show() function
+     * with a duration of 500ms to fade the image in. At the end we call .frame() to give a visual cue
+     * to the user that the image has been inserted
+     */
+    function insertSelectedImage(image) {
+        // create the new image tag.
+        var image = Ext.fly('images').createChild({
+            tag: 'img',
+            src: 'icons/' + image.get('thumb')
+        });
+        
+        // hide it straight away then fade it in over 500ms, finally use the frame animation to give emphasis.
+        image.hide().show({duration: 500}).frame();
+        
+        // this will make the window animate back to the newly inserted image element.
+        win.animateTarget = image;
+    }
+});
+</pre>
+        <pre class="example" data-uri="/extjs/4.0.7/examples/view/chooser/ux/DataView/Animated.js">/*
+
+This file is part of Ext JS 4
+
+Copyright (c) 2011 Sencha Inc
+
+Contact:  http://www.sencha.com/contact
+
+GNU General Public License Usage
+This file may be used under the terms of the GNU General Public License version 3.0 as published by the Free Software Foundation and appearing in the file LICENSE included in the packaging of this file.  Please review the following information to ensure the GNU General Public License version 3.0 requirements will be met: http://www.gnu.org/copyleft/gpl.html.
+
+If you are unsure which license is appropriate for your use, please contact the sales department at http://www.sencha.com/contact.
+
+*/
+/**
+ * @class Ext.ux.DataViewTransition
+ * @extends Object
+ * @author Ed Spencer (http://sencha.com)
+ * Transition plugin for DataViews
+ */
+Ext.define('Ext.ux.DataView.Animated', {
+
+    /**
+     * @property defaults
+     * @type Object
+     * Default configuration options for all DataViewTransition instances
+     */
+    defaults: {
+        duration  : 750,
+        idProperty: 'id'
+    },
+    
+    /**
+     * Creates the plugin instance, applies defaults
+     * @constructor
+     * @param {Object} config Optional config object
+     */
+    constructor: function(config) {
+        Ext.apply(this, config || {}, this.defaults);
+    },
+
+    /**
+     * Initializes the transition plugin. Overrides the dataview's default refresh function
+     * @param {Ext.view.View} dataview The dataview
+     */
+    init: function(dataview) {
+        /**
+         * @property dataview
+         * @type Ext.view.View
+         * Reference to the DataView this instance is bound to
+         */
+        this.dataview = dataview;
+        
+        var idProperty = this.idProperty,
+            store = dataview.store;
+        
+        dataview.blockRefresh = true;
+        dataview.updateIndexes = Ext.Function.createSequence(dataview.updateIndexes, function() {
+            this.getTargetEl().select(this.itemSelector).each(function(element, composite, index) {
+                element.id = element.dom.id = Ext.util.Format.format("{0}-{1}", dataview.id, store.getAt(index).internalId);
+            }, this);
+        }, dataview);
+        
+        /**
+         * @property dataviewID
+         * @type String
+         * The string ID of the DataView component. This is used internally when animating child objects
+         */
+        this.dataviewID = dataview.id;
+        
+        /**
+         * @property cachedStoreData
+         * @type Object
+         * A cache of existing store data, keyed by id. This is used to determine
+         * whether any items were added or removed from the store on data change
+         */
+        this.cachedStoreData = {};
+        
+        //catch the store data with the snapshot immediately
+        this.cacheStoreData(store.data || store.snapshot);
+
+        dataview.on('resize', function() {
+            var store = dataview.store;
+            if (store.getCount() > 0) {
+                // reDraw.call(this, store);
+            }
+        }, this);
+        
+        dataview.store.on('datachanged', reDraw, this);
+        
+        function reDraw(store) {
+            var parentEl = dataview.getTargetEl(),
+                calcItem = store.getAt(0),
+                added    = this.getAdded(store),
+                removed  = this.getRemoved(store),
+                previous = this.getRemaining(store),
+                existing = Ext.apply({}, previous, added);
+            
+            //hide old items
+            Ext.each(removed, function(item) {
+                var id = this.dataviewID + '-' + item.internalId;
+                Ext.fly(id).animate({
+                    remove  : false,
+                    duration: duration,
+                    opacity : 0,
+                    useDisplay: true,
+                    callback: function() {
+                        Ext.fly(id).setDisplayed(false);
+                    }
+                });
+            }, this);
+            
+            //store is empty
+            if (calcItem == undefined) {
+                this.cacheStoreData(store);
+                return;
+            }
+            
+            this.cacheStoreData(store);
+            
+            var el = Ext.get(this.dataviewID + "-" + calcItem.internalId);
+            
+            //if there is nothing rendered, force a refresh and return. This happens when loading asynchronously (was not
+            //covered correctly in previous versions, which only accepted local data)
+            if (!el) {
+                dataview.refresh();
+                return true;
+            }
+            
+            //calculate the number of rows and columns we have
+            var itemCount   = store.getCount(),
+                itemWidth   = el.getMargin('lr') + el.getWidth(),
+                itemHeight  = el.getMargin('bt') + el.getHeight(),
+                dvWidth     = parentEl.getWidth(),
+                columns     = Math.floor(dvWidth / itemWidth),
+                rows        = Math.ceil(itemCount / columns),
+                currentRows = Math.ceil(this.getExistingCount() / columns);
+            
+            //stores the current top and left values for each element (discovered below)
+            var oldPositions = {},
+                newPositions = {},
+                elCache      = {};
+            
+            //find current positions of each element and save a reference in the elCache
+            Ext.iterate(previous, function(id, item) {
+                var id = item.internalId,
+                    el = elCache[id] = Ext.get(this.dataviewID + '-' + id);
+                
+                oldPositions[id] = {
+                    top : el.getTop()  - parentEl.getTop()  - el.getMargin('t') - parentEl.getPadding('t'),
+                    left: el.getLeft() - parentEl.getLeft() - el.getMargin('l') - parentEl.getPadding('l')
+                };
+            }, this);
+            
+            //make sure the correct styles are applied to the parent element
+            parentEl.applyStyles({
+                display : 'block',
+                position: 'relative'
+            });
+            
+            //set absolute positioning on all DataView items. We need to set position, left and 
+            //top at the same time to avoid any flickering
+            Ext.iterate(previous, function(id, item) {
+                var oldPos = oldPositions[id],
+                    el     = elCache[id];
+
+                if (el.getStyle('position') != 'absolute') {
+                    elCache[id].applyStyles({
+                        position: 'absolute',
+                        left    : oldPos.left + "px",
+                        top     : oldPos.top + "px"
+                    });
+                }
+            });
+            
+            //get new positions
+            var index = 0;
+            Ext.iterate(store.data.items, function(item) {
+                var id = item.internalId,
+                    el = elCache[id];
+                
+                var column = index % columns,
+                    row    = Math.floor(index / columns),
+                    top    = row    * itemHeight,
+                    left   = column * itemWidth;
+                
+                newPositions[id] = {
+                    top : top,
+                    left: left
+                };
+                
+                index ++;
+            }, this);
+            
+            //do the movements
+            var startTime  = new Date(),
+                duration   = this.duration,
+                dataviewID = this.dataviewID;
+            
+            var doAnimate = function() {
+                var elapsed  = new Date() - startTime,
+                    fraction = elapsed / duration,
+                    id;
+                
+                if (fraction >= 1) {
+                    for (id in newPositions) {
+                        Ext.fly(dataviewID + '-' + id).applyStyles({
+                            top : newPositions[id].top + "px",
+                            left: newPositions[id].left + "px"
+                        });
+                    }
+                    
+                    Ext.TaskManager.stop(task);
+                } else {
+                    //move each item
+                    for (id in newPositions) {
+                        if (!previous[id]) {
+                            continue;
+                        }
+                        
+                        var oldPos  = oldPositions[id],
+                            newPos  = newPositions[id],
+                            oldTop  = oldPos.top,
+                            newTop  = newPos.top,
+                            oldLeft = oldPos.left,
+                            newLeft = newPos.left,
+                            diffTop = fraction * Math.abs(oldTop  - newTop),
+                            diffLeft= fraction * Math.abs(oldLeft - newLeft),
+                            midTop  = oldTop  > newTop  ? oldTop  - diffTop  : oldTop  + diffTop,
+                            midLeft = oldLeft > newLeft ? oldLeft - diffLeft : oldLeft + diffLeft;
+                        
+                        Ext.fly(dataviewID + '-' + id).applyStyles({
+                            top : midTop + "px",
+                            left: midLeft + "px"
+                        }).setDisplayed(true);
+                    }
+                }
+            };
+            
+            var task = {
+                run     : doAnimate,
+                interval: 20,
+                scope   : this
+            };
+            
+            Ext.TaskManager.start(task);
+            
+            //show new items
+            Ext.iterate(added, function(id, item) {
+                Ext.fly(this.dataviewID + '-' + item.internalId).applyStyles({
+                    top    : newPositions[item.internalId].top + "px",
+                    left   : newPositions[item.internalId].left + "px"
+                }).setDisplayed(true);
+                
+                Ext.fly(this.dataviewID + '-' + item.internalId).animate({
+                    remove  : false,
+                    duration: duration,
+                    opacity : 1
+                });
+            }, this);
+            
+            this.cacheStoreData(store);
+        }
+    },
+    
+    /**
+     * Caches the records from a store locally for comparison later
+     * @param {Ext.data.Store} store The store to cache data from
+     */
+    cacheStoreData: function(store) {
+        this.cachedStoreData = {};
+        
+        store.each(function(record) {
+             this.cachedStoreData[record.internalId] = record;
+        }, this);
+    },
+    
+    /**
+     * Returns all records that were already in the DataView
+     * @return {Object} All existing records
+     */
+    getExisting: function() {
+        return this.cachedStoreData;
+    },
+    
+    /**
+     * Returns the total number of items that are currently visible in the DataView
+     * @return {Number} The number of existing items
+     */
+    getExistingCount: function() {
+        var count = 0,
+            items = this.getExisting();
+        
+        for (var k in items) {
+            count++;
+        }
+        
+        return count;
+    },
+    
+    /**
+     * Returns all records in the given store that were not already present
+     * @param {Ext.data.Store} store The updated store instance
+     * @return {Object} Object of records not already present in the dataview in format {id: record}
+     */
+    getAdded: function(store) {
+        var added = {};
+        
+        store.each(function(record) {
+            if (this.cachedStoreData[record.internalId] == undefined) {
+                added[record.internalId] = record;
+            }
+        }, this);
+        
+        return added;
+    },
+    
+    /**
+     * Returns all records that are present in the DataView but not the new store
+     * @param {Ext.data.Store} store The updated store instance
+     * @return {Array} Array of records that used to be present
+     */
+    getRemoved: function(store) {
+        var removed = [],
+            id;
+        
+        for (id in this.cachedStoreData) {
+            if (store.findBy(function(record) {return record.internalId == id;}) == -1) {
+                removed.push(this.cachedStoreData[id]);
+            }
+        }
+        
+        return removed;
+    },
+    
+    /**
+     * Returns all records that are already present and are still present in the new store
+     * @param {Ext.data.Store} store The updated store instance
+     * @return {Object} Object of records that are still present from last time in format {id: record}
+     */
+    getRemaining: function(store) {
+        var remaining = {};
+
+        store.each(function(record) {
+            if (this.cachedStoreData[record.internalId] != undefined) {
+                remaining[record.internalId] = record;
+            }
+        }, this);
+        
+        return remaining;
+    }
+});
+
+</pre>
+        <pre class="example" data-uri="/extjs/4.0.7/examples/view/chooser/ux/DataView/DragSelector.js">/*
+
+This file is part of Ext JS 4
+
+Copyright (c) 2011 Sencha Inc
+
+Contact:  http://www.sencha.com/contact
+
+GNU General Public License Usage
+This file may be used under the terms of the GNU General Public License version 3.0 as published by the Free Software Foundation and appearing in the file LICENSE included in the packaging of this file.  Please review the following information to ensure the GNU General Public License version 3.0 requirements will be met: http://www.gnu.org/copyleft/gpl.html.
+
+If you are unsure which license is appropriate for your use, please contact the sales department at http://www.sencha.com/contact.
+
+*/
+/**
+ * @class Ext.ux.DataView.DragSelector
+ * @extends Object
+ * @author Ed Spencer
+ * 
+ */
+Ext.define('Ext.ux.DataView.DragSelector', {
+    requires: ['Ext.dd.DragTracker', 'Ext.util.Region'],
+
+    /**
+     * Initializes the plugin by setting up the drag tracker
+     */
+    init: function(dataview) {
+        /**
+         * @property dataview
+         * @type Ext.view.View
+         * The DataView bound to this instance
+         */
+        this.dataview = dataview;
+        dataview.mon(dataview, {
+            beforecontainerclick: this.cancelClick,
+            scope: this,
+            render: {
+                fn: this.onRender,
+                scope: this,
+                single: true
+            }
+        });
+    },
+
+    /**
+     * @private
+     * Called when the attached DataView is rendered. This sets up the DragTracker instance that will be used
+     * to created a dragged selection area
+     */
+    onRender: function() {
+        /**
+         * @property tracker
+         * @type Ext.dd.DragTracker
+         * The DragTracker attached to this instance. Note that the 4 on* functions are called in the scope of the 
+         * DragTracker ('this' refers to the DragTracker inside those functions), so we pass a reference to the 
+         * DragSelector so that we can call this class's functions.
+         */
+        this.tracker = Ext.create('Ext.dd.DragTracker', {
+            dataview: this.dataview,
+            el: this.dataview.el,
+            dragSelector: this,
+            onBeforeStart: this.onBeforeStart,
+            onStart: this.onStart,
+            onDrag : this.onDrag,
+            onEnd  : this.onEnd
+        });
+
+        /**
+         * @property dragRegion
+         * @type Ext.util.Region
+         * Represents the region currently dragged out by the user. This is used to figure out which dataview nodes are
+         * in the selected area and to set the size of the Proxy element used to highlight the current drag area
+         */
+        this.dragRegion = Ext.create('Ext.util.Region');
+    },
+
+    /**
+     * @private
+     * Listener attached to the DragTracker's onBeforeStart event. Returns false if the drag didn't start within the
+     * DataView's el
+     */
+    onBeforeStart: function(e) {
+        return e.target == this.dataview.getEl().dom;
+    },
+
+    /**
+     * @private
+     * Listener attached to the DragTracker's onStart event. Cancel's the DataView's containerclick event from firing
+     * and sets the start co-ordinates of the Proxy element. Clears any existing DataView selection
+     * @param {EventObject} e The click event
+     */
+    onStart: function(e) {
+        var dragSelector = this.dragSelector,
+            dataview     = this.dataview;
+
+        // Flag which controls whether the cancelClick method vetoes the processing of the DataView's containerclick event.
+        // On IE (where else), this needs to remain set for a millisecond after mouseup because even though the mouse has
+        // moved, the mouseup will still trigger a click event.
+        this.dragging = true;
+
+        //here we reset and show the selection proxy element and cache the regions each item in the dataview take up
+        dragSelector.fillRegions();
+        dragSelector.getProxy().show();
+        dataview.getSelectionModel().deselectAll();
+    },
+
+    /**
+     * @private
+     * Reusable handler that's used to cancel the container click event when dragging on the dataview. See onStart for
+     * details
+     */
+    cancelClick: function() {
+        return !this.tracker.dragging;
+    },
+
+    /**
+     * @private
+     * Listener attached to the DragTracker's onDrag event. Figures out how large the drag selection area should be and
+     * updates the proxy element's size to match. Then iterates over all of the rendered items and marks them selected
+     * if the drag region touches them
+     * @param {EventObject} e The drag event
+     */
+    onDrag: function(e) {
+        var dragSelector = this.dragSelector,
+            selModel     = dragSelector.dataview.getSelectionModel(),
+            dragRegion   = dragSelector.dragRegion,
+            bodyRegion   = dragSelector.bodyRegion,
+            proxy        = dragSelector.getProxy(),
+            regions      = dragSelector.regions,
+            length       = regions.length,
+
+            startXY   = this.startXY,
+            currentXY = this.getXY(),
+            minX      = Math.min(startXY[0], currentXY[0]),
+            minY      = Math.min(startXY[1], currentXY[1]),
+            width     = Math.abs(startXY[0] - currentXY[0]),
+            height    = Math.abs(startXY[1] - currentXY[1]),
+            region, selected, i;
+
+        Ext.apply(dragRegion, {
+            top: minY,
+            left: minX,
+            right: minX + width,
+            bottom: minY + height
+        });
+
+        dragRegion.constrainTo(bodyRegion);
+        proxy.setRegion(dragRegion);
+
+        for (i = 0; i < length; i++) {
+            region = regions[i];
+            selected = dragRegion.intersect(region);
+
+            if (selected) {
+                selModel.select(i, true);
+            } else {
+                selModel.deselect(i);
+            }
+        }
+    },
+
+    /**
+     * @private
+     * Listener attached to the DragTracker's onEnd event. This is a delayed function which executes 1
+     * millisecond after it has been called. This is because the dragging flag must remain active to cancel
+     * the containerclick event which the mouseup event will trigger.
+     * @param {EventObject} e The event object
+     */
+    onEnd: Ext.Function.createDelayed(function(e) {
+        var dataview = this.dataview,
+            selModel = dataview.getSelectionModel(),
+            dragSelector = this.dragSelector;
+
+        this.dragging = false;
+        dragSelector.getProxy().hide();
+    }, 1),
+
+    /**
+     * @private
+     * Creates a Proxy element that will be used to highlight the drag selection region
+     * @return {Ext.Element} The Proxy element
+     */
+    getProxy: function() {
+        if (!this.proxy) {
+            this.proxy = this.dataview.getEl().createChild({
+                tag: 'div',
+                cls: 'x-view-selector'
+            });
+        }
+        return this.proxy;
+    },
+
+    /**
+     * @private
+     * Gets the region taken up by each rendered node in the DataView. We use these regions to figure out which nodes
+     * to select based on the selector region the user has dragged out
+     */
+    fillRegions: function() {
+        var dataview = this.dataview,
+            regions  = this.regions = [];
+
+        dataview.all.each(function(node) {
+            regions.push(node.getRegion());
+        });
+        this.bodyRegion = dataview.getEl().getRegion();
+    }
+});
+</pre>
+        <pre class="example" data-uri="/extjs/4.0.7/examples/view/chooser/ux/DataView/Draggable.js">/*
+
+This file is part of Ext JS 4
+
+Copyright (c) 2011 Sencha Inc
+
+Contact:  http://www.sencha.com/contact
+
+GNU General Public License Usage
+This file may be used under the terms of the GNU General Public License version 3.0 as published by the Free Software Foundation and appearing in the file LICENSE included in the packaging of this file.  Please review the following information to ensure the GNU General Public License version 3.0 requirements will be met: http://www.gnu.org/copyleft/gpl.html.
+
+If you are unsure which license is appropriate for your use, please contact the sales department at http://www.sencha.com/contact.
+
+*/
+/**
+ * @class Ext.ux.DataView.Draggable
+ * @extends Object
+ * @author Ed Spencer
+ *
+<pre><code>
+Ext.create('Ext.view.View', {
+    mixins: {
+        draggable: 'Ext.ux.DataView.Draggable'
+    },
+
+    initComponent: function() {
+        this.mixins.draggable.init(this, {
+            ddConfig: {
+                ddGroup: 'someGroup'
+            }
+        });
+
+        this.callParent(arguments);
+    }
+});
+</code></pre>
+ *
+ */
+Ext.define('Ext.ux.DataView.Draggable', {
+    requires: 'Ext.dd.DragZone',
+
+    /**
+     * @cfg {String} ghostCls The CSS class added to the outermost element of the created ghost proxy
+     * (defaults to 'x-dataview-draggable-ghost')
+     */
+    ghostCls: 'x-dataview-draggable-ghost',
+
+    /**
+     * @cfg {Ext.XTemplate/Array} ghostTpl The template used in the ghost DataView
+     */
+    ghostTpl: [
+        '<tpl for=".">',
+            '{title}',
+        '</tpl>'
+    ],
+
+    /**
+     * @cfg {Object} ddConfig Config object that is applied to the internally created DragZone
+     */
+
+    /**
+     * @cfg {String} ghostConfig Config object that is used to configure the internally created DataView
+     */
+
+    init: function(dataview, config) {
+        /**
+         * @property dataview
+         * @type Ext.view.View
+         * The Ext.view.View instance that this DragZone is attached to
+         */
+        this.dataview = dataview;
+
+        dataview.on('render', this.onRender, this);
+
+        Ext.apply(this, {
+            itemSelector: dataview.itemSelector,
+            ghostConfig : {}
+        }, config || {});
+
+        Ext.applyIf(this.ghostConfig, {
+            itemSelector: 'img',
+            cls: this.ghostCls,
+            tpl: this.ghostTpl
+        });
+    },
+
+    /**
+     * @private
+     * Called when the attached DataView is rendered. Sets up the internal DragZone
+     */
+    onRender: function() {
+        var config = Ext.apply({}, this.ddConfig || {}, {
+            dvDraggable: this,
+            dataview   : this.dataview,
+            getDragData: this.getDragData,
+            getTreeNode: this.getTreeNode,
+            afterRepair: this.afterRepair,
+            getRepairXY: this.getRepairXY
+        });
+
+        /**
+         * @property dragZone
+         * @type Ext.dd.DragZone
+         * The attached DragZone instane
+         */
+        this.dragZone = Ext.create('Ext.dd.DragZone', this.dataview.getEl(), config);
+    },
+
+    getDragData: function(e) {
+        var draggable = this.dvDraggable,
+            dataview  = this.dataview,
+            selModel  = dataview.getSelectionModel(),
+            target    = e.getTarget(draggable.itemSelector),
+            selected, dragData;
+
+        if (target) {
+            if (!dataview.isSelected(target)) {
+                selModel.select(dataview.getRecord(target));
+            }
+
+            selected = dataview.getSelectedNodes();
+            dragData = {
+                copy: true,
+                nodes: selected,
+                records: selModel.getSelection(),
+                item: true
+            };
+
+            if (selected.length == 1) {
+                dragData.single = true;
+                dragData.ddel = target;
+            } else {
+                dragData.multi = true;
+                dragData.ddel = draggable.prepareGhost(selModel.getSelection()).dom;
+            }
+
+            return dragData;
+        }
+
+        return false;
+    },
+
+    getTreeNode: function() {
+        // console.log('test');
+    },
+
+    afterRepair: function() {
+        this.dragging = false;
+
+        var nodes  = this.dragData.nodes,
+            length = nodes.length,
+            i;
+
+        //FIXME: Ext.fly does not work here for some reason, only frames the last node
+        for (i = 0; i < length; i++) {
+            Ext.get(nodes[i]).frame('#8db2e3', 1);
+        }
+    },
+
+    /**
+     * @private
+     * Returns the x and y co-ordinates that the dragged item should be animated back to if it was dropped on an
+     * invalid drop target. If we're dragging more than one item we don't animate back and just allow afterRepair
+     * to frame each dropped item.
+     */
+    getRepairXY: function(e) {
+        if (this.dragData.multi) {
+            return false;
+        } else {
+            var repairEl = Ext.get(this.dragData.ddel),
+                repairXY = repairEl.getXY();
+
+            //take the item's margins and padding into account to make the repair animation line up perfectly
+            repairXY[0] += repairEl.getPadding('t') + repairEl.getMargin('t');
+            repairXY[1] += repairEl.getPadding('l') + repairEl.getMargin('l');
+
+            return repairXY;
+        }
+    },
+
+    /**
+     * Updates the internal ghost DataView by ensuring it is rendered and contains the correct records
+     * @param {Array} records The set of records that is currently selected in the parent DataView
+     * @return {Ext.view.View} The Ghost DataView
+     */
+    prepareGhost: function(records) {
+        var ghost = this.createGhost(records),
+            store = ghost.store;
+
+        store.removeAll();
+        store.add(records);
+
+        return ghost.getEl();
+    },
+
+    /**
+     * @private
+     * Creates the 'ghost' DataView that follows the mouse cursor during the drag operation. This div is usually a
+     * lighter-weight representation of just the nodes that are selected in the parent DataView. Delegates the creation
+     * of each selected item's element to {@link createGhostElement}
+     */
+    createGhost: function(records) {
+        if (!this.ghost) {
+            var ghostConfig = Ext.apply({}, this.ghostConfig, {
+                store: Ext.create('Ext.data.Store', {
+                    model: records[0].modelName
+                })
+            });
+
+            this.ghost = Ext.create('Ext.view.View', ghostConfig);
+
+            this.ghost.render(document.createElement('div'));
+        }
+
+        return this.ghost;
+    }
+});
+
+</pre>
+        <pre class="example" data-uri="/extjs/4.0.7/examples/view/chooser/ux/DataView/LabelEditor.js">/*
+
+This file is part of Ext JS 4
+
+Copyright (c) 2011 Sencha Inc
+
+Contact:  http://www.sencha.com/contact
+
+GNU General Public License Usage
+This file may be used under the terms of the GNU General Public License version 3.0 as published by the Free Software Foundation and appearing in the file LICENSE included in the packaging of this file.  Please review the following information to ensure the GNU General Public License version 3.0 requirements will be met: http://www.gnu.org/copyleft/gpl.html.
+
+If you are unsure which license is appropriate for your use, please contact the sales department at http://www.sencha.com/contact.
+
+*/
+/**
+ * @class Ext.ux.DataView.LabelEditor
+ * @extends Ext.Editor
+ */
+Ext.define('Ext.ux.DataView.LabelEditor', {
+
+    extend: 'Ext.Editor',
+
+    alignment: 'tl-tl',
+
+    completeOnEnter: true,
+
+    cancelOnEsc: true,
+
+    shim: false,
+
+    autoSize: {
+        width: 'boundEl',
+        height: 'field'
+    },
+
+    labelSelector: 'x-editable',
+
+    requires: [
+        'Ext.form.field.Text'
+    ],
+
+    constructor: function(config) {
+        config.field = config.field || Ext.create('Ext.form.field.Text', {
+            allowBlank: false,
+            selectOnFocus:true
+        });
+        this.callParent([config]);
+    },
+
+    init: function(view) {
+        this.view = view;
+        this.mon(view, 'render', this.bindEvents, this);
+        this.on('complete', this.onSave, this);
+    },
+
+    // initialize events
+    bindEvents: function() {
+        this.mon(this.view.getEl(), {
+            click: {
+                fn: this.onClick,
+                scope: this
+            }
+        });
+    },
+
+    // on mousedown show editor
+    onClick: function(e, target) {
+        var me = this,
+            item, record;
+
+        if (Ext.fly(target).hasCls(me.labelSelector) && !me.editing && !e.ctrlKey && !e.shiftKey) {
+            e.stopEvent();
+            item = me.view.findItemByChild(target);
+            record = me.view.store.getAt(me.view.indexOf(item));
+            me.startEdit(target, record.data[me.dataIndex]);
+            me.activeRecord = record;
+        } else if (me.editing) {
+            me.field.blur();
+            e.preventDefault();
+        }
+    },
+
+    // update record
+    onSave: function(ed, value) {
+        this.activeRecord.set(this.dataIndex, value);
+    }
+});
+
+
+</pre>
     </div>
 
 </body>

@@ -88,7 +88,15 @@
     </div>
 
     <div class="hidden">
-        <pre class="example" data-uri="/touch/2.0.1/docs/Ext.Msg.2/app.js">(hidden)</pre>
+        <pre class="example" data-uri="/touch/2.0.1/docs/Ext.Msg.2/app.js">/*global Ext:false */
+Ext.application({
+    launch: function() {
+        Ext.Msg.prompt('Name', 'Please enter your name:', function(text) {
+            // process text value and close...
+        });
+    }
+});
+</pre>
     </div>
 
 </body>

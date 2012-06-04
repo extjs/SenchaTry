@@ -92,7 +92,34 @@
     </div>
 
     <div class="hidden">
-        <pre class="example" data-uri="/extjs/4.0.7/demos/Ext.Button.tooltipType.1/app.js">(hidden)</pre>
+        <pre class="example" data-uri="/extjs/4.0.7/demos/Ext.Button.tooltipType.1/app.js">/*global Ext:false */
+Ext.onReady(function () {
+    Ext.tip.QuickTipManager.init();
+    
+    Ext.create('Ext.Panel', {
+        bodyPadding: 20,
+        items: [
+            Ext.create('Ext.Button', {
+                text: 'Button w/ QuickTip (qtip) tooltip',
+                tooltip: 'I\'m a QuickTip tooltip with a default <code>tooltipType</code> (qtip)'
+            }), // create()
+            
+            Ext.create('Ext.Button', {
+                text: 'Button w/ QuickTip tooltip',
+                tooltip: 'I\'m a QuickTip tooltip with an explicit <code>tooltipType: qtip</code>',
+                tooltipType: 'qtip'
+            }), // create()
+            
+            Ext.create('Ext.Button', {
+                text: 'Button w/ title tooltip',
+                tooltip: 'I\'m a title tooltip with an explicit `tooltipType: title`',
+                tooltipType: 'title'
+            }) // create()
+        ], // items
+        renderTo: Ext.getBody()
+    }); // create()
+}); // onReady()
+</pre>
     </div>
 
 </body>

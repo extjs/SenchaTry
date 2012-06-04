@@ -95,7 +95,35 @@
     </div>
 
     <div class="hidden">
-        <pre class="example" data-uri="/extjs/4.0.7/guides/forms.2/app.js">(hidden)</pre>
+        <pre class="example" data-uri="/extjs/4.0.7/guides/forms.2/app.js">/*global Ext:false */
+Ext.onReady(function () {
+    Ext.create('Ext.form.Panel', {
+        renderTo: Ext.getBody(),
+        title: 'User Form',
+        height: 100,
+        width: 515,
+        defaults: {
+            xtype: 'textfield',
+            labelAlign: 'top',
+            padding: 10
+        },
+        layout: {
+            type: 'hbox'
+        },
+        items: [{
+            fieldLabel: 'First Name',
+            name: 'firstName'
+        }, {
+            fieldLabel: 'Last Name',
+            name: 'lastName'
+        }, {
+            xtype: 'datefield',
+            fieldLabel: 'Date of Birth',
+            name: 'birthDate'
+        }]
+    });
+});
+</pre>
     </div>
 
 </body>

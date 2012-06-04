@@ -95,7 +95,23 @@
     </div>
 
     <div class="hidden">
-        <pre class="example" data-uri="/extjs/4.0.7/docs/Ext.form.field.TextArea.1/app.js">(hidden)</pre>
+        <pre class="example" data-uri="/extjs/4.0.7/docs/Ext.form.field.TextArea.1/app.js">/*global Ext:false */
+Ext.onReady(function () {
+    Ext.create('Ext.form.FormPanel', {
+        title: 'Sample TextArea',
+        width: 400,
+        bodyPadding: 10,
+        renderTo: Ext.getBody(),
+        items: [{
+            xtype: 'textareafield',
+            grow: true,
+            name: 'message',
+            fieldLabel: 'Message',
+            anchor: '100%'
+        }]
+    });
+});
+</pre>
     </div>
 
 </body>

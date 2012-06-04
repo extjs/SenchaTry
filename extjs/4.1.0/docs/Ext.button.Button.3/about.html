@@ -88,7 +88,17 @@
     </div>
 
     <div class="hidden">
-        <pre class="example" data-uri="/extjs/4.1.0/docs/Ext.button.Button.3/app.js">(hidden)</pre>
+        <pre class="example" data-uri="/extjs/4.1.0/docs/Ext.button.Button.3/app.js">/*global Ext:false */
+Ext.onReady(function() {
+    Ext.create('Ext.Container', {
+        renderTo: Ext.getBody(),
+        items: [{
+            xtype: 'button',
+            text: 'My Button'
+        }]
+    });
+});
+</pre>
     </div>
 
 </body>

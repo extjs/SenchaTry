@@ -88,7 +88,17 @@
     </div>
 
     <div class="hidden">
-        <pre class="example" data-uri="/touch/2.0.1/docs/Ext.picker.Date.4/app.js">(hidden)</pre>
+        <pre class="example" data-uri="/touch/2.0.1/docs/Ext.picker.Date.4/app.js">/*global Ext:false */
+Ext.application({
+    launch: function() {
+        var datePicker = Ext.create('Ext.picker.Date', {
+            useTitles: false
+        });
+        Ext.Viewport.add(datePicker);
+        datePicker.show();
+    }
+});
+</pre>
     </div>
 
 </body>

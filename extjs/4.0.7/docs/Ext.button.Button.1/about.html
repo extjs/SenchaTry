@@ -91,7 +91,17 @@
     </div>
 
     <div class="hidden">
-        <pre class="example" data-uri="/extjs/4.0.7/docs/Ext.button.Button.1/app.js">(hidden)</pre>
+        <pre class="example" data-uri="/extjs/4.0.7/docs/Ext.button.Button.1/app.js">/*global Ext:false */
+Ext.onReady(function () {
+    Ext.create('Ext.Button', {
+        text: 'Click me',
+        renderTo: Ext.getBody(),
+        handler: function () {
+            alert('You clicked the button!');
+        }
+    });
+});
+</pre>
     </div>
 
 </body>

@@ -88,7 +88,17 @@
     </div>
 
     <div class="hidden">
-        <pre class="example" data-uri="/extjs/4.1.0/docs/Ext.slider.Tip.1/app.js">(hidden)</pre>
+        <pre class="example" data-uri="/extjs/4.1.0/docs/Ext.slider.Tip.1/app.js">/*global Ext:false */
+Ext.onReady(function() {
+    Ext.create('Ext.slider.Single', {
+        width: 214,
+        minValue: 0,
+        maxValue: 100,
+        useTips: true,
+        renderTo: Ext.getBody()
+    });
+});
+</pre>
     </div>
 
 </body>

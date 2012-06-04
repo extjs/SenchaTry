@@ -88,7 +88,27 @@
     </div>
 
     <div class="hidden">
-        <pre class="example" data-uri="/extjs/4.1.0/docs/Ext.draw.Component.1/app.js">(hidden)</pre>
+        <pre class="example" data-uri="/extjs/4.1.0/docs/Ext.draw.Component.1/app.js">/*global Ext:false */
+Ext.onReady(function() {
+    var drawComponent = Ext.create('Ext.draw.Component', {
+        viewBox: false,
+        items: [{
+            type: 'circle',
+            fill: '#79BB3F',
+            radius: 100,
+            x: 100,
+            y: 100
+        }]
+    });
+
+    Ext.create('Ext.Window', {
+        width: 215,
+        height: 235,
+        layout: 'fit',
+        items: [drawComponent]
+    }).show();
+});
+</pre>
     </div>
 
 </body>

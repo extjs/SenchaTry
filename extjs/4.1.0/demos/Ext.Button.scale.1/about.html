@@ -89,7 +89,30 @@
     </div>
 
     <div class="hidden">
-        <pre class="example" data-uri="/extjs/4.1.0/demos/Ext.Button.scale.1/app.js">(hidden)</pre>
+        <pre class="example" data-uri="/extjs/4.1.0/demos/Ext.Button.scale.1/app.js">/*global Ext:false */
+Ext.onReady(function () {
+    Ext.create('Ext.Container', {
+        padding: 20,
+        items: [
+            Ext.create('Ext.Button', {
+                text: 'small (default)',
+                scale: 'small'
+            }), // create()
+            
+            Ext.create('Ext.Button', {
+                text: 'medium',
+                scale: 'medium'
+            }), // create()
+            
+            Ext.create('Ext.Button', {
+                text: 'large',
+                scale: 'large'
+            }) // create()
+        ],
+        renderTo: Ext.getBody()
+    }); // create()
+}); // onReady()
+</pre>
     </div>
 
 </body>

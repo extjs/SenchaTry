@@ -86,7 +86,30 @@
     </div>
 
     <div class="hidden">
-        <pre class="example" data-uri="/touch/2.0.1/demos/Ext.TabPanel.tabBarPosition/app.js">(hidden)</pre>
+        <pre class="example" data-uri="/touch/2.0.1/demos/Ext.TabPanel.tabBarPosition/app.js">/*global Ext:false */
+Ext.application({
+    launch: function () {
+        Ext.create('Ext.TabPanel', {
+            fullscreen: true,
+            tabBarPosition: 'bottom',
+            styleHtmlContent: true,
+            items: [{
+                title: 'Home',
+                iconCls: 'home',
+                html: 'Home container'
+            }, {
+                title: 'Profile',
+                iconCls: 'user',
+                html: 'Profile container'
+            }, {
+                title: 'Settings',
+                iconCls: 'settings',
+                html: 'Settings container'
+            }] // items
+        }); // create()
+    } // launch
+}); // application()
+</pre>
     </div>
 
 </body>

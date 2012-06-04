@@ -88,7 +88,16 @@
     </div>
 
     <div class="hidden">
-        <pre class="example" data-uri="/touch/2.0.1/docs/Ext.Viewport.2/app.js">(hidden)</pre>
+        <pre class="example" data-uri="/touch/2.0.1/docs/Ext.Viewport.2/app.js">/*global Ext:false */
+Ext.setup({
+    viewport: {
+        layout: 'vbox'
+    },
+    onReady: function() {
+        //do something
+    }
+});
+</pre>
     </div>
 
 </body>

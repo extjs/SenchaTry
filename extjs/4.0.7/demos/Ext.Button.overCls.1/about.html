@@ -91,7 +91,20 @@
     </div>
 
     <div class="hidden">
-        <pre class="example" data-uri="/extjs/4.0.7/demos/Ext.Button.overCls.1/app.js">(hidden)</pre>
+        <pre class="example" data-uri="/extjs/4.0.7/demos/Ext.Button.overCls.1/app.js">/*global Ext:false */
+Ext.onReady(function () {
+    Ext.create('Ext.Button', {
+        text: '<code>enableToggle: true</code>',
+        enableToggle: true,
+        overCls: 'customOverStyle',
+        pressedCls: 'customPressedStyle',
+        handler: function (obj) {
+            obj.setText('<code>pressed: ' + obj.pressed + '</code>');
+        }, // handler
+        renderTo: Ext.getBody()
+    }); // create()
+}); // onReady()
+</pre>
     </div>
 
 </body>

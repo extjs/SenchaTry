@@ -89,7 +89,18 @@
     </div>
 
     <div class="hidden">
-        <pre class="example" data-uri="/touch/2.0.1/docs/Ext.field.Toggle.1/app.js">(hidden)</pre>
+        <pre class="example" data-uri="/touch/2.0.1/docs/Ext.field.Toggle.1/app.js">/*global Ext:false */
+Ext.application({
+    launch: function() {
+        Ext.Viewport.add({
+            xtype: 'togglefield',
+            name: 'awesome',
+            label: 'Are you awesome?',
+            labelWidth: '40%'
+        });
+    }
+});
+</pre>
     </div>
 
 </body>

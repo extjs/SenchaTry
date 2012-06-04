@@ -86,7 +86,24 @@
     </div>
 
     <div class="hidden">
-        <pre class="example" data-uri="/extjs/4.1.0/demos/Ext.Panel.setLoading.2/app.js">(hidden)</pre>
+        <pre class="example" data-uri="/extjs/4.1.0/demos/Ext.Panel.setLoading.2/app.js">/*global Ext:false */
+Ext.onReady(function () {
+    var pnl = Ext.create('Ext.Panel', {
+        height: 150,
+        renderTo: Ext.getBody(),
+        tbar: [{
+            text:"Panel setLoading()",
+            handler: function () {
+                pnl.setLoading(true, true);
+                // Clear the loading mask after 3 seconds
+                setTimeout(function (target) {
+                    target.setLoading(false);
+                }, 3000, pnl); // setTimeout()
+            } // handler
+        }] // tbar
+    }); // create()
+}); // onReady()
+</pre>
     </div>
 
 </body>

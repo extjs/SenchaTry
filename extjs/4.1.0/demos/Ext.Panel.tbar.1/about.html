@@ -86,7 +86,31 @@
     </div>
 
     <div class="hidden">
-        <pre class="example" data-uri="/extjs/4.1.0/demos/Ext.Panel.tbar.1/app.js">(hidden)</pre>
+        <pre class="example" data-uri="/extjs/4.1.0/demos/Ext.Panel.tbar.1/app.js">/*global Ext:false */
+Ext.onReady(function () {
+    Ext.create('Ext.Panel', {
+        height: 150,
+        title: 'Ext.Panel title',
+        renderTo: Ext.getBody(),
+        tbar: [{
+            xtype: 'label',
+            html: "Ext.Panel top bar"
+        }], // tbar
+        bbar: [{
+            xtype: 'label',
+            html: 'Ext.Panel bottom bar'
+        }], // bbar
+        lbar: [{
+            xtype: 'label',
+            html: 'Ext.Panel left bar'
+        }], // lbar
+        rbar: [{
+            xtype: 'label',
+            html: 'Ext.Panel right bar'
+        }] // rbar
+    }); // create()
+}); // onReady()
+</pre>
     </div>
 
 </body>

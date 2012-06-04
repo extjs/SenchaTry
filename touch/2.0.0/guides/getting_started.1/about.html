@@ -86,7 +86,15 @@
     </div>
 
     <div class="hidden">
-        <pre class="example" data-uri="/touch/2.0.0/guides/getting_started.1/app.js">(hidden)</pre>
+        <pre class="example" data-uri="/touch/2.0.0/guides/getting_started.1/app.js">/*global Ext:false */
+Ext.application({
+    name: 'Sencha',
+
+    launch: function () {
+        alert('launched');
+    }
+});
+</pre>
     </div>
 
 </body>

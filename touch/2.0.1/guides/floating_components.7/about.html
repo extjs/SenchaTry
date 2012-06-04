@@ -86,7 +86,21 @@
     </div>
 
     <div class="hidden">
-        <pre class="example" data-uri="/touch/2.0.1/guides/floating_components.7/app.js">(hidden)</pre>
+        <pre class="example" data-uri="/touch/2.0.1/guides/floating_components.7/app.js">/*global Ext:false */
+Ext.application({
+    launch: function() {
+        Ext.Viewport.add({
+            xtype: 'panel',
+            html: 'This is a centered and modal panel',
+            modal: true,
+            centered: true
+        });
+
+        Ext.Viewport.setHtml('This content is in the viewport and masked because the panel is modal.');
+        Ext.Viewport.setStyleHtmlContent(true);
+    }
+});
+</pre>
     </div>
 
 </body>

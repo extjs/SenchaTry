@@ -98,7 +98,22 @@
     </div>
 
     <div class="hidden">
-        <pre class="example" data-uri="/extjs/4.0.7/docs/Ext.grid.property.Grid.1/app.js">(hidden)</pre>
+        <pre class="example" data-uri="/extjs/4.0.7/docs/Ext.grid.property.Grid.1/app.js">/*global Ext:false */
+Ext.onReady(function () {
+    Ext.create('Ext.grid.property.Grid', {
+        title: 'Properties Grid',
+        width: 300,
+        renderTo: Ext.getBody(),
+        source: {
+            "(name)": "My Object",
+            "Created": Ext.Date.parse('10/15/2006', 'm/d/Y'),
+            "Available": false,
+            "Version": 0.01,
+            "Description": "A test object"
+        }
+    });
+});
+</pre>
     </div>
 
 </body>

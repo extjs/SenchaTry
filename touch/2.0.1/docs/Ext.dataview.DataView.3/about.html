@@ -91,7 +91,32 @@
     </div>
 
     <div class="hidden">
-        <pre class="example" data-uri="/touch/2.0.1/docs/Ext.dataview.DataView.3/app.js">(hidden)</pre>
+        <pre class="example" data-uri="/touch/2.0.1/docs/Ext.dataview.DataView.3/app.js">/*global Ext:false */
+Ext.application({
+    launch: function() {
+        Ext.create('Ext.DataView', {
+            fullscreen: true,
+            cls: 'twitterView',
+            store: {
+                autoLoad: true,
+                fields: ['from_user', 'text', 'profile_image_url'],
+
+                proxy: {
+                    type: 'jsonp',
+                    url: 'http://search.twitter.com/search.json?q=Sencha Touch',
+
+                    reader: {
+                        type: 'json',
+                        rootProperty: 'results'
+                    }
+                }
+            },
+
+            itemTpl: '<img src="{profile_image_url}" /><h2>{from_user}</h2><p>{text}</p><div style="clear: both"></div>'
+        });
+    }
+});
+</pre>
     </div>
 
 </body>

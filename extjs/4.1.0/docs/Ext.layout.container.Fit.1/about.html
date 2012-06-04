@@ -89,7 +89,23 @@
     </div>
 
     <div class="hidden">
-        <pre class="example" data-uri="/extjs/4.1.0/docs/Ext.layout.container.Fit.1/app.js">(hidden)</pre>
+        <pre class="example" data-uri="/extjs/4.1.0/docs/Ext.layout.container.Fit.1/app.js">/*global Ext:false */
+Ext.onReady(function() {
+    Ext.create('Ext.panel.Panel', {
+        title: 'Fit Layout',
+        width: 300,
+        height: 150,
+        layout: 'fit',
+        items: {
+            title: 'Inner Panel',
+            html: 'This is the inner panel content',
+            bodyPadding: 20,
+            border: false
+        },
+        renderTo: Ext.getBody()
+    });
+});
+</pre>
     </div>
 
 </body>

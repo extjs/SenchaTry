@@ -86,7 +86,32 @@
     </div>
 
     <div class="hidden">
-        <pre class="example" data-uri="/touch/2.0.1/demos/Ext.Msg.show.showAnimation.duration/app.js">(hidden)</pre>
+        <pre class="example" data-uri="/touch/2.0.1/demos/Ext.Msg.show.showAnimation.duration/app.js">/*global Ext:false */
+Ext.application({
+    launch: function () {
+        Ext.create('Ext.Panel', {
+            fullscreen: true,
+            items: [{
+                xtype: 'titlebar',
+                docked: 'top',
+                items: [{
+                    text: 'World\'s slowest alert',
+                    handler: function () {
+                        Ext.Msg.show({
+                            title: 'Lorem Ipsum\'d',
+                            message: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi odio erat, viverra pellentesque pulvinar eu, molestie eget mauris.',
+                            showAnimation: {
+                                type: 'slideIn',
+                                duration: 5000
+                            } // showAnimation
+                        }); // show()
+                    } // handler
+                }] // items
+            }] // items
+        }); // create()
+    } // launch
+}); // application()
+</pre>
     </div>
 
 </body>

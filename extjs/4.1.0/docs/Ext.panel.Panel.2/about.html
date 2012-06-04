@@ -88,7 +88,24 @@
     </div>
 
     <div class="hidden">
-        <pre class="example" data-uri="/extjs/4.1.0/docs/Ext.panel.Panel.2/app.js">(hidden)</pre>
+        <pre class="example" data-uri="/extjs/4.1.0/docs/Ext.panel.Panel.2/app.js">/*global Ext:false */
+Ext.onReady(function() {
+    var filterPanel = Ext.create('Ext.panel.Panel', {
+        bodyPadding: 5,
+        // Don't want content to crunch against the borders
+        width: 300,
+        title: 'Filters',
+        items: [{
+            xtype: 'datefield',
+            fieldLabel: 'Start date'
+        }, {
+            xtype: 'datefield',
+            fieldLabel: 'End date'
+        }],
+        renderTo: Ext.getBody()
+    });
+});
+</pre>
     </div>
 
 </body>

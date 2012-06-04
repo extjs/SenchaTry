@@ -90,7 +90,20 @@
     </div>
 
     <div class="hidden">
-        <pre class="example" data-uri="/extjs/4.0.7/demos/Ext.Msg.show.1/app.js">(hidden)</pre>
+        <pre class="example" data-uri="/extjs/4.0.7/demos/Ext.Msg.show.1/app.js">/*global Ext:false */
+Ext.onReady(function () {
+    Ext.create('Ext.Button', {
+        text: 'Click to launch MessageBox',
+        handler: function () {
+            Ext.Msg.show({
+                title: 'Ext.Msg.show() example',
+                msg: 'Are you sure you want to delete The Internet?<br/><br/>This action cannot be undone.'
+            });
+        },
+        renderTo: Ext.getBody()
+    });
+});
+</pre>
     </div>
 
 </body>

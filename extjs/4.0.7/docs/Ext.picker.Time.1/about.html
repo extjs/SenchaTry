@@ -92,7 +92,16 @@
     </div>
 
     <div class="hidden">
-        <pre class="example" data-uri="/extjs/4.0.7/docs/Ext.picker.Time.1/app.js">(hidden)</pre>
+        <pre class="example" data-uri="/extjs/4.0.7/docs/Ext.picker.Time.1/app.js">/*global Ext:false */
+Ext.onReady(function () {
+    Ext.create('Ext.picker.Time', {
+        width: 60,
+        minValue: Ext.Date.parse('04:30:00 AM', 'h:i:s A'),
+        maxValue: Ext.Date.parse('08:00:00 AM', 'h:i:s A'),
+        renderTo: Ext.getBody()
+    });
+});
+</pre>
     </div>
 
 </body>

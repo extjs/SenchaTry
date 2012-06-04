@@ -93,7 +93,16 @@
     </div>
 
     <div class="hidden">
-        <pre class="example" data-uri="/extjs/4.0.7/docs/Ext.window.MessageBox.3/app.js">(hidden)</pre>
+        <pre class="example" data-uri="/extjs/4.0.7/docs/Ext.window.MessageBox.3/app.js">/*global Ext:false */
+Ext.onReady(function () {
+    Ext.Msg.show({
+        title: 'Save Changes?',
+        msg: 'You are closing a tab that has unsaved changes. Would you like to save your changes?',
+        buttons: Ext.Msg.YESNOCANCEL,
+        icon: Ext.Msg.QUESTION
+    });
+});
+</pre>
     </div>
 
 </body>
