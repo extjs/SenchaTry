@@ -10,40 +10,61 @@
 </head>
 <body>
 
-    <div id="logo-container" class="skiptranslate">
-        <h1 id="logo"><a href="/"><img src="/assets/logo.png" alt="Sencha Try" /></a></h1>
-        <span id="glow"></span>
-    </div>
-    <ul>
-        <li class="with-sub">
-            <a href="#" class="dropdown">Sencha Network</a>
-            <div id="docs-dropdown" class="pop-nav zero">
+    <header id="header">
+        <div id="logo-container" class="skiptranslate">
+            <h1 id="logo"><a href="/"><img src="/assets/logo.png" alt="Sencha Try" /></a></h1>
+            <span id="glow"></span>
+        </div>
+        
+        <nav id="siteNav">
+          <ul>
+            <li class="with-sub">
+              <a href="#" class="dropdown">Sencha Network</a>
+              <div class="pop-nav zero" id="docs-dropdown">
                 <ul>
-                    <li><a href="http://sencha.com/">Sencha.com</a></li>
-                    <li><a href="http://sencha.com/products/io/">Sencha.io</a></li>
-                    <li><a href="http://market.sencha.com/">Sencha Market</a></li>
+                  <li><a href="http://sencha.com/">Sencha.com</a></li>
+                  <li><a href="http://sencha.com/products/io/">Sencha.io</a></li>
+                  <li><a href="http://market.sencha.com/">Sencha Market</a></li>
                 </ul>
-            </div>
-        </li>
-    </ul>
+              </div>
+            </li>
+          </ul>
+        </nav>
+    </header>
     
     <div id="content-wrapper" class="clearfix">
         <div id="content">
-            <a href="/">Home</a> <span>/</span> <a href="/extjs/">Ext JS</a> <span>/</span> <a href="/extjs/4.0.7/">4.0.7</a> <span>/</span> Ext.form.field.Spinner
+            <nav class="bc">
+                <a href="/">Home</a> <span>/</span> <a href="/extjs/">Ext JS</a> <span>/</span> <a href="/extjs/4.0.7/">4.0.7</a> <span>/</span> Ext.form.field.Spinner
+            </nav>
+            
             <div class="developer">
                 <div class="column_nine">
                     <div class="details">
                         <div class="top-block border">
                             <h2 class="alt">Ext.form.field.Spinner</h2>
                         </div>
+                        
                         <div class="plain-text"></div>
+                        
                         <h3>[example widget]</h3>
+                        
                         <div>
                             <ul class="developer-actions">
                                 <li class="request"><a href="src.zip" class="button-link center">Download</a></li>
                             </ul>
                         </div>
+                        
+                        <div>
+                            <h4>Files</h4>
+                            <ul>
+                                <li><a href="/extjs/4.0.7/docs/Ext.form.field.Spinner.1/app.js">app.js</a></li>
+                                <li><a href="/extjs/4.0.7/docs/Ext.form.field.Spinner.1/index.html">index.html</a></li>
+                            </ul>
+                        </div>
+                        
                         <hr class="clear" />
+                        
                         <h4>Tags</h4>
                         <ul class="services-list alt clearfix tags">
                             <li><a href="/tags/Ext%20JS/">Ext JS</a></li>
@@ -61,6 +82,7 @@
                             <li><a href="/tags/spinnerfield/"><code>spinnerfield</code></a></li>
                             <li><a href="/tags/step/"><code>step</code></a></li>
                         </ul>
+                        
                         <h4>See Also</h4>
                         <ul class="services-list alt clearfix see-also">
                             <li class="docs"><a href="http://docs.sencha.com/ext-js/4-0/#!/api/Ext.form.field.Spinner" target="_blank">Ext.form.field.Spinner Documentation</a></li>
@@ -72,78 +94,37 @@
         </div>
     </div>
     
-    <div id="footer-content">
-        <div class="columns">
-            <ul class="column">
-                <li>
-                    <a class="main" href="http://sencha.com/company/">Company</a>
-                    <ul class="zero">
-                        <li class="first"><a href="http://www.sencha.com/contact/" rel="nofollow">Contact Us</a></li>
-                        <li class="last"><a href="/pages/terms/" rel="nofollow">Terms of Use</a></li>
+    <footer id="footer">
+        <div id="footer-content">
+            <nav id="footer-nav">
+                <div class="columns">
+                    <ul class="column">
+                        <li>
+                            <a class="main" href="http://sencha.com/company">Company</a>
+                            <ul class="zero">
+                                <li class="first"><a href="http://www.sencha.com/contact/" rel="nofollow">Contact Us</a></li>
+                                <li class="last"><a href="/pages/terms" rel="nofollow">Terms of Use</a></li>
+                            </ul>
+                        </li>
                     </ul>
-                </li>
-            </ul>
-            <ul class="column">
-                <li>
-                    <a class="main" href="/">Listings</a>
-                    <ul class="zero">
-                        <li class="first"><a href="/developers/">Full listing</a></li>
-                        <li class="last"><a href="/developers/by_location/">Geographic listing</a></li>
+                    <ul class="column">
+                        <li>
+                            <a class="main" href="/">Listings</a>
+                            <ul class="zero">
+                                <li class="first"><a href="/developers">Full listing</a></li>
+                                <li class="last"><a href="/developers/by_location">Geographic listing</a></li>
+                            </ul>
+                        </li>
                     </ul>
-                </li>
-            </ul>
+                </div>
+            </nav>
+            <hr />
+            
+            <div id="copyright">
+                <p>&copy; 2012 Sencha Inc. All rights reserved.</p>
+            </div>
         </div>
-        <hr />
-        <div id="copyright">
-            <p>&copy; 2012 Sencha Inc. All rights reserved.</p>
-        </div>
-    </div>
-
-    <div class="hidden">
-        <pre class="example" data-uri="/extjs/4.0.7/docs/Ext.form.field.Spinner.1/app.js">/*global Ext:false */
-Ext.onReady(function () {
-    Ext.define('Ext.ux.CustomSpinner', {
-        extend: 'Ext.form.field.Spinner',
-        alias: 'widget.customspinner',
-
-        // override onSpinUp (using step isn't neccessary)
-        onSpinUp: function () {
-            var me = this;
-            if (!me.readOnly) {
-                var val = me.step; // set the default value to the step value
-                if (me.getValue() !== '') {
-                    val = parseInt(me.getValue().slice(0, -5), 10); // gets rid of " Pack"
-                }
-                me.setValue((val + me.step) + ' Pack');
-            }
-        },
-
-        // override onSpinDown
-        onSpinDown: function () {
-            var val, me = this;
-            if (!me.readOnly) {
-                if (me.getValue() !== '') {
-                    val = parseInt(me.getValue().slice(0, -5), 10); // gets rid of " Pack"
-                }
-                me.setValue((val - me.step) + ' Pack');
-            }
-        }
-    });
-
-    Ext.create('Ext.form.FormPanel', {
-        title: 'Form with SpinnerField',
-        bodyPadding: 5,
-        width: 350,
-        renderTo: Ext.getBody(),
-        items: [{
-            xtype: 'customspinner',
-            fieldLabel: 'How Much Beer?',
-            step: 6
-        }]
-    });
-});
-</pre>
-    </div>
+    </footer>
 
 </body>
 </html>

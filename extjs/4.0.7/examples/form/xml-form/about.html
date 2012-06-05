@@ -10,49 +10,74 @@
 </head>
 <body>
 
-    <div id="logo-container" class="skiptranslate">
-        <h1 id="logo"><a href="/"><img src="/assets/logo.png" alt="Sencha Try" /></a></h1>
-        <span id="glow"></span>
-    </div>
-    <ul>
-        <li class="with-sub">
-            <a href="#" class="dropdown">Sencha Network</a>
-            <div id="docs-dropdown" class="pop-nav zero">
+    <header id="header">
+        <div id="logo-container" class="skiptranslate">
+            <h1 id="logo"><a href="/"><img src="/assets/logo.png" alt="Sencha Try" /></a></h1>
+            <span id="glow"></span>
+        </div>
+        
+        <nav id="siteNav">
+          <ul>
+            <li class="with-sub">
+              <a href="#" class="dropdown">Sencha Network</a>
+              <div class="pop-nav zero" id="docs-dropdown">
                 <ul>
-                    <li><a href="http://sencha.com/">Sencha.com</a></li>
-                    <li><a href="http://sencha.com/products/io/">Sencha.io</a></li>
-                    <li><a href="http://market.sencha.com/">Sencha Market</a></li>
+                  <li><a href="http://sencha.com/">Sencha.com</a></li>
+                  <li><a href="http://sencha.com/products/io/">Sencha.io</a></li>
+                  <li><a href="http://market.sencha.com/">Sencha Market</a></li>
                 </ul>
-            </div>
-        </li>
-    </ul>
+              </div>
+            </li>
+          </ul>
+        </nav>
+    </header>
     
     <div id="content-wrapper" class="clearfix">
         <div id="content">
-            <a href="/">Home</a> <span>/</span> <a href="/extjs/">Ext JS</a> <span>/</span> <a href="/extjs/4.0.7/">4.0.7</a> <span>/</span> Loading/Saving a Dynamic Form using XML
+            <nav class="bc">
+                <a href="/">Home</a> <span>/</span> <a href="/extjs/">Ext JS</a> <span>/</span> <a href="/extjs/4.0.7/">4.0.7</a> <span>/</span> Loading/Saving a Dynamic Form using XML
+            </nav>
+            
             <div class="developer">
                 <div class="column_nine">
                     <div class="details">
                         <div class="top-block border">
                             <h2 class="alt">Loading/Saving a Dynamic Form using XML</h2>
                         </div>
+                        
                         <div class="plain-text"><p>This is a very simple example of using XML for load and submit of data with an Ext dynamic form.</p>
 
 <p>Click "Load" to load the <a href="xml-form-data.xml">dummy XML data</a> from the server using an XmlReader.</p>
 
 <p>After loading the form, you will be able to hit submit. The submit action will make a post to the server, and the <a href="xml-form-errors.xml">dummy XML file</a> on the server with test server-side validation failure messages will be sent back. Those messages will be applied to the appropriate fields in the form.</p></div>
+                        
                         <h3>[example widget]</h3>
+                        
                         <div>
                             <ul class="developer-actions">
                                 <li class="request"><a href="src.zip" class="button-link center">Download</a></li>
                             </ul>
                         </div>
+                        
+                        <div>
+                            <h4>Files</h4>
+                            <ul>
+                                <li><a href="/extjs/4.0.7/examples/form/xml-form/app.js">app.js</a></li>
+                                <li><a href="/extjs/4.0.7/examples/form/xml-form/index.html">index.html</a></li>
+                                <li><a href="/extjs/4.0.7/examples/form/xml-form/shared/states.js">shared/states.js</a></li>
+                                <li><a href="/extjs/4.0.7/examples/form/xml-form/xml-form-data.xml">xml-form-data.xml</a></li>
+                                <li><a href="/extjs/4.0.7/examples/form/xml-form/xml-form-errors.xml">xml-form-errors.xml</a></li>
+                            </ul>
+                        </div>
+                        
                         <hr class="clear" />
+                        
                         <h4>Tags</h4>
                         <ul class="services-list alt clearfix tags">
                             <li><a href="/tags/Ext%20JS/">Ext JS</a></li>
                             <li><a href="/tags/Ext%20JS%204.0.7/">Ext JS 4.0.7</a></li>
                         </ul>
+                        
                         <h4>See Also</h4>
                         <ul class="services-list alt clearfix see-also">
                         </ul>
@@ -62,241 +87,37 @@
         </div>
     </div>
     
-    <div id="footer-content">
-        <div class="columns">
-            <ul class="column">
-                <li>
-                    <a class="main" href="http://sencha.com/company/">Company</a>
-                    <ul class="zero">
-                        <li class="first"><a href="http://www.sencha.com/contact/" rel="nofollow">Contact Us</a></li>
-                        <li class="last"><a href="/pages/terms/" rel="nofollow">Terms of Use</a></li>
+    <footer id="footer">
+        <div id="footer-content">
+            <nav id="footer-nav">
+                <div class="columns">
+                    <ul class="column">
+                        <li>
+                            <a class="main" href="http://sencha.com/company">Company</a>
+                            <ul class="zero">
+                                <li class="first"><a href="http://www.sencha.com/contact/" rel="nofollow">Contact Us</a></li>
+                                <li class="last"><a href="/pages/terms" rel="nofollow">Terms of Use</a></li>
+                            </ul>
+                        </li>
                     </ul>
-                </li>
-            </ul>
-            <ul class="column">
-                <li>
-                    <a class="main" href="/">Listings</a>
-                    <ul class="zero">
-                        <li class="first"><a href="/developers/">Full listing</a></li>
-                        <li class="last"><a href="/developers/by_location/">Geographic listing</a></li>
+                    <ul class="column">
+                        <li>
+                            <a class="main" href="/">Listings</a>
+                            <ul class="zero">
+                                <li class="first"><a href="/developers">Full listing</a></li>
+                                <li class="last"><a href="/developers/by_location">Geographic listing</a></li>
+                            </ul>
+                        </li>
                     </ul>
-                </li>
-            </ul>
+                </div>
+            </nav>
+            <hr />
+            
+            <div id="copyright">
+                <p>&copy; 2012 Sencha Inc. All rights reserved.</p>
+            </div>
         </div>
-        <hr />
-        <div id="copyright">
-            <p>&copy; 2012 Sencha Inc. All rights reserved.</p>
-        </div>
-    </div>
-
-    <div class="hidden">
-        <pre class="example" data-uri="/extjs/4.0.7/examples/form/xml-form/app.js">/*global Ext:false */
-/*
-
-This file is part of Ext JS 4
-
-Copyright (c) 2011 Sencha Inc
-
-Contact:  http://www.sencha.com/contact
-
-GNU General Public License Usage
-This file may be used under the terms of the GNU General Public License version 3.0 as published by the Free Software Foundation and appearing in the file LICENSE included in the packaging of this file.  Please review the following information to ensure the GNU General Public License version 3.0 requirements will be met: http://www.gnu.org/copyleft/gpl.html.
-
-If you are unsure which license is appropriate for your use, please contact the sales department at http://www.sencha.com/contact.
-
-*/
-Ext.require([
-    'Ext.form.*',
-    'Ext.data.*'
-]);
-
-Ext.onReady(function(){
-
-    Ext.define('example.contact', {
-        extend: 'Ext.data.Model',
-        fields: [
-            {name: 'first', mapping: 'name > first'},
-            {name: 'last', mapping: 'name > last'},
-            'company', 'email', 'state',
-            {name: 'dob', type: 'date', dateFormat: 'm/d/Y'}
-        ]
-    });
-
-    Ext.define('example.fielderror', {
-        extend: 'Ext.data.Model',
-        fields: ['id', 'msg']
-    });
-
-    var formPanel = Ext.create('Ext.form.Panel', {
-        renderTo: 'form-ct',
-        frame: true,
-        title:'XML Form',
-        width: 340,
-        bodyPadding: 5,
-        waitMsgTarget: true,
-
-        fieldDefaults: {
-            labelAlign: 'right',
-            labelWidth: 85,
-            msgTarget: 'side'
-        },
-
-        // configure how to read the XML data
-        reader : Ext.create('Ext.data.reader.Xml', {
-            model: 'example.contact',
-            record : 'contact',
-            successProperty: '@success'
-        }),
-
-        // configure how to read the XML errors
-        errorReader: Ext.create('Ext.data.reader.Xml', {
-            model: 'example.fielderror',
-            record : 'field',
-            successProperty: '@success'
-        }),
-
-        items: [{
-            xtype: 'fieldset',
-            title: 'Contact Information',
-            defaultType: 'textfield',
-            defaults: {
-                width: 280
-            },
-            items: [{
-                    fieldLabel: 'First Name',
-                    emptyText: 'First Name',
-                    name: 'first'
-                }, {
-                    fieldLabel: 'Last Name',
-                    emptyText: 'Last Name',
-                    name: 'last'
-                }, {
-                    fieldLabel: 'Company',
-                    name: 'company'
-                }, {
-                    fieldLabel: 'Email',
-                    name: 'email',
-                    vtype:'email'
-                }, {
-                    xtype: 'combobox',
-                    fieldLabel: 'State',
-                    name: 'state',
-                    store: Ext.create('Ext.data.ArrayStore', {
-                        fields: ['abbr', 'state'],
-                        data : Ext.example.states // from states.js
-                    }),
-                    valueField: 'abbr',
-                    displayField: 'state',
-                    typeAhead: true,
-                    queryMode: 'local',
-                    emptyText: 'Select a state...'
-                }, {
-                    xtype: 'datefield',
-                    fieldLabel: 'Date of Birth',
-                    name: 'dob',
-                    allowBlank: false,
-                    maxValue: new Date()
-                }
-            ]
-        }],
-
-        buttons: [{
-            text: 'Load',
-            handler: function(){
-                formPanel.getForm().load({
-                    url: 'xml-form-data.xml',
-                    waitMsg: 'Loading...'
-                });
-            }
-        }, {
-            text: 'Submit',
-            disabled: true,
-            formBind: true,
-            handler: function(){
-                this.up('form').getForm().submit({
-                    url: 'xml-form-errors.xml',
-                    submitEmptyText: false,
-                    waitMsg: 'Saving Data...'
-                });
-            }
-        }]
-    });
-
-});
-
-</pre>
-        <pre class="example" data-uri="/extjs/4.0.7/examples/form/xml-form/shared/states.js">/*
-
-This file is part of Ext JS 4
-
-Copyright (c) 2011 Sencha Inc
-
-Contact:  http://www.sencha.com/contact
-
-GNU General Public License Usage
-This file may be used under the terms of the GNU General Public License version 3.0 as published by the Free Software Foundation and appearing in the file LICENSE included in the packaging of this file.  Please review the following information to ensure the GNU General Public License version 3.0 requirements will be met: http://www.gnu.org/copyleft/gpl.html.
-
-If you are unsure which license is appropriate for your use, please contact the sales department at http://www.sencha.com/contact.
-
-*/
-// some data used in the examples
-Ext.namespace('Ext.example');
-
-Ext.example.states = [
-        ['AL', 'Alabama', 'The Heart of Dixie'],
-        ['AK', 'Alaska', 'The Land of the Midnight Sun'],
-        ['AZ', 'Arizona', 'The Grand Canyon State'],
-        ['AR', 'Arkansas', 'The Natural State'],
-        ['CA', 'California', 'The Golden State'],
-        ['CO', 'Colorado', 'The Mountain State'],
-        ['CT', 'Connecticut', 'The Constitution State'],
-        ['DE', 'Delaware', 'The First State'],
-        ['DC', 'District of Columbia', "The Nation's Capital"],
-        ['FL', 'Florida', 'The Sunshine State'],
-        ['GA', 'Georgia', 'The Peach State'],
-        ['HI', 'Hawaii', 'The Aloha State'],
-        ['ID', 'Idaho', 'Famous Potatoes'],
-        ['IL', 'Illinois', 'The Prairie State'],
-        ['IN', 'Indiana', 'The Hospitality State'],
-        ['IA', 'Iowa', 'The Corn State'],
-        ['KS', 'Kansas', 'The Sunflower State'],
-        ['KY', 'Kentucky', 'The Bluegrass State'],
-        ['LA', 'Louisiana', 'The Bayou State'],
-        ['ME', 'Maine', 'The Pine Tree State'],
-        ['MD', 'Maryland', 'Chesapeake State'],
-        ['MA', 'Massachusetts', 'The Spirit of America'],
-        ['MI', 'Michigan', 'Great Lakes State'],
-        ['MN', 'Minnesota', 'North Star State'],
-        ['MS', 'Mississippi', 'Magnolia State'],
-        ['MO', 'Missouri', 'Show Me State'],
-        ['MT', 'Montana', 'Big Sky Country'],
-        ['NE', 'Nebraska', 'Beef State'],
-        ['NV', 'Nevada', 'Silver State'],
-        ['NH', 'New Hampshire', 'Granite State'],
-        ['NJ', 'New Jersey', 'Garden State'],
-        ['NM', 'New Mexico', 'Land of Enchantment'],
-        ['NY', 'New York', 'Empire State'],
-        ['NC', 'North Carolina', 'First in Freedom'],
-        ['ND', 'North Dakota', 'Peace Garden State'],
-        ['OH', 'Ohio', 'The Heart of it All'],
-        ['OK', 'Oklahoma', 'Oklahoma is OK'],
-        ['OR', 'Oregon', 'Pacific Wonderland'],
-        ['PA', 'Pennsylvania', 'Keystone State'],
-        ['RI', 'Rhode Island', 'Ocean State'],
-        ['SC', 'South Carolina', 'Nothing Could be Finer'],
-        ['SD', 'South Dakota', 'Great Faces, Great Places'],
-        ['TN', 'Tennessee', 'Volunteer State'],
-        ['TX', 'Texas', 'Lone Star State'],
-        ['UT', 'Utah', 'Salt Lake State'],
-        ['VT', 'Vermont', 'Green Mountain State'],
-        ['VA', 'Virginia', 'Mother of States'],
-        ['WA', 'Washington', 'Green Tree State'],
-        ['WV', 'West Virginia', 'Mountain State'],
-        ['WI', 'Wisconsin', "America's Dairyland"],
-        ['WY', 'Wyoming', 'Like No Place on Earth']
-    ];
-</pre>
-    </div>
+    </footer>
 
 </body>
 </html>

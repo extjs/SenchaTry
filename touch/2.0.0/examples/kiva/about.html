@@ -10,45 +10,96 @@
 </head>
 <body>
 
-    <div id="logo-container" class="skiptranslate">
-        <h1 id="logo"><a href="/"><img src="/assets/logo.png" alt="Sencha Try" /></a></h1>
-        <span id="glow"></span>
-    </div>
-    <ul>
-        <li class="with-sub">
-            <a href="#" class="dropdown">Sencha Network</a>
-            <div id="docs-dropdown" class="pop-nav zero">
+    <header id="header">
+        <div id="logo-container" class="skiptranslate">
+            <h1 id="logo"><a href="/"><img src="/assets/logo.png" alt="Sencha Try" /></a></h1>
+            <span id="glow"></span>
+        </div>
+        
+        <nav id="siteNav">
+          <ul>
+            <li class="with-sub">
+              <a href="#" class="dropdown">Sencha Network</a>
+              <div class="pop-nav zero" id="docs-dropdown">
                 <ul>
-                    <li><a href="http://sencha.com/">Sencha.com</a></li>
-                    <li><a href="http://sencha.com/products/io/">Sencha.io</a></li>
-                    <li><a href="http://market.sencha.com/">Sencha Market</a></li>
+                  <li><a href="http://sencha.com/">Sencha.com</a></li>
+                  <li><a href="http://sencha.com/products/io/">Sencha.io</a></li>
+                  <li><a href="http://market.sencha.com/">Sencha Market</a></li>
                 </ul>
-            </div>
-        </li>
-    </ul>
+              </div>
+            </li>
+          </ul>
+        </nav>
+    </header>
     
     <div id="content-wrapper" class="clearfix">
         <div id="content">
-            <a href="/">Home</a> <span>/</span> <a href="/touch/">Touch</a> <span>/</span> <a href="/touch/2.0.0/">2.0.0</a> <span>/</span> Kiva
+            <nav class="bc">
+                <a href="/">Home</a> <span>/</span> <a href="/touch/">Touch</a> <span>/</span> <a href="/touch/2.0.0/">2.0.0</a> <span>/</span> Kiva
+            </nav>
+            
             <div class="developer">
                 <div class="column_nine">
                     <div class="details">
                         <div class="top-block border">
                             <h2 class="alt">Kiva</h2>
                         </div>
+                        
                         <div class="plain-text"></div>
+                        
                         <h3>[example widget]</h3>
+                        
                         <div>
                             <ul class="developer-actions">
                                 <li class="request"><a href="src.zip" class="button-link center">Download</a></li>
                             </ul>
                         </div>
+                        
+                        <div>
+                            <h4>Files</h4>
+                            <ul>
+                                <li><a href="/touch/2.0.0/examples/kiva/app.js">app.js</a></li>
+                                <li><a href="/touch/2.0.0/examples/kiva/app.json">app.json</a></li>
+                                <li><a href="/touch/2.0.0/examples/kiva/app/controller/Loans.js">app/controller/Loans.js</a></li>
+                                <li><a href="/touch/2.0.0/examples/kiva/app/model/Loan.js">app/model/Loan.js</a></li>
+                                <li><a href="/touch/2.0.0/examples/kiva/app/store/Loans.js">app/store/Loans.js</a></li>
+                                <li><a href="/touch/2.0.0/examples/kiva/app/view/Detail.js">app/view/Detail.js</a></li>
+                                <li><a href="/touch/2.0.0/examples/kiva/app/view/LoanFilter.js">app/view/LoanFilter.js</a></li>
+                                <li><a href="/touch/2.0.0/examples/kiva/app/view/LoansList.js">app/view/LoansList.js</a></li>
+                                <li><a href="/touch/2.0.0/examples/kiva/app/view/LoansListItem.js">app/view/LoansListItem.js</a></li>
+                                <li><a href="/touch/2.0.0/examples/kiva/app/view/LoansListItemCompletion.js">app/view/LoansListItemCompletion.js</a></li>
+                                <li><a href="/touch/2.0.0/examples/kiva/app/view/Main.js">app/view/Main.js</a></li>
+                                <li><a href="/touch/2.0.0/examples/kiva/app/view/detail/Information.js">app/view/detail/Information.js</a></li>
+                                <li><a href="/touch/2.0.0/examples/kiva/app/view/detail/Map.js">app/view/detail/Map.js</a></li>
+                                <li><a href="/touch/2.0.0/examples/kiva/app/view/detail/Schedule.js">app/view/detail/Schedule.js</a></li>
+                                <li><a href="/touch/2.0.0/examples/kiva/index.html">index.html</a></li>
+                                <li><a href="/touch/2.0.0/examples/kiva/lib/KivaProxy.js">lib/KivaProxy.js</a></li>
+                                <li><a href="/touch/2.0.0/examples/kiva/resources/css/app.css">resources/css/app.css</a></li>
+                                <li><a href="/touch/2.0.0/examples/kiva/resources/icons/icon.png">resources/icons/icon.png</a></li>
+                                <li><a href="/touch/2.0.0/examples/kiva/resources/images/kiva_logo_hiRez.png">resources/images/kiva_logo_hiRez.png</a></li>
+                                <li><a href="/touch/2.0.0/examples/kiva/resources/images/loading.gif">resources/images/loading.gif</a></li>
+                                <li><a href="/touch/2.0.0/examples/kiva/resources/loading/Default-LandscapeLeft~ipad.png">resources/loading/Default-LandscapeLeft~ipad.png</a></li>
+                                <li><a href="/touch/2.0.0/examples/kiva/resources/loading/Default-LandscapeRight~ipad.png">resources/loading/Default-LandscapeRight~ipad.png</a></li>
+                                <li><a href="/touch/2.0.0/examples/kiva/resources/loading/Default-Landscape~ipad.png">resources/loading/Default-Landscape~ipad.png</a></li>
+                                <li><a href="/touch/2.0.0/examples/kiva/resources/loading/Default-PortraitUpsideDown~ipad.png">resources/loading/Default-PortraitUpsideDown~ipad.png</a></li>
+                                <li><a href="/touch/2.0.0/examples/kiva/resources/loading/Default-Portrait~ipad.png">resources/loading/Default-Portrait~ipad.png</a></li>
+                                <li><a href="/touch/2.0.0/examples/kiva/resources/loading/Default.png">resources/loading/Default.png</a></li>
+                                <li><a href="/touch/2.0.0/examples/kiva/resources/loading/Default@2x.png">resources/loading/Default@2x.png</a></li>
+                                <li><a href="/touch/2.0.0/examples/kiva/resources/loading/Default~ipad.png">resources/loading/Default~ipad.png</a></li>
+                                <li><a href="/touch/2.0.0/examples/kiva/resources/loading/Homescreen.jpg">resources/loading/Homescreen.jpg</a></li>
+                                <li><a href="/touch/2.0.0/examples/kiva/resources/loading/Homescreen~ipad.jpg">resources/loading/Homescreen~ipad.jpg</a></li>
+                                <li><a href="/touch/2.0.0/examples/kiva/resources/loading/iTunesArtwork.png">resources/loading/iTunesArtwork.png</a></li>
+                            </ul>
+                        </div>
+                        
                         <hr class="clear" />
+                        
                         <h4>Tags</h4>
                         <ul class="services-list alt clearfix tags">
                             <li><a href="/tags/Sencha%20Touch/">Sencha Touch</a></li>
                             <li><a href="/tags/Sencha%20Touch%202.0.0/">Sencha Touch 2.0.0</a></li>
                         </ul>
+                        
                         <h4>See Also</h4>
                         <ul class="services-list alt clearfix see-also">
                         </ul>
@@ -58,816 +109,37 @@
         </div>
     </div>
     
-    <div id="footer-content">
-        <div class="columns">
-            <ul class="column">
-                <li>
-                    <a class="main" href="http://sencha.com/company/">Company</a>
-                    <ul class="zero">
-                        <li class="first"><a href="http://www.sencha.com/contact/" rel="nofollow">Contact Us</a></li>
-                        <li class="last"><a href="/pages/terms/" rel="nofollow">Terms of Use</a></li>
+    <footer id="footer">
+        <div id="footer-content">
+            <nav id="footer-nav">
+                <div class="columns">
+                    <ul class="column">
+                        <li>
+                            <a class="main" href="http://sencha.com/company">Company</a>
+                            <ul class="zero">
+                                <li class="first"><a href="http://www.sencha.com/contact/" rel="nofollow">Contact Us</a></li>
+                                <li class="last"><a href="/pages/terms" rel="nofollow">Terms of Use</a></li>
+                            </ul>
+                        </li>
                     </ul>
-                </li>
-            </ul>
-            <ul class="column">
-                <li>
-                    <a class="main" href="/">Listings</a>
-                    <ul class="zero">
-                        <li class="first"><a href="/developers/">Full listing</a></li>
-                        <li class="last"><a href="/developers/by_location/">Geographic listing</a></li>
+                    <ul class="column">
+                        <li>
+                            <a class="main" href="/">Listings</a>
+                            <ul class="zero">
+                                <li class="first"><a href="/developers">Full listing</a></li>
+                                <li class="last"><a href="/developers/by_location">Geographic listing</a></li>
+                            </ul>
+                        </li>
                     </ul>
-                </li>
-            </ul>
+                </div>
+            </nav>
+            <hr />
+            
+            <div id="copyright">
+                <p>&copy; 2012 Sencha Inc. All rights reserved.</p>
+            </div>
         </div>
-        <hr />
-        <div id="copyright">
-            <p>&copy; 2012 Sencha Inc. All rights reserved.</p>
-        </div>
-    </div>
-
-    <div class="hidden">
-        <pre class="example" data-uri="/touch/2.0.0/examples/kiva/app.js">/*global Ext:false */
-Ext.ClassManager.setAlias('Ext.data.proxy.Kiva', 'proxy.kiva');
-
-Ext.application({
-    name: 'Kiva',
-
-    requires: ['Ext.data.proxy.Kiva'],
-
-    icon: 'resources/icons/icon.png',
-    phoneStartupScreen: 'resources/loading/Homescreen.jpg',
-    tabletStartupScreen: 'resources/loading/Homescreen~ipad.jpg',
-
-    views : ['Main', 'Detail', 'LoanFilter'],
-    controllers: ['Loans'],
-    models: ['Loan'],
-    stores: ['Loans'],
-
-    launch: function() {
-        Ext.create('Kiva.view.Main');
-    }
-});
-</pre>
-        <pre class="example" data-uri="/touch/2.0.0/examples/kiva/app/controller/Loans.js">/**
- * @class Kiva.controller.Loans
- * @extends Ext.app.Controller
- *
- * The only controller in this simple application - this simply sets up the fullscreen viewport panel
- * and renders a detailed overlay whenever a Loan is tapped on.
- */
-Ext.define('Kiva.controller.Loans', {
-    extend: 'Ext.app.Controller',
-
-    config: {
-        profile: Ext.os.deviceType.toLowerCase(),
-
-        refs: {
-            main: 'mainview',
-            loansList: 'loanslist',
-            loanFilter: 'loanfilter',
-            searchField: 'searchfield',
-            refreshButton: 'button[iconCls=refresh]'
-        },
-
-        control: {
-            'loanslist': {
-                select: 'onListTap'
-            },
-            'detail': {
-                hideanimationstart: 'onDetailHideAnimationStart'
-            },
-            'searchfield': {
-                action: 'onSearch'
-            },
-            'selectfield': {
-                change: 'onSelectChange'
-            },
-            'button[iconCls=refresh]': {
-                tap: 'onRefreshButtonTap'
-            }
-        }
-    },
-
-    init: function() {
-        Ext.getStore('Loans').on({
-            scope: this,
-
-            beforeload: this.onBeforeStoreLoad,
-            load: this.onStoreLoad
-        });
-    },
-
-    onListTap: function(list, loan) {
-        if (!this.view) {
-            this.view = Ext.create('Kiva.view.Detail');
-        }
-
-        var view = this.view;
-        view.setLoan(loan);
-
-        if (this.getProfile() == "phone") {
-            view.setWidth(null);
-            view.setHeight('85%');
-            view.setTop(null);
-            view.setLeft(0);
-        }
-
-        if (!view.getParent()) {
-            Ext.Viewport.add(view);
-        }
-
-        view.show();
-    },
-
-    onSearch: function(field) {
-        this.doFilter({
-            q: field.getValue()
-        });
-    },
-
-    onSelectChange: function(field) {
-        if (!field.initialized) {
-            return;
-        }
-
-        var config = {};
-        config[field.getName()] = field.getValue();
-        this.doFilter(config);
-    },
-
-    onDetailHideAnimationStart: function() {
-        this.getLoansList().deselectAll();
-    },
-
-    onRefreshButtonTap: function() {
-        var store = Ext.getStore('Loans'),
-            hasValue = Boolean(this.getSearchField().getValue().length);
-
-        if (!hasValue) {
-            store.clearFilter();
-        }
-
-        store.load();
-    },
-
-    onBeforeStoreLoad: function() {
-        this.getRefreshButton().setDisabled(true);
-    },
-
-    onStoreLoad: function() {
-        this.getRefreshButton().setDisabled(false);
-    },
-
-    /**
-     * @private
-     * Listener for the 'filter' event fired by the listView set up in the 'list' action. This simply
-     * gets the form values that the user wants to filter on and tells the Store to filter using them.
-     */
-    doFilter: function(values) {
-        var store = Ext.getStore('Loans'),
-            filters = [];
-
-        Ext.iterate(values, function(field, value) {
-            filters.push({
-                property: field,
-                value   : value
-            });
-        });
-
-        store.clearFilter();
-        store.filter(filters);
-        store.load();
-    }
-});
-</pre>
-        <pre class="example" data-uri="/touch/2.0.0/examples/kiva/app/model/Loan.js">/**
- * @class Loan
- * @extends Ext.data.Model
- * The Loan model is the only model we need in this simple application. We're using a custom Proxy for
- * this application to enable us to consume Kiva's JSON api. See lib/KivaProxy.js to see how this is done
- */
-Ext.define('Kiva.model.Loan', {
-    extend: 'Ext.data.Model',
-
-    config: {
-        fields: [
-            {name: "id",             type: "int"},
-            {name: "name",           type: "string"},
-            {name: "status",         type: "string"},
-            {name: "loan_amount",    type: "int"},
-            {name: "funded_amount",  type: "int"},
-            {name: "basket_amount",  type: "int"},
-            {name: "borrower_count", type: "int"},
-            {name: "activity",       type: "string"},
-            {name: "sector",         type: "string"},
-            {name: "use",            type: "string"},
-            {name: "partner_id",     type: "int"},
-            {name: "description",    type: "string", mapping: "description.texts.en"},
-            {name: "image", type: "string", mapping: "image.id", convert: function(value, record) {
-                return "http://kiva.org/img/w80h80/" + value + ".jpg";
-            }},
-            'terms', 'location',
-            {
-                name: 'percent_funded', convert: function(v, record) {
-                    return parseInt(record.data.funded_amount / record.data.loan_amount * 100, 10);
-                }
-            }
-        ],
-
-        proxy: {
-            type: 'kiva',
-
-            reader: {
-                type: 'json',
-                successProperty: 'success',
-                rootProperty: function(data) {
-                    if (data.error || data.query.count === 0) {
-                        return [];
-                    } else {
-                        return data.query.results.loans;
-                    }
-                }
-            }
-        }
-    }
-});
-</pre>
-        <pre class="example" data-uri="/touch/2.0.0/examples/kiva/app/store/Loans.js">Ext.define('Kiva.store.Loans', {
-    extend: 'Ext.data.Store',
-
-    config: {
-        model: 'Kiva.model.Loan',
-        autoLoad: true,
-        remoteFilter: true
-    }
-});
-</pre>
-        <pre class="example" data-uri="/touch/2.0.0/examples/kiva/app/view/Detail.js">/**
- * @class kiva.views.LoanInfo
- * @extends Ext.Sheet
- *
- * We use this Ext.Sheet subclass to display information about a particular Loan when the user has tapped on it.
- * Ext.Sheet is an overlay class that slides in from above, below or one of the sides, usually in response to a
- * user action such as tapping on a list item.
- *
- * In this class we set the sheet up to be modal (masks the rest of the page) and to enter and exit from the
- * right hand edge of the screen. It hides itself when the user taps on the modal mask (via the hideOnMaskTap config).
- *
- * Inside the class we have an Ext.Carousel with three cards - details, payments and map. Each card is set up
- * inside its own function to make it easy to see what is going on. The LoanInfo sheet is rendered and shown by
- * the loan controller's 'show' action (see app/controllers/loans.js).
- *
- */
-Ext.define('Kiva.view.Detail', {
-    extend: 'Ext.Panel',
-    xtype: 'detail',
-
-    requires: [
-        'Kiva.view.detail.Information',
-        'Kiva.view.detail.Schedule',
-        'Kiva.view.detail.Map',
-        'Ext.carousel.Carousel'
-    ],
-
-    config: {
-        baseCls: Ext.baseCSSPrefix + 'sheet',
-        modal: true,
-        centered : false,
-        hideOnMaskTap : true,
-
-        ui: 'detail',
-
-        // we always want the sheet to be 400px wide and to be as tall as the device allows
-        width: 400,
-        top: 0,
-        bottom: 0,
-        right: 0,
-
-        loan: null,
-
-        layout: {
-            type: 'vbox',
-            align: 'stretch'
-        },
-
-        items: [
-            {
-                xtype: 'carousel',
-                flex: 1,
-                items: [
-                    { xtype: 'detailInformation' },
-                    { xtype: 'detailSchedule' },
-                    { xtype: 'detailMap' }
-                ]
-            },
-            {
-                xtype: 'button',
-                text: 'Lend $25'
-            }
-        ]
-    },
-
-    hide: function(animation) {
-        var me = this;
-
-        //we fire this event so the controller can deselect all items immediately.
-        me.fireEvent('hideanimationstart', me);
-
-        //show the mask again
-        me.callParent();
-    },
-
-    updateLoan: function(newLoan) {
-        var carousel = this.down('carousel'),
-            information = this.down('detailInformation'),
-            payments = this.down('detailSchedule'),
-            map = this.down('detailMap'),
-            coords = newLoan.get('location').geo.pairs.split(' ').map(parseFloat);
-
-        information.setData(newLoan.data);
-        payments.setData(newLoan.data.terms.scheduled_payments);
-
-        //update the lend button
-        this.updateLendButton();
-
-        //update the map
-        if (this.mapMarker) {
-            this.mapMarker.setMap(null);
-            delete this.mapMarker;
-        }
-
-        //add a marker for the Loanee's position on the map
-        this.mapMarker = new google.maps.Marker({
-            map: map.map,
-            title : newLoan.get('name'),
-            position: new google.maps.LatLng(coords[0], coords[1])
-        });
-
-        carousel.setActiveItem(0);
-
-        map.setMapCenter(this.mapMarker.position);
-    },
-
-    updateLendButton: function() {
-        var url    = "http://www.kiva.org/lend/" + this.getLoan().getId(),
-            button = this.down('button'),
-            link = Ext.getDom('linker'),
-            clickEvent = document.createEvent('Event');
-
-        //http://www.sencha.com/forum/showthread.php?130358-window.open()-from-toolbar-button-opens-window-from-list-item-a-new-tab&p=639938#post639938
-        clickEvent.initEvent('click', true, false);
-
-        button.setHandler(function() {
-            link.href = url;
-            link.dispatchEvent(clickEvent);
-        });
-    }
-});
-</pre>
-        <pre class="example" data-uri="/touch/2.0.0/examples/kiva/app/view/LoanFilter.js">/**
- * @class kiva.views.LoanFilter
- * @extends Ext.form.Panel
- *
- * This form enables the user to filter the types of Loans visible to those that they are interested in.
- *
- * We add a custom event called 'filter' to this class, and fire it whenever the user changes any of the
- * fields. The loans controller listens for this event and filters the Ext.data.Store that contains the
- * Loans based on the values selected (see the onFilter method in app/controllers/loans.js).
- *
- */
-Ext.define('Kiva.view.LoanFilter', {
-    extend: 'Ext.Container',
-    xtype: 'loanfilter',
-    requires: [
-        'Ext.field.Select',
-        'Ext.field.Search'
-    ],
-
-    config: {
-        items: [
-            {
-                xtype: 'toolbar',
-                ui   : 'green',
-                docked: 'top',
-                items: [
-                    { xtype: 'spacer', width: 50 },
-                    { xtype: 'spacer' },
-                    {
-                        xtype: 'title',
-                        title: 'Kiva'
-                    },
-                    { xtype: 'spacer' },
-                    {
-                        xtype: 'button',
-                        iconMask: true,
-                        iconCls: 'refresh'
-                    }
-                ]
-            },
-            {
-                xtype: 'toolbar',
-                docked: 'top',
-                ui: 'gray',
-                items: (Ext.os.deviceType === 'Phone') ? [
-                    { xtype: 'searchfield', flex: 1 }
-                ] : [
-                    {
-                        xtype: 'selectfield',
-                        name: 'gender',
-                        options: [
-                            {text: 'Both', value: 'both'},
-                            {text: 'Male', value: 'male'},
-                            {text: 'Female', value: 'female'}
-                        ]
-                    },
-                    {
-                        xtype: 'selectfield',
-                        name: 'sector',
-                        prependText: 'Sector:',
-                        options: [
-                            {text: 'All',            value: ''},
-                            {text: 'Agriculture',    value: 'agriculture'},
-                            {text: 'Transportation', value: 'transportation'},
-                            {text: 'Services',       value: 'services'},
-                            {text: 'Clothing',       value: 'clothing'},
-                            {text: 'Health',         value: 'health'},
-                            {text: 'Retail',         value: 'retail'},
-                            {text: 'Manufacturing',  value: 'manufacturing'},
-                            {text: 'Arts',           value: 'arts'},
-                            {text: 'Housing',        value: 'housing'},
-                            {text: 'Food',           value: 'food'},
-                            {text: 'Wholesale',      value: 'wholesale'},
-                            {text: 'Construction',   value: 'construction'},
-                            {text: 'Education',      value: 'education'},
-                            {text: 'Personal Use',   value: 'personal'},
-                            {text: 'Entertainment',  value: 'entertainment'},
-                            {text: 'Green',          value: 'green'}
-                        ]
-                    },
-                    // { xtype: 'spacer' },
-                    {
-                        xtype: 'selectfield',
-                        name: 'sort_by',
-                        prependText: 'Sort by:',
-                        options: [
-                            {text: 'Newest',           value: 'newest'},
-                            {text: 'Oldest',           value: 'oldest'},
-                            {text: 'Expiring',         value: 'expiration'},
-                            {text: 'Amount Remaining', value: 'amount_remaining'},
-                            {text: 'Popularity',       value: 'popularity'},
-                            {text: 'Loan Amount',      value: 'loan_amount'}
-                        ]
-                    },
-
-                    {xtype: 'spacer'},
-
-                    { xtype: 'searchfield' }
-                ]
-            }
-        ],
-
-        layout: {
-            type: 'vbox',
-            align: 'stretch'
-        }
-    },
-
-    /**
-     * This is called whenever any of the fields in the form are changed. It simply collects all of the
-     * values of the fields and fires the custom 'filter' event.
-     */
-    onFieldChange : function(comp, value) {
-        this.fireAction('filter', this.getValues(), this);
-    }
-});
-</pre>
-        <pre class="example" data-uri="/touch/2.0.0/examples/kiva/app/view/LoansList.js">/**
- * @class kiva.views.List
- * @extends Ext.DataView
- */
-Ext.define('Kiva.view.LoansList', {
-    extend: 'Ext.DataView',
-    xtype : 'loanslist',
-    requires: [
-        'Kiva.view.LoansListItem'
-    ],
-
-    config: {
-        ui   : 'loans',
-        store: 'Loans',
-        useComponents: true,
-        defaultType: 'loanslistitem',
-        deselectOnContainerClick: false
-    },
-
-    /**
-     * Used so the "sorry something went wrong" message doesn't appear on first load
-     * @private
-     */
-    refreshed: false,
-
-    onLoad: function() {
-        var me = this,
-            store = me.getStore();
-
-        me.callParent(arguments);
-
-        if (store.getCount() === 0 && store.isLoaded()) {
-            me.setMasked({
-                xtype: 'loadmask',
-                indicator: false,
-                message: 'Sorry, KIVA is having issues right now.'
-            });
-
-            me.getScrollable().getScroller().setDisabled(true);
-        }
-    }
-});
-</pre>
-        <pre class="example" data-uri="/touch/2.0.0/examples/kiva/app/view/LoansListItem.js">
-Ext.define('Kiva.view.LoansListItem', {
-    extend: 'Ext.dataview.component.DataItem',
-    xtype : 'loanslistitem',
-    requires: ['Ext.Img', 'Kiva.view.LoansListItemCompletion'],
-
-    config: {
-        dataMap: {
-            getName: {
-                setHtml: 'name'
-            },
-
-            getUse: {
-                setHtml: 'use'
-            },
-
-            getAvatar: {
-                setSrc: 'image'
-            },
-
-            getCompletion: {
-                setPercentFunded: 'percent_funded'
-            }
-        },
-
-        cls: Ext.baseCSSPrefix + 'list-item',
-
-        name: {
-            cls: 'name'
-        },
-
-        use: {
-            cls: 'use'
-        },
-
-        avatar: {
-            docked: 'left'
-        },
-
-        completion: {
-            docked: 'right',
-            hidden: (Ext.os.deviceType === 'Phone') ? true : false
-        },
-
-        layout: {
-            type: 'vbox',
-            pack: 'center'
-        }
-    },
-
-    applyName: function(config) {
-        return Ext.factory(config, Ext.Component, this.getName());
-    },
-
-    updateName: function(newName) {
-        if (newName) {
-            this.add(newName);
-        }
-    },
-
-    applyUse: function(config) {
-        return Ext.factory(config, Ext.Component, this.getUse());
-    },
-
-    updateUse: function(newUse) {
-        if (newUse) {
-            this.add(newUse);
-        }
-    },
-
-    applyAvatar: function(config) {
-        return Ext.factory(config, Ext.Img, this.getAvatar());
-    },
-
-    updateAvatar: function(newAvatar) {
-        if (newAvatar) {
-            this.add(newAvatar);
-        }
-    },
-
-    applyCompletion: function(config) {
-        return Ext.factory(config, Kiva.view.LoansListItemCompletion, this.getCompletion());
-    },
-
-    updateCompletion: function(newCompletion) {
-        if (newCompletion) {
-            this.add(newCompletion);
-        }
-    }
-});
-</pre>
-        <pre class="example" data-uri="/touch/2.0.0/examples/kiva/app/view/LoansListItemCompletion.js">Ext.define('Kiva.view.LoansListItemCompletion', {
-    extend: 'Ext.Component',
-
-    config: {
-        percentFunded: 0,
-
-        cls: 'completion',
-        width: 100
-    },
-
-    updatePercentFunded: function(percentFunded) {
-        var html = '<div class="bar" style="width:' + percentFunded + '%"></div>';
-
-        this.updateHtml(html);
-    }
-});
-</pre>
-        <pre class="example" data-uri="/touch/2.0.0/examples/kiva/app/view/Main.js">Ext.define('Kiva.view.Main', {
-    extend: 'Ext.Container',
-    xtype: 'mainview',
-    requires: [
-        'Kiva.view.LoansList',
-        'Kiva.view.LoanFilter'
-    ],
-
-    config: {
-        fullscreen: true,
-        layout: 'fit',
-        items: [
-            {
-                xtype : 'loanfilter',
-                docked: 'top'
-            },
-            {
-                xtype: 'loanslist'
-            }
-        ]
-    }
-});
-</pre>
-        <pre class="example" data-uri="/touch/2.0.0/examples/kiva/app/view/detail/Information.js">Ext.define('Kiva.view.detail.Information', {
-    extend: 'Ext.Container',
-    xtype: 'detailInformation',
-    requires: ['Ext.XTemplate'],
-
-    config: {
-        cls: 'detail-card',
-        styleHtmlContent: true,
-        scrollable: {
-            direction: 'vertical',
-            directionLock: true
-        },
-
-        tpl: Ext.create('Ext.XTemplate',
-            '<h1>{name}</h1>',
-            '<h2><tpl if="location.town">{location.town}, </tpl>{location.country}</h2>',
-            '<p class="overview">',
-                '<strong>Activity:</strong> {activity}<br />',
-                '<strong>Sector:</strong> {sector}<br />',
-                '<strong>Amount requested:</strong> ${terms.loan_amount}<br />',
-                '<strong>Amount funded:</strong> ${funded_amount}<br />',
-            '</p>',
-            '<p><strong>Overview</strong><br />{description}</p>'
-            // {compiled: true}
-        )
-    }
-});
-</pre>
-        <pre class="example" data-uri="/touch/2.0.0/examples/kiva/app/view/detail/Map.js">Ext.define('Kiva.view.detail.Map', {
-    extend: 'Ext.Map',
-    xtype: 'detailMap',
-    config: {
-        mapOptions: {
-            // center: this.mapPosition,
-            disableDefaultUI: true,
-            zoom: 5,
-            draggable: false
-        }
-    }
-});
-</pre>
-        <pre class="example" data-uri="/touch/2.0.0/examples/kiva/app/view/detail/Schedule.js">Ext.define('Kiva.view.detail.Schedule', {
-    extend: 'Ext.Container',
-    xtype: 'detailSchedule',
-    requires: ['Ext.DateExtras'],
-
-    config: {
-        cls: 'detail-card',
-        styleHtmlContent: true,
-        scrollable: {
-            direction: 'vertical',
-            directionLock: true
-        },
-
-        tpl: Ext.create('Ext.XTemplate',
-            '<h1>Repayment Schedule</h1>',
-            '<tpl for=".">',
-                '<div class="payment">',
-                    '<div>{[this.formatDueDate(values.due_date)]} <span>${amount}</span></div>',
-                '</div>',
-            '</tpl>',
-            {
-                formatDueDate: function(date) {
-                    date = date.split('T')[0];
-
-                    var format = "j M Y";
-                        parsed = new Date(Ext.Date.parse(date, "Y-m-d"));
-                    
-                    return Ext.Date.format(parsed, format);
-                }
-            }
-        )
-    }
-});
-</pre>
-        <pre class="example" data-uri="/touch/2.0.0/examples/kiva/lib/KivaProxy.js">/**
- * @class Ext.data.KivaProxy
- * @extends Ext.data.ScriptTagProxy
- *
- * Kiva does not have a JSON-P API, making it challenging to access their data using a purely client-side
- * application. To get around this, we use Yahoo's YQL service, which acts as a proxy allowing us to use
- * the API as though it was any other data source.
- *
- * To make this work we've set up a very simple subclass of the ScriptTagProxy, which is a Proxy that lets
- * us load data from a different domain (http://query.yahooapis.com in this case). The only extra logic we
- * add is in buildRequest, where we modify the request url to include the YQL statement we need to perform
- * our search.
- *
- * See http://developer.yahoo.com/yql/ for more information about YQL.
- */
-Ext.define('Ext.data.proxy.Kiva', {
-    extend: 'Ext.data.proxy.JsonP',
-    requires: ['Ext.XTemplate'],
-    alias: 'proxy.kiva',
-    autoAppendParams: false,
-
-    /**
-     * The Proxy will always use this url for all requests - Yahoo's YQL service does the rest with the
-     * query that we send it in {@link #buildRequest}
-     */
-    url: 'http://query.yahooapis.com/v1/public/yql',
-    _url: 'http://query.yahooapis.com/v1/public/yql',
-    // url: 'fake.json',
-
-    /**
-     * This proxy uses YQL, which is an SQL-like way of accessing remote data. We are using an XTemplate
-     * to generate the search query. See {@link #buildRequest} for more details
-     */
-    queries: {
-        search: Ext.create('Ext.XTemplate', [
-            'use "http://github.com/extjs/YQL-Tables/raw/master/kiva/loanSearch.xml" as loansearch; ',
-            'use "http://github.com/extjs/YQL-Tables/raw/master/kiva/loanInfo.xml" as loaninfo; ',
-            'select * from loaninfo where ids IN (select id from loansearch where status="fundraising"',
-            '<tpl if="sort_by"> AND sort_by="{sort_by}"</tpl>',
-            '<tpl if="gender"> AND gender="{gender}"</tpl>',
-            '<tpl if="region"> AND region="{region}"</tpl>',
-            '<tpl if="sector"> AND sector="{sector}"</tpl>',
-            '<tpl if="q"> AND q="{q}"</tpl>)'
-            // {compiled: true}
-        ])
-    },
-
-    /**
-     * We need to add a little processing to the normal buildRequest. In YQL we send an SQL-like
-     * query statement - in this case using the search query above. To honor the filters applied
-     * by the user, we pull those out in this function and apply them to the search XTemplate.
-     * Finally, we modify the url to add this generated query and any other required parameters.
-     */
-    buildRequest: function(operation) {
-        var request    = this.callParent(arguments),
-            queryTpl   = this.queries.search,
-            filters    = operation.getFilters() || [],
-            params     = request.getParams(),
-            filterData = {};
-
-        Ext.iterate(filters, function(filter) {
-            filterData[filter.getProperty()] = filter.getValue();
-        });
-
-        delete params.filters;
-
-        Ext.applyIf(params, {
-            format: 'json',
-            q: queryTpl.applyTemplate(filterData)
-        });
-
-        request.setParams(params);
-        request.setUrl(Ext.urlAppend(request.getUrl(), Ext.urlEncode(params)));
-        return request;
-    }
-});
-</pre>
-    </div>
+    </footer>
 
 </body>
 </html>

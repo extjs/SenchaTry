@@ -10,32 +10,41 @@
 </head>
 <body>
 
-    <div id="logo-container" class="skiptranslate">
-        <h1 id="logo"><a href="/"><img src="/assets/logo.png" alt="Sencha Try" /></a></h1>
-        <span id="glow"></span>
-    </div>
-    <ul>
-        <li class="with-sub">
-            <a href="#" class="dropdown">Sencha Network</a>
-            <div id="docs-dropdown" class="pop-nav zero">
+    <header id="header">
+        <div id="logo-container" class="skiptranslate">
+            <h1 id="logo"><a href="/"><img src="/assets/logo.png" alt="Sencha Try" /></a></h1>
+            <span id="glow"></span>
+        </div>
+        
+        <nav id="siteNav">
+          <ul>
+            <li class="with-sub">
+              <a href="#" class="dropdown">Sencha Network</a>
+              <div class="pop-nav zero" id="docs-dropdown">
                 <ul>
-                    <li><a href="http://sencha.com/">Sencha.com</a></li>
-                    <li><a href="http://sencha.com/products/io/">Sencha.io</a></li>
-                    <li><a href="http://market.sencha.com/">Sencha Market</a></li>
+                  <li><a href="http://sencha.com/">Sencha.com</a></li>
+                  <li><a href="http://sencha.com/products/io/">Sencha.io</a></li>
+                  <li><a href="http://market.sencha.com/">Sencha Market</a></li>
                 </ul>
-            </div>
-        </li>
-    </ul>
+              </div>
+            </li>
+          </ul>
+        </nav>
+    </header>
     
     <div id="content-wrapper" class="clearfix">
         <div id="content">
-            <a href="/">Home</a> <span>/</span> <a href="/extjs/">Ext JS</a> <span>/</span> <a href="/extjs/4.0.7/">4.0.7</a> <span>/</span> File Upload Field
+            <nav class="bc">
+                <a href="/">Home</a> <span>/</span> <a href="/extjs/">Ext JS</a> <span>/</span> <a href="/extjs/4.0.7/">4.0.7</a> <span>/</span> File Upload Field
+            </nav>
+            
             <div class="developer">
                 <div class="column_nine">
                     <div class="details">
                         <div class="top-block border">
                             <h2 class="alt">File Upload Field</h2>
                         </div>
+                        
                         <div class="plain-text"><p>This example demonstrates use of Ext.form.field.File, a file upload field with custom rendering.</p>
 
 <h2>Basic File Field</h2>
@@ -49,18 +58,34 @@
 <h2>Form Example</h2>
 
 <p>The File field can also be used in form layouts just like any other field, with support for labeling, validation (the field is required in this example), empty text, etc.  This example also demonstrates using the <code>buttonConfig</code> option to provide a customized icon upload button.</p></div>
+                        
                         <h3>[example widget]</h3>
+                        
                         <div>
                             <ul class="developer-actions">
                                 <li class="request"><a href="src.zip" class="button-link center">Download</a></li>
                             </ul>
                         </div>
+                        
+                        <div>
+                            <h4>Files</h4>
+                            <ul>
+                                <li><a href="/extjs/4.0.7/examples/form/file-upload/app.js">app.js</a></li>
+                                <li><a href="/extjs/4.0.7/examples/form/file-upload/file-upload.php">file-upload.php</a></li>
+                                <li><a href="/extjs/4.0.7/examples/form/file-upload/index.html">index.html</a></li>
+                                <li><a href="/extjs/4.0.7/examples/form/file-upload/resources/css/app.css">resources/css/app.css</a></li>
+                                <li><a href="/extjs/4.0.7/examples/form/file-upload/resources/icons/fam/image_add.png">resources/icons/fam/image_add.png</a></li>
+                            </ul>
+                        </div>
+                        
                         <hr class="clear" />
+                        
                         <h4>Tags</h4>
                         <ul class="services-list alt clearfix tags">
                             <li><a href="/tags/Ext%20JS/">Ext JS</a></li>
                             <li><a href="/tags/Ext%20JS%204.0.7/">Ext JS 4.0.7</a></li>
                         </ul>
+                        
                         <h4>See Also</h4>
                         <ul class="services-list alt clearfix see-also">
                         </ul>
@@ -70,163 +95,37 @@
         </div>
     </div>
     
-    <div id="footer-content">
-        <div class="columns">
-            <ul class="column">
-                <li>
-                    <a class="main" href="http://sencha.com/company/">Company</a>
-                    <ul class="zero">
-                        <li class="first"><a href="http://www.sencha.com/contact/" rel="nofollow">Contact Us</a></li>
-                        <li class="last"><a href="/pages/terms/" rel="nofollow">Terms of Use</a></li>
+    <footer id="footer">
+        <div id="footer-content">
+            <nav id="footer-nav">
+                <div class="columns">
+                    <ul class="column">
+                        <li>
+                            <a class="main" href="http://sencha.com/company">Company</a>
+                            <ul class="zero">
+                                <li class="first"><a href="http://www.sencha.com/contact/" rel="nofollow">Contact Us</a></li>
+                                <li class="last"><a href="/pages/terms" rel="nofollow">Terms of Use</a></li>
+                            </ul>
+                        </li>
                     </ul>
-                </li>
-            </ul>
-            <ul class="column">
-                <li>
-                    <a class="main" href="/">Listings</a>
-                    <ul class="zero">
-                        <li class="first"><a href="/developers/">Full listing</a></li>
-                        <li class="last"><a href="/developers/by_location/">Geographic listing</a></li>
+                    <ul class="column">
+                        <li>
+                            <a class="main" href="/">Listings</a>
+                            <ul class="zero">
+                                <li class="first"><a href="/developers">Full listing</a></li>
+                                <li class="last"><a href="/developers/by_location">Geographic listing</a></li>
+                            </ul>
+                        </li>
                     </ul>
-                </li>
-            </ul>
+                </div>
+            </nav>
+            <hr />
+            
+            <div id="copyright">
+                <p>&copy; 2012 Sencha Inc. All rights reserved.</p>
+            </div>
         </div>
-        <hr />
-        <div id="copyright">
-            <p>&copy; 2012 Sencha Inc. All rights reserved.</p>
-        </div>
-    </div>
-
-    <div class="hidden">
-        <pre class="example" data-uri="/extjs/4.0.7/examples/form/file-upload/app.js">/*global Ext:false */
-/*
-
-This file is part of Ext JS 4
-
-Copyright (c) 2011 Sencha Inc
-
-Contact:  http://www.sencha.com/contact
-
-GNU General Public License Usage
-This file may be used under the terms of the GNU General Public License version 3.0 as published by the Free Software Foundation and appearing in the file LICENSE included in the packaging of this file.  Please review the following information to ensure the GNU General Public License version 3.0 requirements will be met: http://www.gnu.org/copyleft/gpl.html.
-
-If you are unsure which license is appropriate for your use, please contact the sales department at http://www.sencha.com/contact.
-
-*/
-Ext.require([
-    'Ext.form.field.File',
-    'Ext.form.Panel',
-    'Ext.window.MessageBox'
-]);
-
-Ext.onReady(function(){
-
-    var msg = function(title, msg) {
-        Ext.Msg.show({
-            title: title,
-            msg: msg,
-            minWidth: 200,
-            modal: true,
-            icon: Ext.Msg.INFO,
-            buttons: Ext.Msg.OK
-        });
-    };
-
-    var fibasic = Ext.create('Ext.form.field.File', {
-        renderTo: 'fi-basic',
-        width: 400,
-        hideLabel: true
-    });
-
-    Ext.create('Ext.button.Button', {
-        text: 'Get File Path',
-        renderTo: 'fi-basic-btn',
-        handler: function(){
-            var v = fibasic.getValue();
-            msg('Selected File', v && v !== '' ? v : 'None');
-        }
-    });
-
-    Ext.create('Ext.form.field.File', {
-        renderTo: 'fi-button',
-        buttonOnly: true,
-        hideLabel: true,
-        listeners: {
-            'change': function(fb, v){
-                var el = Ext.get('fi-button-msg');
-                el.update('<b>Selected:</b> '+v);
-                if(!el.isVisible()){
-                    el.slideIn('t', {
-                        duration: 200,
-                        easing: 'easeIn',
-                        listeners: {
-                            afteranimate: function() {
-                                el.highlight();
-                                el.setWidth(null);
-                            }
-                        }
-                    });
-                }else{
-                    el.highlight();
-                }
-            }
-        }
-    });
-
-    Ext.create('Ext.form.Panel', {
-        renderTo: 'fi-form',
-        width: 500,
-        frame: true,
-        title: 'File Upload Form',
-        bodyPadding: '10 10 0',
-
-        defaults: {
-            anchor: '100%',
-            allowBlank: false,
-            msgTarget: 'side',
-            labelWidth: 50
-        },
-
-        items: [{
-            xtype: 'textfield',
-            fieldLabel: 'Name'
-        },{
-            xtype: 'filefield',
-            id: 'form-file',
-            emptyText: 'Select an image',
-            fieldLabel: 'Photo',
-            name: 'photo-path',
-            buttonText: '',
-            buttonConfig: {
-                iconCls: 'upload-icon'
-            }
-        }],
-
-        buttons: [{
-            text: 'Save',
-            handler: function(){
-                var form = this.up('form').getForm();
-                if(form.isValid()){
-                    form.submit({
-                        url: 'file-upload.php',
-                        waitMsg: 'Uploading your photo...',
-                        success: function(fp, o) {
-                            msg('Success', 'Processed file "' + o.result.file + '" on the server');
-                        }
-                    });
-                }
-            }
-        },{
-            text: 'Reset',
-            handler: function() {
-                this.up('form').getForm().reset();
-            }
-        }]
-    });
-
-});
-</pre>
-    </div>
+    </footer>
 
 </body>
 </html>

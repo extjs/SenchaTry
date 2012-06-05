@@ -10,45 +10,67 @@
 </head>
 <body>
 
-    <div id="logo-container" class="skiptranslate">
-        <h1 id="logo"><a href="/"><img src="/assets/logo.png" alt="Sencha Try" /></a></h1>
-        <span id="glow"></span>
-    </div>
-    <ul>
-        <li class="with-sub">
-            <a href="#" class="dropdown">Sencha Network</a>
-            <div id="docs-dropdown" class="pop-nav zero">
+    <header id="header">
+        <div id="logo-container" class="skiptranslate">
+            <h1 id="logo"><a href="/"><img src="/assets/logo.png" alt="Sencha Try" /></a></h1>
+            <span id="glow"></span>
+        </div>
+        
+        <nav id="siteNav">
+          <ul>
+            <li class="with-sub">
+              <a href="#" class="dropdown">Sencha Network</a>
+              <div class="pop-nav zero" id="docs-dropdown">
                 <ul>
-                    <li><a href="http://sencha.com/">Sencha.com</a></li>
-                    <li><a href="http://sencha.com/products/io/">Sencha.io</a></li>
-                    <li><a href="http://market.sencha.com/">Sencha Market</a></li>
+                  <li><a href="http://sencha.com/">Sencha.com</a></li>
+                  <li><a href="http://sencha.com/products/io/">Sencha.io</a></li>
+                  <li><a href="http://market.sencha.com/">Sencha Market</a></li>
                 </ul>
-            </div>
-        </li>
-    </ul>
+              </div>
+            </li>
+          </ul>
+        </nav>
+    </header>
     
     <div id="content-wrapper" class="clearfix">
         <div id="content">
-            <a href="/">Home</a> <span>/</span> <a href="/touch/">Touch</a> <span>/</span> <a href="/touch/2.0.0/">2.0.0</a> <span>/</span> Specifying which side of the viewport an Ext.ActionSheet container animates from in Sencha Touch 2
+            <nav class="bc">
+                <a href="/">Home</a> <span>/</span> <a href="/touch/">Touch</a> <span>/</span> <a href="/touch/2.0.0/">2.0.0</a> <span>/</span> Specifying which side of the viewport an Ext.ActionSheet container animates from in Sencha Touch 2
+            </nav>
+            
             <div class="developer">
                 <div class="column_nine">
                     <div class="details">
                         <div class="top-block border">
                             <h2 class="alt">Specifying which side of the viewport an Ext.ActionSheet container animates from in Sencha Touch 2</h2>
                         </div>
+                        
                         <div class="plain-text"><p>The following example shows how you can specify which side of the viewport an Ext.ActionSheet container animates from in Sencha Touch 2 by setting the <code>enter</code> and <code>exit</code> config options.</p></div>
+                        
                         <h3>[example widget]</h3>
+                        
                         <div>
                             <ul class="developer-actions">
                                 <li class="request"><a href="src.zip" class="button-link center">Download</a></li>
                             </ul>
                         </div>
+                        
+                        <div>
+                            <h4>Files</h4>
+                            <ul>
+                                <li><a href="/touch/2.0.0/demos/Ext.ActionSheet.enter/app.js">app.js</a></li>
+                                <li><a href="/touch/2.0.0/demos/Ext.ActionSheet.enter/index.html">index.html</a></li>
+                            </ul>
+                        </div>
+                        
                         <hr class="clear" />
+                        
                         <h4>Tags</h4>
                         <ul class="services-list alt clearfix tags">
                             <li><a href="/tags/Sencha%20Touch/">Sencha Touch</a></li>
                             <li><a href="/tags/Sencha%20Touch%202.0.0/">Sencha Touch 2.0.0</a></li>
                         </ul>
+                        
                         <h4>See Also</h4>
                         <ul class="services-list alt clearfix see-also">
                         </ul>
@@ -58,79 +80,37 @@
         </div>
     </div>
     
-    <div id="footer-content">
-        <div class="columns">
-            <ul class="column">
-                <li>
-                    <a class="main" href="http://sencha.com/company/">Company</a>
-                    <ul class="zero">
-                        <li class="first"><a href="http://www.sencha.com/contact/" rel="nofollow">Contact Us</a></li>
-                        <li class="last"><a href="/pages/terms/" rel="nofollow">Terms of Use</a></li>
+    <footer id="footer">
+        <div id="footer-content">
+            <nav id="footer-nav">
+                <div class="columns">
+                    <ul class="column">
+                        <li>
+                            <a class="main" href="http://sencha.com/company">Company</a>
+                            <ul class="zero">
+                                <li class="first"><a href="http://www.sencha.com/contact/" rel="nofollow">Contact Us</a></li>
+                                <li class="last"><a href="/pages/terms" rel="nofollow">Terms of Use</a></li>
+                            </ul>
+                        </li>
                     </ul>
-                </li>
-            </ul>
-            <ul class="column">
-                <li>
-                    <a class="main" href="/">Listings</a>
-                    <ul class="zero">
-                        <li class="first"><a href="/developers/">Full listing</a></li>
-                        <li class="last"><a href="/developers/by_location/">Geographic listing</a></li>
+                    <ul class="column">
+                        <li>
+                            <a class="main" href="/">Listings</a>
+                            <ul class="zero">
+                                <li class="first"><a href="/developers">Full listing</a></li>
+                                <li class="last"><a href="/developers/by_location">Geographic listing</a></li>
+                            </ul>
+                        </li>
                     </ul>
-                </li>
-            </ul>
+                </div>
+            </nav>
+            <hr />
+            
+            <div id="copyright">
+                <p>&copy; 2012 Sencha Inc. All rights reserved.</p>
+            </div>
         </div>
-        <hr />
-        <div id="copyright">
-            <p>&copy; 2012 Sencha Inc. All rights reserved.</p>
-        </div>
-    </div>
-
-    <div class="hidden">
-        <pre class="example" data-uri="/touch/2.0.0/demos/Ext.ActionSheet.enter/app.js">/*global Ext:false */
-Ext.application({
-    launch: function () {
-        var actionSheet = Ext.create('Ext.ActionSheet', {
-            enter: 'top',
-            exit: 'right',
-            hidden: true,
-            defaults: {
-                listeners: {
-                    tap: function () {
-                        actionSheet.hide();
-                    } // tap
-                } // listeners
-            }, // defaults
-            items: [{
-                text: 'Cancel',
-                handler: function () {
-                    /* cancel handler */
-                } // handler
-            }, {
-                text: 'Submit',
-                handler: function () {
-                    /* submit handler */
-                } // handler
-            }] // items
-        }); // create()
-        
-        Ext.create('Ext.Container', {
-            fullscreen: true,
-            items: [{
-                xtype: 'toolbar',
-                items: [{
-                    text: 'enter:top, exit:right',
-                    handler: function () {
-                        actionSheet.show();
-                    } // handler
-                }] // items (toolbar)
-            }] // items (container)
-        }); // create()
-        
-        Ext.Viewport.add(actionSheet);
-    } // launch
-}); // application()
-</pre>
-    </div>
+    </footer>
 
 </body>
 </html>

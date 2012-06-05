@@ -10,45 +10,78 @@
 </head>
 <body>
 
-    <div id="logo-container" class="skiptranslate">
-        <h1 id="logo"><a href="/"><img src="/assets/logo.png" alt="Sencha Try" /></a></h1>
-        <span id="glow"></span>
-    </div>
-    <ul>
-        <li class="with-sub">
-            <a href="#" class="dropdown">Sencha Network</a>
-            <div id="docs-dropdown" class="pop-nav zero">
+    <header id="header">
+        <div id="logo-container" class="skiptranslate">
+            <h1 id="logo"><a href="/"><img src="/assets/logo.png" alt="Sencha Try" /></a></h1>
+            <span id="glow"></span>
+        </div>
+        
+        <nav id="siteNav">
+          <ul>
+            <li class="with-sub">
+              <a href="#" class="dropdown">Sencha Network</a>
+              <div class="pop-nav zero" id="docs-dropdown">
                 <ul>
-                    <li><a href="http://sencha.com/">Sencha.com</a></li>
-                    <li><a href="http://sencha.com/products/io/">Sencha.io</a></li>
-                    <li><a href="http://market.sencha.com/">Sencha Market</a></li>
+                  <li><a href="http://sencha.com/">Sencha.com</a></li>
+                  <li><a href="http://sencha.com/products/io/">Sencha.io</a></li>
+                  <li><a href="http://market.sencha.com/">Sencha Market</a></li>
                 </ul>
-            </div>
-        </li>
-    </ul>
+              </div>
+            </li>
+          </ul>
+        </nav>
+    </header>
     
     <div id="content-wrapper" class="clearfix">
         <div id="content">
-            <a href="/">Home</a> <span>/</span> <a href="/extjs/">Ext JS</a> <span>/</span> <a href="/extjs/4.0.7/">4.0.7</a> <span>/</span> Vertical Toolbars
+            <nav class="bc">
+                <a href="/">Home</a> <span>/</span> <a href="/extjs/">Ext JS</a> <span>/</span> <a href="/extjs/4.0.7/">4.0.7</a> <span>/</span> Vertical Toolbars
+            </nav>
+            
             <div class="developer">
                 <div class="column_nine">
                     <div class="details">
                         <div class="top-block border">
                             <h2 class="alt">Vertical Toolbars</h2>
                         </div>
+                        
                         <div class="plain-text"></div>
+                        
                         <h3>[example widget]</h3>
+                        
                         <div>
                             <ul class="developer-actions">
                                 <li class="request"><a href="src.zip" class="button-link center">Download</a></li>
                             </ul>
                         </div>
+                        
+                        <div>
+                            <h4>Files</h4>
+                            <ul>
+                                <li><a href="/extjs/4.0.7/examples/toolbar/vertical-toolbars/app.js">app.js</a></li>
+                                <li><a href="/extjs/4.0.7/examples/toolbar/vertical-toolbars/index.html">index.html</a></li>
+                                <li><a href="/extjs/4.0.7/examples/toolbar/vertical-toolbars/resources/css/app.css">resources/css/app.css</a></li>
+                                <li><a href="/extjs/4.0.7/examples/toolbar/vertical-toolbars/resources/css/images/add.gif">resources/css/images/add.gif</a></li>
+                                <li><a href="/extjs/4.0.7/examples/toolbar/vertical-toolbars/resources/css/images/add16.gif">resources/css/images/add16.gif</a></li>
+                                <li><a href="/extjs/4.0.7/examples/toolbar/vertical-toolbars/resources/css/images/add24.gif">resources/css/images/add24.gif</a></li>
+                                <li><a href="/extjs/4.0.7/examples/toolbar/vertical-toolbars/resources/css/images/delete.gif">resources/css/images/delete.gif</a></li>
+                                <li><a href="/extjs/4.0.7/examples/toolbar/vertical-toolbars/resources/css/images/edit.gif">resources/css/images/edit.gif</a></li>
+                                <li><a href="/extjs/4.0.7/examples/toolbar/vertical-toolbars/resources/css/images/find.gif">resources/css/images/find.gif</a></li>
+                                <li><a href="/extjs/4.0.7/examples/toolbar/vertical-toolbars/resources/css/images/im32x32.gif">resources/css/images/im32x32.gif</a></li>
+                                <li><a href="/extjs/4.0.7/examples/toolbar/vertical-toolbars/resources/css/images/money_add.png">resources/css/images/money_add.png</a></li>
+                                <li><a href="/extjs/4.0.7/examples/toolbar/vertical-toolbars/resources/css/images/money_delete.png">resources/css/images/money_delete.png</a></li>
+                                <li><a href="/extjs/4.0.7/examples/toolbar/vertical-toolbars/resources/css/images/view.gif">resources/css/images/view.gif</a></li>
+                            </ul>
+                        </div>
+                        
                         <hr class="clear" />
+                        
                         <h4>Tags</h4>
                         <ul class="services-list alt clearfix tags">
                             <li><a href="/tags/Ext%20JS/">Ext JS</a></li>
                             <li><a href="/tags/Ext%20JS%204.0.7/">Ext JS 4.0.7</a></li>
                         </ul>
+                        
                         <h4>See Also</h4>
                         <ul class="services-list alt clearfix see-also">
                         </ul>
@@ -58,274 +91,37 @@
         </div>
     </div>
     
-    <div id="footer-content">
-        <div class="columns">
-            <ul class="column">
-                <li>
-                    <a class="main" href="http://sencha.com/company/">Company</a>
-                    <ul class="zero">
-                        <li class="first"><a href="http://www.sencha.com/contact/" rel="nofollow">Contact Us</a></li>
-                        <li class="last"><a href="/pages/terms/" rel="nofollow">Terms of Use</a></li>
+    <footer id="footer">
+        <div id="footer-content">
+            <nav id="footer-nav">
+                <div class="columns">
+                    <ul class="column">
+                        <li>
+                            <a class="main" href="http://sencha.com/company">Company</a>
+                            <ul class="zero">
+                                <li class="first"><a href="http://www.sencha.com/contact/" rel="nofollow">Contact Us</a></li>
+                                <li class="last"><a href="/pages/terms" rel="nofollow">Terms of Use</a></li>
+                            </ul>
+                        </li>
                     </ul>
-                </li>
-            </ul>
-            <ul class="column">
-                <li>
-                    <a class="main" href="/">Listings</a>
-                    <ul class="zero">
-                        <li class="first"><a href="/developers/">Full listing</a></li>
-                        <li class="last"><a href="/developers/by_location/">Geographic listing</a></li>
+                    <ul class="column">
+                        <li>
+                            <a class="main" href="/">Listings</a>
+                            <ul class="zero">
+                                <li class="first"><a href="/developers">Full listing</a></li>
+                                <li class="last"><a href="/developers/by_location">Geographic listing</a></li>
+                            </ul>
+                        </li>
                     </ul>
-                </li>
-            </ul>
+                </div>
+            </nav>
+            <hr />
+            
+            <div id="copyright">
+                <p>&copy; 2012 Sencha Inc. All rights reserved.</p>
+            </div>
         </div>
-        <hr />
-        <div id="copyright">
-            <p>&copy; 2012 Sencha Inc. All rights reserved.</p>
-        </div>
-    </div>
-
-    <div class="hidden">
-        <pre class="example" data-uri="/extjs/4.0.7/examples/toolbar/vertical-toolbars/app.js">/*global Ext:false */
-/*
-
-This file is part of Ext JS 4
-
-Copyright (c) 2011 Sencha Inc
-
-Contact:  http://www.sencha.com/contact
-
-GNU General Public License Usage
-This file may be used under the terms of the GNU General Public License version 3.0 as published by the Free Software Foundation and appearing in the file LICENSE included in the packaging of this file.  Please review the following information to ensure the GNU General Public License version 3.0 requirements will be met: http://www.gnu.org/copyleft/gpl.html.
-
-If you are unsure which license is appropriate for your use, please contact the sales department at http://www.sencha.com/contact.
-
-*/
-Ext.require([
-    'Ext.panel.*',
-    'Ext.toolbar.*',
-    'Ext.button.*',
-    'Ext.container.ButtonGroup',
-    'Ext.layout.container.Table',
-    'Ext.tip.QuickTipManager'
-]);
-
-Ext.onReady(function() {
-    var fakeHTML = "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.";
-
-    Ext.QuickTips.init();
-
-    // The default dockedItem weights have TLRB order, but TBLR matches border layout:
-    Ext.panel.AbstractPanel.prototype.defaultDockWeights = { top: 1, bottom: 3, left: 5, right: 7 };
-
-    var SamplePanel = Ext.extend(Ext.Panel, {
-        width    : 500,
-        height   : 250,
-        style    : 'margin-top:15px',
-        bodyStyle: 'padding:10px',
-        renderTo : Ext.getBody(),
-        html     : fakeHTML,
-        autoScroll: true
-    });
-    
-    new SamplePanel({
-        title: 'Standard (lbar)',
-        lbar: [{
-                iconCls: 'add16',
-                tooltip: 'Button 1'
-            },
-            '-',
-            {
-                iconCls: 'add16',
-                tooltip: {
-                    text: 'Button 2',
-                    anchor: 'left'
-                }
-            },{
-                iconCls: 'add16'
-            },{
-                iconCls: 'add16'
-            },
-            '-',
-            {
-                iconCls: 'add16'
-            }
-        ]
-    });
-
-    new SamplePanel({
-        title: 'Standard w/Split Buttons (rbar)',
-        rbar: [{
-                iconCls: 'add16',
-                menu: [{text: 'Menu Button 1'}]
-            },'-',{
-                iconCls: 'add16',
-                menu: [{text: 'Cut Menu Item'}]
-            },{
-                iconCls: 'add16'
-            },{
-                iconCls: 'add16',
-                menu: [{text: 'Paste Menu Item'}]
-            },'-',{
-                iconCls: 'add16'
-            }
-        ]
-    });
-
-    new SamplePanel({
-        title: 'Standard w/Short Text',
-        lbar: [{
-                xtype:'splitbutton',
-                text: 'Menu',
-                iconCls: 'add16',
-                menu: [{text: 'Menu Button 1'}]
-            },
-            //'-',
-            {
-                xtype:'splitbutton',
-                text: 'Cut',
-                textAlign: 'left',
-                iconCls: 'add16',
-                menu: [{text: 'Cut Menu Item'}]
-            },{
-                text: 'Copy',
-                textAlign: 'left',
-                iconCls: 'add16'
-            },{
-                text: 'Paste',
-                textAlign: 'left',
-                iconCls: 'add16',
-                menu: [{text: 'Paste Menu Item'}]
-            },
-            //'-',
-            {
-                text: 'Format',
-                textAlign: 'left',
-                iconCls: 'add16'
-            }
-        ]
-    });
-
-    new SamplePanel({
-        title: 'Standard w/Long Text',
-        rbar: [{
-                xtype:'splitbutton',
-                text: 'Menu Button',
-                iconCls: 'add16',
-                textAlign: 'left',
-                menu: [{text: 'Menu Button 1'}]
-            },'-',{
-                xtype:'splitbutton',
-                text: 'Cut Selection',
-                iconCls: 'add16',
-                textAlign: 'left',
-                menu: [{text: 'Cut Menu Item'}]
-            },{
-                text: 'Copy Selection',
-                textAlign: 'left',
-                iconCls: 'add16'
-            },{
-                text: 'Paste',
-                iconCls: 'add16',
-                textAlign: 'left',
-                menu: [{text: 'Paste Menu Item'}]
-            },'-',{
-                text: 'Format',
-                textAlign: 'left',
-                iconCls: 'add16'
-            }
-        ]
-    });
-
-    new SamplePanel({
-        title: 'One of Everything',
-        tbar: [{
-                iconCls: 'add16',
-                text: 'Button 1'
-            },
-            '-',
-            {
-                iconCls: 'add16',
-                text: 'Button 2'
-            },{
-                iconCls: 'add16'
-            },{
-                iconCls: 'add16'
-            },
-            '-',
-            {
-                iconCls: 'add16'
-            }
-        ],
-        lbar: [{
-                iconCls: 'add16',
-                tooltip: 'Button 1'
-            },
-            '-',
-            {
-                iconCls: 'add16',
-                tooltip: {
-                    text: 'Button 2',
-                    anchor: 'left'
-                }
-            },{
-                iconCls: 'add16'
-            },{
-                iconCls: 'add16'
-            },
-            '-',
-            {
-                iconCls: 'add16'
-            }
-        ],
-        rbar: [{
-                iconCls: 'add16',
-                tooltip: 'Button 1'
-            },
-            '-',
-            {
-                iconCls: 'add16',
-                tooltip: {
-                    text: 'Button 2',
-                    anchor: 'left'
-                }
-            },{
-                iconCls: 'add16'
-            },{
-                iconCls: 'add16'
-            },
-            '-',
-            {
-                iconCls: 'add16'
-            }
-        ],
-        bbar: [{
-                iconCls: 'add16',
-                text: 'Button 3'
-            },
-            '-',
-            {
-                iconCls: 'add16',
-                text: 'Button 4'
-            },{
-                iconCls: 'add16'
-            },{
-                iconCls: 'add16'
-            },
-            '-',
-            {
-                iconCls: 'add16',
-                text: 'Button 5',
-                menu: [
-                    { text: "Menu Item 1" }
-                ]
-            }
-        ]
-    });
-});
-
-</pre>
-    </div>
+    </footer>
 
 </body>
 </html>

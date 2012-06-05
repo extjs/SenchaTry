@@ -10,45 +10,85 @@
 </head>
 <body>
 
-    <div id="logo-container" class="skiptranslate">
-        <h1 id="logo"><a href="/"><img src="/assets/logo.png" alt="Sencha Try" /></a></h1>
-        <span id="glow"></span>
-    </div>
-    <ul>
-        <li class="with-sub">
-            <a href="#" class="dropdown">Sencha Network</a>
-            <div id="docs-dropdown" class="pop-nav zero">
+    <header id="header">
+        <div id="logo-container" class="skiptranslate">
+            <h1 id="logo"><a href="/"><img src="/assets/logo.png" alt="Sencha Try" /></a></h1>
+            <span id="glow"></span>
+        </div>
+        
+        <nav id="siteNav">
+          <ul>
+            <li class="with-sub">
+              <a href="#" class="dropdown">Sencha Network</a>
+              <div class="pop-nav zero" id="docs-dropdown">
                 <ul>
-                    <li><a href="http://sencha.com/">Sencha.com</a></li>
-                    <li><a href="http://sencha.com/products/io/">Sencha.io</a></li>
-                    <li><a href="http://market.sencha.com/">Sencha Market</a></li>
+                  <li><a href="http://sencha.com/">Sencha.com</a></li>
+                  <li><a href="http://sencha.com/products/io/">Sencha.io</a></li>
+                  <li><a href="http://market.sencha.com/">Sencha Market</a></li>
                 </ul>
-            </div>
-        </li>
-    </ul>
+              </div>
+            </li>
+          </ul>
+        </nav>
+    </header>
     
     <div id="content-wrapper" class="clearfix">
         <div id="content">
-            <a href="/">Home</a> <span>/</span> <a href="/touch/">Touch</a> <span>/</span> <a href="/touch/2.0.0/">2.0.0</a> <span>/</span> Nested List
+            <nav class="bc">
+                <a href="/">Home</a> <span>/</span> <a href="/touch/">Touch</a> <span>/</span> <a href="/touch/2.0.0/">2.0.0</a> <span>/</span> Nested List
+            </nav>
+            
             <div class="developer">
                 <div class="column_nine">
                     <div class="details">
                         <div class="top-block border">
                             <h2 class="alt">Nested List</h2>
                         </div>
+                        
                         <div class="plain-text"></div>
+                        
                         <h3>[example widget]</h3>
+                        
                         <div>
                             <ul class="developer-actions">
                                 <li class="request"><a href="src.zip" class="button-link center">Download</a></li>
                             </ul>
                         </div>
+                        
+                        <div>
+                            <h4>Files</h4>
+                            <ul>
+                                <li><a href="/touch/2.0.0/examples/nestedlist/app.js">app.js</a></li>
+                                <li><a href="/touch/2.0.0/examples/nestedlist/app.json">app.json</a></li>
+                                <li><a href="/touch/2.0.0/examples/nestedlist/index.html">index.html</a></li>
+                                <li><a href="/touch/2.0.0/examples/nestedlist/resources/css/app.css">resources/css/app.css</a></li>
+                                <li><a href="/touch/2.0.0/examples/nestedlist/resources/icons/icon.png">resources/icons/icon.png</a></li>
+                                <li><a href="/touch/2.0.0/examples/nestedlist/resources/icons/icon@144.png">resources/icons/icon@144.png</a></li>
+                                <li><a href="/touch/2.0.0/examples/nestedlist/resources/icons/icon@2x.png">resources/icons/icon@2x.png</a></li>
+                                <li><a href="/touch/2.0.0/examples/nestedlist/resources/icons/icon@72.png">resources/icons/icon@72.png</a></li>
+                                <li><a href="/touch/2.0.0/examples/nestedlist/resources/loading/Default-LandscapeLeft~ipad.png">resources/loading/Default-LandscapeLeft~ipad.png</a></li>
+                                <li><a href="/touch/2.0.0/examples/nestedlist/resources/loading/Default-LandscapeRight~ipad.png">resources/loading/Default-LandscapeRight~ipad.png</a></li>
+                                <li><a href="/touch/2.0.0/examples/nestedlist/resources/loading/Default-Landscape~ipad.png">resources/loading/Default-Landscape~ipad.png</a></li>
+                                <li><a href="/touch/2.0.0/examples/nestedlist/resources/loading/Default-PortraitUpsideDown~ipad.png">resources/loading/Default-PortraitUpsideDown~ipad.png</a></li>
+                                <li><a href="/touch/2.0.0/examples/nestedlist/resources/loading/Default-Portrait~ipad.png">resources/loading/Default-Portrait~ipad.png</a></li>
+                                <li><a href="/touch/2.0.0/examples/nestedlist/resources/loading/Default.png">resources/loading/Default.png</a></li>
+                                <li><a href="/touch/2.0.0/examples/nestedlist/resources/loading/Default@2x.png">resources/loading/Default@2x.png</a></li>
+                                <li><a href="/touch/2.0.0/examples/nestedlist/resources/loading/Default~ipad.png">resources/loading/Default~ipad.png</a></li>
+                                <li><a href="/touch/2.0.0/examples/nestedlist/resources/loading/Homescreen.jpg">resources/loading/Homescreen.jpg</a></li>
+                                <li><a href="/touch/2.0.0/examples/nestedlist/resources/loading/Homescreen~ipad.jpg">resources/loading/Homescreen~ipad.jpg</a></li>
+                                <li><a href="/touch/2.0.0/examples/nestedlist/resources/loading/iTunesArtwork.png">resources/loading/iTunesArtwork.png</a></li>
+                                <li><a href="/touch/2.0.0/examples/nestedlist/source.json">source.json</a></li>
+                            </ul>
+                        </div>
+                        
                         <hr class="clear" />
+                        
                         <h4>Tags</h4>
                         <ul class="services-list alt clearfix tags">
                             <li><a href="/tags/Sencha%20Touch/">Sencha Touch</a></li>
                             <li><a href="/tags/Sencha%20Touch%202.0.0/">Sencha Touch 2.0.0</a></li>
                         </ul>
+                        
                         <h4>See Also</h4>
                         <ul class="services-list alt clearfix see-also">
                         </ul>
@@ -58,209 +98,37 @@
         </div>
     </div>
     
-    <div id="footer-content">
-        <div class="columns">
-            <ul class="column">
-                <li>
-                    <a class="main" href="http://sencha.com/company/">Company</a>
-                    <ul class="zero">
-                        <li class="first"><a href="http://www.sencha.com/contact/" rel="nofollow">Contact Us</a></li>
-                        <li class="last"><a href="/pages/terms/" rel="nofollow">Terms of Use</a></li>
+    <footer id="footer">
+        <div id="footer-content">
+            <nav id="footer-nav">
+                <div class="columns">
+                    <ul class="column">
+                        <li>
+                            <a class="main" href="http://sencha.com/company">Company</a>
+                            <ul class="zero">
+                                <li class="first"><a href="http://www.sencha.com/contact/" rel="nofollow">Contact Us</a></li>
+                                <li class="last"><a href="/pages/terms" rel="nofollow">Terms of Use</a></li>
+                            </ul>
+                        </li>
                     </ul>
-                </li>
-            </ul>
-            <ul class="column">
-                <li>
-                    <a class="main" href="/">Listings</a>
-                    <ul class="zero">
-                        <li class="first"><a href="/developers/">Full listing</a></li>
-                        <li class="last"><a href="/developers/by_location/">Geographic listing</a></li>
+                    <ul class="column">
+                        <li>
+                            <a class="main" href="/">Listings</a>
+                            <ul class="zero">
+                                <li class="first"><a href="/developers">Full listing</a></li>
+                                <li class="last"><a href="/developers/by_location">Geographic listing</a></li>
+                            </ul>
+                        </li>
                     </ul>
-                </li>
-            </ul>
+                </div>
+            </nav>
+            <hr />
+            
+            <div id="copyright">
+                <p>&copy; 2012 Sencha Inc. All rights reserved.</p>
+            </div>
         </div>
-        <hr />
-        <div id="copyright">
-            <p>&copy; 2012 Sencha Inc. All rights reserved.</p>
-        </div>
-    </div>
-
-    <div class="hidden">
-        <pre class="example" data-uri="/touch/2.0.0/examples/nestedlist/app.js">/*global Ext:false */
-Ext.define('File', {
-    extend: 'Ext.data.Model',
-    config: {
-        fields: [
-            {name: 'id',       type: 'string'},
-            {name: 'fileName', type: 'string'}
-        ]
-    }
-});
-
-Ext.define('Example.SourceView', {
-    extend: 'Ext.Panel',
-    xtype: 'sourceview',
-    config: {
-        cls: 'ux-code',
-        styleHtmlContent: true,
-        scrollable: true
-    },
-    applyHtml: function(html) {
-        this.matches = [];
-
-        var v   = html,
-            fmt = '<span class="ux-code-{0}">{1}</span>';
-
-        var between = Ext.Function.bind(function(idx, length) {
-            for (var i = 0; i < this.matches.length; i++){
-                var m = this.matches[i],
-                    s = m[0],
-                    e = m[1];
-                /*if (s <= idx && (idx + length) <= e){
-                    return true;
-                }*/
-                if ((s <= idx && idx < e) || (s < (idx + length) && (idx + length) <= e)){
-                    return true;
-                }
-            }
-            return false;
-        }, this);
-
-        var highlight = Ext.Function.bind(function(str, regex, cls, fn){
-            regex.compile(regex);
-            var match;
-
-            while (match = regex.exec(str)) {
-                var mdata = fn ? fn(match) : [match.index, match[0]],
-                    midx = mdata[0],
-                    mstr = mdata[1];
-                if (!between(midx, mstr.length)){
-                    var replacement = Ext.util.Format.format(fmt, cls, mstr),
-                        diff = (replacement.length - mstr.length);
-                    str = str.slice(0, midx) + replacement + str.slice(midx + mstr.length);
-                    regex.lastIndex = midx + replacement.length;
-                    for (var i = 0; i < this.matches.length; i++){
-                        var m = this.matches[i];
-                        if (m[1] < midx) continue;
-
-                        m[0] += diff;
-                        m[1] += diff;
-                    }
-                    this.matches.push([midx, regex.lastIndex]);
-                }
-            }
-            return str;
-        }, this);
-
-        // Escape HTML...whatever
-        var htmlRE = /<(\w+)>/ig, match;
-        while (match = htmlRE.exec(v)) {
-            v = v.slice(0, match.index) + Ext.util.Format.format('<{0}>', match[1]) + v.slice(match.index + match[0].length);
-        }
-
-        // Block comments
-        v = highlight(v, /\/\*(.|\s)*?\*\//ig, 'comment');
-
-        // String literals
-        v = highlight(v, (/("|')[^\1\n\r]*?\1/ig), 'string');
-
-        // Line comments
-        v = highlight(v, /\/\/[^\n\r]*/ig, 'comment');
-
-        // Integers and Floats
-        v = highlight(v, /\d+\.?\d*/ig, 'number');
-
-        // Function names
-        v = highlight(v, /(\w+)\s*\:\s*function/ig, 'function', function(match){
-            return [match.index, match[1]];
-        });
-        v = highlight(v, /function (\w+)/ig, 'function', function(match){
-            return [match.index + 9, match[1]];
-        });
-
-        // Keywords
-        v = highlight(v, /\b(this|function|null|return|true|false|new|int|float|break|const|continue|delete|do|while|for|in|switch|case|throw|try|catch|typeof|instanceof|var|void|with|yield|if|else)\b/ig, 'keyword');
-
-        // Operators
-        v = highlight(v, /\.|\,|\:|\;|\=|\+|\-|\&|\%|\*|\/|\!|\?|\<|\>|\||\^|\~/ig, 'operator');
-
-        return '<pre>' + v + '</pre>';
-    }
-});
-
-Ext.application({
-    glossOnIcon: false,
-    icon: {
-        57: 'resources/icons/icon.png',
-        72: 'resources/icons/icon@72.png',
-        114: 'resources/icons/icon@2x.png',
-        144: 'resources/icons/icon@114.png'
-    },
-
-    phoneStartupScreen: 'resources/loading/Homescreen.jpg',
-    tabletStartupScreen: 'resources/loading/Homescreen~ipad.jpg',
-
-    requires: [
-        'Ext.data.TreeStore',
-        'Ext.NestedList',
-        'Ext.TitleBar'
-    ],
-
-    launch: function() {
-        var store = Ext.create('Ext.data.TreeStore', {
-            model: 'File',
-            autoLoad: true,
-            proxy: {
-                type: 'ajax',
-                url: 'source.json'
-            }
-        });
-
-        Ext.create('Ext.NestedList', {
-            fullscreen: true,
-            title: 'src/',
-            displayField: 'fileName',
-            // add a / for folder nodes in title/back button
-            getTitleTextTpl: function() {
-                return '{' + this.getDisplayField() + '}<tpl if="leaf !== true">/</tpl>';
-            },
-            // add a / for folder nodes in the list
-            getItemTextTpl: function() {
-                return '{' + this.getDisplayField() + '}<tpl if="leaf !== true">/</tpl>';
-            },
-            // provide a codebox for each source file
-            detailCard: new Example.SourceView(),
-            store: store,
-            listeners: {
-                leafitemtap: function(me, list, index, item, e) {
-                    var store = list.getStore(),
-                        record  = store.getAt(index),
-                        detailCard = me.getDetailCard();
-
-                    list.setMasked({
-                        xtype: 'loadmask',
-                        message: 'Loading'
-                    });
-
-                    Ext.Ajax.request({
-                        url: '../../src/' + record.get('id'),
-                        success: function(response) {
-                            detailCard.setHtml(response.responseText);
-                            list.unmask();
-                        },
-                        failure: function() {
-                            detailCard.setHtml("Loading failed.");
-                            list.unmask();
-                        }
-                    });
-
-                }
-            }
-        });
-    }
-});
-</pre>
-    </div>
+    </footer>
 
 </body>
 </html>

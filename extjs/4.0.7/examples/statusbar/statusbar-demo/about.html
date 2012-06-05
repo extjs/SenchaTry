@@ -10,32 +10,41 @@
 </head>
 <body>
 
-    <div id="logo-container" class="skiptranslate">
-        <h1 id="logo"><a href="/"><img src="/assets/logo.png" alt="Sencha Try" /></a></h1>
-        <span id="glow"></span>
-    </div>
-    <ul>
-        <li class="with-sub">
-            <a href="#" class="dropdown">Sencha Network</a>
-            <div id="docs-dropdown" class="pop-nav zero">
+    <header id="header">
+        <div id="logo-container" class="skiptranslate">
+            <h1 id="logo"><a href="/"><img src="/assets/logo.png" alt="Sencha Try" /></a></h1>
+            <span id="glow"></span>
+        </div>
+        
+        <nav id="siteNav">
+          <ul>
+            <li class="with-sub">
+              <a href="#" class="dropdown">Sencha Network</a>
+              <div class="pop-nav zero" id="docs-dropdown">
                 <ul>
-                    <li><a href="http://sencha.com/">Sencha.com</a></li>
-                    <li><a href="http://sencha.com/products/io/">Sencha.io</a></li>
-                    <li><a href="http://market.sencha.com/">Sencha Market</a></li>
+                  <li><a href="http://sencha.com/">Sencha.com</a></li>
+                  <li><a href="http://sencha.com/products/io/">Sencha.io</a></li>
+                  <li><a href="http://market.sencha.com/">Sencha Market</a></li>
                 </ul>
-            </div>
-        </li>
-    </ul>
+              </div>
+            </li>
+          </ul>
+        </nav>
+    </header>
     
     <div id="content-wrapper" class="clearfix">
         <div id="content">
-            <a href="/">Home</a> <span>/</span> <a href="/extjs/">Ext JS</a> <span>/</span> <a href="/extjs/4.0.7/">4.0.7</a> <span>/</span> StatusBar Examples
+            <nav class="bc">
+                <a href="/">Home</a> <span>/</span> <a href="/extjs/">Ext JS</a> <span>/</span> <a href="/extjs/4.0.7/">4.0.7</a> <span>/</span> StatusBar Examples
+            </nav>
+            
             <div class="developer">
                 <div class="column_nine">
                     <div class="details">
                         <div class="top-block border">
                             <h2 class="alt">StatusBar Examples</h2>
                         </div>
+                        
                         <div class="plain-text"><p>Here are several examples of using and customizing the <code>Ext.ux.StatusBar</code> component.</p>
 
 <h2>Basic StatusBar</h2>
@@ -53,18 +62,40 @@
 <h2>Customizing the Look and Feel</h2>
 
 <p>This is a standard StatusBar with some custom CSS styles applied and some event handling in place to handle the TextArea's keypress events.  Notice that after you've stopped typing for a few seconds a simulated auto-save process will begin.</p></div>
+                        
                         <h3>[example widget]</h3>
+                        
                         <div>
                             <ul class="developer-actions">
                                 <li class="request"><a href="src.zip" class="button-link center">Download</a></li>
                             </ul>
                         </div>
+                        
+                        <div>
+                            <h4>Files</h4>
+                            <ul>
+                                <li><a href="/extjs/4.0.7/examples/statusbar/statusbar-demo/app.js">app.js</a></li>
+                                <li><a href="/extjs/4.0.7/examples/statusbar/statusbar-demo/index.html">index.html</a></li>
+                                <li><a href="/extjs/4.0.7/examples/statusbar/statusbar-demo/resources/css/app.css">resources/css/app.css</a></li>
+                                <li><a href="/extjs/4.0.7/examples/statusbar/statusbar-demo/ux/statusbar/StatusBar.js">ux/statusbar/StatusBar.js</a></li>
+                                <li><a href="/extjs/4.0.7/examples/statusbar/statusbar-demo/ux/statusbar/ValidationStatus.js">ux/statusbar/ValidationStatus.js</a></li>
+                                <li><a href="/extjs/4.0.7/examples/statusbar/statusbar-demo/ux/statusbar/css/statusbar.css">ux/statusbar/css/statusbar.css</a></li>
+                                <li><a href="/extjs/4.0.7/examples/statusbar/statusbar-demo/ux/statusbar/images/accept.png">ux/statusbar/images/accept.png</a></li>
+                                <li><a href="/extjs/4.0.7/examples/statusbar/statusbar-demo/ux/statusbar/images/exclamation.gif">ux/statusbar/images/exclamation.gif</a></li>
+                                <li><a href="/extjs/4.0.7/examples/statusbar/statusbar-demo/ux/statusbar/images/loading.gif">ux/statusbar/images/loading.gif</a></li>
+                                <li><a href="/extjs/4.0.7/examples/statusbar/statusbar-demo/ux/statusbar/images/saved.png">ux/statusbar/images/saved.png</a></li>
+                                <li><a href="/extjs/4.0.7/examples/statusbar/statusbar-demo/ux/statusbar/images/saving.gif">ux/statusbar/images/saving.gif</a></li>
+                            </ul>
+                        </div>
+                        
                         <hr class="clear" />
+                        
                         <h4>Tags</h4>
                         <ul class="services-list alt clearfix tags">
                             <li><a href="/tags/Ext%20JS/">Ext JS</a></li>
                             <li><a href="/tags/Ext%20JS%204.0.7/">Ext JS 4.0.7</a></li>
                         </ul>
+                        
                         <h4>See Also</h4>
                         <ul class="services-list alt clearfix see-also">
                         </ul>
@@ -74,953 +105,37 @@
         </div>
     </div>
     
-    <div id="footer-content">
-        <div class="columns">
-            <ul class="column">
-                <li>
-                    <a class="main" href="http://sencha.com/company/">Company</a>
-                    <ul class="zero">
-                        <li class="first"><a href="http://www.sencha.com/contact/" rel="nofollow">Contact Us</a></li>
-                        <li class="last"><a href="/pages/terms/" rel="nofollow">Terms of Use</a></li>
+    <footer id="footer">
+        <div id="footer-content">
+            <nav id="footer-nav">
+                <div class="columns">
+                    <ul class="column">
+                        <li>
+                            <a class="main" href="http://sencha.com/company">Company</a>
+                            <ul class="zero">
+                                <li class="first"><a href="http://www.sencha.com/contact/" rel="nofollow">Contact Us</a></li>
+                                <li class="last"><a href="/pages/terms" rel="nofollow">Terms of Use</a></li>
+                            </ul>
+                        </li>
                     </ul>
-                </li>
-            </ul>
-            <ul class="column">
-                <li>
-                    <a class="main" href="/">Listings</a>
-                    <ul class="zero">
-                        <li class="first"><a href="/developers/">Full listing</a></li>
-                        <li class="last"><a href="/developers/by_location/">Geographic listing</a></li>
+                    <ul class="column">
+                        <li>
+                            <a class="main" href="/">Listings</a>
+                            <ul class="zero">
+                                <li class="first"><a href="/developers">Full listing</a></li>
+                                <li class="last"><a href="/developers/by_location">Geographic listing</a></li>
+                            </ul>
+                        </li>
                     </ul>
-                </li>
-            </ul>
-        </div>
-        <hr />
-        <div id="copyright">
-            <p>&copy; 2012 Sencha Inc. All rights reserved.</p>
-        </div>
-    </div>
-
-    <div class="hidden">
-        <pre class="example" data-uri="/extjs/4.0.7/examples/statusbar/statusbar-demo/app.js">/*global Ext:false */
-/*
-
-This file is part of Ext JS 4
-
-Copyright (c) 2011 Sencha Inc
-
-Contact:  http://www.sencha.com/contact
-
-GNU General Public License Usage
-This file may be used under the terms of the GNU General Public License version 3.0 as published by the Free Software Foundation and appearing in the file LICENSE included in the packaging of this file.  Please review the following information to ensure the GNU General Public License version 3.0 requirements will be met: http://www.gnu.org/copyleft/gpl.html.
-
-If you are unsure which license is appropriate for your use, please contact the sales department at http://www.sencha.com/contact.
-
-*/
-Ext.Loader.setConfig({
-    enabled: true
-});
-
-Ext.Loader.setPath('Ext.ux', 'ux');
-
-Ext.require([
-  'Ext.panel.Panel',
-  'Ext.button.Button',
-  'Ext.window.Window',
-  'Ext.ux.statusbar.StatusBar',
-  'Ext.toolbar.TextItem',
-  'Ext.menu.Menu',
-  'Ext.toolbar.Spacer',
-  'Ext.button.Split',
-  'Ext.form.field.TextArea'
-]);
-
-Ext.onReady(function(){
-
-    // This is a shared function that simulates a load action on a StatusBar.
-    // It is reused by most of the example panels.
-    var loadFn = function(btn, statusBar){
-        btn = Ext.getCmp(btn);
-        statusBar = Ext.getCmp(statusBar);
-
-        btn.disable();
-        statusBar.showBusy();
-
-         Ext.defer(function(){
-            statusBar.clearStatus({useDefaults:true});
-            btn.enable();
-        }, 2000);
-    };
-
-/*
- * ================  Basic StatusBar example  =======================
- */
-    Ext.create('Ext.Panel', {
-        title: 'Basic StatusBar',
-        renderTo: 'basic',
-        width: 550,
-        height: 100,
-        bodyStyle: 'padding:10px;',
-        items:[{
-            xtype: 'button',
-            id: 'basic-button',
-            text: 'Do Loading',
-            handler: Ext.Function.pass(loadFn, ['basic-button', 'basic-statusbar'])
-        }],
-        bbar: Ext.create('Ext.ux.StatusBar', {
-            id: 'basic-statusbar',
-
-            // defaults to use when the status is cleared:
-            defaultText: 'Default status text',
-            //defaultIconCls: 'default-icon',
-        
-            // values to set initially:
-            text: 'Ready',
-            iconCls: 'x-status-valid',
-
-            // any standard Toolbar items:
-            items: [
-                {
-                    xtype: 'button',
-                    text: 'Show Warning & Clear',
-                    handler: function (){
-                        var sb = Ext.getCmp('basic-statusbar');
-                        sb.setStatus({
-                            text: 'Oops!',
-                            iconCls: 'x-status-error',
-                            clear: true // auto-clear after a set interval
-                        });
-                    }
-                },
-                {
-                    xtype: 'button',
-                    text: 'Show Busy',
-                    handler: function (){
-                        var sb = Ext.getCmp('basic-statusbar');
-                        // Set the status bar to show that something is processing:
-                        sb.showBusy();
-                    }
-                },
-                {
-                    xtype: 'button',
-                    text: 'Clear status',
-                    handler: function (){
-                        var sb = Ext.getCmp('basic-statusbar');
-                        // once completed
-                        sb.clearStatus(); 
-                    }
-                },
-                '-',
-                'Plain Text'
-            ]
-        })
-    });
-
-/*
- * ================  Right-aligned StatusBar example  =======================
- */
-    Ext.create('Ext.Panel', {
-        title: 'Right-aligned StatusBar',
-        renderTo: 'right-aligned',
-        width: 550,
-        height: 100,
-        bodyStyle: 'padding:10px;',
-        items:[{
-            xtype: 'button',
-            id: 'right-button',
-            text: 'Do Loading',
-            handler: Ext.Function.pass(loadFn, ['right-button', 'right-statusbar'])
-        }],
-        bbar: Ext.create('Ext.ux.StatusBar', {
-            defaultText: 'Default status',
-            id: 'right-statusbar',
-            statusAlign: 'right', // the magic config
-            items: [{
-                text: 'A Button'
-            }, '-', 'Plain Text', ' ', ' ']
-        })
-    });
-
-/*
- * ================  StatusBar Window example  =======================
- */
-    var win = Ext.create('Ext.Window', {
-        title: 'StatusBar Window',
-        width: 400,
-        minWidth: 350,
-        height: 150,
-        modal: true,
-        closeAction: 'hide',
-        bodyStyle: 'padding:10px;',
-        items:[{
-            xtype: 'button',
-            id: 'win-button',
-            text: 'Do Loading',
-            handler: Ext.Function.pass(loadFn, ['win-button', 'win-statusbar'])
-        }],
-        bbar: Ext.create('Ext.ux.StatusBar', {
-            id: 'win-statusbar',
-            defaultText: 'Ready',
-            items: [{
-                xtype: 'button',
-                text: 'A Button'
-            }, '-',
-            Ext.Date.format(new Date(), 'n/d/Y'), ' ', ' ', '-', {
-                xtype:'splitbutton',
-                text:'Status Menu',
-                menuAlign: 'br-tr?',
-                menu: Ext.create('Ext.menu.Menu', {
-                    items: [{text: 'Item 1'}, {text: 'Item 2'}]
-                })
-            }]
-        })
-    });
-
-    Ext.create('Ext.Button', {
-        text: 'Show Window',
-        renderTo: 'window',
-        handler: function(){
-            win.show();
-        }
-    });
-
-/*
- * ================  Ext Word Processor example  =======================
- *
- * The StatusBar used in this example is completely standard.  What is
- * customized are the styles and event handling to make the example a
- * lot more dynamic and application-oriented.
- *
- */
-    // Create these explicitly so we can manipulate them later
-    var wordCount = Ext.create('Ext.toolbar.TextItem', {text: 'Words: 0'}),
-        charCount = Ext.create('Ext.toolbar.TextItem', {text: 'Chars: 0'}), 
-        clock = Ext.create('Ext.toolbar.TextItem', {text: Ext.Date.format(new Date(), 'g:i:s A')}),
-        event = Ext.isOpera ? 'keypress' : 'keydown'; // opera behaves a little weird with keydown
-
-    Ext.create('Ext.Panel', {
-        title: 'Ext Word Processor',
-        renderTo: 'word-proc',
-        width: 500,
-        autoHeight: true,
-        bodyStyle: 'padding:5px;',
-        layout: 'fit',
-        bbar: Ext.create('Ext.ux.StatusBar', {
-            id: 'word-status',
-            // These are just the standard toolbar TextItems we created above.  They get
-            // custom classes below in the render handler which is what gives them their
-            // customized inset appearance.
-            items: [wordCount, ' ', charCount, ' ', clock, ' ']
-        }),
-        items: {
-            xtype: 'textarea',
-            id: 'word-textarea',
-            enableKeyEvents: true,
-            hideLabel: true,
-            grow: true,
-            growMin: 100,
-            growMax: 200
-        },
-        listeners: {
-            render: {
-                fn: function(){
-                    // Add a class to the parent TD of each text item so we can give them some custom inset box
-                    // styling. Also, since we are using a greedy spacer, we have to add a block level element
-                    // into each text TD in order to give them a fixed width (TextItems are spans).  Insert a
-                    // spacer div into each TD using createChild() so that we can give it a width in CSS.
-                    Ext.fly(wordCount.getEl().parent()).addCls('x-status-text-panel').createChild({cls:'spacer'});
-                    Ext.fly(charCount.getEl().parent()).addCls('x-status-text-panel').createChild({cls:'spacer'});
-                    Ext.fly(clock.getEl().parent()).addCls('x-status-text-panel').createChild({cls:'spacer'});
-
-                    // Kick off the clock timer that updates the clock el every second:
-                 Ext.TaskManager.start({
-                     run: function(){
-                         Ext.fly(clock.getEl()).update(Ext.Date.format(new Date(), 'g:i:s A'));
-                     },
-                     interval: 1000
-                 });
-                },
-                delay: 100
-            }
-        }
-    });
-
-    // This sets up a fake auto-save function.  It monitors keyboard activity and after no typing
-    // has occurred for 1.5 seconds, it updates the status message to indicate that it's saving.
-    // After a fake delay so that you can see the save activity it will update again to indicate
-    // that the action succeeded.
-    Ext.getCmp('word-textarea').on(event, function(){
-        var sb = Ext.getCmp('word-status');
-        sb.showBusy('Saving draft...');
-        Ext.defer(function(){
-            sb.setStatus({
-                iconCls: 'x-status-saved',
-                text: 'Draft auto-saved at ' + Ext.Date.format(new Date(), 'g:i:s A')
-            });
-        }, 4000);
-    }, null, {buffer:1500});
-    
-    // Set up our event for updating the word/char count
-    Ext.getCmp('word-textarea').on(event, function(comp){
-        var v = comp.getValue(),
-            wc = 0, 
-            cc = v.length ? v.length : 0;
-
-        if (cc > 0) {
-            wc = v.match(/\b/g);
-            wc = wc ? wc.length / 2 : 0;
-        }
-        wordCount.update('Words: ' + wc);
-        charCount.update('Chars: ' + cc);
-    }, null, {buffer: 1});
-
-});
-
-</pre>
-        <pre class="example" data-uri="/extjs/4.0.7/examples/statusbar/statusbar-demo/ux/statusbar/StatusBar.js">/*
-
-This file is part of Ext JS 4
-
-Copyright (c) 2011 Sencha Inc
-
-Contact:  http://www.sencha.com/contact
-
-GNU General Public License Usage
-This file may be used under the terms of the GNU General Public License version 3.0 as published by the Free Software Foundation and appearing in the file LICENSE included in the packaging of this file.  Please review the following information to ensure the GNU General Public License version 3.0 requirements will be met: http://www.gnu.org/copyleft/gpl.html.
-
-If you are unsure which license is appropriate for your use, please contact the sales department at http://www.sencha.com/contact.
-
-*/
-/**
- * @class Ext.ux.StatusBar
- * <p>Basic status bar component that can be used as the bottom toolbar of any {@link Ext.Panel}.  In addition to
- * supporting the standard {@link Ext.toolbar.Toolbar} interface for adding buttons, menus and other items, the StatusBar
- * provides a greedy status element that can be aligned to either side and has convenient methods for setting the
- * status text and icon.  You can also indicate that something is processing using the {@link #showBusy} method.</p>
- * <pre><code>
-Ext.create('Ext.Panel', {
-    title: 'StatusBar',
-    // etc.
-    bbar: Ext.create('Ext.ux.StatusBar', {
-        id: 'my-status',
-
-        // defaults to use when the status is cleared:
-        defaultText: 'Default status text',
-        defaultIconCls: 'default-icon',
-
-        // values to set initially:
-        text: 'Ready',
-        iconCls: 'ready-icon',
-
-        // any standard Toolbar items:
-        items: [{
-            text: 'A Button'
-        }, '-', 'Plain Text']
-    })
-});
-
-// Update the status bar later in code:
-var sb = Ext.getCmp('my-status');
-sb.setStatus({
-    text: 'OK',
-    iconCls: 'ok-icon',
-    clear: true // auto-clear after a set interval
-});
-
-// Set the status bar to show that something is processing:
-sb.showBusy();
-
-// processing....
-
-sb.clearStatus(); // once completeed
-</code></pre>
- * @extends Ext.toolbar.Toolbar
- * @constructor
- * Creates a new StatusBar
- * @param {Object/Array} config A config object
- */
-Ext.define('Ext.ux.statusbar.StatusBar', {
-    extend: 'Ext.toolbar.Toolbar',
-    alternateClassName: 'Ext.ux.StatusBar',
-    alias: 'widget.statusbar',
-    requires: ['Ext.toolbar.TextItem'],
-    /**
-     * @cfg {String} statusAlign
-     * The alignment of the status element within the overall StatusBar layout.  When the StatusBar is rendered,
-     * it creates an internal div containing the status text and icon.  Any additional Toolbar items added in the
-     * StatusBar's {@link #items} config, or added via {@link #add} or any of the supported add* methods, will be
-     * rendered, in added order, to the opposite side.  The status element is greedy, so it will automatically
-     * expand to take up all sapce left over by any other items.  Example usage:
-     * <pre><code>
-// Create a left-aligned status bar containing a button,
-// separator and text item that will be right-aligned (default):
-Ext.create('Ext.Panel', {
-    title: 'StatusBar',
-    // etc.
-    bbar: Ext.create('Ext.ux.StatusBar', {
-        defaultText: 'Default status text',
-        id: 'status-id',
-        items: [{
-            text: 'A Button'
-        }, '-', 'Plain Text']
-    })
-});
-
-// By adding the statusAlign config, this will create the
-// exact same toolbar, except the status and toolbar item
-// layout will be reversed from the previous example:
-Ext.create('Ext.Panel', {
-    title: 'StatusBar',
-    // etc.
-    bbar: Ext.create('Ext.ux.StatusBar', {
-        defaultText: 'Default status text',
-        id: 'status-id',
-        statusAlign: 'right',
-        items: [{
-            text: 'A Button'
-        }, '-', 'Plain Text']
-    })
-});
-</code></pre>
-     */
-    /**
-     * @cfg {String} defaultText
-     * The default {@link #text} value.  This will be used anytime the status bar is cleared with the
-     * <tt>useDefaults:true</tt> option (defaults to '').
-     */
-    /**
-     * @cfg {String} defaultIconCls
-     * The default {@link #iconCls} value (see the iconCls docs for additional details about customizing the icon).
-     * This will be used anytime the status bar is cleared with the <tt>useDefaults:true</tt> option (defaults to '').
-     */
-    /**
-     * @cfg {String} text
-     * A string that will be <b>initially</b> set as the status message.  This string
-     * will be set as innerHTML (html tags are accepted) for the toolbar item.
-     * If not specified, the value set for <code>{@link #defaultText}</code>
-     * will be used.
-     */
-    /**
-     * @cfg {String} iconCls
-     * A CSS class that will be <b>initially</b> set as the status bar icon and is
-     * expected to provide a background image (defaults to '').
-     * Example usage:<pre><code>
-// Example CSS rule:
-.x-statusbar .x-status-custom {
-    padding-left: 25px;
-    background: transparent url(images/custom-icon.gif) no-repeat 3px 2px;
-}
-
-// Setting a default icon:
-var sb = Ext.create('Ext.ux.StatusBar', {
-    defaultIconCls: 'x-status-custom'
-});
-
-// Changing the icon:
-sb.setStatus({
-    text: 'New status',
-    iconCls: 'x-status-custom'
-});
-</code></pre>
-     */
-
-    /**
-     * @cfg {String} cls
-     * The base class applied to the containing element for this component on render (defaults to 'x-statusbar')
-     */
-    cls : 'x-statusbar',
-    /**
-     * @cfg {String} busyIconCls
-     * The default <code>{@link #iconCls}</code> applied when calling
-     * <code>{@link #showBusy}</code> (defaults to <tt>'x-status-busy'</tt>).
-     * It can be overridden at any time by passing the <code>iconCls</code>
-     * argument into <code>{@link #showBusy}</code>.
-     */
-    busyIconCls : 'x-status-busy',
-    /**
-     * @cfg {String} busyText
-     * The default <code>{@link #text}</code> applied when calling
-     * <code>{@link #showBusy}</code> (defaults to <tt>'Loading...'</tt>).
-     * It can be overridden at any time by passing the <code>text</code>
-     * argument into <code>{@link #showBusy}</code>.
-     */
-    busyText : 'Loading...',
-    /**
-     * @cfg {Number} autoClear
-     * The number of milliseconds to wait after setting the status via
-     * <code>{@link #setStatus}</code> before automatically clearing the status
-     * text and icon (defaults to <tt>5000</tt>).  Note that this only applies
-     * when passing the <tt>clear</tt> argument to <code>{@link #setStatus}</code>
-     * since that is the only way to defer clearing the status.  This can
-     * be overridden by specifying a different <tt>wait</tt> value in
-     * <code>{@link #setStatus}</code>. Calls to <code>{@link #clearStatus}</code>
-     * always clear the status bar immediately and ignore this value.
-     */
-    autoClear : 5000,
-
-    /**
-     * @cfg {String} emptyText
-     * The text string to use if no text has been set.  Defaults to
-     * <tt>'&nbsp;'</tt>).  If there are no other items in the toolbar using
-     * an empty string (<tt>''</tt>) for this value would end up in the toolbar
-     * height collapsing since the empty string will not maintain the toolbar
-     * height.  Use <tt>''</tt> if the toolbar should collapse in height
-     * vertically when no text is specified and there are no other items in
-     * the toolbar.
-     */
-    emptyText : '&nbsp;',
-
-    // private
-    activeThreadId : 0,
-
-    // private
-    initComponent : function(){
-        if (this.statusAlign === 'right') {
-            this.cls += ' x-status-right';
-        }
-        this.callParent(arguments);
-    },
-
-    // private
-    afterRender : function(){
-        this.callParent(arguments);
-
-        var right = this.statusAlign === 'right';
-        this.currIconCls = this.iconCls || this.defaultIconCls;
-        this.statusEl = Ext.create('Ext.toolbar.TextItem', {
-            cls: 'x-status-text ' + (this.currIconCls || ''),
-            text: this.text || this.defaultText || ''
-        });
-
-        if (right) {
-            this.add('->');
-            this.add(this.statusEl);
-        } else {
-            this.insert(0, this.statusEl);
-            this.insert(1, '->');
-        }
-        this.height = 27;
-        this.doLayout();
-    },
-
-    /**
-     * Sets the status {@link #text} and/or {@link #iconCls}. Also supports automatically clearing the
-     * status that was set after a specified interval.
-     * @param {Object/String} config A config object specifying what status to set, or a string assumed
-     * to be the status text (and all other options are defaulted as explained below). A config
-     * object containing any or all of the following properties can be passed:<ul>
-     * <li><tt>text</tt> {String} : (optional) The status text to display.  If not specified, any current
-     * status text will remain unchanged.</li>
-     * <li><tt>iconCls</tt> {String} : (optional) The CSS class used to customize the status icon (see
-     * {@link #iconCls} for details). If not specified, any current iconCls will remain unchanged.</li>
-     * <li><tt>clear</tt> {Boolean/Number/Object} : (optional) Allows you to set an internal callback that will
-     * automatically clear the status text and iconCls after a specified amount of time has passed. If clear is not
-     * specified, the new status will not be auto-cleared and will stay until updated again or cleared using
-     * {@link #clearStatus}. If <tt>true</tt> is passed, the status will be cleared using {@link #autoClear},
-     * {@link #defaultText} and {@link #defaultIconCls} via a fade out animation. If a numeric value is passed,
-     * it will be used as the callback interval (in milliseconds), overriding the {@link #autoClear} value.
-     * All other options will be defaulted as with the boolean option.  To customize any other options,
-     * you can pass an object in the format:<ul>
-     *    <li><tt>wait</tt> {Number} : (optional) The number of milliseconds to wait before clearing
-     *    (defaults to {@link #autoClear}).</li>
-     *    <li><tt>anim</tt> {Number} : (optional) False to clear the status immediately once the callback
-     *    executes (defaults to true which fades the status out).</li>
-     *    <li><tt>useDefaults</tt> {Number} : (optional) False to completely clear the status text and iconCls
-     *    (defaults to true which uses {@link #defaultText} and {@link #defaultIconCls}).</li>
-     * </ul></li></ul>
-     * Example usage:<pre><code>
-// Simple call to update the text
-statusBar.setStatus('New status');
-
-// Set the status and icon, auto-clearing with default options:
-statusBar.setStatus({
-    text: 'New status',
-    iconCls: 'x-status-custom',
-    clear: true
-});
-
-// Auto-clear with custom options:
-statusBar.setStatus({
-    text: 'New status',
-    iconCls: 'x-status-custom',
-    clear: {
-        wait: 8000,
-        anim: false,
-        useDefaults: false
-    }
-});
-</code></pre>
-     * @return {Ext.ux.StatusBar} this
-     */
-    setStatus : function(o) {
-        o = o || {};
-
-        if (Ext.isString(o)) {
-            o = {text:o};
-        }
-        if (o.text !== undefined) {
-            this.setText(o.text);
-        }
-        if (o.iconCls !== undefined) {
-            this.setIcon(o.iconCls);
-        }
-
-        if (o.clear) {
-            var c = o.clear,
-                wait = this.autoClear,
-                defaults = {useDefaults: true, anim: true};
-
-            if (Ext.isObject(c)) {
-                c = Ext.applyIf(c, defaults);
-                if (c.wait) {
-                    wait = c.wait;
-                }
-            } else if (Ext.isNumber(c)) {
-                wait = c;
-                c = defaults;
-            } else if (Ext.isBoolean(c)) {
-                c = defaults;
-            }
-
-            c.threadId = this.activeThreadId;
-            Ext.defer(this.clearStatus, wait, this, [c]);
-        }
-        this.doLayout();
-        return this;
-    },
-
-    /**
-     * Clears the status {@link #text} and {@link #iconCls}. Also supports clearing via an optional fade out animation.
-     * @param {Object} config (optional) A config object containing any or all of the following properties.  If this
-     * object is not specified the status will be cleared using the defaults below:<ul>
-     * <li><tt>anim</tt> {Boolean} : (optional) True to clear the status by fading out the status element (defaults
-     * to false which clears immediately).</li>
-     * <li><tt>useDefaults</tt> {Boolean} : (optional) True to reset the text and icon using {@link #defaultText} and
-     * {@link #defaultIconCls} (defaults to false which sets the text to '' and removes any existing icon class).</li>
-     * </ul>
-     * @return {Ext.ux.StatusBar} this
-     */
-    clearStatus : function(o) {
-        o = o || {};
-
-        if (o.threadId && o.threadId !== this.activeThreadId) {
-            // this means the current call was made internally, but a newer
-            // thread has set a message since this call was deferred.  Since
-            // we don't want to overwrite a newer message just ignore.
-            return this;
-        }
-
-        var text = o.useDefaults ? this.defaultText : this.emptyText,
-            iconCls = o.useDefaults ? (this.defaultIconCls ? this.defaultIconCls : '') : '';
-
-        if (o.anim) {
-            // animate the statusEl Ext.Element
-            this.statusEl.el.puff({
-                remove: false,
-                useDisplay: true,
-                scope: this,
-                callback: function(){
-                    this.setStatus({
-                     text: text,
-                     iconCls: iconCls
-                 });
-
-                    this.statusEl.el.show();
-                }
-            });
-        } else {
-            // hide/show the el to avoid jumpy text or icon
-             this.statusEl.hide();
-             this.setStatus({
-                 text: text,
-                 iconCls: iconCls
-             });
-             this.statusEl.show();
-        }
-        this.doLayout();
-        return this;
-    },
-
-    /**
-     * Convenience method for setting the status text directly.  For more flexible options see {@link #setStatus}.
-     * @param {String} text (optional) The text to set (defaults to '')
-     * @return {Ext.ux.StatusBar} this
-     */
-    setText : function(text){
-        this.activeThreadId++;
-        this.text = text || '';
-        if (this.rendered) {
-            this.statusEl.setText(this.text);
-        }
-        return this;
-    },
-
-    /**
-     * Returns the current status text.
-     * @return {String} The status text
-     */
-    getText : function(){
-        return this.text;
-    },
-
-    /**
-     * Convenience method for setting the status icon directly.  For more flexible options see {@link #setStatus}.
-     * See {@link #iconCls} for complete details about customizing the icon.
-     * @param {String} iconCls (optional) The icon class to set (defaults to '', and any current icon class is removed)
-     * @return {Ext.ux.StatusBar} this
-     */
-    setIcon : function(cls){
-        this.activeThreadId++;
-        cls = cls || '';
-
-        if (this.rendered) {
-         if (this.currIconCls) {
-             this.statusEl.removeCls(this.currIconCls);
-             this.currIconCls = null;
-         }
-         if (cls.length > 0) {
-             this.statusEl.addCls(cls);
-             this.currIconCls = cls;
-         }
-        } else {
-            this.currIconCls = cls;
-        }
-        return this;
-    },
-
-    /**
-     * Convenience method for setting the status text and icon to special values that are pre-configured to indicate
-     * a "busy" state, usually for loading or processing activities.
-     * @param {Object/String} config (optional) A config object in the same format supported by {@link #setStatus}, or a
-     * string to use as the status text (in which case all other options for setStatus will be defaulted).  Use the
-     * <tt>text</tt> and/or <tt>iconCls</tt> properties on the config to override the default {@link #busyText}
-     * and {@link #busyIconCls} settings. If the config argument is not specified, {@link #busyText} and
-     * {@link #busyIconCls} will be used in conjunction with all of the default options for {@link #setStatus}.
-     * @return {Ext.ux.StatusBar} this
-     */
-    showBusy : function(o){
-        if (Ext.isString(o)) {
-            o = { text: o };
-        }
-        o = Ext.applyIf(o || {}, {
-            text: this.busyText,
-            iconCls: this.busyIconCls
-        });
-        return this.setStatus(o);
-    }
-});
-
-</pre>
-        <pre class="example" data-uri="/extjs/4.0.7/examples/statusbar/statusbar-demo/ux/statusbar/ValidationStatus.js">/*
-
-This file is part of Ext JS 4
-
-Copyright (c) 2011 Sencha Inc
-
-Contact:  http://www.sencha.com/contact
-
-GNU General Public License Usage
-This file may be used under the terms of the GNU General Public License version 3.0 as published by the Free Software Foundation and appearing in the file LICENSE included in the packaging of this file.  Please review the following information to ensure the GNU General Public License version 3.0 requirements will be met: http://www.gnu.org/copyleft/gpl.html.
-
-If you are unsure which license is appropriate for your use, please contact the sales department at http://www.sencha.com/contact.
-
-*/
-/**
- * @class Ext.ux.statusbar.ValidationStatus
- * A {@link Ext.StatusBar} plugin that provides automatic error notification when the
- * associated form contains validation errors.
- * @extends Ext.Component
- * @constructor
- * Creates a new ValiationStatus plugin
- * @param {Object} config A config object
- */
-Ext.define('Ext.ux.statusbar.ValidationStatus', {
-    extend: 'Ext.Component', 
-    requires: ['Ext.util.MixedCollection'],
-    /**
-     * @cfg {String} errorIconCls
-     * The {@link #iconCls} value to be applied to the status message when there is a
-     * validation error. Defaults to <tt>'x-status-error'</tt>.
-     */
-    errorIconCls : 'x-status-error',
-    /**
-     * @cfg {String} errorListCls
-     * The css class to be used for the error list when there are validation errors.
-     * Defaults to <tt>'x-status-error-list'</tt>.
-     */
-    errorListCls : 'x-status-error-list',
-    /**
-     * @cfg {String} validIconCls
-     * The {@link #iconCls} value to be applied to the status message when the form
-     * validates. Defaults to <tt>'x-status-valid'</tt>.
-     */
-    validIconCls : 'x-status-valid',
-    
-    /**
-     * @cfg {String} showText
-     * The {@link #text} value to be applied when there is a form validation error.
-     * Defaults to <tt>'The form has errors (click for details...)'</tt>.
-     */
-    showText : 'The form has errors (click for details...)',
-    /**
-     * @cfg {String} showText
-     * The {@link #text} value to display when the error list is displayed.
-     * Defaults to <tt>'Click again to hide the error list'</tt>.
-     */
-    hideText : 'Click again to hide the error list',
-    /**
-     * @cfg {String} submitText
-     * The {@link #text} value to be applied when the form is being submitted.
-     * Defaults to <tt>'Saving...'</tt>.
-     */
-    submitText : 'Saving...',
-    
-    // private
-    init : function(sb){
-        sb.on('render', function(){
-            this.statusBar = sb;
-            this.monitor = true;
-            this.errors = Ext.create('Ext.util.MixedCollection');
-            this.listAlign = (sb.statusAlign === 'right' ? 'br-tr?' : 'bl-tl?');
+                </div>
+            </nav>
+            <hr />
             
-            if (this.form) {
-                this.formPanel = Ext.getCmp(this.form);
-                this.basicForm = this.formPanel.getForm();
-                this.startMonitoring();
-                this.basicForm.on('beforeaction', function(f, action){
-                    if(action.type === 'submit'){
-                        // Ignore monitoring while submitting otherwise the field validation
-                        // events cause the status message to reset too early
-                        this.monitor = false;
-                    }
-                }, this);
-                var startMonitor = function(){
-                    this.monitor = true;
-                };
-                this.basicForm.on('actioncomplete', startMonitor, this);
-                this.basicForm.on('actionfailed', startMonitor, this);
-            }
-        }, this, {single:true});
-        sb.on({
-            scope: this,
-            afterlayout:{
-                single: true,
-                fn: function(){
-                    // Grab the statusEl after the first layout.
-                    sb.statusEl.getEl().on('click', this.onStatusClick, this, {buffer:200});
-                } 
-            }, 
-            beforedestroy:{
-                single: true,
-                fn: this.onDestroy
-            } 
-        });
-    },
-    
-    // private
-    startMonitoring : function() {
-        this.basicForm.getFields().each(function(f){
-            f.on('validitychange', this.onFieldValidation, this);
-        }, this);
-    },
-    
-    // private
-    stopMonitoring : function(){
-        this.basicForm.getFields().each(function(f){
-            f.un('validitychange', this.onFieldValidation, this);
-        }, this);
-    },
-    
-    // private
-    onDestroy : function(){
-        this.stopMonitoring();
-        this.statusBar.statusEl.un('click', this.onStatusClick, this);
-        this.callParent(arguments);
-    },
-    
-    // private
-    onFieldValidation : function(f, isValid){
-        if (!this.monitor) {
-            return false;
-        }
-        var msg = f.getErrors()[0];
-        if (msg) {
-            this.errors.add(f.id, {field:f, msg:msg});
-        } else {
-            this.errors.removeAtKey(f.id);
-        }
-        this.updateErrorList();
-        if(this.errors.getCount() > 0) {
-            if(this.statusBar.getText() !== this.showText){
-                this.statusBar.setStatus({text:this.showText, iconCls:this.errorIconCls});
-            }
-        }else{
-            this.statusBar.clearStatus().setIcon(this.validIconCls);
-        }
-    },
-    
-    // private
-    updateErrorList : function(){
-        if(this.errors.getCount() > 0){
-         var msg = '<ul>';
-         this.errors.each(function(err){
-             msg += ('<li id="x-err-'+ err.field.id +'"><a href="#">' + err.msg + '</a></li>');
-         }, this);
-         this.getMsgEl().update(msg+'</ul>');
-        }else{
-            this.getMsgEl().update('');
-        }
-        // reset msgEl size
-        this.getMsgEl().setSize('auto', 'auto');
-    },
-    
-    // private
-    getMsgEl : function(){
-        if(!this.msgEl){
-            this.msgEl = Ext.DomHelper.append(Ext.getBody(), {
-                cls: this.errorListCls
-            }, true);
-            this.msgEl.hide();
-            this.msgEl.on('click', function(e){
-                var t = e.getTarget('li', 10, true);
-                if(t){
-                    Ext.getCmp(t.id.split('x-err-')[1]).focus();
-                    this.hideErrors();
-                }
-            }, this, {stopEvent:true}); // prevent anchor click navigation
-        }
-        return this.msgEl;
-    },
-    
-    // private
-    showErrors : function(){
-        this.updateErrorList();
-        this.getMsgEl().alignTo(this.statusBar.getEl(), this.listAlign).slideIn('b', {duration: 300, easing:'easeOut'});
-        this.statusBar.setText(this.hideText);
-        this.formPanel.el.on('click', this.hideErrors, this, {single:true}); // hide if the user clicks directly into the form
-    },
-    
-    // private
-    hideErrors : function(){
-        var el = this.getMsgEl();
-        if(el.isVisible()){
-         el.slideOut('b', {duration: 300, easing:'easeIn'});
-         this.statusBar.setText(this.showText);
-        }
-        this.formPanel.el.un('click', this.hideErrors, this);
-    },
-    
-    // private
-    onStatusClick : function(){
-        if(this.getMsgEl().isVisible()){
-            this.hideErrors();
-        }else if(this.errors.getCount() > 0){
-            this.showErrors();
-        }
-    }
-});
-</pre>
-    </div>
+            <div id="copyright">
+                <p>&copy; 2012 Sencha Inc. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
 
 </body>
 </html>

@@ -10,40 +10,61 @@
 </head>
 <body>
 
-    <div id="logo-container" class="skiptranslate">
-        <h1 id="logo"><a href="/"><img src="/assets/logo.png" alt="Sencha Try" /></a></h1>
-        <span id="glow"></span>
-    </div>
-    <ul>
-        <li class="with-sub">
-            <a href="#" class="dropdown">Sencha Network</a>
-            <div id="docs-dropdown" class="pop-nav zero">
+    <header id="header">
+        <div id="logo-container" class="skiptranslate">
+            <h1 id="logo"><a href="/"><img src="/assets/logo.png" alt="Sencha Try" /></a></h1>
+            <span id="glow"></span>
+        </div>
+        
+        <nav id="siteNav">
+          <ul>
+            <li class="with-sub">
+              <a href="#" class="dropdown">Sencha Network</a>
+              <div class="pop-nav zero" id="docs-dropdown">
                 <ul>
-                    <li><a href="http://sencha.com/">Sencha.com</a></li>
-                    <li><a href="http://sencha.com/products/io/">Sencha.io</a></li>
-                    <li><a href="http://market.sencha.com/">Sencha Market</a></li>
+                  <li><a href="http://sencha.com/">Sencha.com</a></li>
+                  <li><a href="http://sencha.com/products/io/">Sencha.io</a></li>
+                  <li><a href="http://market.sencha.com/">Sencha Market</a></li>
                 </ul>
-            </div>
-        </li>
-    </ul>
+              </div>
+            </li>
+          </ul>
+        </nav>
+    </header>
     
     <div id="content-wrapper" class="clearfix">
         <div id="content">
-            <a href="/">Home</a> <span>/</span> <a href="/extjs/">Ext JS</a> <span>/</span> <a href="/extjs/4.0.7/">4.0.7</a> <span>/</span> Ext.grid.feature.RowBody Example
+            <nav class="bc">
+                <a href="/">Home</a> <span>/</span> <a href="/extjs/">Ext JS</a> <span>/</span> <a href="/extjs/4.0.7/">4.0.7</a> <span>/</span> Ext.grid.feature.RowBody Example
+            </nav>
+            
             <div class="developer">
                 <div class="column_nine">
                     <div class="details">
                         <div class="top-block border">
                             <h2 class="alt">Ext.grid.feature.RowBody Example</h2>
                         </div>
+                        
                         <div class="plain-text"></div>
+                        
                         <h3>[example widget]</h3>
+                        
                         <div>
                             <ul class="developer-actions">
                                 <li class="request"><a href="src.zip" class="button-link center">Download</a></li>
                             </ul>
                         </div>
+                        
+                        <div>
+                            <h4>Files</h4>
+                            <ul>
+                                <li><a href="/extjs/4.0.7/docs/Ext.grid.feature.RowBody.1/app.js">app.js</a></li>
+                                <li><a href="/extjs/4.0.7/docs/Ext.grid.feature.RowBody.1/index.html">index.html</a></li>
+                            </ul>
+                        </div>
+                        
                         <hr class="clear" />
+                        
                         <h4>Tags</h4>
                         <ul class="services-list alt clearfix tags">
                             <li><a href="/tags/Ext%20JS/">Ext JS</a></li>
@@ -56,6 +77,7 @@
                             <li><a href="/tags/grid/"><code>grid</code></a></li>
                             <li><a href="/tags/rowbody/"><code>rowbody</code></a></li>
                         </ul>
+                        
                         <h4>See Also</h4>
                         <ul class="services-list alt clearfix see-also">
                             <li class="docs"><a href="http://docs.sencha.com/ext-js/4-0/#!/api/Ext.grid.feature.RowBody" target="_blank">Ext.grid.feature.RowBody Documentation</a></li>
@@ -71,91 +93,37 @@
         </div>
     </div>
     
-    <div id="footer-content">
-        <div class="columns">
-            <ul class="column">
-                <li>
-                    <a class="main" href="http://sencha.com/company/">Company</a>
-                    <ul class="zero">
-                        <li class="first"><a href="http://www.sencha.com/contact/" rel="nofollow">Contact Us</a></li>
-                        <li class="last"><a href="/pages/terms/" rel="nofollow">Terms of Use</a></li>
+    <footer id="footer">
+        <div id="footer-content">
+            <nav id="footer-nav">
+                <div class="columns">
+                    <ul class="column">
+                        <li>
+                            <a class="main" href="http://sencha.com/company">Company</a>
+                            <ul class="zero">
+                                <li class="first"><a href="http://www.sencha.com/contact/" rel="nofollow">Contact Us</a></li>
+                                <li class="last"><a href="/pages/terms" rel="nofollow">Terms of Use</a></li>
+                            </ul>
+                        </li>
                     </ul>
-                </li>
-            </ul>
-            <ul class="column">
-                <li>
-                    <a class="main" href="/">Listings</a>
-                    <ul class="zero">
-                        <li class="first"><a href="/developers/">Full listing</a></li>
-                        <li class="last"><a href="/developers/by_location/">Geographic listing</a></li>
+                    <ul class="column">
+                        <li>
+                            <a class="main" href="/">Listings</a>
+                            <ul class="zero">
+                                <li class="first"><a href="/developers">Full listing</a></li>
+                                <li class="last"><a href="/developers/by_location">Geographic listing</a></li>
+                            </ul>
+                        </li>
                     </ul>
-                </li>
-            </ul>
+                </div>
+            </nav>
+            <hr />
+            
+            <div id="copyright">
+                <p>&copy; 2012 Sencha Inc. All rights reserved.</p>
+            </div>
         </div>
-        <hr />
-        <div id="copyright">
-            <p>&copy; 2012 Sencha Inc. All rights reserved.</p>
-        </div>
-    </div>
-
-    <div class="hidden">
-        <pre class="example" data-uri="/extjs/4.0.7/docs/Ext.grid.feature.RowBody.1/app.js">/*global Ext:false */
-Ext.onReady(function () {
-    Ext.define('Animal', {
-        extend: 'Ext.data.Model',
-        fields: ['name', 'latin', 'desc']
-    });
-
-    Ext.create('Ext.grid.Panel', {
-        width: 400,
-        height: 300,
-        renderTo: Ext.getBody(),
-        store: {
-            model: 'Animal',
-            data: [{
-                name: 'Tiger',
-                latin: 'Panthera tigris',
-                desc: 'The largest cat species, weighing up to 306 kg (670 lb).'
-            }, {
-                name: 'Roman snail',
-                latin: 'Helix pomatia',
-                desc: 'A species of large, edible, air-breathing land snail.'
-            }, {
-                name: 'Yellow-winged darter',
-                latin: 'Sympetrum flaveolum',
-                desc: 'A dragonfly found in Europe and mid and Northern China.'
-            }, {
-                name: 'Superb Fairy-wren',
-                latin: 'Malurus cyaneus',
-                desc: 'Common and familiar across south-eastern Australia.'
-            }]
-        },
-        columns: [{
-            dataIndex: 'name',
-            text: 'Common name',
-            width: 125
-        }, {
-            dataIndex: 'latin',
-            text: 'Scientific name',
-            flex: 1
-        }],
-        features: [{
-            ftype: 'rowbody',
-            getAdditionalData: function (data, rowIndex, record, orig) {
-                var headerCt = this.view.headerCt,
-                    colspan = headerCt.getColumnCount();
-                // Usually you would style the my-body-class in CSS file
-                return {
-                    rowBody: '<div style="padding: 1em;">' + record.get("desc") + '</div>',
-                    rowBodyCls: "my-body-class",
-                    rowBodyColspan: colspan
-                };
-            }
-        }]
-    });
-});
-</pre>
-    </div>
+    </footer>
 
 </body>
 </html>

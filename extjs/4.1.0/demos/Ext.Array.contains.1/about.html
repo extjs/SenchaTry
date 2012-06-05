@@ -10,40 +10,61 @@
 </head>
 <body>
 
-    <div id="logo-container" class="skiptranslate">
-        <h1 id="logo"><a href="/"><img src="/assets/logo.png" alt="Sencha Try" /></a></h1>
-        <span id="glow"></span>
-    </div>
-    <ul>
-        <li class="with-sub">
-            <a href="#" class="dropdown">Sencha Network</a>
-            <div id="docs-dropdown" class="pop-nav zero">
+    <header id="header">
+        <div id="logo-container" class="skiptranslate">
+            <h1 id="logo"><a href="/"><img src="/assets/logo.png" alt="Sencha Try" /></a></h1>
+            <span id="glow"></span>
+        </div>
+        
+        <nav id="siteNav">
+          <ul>
+            <li class="with-sub">
+              <a href="#" class="dropdown">Sencha Network</a>
+              <div class="pop-nav zero" id="docs-dropdown">
                 <ul>
-                    <li><a href="http://sencha.com/">Sencha.com</a></li>
-                    <li><a href="http://sencha.com/products/io/">Sencha.io</a></li>
-                    <li><a href="http://market.sencha.com/">Sencha Market</a></li>
+                  <li><a href="http://sencha.com/">Sencha.com</a></li>
+                  <li><a href="http://sencha.com/products/io/">Sencha.io</a></li>
+                  <li><a href="http://market.sencha.com/">Sencha Market</a></li>
                 </ul>
-            </div>
-        </li>
-    </ul>
+              </div>
+            </li>
+          </ul>
+        </nav>
+    </header>
     
     <div id="content-wrapper" class="clearfix">
         <div id="content">
-            <a href="/">Home</a> <span>/</span> <a href="/extjs/">Ext JS</a> <span>/</span> <a href="/extjs/4.1.0/">4.1.0</a> <span>/</span> Checking whether an array contains a specific value using the Ext.Array class
+            <nav class="bc">
+                <a href="/">Home</a> <span>/</span> <a href="/extjs/">Ext JS</a> <span>/</span> <a href="/extjs/4.1.0/">4.1.0</a> <span>/</span> Checking whether an array contains a specific value using the Ext.Array class
+            </nav>
+            
             <div class="developer">
                 <div class="column_nine">
                     <div class="details">
                         <div class="top-block border">
                             <h2 class="alt">Checking whether an array contains a specific value using the Ext.Array class</h2>
                         </div>
+                        
                         <div class="plain-text"><p>The following example shows how you can determine if an array contains a specific value using the static <code>Ext.Array.contains()</code> method.</p></div>
+                        
                         <h3>[example widget]</h3>
+                        
                         <div>
                             <ul class="developer-actions">
                                 <li class="request"><a href="src.zip" class="button-link center">Download</a></li>
                             </ul>
                         </div>
+                        
+                        <div>
+                            <h4>Files</h4>
+                            <ul>
+                                <li><a href="/extjs/4.1.0/demos/Ext.Array.contains.1/app.js">app.js</a></li>
+                                <li><a href="/extjs/4.1.0/demos/Ext.Array.contains.1/index.html">index.html</a></li>
+                            </ul>
+                        </div>
+                        
                         <hr class="clear" />
+                        
                         <h4>Tags</h4>
                         <ul class="services-list alt clearfix tags">
                             <li><a href="/tags/Ext%20JS/">Ext JS</a></li>
@@ -51,6 +72,7 @@
                             <li><a href="/tags/Ext.Array/"><code>Ext.Array</code></a></li>
                             <li><a href="/tags/contains%28%29/"><code>contains()</code></a></li>
                         </ul>
+                        
                         <h4>See Also</h4>
                         <ul class="services-list alt clearfix see-also">
                             <li class="docs"><a href="http://docs.sencha.com/ext-js/4-1/#!/api/Ext.Array" target="_blank">Ext.Array Documentation</a></li>
@@ -61,77 +83,37 @@
         </div>
     </div>
     
-    <div id="footer-content">
-        <div class="columns">
-            <ul class="column">
-                <li>
-                    <a class="main" href="http://sencha.com/company/">Company</a>
-                    <ul class="zero">
-                        <li class="first"><a href="http://www.sencha.com/contact/" rel="nofollow">Contact Us</a></li>
-                        <li class="last"><a href="/pages/terms/" rel="nofollow">Terms of Use</a></li>
+    <footer id="footer">
+        <div id="footer-content">
+            <nav id="footer-nav">
+                <div class="columns">
+                    <ul class="column">
+                        <li>
+                            <a class="main" href="http://sencha.com/company">Company</a>
+                            <ul class="zero">
+                                <li class="first"><a href="http://www.sencha.com/contact/" rel="nofollow">Contact Us</a></li>
+                                <li class="last"><a href="/pages/terms" rel="nofollow">Terms of Use</a></li>
+                            </ul>
+                        </li>
                     </ul>
-                </li>
-            </ul>
-            <ul class="column">
-                <li>
-                    <a class="main" href="/">Listings</a>
-                    <ul class="zero">
-                        <li class="first"><a href="/developers/">Full listing</a></li>
-                        <li class="last"><a href="/developers/by_location/">Geographic listing</a></li>
+                    <ul class="column">
+                        <li>
+                            <a class="main" href="/">Listings</a>
+                            <ul class="zero">
+                                <li class="first"><a href="/developers">Full listing</a></li>
+                                <li class="last"><a href="/developers/by_location">Geographic listing</a></li>
+                            </ul>
+                        </li>
                     </ul>
-                </li>
-            </ul>
+                </div>
+            </nav>
+            <hr />
+            
+            <div id="copyright">
+                <p>&copy; 2012 Sencha Inc. All rights reserved.</p>
+            </div>
         </div>
-        <hr />
-        <div id="copyright">
-            <p>&copy; 2012 Sencha Inc. All rights reserved.</p>
-        </div>
-    </div>
-
-    <div class="hidden">
-        <pre class="example" data-uri="/extjs/4.1.0/demos/Ext.Array.contains.1/app.js">/*global Ext:false */
-Ext.application({
-    name: 'Ext.Array.clean()',
-    launch: function () {
-        /* Create two arrays. The 'dirty' array contains empty items. The 'clean' array filters empty items using the static Ext.Array.clean() method. */
-        var arr = ['The', 'quick', 'brown', 'fox', 'jumps', 'over', 'the', 'lazy', 'dog'];
-        
-        /* Create a panel to display the output. */
-        var panel = Ext.create('Ext.Panel', {
-            id: 'pan',
-            title: 'Ext.Array.contains() Example',
-            height: 200,
-            bodyPadding: 10,
-            padding: 20,
-            dockedItems: [{
-                xtype: 'toolbar',
-                dock: 'top',
-                items: [{
-                    xtype: 'textfield',
-                    id: 'key'
-                }, {
-                    xtype: 'button',
-                    text: 'Check',
-                    handler: function () {
-                        var value = Ext.getCmp('key').getValue();
-                        Ext.getCmp('foo').setText(" contains '" + value + "'? " + Ext.Array.contains(arr, value));
-                    }
-                }]
-            }],
-            items: [{
-                xtype: 'label',
-                text: JSON.stringify(arr)
-            }, {
-                xtype: 'label',
-                id: 'foo',
-                text: ''
-            }],
-            renderTo: Ext.getBody()
-        }); // Ext.create()
-    } // launch
-}); // Ext.application()
-</pre>
-    </div>
+    </footer>
 
 </body>
 </html>

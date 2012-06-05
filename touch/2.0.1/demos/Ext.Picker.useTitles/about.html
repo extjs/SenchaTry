@@ -10,45 +10,67 @@
 </head>
 <body>
 
-    <div id="logo-container" class="skiptranslate">
-        <h1 id="logo"><a href="/"><img src="/assets/logo.png" alt="Sencha Try" /></a></h1>
-        <span id="glow"></span>
-    </div>
-    <ul>
-        <li class="with-sub">
-            <a href="#" class="dropdown">Sencha Network</a>
-            <div id="docs-dropdown" class="pop-nav zero">
+    <header id="header">
+        <div id="logo-container" class="skiptranslate">
+            <h1 id="logo"><a href="/"><img src="/assets/logo.png" alt="Sencha Try" /></a></h1>
+            <span id="glow"></span>
+        </div>
+        
+        <nav id="siteNav">
+          <ul>
+            <li class="with-sub">
+              <a href="#" class="dropdown">Sencha Network</a>
+              <div class="pop-nav zero" id="docs-dropdown">
                 <ul>
-                    <li><a href="http://sencha.com/">Sencha.com</a></li>
-                    <li><a href="http://sencha.com/products/io/">Sencha.io</a></li>
-                    <li><a href="http://market.sencha.com/">Sencha Market</a></li>
+                  <li><a href="http://sencha.com/">Sencha.com</a></li>
+                  <li><a href="http://sencha.com/products/io/">Sencha.io</a></li>
+                  <li><a href="http://market.sencha.com/">Sencha Market</a></li>
                 </ul>
-            </div>
-        </li>
-    </ul>
+              </div>
+            </li>
+          </ul>
+        </nav>
+    </header>
     
     <div id="content-wrapper" class="clearfix">
         <div id="content">
-            <a href="/">Home</a> <span>/</span> <a href="/touch/">Touch</a> <span>/</span> <a href="/touch/2.0.1/">2.0.1</a> <span>/</span> Adding a title header on an Ext.Picker control in Sencha Touch 2
+            <nav class="bc">
+                <a href="/">Home</a> <span>/</span> <a href="/touch/">Touch</a> <span>/</span> <a href="/touch/2.0.1/">2.0.1</a> <span>/</span> Adding a title header on an Ext.Picker control in Sencha Touch 2
+            </nav>
+            
             <div class="developer">
                 <div class="column_nine">
                     <div class="details">
                         <div class="top-block border">
                             <h2 class="alt">Adding a title header on an Ext.Picker control in Sencha Touch 2</h2>
                         </div>
+                        
                         <div class="plain-text"><p>The following example shows how you add a title header to an Ext.Picker (picker) control in Sencha Touch 2 by setting the <code>useTitle</code> config option or by calling the <code>setUseTitle()</code> method.</p></div>
+                        
                         <h3>[example widget]</h3>
+                        
                         <div>
                             <ul class="developer-actions">
                                 <li class="request"><a href="src.zip" class="button-link center">Download</a></li>
                             </ul>
                         </div>
+                        
+                        <div>
+                            <h4>Files</h4>
+                            <ul>
+                                <li><a href="/touch/2.0.1/demos/Ext.Picker.useTitles/app.js">app.js</a></li>
+                                <li><a href="/touch/2.0.1/demos/Ext.Picker.useTitles/index.html">index.html</a></li>
+                            </ul>
+                        </div>
+                        
                         <hr class="clear" />
+                        
                         <h4>Tags</h4>
                         <ul class="services-list alt clearfix tags">
                             <li><a href="/tags/Sencha%20Touch/">Sencha Touch</a></li>
                             <li><a href="/tags/Sencha%20Touch%202.0.1/">Sencha Touch 2.0.1</a></li>
                         </ul>
+                        
                         <h4>See Also</h4>
                         <ul class="services-list alt clearfix see-also">
                         </ul>
@@ -58,107 +80,37 @@
         </div>
     </div>
     
-    <div id="footer-content">
-        <div class="columns">
-            <ul class="column">
-                <li>
-                    <a class="main" href="http://sencha.com/company/">Company</a>
-                    <ul class="zero">
-                        <li class="first"><a href="http://www.sencha.com/contact/" rel="nofollow">Contact Us</a></li>
-                        <li class="last"><a href="/pages/terms/" rel="nofollow">Terms of Use</a></li>
+    <footer id="footer">
+        <div id="footer-content">
+            <nav id="footer-nav">
+                <div class="columns">
+                    <ul class="column">
+                        <li>
+                            <a class="main" href="http://sencha.com/company">Company</a>
+                            <ul class="zero">
+                                <li class="first"><a href="http://www.sencha.com/contact/" rel="nofollow">Contact Us</a></li>
+                                <li class="last"><a href="/pages/terms" rel="nofollow">Terms of Use</a></li>
+                            </ul>
+                        </li>
                     </ul>
-                </li>
-            </ul>
-            <ul class="column">
-                <li>
-                    <a class="main" href="/">Listings</a>
-                    <ul class="zero">
-                        <li class="first"><a href="/developers/">Full listing</a></li>
-                        <li class="last"><a href="/developers/by_location/">Geographic listing</a></li>
+                    <ul class="column">
+                        <li>
+                            <a class="main" href="/">Listings</a>
+                            <ul class="zero">
+                                <li class="first"><a href="/developers">Full listing</a></li>
+                                <li class="last"><a href="/developers/by_location">Geographic listing</a></li>
+                            </ul>
+                        </li>
                     </ul>
-                </li>
-            </ul>
+                </div>
+            </nav>
+            <hr />
+            
+            <div id="copyright">
+                <p>&copy; 2012 Sencha Inc. All rights reserved.</p>
+            </div>
         </div>
-        <hr />
-        <div id="copyright">
-            <p>&copy; 2012 Sencha Inc. All rights reserved.</p>
-        </div>
-    </div>
-
-    <div class="hidden">
-        <pre class="example" data-uri="/touch/2.0.1/demos/Ext.Picker.useTitles/app.js">/*global Ext:false */
-Ext.application({
-    launch: function () {
-        var picker = Ext.create('Ext.Picker', {
-            useTitles: true,
-            slots: [{
-                name: 'months',
-                title: 'Months',
-                data: [{
-                    text: 'January',
-                    value: 0
-                }, {
-                    text: 'February',
-                    value: 1
-                }, {
-                    text: 'March',
-                    value: 2
-                }, {
-                    text: 'April',
-                    value: 3
-                }, {
-                    text: 'May',
-                    value: 4
-                }, {
-                    text: 'June',
-                    value: 5
-                }, {
-                    text: 'July',
-                    value: 6
-                }, {
-                    text: 'August',
-                    value: 7
-                }, {
-                    text: 'September',
-                    value: 8
-                }, {
-                    text: 'October',
-                    value: 9
-                }, {
-                    text: 'November',
-                    value: 10
-                }, {
-                    text: 'December',
-                    value: 11
-                }] // data
-            }] // slots
-        }); // create()
-        
-        Ext.create('Ext.Container', {
-            fullscreen: true,
-            items: [{
-                xtype: 'toolbar',
-                items: [{
-                    text: 'useTitles = true',
-                    handler: function () {
-                        picker.setUseTitles(true);
-                        picker.show();
-                    } // handler
-                }, {
-                    text: 'useTitles = false',
-                    handler: function () {
-                        picker.setUseTitles(false);
-                        picker.show();
-                    } // handler
-                }] // items (toolbar)
-            }] // items (container)
-        }); // create()
-        
-        Ext.Viewport.add(picker);
-    } // launch
-}); // application()
-</pre>
-    </div>
+    </footer>
 
 </body>
 </html>

@@ -10,40 +10,61 @@
 </head>
 <body>
 
-    <div id="logo-container" class="skiptranslate">
-        <h1 id="logo"><a href="/"><img src="/assets/logo.png" alt="Sencha Try" /></a></h1>
-        <span id="glow"></span>
-    </div>
-    <ul>
-        <li class="with-sub">
-            <a href="#" class="dropdown">Sencha Network</a>
-            <div id="docs-dropdown" class="pop-nav zero">
+    <header id="header">
+        <div id="logo-container" class="skiptranslate">
+            <h1 id="logo"><a href="/"><img src="/assets/logo.png" alt="Sencha Try" /></a></h1>
+            <span id="glow"></span>
+        </div>
+        
+        <nav id="siteNav">
+          <ul>
+            <li class="with-sub">
+              <a href="#" class="dropdown">Sencha Network</a>
+              <div class="pop-nav zero" id="docs-dropdown">
                 <ul>
-                    <li><a href="http://sencha.com/">Sencha.com</a></li>
-                    <li><a href="http://sencha.com/products/io/">Sencha.io</a></li>
-                    <li><a href="http://market.sencha.com/">Sencha Market</a></li>
+                  <li><a href="http://sencha.com/">Sencha.com</a></li>
+                  <li><a href="http://sencha.com/products/io/">Sencha.io</a></li>
+                  <li><a href="http://market.sencha.com/">Sencha Market</a></li>
                 </ul>
-            </div>
-        </li>
-    </ul>
+              </div>
+            </li>
+          </ul>
+        </nav>
+    </header>
     
     <div id="content-wrapper" class="clearfix">
         <div id="content">
-            <a href="/">Home</a> <span>/</span> <a href="/extjs/">Ext JS</a> <span>/</span> <a href="/extjs/4.0.7/">4.0.7</a> <span>/</span> Ext.chart.Legend Example
+            <nav class="bc">
+                <a href="/">Home</a> <span>/</span> <a href="/extjs/">Ext JS</a> <span>/</span> <a href="/extjs/4.0.7/">4.0.7</a> <span>/</span> Ext.chart.Legend Example
+            </nav>
+            
             <div class="developer">
                 <div class="column_nine">
                     <div class="details">
                         <div class="top-block border">
                             <h2 class="alt">Ext.chart.Legend Example</h2>
                         </div>
+                        
                         <div class="plain-text"></div>
+                        
                         <h3>[example widget]</h3>
+                        
                         <div>
                             <ul class="developer-actions">
                                 <li class="request"><a href="src.zip" class="button-link center">Download</a></li>
                             </ul>
                         </div>
+                        
+                        <div>
+                            <h4>Files</h4>
+                            <ul>
+                                <li><a href="/extjs/4.0.7/docs/Ext.chart.Legend.1/app.js">app.js</a></li>
+                                <li><a href="/extjs/4.0.7/docs/Ext.chart.Legend.1/index.html">index.html</a></li>
+                            </ul>
+                        </div>
+                        
                         <hr class="clear" />
+                        
                         <h4>Tags</h4>
                         <ul class="services-list alt clearfix tags">
                             <li><a href="/tags/Ext%20JS/">Ext JS</a></li>
@@ -52,6 +73,7 @@
                             <li><a href="/tags/chart/"><code>chart</code></a></li>
                             <li><a href="/tags/position/"><code>position</code></a></li>
                         </ul>
+                        
                         <h4>See Also</h4>
                         <ul class="services-list alt clearfix see-also">
                             <li class="docs"><a href="http://docs.sencha.com/ext-js/4-0/#!/api/Ext.chart.Legend" target="_blank">Ext.chart.Legend Documentation</a></li>
@@ -63,128 +85,37 @@
         </div>
     </div>
     
-    <div id="footer-content">
-        <div class="columns">
-            <ul class="column">
-                <li>
-                    <a class="main" href="http://sencha.com/company/">Company</a>
-                    <ul class="zero">
-                        <li class="first"><a href="http://www.sencha.com/contact/" rel="nofollow">Contact Us</a></li>
-                        <li class="last"><a href="/pages/terms/" rel="nofollow">Terms of Use</a></li>
+    <footer id="footer">
+        <div id="footer-content">
+            <nav id="footer-nav">
+                <div class="columns">
+                    <ul class="column">
+                        <li>
+                            <a class="main" href="http://sencha.com/company">Company</a>
+                            <ul class="zero">
+                                <li class="first"><a href="http://www.sencha.com/contact/" rel="nofollow">Contact Us</a></li>
+                                <li class="last"><a href="/pages/terms" rel="nofollow">Terms of Use</a></li>
+                            </ul>
+                        </li>
                     </ul>
-                </li>
-            </ul>
-            <ul class="column">
-                <li>
-                    <a class="main" href="/">Listings</a>
-                    <ul class="zero">
-                        <li class="first"><a href="/developers/">Full listing</a></li>
-                        <li class="last"><a href="/developers/by_location/">Geographic listing</a></li>
+                    <ul class="column">
+                        <li>
+                            <a class="main" href="/">Listings</a>
+                            <ul class="zero">
+                                <li class="first"><a href="/developers">Full listing</a></li>
+                                <li class="last"><a href="/developers/by_location">Geographic listing</a></li>
+                            </ul>
+                        </li>
                     </ul>
-                </li>
-            </ul>
+                </div>
+            </nav>
+            <hr />
+            
+            <div id="copyright">
+                <p>&copy; 2012 Sencha Inc. All rights reserved.</p>
+            </div>
         </div>
-        <hr />
-        <div id="copyright">
-            <p>&copy; 2012 Sencha Inc. All rights reserved.</p>
-        </div>
-    </div>
-
-    <div class="hidden">
-        <pre class="example" data-uri="/extjs/4.0.7/docs/Ext.chart.Legend.1/app.js">/*global Ext:false */
-Ext.onReady(function () {
-    var store = Ext.create('Ext.data.JsonStore', {
-        fields: ['name', 'data1', 'data2', 'data3', 'data4', 'data5'],
-        data: [{
-            'name': 'metric one',
-            'data1': 10,
-            'data2': 12,
-            'data3': 14,
-            'data4': 8,
-            'data5': 13
-        }, {
-            'name': 'metric two',
-            'data1': 7,
-            'data2': 8,
-            'data3': 16,
-            'data4': 10,
-            'data5': 3
-        }, {
-            'name': 'metric three',
-            'data1': 5,
-            'data2': 2,
-            'data3': 14,
-            'data4': 12,
-            'data5': 7
-        }, {
-            'name': 'metric four',
-            'data1': 2,
-            'data2': 14,
-            'data3': 6,
-            'data4': 1,
-            'data5': 23
-        }, {
-            'name': 'metric five',
-            'data1': 27,
-            'data2': 38,
-            'data3': 36,
-            'data4': 13,
-            'data5': 33
-        }]
-    });
-
-    Ext.create('Ext.chart.Chart', {
-        renderTo: Ext.getBody(),
-        width: 500,
-        height: 300,
-        animate: true,
-        store: store,
-        shadow: true,
-        theme: 'Category1',
-        legend: {
-            position: 'top'
-        },
-        axes: [{
-            type: 'Numeric',
-            position: 'left',
-            fields: ['data1', 'data2', 'data3', 'data4', 'data5'],
-            title: 'Sample Values',
-            grid: {
-                odd: {
-                    opacity: 1,
-                    fill: '#ddd',
-                    stroke: '#bbb',
-                    'stroke-width': 1
-                }
-            },
-            minimum: 0,
-            adjustMinimumByMajorUnit: 0
-        }, {
-            type: 'Category',
-            position: 'bottom',
-            fields: ['name'],
-            title: 'Sample Metrics',
-            grid: true,
-            label: {
-                rotate: {
-                    degrees: 315
-                }
-            }
-        }],
-        series: [{
-            type: 'area',
-            highlight: false,
-            axis: 'left',
-            xField: 'name',
-            yField: ['data1', 'data2', 'data3', 'data4', 'data5'],
-            style: {
-                opacity: 0.93
-            }
-        }]
-    });
-});
-</pre>
-    </div>
+    </footer>
 
 </body>
 </html>

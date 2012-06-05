@@ -10,45 +10,85 @@
 </head>
 <body>
 
-    <div id="logo-container" class="skiptranslate">
-        <h1 id="logo"><a href="/"><img src="/assets/logo.png" alt="Sencha Try" /></a></h1>
-        <span id="glow"></span>
-    </div>
-    <ul>
-        <li class="with-sub">
-            <a href="#" class="dropdown">Sencha Network</a>
-            <div id="docs-dropdown" class="pop-nav zero">
+    <header id="header">
+        <div id="logo-container" class="skiptranslate">
+            <h1 id="logo"><a href="/"><img src="/assets/logo.png" alt="Sencha Try" /></a></h1>
+            <span id="glow"></span>
+        </div>
+        
+        <nav id="siteNav">
+          <ul>
+            <li class="with-sub">
+              <a href="#" class="dropdown">Sencha Network</a>
+              <div class="pop-nav zero" id="docs-dropdown">
                 <ul>
-                    <li><a href="http://sencha.com/">Sencha.com</a></li>
-                    <li><a href="http://sencha.com/products/io/">Sencha.io</a></li>
-                    <li><a href="http://market.sencha.com/">Sencha Market</a></li>
+                  <li><a href="http://sencha.com/">Sencha.com</a></li>
+                  <li><a href="http://sencha.com/products/io/">Sencha.io</a></li>
+                  <li><a href="http://market.sencha.com/">Sencha Market</a></li>
                 </ul>
-            </div>
-        </li>
-    </ul>
+              </div>
+            </li>
+          </ul>
+        </nav>
+    </header>
     
     <div id="content-wrapper" class="clearfix">
         <div id="content">
-            <a href="/">Home</a> <span>/</span> <a href="/touch/">Touch</a> <span>/</span> <a href="/touch/2.0.0/">2.0.0</a> <span>/</span> Audio
+            <nav class="bc">
+                <a href="/">Home</a> <span>/</span> <a href="/touch/">Touch</a> <span>/</span> <a href="/touch/2.0.0/">2.0.0</a> <span>/</span> Audio
+            </nav>
+            
             <div class="developer">
                 <div class="column_nine">
                     <div class="details">
                         <div class="top-block border">
                             <h2 class="alt">Audio</h2>
                         </div>
+                        
                         <div class="plain-text"></div>
+                        
                         <h3>[example widget]</h3>
+                        
                         <div>
                             <ul class="developer-actions">
                                 <li class="request"><a href="src.zip" class="button-link center">Download</a></li>
                             </ul>
                         </div>
+                        
+                        <div>
+                            <h4>Files</h4>
+                            <ul>
+                                <li><a href="/touch/2.0.0/examples/audio/app.js">app.js</a></li>
+                                <li><a href="/touch/2.0.0/examples/audio/app.json">app.json</a></li>
+                                <li><a href="/touch/2.0.0/examples/audio/crash.mp3">crash.mp3</a></li>
+                                <li><a href="/touch/2.0.0/examples/audio/index.html">index.html</a></li>
+                                <li><a href="/touch/2.0.0/examples/audio/resources/css/app.css">resources/css/app.css</a></li>
+                                <li><a href="/touch/2.0.0/examples/audio/resources/icons/icon.png">resources/icons/icon.png</a></li>
+                                <li><a href="/touch/2.0.0/examples/audio/resources/icons/icon@144.png">resources/icons/icon@144.png</a></li>
+                                <li><a href="/touch/2.0.0/examples/audio/resources/icons/icon@2x.png">resources/icons/icon@2x.png</a></li>
+                                <li><a href="/touch/2.0.0/examples/audio/resources/icons/icon@72.png">resources/icons/icon@72.png</a></li>
+                                <li><a href="/touch/2.0.0/examples/audio/resources/loading/Default-LandscapeLeft~ipad.png">resources/loading/Default-LandscapeLeft~ipad.png</a></li>
+                                <li><a href="/touch/2.0.0/examples/audio/resources/loading/Default-LandscapeRight~ipad.png">resources/loading/Default-LandscapeRight~ipad.png</a></li>
+                                <li><a href="/touch/2.0.0/examples/audio/resources/loading/Default-Landscape~ipad.png">resources/loading/Default-Landscape~ipad.png</a></li>
+                                <li><a href="/touch/2.0.0/examples/audio/resources/loading/Default-PortraitUpsideDown~ipad.png">resources/loading/Default-PortraitUpsideDown~ipad.png</a></li>
+                                <li><a href="/touch/2.0.0/examples/audio/resources/loading/Default-Portrait~ipad.png">resources/loading/Default-Portrait~ipad.png</a></li>
+                                <li><a href="/touch/2.0.0/examples/audio/resources/loading/Default.png">resources/loading/Default.png</a></li>
+                                <li><a href="/touch/2.0.0/examples/audio/resources/loading/Default@2x.png">resources/loading/Default@2x.png</a></li>
+                                <li><a href="/touch/2.0.0/examples/audio/resources/loading/Default~ipad.png">resources/loading/Default~ipad.png</a></li>
+                                <li><a href="/touch/2.0.0/examples/audio/resources/loading/Homescreen.jpg">resources/loading/Homescreen.jpg</a></li>
+                                <li><a href="/touch/2.0.0/examples/audio/resources/loading/Homescreen~ipad.jpg">resources/loading/Homescreen~ipad.jpg</a></li>
+                                <li><a href="/touch/2.0.0/examples/audio/resources/loading/iTunesArtwork.png">resources/loading/iTunesArtwork.png</a></li>
+                            </ul>
+                        </div>
+                        
                         <hr class="clear" />
+                        
                         <h4>Tags</h4>
                         <ul class="services-list alt clearfix tags">
                             <li><a href="/tags/Sencha%20Touch/">Sencha Touch</a></li>
                             <li><a href="/tags/Sencha%20Touch%202.0.0/">Sencha Touch 2.0.0</a></li>
                         </ul>
+                        
                         <h4>See Also</h4>
                         <ul class="services-list alt clearfix see-also">
                         </ul>
@@ -58,143 +98,37 @@
         </div>
     </div>
     
-    <div id="footer-content">
-        <div class="columns">
-            <ul class="column">
-                <li>
-                    <a class="main" href="http://sencha.com/company/">Company</a>
-                    <ul class="zero">
-                        <li class="first"><a href="http://www.sencha.com/contact/" rel="nofollow">Contact Us</a></li>
-                        <li class="last"><a href="/pages/terms/" rel="nofollow">Terms of Use</a></li>
+    <footer id="footer">
+        <div id="footer-content">
+            <nav id="footer-nav">
+                <div class="columns">
+                    <ul class="column">
+                        <li>
+                            <a class="main" href="http://sencha.com/company">Company</a>
+                            <ul class="zero">
+                                <li class="first"><a href="http://www.sencha.com/contact/" rel="nofollow">Contact Us</a></li>
+                                <li class="last"><a href="/pages/terms" rel="nofollow">Terms of Use</a></li>
+                            </ul>
+                        </li>
                     </ul>
-                </li>
-            </ul>
-            <ul class="column">
-                <li>
-                    <a class="main" href="/">Listings</a>
-                    <ul class="zero">
-                        <li class="first"><a href="/developers/">Full listing</a></li>
-                        <li class="last"><a href="/developers/by_location/">Geographic listing</a></li>
+                    <ul class="column">
+                        <li>
+                            <a class="main" href="/">Listings</a>
+                            <ul class="zero">
+                                <li class="first"><a href="/developers">Full listing</a></li>
+                                <li class="last"><a href="/developers/by_location">Geographic listing</a></li>
+                            </ul>
+                        </li>
                     </ul>
-                </li>
-            </ul>
+                </div>
+            </nav>
+            <hr />
+            
+            <div id="copyright">
+                <p>&copy; 2012 Sencha Inc. All rights reserved.</p>
+            </div>
         </div>
-        <hr />
-        <div id="copyright">
-            <p>&copy; 2012 Sencha Inc. All rights reserved.</p>
-        </div>
-    </div>
-
-    <div class="hidden">
-        <pre class="example" data-uri="/touch/2.0.0/examples/audio/app.js">/*global Ext:false */
-//<debug>
-Ext.Loader.setPath({
-    'Ext': '../../src'
-});
-//</debug>
-
-/**
- * A simple example which demonstrates the Ext.Audio component in Sencha Touch.
- */
-
-Ext.application({
-    glossOnIcon: false,
-    icon: {
-        57: 'resources/icons/icon.png',
-        72: 'resources/icons/icon@72.png',
-        114: 'resources/icons/icon@2x.png',
-        144: 'resources/icons/icon@114.png'
-    },
-
-    phoneStartupScreen: 'resources/loading/Homescreen.jpg',
-    tabletStartupScreen: 'resources/loading/Homescreen~ipad.jpg',
-
-    requires: [
-        'Ext.Audio',
-        'Ext.Button',
-        'Ext.tab.Panel'
-    ],
-
-    launch: function() {
-        var audioBase = {
-            xtype: 'audio',
-            url  : 'crash.mp3',
-            loop : true
-        };
-
-        var hiddenAudio = Ext.create('Ext.Container', {
-            title: 'Hidden',
-            layout: {
-                type: 'vbox',
-                pack: 'center'
-            },
-            items: [
-                {
-                    xtype : 'button',
-                    text  : 'Play audio',
-                    margin: 20,
-                    handler: function() {
-                        var audio = this.getParent().down('audio');
-
-                        if (audio.isPlaying()) {
-                            audio.pause();
-                            this.setText('Play audio');
-                        } else {
-                            audio.play();
-                            this.setText('Pause audio');
-                        }
-                    }
-                },
-                Ext.apply({}, audioBase, {
-                    enableControls: false
-                })
-            ]
-        });
-
-        var styledAudio = Ext.create('Ext.Audio', Ext.apply({}, audioBase, {
-            title: 'Styled',
-            cls: 'myAudio',
-            layout: 'fit',
-            enableControls: true
-        }));
-
-        var autoAudio = Ext.create('Ext.Audio', Ext.apply({}, audioBase, {
-            title: 'autoResume',
-            autoResume: true
-        }));
-
-        var items = [];
-
-        if (Ext.os.is.Android) {
-            //android devices do not support the <audio> tag controls
-            items = [
-                {
-                    xtype: 'container',
-                    layout: {
-                        type: 'vbox',
-                        pack: 'center'
-                    },
-                    title: 'Audio Sample',
-                    items: hiddenAudio
-                }
-            ];
-        } else {
-            items = [hiddenAudio, styledAudio];
-            if (Ext.os.deviceType.toLowerCase() != "phone") {
-                items.push(autoAudio);
-            }
-        }
-
-        Ext.create('Ext.tab.Panel', {
-            fullscreen: true,
-            tabBarPosition: 'top',
-            items: items
-        });
-    }
-});
-
-</pre>
-    </div>
+    </footer>
 
 </body>
 </html>
