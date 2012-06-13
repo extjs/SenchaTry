@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8"/>
-    <title>Home | Sencha Try</title>
+    <title>Submit an example | Sencha Try</title>
     <meta name="description" content="Just a bunch of Ext JS and Sencha Touch examples" />
     <meta name="keywords" content="Sencha, Ext JS, Sencha Touch" />
     <meta name="author" content="Sencha Inc." />
@@ -34,19 +34,35 @@
 
 <div id="hero">
         <div class="hero-content-wrap">
-            <h1 class="hero-heading">Sencha Try</h1>
-            <p class="hero-p">Just a bunch of Ext JS, and Sencha Touch examples.</p>
-            <form id="search" method="get" onsubmit="this.action = sdks.value;">
+            <h1 class="hero-heading">Submit example</h1>
+            <p class="hero-p">Please fill out the following form to submit an example pull request.</p>
+            <form id="search" method="post">
                 <div style="margin:0;padding:0;display:inline;"></div>
                 <fieldset>
-                    <select class="select-location" id="sdks" name="sdks" onchange="this.form.submit();">
-                        <option value="/extjs/4.0.7/">Ext JS 4.0.7</option>
-                        <option value="/extjs/4.1.0/">Ext JS 4.1.0</option>
-                        <option value="/touch/2.0.0/">Sencha Touch 2.0.0</option>
-                        <option value="/touch/2.0.1/">Sencha Touch 2.0.1</option>
-                    </select>
-                    <input class="button-link search-devs" name="commit" type="submit" value="Go">
+                    <label for="name">Name:</label><br />
+                    <input type="text" id="name" name="name" required="true" />
                 </fieldset>
+                
+                <fieldset>
+                    <label for="url">URL:</label><br />
+                    <input type="url" id="url" name="url" required="false" />
+                </fieldset>
+                
+                <fieldset>
+                    <label for="github">Github:</label><br />
+                    <input type="text" id="github" name="github" required="false" />
+                </fieldset>
+                
+                <fieldset>
+                    <label for="senchadevs">Sencha Devs URL:</label>
+                    <input type="url" id="senchadevs" name="senchadevs" required="false" />
+                </fieldset>
+                
+                <fieldset>
+                    <textarea id="comments" placeholder="Comments"></textarea>
+                </fieldset>
+                
+                <input type="submit" value="Submit" />
             </form>
         </div>
     </div>
