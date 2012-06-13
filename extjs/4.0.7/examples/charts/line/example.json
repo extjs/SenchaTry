@@ -11,7 +11,47 @@
             "label": "Ext JS 4.0.7"
         }
     ],
-    "tags": [],
+    "tags": [
+        {
+            "label": "Ext.Window"
+        },
+        {
+            "label": "Ext.fx.target.Sprite"
+        },
+        {
+            "label": "Ext.layout.container.Fit"
+        },
+        {
+            "label": "theme"
+        },
+        {
+            "label": "minorTickSteps"
+        },
+        {
+            "label": "grid"
+        },
+        {
+            "label": "odd"
+        },
+        {
+            "label": "series"
+        },
+        {
+            "label": "highlight"
+        },
+        {
+            "label": "size"
+        },
+        {
+            "label": "radius"
+        },
+        {
+            "label": "markerConfig"
+        },
+        {
+            "label": "smooth"
+        }
+    ],
     "seeAlso": [],
     "author": {
         "name": "Sencha Inc.",

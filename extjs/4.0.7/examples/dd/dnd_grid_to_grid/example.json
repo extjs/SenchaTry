@@ -11,7 +11,56 @@
             "label": "Ext JS 4.0.7"
         }
     ],
-    "tags": [],
+    "tags": [
+        {
+            "label": "Ext.data.Model"
+        },
+        {
+            "label": "Ext.data.Store"
+        },
+        {
+            "label": "Ext.grid.Panel"
+        },
+        {
+            "label": "multiSelect"
+        },
+        {
+            "label": "viewConfig"
+        },
+        {
+            "label": "plugins"
+        },
+        {
+            "label": "drop"
+        },
+        {
+            "label": "columns"
+        },
+        {
+            "label": "stripeRows"
+        },
+        {
+            "label": "Ext.grid.plugin.DragDrop"
+        },
+        {
+            "label": "gridviewdragdrop"
+        },
+        {
+            "label": "dragGroup"
+        },
+        {
+            "label": "dropGroup"
+        },
+        {
+            "label": "records"
+        },
+        {
+            "label": "loadData()"
+        },
+        {
+            "label": "removeAll()"
+        }
+    ],
     "seeAlso": [],
     "author": {
         "name": "Sencha Inc.",

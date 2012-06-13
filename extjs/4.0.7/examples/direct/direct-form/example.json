@@ -11,7 +11,47 @@
             "label": "Ext JS 4.0.7"
         }
     ],
-    "tags": [],
+    "tags": [
+        {
+            "label": "Ext.tip.QuickTipManager"
+        },
+        {
+            "label": "Ext.layout.container.Accordion"
+        },
+        {
+            "label": "Ext.direct.Manager"
+        },
+        {
+            "label": "addProvider()"
+        },
+        {
+            "label": "api"
+        },
+        {
+            "label": "load"
+        },
+        {
+            "label": "submit"
+        },
+        {
+            "label": "paramOrder"
+        },
+        {
+            "label": "getForm()"
+        },
+        {
+            "label": "submit()"
+        },
+        {
+            "label": "params"
+        },
+        {
+            "label": "Ext.Function.defer()"
+        },
+        {
+            "label": "load()"
+        }
+    ],
     "seeAlso": [],
     "author": {
         "name": "Sencha Inc.",

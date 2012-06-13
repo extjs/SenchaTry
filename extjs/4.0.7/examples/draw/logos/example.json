@@ -11,7 +11,38 @@
             "label": "Ext JS 4.0.7"
         }
     ],
-    "tags": [],
+    "tags": [
+        {
+            "label": "Ext.draw.Component"
+        },
+        {
+            "label": "viewBox"
+        },
+        {
+            "label": "gradients"
+        },
+        {
+            "label": "angle"
+        },
+        {
+            "label": "stops"
+        },
+        {
+            "label": "path"
+        },
+        {
+            "label": "fill"
+        },
+        {
+            "label": "stroke"
+        },
+        {
+            "label": "resizable"
+        },
+        {
+            "label": "dynamic"
+        }
+    ],
     "seeAlso": [],
     "author": {
         "name": "Sencha Inc.",

@@ -11,7 +11,41 @@
             "label": "Ext JS 4.0.7"
         }
     ],
-    "tags": [],
+    "tags": [
+        {
+            "label": "Ext.form.field.VTypes"
+        },
+        {
+            "label": "Ext.form.VTypes"
+        },
+        {
+            "label": "parseDate()"
+        },
+        {
+            "label": "Ext.form.Panel"
+        },
+        {
+            "label": "Ext.FormPanel"
+        },
+        {
+            "label": "Ext.form.FormPanel"
+        },
+        {
+            "label": "frame"
+        },
+        {
+            "label": "autoFitErrors"
+        },
+        {
+            "label": "msgTarget"
+        },
+        {
+            "label": "vtype"
+        },
+        {
+            "label": "inputType"
+        }
+    ],
     "seeAlso": [],
     "author": {
         "name": "Sencha Inc.",

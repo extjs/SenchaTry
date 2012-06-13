@@ -11,7 +11,47 @@
             "label": "Ext JS 4.0.7"
         }
     ],
-    "tags": [],
+    "tags": [
+        {
+            "label": "Ext.layout.container.Fit"
+        },
+        {
+            "label": "Ext.data.JsonStore"
+        },
+        {
+            "label": "json"
+        },
+        {
+            "label": "Ext.chart.Chart"
+        },
+        {
+            "label": "chart"
+        },
+        {
+            "label": "renderer"
+        },
+        {
+            "label": "roundToDecimal"
+        },
+        {
+            "label": "stacked"
+        },
+        {
+            "label": "series"
+        },
+        {
+            "label": "Ext.chart.series.Bar"
+        },
+        {
+            "label": "Ext.chart.BarChart"
+        },
+        {
+            "label": "Ext.chart.BarSeries"
+        },
+        {
+            "label": "Ext.chart.StackedBarChart"
+        }
+    ],
     "seeAlso": [],
     "author": {
         "name": "Sencha Inc.",

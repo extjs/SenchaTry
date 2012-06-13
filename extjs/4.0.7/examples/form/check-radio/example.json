@@ -11,7 +11,125 @@
             "label": "Ext JS 4.0.7"
         }
     ],
-    "tags": [],
+    "tags": [
+        {
+            "label": "Ext.layout.container.Column"
+        },
+        {
+            "label": "Ext.window.MessageBox"
+        },
+        {
+            "label": "Ext.fx.target.Element"
+        },
+        {
+            "label": "anchor"
+        },
+        {
+            "label": "Ext.layout.container.Anchor"
+        },
+        {
+            "label": "Ext.layout.AnchorLayout"
+        },
+        {
+            "label": "checkbox"
+        },
+        {
+            "label": "Ext.form.field.Checkbox"
+        },
+        {
+            "label": "checkboxfield"
+        },
+        {
+            "label": "Ext.form.Checkbox"
+        },
+        {
+            "label": "form"
+        },
+        {
+            "label": "field"
+        },
+        {
+            "label": "hideEmptyLabel"
+        },
+        {
+            "label": "fieldLabel"
+        },
+        {
+            "label": "boxLabel"
+        },
+        {
+            "label": "inputValue"
+        },
+        {
+            "label": "checked"
+        },
+        {
+            "label": "fieldset"
+        },
+        {
+            "label": "labelStyle"
+        },
+        {
+            "label": "collapsible"
+        },
+        {
+            "label": "collapsed"
+        },
+        {
+            "label": "Ext.form.CheckboxGroup"
+        },
+        {
+            "label": "checkboxgroup"
+        },
+        {
+            "label": "columns"
+        },
+        {
+            "label": "vertical"
+        },
+        {
+            "label": "allowBlank"
+        },
+        {
+            "label": "msgTarget"
+        },
+        {
+            "label": "autoFitErrors"
+        },
+        {
+            "label": "columnWidth"
+        },
+        {
+            "label": "Ext.form.field.Radio"
+        },
+        {
+            "label": "radiofield"
+        },
+        {
+            "label": "radio"
+        },
+        {
+            "label": "Ext.form.Radio"
+        },
+        {
+            "label": "Ext.form.RadioGroup"
+        },
+        {
+            "label": "radiogroup"
+        },
+        {
+            "label": "getForm()"
+        },
+        {
+            "label": "isValid()"
+        },
+        {
+            "label": "reset()"
+        },
+        {
+            "label": "getValues()"
+        }
+    ],
     "seeAlso": [],
     "author": {
         "name": "Sencha Inc.",

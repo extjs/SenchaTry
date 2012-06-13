@@ -11,7 +11,29 @@
             "label": "Ext JS 4.0.7"
         }
     ],
-    "tags": [],
+    "tags": [
+        {
+            "label": "Ext.chart.series.Radar"
+        },
+        {
+            "label": "radar"
+        },
+        {
+            "label": "series"
+        },
+        {
+            "label": "loadData"
+        },
+        {
+            "label": "theme"
+        },
+        {
+            "label": "radial"
+        },
+        {
+            "label": "opacity"
+        }
+    ],
     "seeAlso": [],
     "author": {
         "name": "Sencha Inc.",

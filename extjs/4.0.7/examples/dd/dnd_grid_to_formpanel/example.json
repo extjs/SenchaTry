@@ -11,7 +11,83 @@
             "label": "Ext JS 4.0.7"
         }
     ],
-    "tags": [],
+    "tags": [
+        {
+            "label": "Ext.data.Model"
+        },
+        {
+            "label": "mapping"
+        },
+        {
+            "label": "Ext.data.Store"
+        },
+        {
+            "label": "header"
+        },
+        {
+            "label": "sortable"
+        },
+        {
+            "label": "dataIndex"
+        },
+        {
+            "label": "viewConfig"
+        },
+        {
+            "label": "plugins"
+        },
+        {
+            "label": "ddGroup"
+        },
+        {
+            "label": "enableDrop"
+        },
+        {
+            "label": "enableDragDrop"
+        },
+        {
+            "label": "stripeRows"
+        },
+        {
+            "label": "region"
+        },
+        {
+            "label": "selModel"
+        },
+        {
+            "label": "Ext.selection.RowModel"
+        },
+        {
+            "label": "singleSelect"
+        },
+        {
+            "label": "Ext.form.Panel"
+        },
+        {
+            "label": "getForm()"
+        },
+        {
+            "label": "reset()"
+        },
+        {
+            "label": "notifyEnter"
+        },
+        {
+            "label": "stopAnimation()"
+        },
+        {
+            "label": "highlight()"
+        },
+        {
+            "label": "notifyDrop"
+        },
+        {
+            "label": "loadRecord()"
+        },
+        {
+            "label": "remove()"
+        }
+    ],
     "seeAlso": [],
     "author": {
         "name": "Sencha Inc.",

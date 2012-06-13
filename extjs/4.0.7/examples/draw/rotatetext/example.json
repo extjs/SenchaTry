@@ -11,7 +11,32 @@
             "label": "Ext JS 4.0.7"
         }
     ],
-    "tags": [],
+    "tags": [
+        {
+            "label": "Ext.draw.Component"
+        },
+        {
+            "label": "viewBox"
+        },
+        {
+            "label": "rotate"
+        },
+        {
+            "label": "degrees"
+        },
+        {
+            "label": "surface"
+        },
+        {
+            "label": "setAttributes()"
+        },
+        {
+            "label": "rotation"
+        },
+        {
+            "label": "text"
+        }
+    ],
     "seeAlso": [],
     "author": {
         "name": "Sencha Inc.",

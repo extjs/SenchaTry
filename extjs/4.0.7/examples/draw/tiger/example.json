@@ -11,7 +11,32 @@
             "label": "Ext JS 4.0.7"
         }
     ],
-    "tags": [],
+    "tags": [
+        {
+            "label": "Ext.draw.Component"
+        },
+        {
+            "label": "draggable"
+        },
+        {
+            "label": "constrain"
+        },
+        {
+            "label": "constrainTo"
+        },
+        {
+            "label": "floating"
+        },
+        {
+            "label": "path"
+        },
+        {
+            "label": "stroke"
+        },
+        {
+            "label": "fill"
+        }
+    ],
     "seeAlso": [],
     "author": {
         "name": "Sencha Inc.",

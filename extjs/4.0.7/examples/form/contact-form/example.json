@@ -11,7 +11,62 @@
             "label": "Ext JS 4.0.7"
         }
     ],
-    "tags": [],
+    "tags": [
+        {
+            "label": "Ext.form.Panel"
+        },
+        {
+            "label": "Ext.FormPanel"
+        },
+        {
+            "label": "Ext.form.FormPanel"
+        },
+        {
+            "label": "form"
+        },
+        {
+            "label": "fieldDefaults"
+        },
+        {
+            "label": "labelAlign"
+        },
+        {
+            "label": "labelWidth"
+        },
+        {
+            "label": "labelStyle"
+        },
+        {
+            "label": "Ext.form.FieldContainer"
+        },
+        {
+            "label": "fieldcontainer"
+        },
+        {
+            "label": "allowBlank"
+        },
+        {
+            "label": "email"
+        },
+        {
+            "label": "getForm()"
+        },
+        {
+            "label": "reset()"
+        },
+        {
+            "label": "hide()"
+        },
+        {
+            "label": "isValid()"
+        },
+        {
+            "label": "modal"
+        },
+        {
+            "label": "closeAction"
+        }
+    ],
     "seeAlso": [],
     "author": {
         "name": "Sencha Inc.",

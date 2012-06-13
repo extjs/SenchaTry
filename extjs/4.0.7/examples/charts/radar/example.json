@@ -11,7 +11,35 @@
             "label": "Ext JS 4.0.7"
         }
     ],
-    "tags": [],
+    "tags": [
+        {
+            "label": "Ext.Window"
+        },
+        {
+            "label": "Ext.fx.target.Sprite"
+        },
+        {
+            "label": "Ext.chart.axis.Radial"
+        },
+        {
+            "label": "Ext.chart.series.Radar"
+        },
+        {
+            "label": "Radial"
+        },
+        {
+            "label": "showInLegend"
+        },
+        {
+            "label": "showMarkers"
+        },
+        {
+            "label": "markerConfig"
+        },
+        {
+            "label": "radar"
+        }
+    ],
     "seeAlso": [],
     "author": {
         "name": "Sencha Inc.",

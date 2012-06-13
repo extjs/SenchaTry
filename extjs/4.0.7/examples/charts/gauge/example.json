@@ -11,7 +11,26 @@
             "label": "Ext JS 4.0.7"
         }
     ],
-    "tags": [],
+    "tags": [
+        {
+            "label": "Ext.chart.axis.Gauge"
+        },
+        {
+            "label": "Ext.Window"
+        },
+        {
+            "label": "animate"
+        },
+        {
+            "label": "easing"
+        },
+        {
+            "label": "donut"
+        },
+        {
+            "label": "colorSet"
+        }
+    ],
     "seeAlso": [],
     "author": {
         "name": "Sencha Inc.",

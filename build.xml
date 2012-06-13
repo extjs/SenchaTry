@@ -245,9 +245,17 @@ $ ant -projecthelp
     <!-- Find all those pesky .DS_Store files -->
     <target name="example_json"
             description="Find all those pesky example.json files.">
-        <delete>
-            <fileset dir="${src.dir}" includes="**/example.json2" defaultexcludes="no" />
-        </delete>
+        <property name="jshint_opts" value="asi=true,boss=true,browser=true,curly=true,devel=true,eqeqeq=true,eqnull=true,forin=true,lastsemic=true,laxbreak=true,laxcomma=true,nonstandard=true,onecase=true,shadow=true,smarttabs=true,sub=true,undef=false" />
+        <fixcrlf srcdir="${src.dir}"
+                tab="remove"
+                tablength="4"
+                eol="lf">
+            <include name="**/example.json" />
+        </fixcrlf>
+        <jshint options="${jshint_opts}">
+            <fileset dir="${src.dir}"
+                    includes="**/example.json" />
+        </jshint>
     </target>
     
     

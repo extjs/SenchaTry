@@ -11,7 +11,38 @@
             "label": "Ext JS 4.0.7"
         }
     ],
-    "tags": [],
+    "tags": [
+        {
+            "label": "Ext.layout.container.Absolute"
+        },
+        {
+            "label": "absolute"
+        },
+        {
+            "label": "x"
+        },
+        {
+            "label": "y"
+        },
+        {
+            "label": "anchor"
+        },
+        {
+            "label": "Ext.window.Window"
+        },
+        {
+            "label": "Ext.form.Panel"
+        },
+        {
+            "label": "Ext.FormPanel"
+        },
+        {
+            "label": "Ext.form.FormPanel"
+        },
+        {
+            "label": "form"
+        }
+    ],
     "seeAlso": [],
     "author": {
         "name": "Sencha Inc.",

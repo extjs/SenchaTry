@@ -11,7 +11,86 @@
             "label": "Ext JS 4.0.7"
         }
     ],
-    "tags": [],
+    "tags": [
+        {
+            "label": "Ext.panel.Panel"
+        },
+        {
+            "label": "Ext.form.field.Number"
+        },
+        {
+            "label": "loader"
+        },
+        {
+            "label": "autoLoad"
+        },
+        {
+            "label": "url"
+        },
+        {
+            "label": "renderer"
+        },
+        {
+            "label": "tpl"
+        },
+        {
+            "label": "itemId"
+        },
+        {
+            "label": "dockedItems"
+        },
+        {
+            "label": "dock"
+        },
+        {
+            "label": "Ext.toolbar.Toolbar"
+        },
+        {
+            "label": "toolbar"
+        },
+        {
+            "label": "Ext.Toolbar"
+        },
+        {
+            "label": "fieldLabel"
+        },
+        {
+            "label": "labelWidth"
+        },
+        {
+            "label": "child()"
+        },
+        {
+            "label": "down()"
+        },
+        {
+            "label": "getValue()"
+        },
+        {
+            "label": "getLoader()"
+        },
+        {
+            "label": "load()"
+        },
+        {
+            "label": "params"
+        },
+        {
+            "label": "loadMask"
+        },
+        {
+            "label": "removeAll"
+        },
+        {
+            "label": "success"
+        },
+        {
+            "label": "getTarget()"
+        },
+        {
+            "label": "getCount()"
+        }
+    ],
     "seeAlso": [],
     "author": {
         "name": "Sencha Inc.",

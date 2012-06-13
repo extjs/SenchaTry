@@ -11,7 +11,116 @@
             "label": "Ext JS 4.0.7"
         }
     ],
-    "tags": [],
+    "tags": [
+        {
+            "label": "Ext.grid.Panel"
+        },
+        {
+            "label": "Ext.layout.container.Column"
+        },
+        {
+            "label": "series"
+        },
+        {
+            "label": "highlightItem()"
+        },
+        {
+            "label": "unHighlightItem()"
+        },
+        {
+            "label": "cleanHighlights()"
+        },
+        {
+            "label": "loadData()"
+        },
+        {
+            "label": "buffer"
+        },
+        {
+            "label": "change"
+        },
+        {
+            "label": "updateRecord()"
+        },
+        {
+            "label": "Ext.data.ArrayStore"
+        },
+        {
+            "label": "Ext.data.JsonStore"
+        },
+        {
+            "label": "Ext.chart.Chart"
+        },
+        {
+            "label": "sortable"
+        },
+        {
+            "label": "dataIndex"
+        },
+        {
+            "label": "renderer"
+        },
+        {
+            "label": "selectionchange"
+        },
+        {
+            "label": "loadRecord()"
+        },
+        {
+            "label": "resumeEvents()"
+        },
+        {
+            "label": "getFields()"
+        },
+        {
+            "label": "getForm()"
+        },
+        {
+            "label": "suspendEvents()"
+        },
+        {
+            "label": "rotate"
+        },
+        {
+            "label": "Ext.String.ellipsis()"
+        },
+        {
+            "label": "itemmouseup"
+        },
+        {
+            "label": "getSelectionModel()"
+        },
+        {
+            "label": "select()"
+        },
+        {
+            "label": "storeItem"
+        },
+        {
+            "label": "highlight"
+        },
+        {
+            "label": "beforerefresh"
+        },
+        {
+            "label": "Ext.form.Panel"
+        },
+        {
+            "label": "fieldDefaults"
+        },
+        {
+            "label": "defaults"
+        },
+        {
+            "label": "defaultType"
+        },
+        {
+            "label": "maxLength"
+        },
+        {
+            "label": "enforceMaxLength"
+        }
+    ],
     "seeAlso": [],
     "author": {
         "name": "Sencha Inc.",

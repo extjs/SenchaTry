@@ -11,7 +11,59 @@
             "label": "Ext JS 4.0.7"
         }
     ],
-    "tags": [],
+    "tags": [
+        {
+            "label": "Ext.chart.Chart"
+        },
+        {
+            "label": "chart"
+        },
+        {
+            "label": "Ext.data.JsonStore"
+        },
+        {
+            "label": "json"
+        },
+        {
+            "label": "theme"
+        },
+        {
+            "label": "Ext.grid.Panel"
+        },
+        {
+            "label": "gridpanel"
+        },
+        {
+            "label": "grid"
+        },
+        {
+            "label": "Ext.ListView"
+        },
+        {
+            "label": "Ext.grid.GridPanel"
+        },
+        {
+            "label": "Ext.list.ListView"
+        },
+        {
+            "label": "tips"
+        },
+        {
+            "label": "trackMouse"
+        },
+        {
+            "label": "renderer"
+        },
+        {
+            "label": "storeItem"
+        },
+        {
+            "label": "loadData()"
+        },
+        {
+            "label": "setSize()"
+        }
+    ],
     "seeAlso": [],
     "author": {
         "name": "Sencha Inc.",

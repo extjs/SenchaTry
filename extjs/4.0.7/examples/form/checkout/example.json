@@ -11,7 +11,110 @@
             "label": "Ext JS 4.0.7"
         }
     ],
-    "tags": [],
+    "tags": [
+        {
+            "label": "Ext.window.MessageBox"
+        },
+        {
+            "label": "messagebox"
+        },
+        {
+            "label": "Ext.data.ArrayStore"
+        },
+        {
+            "label": "Ext.data.Store"
+        },
+        {
+            "label": "data"
+        },
+        {
+            "label": "Ext.Date.monthNames"
+        },
+        {
+            "label": "Ext.Array.forEach()"
+        },
+        {
+            "label": "getValue()"
+        },
+        {
+            "label": "setValue()"
+        },
+        {
+            "label": "Ext.widget()"
+        },
+        {
+            "label": "Ext.form.Panel"
+        },
+        {
+            "label": "Ext.FormPanel"
+        },
+        {
+            "label": "Ext.form.FormPanel"
+        },
+        {
+            "label": "msgTarget"
+        },
+        {
+            "label": "fieldset"
+        },
+        {
+            "label": "Ext.form.FieldSet"
+        },
+        {
+            "label": "anchor"
+        },
+        {
+            "label": "Ext.layout.container.Anchor"
+        },
+        {
+            "label": "Ext.layout.AnchorLayout"
+        },
+        {
+            "label": "Ext.form.FieldContainer"
+        },
+        {
+            "label": "fieldcontainer"
+        },
+        {
+            "label": "combineErrors"
+        },
+        {
+            "label": "hideLabel"
+        },
+        {
+            "label": "emptyText"
+        },
+        {
+            "label": "allowBlank"
+        },
+        {
+            "label": "maskRe"
+        },
+        {
+            "label": "regex"
+        },
+        {
+            "label": "regexText"
+        },
+        {
+            "label": "typeAhead"
+        },
+        {
+            "label": "queryMode"
+        },
+        {
+            "label": "forceSelection"
+        },
+        {
+            "label": "enforceMaxLength"
+        },
+        {
+            "label": "boxLabel"
+        },
+        {
+            "label": "radiogroup"
+        }
+    ],
     "seeAlso": [],
     "author": {
         "name": "Sencha Inc.",
