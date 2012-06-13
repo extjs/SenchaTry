@@ -6,7 +6,7 @@
     <meta name="description" content="Lazy Loading Data Associations" />
     <meta name="keywords" content="Sencha, Ext JS, Ext JS 4.0.7, Ext.Date.format(), Ext.ListView, Ext.data.AjaxProxy, Ext.data.HttpProxy, Ext.data.Model, Ext.data.proxy.Ajax, Ext.grid.GridPanel, Ext.grid.Panel, Ext.layout.container.Card, Ext.list.ListView, Ext.panel.Panel, Ext.tip.QuickTipManager, associations, autoLoad, belongsTo, callParent(), columns, dataIndex, destroy(), dockedItems, fields, getLayout(), getSelectionModel(), grid, gridpanel, initComponent, isLoading(), load, model, proxy, scope, selectionchange, store, tpl, tplWriteMode, url" />
     <meta name="author" content="Sencha Inc." />
-    <link href="/assets/application.css" media="screen" rel="stylesheet" type="text/css" />
+    <link href="http://hollow-galaxy-2879.herokuapp.com/assets/application.css" media="screen" rel="stylesheet" type="text/css" />
 </head>
 <body>
 
@@ -31,20 +31,28 @@
           </ul>
         </nav>
     </header>
-    
-    <div id="content-wrapper" class="clearfix">
+
+<div id="content-wrapper" class="clearfix">
         <div id="content">
-            <nav class="bc">
-                <a href="/">Home</a> <span>/</span> <a href="/extjs/">Ext JS</a> <span>/</span> <a href="/extjs/4.0.7/">4.0.7</a> <span>/</span> Lazy Loading Data Associations
-            </nav>
+            <div class="search-bar">
+                <nav class="bc"><a href="/">Home</a>  <span>/</span> <a href="/extjs/">Ext JS</a>  <span>/</span> <a href="/extjs/4.0.7/">4.0.7</a>  <span>/</span> Lazy Loading Data Associations</nav>
+            </div>
             
             <div class="developer">
                 <div class="column_nine">
                     <div class="details">
-                        <div class="top-block border">
-                            <h2 class="alt">Lazy Loading Data Associations</h2>
-                        </div>
-                        
+                        <h2 class="normalise bold clearfix">Lazy Loading Data Associations</h2>
+                        <ul class="developer-attributes-list">
+                            <li class="search-results-list-size">
+                                <span class="visually-hidden">Author:</span>
+                                <span class="icon-user company-size-icon"></span>
+                                <a href="http://sencha.com/">Sencha Inc.</a>
+                            </li>
+                            <li class="search-results-list-size">
+                                <a href="https://twitter.com/share" class="twitter-share-button" data-via="Sencha" data-hashtags="senchatry">Tweet</a>
+                                <script defer>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+                            </li>
+                        </ul>
                         <div class="plain-text"><p>This example demonstrates the ability to lazy load associative data. For loading nested data in a single request, see the (nested loading example)[nested-loading.html].</p>
 
 <p>We look at a fictional company that sells furniture to their retail customers.</p>
@@ -53,101 +61,88 @@
 
 <p>Once you reach the last level, we also demonstrate the ability to load back up the hierarchy. Note that this creates a new Model instance so no previous association data is present when we begin.</p></div>
                         
-                        <h3>[example widget]</h3>
-                        
+                        <iframe src="index.html" width="100%" height="400"></iframe>
                         <div>
                             <ul class="developer-actions">
                                 <li class="request"><a href="src.zip" class="button-link center">Download</a></li>
                             </ul>
                         </div>
-                        
-                        <section class="files">
-                            <h4>Files</h4>
-                            <ul>
-                                <li><a href="/extjs/4.0.7/examples/data/associations/app.js">app.js</a></li>
-                                <li><a href="/extjs/4.0.7/examples/data/associations/customer.php">customer.php</a></li>
-                                <li><a href="/extjs/4.0.7/examples/data/associations/index.html">index.html</a></li>
-                                <li><a href="/extjs/4.0.7/examples/data/associations/order.php">order.php</a></li>
-                                <li><a href="/extjs/4.0.7/examples/data/associations/orderitem.php">orderitem.php</a></li>
-                                <li><a href="/extjs/4.0.7/examples/data/associations/resources/css/app.css">resources/css/app.css</a></li>
-                            </ul>
-                        </section>
-                        
-                        <hr class="clear" />
-                        
-                        <section class="tags">
-                            <h4>Tags</h4>
-                            <ul class="services-list alt clearfix">
-                                <li><a href="/tags/Ext%20JS/">Ext JS</a></li>
-                                <li><a href="/tags/Ext%20JS%204.0.7/">Ext JS 4.0.7</a></li>
-                                <li><a href="/tags/Ext.Date.format%28%29/"><code>Ext.Date.format()</code></a></li>
-                                <li><a href="/tags/Ext.ListView/"><code>Ext.ListView</code></a></li>
-                                <li><a href="/tags/Ext.data.AjaxProxy/"><code>Ext.data.AjaxProxy</code></a></li>
-                                <li><a href="/tags/Ext.data.HttpProxy/"><code>Ext.data.HttpProxy</code></a></li>
-                                <li><a href="/tags/Ext.data.Model/"><code>Ext.data.Model</code></a></li>
-                                <li><a href="/tags/Ext.data.proxy.Ajax/"><code>Ext.data.proxy.Ajax</code></a></li>
-                                <li><a href="/tags/Ext.grid.GridPanel/"><code>Ext.grid.GridPanel</code></a></li>
-                                <li><a href="/tags/Ext.grid.Panel/"><code>Ext.grid.Panel</code></a></li>
-                                <li><a href="/tags/Ext.layout.container.Card/"><code>Ext.layout.container.Card</code></a></li>
-                                <li><a href="/tags/Ext.list.ListView/"><code>Ext.list.ListView</code></a></li>
-                                <li><a href="/tags/Ext.panel.Panel/"><code>Ext.panel.Panel</code></a></li>
-                                <li><a href="/tags/Ext.tip.QuickTipManager/"><code>Ext.tip.QuickTipManager</code></a></li>
-                                <li><a href="/tags/associations/"><code>associations</code></a></li>
-                                <li><a href="/tags/autoLoad/"><code>autoLoad</code></a></li>
-                                <li><a href="/tags/belongsTo/"><code>belongsTo</code></a></li>
-                                <li><a href="/tags/callParent%28%29/"><code>callParent()</code></a></li>
-                                <li><a href="/tags/columns/"><code>columns</code></a></li>
-                                <li><a href="/tags/dataIndex/"><code>dataIndex</code></a></li>
-                                <li><a href="/tags/destroy%28%29/"><code>destroy()</code></a></li>
-                                <li><a href="/tags/dockedItems/"><code>dockedItems</code></a></li>
-                                <li><a href="/tags/fields/"><code>fields</code></a></li>
-                                <li><a href="/tags/getLayout%28%29/"><code>getLayout()</code></a></li>
-                                <li><a href="/tags/getSelectionModel%28%29/"><code>getSelectionModel()</code></a></li>
-                                <li><a href="/tags/grid/"><code>grid</code></a></li>
-                                <li><a href="/tags/gridpanel/"><code>gridpanel</code></a></li>
-                                <li><a href="/tags/initComponent/"><code>initComponent</code></a></li>
-                                <li><a href="/tags/isLoading%28%29/"><code>isLoading()</code></a></li>
-                                <li><a href="/tags/load/"><code>load</code></a></li>
-                                <li><a href="/tags/model/"><code>model</code></a></li>
-                                <li><a href="/tags/proxy/"><code>proxy</code></a></li>
-                                <li><a href="/tags/scope/"><code>scope</code></a></li>
-                                <li><a href="/tags/selectionchange/"><code>selectionchange</code></a></li>
-                                <li><a href="/tags/store/"><code>store</code></a></li>
-                                <li><a href="/tags/tpl/"><code>tpl</code></a></li>
-                                <li><a href="/tags/tplWriteMode/"><code>tplWriteMode</code></a></li>
-                                <li><a href="/tags/url/"><code>url</code></a></li>
-                            </ul>
-                        </section>
-                        
-                        <section class="seeAlso">
-                            <h4>See Also</h4>
-                            <ul class="services-list alt clearfix">
-                            </ul>
-                        </section>
-                        
-                        <hr class="clear" />
-                        
-                        <section id="comments">
-                            <div id="disqus_thread"></div>
-                            <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments</a>.</noscript>
-                            <a href="http://disqus.com/" class="dsq-brlink">Comments powered by <span class="logo-disqus">Disqus</span></a>
-                        </section>
+                    </div>
+
+
+                    <div class="search-results-column">
+                        <div class="results-statement clearfix">
+                            <div class="clearfix">
+                                <div class="filter-option-name"><strong>Files</strong> <span class="filter-option-pill">6</span></div>
+                                <ul class="filter-statement-list">
+                                    <li><div class="filter-statement-term-wrap service"><span class="filter-statement-term service-space"><a href="app.js" class="remove-filter">app.js</a></span></div></li>
+                                    <li><div class="filter-statement-term-wrap service"><span class="filter-statement-term service-space"><a href="customer.php" class="remove-filter">customer.php</a></span></div></li>
+                                    <li><div class="filter-statement-term-wrap service"><span class="filter-statement-term service-space"><a href="index.html" class="remove-filter">index.html</a></span></div></li>
+                                    <li><div class="filter-statement-term-wrap service"><span class="filter-statement-term service-space"><a href="order.php" class="remove-filter">order.php</a></span></div></li>
+                                    <li><div class="filter-statement-term-wrap service"><span class="filter-statement-term service-space"><a href="orderitem.php" class="remove-filter">orderitem.php</a></span></div></li>
+                                    <li><div class="filter-statement-term-wrap service"><span class="filter-statement-term service-space"><a href="resources/css/app.css" class="remove-filter">resources/css/app.css</a></span></div></li>
+                                </ul>
+                            </div>
+                            
+                            <div class="clearfix">
+                                <div class="filter-option-name"><strong>Tags</strong> <span class="filter-option-pill">36</span></div>
+                                <ul class="filter-statement-list">
+                                    <li><div class="filter-statement-term-wrap service"><span class="filter-statement-term service-space"><a href="/tags/Ext.Date.format%28%29" class="remove-filter">Ext.Date.format()</a></span></div></li>
+                                    <li><div class="filter-statement-term-wrap service"><span class="filter-statement-term service-space"><a href="/tags/Ext.ListView" class="remove-filter">Ext.ListView</a></span></div></li>
+                                    <li><div class="filter-statement-term-wrap service"><span class="filter-statement-term service-space"><a href="/tags/Ext.data.AjaxProxy" class="remove-filter">Ext.data.AjaxProxy</a></span></div></li>
+                                    <li><div class="filter-statement-term-wrap service"><span class="filter-statement-term service-space"><a href="/tags/Ext.data.HttpProxy" class="remove-filter">Ext.data.HttpProxy</a></span></div></li>
+                                    <li><div class="filter-statement-term-wrap service"><span class="filter-statement-term service-space"><a href="/tags/Ext.data.Model" class="remove-filter">Ext.data.Model</a></span></div></li>
+                                    <li><div class="filter-statement-term-wrap service"><span class="filter-statement-term service-space"><a href="/tags/Ext.data.proxy.Ajax" class="remove-filter">Ext.data.proxy.Ajax</a></span></div></li>
+                                    <li><div class="filter-statement-term-wrap service"><span class="filter-statement-term service-space"><a href="/tags/Ext.grid.GridPanel" class="remove-filter">Ext.grid.GridPanel</a></span></div></li>
+                                    <li><div class="filter-statement-term-wrap service"><span class="filter-statement-term service-space"><a href="/tags/Ext.grid.Panel" class="remove-filter">Ext.grid.Panel</a></span></div></li>
+                                    <li><div class="filter-statement-term-wrap service"><span class="filter-statement-term service-space"><a href="/tags/Ext.layout.container.Card" class="remove-filter">Ext.layout.container.Card</a></span></div></li>
+                                    <li><div class="filter-statement-term-wrap service"><span class="filter-statement-term service-space"><a href="/tags/Ext.list.ListView" class="remove-filter">Ext.list.ListView</a></span></div></li>
+                                    <li><div class="filter-statement-term-wrap service"><span class="filter-statement-term service-space"><a href="/tags/Ext.panel.Panel" class="remove-filter">Ext.panel.Panel</a></span></div></li>
+                                    <li><div class="filter-statement-term-wrap service"><span class="filter-statement-term service-space"><a href="/tags/Ext.tip.QuickTipManager" class="remove-filter">Ext.tip.QuickTipManager</a></span></div></li>
+                                    <li><div class="filter-statement-term-wrap service"><span class="filter-statement-term service-space"><a href="/tags/associations" class="remove-filter">associations</a></span></div></li>
+                                    <li><div class="filter-statement-term-wrap service"><span class="filter-statement-term service-space"><a href="/tags/autoLoad" class="remove-filter">autoLoad</a></span></div></li>
+                                    <li><div class="filter-statement-term-wrap service"><span class="filter-statement-term service-space"><a href="/tags/belongsTo" class="remove-filter">belongsTo</a></span></div></li>
+                                    <li><div class="filter-statement-term-wrap service"><span class="filter-statement-term service-space"><a href="/tags/callParent%28%29" class="remove-filter">callParent()</a></span></div></li>
+                                    <li><div class="filter-statement-term-wrap service"><span class="filter-statement-term service-space"><a href="/tags/columns" class="remove-filter">columns</a></span></div></li>
+                                    <li><div class="filter-statement-term-wrap service"><span class="filter-statement-term service-space"><a href="/tags/dataIndex" class="remove-filter">dataIndex</a></span></div></li>
+                                    <li><div class="filter-statement-term-wrap service"><span class="filter-statement-term service-space"><a href="/tags/destroy%28%29" class="remove-filter">destroy()</a></span></div></li>
+                                    <li><div class="filter-statement-term-wrap service"><span class="filter-statement-term service-space"><a href="/tags/dockedItems" class="remove-filter">dockedItems</a></span></div></li>
+                                    <li><div class="filter-statement-term-wrap service"><span class="filter-statement-term service-space"><a href="/tags/fields" class="remove-filter">fields</a></span></div></li>
+                                    <li><div class="filter-statement-term-wrap service"><span class="filter-statement-term service-space"><a href="/tags/getLayout%28%29" class="remove-filter">getLayout()</a></span></div></li>
+                                    <li><div class="filter-statement-term-wrap service"><span class="filter-statement-term service-space"><a href="/tags/getSelectionModel%28%29" class="remove-filter">getSelectionModel()</a></span></div></li>
+                                    <li><div class="filter-statement-term-wrap service"><span class="filter-statement-term service-space"><a href="/tags/grid" class="remove-filter">grid</a></span></div></li>
+                                    <li><div class="filter-statement-term-wrap service"><span class="filter-statement-term service-space"><a href="/tags/gridpanel" class="remove-filter">gridpanel</a></span></div></li>
+                                    <li><div class="filter-statement-term-wrap service"><span class="filter-statement-term service-space"><a href="/tags/initComponent" class="remove-filter">initComponent</a></span></div></li>
+                                    <li><div class="filter-statement-term-wrap service"><span class="filter-statement-term service-space"><a href="/tags/isLoading%28%29" class="remove-filter">isLoading()</a></span></div></li>
+                                    <li><div class="filter-statement-term-wrap service"><span class="filter-statement-term service-space"><a href="/tags/load" class="remove-filter">load</a></span></div></li>
+                                    <li><div class="filter-statement-term-wrap service"><span class="filter-statement-term service-space"><a href="/tags/model" class="remove-filter">model</a></span></div></li>
+                                    <li><div class="filter-statement-term-wrap service"><span class="filter-statement-term service-space"><a href="/tags/proxy" class="remove-filter">proxy</a></span></div></li>
+                                    <li><div class="filter-statement-term-wrap service"><span class="filter-statement-term service-space"><a href="/tags/scope" class="remove-filter">scope</a></span></div></li>
+                                    <li><div class="filter-statement-term-wrap service"><span class="filter-statement-term service-space"><a href="/tags/selectionchange" class="remove-filter">selectionchange</a></span></div></li>
+                                    <li><div class="filter-statement-term-wrap service"><span class="filter-statement-term service-space"><a href="/tags/store" class="remove-filter">store</a></span></div></li>
+                                    <li><div class="filter-statement-term-wrap service"><span class="filter-statement-term service-space"><a href="/tags/tpl" class="remove-filter">tpl</a></span></div></li>
+                                    <li><div class="filter-statement-term-wrap service"><span class="filter-statement-term service-space"><a href="/tags/tplWriteMode" class="remove-filter">tplWriteMode</a></span></div></li>
+                                    <li><div class="filter-statement-term-wrap service"><span class="filter-statement-term service-space"><a href="/tags/url" class="remove-filter">url</a></span></div></li>
+                                </ul>
+                            </div>
+                            
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-    
-    <footer id="footer">
+
+<footer id="footer">
         <div id="footer-content">
             <nav id="footer-nav">
                 <div class="columns">
                     <ul class="column">
                         <li>
-                            <a class="main" href="http://sencha.com/company">Company</a>
+                            <a class="main" href="http://sencha.com/company/">Company</a>
                             <ul class="zero">
                                 <li class="first"><a href="http://www.sencha.com/contact/" rel="nofollow">Contact Us</a></li>
-                                <li class="last"><a href="/pages/terms" rel="nofollow">Terms of Use</a></li>
+                                <li class="last"><a href="/pages/terms/" rel="nofollow">Terms of Use</a></li>
                             </ul>
                         </li>
                     </ul>
@@ -155,8 +150,8 @@
                         <li>
                             <a class="main" href="/">Listings</a>
                             <ul class="zero">
-                                <li class="first"><a href="/developers">Full listing</a></li>
-                                <li class="last"><a href="/developers/by_location">Geographic listing</a></li>
+                                <li class="first"><a href="/developers/">Full listing</a></li>
+                                <li class="last"><a href="/developers/by_location/">Geographic listing</a></li>
                             </ul>
                         </li>
                     </ul>
@@ -164,15 +159,13 @@
             </nav>
             <hr />
             
-            <div id="copyright">
-                <p>&copy; 2012 Sencha Inc. All rights reserved.</p>
-            </div>
+            <div id="copyright">&copy; 2012 Sencha Inc. All rights reserved.</div>
         </div>
     </footer>
 
     <script type="text/javascript">
         var disqus_title = "Lazy Loading Data Associations",
-            disqus_identifier = "extjs/4.0.7/examples/data/associations/about.html",
+            disqus_identifier = "extjs/4.0.7/examples/data/associations/",
             disqus_url = document.location + "about.html";
     </script>
     <script src="/scripts/comments.js" type="text/javascript"></script>
