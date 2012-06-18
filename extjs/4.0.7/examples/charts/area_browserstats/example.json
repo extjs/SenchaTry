@@ -11,56 +11,6 @@
             "label": "Ext JS 4.0.7"
         }
     ],
-    "tags": [
-        {
-            "label": "Ext.chart.Chart"
-        },
-        {
-            "label": "Ext.chart.series.Area"
-        },
-        {
-            "label": "Ext.Window"
-        },
-        {
-            "label": "Ext.data.JsonStore"
-        },
-        {
-            "label": "Ext.chart.theme.Base"
-        },
-        {
-            "label": "animate"
-        },
-        {
-            "label": "theme"
-        },
-        {
-            "label": "defaultInsets"
-        },
-        {
-            "label": "legend"
-        },
-        {
-            "label": "renderer"
-        },
-        {
-            "label": "series"
-        },
-        {
-            "label": "chart"
-        },
-        {
-            "label": "area"
-        },
-        {
-            "label": "tips"
-        },
-        {
-            "label": "trackMouse"
-        },
-        {
-            "label": "Ext.Date.format()"
-        }
-    ],
     "seeAlso": [
         {
             "label": "Ext.chart.Chart Documentation",

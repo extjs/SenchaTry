@@ -11,26 +11,6 @@
             "label": "Ext JS 4.0.7"
         }
     ],
-    "tags": [
-        {
-            "label": "Ext.picker.Date"
-        },
-        {
-            "label": "Ext.DatePicker"
-        },
-        {
-            "label": "datepicker"
-        },
-        {
-            "label": "minDate"
-        },
-        {
-            "label": "handler"
-        },
-        {
-            "label": "picker"
-        }
-    ],
     "seeAlso": [
         {
             "label": "Ext.picker.Date Documentation",

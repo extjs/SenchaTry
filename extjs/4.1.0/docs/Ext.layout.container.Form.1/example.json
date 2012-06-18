@@ -11,11 +11,6 @@
             "label": "Ext JS 4.1.0"
         }
     ],
-    "tags": [
-        {
-            "label": "Ext.layout.container.Form"
-        }
-    ],
     "seeAlso": [
         {
             "label": "Ext.layout.container.Form Documentation",

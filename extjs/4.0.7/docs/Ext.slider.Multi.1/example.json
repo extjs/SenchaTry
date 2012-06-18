@@ -11,35 +11,6 @@
             "label": "Ext JS 4.0.7"
         }
     ],
-    "tags": [
-        {
-            "label": "Ext.slider.Multi"
-        },
-        {
-            "label": "Ext.slider.MultiSlider"
-        },
-        {
-            "label": "multislider"
-        },
-        {
-            "label": "values"
-        },
-        {
-            "label": "increment"
-        },
-        {
-            "label": "minValue"
-        },
-        {
-            "label": "maxValue"
-        },
-        {
-            "label": "constrainThumbs"
-        },
-        {
-            "label": "slider"
-        }
-    ],
     "seeAlso": [
         {
             "label": "Ext.slider.Multi Documentation",

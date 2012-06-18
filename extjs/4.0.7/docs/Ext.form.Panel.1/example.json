@@ -11,35 +11,6 @@
             "label": "Ext JS 4.0.7"
         }
     ],
-    "tags": [
-        {
-            "label": "Ext.form.Panel"
-        },
-        {
-            "label": "Ext.FormPanel"
-        },
-        {
-            "label": "Ext.form.FormPanel"
-        },
-        {
-            "label": "form"
-        },
-        {
-            "label": "bodyPadding"
-        },
-        {
-            "label": "url"
-        },
-        {
-            "label": "anchor"
-        },
-        {
-            "label": "buttons"
-        },
-        {
-            "label": "form"
-        }
-    ],
     "seeAlso": [
         {
             "label": "Ext.form.Panel Documentation",

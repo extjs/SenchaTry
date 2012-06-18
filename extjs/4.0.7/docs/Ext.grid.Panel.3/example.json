@@ -11,29 +11,6 @@
             "label": "Ext JS 4.0.7"
         }
     ],
-    "tags": [
-        {
-            "label": "Ext.grid.Panel"
-        },
-        {
-            "label": "Ext.ListView"
-        },
-        {
-            "label": "Ext.grid.GridPanel"
-        },
-        {
-            "label": "Ext.list.ListView"
-        },
-        {
-            "label": "gridpanel"
-        },
-        {
-            "label": "grid"
-        },
-        {
-            "label": "dockedItems"
-        }
-    ],
     "seeAlso": [
         {
             "label": "Ext.grid.Panel Documentation",

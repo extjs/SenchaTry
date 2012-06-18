@@ -11,23 +11,6 @@
             "label": "Ext JS 4.0.7"
         }
     ],
-    "tags": [
-        {
-            "label": "Ext.window.Window"
-        },
-        {
-            "label": "Ext.Window"
-        },
-        {
-            "label": "window"
-        },
-        {
-            "label": "layout"
-        },
-        {
-            "label": "show()"
-        }
-    ],
     "seeAlso": [
         {
             "label": "Ext.window.Window Documentation",

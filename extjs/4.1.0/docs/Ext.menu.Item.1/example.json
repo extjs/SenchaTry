@@ -11,11 +11,6 @@
             "label": "Ext JS 4.1.0"
         }
     ],
-    "tags": [
-        {
-            "label": "Ext.menu.Item"
-        }
-    ],
     "seeAlso": [
         {
             "label": "Ext.menu.Item Documentation",

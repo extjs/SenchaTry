@@ -11,41 +11,6 @@
             "label": "Ext JS 4.0.7"
         }
     ],
-    "tags": [
-        {
-            "label": "Ext.tree.Panel"
-        },
-        {
-            "label": "tree"
-        },
-        {
-            "label": "fields"
-        },
-        {
-            "label": "columns"
-        },
-        {
-            "label": "treecolumn"
-        },
-        {
-            "label": "dataIndex"
-        },
-        {
-            "label": "sortable"
-        },
-        {
-            "label": "root"
-        },
-        {
-            "label": "expanded"
-        },
-        {
-            "label": "children"
-        },
-        {
-            "label": "leaf"
-        }
-    ],
     "seeAlso": [
         {
             "label": "Trees Guide",

@@ -11,29 +11,6 @@
             "label": "Ext JS 4.0.7"
         }
     ],
-    "tags": [
-        {
-            "label": "Ext.form.Panel"
-        },
-        {
-            "label": "form"
-        },
-        {
-            "label": "Ext.FormPanel"
-        },
-        {
-            "label": "Ext.form.FormPanel"
-        },
-        {
-            "label": "fieldDefaults"
-        },
-        {
-            "label": "anchor"
-        },
-        {
-            "label": "hideLabel"
-        }
-    ],
     "seeAlso": [],
     "author": {
         "name": "Sencha Inc.",

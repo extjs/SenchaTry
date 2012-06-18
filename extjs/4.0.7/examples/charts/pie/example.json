@@ -11,59 +11,6 @@
             "label": "Ext JS 4.0.7"
         }
     ],
-    "tags": [
-        {
-            "label": "Ext.layout.container.Fit"
-        },
-        {
-            "label": "loadData()"
-        },
-        {
-            "label": "series"
-        },
-        {
-            "label": "first()"
-        },
-        {
-            "label": "donut"
-        },
-        {
-            "label": "refresh()"
-        },
-        {
-            "label": "insetPadding"
-        },
-        {
-            "label": "theme"
-        },
-        {
-            "label": "showInLegend"
-        },
-        {
-            "label": "tips"
-        },
-        {
-            "label": "trackMouse"
-        },
-        {
-            "label": "setTitle()"
-        },
-        {
-            "label": "highlight"
-        },
-        {
-            "label": "segment"
-        },
-        {
-            "label": "display"
-        },
-        {
-            "label": "contrast"
-        },
-        {
-            "label": "legend"
-        }
-    ],
     "seeAlso": [],
     "author": {
         "name": "Sencha Inc.",

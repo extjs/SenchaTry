@@ -11,35 +11,6 @@
             "label": "Ext JS 4.0.7"
         }
     ],
-    "tags": [
-        {
-            "label": "Ext.form.field.Time"
-        },
-        {
-            "label": "Ext.form.Time"
-        },
-        {
-            "label": "Ext.form.TimeField"
-        },
-        {
-            "label": "timefield"
-        },
-        {
-            "label": "minValue"
-        },
-        {
-            "label": "maxValue"
-        },
-        {
-            "label": "increment"
-        },
-        {
-            "label": "form"
-        },
-        {
-            "label": "field"
-        }
-    ],
     "seeAlso": [
         {
             "label": "Ext.form.field.Time Documentation",

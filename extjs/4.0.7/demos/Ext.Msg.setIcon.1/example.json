@@ -11,23 +11,6 @@
             "label": "Ext JS 4.0.7"
         }
     ],
-    "tags": [
-        {
-            "label": "Ext.MessageBox"
-        },
-        {
-            "label": "Ext.Msg"
-        },
-        {
-            "label": "icon"
-        },
-        {
-            "label": "setIcon()"
-        },
-        {
-            "label": "show()"
-        }
-    ],
     "seeAlso": [
         {
             "label": "Ext.MessageBox Documentation",

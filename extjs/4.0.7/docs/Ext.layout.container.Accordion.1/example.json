@@ -11,32 +11,6 @@
             "label": "Ext JS 4.0.7"
         }
     ],
-    "tags": [
-        {
-            "label": "Ext.layout.container.Accordion"
-        },
-        {
-            "label": "Ext.layout.AccorionLayout"
-        },
-        {
-            "label": "accordion"
-        },
-        {
-            "label": "layout"
-        },
-        {
-            "label": "titleCollapse"
-        },
-        {
-            "label": "animate"
-        },
-        {
-            "label": "activeOnTop"
-        },
-        {
-            "label": "container"
-        }
-    ],
     "seeAlso": [
         {
             "label": "Ext.layout.container.Accordion Documentation",

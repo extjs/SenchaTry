@@ -11,26 +11,6 @@
             "label": "Ext JS 4.0.7"
         }
     ],
-    "tags": [
-        {
-            "label": "Ext.picker.Color"
-        },
-        {
-            "label": "Ext.ColorPalette"
-        },
-        {
-            "label": "colorpicker"
-        },
-        {
-            "label": "listeners"
-        },
-        {
-            "label": "select"
-        },
-        {
-            "label": "picker"
-        }
-    ],
     "seeAlso": [
         {
             "label": "Ext.picker.Color Documentation",

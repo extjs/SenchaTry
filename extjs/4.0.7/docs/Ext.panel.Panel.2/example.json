@@ -11,17 +11,6 @@
             "label": "Ext JS 4.0.7"
         }
     ],
-    "tags": [
-        {
-            "label": "Ext.panel.Panel"
-        },
-        {
-            "label": "Ext.Panel"
-        },
-        {
-            "label": "panel"
-        }
-    ],
     "seeAlso": [
         {
             "label": "Ext.panel.Panel Documentation",

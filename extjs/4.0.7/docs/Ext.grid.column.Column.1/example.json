@@ -11,23 +11,6 @@
             "label": "Ext JS 4.0.7"
         }
     ],
-    "tags": [
-        {
-            "label": "Ext.grid.column.Column"
-        },
-        {
-            "label": "Ext.grid.Column"
-        },
-        {
-            "label": "gridcolumn"
-        },
-        {
-            "label": "grid"
-        },
-        {
-            "label": "column"
-        }
-    ],
     "seeAlso": [
         {
             "label": "Ext.grid.column.Column Documentation",

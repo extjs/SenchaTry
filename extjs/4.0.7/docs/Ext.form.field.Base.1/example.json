@@ -11,23 +11,6 @@
             "label": "Ext JS 4.0.7"
         }
     ],
-    "tags": [
-        {
-            "label": "Ext.form.field.Base"
-        },
-        {
-            "label": "Ext.form.BaseField"
-        },
-        {
-            "label": "Ext.form.Field"
-        },
-        {
-            "label": "field"
-        },
-        {
-            "label": "form"
-        }
-    ],
     "seeAlso": [
         {
             "label": "Ext.form.field.Base Documentation",

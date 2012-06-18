@@ -11,38 +11,6 @@
             "label": "Ext JS 4.0.7"
         }
     ],
-    "tags": [
-        {
-            "label": "Ext.form.field.Number"
-        },
-        {
-            "label": "Ext.form.Number"
-        },
-        {
-            "label": "Ext.form.NumberField"
-        },
-        {
-            "label": "numberfield"
-        },
-        {
-            "label": "minValue"
-        },
-        {
-            "label": "hideTrigger"
-        },
-        {
-            "label": "keyNavEnabled"
-        },
-        {
-            "label": "mouseWheelEnabled"
-        },
-        {
-            "label": "form"
-        },
-        {
-            "label": "field"
-        }
-    ],
     "seeAlso": [
         {
             "label": "Ext.form.field.Number Documentation",

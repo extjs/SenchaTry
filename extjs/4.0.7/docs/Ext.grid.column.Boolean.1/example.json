@@ -11,32 +11,6 @@
             "label": "Ext JS 4.0.7"
         }
     ],
-    "tags": [
-        {
-            "label": "Ext.grid.column.Boolean"
-        },
-        {
-            "label": "Ext.grid.BooleanColumn"
-        },
-        {
-            "label": "booleancolumn"
-        },
-        {
-            "label": "trueText"
-        },
-        {
-            "label": "falseText"
-        },
-        {
-            "label": "dataIndex"
-        },
-        {
-            "label": "grid"
-        },
-        {
-            "label": "column"
-        }
-    ],
     "seeAlso": [
         {
             "label": "Ext.grid.column.Boolean Documentation",

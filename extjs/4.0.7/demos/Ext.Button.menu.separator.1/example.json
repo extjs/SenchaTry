@@ -11,26 +11,6 @@
             "label": "Ext JS 4.0.7"
         }
     ],
-    "tags": [
-        {
-            "label": "Ext.button.Button"
-        },
-        {
-            "label": "Ext.Button"
-        },
-        {
-            "label": "button"
-        },
-        {
-            "label": "menu"
-        },
-        {
-            "label": "Ext.menu.Separator"
-        },
-        {
-            "label": "menuseparator"
-        }
-    ],
     "seeAlso": [
         {
             "label": "Ext.button.Button Documentation",

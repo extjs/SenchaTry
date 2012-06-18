@@ -11,32 +11,6 @@
             "label": "Ext JS 4.0.7"
         }
     ],
-    "tags": [
-        {
-            "label": "Ext.form.field.Display"
-        },
-        {
-            "label": "Ext.form.Display"
-        },
-        {
-            "label": "Ext.form.DisplayField"
-        },
-        {
-            "label": "displayfield"
-        },
-        {
-            "label": "fieldLabel"
-        },
-        {
-            "label": "value"
-        },
-        {
-            "label": "form"
-        },
-        {
-            "label": "field"
-        }
-    ],
     "seeAlso": [
         {
             "label": "Ext.form.field.Display Documentation",

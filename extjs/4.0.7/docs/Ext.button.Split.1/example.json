@@ -11,23 +11,6 @@
             "label": "Ext JS 4.0.7"
         }
     ],
-    "tags": [
-        {
-            "label": "Ext.button.Split"
-        },
-        {
-            "label": "Ext.SplitButton"
-        },
-        {
-            "label": "splitbutton"
-        },
-        {
-            "label": "handler"
-        },
-        {
-            "label": "menu"
-        }
-    ],
     "seeAlso": [
         {
             "label": "Ext.button.Split Documentation",

@@ -11,38 +11,6 @@
             "label": "Ext JS 4.0.7"
         }
     ],
-    "tags": [
-        {
-            "label": "Ext.form.field.Radio"
-        },
-        {
-            "label": "Ext.form.Radio"
-        },
-        {
-            "label": "radiofield"
-        },
-        {
-            "label": "radio"
-        },
-        {
-            "label": "boxLabel"
-        },
-        {
-            "label": "inputValue"
-        },
-        {
-            "label": "getValue()"
-        },
-        {
-            "label": "setValue()"
-        },
-        {
-            "label": "form"
-        },
-        {
-            "label": "field"
-        }
-    ],
     "seeAlso": [
         {
             "label": "Ext.form.field.Radio Documentation",

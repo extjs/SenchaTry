@@ -11,35 +11,6 @@
             "label": "Ext JS 4.0.7"
         }
     ],
-    "tags": [
-        {
-            "label": "Ext.form.field.Checkbox"
-        },
-        {
-            "label": "Ext.form.Checkbox"
-        },
-        {
-            "label": "checkboxfield"
-        },
-        {
-            "label": "checkbox"
-        },
-        {
-            "label": "boxLabel"
-        },
-        {
-            "label": "topping"
-        },
-        {
-            "label": "inputValue"
-        },
-        {
-            "label": "form"
-        },
-        {
-            "label": "field"
-        }
-    ],
     "seeAlso": [
         {
             "label": "Ext.form.field.Checkbox Documentation",

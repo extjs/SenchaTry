@@ -11,56 +11,6 @@
             "label": "Ext JS 4.0.7"
         }
     ],
-    "tags": [
-        {
-            "label": "Ext.define()"
-        },
-        {
-            "label": "createElements"
-        },
-        {
-            "label": "Ext.each()"
-        },
-        {
-            "label": "Ext.destroy()"
-        },
-        {
-            "label": "Ext.apply()"
-        },
-        {
-            "label": "Ext.require()"
-        },
-        {
-            "label": "Ext.panel.Panel"
-        },
-        {
-            "label": "Ext.layout.container.Table"
-        },
-        {
-            "label": "dockedItems"
-        },
-        {
-            "label": "last()"
-        },
-        {
-            "label": "first()"
-        },
-        {
-            "label": "Ext.createWidget()"
-        },
-        {
-            "label": "layout"
-        },
-        {
-            "label": "layoutConfig"
-        },
-        {
-            "label": "columns"
-        },
-        {
-            "label": "dsabled"
-        }
-    ],
     "seeAlso": [],
     "author": {
         "name": "Sencha Inc.",

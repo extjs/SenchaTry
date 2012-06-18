@@ -11,11 +11,6 @@
             "label": "Ext JS 4.1.0"
         }
     ],
-    "tags": [
-        {
-            "label": "Ext.picker.Time"
-        }
-    ],
     "seeAlso": [
         {
             "label": "Ext.picker.Time Documentation",

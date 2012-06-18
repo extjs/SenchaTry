@@ -11,38 +11,6 @@
             "label": "Ext JS 4.0.7"
         }
     ],
-    "tags": [
-        {
-            "label": "Ext.Window"
-        },
-        {
-            "label": "Ext.fx.target.Sprite"
-        },
-        {
-            "label": "Ext.layout.container.Fit"
-        },
-        {
-            "label": "maximizable"
-        },
-        {
-            "label": "animate"
-        },
-        {
-            "label": "shadow"
-        },
-        {
-            "label": "renderer"
-        },
-        {
-            "label": "Ext.util.Format.numberRenderer()"
-        },
-        {
-            "label": "grid"
-        },
-        {
-            "label": "fields"
-        }
-    ],
     "seeAlso": [],
     "author": {
         "name": "Sencha Inc.",

@@ -11,11 +11,6 @@
             "label": "Ext JS 4.1.0"
         }
     ],
-    "tags": [
-        {
-            "label": "Ext.panel.Tool"
-        }
-    ],
     "seeAlso": [
         {
             "label": "Ext.panel.Tool Documentation",

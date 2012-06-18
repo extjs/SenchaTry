@@ -11,44 +11,6 @@
             "label": "Ext JS 4.0.7"
         }
     ],
-    "tags": [
-        {
-            "label": "Ext.chart.axis.Category"
-        },
-        {
-            "label": "Ext.chart.CategoryAxis"
-        },
-        {
-            "label": "category"
-        },
-        {
-            "label": "axes"
-        },
-        {
-            "label": "position"
-        },
-        {
-            "label": "fields"
-        },
-        {
-            "label": "title"
-        },
-        {
-            "label": "grid"
-        },
-        {
-            "label": "label"
-        },
-        {
-            "label": "series"
-        },
-        {
-            "label": "chart"
-        },
-        {
-            "label": "axis"
-        }
-    ],
     "seeAlso": [
         {
             "label": "Ext.chart.axis.Category Documentation",

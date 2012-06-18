@@ -11,26 +11,6 @@
             "label": "Ext JS 4.0.7"
         }
     ],
-    "tags": [
-        {
-            "label": "Ext.form.Label"
-        },
-        {
-            "label": "label"
-        },
-        {
-            "label": "forId"
-        },
-        {
-            "label": "text"
-        },
-        {
-            "label": "margins"
-        },
-        {
-            "label": "form"
-        }
-    ],
     "seeAlso": [
         {
             "label": "Ext.form.Label Documentation",

@@ -11,26 +11,6 @@
             "label": "Ext JS 4.0.7"
         }
     ],
-    "tags": [
-        {
-            "label": "Ext.form.RadioGroup"
-        },
-        {
-            "label": "radiogroup"
-        },
-        {
-            "label": "fieldLabel"
-        },
-        {
-            "label": "columns"
-        },
-        {
-            "label": "vertical"
-        },
-        {
-            "label": "form"
-        }
-    ],
     "seeAlso": [
         {
             "label": "Ext.form.RadioGroup Documentation",

@@ -11,41 +11,6 @@
             "label": "Ext JS 4.0.7"
         }
     ],
-    "tags": [
-        {
-            "label": "Ext.apply()"
-        },
-        {
-            "label": "xField"
-        },
-        {
-            "label": "yField"
-        },
-        {
-            "label": "Ext.menu.Menu"
-        },
-        {
-            "label": "checked"
-        },
-        {
-            "label": "group"
-        },
-        {
-            "label": "loadData()"
-        },
-        {
-            "label": "menu"
-        },
-        {
-            "label": "Ext.chart.Chart"
-        },
-        {
-            "label": "Ext.chart.series.Scatter"
-        },
-        {
-            "label": "scatter"
-        }
-    ],
     "seeAlso": [],
     "author": {
         "name": "Sencha Inc.",

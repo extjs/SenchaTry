@@ -11,26 +11,6 @@
             "label": "Ext JS 4.0.7"
         }
     ],
-    "tags": [
-        {
-            "label": "Ext.fx.Anim"
-        },
-        {
-            "label": "target"
-        },
-        {
-            "label": "duration"
-        },
-        {
-            "label": "from"
-        },
-        {
-            "label": "to"
-        },
-        {
-            "label": "fx"
-        }
-    ],
     "seeAlso": [
         {
             "label": "Ext.fx.Anim Documentation",

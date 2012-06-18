@@ -11,20 +11,6 @@
             "label": "Ext JS 4.0.7"
         }
     ],
-    "tags": [
-        {
-            "label": "Ext.menu.Menu"
-        },
-        {
-            "label": "menu"
-        },
-        {
-            "label": "plain"
-        },
-        {
-            "label": "floating"
-        }
-    ],
     "seeAlso": [
         {
             "label": "Ext.menu.Menu Documentation",

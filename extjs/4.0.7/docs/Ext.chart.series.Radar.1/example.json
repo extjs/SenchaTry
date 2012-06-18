@@ -11,35 +11,6 @@
             "label": "Ext JS 4.0.7"
         }
     ],
-    "tags": [
-        {
-            "label": "Ext.chart.series.Radar"
-        },
-        {
-            "label": "radar"
-        },
-        {
-            "label": "xField"
-        },
-        {
-            "label": "yField"
-        },
-        {
-            "label": "showInLegend"
-        },
-        {
-            "label": "showMarkers"
-        },
-        {
-            "label": "markerConfig"
-        },
-        {
-            "label": "chart"
-        },
-        {
-            "label": "series"
-        }
-    ],
     "seeAlso": [
         {
             "label": "Ext.chart.series.Radar Documentation",

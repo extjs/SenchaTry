@@ -11,23 +11,6 @@
             "label": "Ext JS 4.0.7"
         }
     ],
-    "tags": [
-        {
-            "label": "Ext.layout.container.Absolute"
-        },
-        {
-            "label": "Ext.layout.AbsoluteLayout"
-        },
-        {
-            "label": "absolute"
-        },
-        {
-            "label": "layout"
-        },
-        {
-            "label": "container"
-        }
-    ],
     "seeAlso": [
         {
             "label": "Ext.layout.container.Absolute Documentation",

@@ -11,38 +11,6 @@
             "label": "Ext JS 4.0.7"
         }
     ],
-    "tags": [
-        {
-            "label": "Ext.draw.Component"
-        },
-        {
-            "label": "resizable"
-        },
-        {
-            "label": "pinned"
-        },
-        {
-            "label": "dynamic"
-        },
-        {
-            "label": "handles"
-        },
-        {
-            "label": "gradients"
-        },
-        {
-            "label": "angle"
-        },
-        {
-            "label": "stops"
-        },
-        {
-            "label": "path"
-        },
-        {
-            "label": "fill"
-        }
-    ],
     "seeAlso": [],
     "author": {
         "name": "Sencha Inc.",

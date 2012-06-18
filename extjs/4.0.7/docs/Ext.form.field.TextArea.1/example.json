@@ -11,29 +11,6 @@
             "label": "Ext JS 4.0.7"
         }
     ],
-    "tags": [
-        {
-            "label": "Ext.form.field.TextArea"
-        },
-        {
-            "label": "Ext.form.TextArea"
-        },
-        {
-            "label": "textareafield"
-        },
-        {
-            "label": "textarea"
-        },
-        {
-            "label": "grow"
-        },
-        {
-            "label": "form"
-        },
-        {
-            "label": "field"
-        }
-    ],
     "seeAlso": [
         {
             "label": "Ext.form.field.TextArea Documentation",

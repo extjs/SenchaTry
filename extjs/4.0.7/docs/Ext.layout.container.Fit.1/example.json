@@ -11,23 +11,6 @@
             "label": "Ext JS 4.0.7"
         }
     ],
-    "tags": [
-        {
-            "label": "Ext.layout.container.Fit"
-        },
-        {
-            "label": "Ext.layout.FitLayout"
-        },
-        {
-            "label": "fit"
-        },
-        {
-            "label": "layout"
-        },
-        {
-            "label": "container"
-        }
-    ],
     "seeAlso": [
         {
             "label": "Ext.layout.container.Fit Documentation",

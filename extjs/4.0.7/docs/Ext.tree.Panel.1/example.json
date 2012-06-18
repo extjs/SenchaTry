@@ -11,35 +11,6 @@
             "label": "Ext JS 4.0.7"
         }
     ],
-    "tags": [
-        {
-            "label": "Ext.tree.Panel"
-        },
-        {
-            "label": "Ext.TreePanel"
-        },
-        {
-            "label": "Ext.tree.TreePanel"
-        },
-        {
-            "label": "treepanel"
-        },
-        {
-            "label": "tree"
-        },
-        {
-            "label": "Ext.data.TreeStore"
-        },
-        {
-            "label": "expanded"
-        },
-        {
-            "label": "leaf"
-        },
-        {
-            "label": "rootVisible"
-        }
-    ],
     "seeAlso": [
         {
             "label": "Ext.tree.Panel Documentation",

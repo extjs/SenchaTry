@@ -11,17 +11,6 @@
             "label": "Sencha Touch 2.0.0"
         }
     ],
-    "tags": [
-        {
-            "label": "Ext.LoadMask"
-        },
-        {
-            "label": "loadmask"
-        },
-        {
-            "label": "masked"
-        }
-    ],
     "seeAlso": [
         {
             "label": "Ext.LoadMask Documentation",

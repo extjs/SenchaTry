@@ -11,23 +11,6 @@
             "label": "Ext JS 4.0.7"
         }
     ],
-    "tags": [
-        {
-            "label": "Ext.toolbar.Toolbar"
-        },
-        {
-            "label": "Ext.Toolbar"
-        },
-        {
-            "label": "toolbar"
-        },
-        {
-            "label": "enable()"
-        },
-        {
-            "label": "disable()"
-        }
-    ],
     "seeAlso": [
         {
             "label": "Ext.toolbar.Toolbar Documentation",

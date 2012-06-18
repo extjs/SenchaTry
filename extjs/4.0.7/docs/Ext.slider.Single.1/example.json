@@ -11,41 +11,6 @@
             "label": "Ext JS 4.0.7"
         }
     ],
-    "tags": [
-        {
-            "label": "Ext.slider.Single"
-        },
-        {
-            "label": "Ext.Slider"
-        },
-        {
-            "label": "Ext.form.SliderField"
-        },
-        {
-            "label": "Ext.slider.SingleSlider"
-        },
-        {
-            "label": "Ext.slider.Slider"
-        },
-        {
-            "label": "slider"
-        },
-        {
-            "label": "sliderfield"
-        },
-        {
-            "label": "value"
-        },
-        {
-            "label": "increment"
-        },
-        {
-            "label": "minValue"
-        },
-        {
-            "label": "maxValue"
-        }
-    ],
     "seeAlso": [
         {
             "label": "Ext.slider.Single Documentation",

@@ -11,29 +11,6 @@
             "label": "Ext JS 4.0.7"
         }
     ],
-    "tags": [
-        {
-            "label": "Ext.view.View"
-        },
-        {
-            "label": "Ext.DataView"
-        },
-        {
-            "label": "dataview"
-        },
-        {
-            "label": "view"
-        },
-        {
-            "label": "tpl"
-        },
-        {
-            "label": "itemSelector"
-        },
-        {
-            "label": "emptyText"
-        }
-    ],
     "seeAlso": [
         {
             "label": "Ext.view.View Documentation",

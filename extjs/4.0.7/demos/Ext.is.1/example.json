@@ -11,50 +11,6 @@
             "label": "Ext JS 4.0.7"
         }
     ],
-    "tags": [
-        {
-            "label": "Ext.is"
-        },
-        {
-            "label": "Android"
-        },
-        {
-            "label": "Blackberry"
-        },
-        {
-            "label": "Desktop"
-        },
-        {
-            "label": "Linux"
-        },
-        {
-            "label": "Mac"
-        },
-        {
-            "label": "Phone"
-        },
-        {
-            "label": "Standalone"
-        },
-        {
-            "label": "Tablet"
-        },
-        {
-            "label": "Windows"
-        },
-        {
-            "label": "iOS"
-        },
-        {
-            "label": "iPad"
-        },
-        {
-            "label": "iPhone"
-        },
-        {
-            "label": "iPod"
-        }
-    ],
     "seeAlso": [
         {
             "label": "Ext.is Documentation",

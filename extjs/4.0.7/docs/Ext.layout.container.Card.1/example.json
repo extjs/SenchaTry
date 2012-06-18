@@ -11,23 +11,6 @@
             "label": "Ext JS 4.0.7"
         }
     ],
-    "tags": [
-        {
-            "label": "Ext.layout.container.Card"
-        },
-        {
-            "label": "Ext.layout.CardLayout"
-        },
-        {
-            "label": "card"
-        },
-        {
-            "label": "layout"
-        },
-        {
-            "label": "container"
-        }
-    ],
     "seeAlso": [
         {
             "label": "Ext.layout.container.Card Documentation",

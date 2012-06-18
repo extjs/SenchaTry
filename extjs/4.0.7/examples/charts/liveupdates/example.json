@@ -11,65 +11,6 @@
             "label": "Ext JS 4.0.7"
         }
     ],
-    "tags": [
-        {
-            "label": "Ext.window.Window"
-        },
-        {
-            "label": "Ext.Window"
-        },
-        {
-            "label": "Ext.Date"
-        },
-        {
-            "label": "dateFormat"
-        },
-        {
-            "label": "groupBy"
-        },
-        {
-            "label": "axes"
-        },
-        {
-            "label": "axis"
-        },
-        {
-            "label": "redraw()"
-        },
-        {
-            "label": "Ext.data.JsonStore"
-        },
-        {
-            "label": "toDate"
-        },
-        {
-            "label": "fromDate"
-        },
-        {
-            "label": "markerIndex"
-        },
-        {
-            "label": "Ext.Date.add()"
-        },
-        {
-            "label": "Ext.Date.clone()"
-        },
-        {
-            "label": "markerConfig"
-        },
-        {
-            "label": "loadData()"
-        },
-        {
-            "label": "renderer"
-        },
-        {
-            "label": "constrain"
-        },
-        {
-            "label": "aggregateOp"
-        }
-    ],
     "seeAlso": [],
     "author": {
         "name": "Sencha Inc.",

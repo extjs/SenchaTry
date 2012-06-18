@@ -11,59 +11,6 @@
             "label": "Ext JS 4.0.7"
         }
     ],
-    "tags": [
-        {
-            "label": "Ext.form.field.ComboBox"
-        },
-        {
-            "label": "Ext.form.FieldSet"
-        },
-        {
-            "label": "form"
-        },
-        {
-            "label": "field"
-        },
-        {
-            "label": "Ext.tip.QuickTipManager"
-        },
-        {
-            "label": "Ext.data.Model"
-        },
-        {
-            "label": "queryMode"
-        },
-        {
-            "label": "typeAhead"
-        },
-        {
-            "label": "listConfig"
-        },
-        {
-            "label": "getInnerTpl"
-        },
-        {
-            "label": "multiSelect"
-        },
-        {
-            "label": "transform"
-        },
-        {
-            "label": "forceSelection"
-        },
-        {
-            "label": "Ext.select()"
-        },
-        {
-            "label": "contentEl"
-        },
-        {
-            "label": "collapsible"
-        },
-        {
-            "label": "collapsed"
-        }
-    ],
     "seeAlso": [],
     "author": {
         "name": "Sencha Inc.",

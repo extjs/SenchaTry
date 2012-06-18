@@ -11,23 +11,6 @@
             "label": "Sencha Touch 2.0.0"
         }
     ],
-    "tags": [
-        {
-            "label": "Ext.Img"
-        },
-        {
-            "label": "image"
-        },
-        {
-            "label": "img"
-        },
-        {
-            "label": "src"
-        },
-        {
-            "label": "flex"
-        }
-    ],
     "seeAlso": [
         {
             "label": "Ext.Img Documentation",

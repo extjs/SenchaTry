@@ -11,20 +11,6 @@
             "label": "Ext JS 4.0.7"
         }
     ],
-    "tags": [
-        {
-            "label": "Ext.button.Button"
-        },
-        {
-            "label": "Ext.Button"
-        },
-        {
-            "label": "button"
-        },
-        {
-            "label": "scale"
-        }
-    ],
     "seeAlso": [
         {
             "label": "Ext.button.Button Documentation",

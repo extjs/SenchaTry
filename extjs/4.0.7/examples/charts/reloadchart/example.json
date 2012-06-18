@@ -11,59 +11,6 @@
             "label": "Ext JS 4.0.7"
         }
     ],
-    "tags": [
-        {
-            "label": "chart"
-        },
-        {
-            "label": "Category"
-        },
-        {
-            "label": "Numeric"
-        },
-        {
-            "label": "Ext.chart.axis.Numeric"
-        },
-        {
-            "label": "Ext.chart.NumericAxis"
-        },
-        {
-            "label": "Ext.chart.axis.Category"
-        },
-        {
-            "label": "Ext.chart.CategoryAxis"
-        },
-        {
-            "label": "Ext.chart.Chart"
-        },
-        {
-            "label": "gutter"
-        },
-        {
-            "label": "renderer"
-        },
-        {
-            "label": "axes"
-        },
-        {
-            "label": "series"
-        },
-        {
-            "label": "Ext.chart.series.Column"
-        },
-        {
-            "label": "Ext.chart.ColumnChart"
-        },
-        {
-            "label": "Ext.chart.ColumnSeries"
-        },
-        {
-            "label": "Ext.chart.StackedColumnChart"
-        },
-        {
-            "label": "loadData()"
-        }
-    ],
     "seeAlso": [],
     "author": {
         "name": "Sencha Inc.",

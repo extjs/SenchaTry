@@ -11,23 +11,6 @@
             "label": "Sencha Touch 2.0.0"
         }
     ],
-    "tags": [
-        {
-            "label": "Ext.layout.VBox"
-        },
-        {
-            "label": "Ext.layout.VBoxLayout"
-        },
-        {
-            "label": "vbox"
-        },
-        {
-            "label": "layout"
-        },
-        {
-            "label": "flex"
-        }
-    ],
     "seeAlso": [
         {
             "label": "Ext.layout.VBox Documentation",

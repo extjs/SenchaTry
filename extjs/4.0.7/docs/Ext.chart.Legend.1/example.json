@@ -11,17 +11,6 @@
             "label": "Ext JS 4.0.7"
         }
     ],
-    "tags": [
-        {
-            "label": "Ext.chart.Legend"
-        },
-        {
-            "label": "position"
-        },
-        {
-            "label": "chart"
-        }
-    ],
     "seeAlso": [
         {
             "label": "Ext.chart.Legend Documentation",

@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8"/>
-    <title>Ext JS Archive | Sencha Try</title>
+    <title>Submit an example | Sencha Try</title>
     <meta name="description" content="Just a bunch of Ext JS and Sencha Touch examples." />
     <meta name="keywords" content="Sencha, Ext JS, Sencha Touch" />
     <meta name="author" content="Sencha Inc." />
@@ -12,13 +12,14 @@
 
   <header id="header">
     <div id="logo-container" class="skiptranslate">
-      <h5 id="logo"><a href="/"><img src="/assets/logo.png" alt="Sencha Try" /></a></h5>
+      <h1 id="logo"><a href="/"><img src="/assets/logo.png" alt="Sencha Try" /></a></h1>
       <span id="glow"></span>
     </div>    
     
     <nav id="nav">
       <ul class="zero">
         <li class="filter_type">
+          <span class="action-motivation">Submit an example to Sencha Try</span>
           <a href="/submit/" class="main button-link in-nav" rel="nofollow">Submit example</a>
         </li>
       </ul>
@@ -45,28 +46,38 @@
     </nav>
   </header>
 
-<div id="content-wrapper" class="clearfix">
-        <div id="content">
-            <div class="search-bar">
-                <nav class="bc"><a href="/">Home</a>  <span>/</span> Ext JS</nav>
-            </div>
-            <div class="search-columns-wrap">
-                <div class="results-results-column">
-                    <div class="results-statement clearfix">
-                        <h3 class="normalise bold left">Ext JS Archive</h3>
-                    </div>
-                    <div class="search-results-list-wrap clearfix">
-                        <ul class="search-results-list">
-                            <li class="clearfix">
-                                <h4 class="alt"><a href="4.0.7/">4.0.7</a></h4>
-                            </li>
-                            <li class="clearfix">
-                                <h4 class="alt"><a href="4.1.0/">4.1.0</a></h4>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
+<div id="hero">
+        <div class="hero-content-wrap">
+            <h1 class="hero-heading">Submit example</h1>
+            <p class="hero-p">Please fill out the following form to submit an example pull request.</p>
+            <form id="search" method="post">
+                <div style="margin:0;padding:0;display:inline;"></div>
+                <fieldset>
+                    <label for="name">Name:</label><br />
+                    <input type="text" id="name" name="name" required="true" />
+                </fieldset>
+                
+                <fieldset>
+                    <label for="url">URL:</label><br />
+                    <input type="url" id="url" name="url" required="false" />
+                </fieldset>
+                
+                <fieldset>
+                    <label for="github">Github:</label><br />
+                    <input type="text" id="github" name="github" required="false" />
+                </fieldset>
+                
+                <fieldset>
+                    <label for="senchadevs">Sencha Devs URL:</label>
+                    <input type="url" id="senchadevs" name="senchadevs" required="false" />
+                </fieldset>
+                
+                <fieldset>
+                    <textarea id="comments" placeholder="Comments"></textarea>
+                </fieldset>
+                
+                <input type="submit" value="Submit" />
+            </form>
         </div>
     </div>
 

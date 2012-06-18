@@ -11,35 +11,6 @@
             "label": "Ext JS 4.0.7"
         }
     ],
-    "tags": [
-        {
-            "label": "Ext.button.Button"
-        },
-        {
-            "label": "Ext.Button"
-        },
-        {
-            "label": "button"
-        },
-        {
-            "label": "Ext.require()"
-        },
-        {
-            "label": "iconCls"
-        },
-        {
-            "label": "iconAlign"
-        },
-        {
-            "label": "Ext.createWidget()"
-        },
-        {
-            "label": "Ext.each()"
-        },
-        {
-            "label": "Ext.apply()"
-        }
-    ],
     "seeAlso": [
         {
             "label": "Ext.button.Button Documentation",

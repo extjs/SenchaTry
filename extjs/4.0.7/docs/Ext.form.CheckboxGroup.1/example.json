@@ -11,29 +11,6 @@
             "label": "Ext JS 4.0.7"
         }
     ],
-    "tags": [
-        {
-            "label": "Ext.form.CheckboxGroup"
-        },
-        {
-            "label": "checkboxgroup"
-        },
-        {
-            "label": "fieldLabel"
-        },
-        {
-            "label": "columns"
-        },
-        {
-            "label": "vertical"
-        },
-        {
-            "label": "items"
-        },
-        {
-            "label": "form"
-        }
-    ],
     "seeAlso": [
         {
             "label": "Ext.form.CheckboxGroup Documentation",

@@ -11,44 +11,6 @@
             "label": "Ext JS 4.0.7"
         }
     ],
-    "tags": [
-        {
-            "label": "Ext.form.field.Spinner"
-        },
-        {
-            "label": "Ext.form.Spinner"
-        },
-        {
-            "label": "spinnerfield"
-        },
-        {
-            "label": "fieldLabel"
-        },
-        {
-            "label": "step"
-        },
-        {
-            "label": "onSpinUp"
-        },
-        {
-            "label": "onSpinDown"
-        },
-        {
-            "label": "readOnly"
-        },
-        {
-            "label": "getValue()"
-        },
-        {
-            "label": "setValue()"
-        },
-        {
-            "label": "form"
-        },
-        {
-            "label": "field"
-        }
-    ],
     "seeAlso": [
         {
             "label": "Ext.form.field.Spinner Documentation",

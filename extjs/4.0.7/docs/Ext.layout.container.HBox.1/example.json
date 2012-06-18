@@ -11,29 +11,6 @@
             "label": "Ext JS 4.0.7"
         }
     ],
-    "tags": [
-        {
-            "label": "Ext.layout.container.HBox"
-        },
-        {
-            "label": "Ext.layout.HBoxLayout"
-        },
-        {
-            "label": "hbox"
-        },
-        {
-            "label": "layout"
-        },
-        {
-            "label": "container"
-        },
-        {
-            "label": "align"
-        },
-        {
-            "label": "stretch"
-        }
-    ],
     "seeAlso": [
         {
             "label": "Ext.layout.container.HBox Documentation",

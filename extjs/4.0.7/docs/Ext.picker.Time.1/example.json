@@ -11,23 +11,6 @@
             "label": "Ext JS 4.0.7"
         }
     ],
-    "tags": [
-        {
-            "label": "Ext.picker.Time"
-        },
-        {
-            "label": "timepicker"
-        },
-        {
-            "label": "picker"
-        },
-        {
-            "label": "minValue"
-        },
-        {
-            "label": "maxValue"
-        }
-    ],
     "seeAlso": [
         {
             "label": "Ext.picker.Time Documentation",

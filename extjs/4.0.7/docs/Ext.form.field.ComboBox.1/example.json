@@ -11,41 +11,6 @@
             "label": "Ext JS 4.0.7"
         }
     ],
-    "tags": [
-        {
-            "label": "Ext.form.field.ComboBox"
-        },
-        {
-            "label": "Ext.form.ComboBox"
-        },
-        {
-            "label": "combobox"
-        },
-        {
-            "label": "combo"
-        },
-        {
-            "label": "fieldLabel"
-        },
-        {
-            "label": "store"
-        },
-        {
-            "label": "queryMode"
-        },
-        {
-            "label": "displayField"
-        },
-        {
-            "label": "valueField"
-        },
-        {
-            "label": "form"
-        },
-        {
-            "label": "field"
-        }
-    ],
     "seeAlso": [
         {
             "label": "Ext.form.field.ComboBox Documentation",

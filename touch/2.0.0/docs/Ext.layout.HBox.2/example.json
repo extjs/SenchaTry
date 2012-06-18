@@ -11,23 +11,6 @@
             "label": "Sencha Touch 2.0.0"
         }
     ],
-    "tags": [
-        {
-            "label": "Ext.layout.HBox"
-        },
-        {
-            "label": "Ext.layout.HBoxLayout"
-        },
-        {
-            "label": "hbox"
-        },
-        {
-            "label": "layout"
-        },
-        {
-            "label": "flex"
-        }
-    ],
     "seeAlso": [
         {
             "label": "Ext.layout.HBox Documentation",

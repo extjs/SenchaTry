@@ -11,26 +11,6 @@
             "label": "Ext JS 4.0.7"
         }
     ],
-    "tags": [
-        {
-            "label": "Ext.form.FieldContainer"
-        },
-        {
-            "label": "fieldcontainer"
-        },
-        {
-            "label": "fieldLabel"
-        },
-        {
-            "label": "labelWidth"
-        },
-        {
-            "label": "layout"
-        },
-        {
-            "label": "form"
-        }
-    ],
     "seeAlso": [
         {
             "label": "Ext.form.FieldContainer Documentation",

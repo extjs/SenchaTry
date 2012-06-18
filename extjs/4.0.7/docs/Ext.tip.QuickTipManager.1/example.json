@@ -11,35 +11,6 @@
             "label": "Ext JS 4.0.7"
         }
     ],
-    "tags": [
-        {
-            "label": "Ext.tip.QuickTipManager"
-        },
-        {
-            "label": "tip"
-        },
-        {
-            "label": "init()"
-        },
-        {
-            "label": "getQuickTip()"
-        },
-        {
-            "label": "minWidth"
-        },
-        {
-            "label": "maxWidth"
-        },
-        {
-            "label": "showDelay"
-        },
-        {
-            "label": "register()"
-        },
-        {
-            "label": "dismissDelay"
-        }
-    ],
     "seeAlso": [
         {
             "label": "Ext.tip.QuickTipManager Documentation",

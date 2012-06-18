@@ -11,32 +11,6 @@
             "label": "Ext JS 4.0.7"
         }
     ],
-    "tags": [
-        {
-            "label": "Ext.grid.plugin.DragDrop"
-        },
-        {
-            "label": "gridviewdragdrop"
-        },
-        {
-            "label": "viewConfig"
-        },
-        {
-            "label": "plugins"
-        },
-        {
-            "label": "ptype"
-        },
-        {
-            "label": "dragText"
-        },
-        {
-            "label": "grid"
-        },
-        {
-            "label": "plugin"
-        }
-    ],
     "seeAlso": [
         {
             "label": "Ext.grid.plugin.DragDrop Documentation",

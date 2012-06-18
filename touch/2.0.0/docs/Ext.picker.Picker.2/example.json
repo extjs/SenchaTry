@@ -11,29 +11,6 @@
             "label": "Sencha Touch 2.0.0"
         }
     ],
-    "tags": [
-        {
-            "label": "Ext.picker.Picker"
-        },
-        {
-            "label": "Ext.Picker"
-        },
-        {
-            "label": "picker"
-        },
-        {
-            "label": "doneButton"
-        },
-        {
-            "label": "cancelButton"
-        },
-        {
-            "label": "slots"
-        },
-        {
-            "label": "show()"
-        }
-    ],
     "seeAlso": [
         {
             "label": "Ext.picker.Picker Documentation",

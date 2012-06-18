@@ -11,38 +11,6 @@
             "label": "Ext JS 4.0.7"
         }
     ],
-    "tags": [
-        {
-            "label": "Ext.form.field.Text"
-        },
-        {
-            "label": "Ext.form.Text"
-        },
-        {
-            "label": "Ext.form.TextField"
-        },
-        {
-            "label": "textfield"
-        },
-        {
-            "label": "fieldLabel"
-        },
-        {
-            "label": "allowBlank"
-        },
-        {
-            "label": "vtype"
-        },
-        {
-            "label": "email"
-        },
-        {
-            "label": "form"
-        },
-        {
-            "label": "field"
-        }
-    ],
     "seeAlso": [
         {
             "label": "Ext.form.field.Text Documentation",

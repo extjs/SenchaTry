@@ -11,26 +11,6 @@
             "label": "Ext JS 4.0.7"
         }
     ],
-    "tags": [
-        {
-            "label": "Ext.grid.property.Grid"
-        },
-        {
-            "label": "Ext.grid.PropertyGrid"
-        },
-        {
-            "label": "propertygrid"
-        },
-        {
-            "label": "source"
-        },
-        {
-            "label": "grid"
-        },
-        {
-            "label": "property"
-        }
-    ],
     "seeAlso": [
         {
             "label": "Ext.grid.property.Grid Documentation",

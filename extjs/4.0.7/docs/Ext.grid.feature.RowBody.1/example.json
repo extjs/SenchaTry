@@ -11,29 +11,6 @@
             "label": "Ext JS 4.0.7"
         }
     ],
-    "tags": [
-        {
-            "label": "Ext.grid.feature.RowBody"
-        },
-        {
-            "label": "rowbody"
-        },
-        {
-            "label": "features"
-        },
-        {
-            "label": "ftype"
-        },
-        {
-            "label": "getAdditionalData"
-        },
-        {
-            "label": "grid"
-        },
-        {
-            "label": "feature"
-        }
-    ],
     "seeAlso": [
         {
             "label": "Ext.grid.feature.RowBody Documentation",

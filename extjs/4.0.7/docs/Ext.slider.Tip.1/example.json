@@ -11,20 +11,6 @@
             "label": "Ext JS 4.0.7"
         }
     ],
-    "tags": [
-        {
-            "label": "Ext.slider.Tip"
-        },
-        {
-            "label": "slidertip"
-        },
-        {
-            "label": "useTips"
-        },
-        {
-            "label": "slider"
-        }
-    ],
     "seeAlso": [
         {
             "label": "Ext.slider.Tip Documentation",

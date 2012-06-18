@@ -11,35 +11,6 @@
             "label": "Ext JS 4.0.7"
         }
     ],
-    "tags": [
-        {
-            "label": "Ext.form.FieldSet"
-        },
-        {
-            "label": "fieldset"
-        },
-        {
-            "label": "columnWidth"
-        },
-        {
-            "label": "title"
-        },
-        {
-            "label": "collapsible"
-        },
-        {
-            "label": "layout"
-        },
-        {
-            "label": "checkboxToggle"
-        },
-        {
-            "label": "collapsed"
-        },
-        {
-            "label": "form"
-        }
-    ],
     "seeAlso": [
         {
             "label": "Ext.form.FieldSet Documentation",

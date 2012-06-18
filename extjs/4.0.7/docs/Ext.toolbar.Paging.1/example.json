@@ -11,26 +11,6 @@
             "label": "Ext JS 4.0.7"
         }
     ],
-    "tags": [
-        {
-            "label": "Ext.toolbar.Paging"
-        },
-        {
-            "label": "Ext.PagingToolbar"
-        },
-        {
-            "label": "pagingtoolbar"
-        },
-        {
-            "label": "dock"
-        },
-        {
-            "label": "displayInfo"
-        },
-        {
-            "label": "toolbar"
-        }
-    ],
     "seeAlso": [
         {
             "label": "Ext.toolbar.Paging Documentation",

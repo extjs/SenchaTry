@@ -11,53 +11,6 @@
             "label": "Ext JS 4.0.7"
         }
     ],
-    "tags": [
-        {
-            "label": "Ext.Window"
-        },
-        {
-            "label": "Ext.fx.target.Sprite"
-        },
-        {
-            "label": "Ext.layout.container.Fit"
-        },
-        {
-            "label": "enableToggle"
-        },
-        {
-            "label": "pressed"
-        },
-        {
-            "label": "toggleHandler"
-        },
-        {
-            "label": "animate"
-        },
-        {
-            "label": "easing"
-        },
-        {
-            "label": "duration"
-        },
-        {
-            "label": "fill"
-        },
-        {
-            "label": "markerConfig"
-        },
-        {
-            "label": "smooth"
-        },
-        {
-            "label": "fill"
-        },
-        {
-            "label": "fillOpacity"
-        },
-        {
-            "label": "theme"
-        }
-    ],
     "seeAlso": [],
     "author": {
         "name": "Sencha Inc.",

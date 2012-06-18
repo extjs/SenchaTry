@@ -11,23 +11,6 @@
             "label": "Ext JS 4.0.7"
         }
     ],
-    "tags": [
-        {
-            "label": "Ext.toolbar.TextItem"
-        },
-        {
-            "label": "Ext.Toolbar.TextItem"
-        },
-        {
-            "label": "tbtext"
-        },
-        {
-            "label": "toolbar"
-        },
-        {
-            "label": "tbar"
-        }
-    ],
     "seeAlso": [
         {
             "label": "Ext.toolbar.TextItem Documentation",

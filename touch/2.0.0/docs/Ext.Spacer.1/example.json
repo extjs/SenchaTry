@@ -11,14 +11,6 @@
             "label": "Sencha Touch 2.0.0"
         }
     ],
-    "tags": [
-        {
-            "label": "Ext.Spacer"
-        },
-        {
-            "label": "spacer"
-        }
-    ],
     "seeAlso": [
         {
             "label": "Ext.Spacer Documentation",

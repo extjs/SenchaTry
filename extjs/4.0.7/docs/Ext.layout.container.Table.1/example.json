@@ -11,26 +11,6 @@
             "label": "Ext JS 4.0.7"
         }
     ],
-    "tags": [
-        {
-            "label": "Ext.layout.container.Table"
-        },
-        {
-            "label": "Ext.layout.TableLayout"
-        },
-        {
-            "label": "table"
-        },
-        {
-            "label": "columns"
-        },
-        {
-            "label": "layout"
-        },
-        {
-            "label": "container"
-        }
-    ],
     "seeAlso": [
         {
             "label": "Ext.layout.container.Table Documentation",

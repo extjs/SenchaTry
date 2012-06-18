@@ -11,11 +11,6 @@
             "label": "Ext JS 4.1.0"
         }
     ],
-    "tags": [
-        {
-            "label": "Ext.form.field.Date"
-        }
-    ],
     "seeAlso": [
         {
             "label": "Ext.form.field.Date Documentation",

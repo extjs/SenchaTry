@@ -11,29 +11,6 @@
             "label": "Ext JS 4.0.7"
         }
     ],
-    "tags": [
-        {
-            "label": "Ext.container.ButtonGroup"
-        },
-        {
-            "label": "Ext.ButtonGroup"
-        },
-        {
-            "label": "buttongroup"
-        },
-        {
-            "label": "columns"
-        },
-        {
-            "label": "title"
-        },
-        {
-            "label": "items"
-        },
-        {
-            "label": "container"
-        }
-    ],
     "seeAlso": [
         {
             "label": "Ext.container.ButtonGroup Documentation",

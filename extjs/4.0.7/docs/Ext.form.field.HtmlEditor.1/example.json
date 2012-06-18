@@ -11,23 +11,6 @@
             "label": "Ext JS 4.0.7"
         }
     ],
-    "tags": [
-        {
-            "label": "Ext.form.field.HtmlEditor"
-        },
-        {
-            "label": "Ext.form.HtmlEditor"
-        },
-        {
-            "label": "htmleditor"
-        },
-        {
-            "label": "form"
-        },
-        {
-            "label": "field"
-        }
-    ],
     "seeAlso": [
         {
             "label": "Ext.form.field.HtmlEditor Documentation",

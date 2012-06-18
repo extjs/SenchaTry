@@ -11,17 +11,6 @@
             "label": "Ext JS 4.1.0"
         }
     ],
-    "tags": [
-        {
-            "label": "Ext.button.Button"
-        },
-        {
-            "label": "Ext.Button"
-        },
-        {
-            "label": "button"
-        }
-    ],
     "seeAlso": [],
     "author": {
         "name": "Sencha Inc.",
