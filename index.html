@@ -49,15 +49,15 @@
 <div id="hero">
         <div class="hero-content-wrap">
             <h1 class="hero-heading">Sencha Try</h1>
-            <p class="hero-p">Just a bunch of Ext JS, and Sencha Touch examples.</p>
-            <form id="search" method="get" onsubmit="this.action = sdks.value;">
-                <div style="margin:0;padding:0;display:inline;"></div>
+            <p class="hero-p">Just a metric ton of Ext JS, and Sencha Touch examples.</p>
+            <form id="search" method="get" onsubmit="window.location = this.sdks.value; return false;">
+                <div style="margin:0; padding:0; display:inline;"></div>
                 <fieldset>
-                    <select class="select-location" id="sdks" name="sdks" onchange="this.form.submit();">
-                        <option value="/extjs/4.0.7/">Ext JS 4.0.7</option>
-                        <option value="/extjs/4.1.0/">Ext JS 4.1.0</option>
-                        <option value="/touch/2.0.0/">Sencha Touch 2.0.0</option>
-                        <option value="/touch/2.0.1/">Sencha Touch 2.0.1</option>
+                    <select class="select-location" id="sdks" name="sdks" onchange="window.location = this.value;">
+                        <option value="/extjs/4.1.0/">Ext JS 4.1.0 (current)</option>
+                        <option value="/extjs/4.0.7/">Ext JS 4.0.7 </option>
+                        <option value="/touch/2.0.1/">Sencha Touch 2.0.1 (current)</option>
+                        <option value="/touch/2.0.0/">Sencha Touch 2.0.0 </option>
                     </select>
                     <input class="button-link search-devs" name="commit" type="submit" value="Go">
                 </fieldset>
@@ -80,10 +80,10 @@
                     </ul>
                     <ul class="column">
                         <li>
-                            <a class="main" href="/">Listings</a>
+                            <a class="main" href="/">Home</a>
                             <ul class="zero">
-                                <li class="first"><a href="/developers/">Full listing</a></li>
-                                <li class="last"><a href="/developers/by_location/">Geographic listing</a></li>
+                                <li class="first"><a href="/all/">All Examples</a></li>
+                                <li class="last"><a href="/tags/">Tags</a></li>
                             </ul>
                         </li>
                     </ul>
