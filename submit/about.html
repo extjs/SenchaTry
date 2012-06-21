@@ -50,35 +50,38 @@
         <div class="hero-content-wrap">
             <h1 class="hero-heading">Submit example</h1>
             <p class="hero-p">Please fill out the following form to submit an example pull request.</p>
-            <form id="search" method="post">
-                <div style="margin:0;padding:0;display:inline;"></div>
-                <fieldset>
-                    <label for="name">Name:</label><br />
-                    <input type="text" id="name" name="name" required="true" />
-                </fieldset>
-                
-                <fieldset>
-                    <label for="url">URL:</label><br />
-                    <input type="url" id="url" name="url" required="false" />
-                </fieldset>
-                
-                <fieldset>
-                    <label for="github">Github:</label><br />
-                    <input type="text" id="github" name="github" required="false" />
-                </fieldset>
-                
-                <fieldset>
-                    <label for="senchadevs">Sencha Devs URL:</label>
-                    <input type="url" id="senchadevs" name="senchadevs" required="false" />
-                </fieldset>
-                
-                <fieldset>
-                    <textarea id="comments" placeholder="Comments"></textarea>
-                </fieldset>
-                
-                <input type="submit" value="Submit" />
-            </form>
         </div>
+    </div>
+    
+    <div class="container">
+        <form id="search" method="post">
+            <fieldset>
+                <label for="name" class="column_six" style="text-align:right;">Name:</label>
+                <input type="text" id="name" name="name" required="true" class="column_six" />
+            </fieldset>
+            
+            <fieldset>
+                <label for="url" class="column_six" style="text-align:right;">URL:</label>
+                <input type="url" id="url" name="url" required="false" class="column_six" />
+            </fieldset>
+            
+            <fieldset>
+                <label for="github" class="column_six" style="text-align:right;">Github:</label>
+                <input type="text" id="github" name="github" required="false" class="column_six" />
+            </fieldset>
+            
+            <fieldset>
+                <label for="senchadevs" class="column_six" style="text-align:right;">Sencha Devs URL:</label>
+                <input type="url" id="senchadevs" name="senchadevs" required="false" class="column_six" />
+            </fieldset>
+            
+            <fieldset>
+                <label for="comments" class="column_six" style="text-align:right;">Comments:</label>
+                <textarea id="comments" name="comments" class="column_six"></textarea>
+            </fieldset>
+            
+            <input class="button-link search-devs" name="commit" type="submit" value="Submit">
+        </form>
     </div>
 
 <footer id="footer">

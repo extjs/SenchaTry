@@ -6,19 +6,19 @@
     
     <sitemap>
         <loc>http://try.sencha.com/site.xml</loc>
-        <lastmod>2012-06-20</lastmod>
+        <lastmod>2012-06-21</lastmod>
     </sitemap>
     <sitemap>
         <loc>http://try.sencha.com/post.xml</loc>
-        <lastmod>2012-06-20</lastmod>
+        <lastmod>2012-06-21</lastmod>
     </sitemap>
     <sitemap>
         <loc>http://try.sencha.com/page.xml</loc>
-        <lastmod>2012-06-20</lastmod>
+        <lastmod>2012-06-21</lastmod>
     </sitemap>
     <sitemap>
         <loc>http://try.sencha.com/taxonomy_category.xml</loc>
-        <lastmod>2012-06-20</lastmod>
+        <lastmod>2012-06-21</lastmod>
     </sitemap>
     
 </sitemapindex>
