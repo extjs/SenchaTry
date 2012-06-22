@@ -39,29 +39,33 @@
 
 <div id="content-wrapper" class="clearfix">
         <div id="content">
-            <h1 class="balt">Submit example</h1>
+            <h1 class="balt">Submit an example</h1>
             <form id="search" action="/submit/" method="post">
                 <div class="blockbody formcontrols">
                     <h3 class="blocksubhead">Please fill out the following form to submit an example pull request.</h3>
                     <div class="blockrow required">
-                        <label for="url">First/Last Name</label>
-                        <input type="url" id="name" name="name" required="true" autofocus="autofocus" class="primary textbox" />
+                        <label for="dev_name">Developer Name</label>
+                        <input type="text" id="dev_name" name="dev_name" required="true" autofocus="autofocus" class="primary textbox" />
                     </div>
                     <div class="blockrow required">
-                        <label for="url">Attribution URL</label>
-                        <input type="url" id="url" name="url" required="false" class="primary textbox" />
+                        <label for="dev_email">Developer Email</label>
+                        <input type="email" id="dev_email" name="dev_email" required="true" class="primary textbox" />
                     </div>
                     <div class="blockrow required">
-                        <label for="exampleName">Example Name</label>
-                        <input type="text" id="exampleName" name="exampleName" required="true" class="primary textbox" />
+                        <label for="dev_url">Developer URL (Attribution)</label>
+                        <input type="url" id="dev_url" name="dev_url" required="false" class="primary textbox" />
+                    </div>
+                    <div class="blockrow required">
+                        <label for="example_name">Example Name</label>
+                        <input type="text" id="example_name" name="example_name" required="true" class="primary textbox" />
                     </div>
                     <div class="blockrow">
-                        <label for="comments">Example Description</label>
-                        <textarea id="comments" name="comments" class="primary textbox"></textarea>
+                        <label for="example_description">Example Description</label>
+                        <textarea id="example_description" name="example_description" class="primary textbox"></textarea>
                     </div>
                     <div class="blockrow required">
-                        <label for="github">Example Github URL</label>
-                        <input type="text" id="github" name="github" required="false" class="primary textbox" />
+                        <label for="example_github">Example Github URL</label>
+                        <input type="text" id="example_github" name="example_github" required="false" class="primary textbox" />
                     </div>
                     <!--
                     <div class="blockrow">
