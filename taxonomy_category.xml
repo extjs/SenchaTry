@@ -11,13 +11,13 @@
         <priority>0.6</priority>
     </url>
     <url>
-        <loc>http://try.sencha.com/tags/Ext_JS_4.1.0/</loc>
+        <loc>http://try.sencha.com/tags/Ext_JS_4_1_0/</loc>
         <lastmod>2012-06-22</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.5</priority>
     </url>
     <url>
-        <loc>http://try.sencha.com/tags/Ext_JS_4.0.7/</loc>
+        <loc>http://try.sencha.com/tags/Ext_JS_4_0_7/</loc>
         <lastmod>2012-06-22</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.5</priority>
@@ -29,13 +29,13 @@
         <priority>0.6</priority>
     </url>
     <url>
-        <loc>http://try.sencha.com/tags/Sencha_Touch_2.0.1/</loc>
+        <loc>http://try.sencha.com/tags/Sencha_Touch_2_0_1/</loc>
         <lastmod>2012-06-22</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.5</priority>
     </url>
     <url>
-        <loc>http://try.sencha.com/tags/Sencha_Touch_2.0.0/</loc>
+        <loc>http://try.sencha.com/tags/Sencha_Touch_2_0_0/</loc>
         <lastmod>2012-06-22</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.5</priority>
