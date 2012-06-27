@@ -1,5 +1,4 @@
-ExtJS 4 MVC Complex Dashboard Example
-============================
+# ExtJS 4 MVC Complex Dashboard Example #
 
 Ported Complex Dashboard Example to MVC
 

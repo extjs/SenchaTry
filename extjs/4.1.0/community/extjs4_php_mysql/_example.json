@@ -1,0 +1,57 @@
+{
+    "title": "Extjs 4 + Php + MySQL",
+    "product": "extjs",
+    "version": "4.1.0",
+    "path": "extjs/4.1.0/community/extjs4_php_mysql/",
+    "categories": [
+        {
+            "label": "Ext JS"
+        },
+        {
+            "label": "Ext JS 4.1.0"
+        }
+    ],
+    "seeAlso": [
+        {
+            "label": "Extjs 4 + Php + MySQL on Github",
+            "url": "https://github.com/ErnestoR/Extjs4_PHP_MySQL",
+            "type": "github"
+        }
+    ],
+    "author": {
+        "name": "Ernesto Ramirez",
+        "github": "ErnestoR",
+        "url": "https://github.com/ErnestoR/"
+    },
+    "files": [
+        "app/controller/User.js",
+        "app/model/User.js",
+        "app/store/User.js",
+        "app/view/user/Create.js",
+        "app/view/user/Edit.js",
+        "app/view/user/List.js",
+        "app.js",
+        "CRUD_Extjs4.sql",
+        "data/createUser.php",
+        "data/database_connection.php",
+        "data/deleteUser.php",
+        "data/lib/request.php",
+        "data/lib/response.php",
+        "data/readUser.php",
+        "data/updateUser.php",
+        "index.html",
+        "resources/icons/user.png",
+        "resources/icons/user_add.png",
+        "resources/icons/user_comment.png",
+        "resources/icons/user_delete.png",
+        "resources/icons/user_edit.png",
+        "resources/icons/user_female.png",
+        "resources/icons/user_go.png",
+        "resources/icons/user_gray.png",
+        "resources/icons/user_green.png",
+        "resources/icons/user_orange.png",
+        "resources/icons/user_red.png",
+        "resources/icons/user_suit.png",
+        "resources/style.css"
+    ]
+}

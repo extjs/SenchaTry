@@ -1,5 +1,4 @@
-ExtJS 4 MVC Multiselect/ItemSelector Examples
-======================
+# ExtJS 4 MVC Multiselect/ItemSelector Examples #
 
 Ported Multiselect/ItemSelector Examples to MVC
 

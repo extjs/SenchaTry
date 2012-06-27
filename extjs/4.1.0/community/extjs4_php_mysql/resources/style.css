@@ -1,0 +1,32 @@
+/* 
+    Document   : style
+    Created on : Nov 16, 2011, 12:57:47 PM
+    Author     : Ernesto
+    Description:
+        Purpose of the stylesheet follows.
+*/
+
+/* 
+   TODO customize this sample style
+   Syntax recommendation http://www.w3.org/TR/REC-CSS2/
+*/
+
+root { 
+    display: block;
+}
+
+body {
+    background: #ededed;
+}
+
+.user {
+    background: url('icons/user.png');
+}
+
+.user_add {
+    background: url('icons/user_add.png');
+}
+
+.user_delete {
+    background: url('icons/user_delete.png');
+}

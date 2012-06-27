@@ -1,0 +1,47 @@
+{
+    "title": "FeedBurner RSS Reader",
+    "product": "touch",
+    "version": "2.0.1",
+    "path": "touch/2.0.1/community/feedburner-rss-reader/",
+    "categories": [
+        {
+            "label": "Sencha Touch"
+        },
+        {
+            "label": "Sencha Touch 2.0.1"
+        }
+    ],
+    "seeAlso": [
+        {
+            "label": "FeedBurner-RSS-Reader on Github",
+            "url": "https://github.com/AndreaCammarata/FeedBurner-RSS-Reader",
+            "type": "github"
+        }
+    ],
+    "author": {
+        "name": "Andrea Cammarata",
+        "github": "AndreaCammarata",
+        "url": "www.andreacammarata.com/"
+    },
+    "files": [
+        "app/controller/Feeds.js",
+        "app/model/Feed.js",
+        "app/model/News.js",
+        "app/store/Feeds.js",
+        "app/store/News.js",
+        "app/view/Feeds.js",
+        "app/view/New.js",
+        "app/view/News.js",
+        "app/view/NewsContainer.js",
+        "app/view/NewsList.js",
+        "app.js",
+        "index.html",
+        "override/data/proxy/Server.js",
+        "resources/css/rss.css",
+        "tux/data/proxy/FeedBurner.js",
+        "tux/dataview/FeedListItem.js",
+        "tux/fx/animation/TimeMachine.js",
+        "tux/fx/layout/card/TimeMachine.js",
+        "tux/util/Url.js"
+    ]
+}

@@ -14,19 +14,16 @@
     "seeAlso": [
         {
             "label": "ExtJS 4 MVC Complex Dashboard Example on Github",
-            "url": "https://github.com/loiane/extjs4-mvc-complex-dashboard/",
+            "url": "https://github.com/loiane/extjs4-mvc-complex-dashboard",
             "type": "github"
         }
     ],
     "author": {
         "name": "Loiane Groner",
         "github": "loiane",
-        "url": "http://loianegroner.com/",
-        "senchadevs": ""
+        "url": "http://loianegroner.com/"
     },
     "files": [
-        "app.js",
-        "index.html",
         "app/controller/Stocks.js",
         "app/model/RadarDataSet.js",
         "app/model/Stock.js",
@@ -36,6 +33,8 @@
         "app/view/chart/StockRadar.js",
         "app/view/stocks/StockForm.js",
         "app/view/stocks/StockGrid.js",
-        "app/view/Viewport.js"
+        "app/view/Viewport.js",
+        "app.js",
+        "index.html"
     ]
 }

@@ -1,5 +1,4 @@
-ExtJS 4 MVC Portal Example
-=================
+# ExtJS 4 MVC Portal Example #
 
 Ported Portal Example to MVC
 
