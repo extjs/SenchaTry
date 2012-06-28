@@ -11,4 +11,4 @@ This application developed using Sencha Touch 2, allows to read FeedBurner Feeds
 - Custom JsonP proxy
 - LocalStorage
 
-Via [Andrea Cammarata](www.andreacammarata.com/).
+Via [Andrea Cammarata](http://www.andreacammarata.com/).
