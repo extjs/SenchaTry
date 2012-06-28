@@ -1,7 +1,9 @@
+Ext.Loader.setConfig({enabled: true});
+
 Ext.application({
     name: 'ExtMVC',
 
-    paths: { 'Ext.ux': 'extjs/ux/' },
+    paths: { 'Ext.ux': 'ux' },
 
     controllers: [
         'ForumThreads'
