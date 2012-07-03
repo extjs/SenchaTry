@@ -1,0 +1,30 @@
+{
+    "title": "Ext.grid.feature.Grouping Example",
+    "product": "extjs",
+    "version": "4.1.1",
+    "path": "extjs/4.1.1/docs/Ext.grid.feature.Grouping.1/",
+    "categories": [
+        {
+            "label": "Ext JS"
+        },
+        {
+            "label": "Ext JS 4.1.1"
+        }
+    ],
+    "seeAlso": [
+        {
+            "label": "Ext.grid.feature.Grouping Documentation",
+            "url": "http://docs.sencha.com/ext-js/4-1/#!/api/Ext.grid.feature.Grouping",
+            "type": "api"
+        }
+    ],
+    "author": {
+        "name": "Sencha Inc.",
+        "github": "extjs",
+        "url": "http://sencha.com/"
+    },
+    "files": [
+        "app.js",
+        "index.html"
+    ]
+}

@@ -1,0 +1,30 @@
+{
+    "title": "Ext.chart.series.Scatter Example",
+    "product": "extjs",
+    "version": "4.1.1",
+    "path": "extjs/4.1.1/docs/Ext.chart.series.Scatter.1/",
+    "categories": [
+        {
+            "label": "Ext JS"
+        },
+        {
+            "label": "Ext JS 4.1.1"
+        }
+    ],
+    "seeAlso": [
+        {
+            "label": "Ext.chart.series.Scatter Documentation",
+            "url": "http://docs.sencha.com/ext-js/4-1/#!/api/Ext.chart.series.Scatter",
+            "type": "api"
+        }
+    ],
+    "author": {
+        "name": "Sencha Inc.",
+        "github": "extjs",
+        "url": "http://sencha.com/"
+    },
+    "files": [
+        "app.js",
+        "index.html"
+    ]
+}

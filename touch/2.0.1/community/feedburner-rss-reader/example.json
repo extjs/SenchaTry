@@ -21,7 +21,7 @@
     "author": {
         "name": "Andrea Cammarata",
         "github": "AndreaCammarata",
-        "url": "www.andreacammarata.com/"
+        "url": "http://www.andreacammarata.com/"
     },
     "files": [
         "app/controller/Feeds.js",

@@ -1,0 +1,30 @@
+{
+    "title": "drawing and charting Example",
+    "product": "extjs",
+    "version": "4.1.1",
+    "path": "extjs/4.1.1/guides/drawing_and_charting.1/",
+    "categories": [
+        {
+            "label": "Ext JS"
+        },
+        {
+            "label": "Ext JS 4.1.1"
+        }
+    ],
+    "seeAlso": [
+        {
+            "label": "drawing_and_charting Documentation",
+            "url": "http://docs.sencha.com/ext-js/4-1/#!/guide/drawing_and_charting",
+            "type": "guide"
+        }
+    ],
+    "author": {
+        "name": "Sencha Inc.",
+        "github": "extjs",
+        "url": "http://sencha.com/"
+    },
+    "files": [
+        "app.js",
+        "index.html"
+    ]
+}

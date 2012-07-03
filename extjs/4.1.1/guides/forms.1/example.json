@@ -1,0 +1,30 @@
+{
+    "title": "forms Example",
+    "product": "extjs",
+    "version": "4.1.1",
+    "path": "extjs/4.1.1/guides/forms.1/",
+    "categories": [
+        {
+            "label": "Ext JS"
+        },
+        {
+            "label": "Ext JS 4.1.1"
+        }
+    ],
+    "seeAlso": [
+        {
+            "label": "forms Documentation",
+            "url": "http://docs.sencha.com/ext-js/4-1/#!/guide/forms",
+            "type": "guide"
+        }
+    ],
+    "author": {
+        "name": "Sencha Inc.",
+        "github": "extjs",
+        "url": "http://sencha.com/"
+    },
+    "files": [
+        "app.js",
+        "index.html"
+    ]
+}

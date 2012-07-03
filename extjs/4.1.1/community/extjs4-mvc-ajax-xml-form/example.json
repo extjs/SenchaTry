@@ -1,0 +1,39 @@
+{
+    "title": "ExtJS 4 MVC Ajax XML Form",
+    "product": "extjs",
+    "version": "4.1.1",
+    "path": "extjs/4.1.1/community/extjs4-mvc-ajax-xml-form/",
+    "categories": [
+        {
+            "label": "Ext JS"
+        },
+        {
+            "label": "Ext JS 4.1.1"
+        }
+    ],
+    "seeAlso": [
+        {
+            "label": "ExtJS 4 MVC Ajax XML Form on Github",
+            "url": "https://github.com/loiane/extjs4-mvc-ajax-xml-form",
+            "type": "github"
+        }
+    ],
+    "author": {
+        "name": "Loiane Groner",
+        "github": "loiane",
+        "url": "http://loianegroner.com/"
+    },
+    "files": [
+        "app/controller/Contacts.js",
+        "app/model/Contact.js",
+        "app/model/FieldError.js",
+        "app/model/State.js",
+        "app/store/States.js",
+        "app/view/contact/ContactForm.js",
+        "app/view/Viewport.js",
+        "app.js",
+        "data/xml-form-data.xml",
+        "data/xml-form-errors.xml",
+        "index.html"
+    ]
+}

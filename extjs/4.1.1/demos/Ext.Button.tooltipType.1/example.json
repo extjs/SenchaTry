@@ -1,0 +1,25 @@
+{
+    "title": "Adding tooltips to an Ext.Button component using Ext JS",
+    "product": "extjs",
+    "version": "4.1.1",
+    "path": "extjs/4.1.1/demos/Ext.Button.tooltipType.1/",
+    "categories": [
+        {
+            "label": "Ext JS"
+        },
+        {
+            "label": "Ext JS 4.1.1"
+        }
+    ],
+    "seeAlso": [],
+    "author": {
+        "name": "Sencha Inc.",
+        "github": "extjs",
+        "url": "http://sencha.com/",
+        "senchadevs": ""
+    },
+    "files": [
+        "app.js",
+        "index.html"
+    ]
+}

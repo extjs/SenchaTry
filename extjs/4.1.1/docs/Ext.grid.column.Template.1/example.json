@@ -1,0 +1,30 @@
+{
+    "title": "Ext.grid.column.Template Example",
+    "product": "extjs",
+    "version": "4.1.1",
+    "path": "extjs/4.1.1/docs/Ext.grid.column.Template.1/",
+    "categories": [
+        {
+            "label": "Ext JS"
+        },
+        {
+            "label": "Ext JS 4.1.1"
+        }
+    ],
+    "seeAlso": [
+        {
+            "label": "Ext.grid.column.Template Documentation",
+            "url": "http://docs.sencha.com/ext-js/4-1/#!/api/Ext.grid.column.Template",
+            "type": "api"
+        }
+    ],
+    "author": {
+        "name": "Sencha Inc.",
+        "github": "extjs",
+        "url": "http://sencha.com/"
+    },
+    "files": [
+        "app.js",
+        "index.html"
+    ]
+}

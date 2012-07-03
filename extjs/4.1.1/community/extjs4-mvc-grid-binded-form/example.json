@@ -1,0 +1,37 @@
+{
+    "title": "ExtJS 4 MVC - Grid binded to a Form",
+    "product": "extjs",
+    "version": "4.1.1",
+    "path": "extjs/4.1.1/community/extjs4-mvc-grid-binded-form/",
+    "categories": [
+        {
+            "label": "Ext JS"
+        },
+        {
+            "label": "Ext JS 4.1.1"
+        }
+    ],
+    "seeAlso": [
+        {
+            "label": "ExtJS 4 MVC - Grid binded to a Form on Github",
+            "url": "https://github.com/loiane/extjs4-mvc-grid-binded-form",
+            "type": "github"
+        }
+    ],
+    "author": {
+        "name": "Loiane Groner",
+        "github": "loiane",
+        "url": "http://loianegroner.com/"
+    },
+    "files": [
+        "app/controller/Stocks.js",
+        "app/model/Stock.js",
+        "app/store/Stocks.js",
+        "app/view/stock/StockForm.js",
+        "app/view/stock/StockGrid.js",
+        "app/view/stock/StockPanel.js",
+        "app/view/Viewport.js",
+        "app.js",
+        "index.html"
+    ]
+}

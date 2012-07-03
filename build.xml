@@ -148,6 +148,17 @@ $ ant -projecthelp
             <arg value="${findURLs3.cmd}" />
         </exec>
     </target>
+
+
+    <!-- Find all URLs without `http:` or `https:` prefixes -->
+    <target name="findNonQualifiedURLs"
+            description="Find all URLs without `http:` or `https:` prefixes.">
+        <echo>${findNonQualifiedURLs.cmd}</echo>
+        <exec executable="sh">
+            <arg value="-c" />
+            <arg value="${findNonQualifiedURLs.cmd}" />
+        </exec>
+    </target>
     
     
     <!-- Find all *.php file references -->
@@ -186,7 +197,7 @@ $ ant -projecthelp
     <!-- Applies some basic code/markup validations -->
     <target name="validate"
             description="Applies some basic code/markup validations."
-            depends="showsplash, ds_store, htmFiles, missingDoctype, html4Doctype, emptyTitles, missingTitles, readmeMarkup">
+            depends="showsplash, ds_store, htmFiles, missingDoctype, html4Doctype, findNonQualifiedURLs, emptyTitles, missingTitles, readmeMarkup">
     </target>
     
     
@@ -220,7 +231,7 @@ $ ant -projecthelp
         <jshint options="${jshint_opts}">
             <fileset dir="${src.dir}"
                     includes="**/*.js, **/*.json"
-                    excludes="**/examples/**, **/Ext.Array.clean.1/**" />
+                    excludes="**/examples/**, **/community/**, **/Ext.Array.clean.1/**" />
         </jshint>
     </target>
     

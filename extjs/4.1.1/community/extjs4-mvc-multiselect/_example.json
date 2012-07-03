@@ -1,0 +1,57 @@
+{
+    "title": "ExtJS 4 MVC Multiselect/ItemSelector Examples",
+    "product": "extjs",
+    "version": "4.1.1",
+    "path": "extjs/4.1.1/community/extjs4-mvc-multiselect/",
+    "categories": [
+        {
+            "label": "Ext JS"
+        },
+        {
+            "label": "Ext JS 4.1.1"
+        }
+    ],
+    "seeAlso": [
+        {
+            "label": "ExtJS 4 MVC Multiselect/ItemSelector Examples on Github",
+            "url": "https://github.com/loiane/extjs4-mvc-multiselect",
+            "type": "github"
+        }
+    ],
+    "author": {
+        "name": "Loiane Groner",
+        "github": "loiane",
+        "url": "http://loianegroner.com/"
+    },
+    "files": [
+        "app/controller/SelectController.js",
+        "app/model/Number.js",
+        "app/store/Numbers.js",
+        "app/ux/form/ItemSelector.js",
+        "app/ux/form/MultiSelect.js",
+        "app/view/DockedButtons.js",
+        "app/view/DockedToolbar.js",
+        "app/view/ItemSelectorForm.js",
+        "app/view/MultiSelectForm.js",
+        "app/view/Viewport.js",
+        "app.js",
+        "index.html",
+        "php/database.php",
+        "php/listCities.php",
+        "php/listStates.php",
+        "resources/images/border.gif",
+        "resources/images/bottom2.gif",
+        "resources/images/checked.gif",
+        "resources/images/down2.gif",
+        "resources/images/left2.gif",
+        "resources/images/right2.gif",
+        "resources/images/tab-collapsed.gif",
+        "resources/images/tab-first.gif",
+        "resources/images/tab-last.gif",
+        "resources/images/tab-scroller-menu.gif",
+        "resources/images/top2.gif",
+        "resources/images/unchecked.gif",
+        "resources/images/up2.gif",
+        "resources/ItemSelector.css"
+    ]
+}
