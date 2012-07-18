@@ -21,11 +21,11 @@
     "author": {
         "name": "Loiane Groner",
         "github": "loiane",
-        "url": "http://loianegroner.com/"
+        "url": "http://loianegroner.com/",
+        "senchadevs": ""
     },
     "files": [
         "app.js",
         "index.html"
     ]
 }
- 

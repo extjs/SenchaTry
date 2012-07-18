@@ -21,7 +21,8 @@
     "author": {
         "name": "Sencha Inc.",
         "github": "extjs",
-        "url": "http://sencha.com/"
+        "url": "http://sencha.com/",
+        "senchadevs": ""
     },
     "files": [
         "app.js",
