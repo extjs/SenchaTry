@@ -21,7 +21,8 @@
     "author": {
         "name": "Ernesto Ramirez",
         "github": "ErnestoR",
-        "url": "https://github.com/ErnestoR/"
+        "url": "https://github.com/ErnestoR/",
+        "senchadevs": ""
     },
     "files": [
         "app/controller/User.js",

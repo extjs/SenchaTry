@@ -22,7 +22,7 @@
         "name": "Loiane Groner",
         "github": "loiane",
         "url": "http://loianegroner.com/",
-        "senchadevs": ""
+        "senchadevs": "loiane"
     },
     "files": [
         "app/controller/Contacts.js",
