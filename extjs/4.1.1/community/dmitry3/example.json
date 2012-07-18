@@ -1,0 +1,31 @@
+{
+    "title": "Self closing Menu",
+    "product": "extjs",
+    "version": "4.1.1",
+    "path": "extjs/4.1.1/community/dmitry3/",
+    "categories": [
+        {
+            "label": "Ext JS"
+        },
+        {
+            "label": "Ext JS 4.1.1"
+        }
+    ],
+    "seeAlso": [
+        {
+            "label": "Self closing Menu on jsFiddle",
+            "url": "http://jsfiddle.net/dbrin/gWaCv/",
+            "type": "jsfiddle"
+        }
+    ],
+    "author": {
+        "name": "Dmitry Brin",
+        "github": "",
+        "url": "http://www.sencha.com/forum/member.php?106520-dbrin",
+        "senchadevs": ""
+    },
+    "files": [
+        "app.js",
+        "index.html"
+    ]
+}

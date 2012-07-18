@@ -1,0 +1,31 @@
+{
+    "title": "Grid with a busy Toolbar",
+    "product": "extjs",
+    "version": "4.1.1",
+    "path": "extjs/4.1.1/community/dmitry1/",
+    "categories": [
+        {
+            "label": "Ext JS"
+        },
+        {
+            "label": "Ext JS 4.1.1"
+        }
+    ],
+    "seeAlso": [
+        {
+            "label": "Grid with a busy Toolbar on jsFiddle",
+            "url": "http://jsfiddle.net/dbrin/PhAbR/",
+            "type": "jsfiddle"
+        }
+    ],
+    "author": {
+        "name": "Dmitry Brin",
+        "github": "",
+        "url": "http://www.sencha.com/forum/member.php?106520-dbrin",
+        "senchadevs": ""
+    },
+    "files": [
+        "app.js",
+        "index.html"
+    ]
+}

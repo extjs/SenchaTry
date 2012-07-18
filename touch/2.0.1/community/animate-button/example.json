@@ -1,0 +1,32 @@
+{
+    "title": "Animate Button",
+    "product": "touch",
+    "version": "2.0.1",
+    "path": "touch/2.0.1/community/animate-button/",
+    "categories": [
+        {
+            "label": "Sencha Touch"
+        },
+        {
+            "label": "Sencha Touch 2.0.1"
+        }
+    ],
+    "seeAlso": [
+        {
+            "label": "Animate Button Example on GitHub",
+            "url": "https://github.com/brunotavares/SenchaExamples/tree/master/touch/animate-button",
+            "type": "github"
+        }
+    ],
+    "author": {
+        "name": "Bruno Tavares",
+        "github": "brunotavares",
+        "url": "http://bruno.tavares.me/",
+        "senchadevs": ""
+    },
+    "files": [
+        "app/view/Main.js",
+        "app.js",
+        "index.html"
+    ]
+}

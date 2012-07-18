@@ -10,5 +10,8 @@ Thanks to the following contributors:
 - [Loiane Groner](http://loianegroner.com/)
 - [Andrea Cammarata](http://www.andreacammarata.com/)
 - [Ernesto Ramirez](https://github.com/ErnestoR/)
+- [Dmitry Brin](http://www.sencha.com/forum/member.php?106520-dbrin)
+- [manduks](http://www.armando.mx/)
+- [Bruno Tavares](http://bruno.tavares.me/)
 
 :shipit:
