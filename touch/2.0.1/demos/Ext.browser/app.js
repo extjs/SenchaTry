@@ -1,12 +1,7 @@
 /*global Ext:false */
 Ext.application({
     launch: function () {
-        Ext.define('Browser', {
-            extend: 'Ext.data.Model'
-        }); // define()
-        
         var store = Ext.create('Ext.data.Store', {
-            model: 'Browser',
             sorters: 'name',
             fields: ['name', 'value'],
             data: [{
