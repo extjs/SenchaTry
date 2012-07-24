@@ -1,0 +1,43 @@
+{
+    "title": "ExtJS 4 + Sencha Architect 2: Basic Array Grid Example (using ActionColumn)",
+    "product": "extjs",
+    "version": "4.1.1",
+    "path": "extjs/4.1.1/community/arrayGrid/",
+    "categories": [
+        {
+            "label": "Ext JS"
+        },
+        {
+            "label": "Ext JS 4.1.1"
+        }
+    ],
+    "seeAlso": [
+        {
+            "label": "ExtJS 4 + Sencha Architect 2: Basic Array Grid Example (using ActionColumn) on GitHub",
+            "url": "https://github.com/loiane/sencha-extjs4-examples-architect/tree/master/grid/arrayGrid",
+            "type": "github"
+        }
+    ],
+    "author": {
+        "name": "Loiane Groner",
+        "github": "loiane",
+        "url": "http://loianegroner.com/",
+        "senchadevs": ""
+    },
+    "files": [
+        "app/controller/Company.js",
+        "app/model/Company.js",
+        "app/store/Companies.js",
+        "app/view/AppViewport.js",
+        "app/view/CompanyGrid.js",
+        "app/view/Viewport.js",
+        "app.js",
+        "index.html",
+        "resources/app.css",
+        "resources/icons/fam/accept.gif",
+        "resources/icons/fam/accept.png",
+        "resources/icons/fam/delete.gif",
+        "resources/icons/fam/error.gif",
+        "resources/icons/fam/error.png"
+    ]
+}

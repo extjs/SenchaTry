@@ -1,0 +1,1 @@
+Pls download ExtJS 4 SDK from http://www.sencha.com/products/extjs/download
