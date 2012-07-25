@@ -1,0 +1,64 @@
+// Path like menu
+@include sencha-button-ui('pathmenu', #ffffff, 'glossy');
+
+.x-button {
+	&.x-button-pathmenu {
+		background: #555;
+		border: 3px solid #fff;
+		border-radius:50%;
+		padding-left: 5px;
+		-webkit-box-shadow: 0px 0px 2px #999;
+
+		.x-button-icon {
+			&.x-icon-mask {
+				background-color: #fff;
+				color: #fff;
+				background-image: none;
+			}
+		}
+
+		&.x-button-active,
+		&.x-button-pressing {
+			background: #555;
+		}
+
+		&.menubutton {
+			background: orange;
+		}
+
+		&.open {
+			-webkit-transform: rotate(360deg) translateZ(0);
+		}
+
+		&.close {
+			-webkit-transform: rotate(-360deg) translateZ(0);
+		}
+
+
+		&.menubutton {
+			-webkit-transition: all 300ms;
+
+			&.open {
+				-webkit-transform: rotate(45deg) translateZ(0);
+			}
+
+			&.close {
+				-webkit-transform: rotate(0deg) translateZ(0);
+			}
+		}
+		&.menuitembutton {
+			-webkit-transition-duration: 300ms;
+			-webkit-transition-property: opacity, left, bottom, -webkit-transform;
+			-webkit-transition-timing-function: cubic-bezier(0.68, -0.55, 0.265, 1.55);
+			opacity: 1;
+
+			&.close {
+			}
+
+			&.tapped {
+				-webkit-transform: rotate(180deg) scale(4) translatez(0);
+				opacity: 0;
+			}
+		}
+	}
+}

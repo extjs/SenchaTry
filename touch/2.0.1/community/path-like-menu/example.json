@@ -1,0 +1,39 @@
+{
+    "title": "Path like menu",
+    "product": "touch",
+    "version": "2.0.1",
+    "path": "touch/2.0.1/community/path-like-menu/",
+    "categories": [
+        {
+            "label": "Sencha Touch"
+        },
+        {
+            "label": "Sencha Touch 2.0.1"
+        }
+    ],
+    "seeAlso": [
+        {
+            "label": "Path like menu Example on Bitbucket",
+            "url": "https://bitbucket.org/nilsdehl/sencha-touch-2-path-like-menu/",
+            "type": "bitbucket"
+        }
+    ],
+    "author": {
+        "name": "Nils Dehl",
+        "github": "",
+        "url": "http://nils-dehl.de/",
+        "senchadevs": ""
+    },
+    "files": [
+        "app/controller/Application.js",
+        "app/view/Dummy.js",
+        "app.js",
+        "index.html",
+        "libs/ux/PathMenu.js",
+        "resources/css/app.css",
+        "resources/images/noise.png",
+        "resources/sass/_pathmenu.scss",
+        "resources/sass/app.scss",
+        "resources/sass/config.rb"
+    ]
+}
