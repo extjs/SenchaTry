@@ -13,5 +13,6 @@ Thanks to the following contributors:
 - [Dmitry Brin](http://www.sencha.com/forum/member.php?106520-dbrin)
 - [manduks](http://www.armando.mx/)
 - [Bruno Tavares](http://bruno.tavares.me/)
+- [Nils Dehl](http://nils-dehl.de/)
 
 :shipit:
