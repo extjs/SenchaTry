@@ -1,0 +1,32 @@
+{
+    "title": "Individual Column Filter",
+    "product": "extjs",
+    "version": "4.1.1",
+    "path": "extjs/4.1.1/community/individualcolumnfilter/",
+    "categories": [
+        {
+            "label": "Ext JS"
+        },
+        {
+            "label": "Ext JS 4.1.1"
+        }
+    ],
+    "seeAlso": [
+        {
+            "label": "Individual Column Filter Example on GitHub",
+            "url": "https://github.com/lumartineck/individualcolumnfilter",
+            "type": "github"
+        }
+    ],
+    "author": {
+        "name": "Luis Enrique Martínez Gómez",
+        "github": "lumartineck",
+        "url": "http://www.codetlan.com/",
+        "senchadevs": ""
+    },
+    "files": [
+        "app/view/GridPanel.js",
+        "app.js",
+        "index.html"
+    ]
+}

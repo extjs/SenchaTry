@@ -14,5 +14,7 @@ Thanks to the following contributors:
 - [manduks](http://www.armando.mx/)
 - [Bruno Tavares](http://bruno.tavares.me/)
 - [Nils Dehl](http://nils-dehl.de/)
+- [Dave Mitchell](http://bunchofstring.magnt.com/)
+- [Luis Enrique Martínez Gómez](http://www.codetlan.com/)
 
 :shipit:
